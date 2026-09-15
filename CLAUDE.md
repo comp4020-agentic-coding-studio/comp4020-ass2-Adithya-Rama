@@ -24,3 +24,9 @@ Read README.md before structural work. Keep Astro, strict TypeScript, SlopU bran
 
 ## Authorship
 Adithya approved this direction in the implementation request. Identify agent-authored material honestly. Do not claim an HD or personal review on the student's behalf.
+
+## Rules added after rendered review
+- Check contrast in a real browser: the static build cannot measure rendered colours. Keep brand tokens intact and use darker bronze or ink for small text.
+- Check the bounds of content inside clipped containers, not only document overflow. Inspect every deck slide at both viewports.
+- A storage failure must still allow a backup on the current page. Test the downloaded file, not only the warning message.
+- A keyboard journey must actually navigate and enter answers with keyboard events. Keep the theme search and menu usable, with static course navigation when JavaScript is absent.

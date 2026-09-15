@@ -7,14 +7,27 @@ const browser=await chromium.launch();
 const review=[];
 for(const [name,viewport]of [["desktop",{width:1920,height:1080}],["phone",{width:390,height:844}]]){
  const context=await browser.newContext({viewport});const page=await context.newPage();
- for(const route of ["","sessions/week-07/","operation/"]){
-  await page.goto(base+route);await page.screenshot({path:"docs/evidence/"+(route===""?"home":route.startsWith("sessions")?"revision":"operation")+"-"+name+".png"});
+ for(const route of ["","lectures/week-02/","lectures/week-07/","lectures/week-11/","assessments/assignment-1/"]){
+  await page.goto(base+route);
+  const file=route===""?"home":route.split("/").slice(0,2).join("-");
+  await page.screenshot({path:"docs/evidence/"+file+"-"+name+".png"});
  }
- await page.goto(base+"decks/week-07/");
- await page.waitForSelector(".reveal.ready");
+ await page.goto(base+"operation/");await page.getByRole("button",{name:"Load labelled sample dossier"}).click();
+ await page.screenshot({path:"docs/evidence/operation-"+name+".png"});
+ await page.goto(base+"sessions/week-07/");
+ await page.locator("[data-plan-comparison]").screenshot({path:"docs/evidence/revision-"+name+".png",style:".at-nav{visibility:hidden!important}"});
+ await page.goto(base+"operation/");await page.getByRole("button",{name:"Start Contradiction",exact:true}).click();
+ const run=page.locator("[data-rehearsal]");
+ for(const choice of ["Disclose the record","Inspect the source conflict (2 units)","Renew agreement in council (2 units)","Adopt R2 and retest (2 units)","Examine the registry consequence (1 unit)","Disclose the record"])await run.getByRole("button",{name:choice,exact:true}).click();
+ await page.locator("#rehearsal").screenshot({path:"docs/evidence/rehearsal-"+name+".png",style:".at-nav{visibility:hidden!important}"});
+ if(name==="desktop"){
+  const downloadPromise=page.waitForEvent("download");await page.getByRole("button",{name:"Export dossier Markdown"}).click();
+  const download=await downloadPromise;await download.saveAs("docs/evidence/sample-rehearsal.md");
+ }
+ await page.goto(base+"decks/week-07/");await page.waitForSelector(".reveal.ready");
  const tiles=[];
  for(let i=0;i<14;i++){
-  if(i>0) await page.keyboard.press("ArrowRight");
+  if(i>0)await page.keyboard.press("ArrowRight");
   await page.waitForTimeout(120);
   const buffer=await page.screenshot();
   if(i===6)await writeFile("docs/evidence/deck-"+name+".png",buffer);
@@ -27,4 +40,4 @@ for(const [name,viewport]of [["desktop",{width:1920,height:1080}],["phone",{widt
  await context.close();
 }
 await writeFile("docs/evidence/deck-fit.json",JSON.stringify(review,null,2));
-await browser.close();console.log("Captured desktop, phone and all 14 slides at both viewports.");
+await browser.close();console.log("Captured course review, preserved plans, a completed rehearsal and all 14 slides at both viewports.");

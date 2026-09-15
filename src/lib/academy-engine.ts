@@ -81,6 +81,13 @@ export const saveSchema=z.object({
   }
   if(Object.keys(save.artefacts).some(key=>!activities.some(a=>a.output===key)))ctx.addIssue({code:"custom",message:"Unknown dossier artefact"});
   if(new Set(save.crew).size!==save.crew.length)ctx.addIssue({code:"custom",message:"Duplicate crew member"});
+  for(const plan of save.plans){
+    const full=activities.find(a=>a.week===6)!.items!;
+    const seals=["SILVER","WITNESS","CROWN"];
+    const allowed=plan.label==="Version 1" && plan.order.length===full.length?full:seals;
+    if(plan.order.length!==allowed.length||new Set(plan.order).size!==allowed.length||plan.order.some(item=>!allowed.includes(item)))ctx.addIssue({code:"custom",message:"Unknown or incomplete plan sequence"});
+  }
+  if(save.plans.some(p=>p.label==="Version 2")&&save.plans[0]?.label!=="Version 1")ctx.addIssue({code:"custom",message:"Revision missing its preserved original"});
   if(save.plans.filter(p=>p.label==="Version 1").length>1)ctx.addIssue({code:"custom",message:"More than one original plan"});
 });
 export type Save = z.infer<typeof saveSchema>;

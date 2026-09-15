@@ -35,3 +35,13 @@ A subsequent rendered-browser axe review found insufficient contrast in small go
 Adithya supplied the first-person course rationale in docs/AUTHOR-NOTES.md. The agent may organise that wording and link the actual evidence; it must not invent personal observations, student playtesting or approval.
 
 Adithya requested unsigned commits and explicitly deferred pushing to themself. No push, public visibility change or deployment has been performed. CI and live GitHub Pages acceptance remain unverified.
+
+## Rendered review correction
+
+The recorded contrast issue is fixed in course-owned CSS: small headings and legends use ink; active navigation uses the existing secondary bronze. The 12 rendered page/viewport checks now report zero violations. No SlopU brand token was overridden.
+
+The theme also marked Overview active on every nested base-path page and left its menu inert without JavaScript. A course-level enhancement corrects the active section; a static navigation fallback makes the conventional course links available without JavaScript. The menu and existing search are exercised through actual clicks and deep search results.
+
+The keyboard test now enters classifications, reasoning and Save through keyboard events. A new network-throttled journey checks the readable worksheet and eventual activity controls. The current browser suite passes 32 tests. A test initially assumed the assessment index's title was literally Assessments; inspection showed the intended heading was Defend the decision. The test now checks the destination route and a visible heading rather than inventing page wording.
+
+Imports now reject incomplete historical runs, incomplete activity responses, unknown plan actions and revisions without an original. The required check passes 30 tests. See VALIDATION.md for evidence and explicit verification boundaries.

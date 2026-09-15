@@ -97,6 +97,13 @@ describe("local dossier integrity",()=>{
   s.answers={contract:{reflection:"Missing choice",savedAt:now}};
   expect(()=>parseImport(JSON.stringify(s))).toThrow();
  });
+ it("rejects unknown plan actions and a revision without its original",()=>{
+  const s=saveAnswer(emptySave(now),activityForWeek(7),{reflection:"R2 revision",order:activityForWeek(7).correct,savedAt:now});
+  s.plans[1].order=["UNKNOWN","WITNESS","CROWN"];
+  expect(()=>parseImport(JSON.stringify(s))).toThrow();
+  s.plans[1].order=["SILVER","WITNESS","CROWN"];s.plans.shift();
+  expect(()=>parseImport(JSON.stringify(s))).toThrow();
+ });
  it("validates a reset without modifying an earlier record",()=>{
   const s=emptySave(now);s.runs=[{preset:"baseline",choices:["withdraw"]}];const reset=emptySave(now);
   expect(saveSchema.safeParse(reset).success).toBe(true);expect(s.runs).toHaveLength(1);expect(reset.runs).toHaveLength(0);

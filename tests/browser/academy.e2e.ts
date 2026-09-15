@@ -11,11 +11,14 @@ test("course navigation and non-adjacent weeks survive direct reload",async({pag
 });
 test("evidence can be completed by keyboard and restored",async({page})=>{
  await page.goto("sessions/week-02/");
- await page.locator("#evidence-receipt-category").selectOption("observation");
- await page.locator("#evidence-witness-category").selectOption("claim");
- await page.locator("#evidence-future-category").selectOption("assumption");
- await page.locator("#evidence-reflection").fill("E03 is provisional. A signed revision would change my confidence.");
- await page.getByRole("button",{name:"Save to dossier & review"}).focus();await page.keyboard.press("Enter");
+ await page.locator("#evidence-receipt-category").focus();
+ for(const presses of [1,2,3]){
+  for(let i=0;i<presses;i++)await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Tab");await page.keyboard.press("Tab");
+ }
+ await expect(page.locator("#evidence-reflection")).toBeFocused();
+ await page.keyboard.type("E03 is provisional. A signed revision would change my confidence.");
+ await page.keyboard.press("Tab");await page.keyboard.press("Enter");
  await expect(page.locator("[data-activity-status]")).toContainText("Saved");
  await page.reload();await expect(page.locator("#evidence-reflection")).toHaveValue(/signed revision/);
  await page.goto("operation/");await expect(page.locator("[data-dossier]")).toContainText("signed revision");
@@ -82,6 +85,7 @@ test("imported markup stays text and does not execute",async({page})=>{
 test("course and paper alternatives remain available without JavaScript",async({browser,baseURL})=>{
  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();
  await page.goto(baseURL+"sessions/week-07/");await page.getByText("Worksheet, feedback and exemplar",{exact:true}).click();await expect(page.getByText("Worked response:",{exact:false})).toBeVisible();await expect(page.locator("h1")).toBeVisible();
+ await expect(page.getByRole("navigation",{name:"Course navigation without JavaScript"}).getByRole("link",{name:"Weeks",exact:true})).toBeVisible();
  await context.close();
 });
 test("reduced motion, delayed scripts and lecture deck remain usable",async({page})=>{
@@ -106,4 +110,18 @@ test("every slide fits and has readable text and working visible navigation",asy
   expect(fit.textHeight).toBeGreaterThan(15);expect(fit.overflow).toBe(false);
   if(i<13)await slide.getByRole("button",{name:"Next →",exact:true}).click();
  }
+});
+test("navigation identifies one section and search returns a deep course link",async({page})=>{
+ await page.goto("sessions/week-07/");
+ await expect(page.locator(".at-nav-links [aria-current=page]")).toHaveCount(1);
+ await expect(page.locator(".at-nav-links [aria-current=page]")).toHaveText("Labs");
+ const menu=page.getByRole("button",{name:"Menu",exact:true});
+ if(await menu.isVisible())await menu.click();
+ await page.locator(".at-nav-links").getByRole("link",{name:"Assessments",exact:true}).click();
+ await expect(page).toHaveURL(/\/assessments\/$/);await expect(page.locator("h1")).toBeVisible();
+ await page.getByRole("button",{name:"Search (Cmd+K)",exact:true}).click();
+ const dialog=page.getByRole("dialog");await expect(dialog).toBeVisible();
+ await dialog.getByRole("searchbox").fill("counterplanner");
+ await expect(dialog.locator("a[href*='week-11']").first()).toBeVisible();
+ await page.keyboard.press("Escape");await expect(dialog).not.toBeVisible();
 });
