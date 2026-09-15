@@ -57,3 +57,5 @@ body::after{display:none}
 .academy-page h3,.academy-page legend{color:var(--academy-ink)}
 .at-nav a[aria-current="page"]{color:#8a5c13}
 .paper-nav{display:flex;flex-wrap:wrap;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--academy-line)}
+
+@media(max-width:750px){.hero-board .intro{font-size:1rem;line-height:1.65}}

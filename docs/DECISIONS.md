@@ -45,3 +45,8 @@ The theme also marked Overview active on every nested base-path page and left it
 The keyboard test now enters classifications, reasoning and Save through keyboard events. A new network-throttled journey checks the readable worksheet and eventual activity controls. The current browser suite passes 32 tests. A test initially assumed the assessment index's title was literally Assessments; inspection showed the intended heading was Defend the decision. The test now checks the destination route and a visible heading rather than inventing page wording.
 
 Imports now reject incomplete historical runs, incomplete activity responses, unknown plan actions and revisions without an original. The required check passes 30 tests. See VALIDATION.md for evidence and explicit verification boundaries.
+## Local handoff
+
+PROCESS.md is a 496-word edited narrative based on Adithya's supplied account. It cites the real harness, implementation and rendered-review commits. The evidence gate passes with all three citations resolved locally and all starter material replaced or removed.
+
+The final opening-screen review moved the audience and fictional premise into the hero itself. The phone tagline is compact enough that both actions remain visible at 390×844. The final check passes 30 course/logic tests; all 32 browser journeys and 12 rendered accessibility checks pass after this change. The preview also returned HTTP 200 from Windows. These remain local results. Commits are unsigned; pushing remains deferred to Adithya.

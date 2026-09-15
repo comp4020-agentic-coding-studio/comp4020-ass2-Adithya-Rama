@@ -7,6 +7,7 @@ Date: 15 September 2026. Reviewer: coding agent. Publication was deferred by Adi
 | Check | Result | What it establishes |
 | --- | --- | --- |
 | pnpm check | Pass; 30 tests, zero type diagnostics | Content integrity, symbolic rules, imports, preservation and rehearsal behaviour |
+| pnpm check:evidence | Pass; three real commit citations | Authored process account, harness and removal of all starter text/imagery |
 | Production build | 41 pages; 32 API nodes and 64 edges | Static output, base-path links, deck compilation, required collection/API contract |
 | Built-page accessibility | No reported violations | The starter's static accessibility checks |
 | Playwright browser suite | 32 passed | Sixteen journeys at each of 1920×1080 and 390×844 |
@@ -21,7 +22,7 @@ Axe retains incomplete contrast cases for the original decorative hero SVG; thes
 
 ## Agent review observations
 
-- **Home:** the first layout clipped the title and schematic within the hero. The before image is retained. The revised desktop frame displays both; phone layout presents the title and actions in one column. The decorative drawing appears further down the phone page.
+- **Home:** the first layout clipped the title and schematic within the hero. The before image is retained. The revised desktop frame displays both; phone layout presents the title and actions in one column. The opening also states the fictional premise, fourth-year audience and Grand Reserve target. Both main actions fit in the phone viewport; the decorative drawing appears further down.
 - **Week 2:** the distinction between an observed record, a witness claim and an assumption is explicit. Review found and corrected the witness quotation mismatch. The response asks which decision the uncertainty affects.
 - **Week 7:** E03 says it is provisional before E07 supersedes it. The old record remains in the archive. Both plans and the changed dependency are visible; direct-entry samples identify their provenance. The twist is inspectable course material.
 - **Week 11:** the different presets state their protocol versions. The comparison prompt asks about a specific decision, avoiding the claim that an ending alone establishes reasoning quality.

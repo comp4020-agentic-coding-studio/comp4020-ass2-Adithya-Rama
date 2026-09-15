@@ -1,53 +1,19 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
+I chose the heist idea because I wanted the course to have a strong identity that a student would remember immediately. I liked the fantasy of becoming a mastermind and planning an impossible heist, but I did not want the course to depend only on its theme. It gave me a way to put students inside situations with incomplete information, conflicting evidence, different motivations and plans that can fail even when they initially look perfect.
 
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
+What I really wanted students to learn was how to make and defend decisions under uncertainty. They should distinguish evidence from assumptions, understand dependencies, consider people's incentives and recognise when new information should change their plan. My approved direction became the working agreement in [4c8495d](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/4c8495d): one operation across twelve weeks, explicit sources, preserved revisions and direct access to the teaching.
 
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
+The course-design references helped make that position concrete. [Calling Bullshit](https://callingbullshit.org/syllabus.html) sustains a position across its modules; [How to Make Almost Anything](https://fab.cba.mit.edu/classes/863.25/) connects weekly capabilities to larger work. In my course, each week changes the same operation. Students gather evidence, model the fictional system, form a crew and build a plan. Their later work depends on those records, which gives the early exercises a purpose beyond completing a worksheet.
 
-## What I built
+The central decision was to build towards a complete plan halfway through the semester and then break one of its assumptions. I wanted students to revise it without pretending the original mistake never happened. The implementation in [bc31705](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/bc31705) keeps the provisional rule and Version 1 available while a new document requires Version 2. The checks verify preservation and source relationships; the browser journey saves an original, makes a revision and checks that both explanations remain visible. This makes revision something a student can inspect.
 
-One paragraph: the thing, and the idea behind it.
+I also wanted to separate a good decision from a lucky outcome. A student should be able to fail the fictional heist and still demonstrate excellent reasoning. That became the assessment principle: evidence, reasoning, revision and defence matter, rather than simply winning. The rehearsal tests cover all 432 complete routes and establish predictable endings. They cannot establish whether a student's explanation is thoughtful. That judgement belongs with a reader.
 
-## How I got here
+The implementation review exposed a similar boundary in the website. Static checks passed while screenshots revealed a clipped hero and unreadable phone slides. A later browser audit found weak contrast in small gold text. The correction in [7ac8f66](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/7ac8f66) also strengthened the harness: inspect rendered content, use actual keyboard events, and verify the backup downloaded after storage fails. The [validation record](docs/VALIDATION.md) identifies these as agent-run observations, with their limits.
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+My aim remains for someone to arrive because the mastermind academy sounds fun and leave having practised careful thinking when information, people and conditions refuse to stay fixed. Automated checks protect the course's promises; coherence, voice and the quality of its reasoning still require personal judgement. Publishing is deferred to me, so local results are not presented as live-site acceptance.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+*Edited with coding-agent assistance from my supplied [original account](docs/AUTHOR-NOTES.md).*
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
-
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
-
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
-
-## Before you ship
-
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+![The completed desktop course homepage](docs/evidence/home-desktop.png)
