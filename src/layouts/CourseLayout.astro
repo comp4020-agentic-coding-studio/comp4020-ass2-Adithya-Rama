@@ -1,0 +1,18 @@
+---
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { siteConfig } from "../site-config";
+import { courseMeta } from "../course-config";
+import "../styles/academy.css";
+interface Props {title:string;description?:string|null;eyebrow?:string;wide?:boolean;home?:boolean}
+const {title,description,eyebrow="THE GLASS CROWN FILES",wide=false,home=false}=Astro.props;
+---
+<BaseLayout {...siteConfig} title={title+" — "+courseMeta.code} description={description??undefined} clientRouter={false} colorScheme="light">
+  <div class:list={["academy-page",{wide,home}]}>
+    <div class="course-strip"><a href={withBase("/")}>{courseMeta.code} / MASTERMIND</a><span>{courseMeta.session} · {courseMeta.year}</span></div>
+    {!home && <header class="page-heading"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{description&&<p class="intro">{description}</p>}</header>}
+    <slot />
+    <nav class="secondary-nav" aria-label="Course resources"><a href={withBase("/people/")}>People</a><a href={withBase("/resources/")}>Resources & case files</a><a href={withBase("/policies/")}>Policies & support</a></nav>
+    <p class="course-colophon">SLOP UNIVERSITY · SCHOOL OF IMPOSSIBLE OPERATIONS<br/>An original fictional course. All training systems are invented simulations.</p>
+  </div>
+</BaseLayout>

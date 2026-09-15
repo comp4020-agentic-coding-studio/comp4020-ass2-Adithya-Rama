@@ -1,27 +1,16 @@
 ---
-import { render } from "astro:content";
-import { getPublishedCollection } from "astro-course-university/content";
-import RelatedContent from "astro-course-university/components/RelatedContent.astro";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import { withBase } from "astro-theme-university/url";
-import TeachingTeam from "../../components/TeachingTeam.astro";
-import { formatCourseDate } from "../../lib/dates";
-import { graphCollections, siteConfig } from "../../site-config";
-
-export async function getStaticPaths() {
-  const lectures = await getPublishedCollection("lectures");
-  return lectures.map((lecture) => ({ params: { slug: lecture.id }, props: { lecture } }));
-}
-
-const { lecture } = Astro.props;
-const { Content } = await render(lecture);
-const title = `Week ${lecture.data.week}: ${lecture.data.title}`;
+import {render} from "astro:content";
+import {getPublishedCollection} from "astro-course-university/content";
+import {withBase} from "astro-theme-university/url";
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import {formatCourseDate} from "../../lib/dates";
+export async function getStaticPaths(){return (await getPublishedCollection("lectures")).map(lecture=>({params:{slug:lecture.id},props:{lecture}}));}
+const {lecture}=Astro.props;const {Content}=await render(lecture);
+const week=lecture.data.week;
 ---
-
-<ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
-  <p><strong>{formatCourseDate(lecture.data.date)}</strong></p>
-  {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
-  <Content />
-  <TeachingTeam teachers={lecture.data.teachers} />
-  <RelatedContent entry={lecture} collections={graphCollections} />
-</ContentLayout>
+<CourseLayout title={lecture.data.title} description={lecture.data.description} eyebrow={"BRIEFING / WEEK "+String(week).padStart(2,"0")}>
+<div class="fact-strip"><span>{formatCourseDate(lecture.data.date)}</span><span>1-hour briefing</span><span>{(lecture.data.learningOutcomes as string[]).join(" · ")}</span></div>
+{lecture.data.slides&&<div class="actions"><a class="button primary" href={withBase(lecture.data.slides)}>Open the Week 7 lecture deck ↗</a></div>}
+<Content />
+<nav class="actions" aria-label="Week navigation">{week>1&&<a class="button" href={withBase("/lectures/week-"+String(week-1).padStart(2,"0")+"/")}>← Previous week</a>}<a class="button" href={withBase("/lectures/")}>All weeks</a>{week<12&&<a class="button" href={withBase("/lectures/week-"+String(week+1).padStart(2,"0")+"/")}>Next week →</a>}</nav>
+</CourseLayout>

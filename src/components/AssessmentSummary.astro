@@ -1,0 +1,7 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import { withBase } from "astro-theme-university/url";
+import { formatCourseDate } from "../lib/dates";
+const entries=(await getPublishedCollection("assessments")).sort((a,b)=>a.data.weight-b.data.weight);
+---
+<div class="schedule">{entries.map(a=><article class="schedule-row"><span class="number">{a.data.weight}%</span><div><a href={withBase("/assessments/"+a.id+"/")}>{a.data.title}</a><small>{String(a.data.participation)} · {formatCourseDate(a.data.due)} · 17:00 Canberra</small></div></article>)}</div>

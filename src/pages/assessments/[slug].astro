@@ -1,47 +1,18 @@
 ---
-import { render } from "astro:content";
-import { getPublishedCollection } from "astro-course-university/content";
-import RelatedContent from "astro-course-university/components/RelatedContent.astro";
-import SpecList from "astro-course-university/components/SpecList.astro";
-import Callout from "astro-theme-university/components/Callout.astro";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import {render} from "astro:content";
+import {getPublishedCollection} from "astro-course-university/content";
+import {withBase} from "astro-theme-university/url";
+import CourseLayout from "../../layouts/CourseLayout.astro";
 import MarkingModel from "../../components/MarkingModel.astro";
-import { formatCourseDate } from "../../lib/dates";
-import { graphCollections, siteConfig } from "../../site-config";
-
-export async function getStaticPaths() {
-  const assessments = await getPublishedCollection("assessments");
-  return assessments.map((assessment) => ({
-    params: { slug: assessment.id },
-    props: { assessment },
-  }));
-}
-
-const { assessment } = Astro.props;
-const { Content } = await render(assessment);
+import {formatCourseDate} from "../../lib/dates";
+export async function getStaticPaths(){return (await getPublishedCollection("assessments")).map(assessment=>({params:{slug:assessment.id},props:{assessment}}));}
+const {assessment}=Astro.props;const {Content}=await render(assessment);
+const sessions=assessment.id==="fieldwork"?(await getPublishedCollection("sessions")).sort((a,b)=>a.data.week-b.data.week):[];
 ---
-
-<ContentLayout
-  title={assessment.data.title}
-  description={assessment.data.description}
-  {...siteConfig}
->
-  {
-    assessment.data.draft && (
-      <Callout type="warning">
-        <p>
-          <strong>Draft.</strong> This brief is still being finalised and may change.
-        </p>
-      </Callout>
-    )
-  }
-  <p><strong>Due:</strong> {formatCourseDate(assessment.data.due)} · <strong>Weight:</strong> {assessment.data.weight}%</p>
-  <Content />
-  <SpecList spec={assessment.data.spec}>
-    The brief poses the problem and leaves room for a response. The spec is the
-    fixed part: what a marker checks. Some lines can be checked mechanically;
-    the rest call for judgement.
-  </SpecList>
-  {assessment.data.marking && <MarkingModel marking={assessment.data.marking} />}
-  <RelatedContent entry={assessment} collections={graphCollections} />
-</ContentLayout>
+<CourseLayout title={assessment.data.title} description={assessment.data.description} eyebrow="ASSESSMENT / THE CONTRACT">
+<div class="fact-strip"><span>{assessment.data.weight}% of course</span><span>{String(assessment.data.participation)}</span><span>Due {formatCourseDate(assessment.data.due)} · 17:00 Canberra</span></div>
+<div class="actions"><a class="button" href={withBase("/templates/"+assessment.id+".md")} download>Download assessment template</a><a class="button" href={withBase("/operation/")}>Export your practice dossier</a></div>
+<Content />
+{assessment.data.marking&&<MarkingModel marking={assessment.data.marking}/>}
+{sessions.length>0&&<section><h2>Fieldwork checkpoints</h2><ul>{sessions.map(s=><li><a href={withBase("/sessions/"+s.id+"/")}>Week {s.data.week} — {s.data.title}</a>: {formatCourseDate(s.data.date)}, 17:00.</li>)}</ul></section>}
+</CourseLayout>

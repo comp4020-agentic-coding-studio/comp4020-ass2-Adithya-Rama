@@ -1,68 +1,22 @@
 ---
-import Card from "astro-theme-university/components/Card.astro";
-import CardGrid from "astro-theme-university/components/CardGrid.astro";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
-import { courseMeta } from "../course-config";
-import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
+import CourseLayout from "../layouts/CourseLayout.astro";
+import ReserveDiagram from "../components/ReserveDiagram.astro";
+import AssessmentSummary from "../components/AssessmentSummary.astro";
+import Activity from "../components/Activity.astro";
+import {outcomes} from "../data/academy";
+import {withBase} from "astro-theme-university/url";
+import {courseMeta} from "../course-config";
 ---
-
-<ContentLayout
-  title={`${courseMeta.code}: ${courseMeta.title}`}
-  description={courseMeta.description}
-  heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
-  {...siteConfig}
->
-  <ul class="course-tags" aria-label="Course tags">
-    {courseMeta.tags.map((tag) => <li>{tag}</li>)}
-  </ul>
-
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
-  <h2>What you will do</h2>
-  <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
-  </p>
-
-  <h2>Who it is for</h2>
-  <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
-  </p>
-
-  <h2>Where to go next</h2>
-  <CardGrid columns={2}>
-    <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
-    </Card>
-    <Card title="Assessment" href="/assessments/">
-      <p>What is marked, what it is worth, and when it is due.</p>
-    </Card>
-    <Card title="People" href="/people/">
-      <p>Who teaches the course and how to reach them.</p>
-    </Card>
-  </CardGrid>
-</ContentLayout>
-
-<style>
-  .course-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-block: 0 2rem;
-    padding: 0;
-    list-style: none;
-  }
-
-  .course-tags li {
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
-    color: var(--at-text-secondary);
-    background: var(--at-bg-alt);
-    font-size: 0.9rem;
-  }
-</style>
+<CourseLayout title={courseMeta.title} description={courseMeta.description} home>
+<section class="hero-board">
+ <div><p class="eyebrow">SLOP UNIVERSITY / IMPOSSIBLE OPERATIONS</p><h1>MASTERMIND<span>The Art of the Impossible Heist</span></h1><p class="intro">The first plan gets you into the room.<br/>The second proves you belong there.</p><p>Twelve weeks. One impossible operation.<br/>Learn to build a plan that survives its own assumptions.</p><div class="actions"><a class="button primary" href={withBase("/lectures/")}>Explore the course ↗</a><a class="button ghost" href={withBase("/operation/")}>Enter the Operation Room</a></div></div>
+ <div class="hero-art"><ReserveDiagram /></div>
+</section>
+<div class="hero-footer"><span>OPERATION 408 / GLASS CROWN</span><span>TARGET: THE GRAND RESERVE</span><span>12 WEEKS · 2027</span></div>
+<div class="section-grid"><section><span class="section-number">01 / THE COMMISSION</span><h2>The prize is simple.<br/>Everything else changes.</h2><p>The Grand Reserve holds a Crown that authenticates an entire city’s ownership records. Your crew has been asked to extract it. First, you must establish what that would actually mean.</p><p>Build an evidence ledger. Model an invented seal system. Negotiate a crew agreement. Then face the document that makes your carefully assembled plan obsolete.</p><p>This is an original fictional academy for students who enjoy intricate puzzles, ensemble stories and decisions that resist an easy answer.</p></section><section><span class="section-number">02 / THE DOCTRINE</span><blockquote>A successful outcome can conceal a bad decision. A failed operation can expose a good one.</blockquote><p>You are assessed on evidence, reasoning and revision. The rehearsal’s ending never determines your academic grade.</p><p class="small">Fourth-year undergraduate level. Basic logical reasoning and a willingness to explain your choices are enough. No programming or security background is required.</p></section></div>
+<section><p class="eyebrow">THE SEMESTER IN THREE ACTS</p><h2>Build it. Break it. Defend it.</h2><div class="section-grid"><div><h3>01—06 / The first plan</h3><p>Define the job, inspect the evidence, learn the symbolic systems and assemble the crew. Preserve Version 1.</p><h3>07 / Break the Mastermind</h3><p>A signed revision changes one dependency. Trace its effects and build Version 2 without erasing your earlier reasoning.</p></div><div><h3>08—12 / Beyond the Architect</h3><p>Reconcile an incomplete record. Hear a refusal. Reconsider the prize. Test against a rival, then defend the final operation.</p><a class="button" href={withBase("/lectures/")}>Read the twelve-week schedule</a></div></div></section>
+<section><p class="eyebrow">WHAT YOU WILL LEARN</p><h2>Six capabilities. One operation.</h2><ol class="outcome-list">{outcomes.map(([id,title,body])=><li><span>{id}</span><div><strong>{title}</strong><span>{body}</span></div></li>)}</ol></section>
+<div class="section-grid"><section><h2>A real course rhythm.</h2><p>Monday: a one-hour briefing. Friday: a two-hour lab. Allow around three more hours for preparation and assessment work.</p><p>Teaching runs from 22 February to 28 May 2027, with a pause from 5–18 April. Every week produces something your later work needs.</p><p>All materials are open. Start anywhere; samples are available when you need earlier context.</p></section><section><h2>Assessment</h2><AssessmentSummary /></section></div>
+<section><p class="eyebrow">TRY A PIECE OF THE TRAINING</p><h2>Would you trust this evidence?</h2><p>Three statements. Three different relationships to the truth. This is the Week 2 exercise; anything you save joins your local dossier.</p><Activity week={2}/><p><a href={withBase("/operation/")}>Open or export your dossier</a></p></section>
+<section><h2>Your instructors</h2><p>Mara Voss builds the plan. Iona Vale finds the unsupported assumption. Sol Renn makes sure the record survives both of them.</p><a href={withBase("/people/")}>Meet the fictional teaching team ↗</a></section>
+</CourseLayout>

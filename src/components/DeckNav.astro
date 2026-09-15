@@ -1,0 +1,8 @@
+---
+interface Props{slide:number;total:number}
+const {slide,total}=Astro.props;
+---
+<nav class="deck-nav" aria-label={"Slide "+slide+" navigation"}>
+<button type="button" data-slide-jump={slide-1} disabled={slide===1}>← Previous</button><span>{slide} / {total}</span><button type="button" data-slide-jump={slide+1} disabled={slide===total}>Next →</button>
+</nav>
+<script>document.querySelectorAll<HTMLButtonElement>("[data-slide-jump]").forEach(button=>button.addEventListener("click",()=>{location.hash="/"+button.dataset.slideJump;}));</script>

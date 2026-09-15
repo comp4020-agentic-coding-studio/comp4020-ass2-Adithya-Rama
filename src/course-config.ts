@@ -46,17 +46,15 @@ export const slopCourseMetaSchema = z
 // The code's last three digits were assigned to this repo when it was
 // provisioned, and no other course in the cohort has them. Change the first
 // digit to your course's level (and `level` to match); keep the other three.
-// STARTER_CONTENT: replace this course record, then remove this comment.
 export const courseMeta = slopCourseMetaSchema.parse({
-  code: "SLOP1408",
-  title: "Course Title Goes Here",
+  code: "SLOP4408",
+  title: "MASTERMIND: The Art of the Impossible Heist",
   session: "Semester 1",
   year: 2027,
-  level: 1,
+  level: 4,
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:
-    "One concise paragraph explaining what this course is, who it is for, " +
-    "and why somebody would choose to spend a semester taking it.",
-  tags: ["replace me"],
+    "An elite fictional mastermind academy. Build, test and defend one impossible heist through twelve weeks of evidence, symbolic systems, crew negotiation and revision.",
+  tags: ["Fictional heists", "Systems thinking", "Strategy"],
 }) satisfies CourseMetaInput;

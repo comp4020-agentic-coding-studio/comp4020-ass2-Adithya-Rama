@@ -1,33 +1,16 @@
 ---
-import { render } from "astro:content";
-import { getPublishedCollection } from "astro-course-university/content";
-import RelatedContent from "astro-course-university/components/RelatedContent.astro";
-import SpecList from "astro-course-university/components/SpecList.astro";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import TeachingTeam from "../../components/TeachingTeam.astro";
-import { formatCourseDate } from "../../lib/dates";
-import { graphCollections, sessionLabels, siteConfig } from "../../site-config";
-
-export async function getStaticPaths() {
-  const sessions = await getPublishedCollection("sessions");
-  return sessions.map((session) => ({ params: { slug: session.id }, props: { session } }));
-}
-
-const { session } = Astro.props;
-const { Content } = await render(session);
+import {render} from "astro:content";
+import {getPublishedCollection} from "astro-course-university/content";
+import {withBase} from "astro-theme-university/url";
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import Activity from "../../components/Activity.astro";
+import {formatCourseDate} from "../../lib/dates";
+export async function getStaticPaths(){return (await getPublishedCollection("sessions")).map(session=>({params:{slug:session.id},props:{session}}));}
+const {session}=Astro.props;const {Content}=await render(session);const week=session.data.week;
 ---
-
-<ContentLayout
-  title={`Week ${session.data.week} ${sessionLabels.singular}: ${session.data.title}`}
-  description={session.data.description}
-  {...siteConfig}
->
-  <p><strong>{formatCourseDate(session.data.date)}</strong></p>
-  <Content />
-  <SpecList spec={session.data.spec}>
-    What you bring to the session. Written so a reader can tell whether it has
-    been met without asking you.
-  </SpecList>
-  <TeachingTeam teachers={session.data.teachers} />
-  <RelatedContent entry={session} collections={graphCollections} />
-</ContentLayout>
+<CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")}>
+<div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
+<p><a href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a> · <a href="#exercise">Go to the exercise</a> · <a href={withBase("/operation/")}>Open your dossier</a></p>
+<Content />
+<div id="exercise"><Activity week={week}/></div>
+</CourseLayout>

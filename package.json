@@ -11,7 +11,8 @@
     "check": "pnpm typecheck && pnpm test",
     "check:evidence": "node scripts/check-evidence.ts",
     "test": "pnpm build && vitest run spec",
-    "test:template": "vitest run scripts"
+    "test:template": "vitest run scripts",
+    "test:browser": "pnpm build && playwright test"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^24.0.0",
     "lightningcss": "^1.32.0",
     "pagefind": "^1.5.2",

@@ -1,0 +1,366 @@
+[
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-current=\"page\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "div:nth-child(1) > h3:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "h3:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "div:nth-child(2) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"receipt\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"witness\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"future\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 7
+      }
+    ]
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "sessions/week-07/",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-current=\"page\"][href=\"/comp4020-ass2-Adithya-Rama/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "li:nth-child(3) > a[aria-current=\"page\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "operation/",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-current=\"page\"][href=\"/comp4020-ass2-Adithya-Rama/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "li:nth-child(5) > a[aria-current=\"page\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".journal-entry:nth-child(3) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".journal-entry:nth-child(4) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".journal-entry:nth-child(5) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".snapshot:nth-child(1) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.79 (foreground color: #b97d1c, background color: #eee5d3, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".snapshot:nth-child(2) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.79 (foreground color: #b97d1c, background color: #eee5d3, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "assessments/assignment-1/",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-current=\"page\"][href=\"/comp4020-ass2-Adithya-Rama/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "li:nth-child(4) > a[aria-current=\"page\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "policies/",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-current=\"page\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdfa, font size: 11.8pt (15.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "route": "decks/week-07/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-hidden-focus",
+        "nodes": 9
+      }
+    ]
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "div:nth-child(1) > h3:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "h3:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "div:nth-child(2) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"receipt\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"witness\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "fieldset[data-statement=\"future\"] > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #b97d1c, background color: #fffdf7, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 7
+      }
+    ]
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "sessions/week-07/",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "operation/",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".journal-entry:nth-child(3) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".journal-entry:nth-child(4) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".journal-entry:nth-child(5) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #b97d1c, background color: #f4f0e7, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".snapshot:nth-child(1) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.79 (foreground color: #b97d1c, background color: #eee5d3, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".snapshot:nth-child(2) > h3"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.79 (foreground color: #b97d1c, background color: #eee5d3, font size: 15.5pt (20.7px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "assessments/assignment-1/",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "policies/",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "route": "decks/week-07/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-hidden-focus",
+        "nodes": 9
+      }
+    ]
+  }
+]

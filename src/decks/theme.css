@@ -1,13 +1,16 @@
-/* The deck stylesheet. It is one import on purpose.
- *
- * astro-theme-university's deck.css derives every colour it uses from the
- * same --at-* brand tokens the site's own styles derive from, and
- * `brandCss: "astro-theme-slop/slop.css"` in astro.config.ts puts the Slop
- * palette behind those tokens. So a deck already matches the site, and
- * restating a colour here is how the two start to disagree.
- *
- * Deck pages are dark surfaces and they don't load the site's stylesheets ---
- * only the brand CSS and this file. Add your own rules below the import: a
- * slide class you reach for (`_class: quote`), a code-heavy layout, a
- * background. */
-@import url("astro-theme-university/styles/deck.css");
+@import "astro-theme-university/styles/deck.css";
+.reveal h1,.reveal h2{letter-spacing:-.04em}
+.reveal .slides section{padding:1rem}
+.reveal p{line-height:1.5}
+@media(prefers-reduced-motion:reduce){.reveal *{transition:none!important}}
+
+.deck-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.2rem;font-size:1.25rem}
+.deck-nav button{font:inherit;min-height:44px;border:1px solid #c99a4b;background:#29241a;color:#f4e5c8;padding:.5rem 1rem;border-radius:3px;cursor:pointer}
+.deck-nav button:disabled{opacity:.35;cursor:default}
+.deck-nav button:focus-visible{outline:3px solid #f4e5c8;outline-offset:3px}
+@media(max-width:600px){
+ html:not(.reveal-print) .reveal .slides{width:100%!important;height:100%!important;left:0!important;top:0!important;transform:none!important;zoom:1!important;text-align:left}
+ html:not(.reveal-print) .reveal .slides>section{width:100%!important;height:100%!important;top:0!important;padding:1.5rem!important;transform:none!important;box-sizing:border-box;overflow-y:auto!important;align-content:center;gap:.7rem}
+ .reveal{font-size:18px}.reveal h1{font-size:2.5rem}.reveal h2{font-size:1.9rem}.reveal p,.reveal li{font-size:1.12rem;line-height:1.6}
+ .reveal p{margin:.45rem 0}.reveal h1,.reveal h2{margin:0 0 1rem}.deck-nav{font-size:.85rem}.deck-nav button{padding:.65rem}
+}

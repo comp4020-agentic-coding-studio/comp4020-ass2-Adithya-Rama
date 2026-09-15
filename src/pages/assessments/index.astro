@@ -1,0 +1,11 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import AssessmentSummary from "../../components/AssessmentSummary.astro";
+import {withBase} from "astro-theme-university/url";
+---
+<CourseLayout title="Defend the decision." description="Four assessment components. One accumulating body of work. A game's ending never determines your academic grade." eyebrow="THE COURSE / ASSESSMENTS">
+<AssessmentSummary />
+<h2>How the work connects</h2><p>Your individual dossier establishes the evidence. The pair project integrates it, then revises a preserved plan. The final group project defends the operation through contrasting rehearsals. Weekly fieldwork supplies the smaller artefacts along the way.</p>
+<p>All due times use Australia/Canberra. Each brief explains its submission format, rubric and performance standards. The site provides local practice and exports; it is not a live submission portal.</p>
+<p><a href={withBase("/policies/")}>Read collaboration, extension and accessibility policies</a></p>
+</CourseLayout>
