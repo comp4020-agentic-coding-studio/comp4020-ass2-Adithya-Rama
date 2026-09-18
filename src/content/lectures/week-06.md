@@ -1,44 +1,53 @@
 ---
-title: "The Architect’s Plan"
-description: "Integrate the objective, evidence, model and crew into one plan. Preserve an explicit Version 1 with a consequential assumption."
+title: "Follow the Digital Trace"
+description: "Compare supplied records, separate file labels from evidence and reconstruct an event sequence."
 week: 6
-learningOutcomes: ["LO1","LO2","LO3","LO4"]
-activityId: "plan"
-caseFiles: ["E06","E03"]
-teachers: ["mara-voss"]
+learningOutcomes: ["LO4"]
+skillIds: ["LO4"]
+activityId: "week-06"
+caseFiles: ["DI-01","DI-02"]
+teachers: ["iona-vale"]
 date: 2027-03-29
 related: ["sessions/week-06", "assessments/assignment-2"]
 ---
 
-> The plan fits on one sheet. It is the first thing this semester that looks inevitable.
+> Three files claim to be the last copy. Filenames are not witnesses.
 
 ## What you will learn
 
-- Integrate the objective, evidence, model and crew into one plan.
-- Preserve an explicit Version 1 with a consequential assumption.
+- Distinguish an observed record from a conclusion about events.
+- Compare version records and integrity results without treating filenames as authority.
+- Preserve unresolved contradictions in a reproducible timeline.
 
 ## The briefing
 
-Integration means checking the relationships between parts, not pasting documents together. Your objective determines what counts as completion. The ledger determines which dependencies deserve confidence. The model determines whether the sequence can run. The crew agreement determines who owns the decisions and handoffs.
+Digital investigation begins with a defined question and a preserved source set. A timestamp records something about a system's clock and event type; it does not automatically establish when the underlying content was created. A checksum comparison can establish equality against a trusted reference, but cannot establish the truth of the content itself.
 
-Version 1 should be complete enough to fail in a useful way. Cite the protocol it uses and identify the assumption whose failure would invalidate the most later work. Preserve this version even if you already suspect a revision is coming. Without a stable earlier record, you cannot show what changed or why.
+Build a timeline with separate columns for record, direct observation and interpretation. Two records may share a source and therefore provide less independent support than they appear to. Keep competing explanations alive until evidence separates them. An inconsistency should change your investigation plan: name the next record or test that could resolve it. Do not fill a timeline gap with a confident story merely because the story is plausible.
 
 ## Worked example
 
-E06 proposes an orderly sequence but relies on R1 remaining current. The pair’s plan records E03 as provisional and names the seal test as a dependent task. A later rule change would require revising the model and retesting, while the aim and some crew responsibilities might remain valid.
+A and B each contain 24 sections, but their digests differ. Under the original signed reference M-42, A is the matching copy even though B has a later timestamp. When an amended authoritative reference requires M-99, the defensible choice becomes B. The historical result about A remains true under the earlier requirement.
 
 ## A plausible mistake
 
-Submitting only the polished final diagram hides the decision history. Saying ‘we always knew’ after a disruption prevents you from assessing what the first plan actually assumed.
+Selecting the newest file because it is ‘latest’ confuses recency with correctness. Treating any mismatch as deliberate tampering adds intent that the records do not supply. Preserve exact observations before suggesting causes.
+
+## Supplied rule sheet
+
+- Archive A: 10:10; 24 sections; digest M-42 matches the signed source manifest.
+- Archive B: 10:35; 24 sections; digest M-99 differs because of a later annotation.
+- Archive C: 10:05; 23 sections; digest M-17; the copy ended before its final section.
+- Practice and check mandate: recover the complete 24-section copy matching signed reference M-42.
+- Transfer mandate: an amended signed reference explicitly requires the annotated copy M-99.
+- Inspect at least two copies before selecting. Digest identifiers are authored comparison results; no external service is contacted.
 
 ## Before the lab
 
-Bring your A1 dossier and Week 5 crew agreement (20 minutes). Read E06 and identify where Voss moves from evidence to prediction. The full [case-file library](/resources/#E06) is available without sign-in.
-
-Present the plan to a pair who has not seen it. Ask them to identify its objective, protocol version and most fragile assumption without explanation from its authors.
+Read DI-01 and DI-02 (20 minutes). Write one statement the digest comparison establishes and one it cannot establish.
 
 ## What happens next
 
-Save Version 1 for the A2 checkpoint. Week 7 revises this exact record.
+Identify which archive copy can support a defensible recovery decision. The lab produces **evidence-timeline**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
 
-[Open this week's lab](/sessions/week-06/) · [Read the assessment brief](/assessments/assignment-2/)
+[Open this week's lab](/sessions/week-06/) · [Download the campus pack](/campus/week-06.md) · [Explore the academy](/academy/)

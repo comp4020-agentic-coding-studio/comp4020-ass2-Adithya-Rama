@@ -1,18 +1,21 @@
 ---
-title: Dr Mara Voss
-description: "The Architect teaches planning and systems. Her recommendations are sharp, explicit and open to challenge."
-role: convenor
-affiliation: "Slop University · School of Impossible Operations"
-contact: "Fictional course: bring questions to the Monday briefing or Friday lab. This profile has no live contact address."
+title: "Dr Mara Voss — The Architect"
+description: "Mara teaches students to predict how an object will behave before moving it. Her workshops connect spatial models, mechanisms and simple circuits with the recovery decisions they support."
+role: "Systems, mechanisms and spatial thinking"
+affiliation: "Slop University · MASTERMIND"
+contact: "Fictional staff profile; support is described in the course policies."
 ---
-## The Architect
 
-Voss builds a plan by asking what must be true before its first step can work. She teaches the early briefings and helps crews integrate evidence, symbolic models and responsibilities.
+> A convincing diagnosis explains both the symptom and the observation that would disprove it.
 
-Her Week 6 draft is deliberately open to challenge. It cites a provisional protocol and makes its assumption visible, so the class can examine it when a later authority changes the rule.
+## Teaching responsibility
 
-## Bring a question, not a performance
+Weeks 3–5, sensor modelling and integrated rehearsals. Mara reviews causal models and asks students to distinguish a useful approximation from a physical measurement.
 
-Bring a dependency you cannot explain, a source you do not trust, or an objective that changed while you were writing it. Voss will ask which observation would alter your view.
+## What to bring to a discussion
 
-Her consultation time belongs to the weekly lab. You do not need a completed plan to seek feedback.
+Bring a specific attempt, its prediction and the observation that surprised you. State what you have already checked and which question remains. The teaching team values a precise account of uncertainty over a polished claim that everything worked.
+
+## Course access
+
+All teaching material and practice activities are directly accessible. Consult the [policies](/policies/) for equivalent browser/campus routes, attribution, feedback and extensions. This profile is part of the fictional course and does not provide live staff contact.

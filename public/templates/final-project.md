@@ -1,39 +1,44 @@
-# Final Project — Operation Glass Crown
+# Final Project — Operation Last Light
 
-SLOP4408 · Group of four · 1,200–1,600-word operation dossier
+Name(s):
 
-Also prepare a ten-minute team presentation and a 300-word defence from each member. Use the assessment page for the deadline and rubric. Exporting does not submit your work.
+Student roles and contributions:
 
-## Team and contributions
-| Member | Responsibility | Evidence of contribution | Decision to defend |
-| --- | --- | --- | --- |
-| | | | |
+Scenario / route / attempt date:
 
-## Mission contract
-Declare the final objective, constraints, reasons to stop, protected interests and burdens. Explain any change from the original contract.
+## Objective and constraints
 
-## Evidence and dependency model
-Include the evidence ledger, current protocol, valid sequence, counterexample and unresolved assumptions. Identify source versions explicitly.
+## Evidence and initial prediction
 
-## Crew agreement
-| Crew member | Responsibility | Agreed objective | Condition / unresolved concern |
-| --- | --- | --- | --- |
-| | | | |
+## Practical record
 
-## Two contrasting rehearsal records
-Attach complete exports from Baseline and a contrasting preset. Compare a specific checkpoint, the source used, the decision and the consequence. Different endings do not automatically imply different decision quality.
+Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
 
-## Revision history
-Preserve Version 1 and later revisions. Link each change to its evidence, test or crew decision.
+## Changed-situation response
 
-## Consequences and limitations
-Defend your final objective against a credible alternative. State costs that your chosen ending leaves unresolved.
+Preserve the initial version; explain the authority or observation requiring a revision.
 
-## Team presentation
-Explain the objective, one important dependency, a consequential revision, the rehearsal comparison and the remaining limitation.
+## Explanation and limitations
 
-## Individual defences
-Each member supplies their own 300 words: a decision, evidence available at the time, rejected alternative, consequence and personal contribution.
+Follow the word guidance and deliverables in the published brief.
 
-## Attribution and assistance
-Identify case files, external material and tools. Declare AI assistance and explain how its output was verified.
+## Assistance and attribution
+
+## Individual contribution / defence
+
+## Required items
+
+## What you hand over
+
+- Two contrasting rehearsal records using different published presets.
+- A final mission run and its evidence-linked debrief.
+- The original team plan and a preserved revision.
+- A role agreement and contribution record.
+- An **800–1,200-word team account**.
+- A **ten-minute team presentation**.
+- A **300-word individual defence** from each member.
+
+Use the published Baseline, Equipment Failure and Conflicting Archive presets. A final run can repeat a rehearsed preset; the account must still explain what the rehearsals changed. Cite activity records where earlier learning informed a decision.
+
+
+This template is a writing aid, not an institutional submission form.

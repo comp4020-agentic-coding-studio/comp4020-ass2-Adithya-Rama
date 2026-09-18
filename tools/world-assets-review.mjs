@@ -1,0 +1,44 @@
+import { chromium } from '@playwright/test';
+import { mkdir,writeFile } from 'node:fs/promises';
+await mkdir('docs/evidence',{recursive:true});
+const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use-angle=swiftshader','--enable-webgl']});
+const page=await browser.newPage({viewport:{width:1920,height:1080}});
+await page.routeWebSocket(/.*/, ws => ws.close());
+const issues=[];page.on('pageerror',e=>{if(!e.stack?.includes('@vite'))issues.push(e.message)});page.on('console',m=>{if(m.type()==='error'&&!m.text().startsWith('[vite]'))issues.push(m.text())});
+const base=process.env.COURSE_BASE_URL||'http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/';
+await page.goto(base+'academy/',{waitUntil:'networkidle'});
+await page.locator('[data-world-launch]').first().click();
+await page.locator('[data-world-canvas] canvas').waitFor({state:'visible',timeout:60000});
+await page.waitForTimeout(2500);
+await page.locator('[data-academy-world]').screenshot({path:'docs/evidence/new-world-desktop.png'});
+const rooms=[];
+for(const room of ['perception','spatial','mechanics','systems','digital','council','movement','operations','atrium','mechanics','digital','systems','mechanics','digital','systems','mechanics']){
+ await page.locator('[data-world-travel]').selectOption(room);
+ await page.waitForFunction(room=>document.querySelector('[data-academy-world]').dataset.worldRoom===room,room);
+ rooms.push(await page.locator('[data-academy-world]').evaluate(el=>({room:el.dataset.worldRoom,calls:el.dataset.worldDrawCalls,geometries:el.dataset.worldGeometries})));
+}
+await page.locator('[data-world-inspect]').click();
+await page.waitForTimeout(900);
+await page.locator('[data-academy-world]').screenshot({path:'docs/evidence/new-world-mechanism.png'});
+await page.setViewportSize({width:390,height:844});
+await page.waitForTimeout(900);
+await page.locator('[data-academy-world]').screenshot({path:'docs/evidence/new-world-mobile.png'});
+const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+await page.evaluate(()=>{const gl=document.querySelector('canvas').getContext('webgl2');window.__loss=gl.getExtension('WEBGL_lose_context');window.__loss.loseContext()});await page.waitForTimeout(800);
+const contextMessage=await page.locator('[data-world-status]').textContent();
+await page.evaluate(()=>window.__loss.restoreContext());
+await page.waitForTimeout(200);
+const restoredMessage=await page.locator('[data-world-status]').textContent();
+const failed=await browser.newPage({viewport:{width:390,height:844}});
+await failed.routeWebSocket(/.*/,ws=>ws.close());
+await failed.route('**/academy-kit.glb',route=>route.abort());
+await failed.goto(base+'academy/',{waitUntil:'networkidle'});
+await failed.locator('[data-world-launch]').click();
+await failed.locator('.world-error').waitFor({timeout:60000});
+const failure={message:await failed.locator('.world-error').textContent(),canvas:await failed.locator('canvas').count(),retry:await failed.locator('[data-world-launch]').isEnabled()};
+const result={environment:'Playwright Chromium / SwiftShader software renderer, not physical phone',issues,overflow,rooms,contextMessage,restoredMessage,failure};
+await writeFile('docs/evidence/world-review.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result,null,2));
+await browser.close();
+
+

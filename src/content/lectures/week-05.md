@@ -1,44 +1,53 @@
 ---
-title: "A Crew Is a System"
-description: "Connect a capability to a responsibility and a named handoff. Distinguish assigned roles from agreement with the objective."
+title: "Wake a Dead System"
+description: "Trace a low-voltage circuit, select informative measurements and locate an open fault."
 week: 5
-learningOutcomes: ["LO4"]
-activityId: "crew"
-caseFiles: ["E05"]
+learningOutcomes: ["LO3"]
+skillIds: ["LO3"]
+activityId: "week-05"
+caseFiles: ["EL-01","EL-02"]
 teachers: ["mara-voss"]
 date: 2027-03-22
 related: ["sessions/week-05", "assessments/assignment-2"]
 ---
 
-> Six names appear on the roster. Voss asks who owns the handoff. Nobody answers.
+> The cart is silent. A useful diagnosis begins before the first part is replaced.
 
 ## What you will learn
 
-- Connect a capability to a responsibility and a named handoff.
-- Distinguish assigned roles from agreement with the objective.
+- Trace a complete current path through a supplied simple circuit.
+- Use measurements to distinguish an open fuse from an open switch.
+- Verify a repair without changing unrelated components.
 
 ## The briefing
 
-A collection of specialists is not yet a coordinated crew. A capability says what someone can contribute; an incentive or condition says when they will contribute. If Oren needs a second reader and Eli has no review time, the plan contains an unsupported handoff even when both roles are filled.
+A circuit needs a source, a load and a complete conducting path. An interruption can leave a device inactive while upstream components still appear healthy. The first task is to identify what each measurement represents: voltage is a difference between two named points, not an amount simply ‘inside’ a component.
 
-Assign responsibility for outputs and for disagreements. A good agreement names the decision, its owner, its dependencies and the condition for escalation. Coordination does not grant Tess authority to consent on everyone else’s behalf. The crew should know which routine choices can proceed and which objective changes require a council.
+The browser uses a deliberately simplified supply-node model. With power on, probe points read 6 V until a fuse/cable supply break; downstream nodes then read 0 V. An open lamp still has supply voltage, so a dark output with 6 V requires a different check: isolate the power and test continuity through the lamp. It is not a full analogue circuit solver and should not be used to predict arbitrary physical circuits. Diagnose using powered measurements, isolate before changing a part, then restore power and verify the original symptom. Preserve the failed readings: replacing the right part by luck is different from explaining why it was the right part.
 
 ## Worked example
 
-Oren drafts the symbolic sequence, Eli checks one counterexample, and Tess allocates that review before the handoff. Sen preserves both versions. This arrangement addresses Oren’s condition but still owes Eli time; writing ‘everyone reviews’ would leave that obligation ownerless.
+In the practice configuration, battery reads 6 V and the fuse output reads 0 V while powered. The first missing supply localises the model's open fuse. Isolate power before replacement, then restore power and verify the downstream lamp node reads 6 V. That before/after trace distinguishes diagnosis from guessing a component.
 
 ## A plausible mistake
 
-Giving the strongest specialist every important task creates a bottleneck. Treating silence as agreement creates a different failure: the roster appears complete while its purpose remains disputed.
+‘There is 6 V in the circuit’ is too vague to be diagnostic. Measuring the source confirms its voltage but not that the lamp has a complete path. Replacing every component hides which fault caused the symptom.
+
+## Supplied rule sheet
+
+- The idealised bench model uses a 6 V source, fuse, switch/cable, lamp and common return.
+- Probe labels refer to the node after each named component, measured relative to the common return.
+- With power on, a fuse or cable supply break gives 6 V before the break and 0 V at downstream nodes. An open lamp can still have 6 V at its supply node while remaining dark.
+- Practice fault: fuse. Skill-check fault: cable. Transfer fault: open lamp; its powered supply readings remain 6 V.
+- A zero voltage reading while power is off does not locate a supply fault. For fuse/cable faults, record the powered zero node before isolation and replacement. For the open lamp, first observe healthy 6 V supply with a dark output; isolate power and use the continuity check to confirm the open lamp before replacing it.
+- This deliberately simplified node model is not a full analogue circuit solver. Campus readings depend on the actual apparatus.
 
 ## Before the lab
 
-Read E05 and the six crew dossiers (20 minutes). Choose a condition your first allocation would violate. The full [case-file library](/resources/#E05) is available without sign-in.
-
-In pairs, allocate the six responsibilities. Exchange the agreement with another pair and have them identify an unowned decision.
+Trace EL-01 from source to return (10 minutes). Write predicted lamp states for an open switch and a broken return (10 minutes).
 
 ## What happens next
 
-The crew agreement enters A2 and is reopened when Nadi refuses the objective in Week 9.
+Restore the archive carriage's support circuit with a documented fault diagnosis. The lab produces **circuit-diagnosis**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
 
-[Open this week's lab](/sessions/week-05/) · [Read the assessment brief](/assessments/assignment-2/)
+[Open this week's lab](/sessions/week-05/) · [Download the campus pack](/campus/week-05.md) · [Explore the academy](/academy/)

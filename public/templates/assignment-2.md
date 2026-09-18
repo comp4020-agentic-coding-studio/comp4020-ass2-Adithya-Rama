@@ -1,32 +1,44 @@
-# A2 — The Plan That Survived
+# A2 — Restore the Relay
 
-SLOP4408 · Pair · 600–800-word change rationale
+Name(s):
 
-Use the assessment page for both deadlines and the rubric. Exporting does not submit the checkpoint or final task.
+Student roles and contributions:
 
-## Pair and responsibilities
-| Member | Responsibility | Work produced | Review received |
-| --- | --- | --- | --- |
-| | | | |
+Scenario / route / attempt date:
 
-## Version 1 — preserved checkpoint
-Attach the original operation sequence, mission contract, crew responsibilities and R1 dependency model. Record its date and sources. Keep this section unchanged after the checkpoint.
+## Objective and constraints
 
-## Disruption record
-Identify E07, the authority that supersedes E03, and the exact prerequisite it changes. Quote or paraphrase the relevant rule with attribution.
+## Evidence and initial prediction
 
-## Version 2 — revised plan
-Attach the revised operation sequence and R2 dependency model. Include a valid sequence and a counterexample. Identify decisions retained from Version 1.
+## Practical record
 
-## Change rationale
-Explain the diagnosis, affected dependencies, necessary revisions and what remains valid. Compare your choice with a superficial patch or another credible alternative.
+Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
 
-| Original decision | Changed evidence | Revised decision | Why / remaining uncertainty |
-| --- | --- | --- | --- |
-| | | | |
+## Changed-situation response
 
-## Contribution and assistance statement
-Each member identifies their contribution, a decision they can defend, and assistance received. Explain any unresolved disagreement fairly. Declare and verify AI assistance.
+Preserve the initial version; explain the authority or observation requiring a revision.
 
-## Final file check
-Include Version 1, E07 disruption record, Version 2, rationale, responsibilities table and both contribution statements.
+## Explanation and limitations
+
+Follow the word guidance and deliverables in the published brief.
+
+## Assistance and attribution
+
+## Individual contribution / defence
+
+## Required items
+
+## What you hand over
+
+- Both role records, showing at least one meaningful rotation.
+- A measured circuit fault and verification trace.
+- A source-backed archive selection.
+- Before/after permission matrices, including positive and negative checks.
+- A complete destination/quantity/code handoff with acknowledgement.
+- A **500–700-word joint explanation**.
+- A responsibilities table and individual contribution statement from each person.
+
+The explanation should connect diagnosis, evidence and communication. Describe one misunderstanding or uncertainty even when it was resolved before the final attempt.
+
+
+This template is a writing aid, not an institutional submission form.

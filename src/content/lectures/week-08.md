@@ -1,44 +1,53 @@
 ---
-title: "What the Reserve Thinks Happened"
-description: "Distinguish observation, inference and an observed absence. State the assumptions needed to reconstruct an unseen event."
+title: "Get the Message Through"
+description: "Coordinate a recovery task when different people hold different constraints."
 week: 8
-learningOutcomes: ["LO2","LO3"]
-activityId: "observations"
-caseFiles: ["E08","E07"]
-teachers: ["iona-vale"]
+learningOutcomes: ["LO5"]
+skillIds: ["LO5"]
+activityId: "week-08"
+caseFiles: ["CO-01","CO-02"]
+teachers: ["sol-renn"]
 date: 2027-04-26
-related: ["sessions/week-08", "assessments/final-project"]
+related: ["sessions/week-08", "assessments/assignment-2"]
 ---
 
-> The record has an empty line. The first team calls it proof. The second calls it a gap.
+> Both people are competent. Each has half the information.
 
 ## What you will learn
 
-- Distinguish observation, inference and an observed absence.
-- State the assumptions needed to reconstruct an unseen event.
+- Convert a vague instruction into a message with action, object, condition and confirmation.
+- Negotiate a sequence that respects constraints held by another role.
+- Use read-back to detect a consequential misunderstanding.
 
 ## The briefing
 
-A system records selected events, not complete reality. E08 marks one turn unobserved. That is different from recording that nothing happened. When you combine a partial transcript with a rule model, you may infer an event required by a later state, but the inference remains conditional on the model and record being faithful.
+Communication is a coordination mechanism. A message should specify the action, its object, the condition under which it applies and how completion will be confirmed. Shared vocabulary cannot be assumed: a colour, identifier or direction may mean different things on different displays.
 
-Write those conditions next to the conclusion. This prevents a plausible reconstruction being presented as direct observation. It also identifies the next useful question: if the model says a witness must exist, look for evidence about the witness rather than repeatedly asserting that someone must have acted.
+Asymmetric information creates legitimate disagreement. An analyst may prioritise preserving a fragile archive while an operator sees a route restriction the analyst does not know. Negotiation discovers those constraints and designs a workable agreement. Read-back is a check on a shared mental model, not an exercise in obedience. The receiver restates the intended action and trigger; the sender confirms or corrects it. Record an unresolved condition as unresolved rather than treating silence as consent.
 
 ## Worked example
 
-Under R2, CROWN follows a certified silver token. If E08 accurately records completion under R2, a certification must have happened after SILVER. The transcript still does not identify who performed it. ‘There was a witness’ and ‘Nadi was the witness’ have different evidential support.
+The analyst's card says Relay, two units, AMBER. ‘Send it there’ leaves the object count and destination ambiguous. A precise message says ‘Deliver two units to Relay, verification code AMBER; read back before dispatch.’ If the operator repeats Archive, the mismatch is caught before acting.
 
 ## A plausible mistake
 
-Treating a missing observation as an observed absence produces a stronger conclusion than the source allows. The opposite mistake is inventing a detailed story to fill the gap.
+Repeating the same instruction more loudly does not fix different assumptions. Giving every available fact at once can also bury the condition that matters. Prioritise the next decision and confirm its essential constraints.
+
+## Supplied rule sheet
+
+- The analyst holds the authoritative destination, quantity and verification code. The operator must record and read back all three.
+- Practice handoff: destination Relay; quantity 2; code AMBER.
+- Skill check: destination Archive; quantity 3; code COPPER.
+- Transfer: destination Dispatch; quantity 1; code IVORY.
+- The handoff is complete only when the operator's fields agree with the analyst card and acknowledgement is recorded.
+- Role switching is explicit in solo mode; a team can divide the two information views.
 
 ## Before the lab
 
-Read E08 and recheck R2 in E07 (15 minutes). Mark the transcript’s actual observations. The full [case-file library](/resources/#E08) is available without sign-in.
-
-Build two explanations consistent with the visible record. For each, state one discriminating piece of evidence that would favour it over the other.
+Read only your assigned role pack first (10 minutes). Rewrite one vague everyday instruction using action/object/condition/confirmation (10 minutes). Solo students inspect packs in sequence and record what changed.
 
 ## What happens next
 
-The observation audit supports the final rehearsal’s debrief and prevents unsupported claims in the defence.
+Create an explicit agreement between Meridian's operator, investigator and station custodian. The lab produces **handoff-agreement**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
 
-[Open this week's lab](/sessions/week-08/) · [Read the assessment brief](/assessments/final-project/)
+[Open this week's lab](/sessions/week-08/) · [Download the campus pack](/campus/week-08.md) · [Explore the academy](/academy/)

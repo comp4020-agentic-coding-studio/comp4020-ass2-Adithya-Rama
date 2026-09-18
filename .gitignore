@@ -30,3 +30,6 @@ mise.local.toml
 # Browser verification outputs
 /test-results/
 /playwright-report/
+
+# Local isolated acceptance artifacts
+.browser-*/

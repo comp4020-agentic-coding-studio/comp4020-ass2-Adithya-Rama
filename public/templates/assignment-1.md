@@ -1,34 +1,42 @@
-# A1 — The Intelligence Dossier
+# A1 — The Sealed Workshop
 
-SLOP4408 · Individual · 800–1,000 words
+Name(s):
 
-Use the assessment page for the deadline and rubric. Downloading or exporting does not submit this document. Tables, diagrams and references sit outside the word guidance.
+Student roles and contributions:
 
-## Author and assistance
-Name yourself. Declare discussion, borrowed material, AI assistance and how you checked it.
+Scenario / route / attempt date:
 
 ## Objective and constraints
-Identify the requested prize, the objective you recommend investigating, and its constraints.
 
-## Evidence ledger
-| Exact statement | Case file | Observation / claim / assumption | Confidence and reason | Evidence that would change it |
-| --- | --- | --- | --- | --- |
-| | | | | |
+## Evidence and initial prediction
 
-## Dependency model
-Identify E03/R1 or E04. Draw the prerequisites or describe them as ordered text. Show a valid sequence and a counterexample, identifying the first failed prerequisite.
+## Practical record
 
-## Three consequential assumptions
-1. Assumption; source or missing evidence; decision it affects.
-2. Assumption; source or missing evidence; decision it affects.
-3. Assumption; source or missing evidence; decision it affects.
+Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
 
-## Two contradictions or unresolved questions
-1. Quote the conflicting or incomplete sources and explain the gap.
-2. Quote the conflicting or incomplete sources and explain the gap.
+## Changed-situation response
 
-## Investigation recommendation
-Explain what should be investigated next and why it matters more than a credible alternative. State what your dossier still cannot establish.
+Preserve the initial version; explain the authority or observation requiring a revision.
 
-## Source list
-List each case-file identifier and any additional attributed material.
+## Explanation and limitations
+
+Follow the word guidance and deliverables in the published brief.
+
+## Assistance and attribution
+
+## Individual contribution / defence
+
+## Required items
+
+## What you hand over
+
+- The exported trial record, or equivalent campus event record.
+- A causal model linking input, gear, cam, spring, interlock and output.
+- **350–500 words** explaining two consequential decisions and one changed-situation response.
+- One failed prediction or limitation, with the evidence that revealed it.
+- An attribution and assistance statement.
+
+Include the configuration and attempt date. Diagram labels, source references and the event trace are outside the word guidance. A trial ending is evidence to analyse, not the academic mark.
+
+
+This template is a writing aid, not an institutional submission form.

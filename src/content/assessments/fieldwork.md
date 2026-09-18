@@ -1,6 +1,6 @@
 ---
 title: "Weekly Fieldwork"
-description: "Build a record of how your judgement changes. Each teaching week produces one named artefact; your best ten of twelve records count."
+description: "Build a portfolio of demonstrated skills, transfer attempts and thoughtful reflection across twelve labs."
 week: 12
 due: 2027-05-28T17:00:00+10:00
 weight: 10
@@ -9,45 +9,73 @@ learningOutcomes: ["LO1","LO2","LO3","LO4","LO5","LO6"]
 marking:
   mode: weighted
   criteria:
-    - name: "Evidence use"
+    - name: "Demonstrated skill"
       weight: 40
-    - name: "Reasoning"
+    - name: "Transfer"
       weight: 40
     - name: "Reflection"
       weight: 20
 spec:
-  - "include the artefacts named in this brief"
-  - "support consequential claims using the supplied sources"
-  - "declare assistance and explain your own contribution"
+  - "demonstrate the capabilities named in the brief with a traceable activity record"
+  - "explain a changed-situation response and a meaningful limitation"
+  - "declare assistance and preserve individual contribution evidence"
 related: ["sessions/week-12"]
 ---
 
 ## The brief
 
-Build a record of how your judgement changes. Each teaching week produces one named artefact; your best ten of twelve records count.
+Keep twelve individual lab records. Your **best ten** count; each counted record contributes up to one percentage point to the course total. Game completion alone does not earn the point.
 
-## What you submit
+Each record is due at **17:00 Canberra time on its Friday lab date**. The final portfolio closes on 28 May 2027 at 17:00. Weekly checkpoints appear in the lab schedule and do not create twelve additional assessments.
 
-For each lab, retain the activity output, a source-backed justification and a short reflection. A useful record is approximately 150–250 words plus its diagram, sequence or rehearsal export. The lab page names its artefact and provides a worksheet.
+## What you hand over
 
-Each record is due Friday at 17:00, Australia/Canberra time. The twelve dates appear in the checkpoint list below. The portfolio closes on 28 May. Each of the best ten records contributes up to one percentage point; the other two are dropped. A blank record contributes zero.
+For every record include:
 
-## What counts
+- The named weekly output and its scenario.
+- Your initial prediction and relevant action or measurement trace.
+- Your response to the changed situation.
+- Approximately **100 words of reflection**.
+- The route used: browser or campus.
+- Any hints, assistance or adapted materials.
 
-Evidence use means citing the case file and respecting its limits. Reasoning means explaining a decision rather than reporting a click. Reflection means naming what changed after feedback, or explaining why you retained the earlier view. Completing a game or selecting the exemplar does not by itself earn the mark.
+An exported activity record supplies evidence but does not replace your explanation. Preserve unsuccessful attempts when they show a useful diagnosis or revision. A campus record can use measurements, photographs of your own model, coordinates or a written event trace. No public ranking or speed score is required.
 
-## Performance standards
+## How fieldwork accumulates
 
-**Outstanding:** a specific source supports the decision; a credible alternative is considered; the reflection identifies a consequential change or defended retention.
+The first four records support A1. Records five to eight support A2. Council, sensor and revision work prepare the final recovery mission. You may revisit any published lab; mark a later attempt clearly so its provenance remains understandable.
 
-**Competent:** the output is complete and its reasoning fits the supplied rules, but the evidence or reflection is less precise.
+## Missed sessions and feedback
 
-**Developing:** the record reports an outcome or copies an example without explaining its assumptions.
+Best-ten marking accommodates two missed records. A student who misses the campus session can complete the browser route or supplied equivalent within the published arrangements. See policies for individual access and extension needs.
 
-**Insufficient:** the record is missing or cannot be connected to the week’s task.
+Rule-based feedback is immediate. Use the final fifteen minutes of each lab for peer or tutor discussion. Open-ended reflection is reviewed by a teacher; the site does not assign an academic grade to it.
 
-## Feedback and submission
+## Criterion-specific performance standards
 
-Inspect immediate activity feedback, then discuss your explanation during the lab. Export records from the Operation Room and assemble them using the template. This demonstration site does not receive submissions or assign academic marks. In the fictional taught course, the portfolio is handed to the teaching team.
+### Demonstrated skill — 40%
 
-Best-ten marking accommodates two missed records. See the [course policies](/policies/) for accessible alternatives.
+- **Outstanding:** Accurate performance or precise diagnosis supported by a reproducible activity trace.
+- **Competent:** The main skill is demonstrated with minor unexplained gaps.
+- **Developing:** A result is supplied but its relationship to the skill is unclear.
+- **Insufficient:** No usable performance evidence or a fundamental unexamined rule error.
+
+### Transfer — 40%
+
+- **Outstanding:** Applies the principle in the changed scenario and explains what must be reconsidered.
+- **Competent:** Adapts to the supplied change with a broadly sound explanation.
+- **Developing:** Repeats the practice answer without addressing an important changed condition.
+- **Insufficient:** No changed-situation attempt or no connection to the taught principle.
+
+### Reflection — 20%
+
+- **Outstanding:** Identifies a specific error or limit and a credible improvement grounded in the attempt.
+- **Competent:** Explains one relevant success or difficulty.
+- **Developing:** General statements with little connection to the record.
+- **Insufficient:** Reflection missing or presented as someone else's experience.
+
+## Format, export and access
+
+Use the [downloadable template](/templates/fieldwork.md), retain editable source and export a readable record. The website provides downloads and local practice; it does not submit to an institutional system. The browser and campus routes assess the same concepts and problem-solving outcomes. Neither automatically certifies physical dexterity.
+
+All due times use **17:00 Canberra time** on the published date. [Policies and support](/policies/) explain attribution, accessible alternatives, contribution disputes, saving and extensions.

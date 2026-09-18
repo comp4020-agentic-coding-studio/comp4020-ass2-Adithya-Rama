@@ -1,18 +1,21 @@
 ---
-title: Sol Renn
-description: "The Registrar preserves the operation record and explains assessment, contribution and the difference between a result and a defence."
-role: tutor
-affiliation: "Slop University · School of Impossible Operations"
-contact: "Fictional course: raise assessment or access needs during the briefing or lab. This profile has no live contact address."
+title: "Sol Renn — The Coordinator"
+description: "Sol designs the academy's handoffs, records and role agreements. Students learn that remembering a message and successfully communicating it are different achievements."
+role: "Memory, communication and assessment records"
+affiliation: "Slop University · MASTERMIND"
+contact: "Fictional staff profile; support is described in the course policies."
 ---
-## The Registrar
 
-Renn keeps the version history and the assessment contract understandable. A missing source, inaccessible diagram or ambiguous contribution is a practical problem to solve before the final defence.
+> The registry accepts uncertainty. It asks that you label it.
 
-He leads the closing session and coordinates questions about deadlines, alternatives and contribution evidence.
+## Teaching responsibility
 
-## The record matters
+Weeks 2, 8 and 12, contribution evidence and accessible activity routes. Sol handles the fictional course's assessment mechanics and insists that a local export is labelled accurately.
 
-The academy permits revisions. It does not permit a revised plan to travel backwards in time and become the original. Renn maintains that this is a modest administrative request.
+## What to bring to a discussion
 
-If a teammate is unavailable or an activity creates an access barrier, bring the work you have and name the barrier. The alternative should test the same learning outcome, not your ability to endure the interface.
+Bring a specific attempt, its prediction and the observation that surprised you. State what you have already checked and which question remains. The teaching team values a precise account of uncertainty over a polished claim that everything worked.
+
+## Course access
+
+All teaching material and practice activities are directly accessible. Consult the [policies](/policies/) for equivalent browser/campus routes, attribution, feedback and extensions. This profile is part of the fictional course and does not provide live staff contact.

@@ -1,242 +1,228 @@
 ---
-title: "Break the Mastermind"
-description: "Week 7: diagnose a changed rule, preserve an earlier plan, and defend a reasoned revision."
+title: "Challenge the System"
+description: "Week 7: inspect an invented permission model, repair its policy and verify both allowed and denied actions."
 ---
 
 import DeckNav from "../components/DeckNav.astro";
 
-# Break the Mastermind
+# Challenge the System
 
-A six-line document changes a month of certainty.
+Week 7 · MASTERMIND
 
-Week 7 · SLOP4408 · Operation Glass Crown
+A recognised identity is not a permission.
 
 ```notes
-Ask the room to recall the dependency their Version 1 relies on. Do not reveal the new sequence yet.
+Open with the observer role selected. Ask whether knowing who someone is establishes what they may do. Accept a concrete counterexample.
 ```
 
 <DeckNav slide={1} total={14} />
 
-
 ---
 
-## What you brought
+## The unexpected result
 
-An objective. An evidence ledger. A crew agreement.
+An observer can certify the archive.
 
-A tested seal model under **R1**.
+A registrar cannot.
 
-A preserved Version 1.
+Both results contradict the mandate.
 
 ```notes
-Invite a pair to state their fragile assumption in one sentence. Ask them to name E03 as its source.
+Show the initial faulty matrix: observer has read, service and certify; other roles have read only. Distinguish an unauthorised success from a legitimate operation wrongly denied.
 ```
 
 <DeckNav slide={2} total={14} />
 
-
 ---
 
-## The assumption
+## State the contract first
 
-“The protocol we tested will still apply.”
+Everyone may read.
 
-E03 calls itself **provisional**.
+Technicians may service the cart.
+
+Registrars may certify the archive.
 
 ```notes
-Separate current validity from future permanence. High confidence about R1 does not establish the latter.
+Have students paraphrase the rule. No role may infer authority from a button being available. The contract determines expected results.
 ```
 
 <DeckNav slide={3} total={14} />
 
-
 ---
 
-## The earlier model
+## Three parts of a request
 
-**WITNESS → SILVER → CROWN**
+**Subject:** observer
 
-WITNESS creates the first token.
+**Action:** certify
 
-SILVER requires that token.
+**Object:** archive
 
 ```notes
-Trace the empty state through R1. Have a student explain why SILVER cannot come first under that edition.
+Ask which part changes when the same person requests read instead of certify. Explain that the simplified model fixes an object for each action; real systems may need finer distinctions.
 ```
 
 <DeckNav slide={4} total={14} />
 
-
 ---
 
-## A new authority arrives
+## Identity and authority
 
-**E07 / Protocol R2**
+Identity answers **who**.
 
-SILVER creates a provisional token.
+Permission answers **may they do this**.
 
-WITNESS certifies that existing token.
-
-CROWN requires certification.
+The second question must still be asked.
 
 ```notes
-Read the new prerequisite exactly. E07 supersedes E03 for revised runs; it does not alter historical runs.
+Avoid treating an account or badge as universal authority. All examples remain in the local fictional simulator.
 ```
 
 <DeckNav slide={5} total={14} />
 
-
 ---
 
-## Locate the change
+## Predict the matrix
 
-The changed edge is **SILVER → WITNESS**.
-
-The witness now needs something to certify.
+| Role | Read | Service | Certify |
+| --- | --- | --- | --- |
+| Observer | Allow | Deny | Deny |
+| Technician | Allow | Allow | Deny |
+| Registrar | Allow | Deny | Allow |
 
 ```notes
-Ask which original test is invalidated. The change is small in text and large in its consequences.
+Give pairs two minutes to predict all nine cells before revealing the completed matrix. Ask one student to justify a positive case and another a negative case.
 ```
 
 <DeckNav slide={6} total={14} />
 
-
 ---
 
-## Predict before you click
+## A reproducible test
 
-Which sequence can start from an empty state under R2?
+Observer → certify archive
 
-1. WITNESS → SILVER → CROWN
-2. SILVER → WITNESS → CROWN
-3. CROWN → SILVER → WITNESS
+**Expected:** deny
+
+**Observed before repair:** allow
 
 ```notes
-Give pairs two minutes. Require a missing-prerequisite explanation for a rejected sequence, not merely a choice of option two.
+A useful failure record identifies the case and the expected result. It should not simply say that the application is insecure.
 ```
 
 <DeckNav slide={7} total={14} />
 
-
 ---
 
-## The revised model
+## Repair the actual policy
 
-**SILVER → WITNESS → CROWN**
+Remove observer service and certification.
 
-Its first action creates the token its second action requires.
+Restore technician service.
+
+Restore registrar certification.
 
 ```notes
-Trace R2 from empty to provisional silver to certified silver to Crown. Explain why R1's first action now fails.
+The complete repair changes four cells. Removing only observer certification leaves both excess authority and missing legitimate capability.
 ```
 
 <DeckNav slide={8} total={14} />
 
-
 ---
 
-## A patch is not yet a revision
+## Denying everything fails too
 
-“We swapped the first two labels.”
+No unauthorised operation succeeds.
 
-What source required it?
+But nobody can do their job.
 
-What dependent test changed?
-
-What can still be trusted?
+Useful access is part of the requirement.
 
 ```notes
-Contrast a visible correction with an explained one. A reader should be able to reconstruct the reason from the submitted record.
+Ask what a test suite containing only forbidden cases would miss. Connect the example to why regression tests must include positive cases.
 ```
 
 <DeckNav slide={9} total={14} />
 
-
 ---
 
-## Keep the useful work
+## Recheck all nine cases
 
-The objective may remain valid.
+The forbidden action now fails.
 
-The crew agreement may remain valid.
+The required action still succeeds.
 
-The old seal test proves only **R1**.
+Unrelated rights remain correct.
 
 ```notes
-Use 'may' deliberately. Ask students to justify retained decisions rather than treating them as automatically invalid or valid.
+Students compare before/after matrices. Require all nine expectations, not a screenshot of one passing button.
 ```
 
 <DeckNav slide={10} total={14} />
 
-
 ---
 
-## Preserve both versions
+## A mandate changes
 
-**V1:** what made sense under E03.
+A published maintenance hold suspends service.
 
-**V2:** what E07 required you to change.
+Read access remains.
 
-The original does not travel backwards in time.
+Registrar certification remains.
 
 ```notes
-Explain the application's immutable original snapshot and labelled sample. Sample history must not be presented as student authorship.
+This is new authoritative material, not a secret trick or evidence the earlier matrix was wrong. Preserve the earlier matrix with its original mandate.
 ```
 
 <DeckNav slide={11} total={14} />
 
-
 ---
 
-## Your pair's defence
+## Your decision exercise
 
-Name the changed premise.
+Which cell changes under the hold?
 
-Trace its consequences.
+What should stay unchanged?
 
-Justify what you retained.
-
-Show the new test.
+What would you test first?
 
 ```notes
-These are the reasoning moves assessed in A2. Both pair members need to explain the model.
+Allow two minutes. Answer: technician/service changes to deny. First check that denial, then check reads and registrar certification. Discuss why global denial overreaches.
 ```
 
 <DeckNav slide={12} total={14} />
 
-
 ---
 
-## The assessment connection
+## A2 checkpoint
 
-A2: initial plan → disruption → revised plan.
+Preserve the diagnosis and source comparison.
 
-**Revision quality carries 35% of this task.**
+Export both permission matrices.
 
-[Read the full assessment brief](/assessments/assignment-2/)
+Label each role's contribution.
 
 ```notes
-The 35 percent is an internal criterion, not the course weighting. Refer to the canonical brief for the due date and overall weight.
+The checkpoint is 23 April at 17:00 Canberra time. Final A2 follows the Week8 communication lab on 30 April. Explain that an export is not an institutional submission.
 ```
 
 <DeckNav slide={13} total={14} />
-
 
 ---
 
 ## Take it into the lab
 
-Annotate Version 1.
+Predict → test → repair → recheck.
 
-Build and test Version 2.
+Apply the maintenance hold.
 
-Explain one decision you kept.
+Explain what changed and why.
 
 [Open the Week 7 lab](/sessions/week-07/)
 
 ```notes
-The complete HTML briefing is the readable summary. The lab provides the sources, sample, paper alternative and two-hour schedule.
+The HTML briefing is the readable summary. Browser and tabletop routes use the same matrix and published hold. Close by asking students to name a legitimate action their fix must preserve.
 ```
-
 
 <DeckNav slide={14} total={14} />

@@ -1,44 +1,54 @@
 ---
-title: "Hacking the Impossible Machine"
-description: "Distinguish evidence from permission in an explicit model. Explain why invalid actions leave the current state unchanged."
+title: "Understand the Mechanism"
+description: "Predict a training mechanism's motion, locate a failed dependency and verify a repair."
 week: 4
 learningOutcomes: ["LO2","LO3"]
-activityId: "interpreter"
-caseFiles: ["E04"]
+skillIds: ["LO2","LO3"]
+activityId: "week-04"
+caseFiles: ["ME-01","ME-02"]
 teachers: ["mara-voss"]
 date: 2027-03-15
 related: ["sessions/week-04", "assessments/assignment-1"]
 ---
 
-> The machine accepts three symbols. Oren refuses to add a fourth. ‘If we cannot explain this one, more machinery will not help.’
+> Forcing the handle would make something happen. Understanding the mechanism lets you choose what happens.
 
 ## What you will learn
 
-- Distinguish evidence from permission in an explicit model.
-- Explain why invalid actions leave the current state unchanged.
+- Predict relative speed and direction in a simple gear pair.
+- Trace how an interlock and cam control an output.
+- Diagnose a fault through observations that distinguish competing causes.
 
 ## The briefing
 
-A state machine makes changes explicit. OBSERVE creates a record. AUTHORISE uses that record to grant temporary permission. TRANSFER consumes the opportunity to finish. A record about an event and permission to change the system are different states, even when a story makes them sound similar.
+A mechanism transmits motion through connected parts. A gear pair relates the angular movement of two shafts; a cam converts rotation into a repeated follower motion. An interlock prevents a later action until a required state is present. These are different causal roles, so diagnosis begins by identifying where motion stops.
 
-The training machine accepts only the three printed symbols. An invalid action explains its missing prerequisite and leaves the state unchanged. That rule lets you diagnose a failed sequence: the next action sees the actual prior state, not the state you wished the machine had reached. No real commands, credentials or network requests are involved.
+In the supplied model, a 12-tooth driving gear meshes externally with a 24-tooth driven gear. One full input turn produces half an output turn in the opposite direction. The cam on the output shaft moves the carriage only when the interlock is released. A stalled carriage can therefore have several causes: absent input, an unmeshed gear, or an engaged interlock. Choose an observation that discriminates between causes instead of changing every part at once.
 
 ## Worked example
 
-TRANSFER from an empty state fails because permission is missing. OBSERVE then creates a record, but TRANSFER still fails until AUTHORISE succeeds. The supported full sequence is OBSERVE → AUTHORISE → TRANSFER.
+Four input turns through a 24-tooth driven gear produce two output turns in the opposite direction. Yet a correct ratio does not guarantee motion: the interlock must be released, the spring attached and the cam set to 180 degrees. Diagnose readiness and ratio separately.
 
 ## A plausible mistake
 
-‘It saw the record, so it should allow the transfer’ imports an unstated permission rule. A plan is only defensible against the rules actually supplied. State any extra premise instead of hiding it in natural language.
+Swapping parts until movement appears may reach a working state without explaining the fault. It also destroys the evidence of what mattered. Change one variable, state a prediction and preserve the before/after observations.
+
+## Supplied rule sheet
+
+- A 12-tooth driving gear externally meshes with a selectable 12-, 24- or 36-tooth driven gear. Output turns = 12 ÷ driven teeth × input turns, in the opposite direction.
+- The model only moves with interlock released, return spring attached and cam at the published angle.
+- An engaged interlock blocks cam adjustment. Release it before changing the cam.
+- Practice: four input turns must produce two output turns, cam 180 degrees.
+- Skill check: four input turns must produce four output turns, cam 180 degrees.
+- Transfer: six input turns must produce two output turns, cam 90 degrees.
+- This is an educational carriage mechanism, not a commercial lock or bypass procedure.
 
 ## Before the lab
 
-Inspect E04 and revise your A1 ledger (20 minutes). Bring one uncertainty you cannot settle from the supplied files. The full [case-file library](/resources/#E04) is available without sign-in.
-
-Trace a valid run and an invalid run, writing the state after every attempted action. Use the result to finish the A1 dependency model.
+Read the labelled ME-01 parts and trace its input-to-output chain (15 minutes). Predict the output after two input turns (5 minutes).
 
 ## What happens next
 
-This completes A1’s system analysis and gives the pair project a method for diagnosing changes.
+Diagnose Meridian's recovery carriage without treating a jam as an unexplained obstacle. The lab produces **mechanism-diagnosis**, which becomes evidence for [the connected assessment](/assessments/assignment-1/).
 
-[Open this week's lab](/sessions/week-04/) · [Read the assessment brief](/assessments/assignment-1/)
+[Open this week's lab](/sessions/week-04/) · [Download the campus pack](/campus/week-04.md) · [Explore the academy](/academy/)

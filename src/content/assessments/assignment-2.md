@@ -1,69 +1,108 @@
 ---
-title: "A2 — The Plan That Survived"
-description: "Preserve a plan that made sense, then explain why it must change."
-week: 7
-due: 2027-04-23T17:00:00+10:00
+title: "A2 — Restore the Relay"
+description: "A paired recovery challenge joining electronic diagnosis, digital evidence, permission repair and explicit handoffs."
+week: 8
+due: 2027-04-30T17:00:00+10:00
 weight: 25
 participation: pair
-learningOutcomes: ["LO1","LO2","LO3","LO4","LO5"]
-checkpointDue: "2027-04-02T17:00:00+11:00"
+learningOutcomes: ["LO3","LO4","LO5","LO6"]
+checkpointDue: 2027-04-23T17:00:00+10:00
 requiresRevision: true
 marking:
   mode: weighted
   criteria:
-    - name: "Initial model and rationale"
+    - name: "Diagnosis"
+      weight: 30
+    - name: "Evidence"
       weight: 20
-    - name: "Diagnosis of the disruption"
+    - name: "Coordination"
       weight: 25
-    - name: "Quality of revision"
-      weight: 35
-    - name: "Evidence and contribution traceability"
-      weight: 20
+    - name: "Adaptation"
+      weight: 15
+    - name: "Traceability"
+      weight: 10
 spec:
-  - "include the artefacts named in this brief"
-  - "support consequential claims using the supplied sources"
-  - "declare assistance and explain your own contribution"
-related: ["sessions/week-07"]
+  - "demonstrate the capabilities named in the brief with a traceable activity record"
+  - "explain a changed-situation response and a meaningful limitation"
+  - "declare assistance and preserve individual contribution evidence"
+related: ["sessions/week-08"]
 ---
 
 ## The brief
 
-> Preserve a plan that made sense, then explain why it must change.
+In pairs, restore a fictional recovery relay. One role operates the equipment; the other initially holds the investigation and instruction records. Rotate roles so each person demonstrates diagnosis and communication.
 
-Work in pairs. Version 1 is due at the **2 April 2027, 17:00 checkpoint**. The final submission is due 23 April at 17:00. The checkpoint contributes to this assessment’s initial-model criterion; it is not an additional assessment weight.
+The relay challenge combines the Week 5 circuit, Week 6 archive comparison, Week 7 permission matrix and Week 8 explicit handoff. Earlier observation and spatial skills help you inspect the system. Use the [campus trial pack](/campus/assignment-2.md) for a tabletop equivalent.
 
-## What you submit
+## Checkpoint and final deadline
 
-- The preserved Version 1, including objective, evidence, R1 seal model and crew responsibilities.
-- E07 identified as the disruption record.
-- Version 2, with the changed dependencies clearly shown.
-- A **600–800-word change rationale**.
-- A responsibilities table and contribution statement from both members.
+**Checkpoint: 23 April 2027, 17:00 Canberra time.** Preserve your initial circuit diagnosis, source comparison and repaired permission matrix. Record which role performed each check. This checkpoint is formative and does not create an additional assessment weight.
 
-Present the versions side by side where possible. Keep the earlier text intact and annotate the revision separately. If you inspect E07 early, state that honestly: the task is reasoned revision, not guessing a secret.
+**Final: 30 April 2027, 17:00 Canberra time.** Complete the coordinated handoff and changed-condition response. Preserve both the initial checkpoint and final record.
 
-## What the revision must explain
+## What you hand over
 
-E07 supersedes E03. WITNESS can no longer begin from an empty state; it must certify an existing silver token. That changes the valid sequence to SILVER → WITNESS → CROWN.
+- Both role records, showing at least one meaningful rotation.
+- A measured circuit fault and verification trace.
+- A source-backed archive selection.
+- Before/after permission matrices, including positive and negative checks.
+- A complete destination/quantity/code handoff with acknowledgement.
+- A **500–700-word joint explanation**.
+- A responsibilities table and individual contribution statement from each person.
 
-Identify the affected model and test, then justify what remains useful from the old plan. A changed seal rule does not automatically invalidate a carefully agreed objective or every crew responsibility.
+The explanation should connect diagnosis, evidence and communication. Describe one misunderstanding or uncertainty even when it was resolved before the final attempt.
 
-## Performance standards
+## The changed situation
 
-**Outstanding:** Version 1 states its assumptions; the diagnosis identifies the precise changed prerequisite; Version 2 propagates the change and repeats the relevant test; retained decisions and individual contributions are traceable.
+Choose the published maintenance hold or amended archive reference as a revision case. Preserve the old decision, state the new authority and change only the affected expectations. Complete a fresh handoff using the new authoritative card.
 
-**Competent:** both versions are coherent and the main change is justified, but its wider effects or retained decisions receive limited explanation.
+A justified change of archive copy is stronger than repeating a once-correct selection after the reference changes. Denying all permissions is not a useful repair when legitimate read and certification work must continue.
 
-**Developing:** the final order is corrected without a clear diagnosis, or the earlier plan has been overwritten.
+## How to work as a pair
 
-**Insufficient:** a version is missing, the revision still relies on the superseded rule, or individual contribution cannot be identified.
+Use one shared browser state with rotating control, or divide role packs and communicate through a shared screen. There is no live multiplayer server. The selected role label identifies the action source but is not proof of a person's identity; your contribution account supplies that context.
 
-## Pair work and feedback
+A partner's absence does not erase completed individual work. Preserve it and follow the published contribution policy. Feedback is scheduled within seven days to inform the final team mission.
 
-Agree responsibilities before drafting. Both members must be able to explain the changed dependency. Record disagreements and their resolution; do not use a contribution percentage as a substitute for evidence of work.
+## Criterion-specific performance standards
 
-The Week 7 lab provides formative critique. Written feedback is scheduled within seven days of the final submission. Use it when forming the capstone group.
+### Diagnosis — 30%
 
-## Format and handoff
+- **Outstanding:** Isolates the circuit and policy faults using discriminating checks and verifies the resulting system.
+- **Competent:** Diagnoses the main faults and provides broadly sound checks.
+- **Developing:** A working state is reached but key causes or checks are missing.
+- **Insufficient:** No supported diagnosis or unresolved contradiction with the supplied rules.
 
-Export the dossier and retain both snapshots. The template provides space for the change rationale and contribution statements. Sample plans are labelled teaching material and must not be represented as your original Version 1. The site saves practice locally; it does not receive assignments. See [policies](/policies/).
+### Evidence — 20%
+
+- **Outstanding:** Uses source identity, completeness and the current signed reference; limits are explicit.
+- **Competent:** Selects relevant records and supports the main conclusion.
+- **Developing:** Relies on labels or timestamps without checking their authority.
+- **Insufficient:** No usable source comparison or unsupported evidence claims.
+
+### Coordination — 25%
+
+- **Outstanding:** Both roles contribute, rotate and use precise instructions with documented read-back.
+- **Competent:** Responsibilities and handoffs are clear with minor gaps.
+- **Developing:** One role dominates or communication assumptions remain unresolved.
+- **Insufficient:** No credible paired coordination or contribution evidence.
+
+### Adaptation — 15%
+
+- **Outstanding:** Explains and tests the changed mandate or handoff while preserving the earlier state.
+- **Competent:** Makes a justified revision with some testing.
+- **Developing:** Changes the answer without explaining the affected requirement.
+- **Insufficient:** Ignores the changed condition or overwrites the only original record.
+
+### Traceability — 10%
+
+- **Outstanding:** The joint account reconstructs actions, roles, versions and assistance without ambiguity.
+- **Competent:** Most decisions and contributions can be followed.
+- **Developing:** Missing role labels or version links make important work difficult to assess.
+- **Insufficient:** Unusable record or unclear authorship.
+
+## Format, export and access
+
+Use the [downloadable template](/templates/assignment-2.md), retain editable source and export a readable record. The website provides downloads and local practice; it does not submit to an institutional system. The browser and campus routes assess the same concepts and problem-solving outcomes. Neither automatically certifies physical dexterity.
+
+All due times use **17:00 Canberra time** on the published date. [Policies and support](/policies/) explain attribution, accessible alternatives, contribution disputes, saving and extensions.

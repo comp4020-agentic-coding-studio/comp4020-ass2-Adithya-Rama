@@ -1,73 +1,123 @@
 ---
-title: "Final Project — Operation Glass Crown"
-description: "Conduct an operation whose decisions you can defend after the ending is known."
+title: "Final Project — Operation Last Light"
+description: "A four-person recovery mission at Meridian Station, integrating the semester's capabilities and a defensible response to change."
 week: 12
 due: 2027-05-28T17:00:00+10:00
 weight: 45
 participation: group
 learningOutcomes: ["LO1","LO2","LO3","LO4","LO5","LO6"]
+requiresRevision: true
+requires: ["observation-record", "recall-strategy", "spatial-model", "mechanism-diagnosis", "circuit-diagnosis", "evidence-timeline", "permission-audit", "handoff-agreement", "claim-verification", "sensor-route", "revised-plan"]
 marking:
   mode: weighted
   criteria:
-    - name: "Coherence and feasibility within the fictional rules"
+    - name: "Integration"
       weight: 25
-    - name: "Evidence and uncertainty"
-      weight: 20
-    - name: "Testing and revision"
-      weight: 20
-    - name: "Consequences and trade-offs"
+    - name: "Evidence"
       weight: 15
+    - name: "Coordination"
+      weight: 20
+    - name: "Adaptation"
+      weight: 20
     - name: "Individual defence"
       weight: 20
 spec:
-  - "include the artefacts named in this brief"
-  - "support consequential claims using the supplied sources"
-  - "declare assistance and explain your own contribution"
+  - "demonstrate the capabilities named in the brief with a traceable activity record"
+  - "explain a changed-situation response and a meaningful limitation"
+  - "declare assistance and preserve individual contribution evidence"
 related: ["sessions/week-12"]
 ---
 
 ## The brief
 
-> Conduct an operation whose decisions you can defend after the ending is known.
+Form a group of four, normally by combining two A2 pairs. Recover the last intact research archive at fictional **Meridian Station** under the published authority and handling rules.
 
-Work in groups of four, normally formed by combining two A2 pairs. The target is the same Grand Reserve; the challenge is to integrate the whole semester. Extraction, disclosure and withdrawal are all possible endings. None determines the academic grade.
+Use [the final mission](/operation/) for the browser route or the [campus mission pack](/campus/final-project.md). The mission combines the semester's skills in a new setting. You must recognise when a capability is needed, rather than waiting for every challenge to announce its week number.
 
-## What you submit
+## Roles and responsibilities
 
-- A **1,200–1,600-word final operation dossier**.
-- The current mission contract and dependency model.
-- A crew agreement that records consent and responsibilities.
-- **Two contrasting rehearsal records**: Baseline plus Contradiction or Divided Crew.
-- A revision history showing the relationship to earlier work.
+- **Observer/navigator:** scene information, layout and route predictions.
+- **Systems specialist:** mechanism, circuit and equipment verification.
+- **Investigator:** source comparison, integrity and permission checks.
+- **Coordinator:** handoffs, negotiated agreements and objective changes.
+
+Roles distribute responsibility without making understanding exclusive. Every student must explain at least one dependency outside their principal role. Solo practice can rotate all roles; the assessed course task remains a group project unless an individual arrangement is recorded.
+
+## Mission and resolutions
+
+Inspect the arrival scene, restore equipment, investigate copies, agree handling, navigate the maintenance area and respond to a published disruption. Then choose a justified resolution:
+
+- **Physical recovery:** verified identity, working support equipment, agreed handling and confirmed custody.
+- **Digital recovery:** verified copy, recorded reference limitations and confirmed receipt; preserve the original's location.
+- **Stabilisation and handover:** verified stable state, named custodian, unresolved issues and a documented handover plan.
+
+No ending is automatically worth more marks. A resolution must meet the objective the team actually claims. If the objective changes, record and defend the change.
+
+## What you hand over
+
+- Two contrasting rehearsal records using different published presets.
+- A final mission run and its evidence-linked debrief.
+- The original team plan and a preserved revision.
+- A role agreement and contribution record.
+- An **800–1,200-word team account**.
 - A **ten-minute team presentation**.
-- A **300-word individual defence from each member**.
+- A **300-word individual defence** from each member.
 
-The dossier’s word guidance excludes diagrams, tables, rehearsal records and individual defences. Include source identifiers so the reader can follow a decision back to its evidence.
+Use the published Baseline, Equipment Failure and Conflicting Archive presets. A final run can repeat a rehearsed preset; the account must still explain what the rehearsals changed. Cite activity records where earlier learning informed a decision.
 
-## The final rehearsal
+## Team account and presentation
 
-Declare your objective before running the six checkpoints. Use the authored rules for the selected preset. Baseline stipulates R1; Contradiction issues R2; Divided Crew changes agreement.
+State the original objective and its constraints. Explain one integrated chain of decisions across roles. Compare the two rehearsals, identify the changed dependency and show the verification used in the final run. End with the unresolved consequence or limitation that matters most.
 
-Compare at least one specific decision across runs. If the final objective differs from the initial one, explain the evidence behind the revision. A different ending is not proof that one run was better.
+Use the presentation to demonstrate one consequential decision and its alternative. Do not spend the whole ten minutes retelling every movement through the station. Caption recorded media and provide readable diagrams or ordered text.
 
-## Presentation and individual defence
+## Individual defence
 
-Use the presentation to explain one decisive moment, its supporting source, a rejected alternative and a remaining limitation. Each member must answer a question about a decision outside their primary role.
+Explain a decision you owned, the evidence supporting it, one dependency on another role and one credible alternative. Distinguish what you directly observed from what another person reported. The defence supplies 20% of the task mark separately for each member; the remaining 80% is assessed from the group work.
 
-The first four rubric criteria assess the group artefact, together making 80% of the task. The individual defence supplies the remaining 20% for each student. Each defence identifies a concrete contribution and explains a decision its author understands. This gives individual accountability without inventing an automatic peer multiplier.
+## Feedback and final-week arrangements
 
-## Performance standards
+Feedback is scheduled within seven days. The standard 48-hour extension cannot move work beyond the teaching-period end; final-week needs require a stated individual arrangement. Preserve incomplete work and contribution evidence if a teammate becomes unavailable. The policy page explains the fictional course rules.
 
-**Outstanding:** the objective, evidence, model and crew agreement form a coherent operation; contrasting runs produce an explained revision; consequences and alternatives receive serious treatment; every individual can defend their contribution.
+## Criterion-specific performance standards
 
-**Competent:** the operation is coherent and complete, with credible evidence but some limited treatment of alternatives or uncertainty.
+### Integration — 25%
 
-**Developing:** the record focuses on obtaining a preferred ending, with weak links between sources, decisions and revisions.
+- **Outstanding:** Selects and combines relevant capabilities in the unfamiliar mission, verifying all claimed resolution requirements.
+- **Competent:** Combines the major capabilities with minor gaps in verification.
+- **Developing:** Weekly skills appear separately but their mission dependencies are weak.
+- **Insufficient:** The mission account does not demonstrate the required integrated capability.
 
-**Insufficient:** major artefacts are absent, the operation contradicts its own rules, or the defence cannot substantiate the claimed work.
+### Evidence — 15%
 
-## Milestones and support
+- **Outstanding:** Consequential claims cite current records, observed checks and explicit reference limits.
+- **Competent:** Main decisions have relevant evidence and some acknowledgement of limits.
+- **Developing:** Evidence is present but authority or scope is unclear.
+- **Insufficient:** Claims conflict with records or lack usable support.
 
-Week 9 revises the crew agreement. Week 10 revisits the objective. Week 11 supplies the two runs and rival critique. Week 12 closes the record.
+### Coordination — 20%
 
-Use the dossier template and export the complete operation. Feedback is scheduled within seven days. Final-week extensions need an individual arrangement because the standard extension cannot pass the teaching-period end. If a teammate becomes unavailable, preserve contribution evidence and seek an arrangement under [course policies](/policies/).
+- **Outstanding:** All four roles contribute; agreements, read-backs and changed responsibilities are documented.
+- **Competent:** Roles and contributions are clear with occasional incomplete handoffs.
+- **Developing:** Coordination depends on unrecorded assumptions or uneven ownership.
+- **Insufficient:** No assessable team process or contribution evidence.
+
+### Adaptation — 20%
+
+- **Outstanding:** Contrasting rehearsals lead to a reasoned revision, with dependencies and consequences tested.
+- **Competent:** Rehearsal findings produce a plausible documented change.
+- **Developing:** Revisions are cosmetic or unconnected to rehearsal evidence.
+- **Insufficient:** No meaningful contrast, preserved original or tested revision.
+
+### Individual defence — 20%
+
+- **Outstanding:** The student independently explains their contribution, a cross-role dependency, a credible alternative and a limitation.
+- **Competent:** Explains own decisions and one relevant connection or limitation.
+- **Developing:** Describes activity but cannot justify important decisions independently.
+- **Insufficient:** Defence missing or fails to establish individual understanding.
+
+## Format, export and access
+
+Use the [downloadable template](/templates/final-project.md), retain editable source and export a readable record. The website provides downloads and local practice; it does not submit to an institutional system. The browser and campus routes assess the same concepts and problem-solving outcomes. Neither automatically certifies physical dexterity.
+
+All due times use **17:00 Canberra time** on the published date. [Policies and support](/policies/) explain attribution, accessible alternatives, contribution disputes, saving and extensions.

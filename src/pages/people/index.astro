@@ -6,5 +6,5 @@ const people=await getPublishedCollection("people");
 ---
 <CourseLayout title="The people behind the plan" description="Three fictional instructors. Different responsibilities. The same expectation: explain what your decision depends on." eyebrow="THE ACADEMY / PEOPLE">
 {people.map(p=><article class="staff-row"><span class="staff-mark" aria-hidden="true">{p.data.title.split(" ").slice(-2).map(w=>w[0]).join("")}</span><div><h2><a href={withBase("/people/"+p.id+"/")}>{p.data.title}</a></h2><p>{p.data.description}</p></div></article>)}
-<p class="small">These are original fictional teaching characters, separate from the six crew members in the case-file library. There are no live staff accounts or contact addresses.</p>
+<p class="small">These are original fictional teaching characters. Mission role packs describe four student responsibilities, which can be shared or rotated. There are no live staff accounts or contact addresses.</p>
 </CourseLayout>

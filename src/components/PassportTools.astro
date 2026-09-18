@@ -1,0 +1,21 @@
+---
+interface Props {compact?:boolean}
+const {compact=false}=Astro.props;
+---
+<section class:list={["passport-tools",{compact}]} aria-label="Skills passport">
+ <div><p class="eyebrow">YOUR SKILLS PASSPORT</p><h2>Keep what you learn.</h2><p>Practice stays in this browser. Export it to take your work with you.</p></div>
+ <p data-passport-status role="status">Preparing your saved progress…</p>
+ <p data-passport-count class="small"></p>
+ <div class="actions">
+  <button type="button" data-passport-export="json" disabled>Export backup JSON</button>
+  <button type="button" data-passport-export="markdown" disabled>Export learning record</button>
+  <label class="button import-label">Restore backup<input type="file" accept=".json,application/json" data-passport-import disabled /></label>
+  <button type="button" data-passport-print disabled>Print record</button>
+  <button type="button" data-passport-legacy disabled hidden>Export legacy dossier</button>
+  <button type="button" data-passport-archive disabled>Export & clear completed-run history</button>
+  <button type="button" data-passport-reset disabled>Reset passport</button>
+ </div>
+ <dialog data-passport-dialog><h2 data-dialog-title>Replace this passport?</h2><p data-dialog-body></p><div class="actions"><button type="button" data-dialog-confirm>Confirm replacement</button><button type="button" data-dialog-cancel>Keep current work</button></div></dialog>
+ <section data-passport-report class="passport-report" hidden></section>
+ <noscript><p>Use the downloadable templates and printable worksheets to keep your work. Interactive saving needs JavaScript.</p></noscript>
+</section>

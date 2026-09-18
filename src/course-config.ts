@@ -48,13 +48,13 @@ export const slopCourseMetaSchema = z
 // digit to your course's level (and `level` to match); keep the other three.
 export const courseMeta = slopCourseMetaSchema.parse({
   code: "SLOP4408",
-  title: "MASTERMIND: The Art of the Impossible Heist",
+  title: "MASTERMIND: The Academy of Impossible Skills",
   session: "Semester 1",
   year: 2027,
   level: 4,
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:
-    "An elite fictional mastermind academy. Build, test and defend one impossible heist through twelve weeks of evidence, symbolic systems, crew negotiation and revision.",
-  tags: ["Fictional heists", "Systems thinking", "Strategy"],
+    "Acquire unusual skills through observation, memory, mechanisms, electronics, digital investigation and teamwork. Practise in an interactive academy, then recover the research archive at fictional Meridian Station.",
+  tags: ["Interactive learning", "Problem solving", "Recovery missions"],
 }) satisfies CourseMetaInput;

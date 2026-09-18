@@ -1,57 +1,101 @@
 ---
-title: "The Impossible Contract"
-description: "Write an observable objective and two constraints. Name a specific condition that would make you pause."
+title: "Read the Room"
+description: "Inspect a furnished scene, reconstruct what was present and distinguish observations from interpretations."
 week: 1
 learningOutcomes: ["LO1"]
-activityId: "contract"
-caseFiles: ["E01"]
-teachers: ["mara-voss"]
+skillIds: ["LO1"]
+activityId: "week-01"
+caseFiles: ["PG-01","PG-02"]
+teachers: ["iona-vale"]
 date: 2027-02-26
 checkpointDue: 2027-02-26T17:00:00+11:00
-produces: ["mission-contract"]
+produces: ["observation-record"]
 requires: []
 sampleAvailable: true
-assessmentIds: ["fieldwork","final-project"]
-related: ["lectures/week-01","assessments/final-project","assessments/fieldwork"]
+campusPack: "/campus/week-01.md"
+browserActivity: "/sessions/week-01/#activity"
+assessmentIds: ["fieldwork", "assignment-1"]
+related: ["lectures/week-01", "assessments/assignment-1", "assessments/fieldwork"]
 spec:
-  - "produce mission-contract with a source-backed explanation"
-  - "state one assumption, alternative or unresolved question"
-  - "save or export the record; browser progress is not a submission"
+  - "demonstrate the named skill and explain a transfer to a changed situation"
+  - "record predictions, observations and remaining uncertainty"
+  - "export the evidence; practice progress is not an academic submission"
 ---
 
 ## Before you arrive
 
-Read E01 and write a one-sentence difference between a prize and an objective (15 minutes).
+Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Do not memorise the answer key.
 
-Bring a notebook or an empty local dossier. If you are entering this week directly, use the labelled example in the activity. It supplies a starting point and does not count as your original work.
+Read the [briefing](/lectures/week-01/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-01.md). Both assess the outcomes below.
+
+## What you will learn
+
+- Record specific observable details without silently adding a cause.
+- Separate a missed detail from a remembered detail that was never present.
+- Transfer a deliberate inspection method to a changed scene.
+
+## Supplied case file and rules
+
+- Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
+- The claim that the owner left in a hurry is an inference: the visible objects do not establish intent.
+- Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
+- Transfer: display 14:10; silver flask beside a map; open service hatch; an operator reports a power failure; the open hatch causing it is an inference.
+- Classify three directly supplied scene features as observations, the account's contents as a claim and the proposed explanation as an inference. The existence of a note is itself observable; its content is the claim being classified.
+- Cover the scene to recall its display reading. Reopening it is allowed and should be recorded as assistance.
 
 ## The two-hour lab
 
-| Time | Work |
+| Time | Activity |
 | --- | --- |
-| 0–15 min | Read the case file and name the decision the evidence affects. |
-| 15–35 min | Compare the three objectives in E01. For each, name a person whose interests it protects and a question it leaves open. |
-| 35–70 min | Complete the playable exercise below; record a reason before inspecting the feedback. |
-| 70–95 min | Exchange explanations. Challenge one assumption using a specific source. |
-| 95–110 min | Revise the output and explain which part of the feedback changed it. |
-| 110–120 min | Save or export the record and write the closing reflection. |
+| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
+| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
+| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
+| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
+| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+
+## Browser route
+
+Launch the activity below or travel to the Perception Gallery in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+
+**Practise.** Inspect all five statements in the practice scene. Cover it, recall the clock reading and classify the statements as observation, claim or inference. Reveal it and inspect the feedback.
+
+**Skill check.** Use the changed scene with clock 09:40. Reconstruct the new reading and classifications rather than repeating the practice answers.
+
+**Transfer.** Inspect the service-hatch scene and recall 14:10. Explain why a reported power failure does not establish that the hatch caused it.
+
+## Campus route
+
+[Printable scene and memory cards](/campus/perception-cards.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** A table, printed clock/display cards, cup/flask cards, a ledger/map, open/closed door cards and the supplied written claims. All equipment can be paper.
+
+**Setup:** Print the five scene statements and arrange simple cup, clock and door cards to match them. Conceal the cards for recall. Change the scene using the complete published check/transfer inventories.
+
+**Activity:** Each student writes independently before pairs compare. The facilitator reveals the printed inventory and asks students to classify their own errors. Do not reward speed or secretly change the scene during inspection.
+
+The [printable facilitator pack](/campus/week-01.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 
-**mission-contract** is this week's named artefact. Your contract governs the Week 6 plan and is explicitly reconsidered in Week 10.
+**observation-record** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
 
-Include your decision, the case-file identifier, a justification, and one remaining limitation. The fields in the exercise are a starting structure; expand them in your assessment document where the brief requires it.
+Use the arrival scene to notice changed equipment before committing the team to a route.
+
+## Feedback and explanation
+
+Three supplied scene details are observations, the account is a claim and the proposed cause is an inference. The exact display reading is a separate recall check. The classification depends on what is asserted, not whether you personally believe it.
+
+**Worked reflection:** I recorded the open door and 08:20 display. I marked ‘left in a hurry’ as an inference because the objects did not establish a cause. The note preserved what someone claimed, not independent proof of their account.
 
 ## How to judge the response
 
-Adding more adjectives to the objective does not make it testable. ‘A flawless, invisible, perfect operation’ leaves the reader unable to determine what counts. Name the outcome and the conditions separately.
-
-A strong response explains a particular choice and an alternative. The supplied exemplar is inspectable feedback, not a sentence you must copy. Your confidence or reflection is never assigned an automatic academic grade.
+A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
 
 ## Closing reflection
 
-Which part of your contract is most likely to change after new evidence?
+Which error came from failing to inspect, and which came from expecting something to be there?
 
 ## Afterwards
 
-Export a backup from the [Operation Room](/operation/). This lab record contributes to [Weekly Fieldwork](/assessments/fieldwork/); the final mark uses your best ten records. The [final project brief](/assessments/final-project/) explains its larger use. See [policies](/policies/) for alternatives and missed work.
+Export your record and keep a backup. It contributes to [Weekly Fieldwork](/assessments/fieldwork/), with the best ten of twelve counting. Continue to [the assessment brief](/assessments/assignment-1/) and consult [policies](/policies/) for access, collaboration and extensions. Exporting does not submit coursework.

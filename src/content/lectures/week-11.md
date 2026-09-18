@@ -1,44 +1,53 @@
 ---
-title: "The Rival’s Rehearsal"
-description: "Test one plan under contrasting stated conditions. Respond to a source-based challenge with a traceable revision."
+title: "When the Plan Breaks"
+description: "Preserve a working plan, diagnose a disruption and coordinate a justified revision."
 week: 11
-learningOutcomes: ["LO5","LO6"]
-activityId: "rehearsal"
-caseFiles: ["E11","E07","E09"]
-teachers: ["iona-vale"]
+learningOutcomes: ["LO3","LO4","LO5","LO6"]
+skillIds: ["LO3","LO4","LO5","LO6"]
+activityId: "week-11"
+caseFiles: ["IM-01","IM-02"]
+teachers: ["mara-voss"]
 date: 2027-05-17
 related: ["sessions/week-11", "assessments/final-project"]
 ---
 
-> Vale has read the plan. She asks about the one sentence nobody put on the slide.
+> The plan was sensible when you wrote it. The station has changed.
 
 ## What you will learn
 
-- Test one plan under contrasting stated conditions.
-- Respond to a source-based challenge with a traceable revision.
+- Identify which dependencies a disruption invalidates.
+- Preserve the original plan and explain each consequential revision.
+- Reassign work through an explicit, verified handoff.
 
 ## The briefing
 
-An adversarial review is strongest when it cites a rule, a source or a declared assumption. Inventing an unbeatable opponent tells you little about the plan. E11 asks where the key dependency comes from, what changes the objective, and whether another crew member can explain the operation.
+Improvisation is disciplined adaptation under changed conditions. It begins by locating the failed dependency: which proposed action required the unavailable tool, route or assumption? Some earlier decisions remain valid; others must be revisited. Rebuilding everything wastes sound work, while changing only the visible symptom can leave hidden dependencies broken.
 
-Run the same reasoning through different conditions. Baseline stipulates the current R1 model. Contradiction introduces R2. Divided Crew changes agreement. Compare a specific checkpoint and the reasons for the choice. The same ending can conceal different unresolved assumptions; different endings can follow equally careful reasoning.
+Preserve a baseline before receiving the disruption. A revision record should connect the new evidence to the changed action, role, verification and consequence. Team coordination matters because a technically correct change can fail if another role continues executing the old plan. Use an explicit handoff and read-back. Disagreement is useful when it exposes a constraint; record how it was resolved rather than describing the team as automatically unanimous.
 
 ## Worked example
 
-Baseline can retain R1 because that preset stipulates it. Contradiction cannot use the same justification after E07 is issued. A team may arrive at disclosure in both runs, but its protocol decision should differ or be explicitly defended.
+The east passage becomes unavailable after the baseline was recorded. The manifest inspection remains useful. The transport route must change to west and an additional relay verification must precede it. The revised plan records who performs that check and who confirms the handoff, while leaving the original plan visible.
 
 ## A plausible mistake
 
-Calling a run successful because it reaches extraction confuses the outcome with the quality of the reasoning. Selecting every preset without comparing a decision is activity, not analysis.
+Overwriting the original plan makes the revision impossible to assess. Calling any new action ‘improvisation’ also evades the question of whether it meets the original objective. Preserve the earlier state and identify whether the objective itself has changed.
+
+## Supplied rule sheet
+
+- Baseline plan: Inspect manifest → Restore relay → Use east passage → Record handover.
+- The initial plan is preserved as an immutable original in the activity.
+- Practice/check disruption: east passage unavailable; west passage open but requires an additional relay check.
+- Transfer disruption: the meter is unavailable. Supplied reference readings for battery/fuse/cable/lamp are 6/6/0/0 V; document their provenance and limits.
+- Create a revised plan and rationale naming the failed dependency, replacement action, verification and responsibility.
+- The activity prompts reflection; it does not assign a grade to the quality of open-ended reasoning.
 
 ## Before the lab
 
-Read E11 and bring your current mission, model and crew agreement (20 minutes). The full [case-file library](/resources/#E11) is available without sign-in.
-
-Run Baseline and one contrast. Exchange exports with another team; their challenge must name a source and a particular checkpoint.
+Bring one earlier diagnostic record and one communication record (15 minutes). Read IM-01 and write a baseline plan before opening IM-02 (15 minutes). Direct entrants may use the labelled sample.
 
 ## What happens next
 
-Two contrasting records and a revision memo become part of the final project.
+Respond to Meridian's changed equipment or evidence while keeping responsibility and verification clear. The lab produces **revised-plan**, which becomes evidence for [the connected assessment](/assessments/final-project/).
 
-[Open this week's lab](/sessions/week-11/) · [Read the assessment brief](/assessments/final-project/)
+[Open this week's lab](/sessions/week-11/) · [Download the campus pack](/campus/week-11.md) · [Explore the academy](/academy/)

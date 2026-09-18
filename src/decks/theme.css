@@ -14,3 +14,13 @@
  .reveal{font-size:18px}.reveal h1{font-size:2.5rem}.reveal h2{font-size:1.9rem}.reveal p,.reveal li{font-size:1.12rem;line-height:1.6}
  .reveal p{margin:.45rem 0}.reveal h1,.reveal h2{margin:0 0 1rem}.deck-nav{font-size:.85rem}.deck-nav button{padding:.65rem}
 }
+/* Keep the complete policy matrix readable on the marking phone viewport. */
+.reveal .slides>section.present{display:flex;flex-direction:column;justify-content:center}
+.reveal .slides>section .deck-nav{width:100%}
+.reveal table{width:100%;table-layout:fixed}
+@media(min-width:601px){.reveal .slides>section{padding:3rem 4rem}.reveal .slides>section>*{max-width:1100px}}
+@media(max-width:600px){
+ .reveal table{font-size:.875rem;line-height:1.5}
+ .reveal table th,.reveal table td{padding:.45rem .2rem;overflow-wrap:anywhere}
+ .reveal table th:first-child,.reveal table td:first-child{width:30%}
+}

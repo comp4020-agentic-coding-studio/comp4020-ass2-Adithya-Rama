@@ -1,0 +1,30 @@
+{
+  "title": "MASTERMIND original world kit",
+  "author": "Course project",
+  "source": "tools/world-assets.mjs",
+  "format": "glTF 2.0 binary",
+  "license": "Original project artwork",
+  "assets": [
+    "Student",
+    "Mara",
+    "Workbench",
+    "Console",
+    "Archive",
+    "ServiceCart",
+    "Gear",
+    "Gear12",
+    "Gear24",
+    "Gear36",
+    "Stool",
+    "Planter",
+    "Book"
+  ],
+  "joints": [
+    "ArmL",
+    "ArmR",
+    "LegL",
+    "LegR"
+  ],
+  "externalAssets": [],
+  "bytes": 609888
+}

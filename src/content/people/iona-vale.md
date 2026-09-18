@@ -1,18 +1,21 @@
 ---
-title: Iona Vale
-description: "The Counterplanner teaches evidence, adversarial review and revision. A challenge must identify a source or assumption."
-role: tutor
-affiliation: "Slop University · School of Impossible Operations"
-contact: "Fictional course: discuss evidence and revision during the Friday lab. This profile has no live contact address."
+title: "Iona Vale — The Investigator"
+description: "Iona investigates the gap between a plausible story and a supported conclusion. She teaches careful observation, record comparison and the fictional permission system used at Meridian."
+role: "Observation, digital evidence and policy"
+affiliation: "Slop University · MASTERMIND"
+contact: "Fictional staff profile; support is described in the course policies."
 ---
-## The Counterplanner
 
-Vale does not invent a stronger opponent every time a plan works. She identifies the assumption already inside it. Her challenges name a source, a dependency and the decision affected.
+> A record can be authentic and still answer the wrong question.
 
-She leads the Week 7 revision, Week 8 observation audit and Week 11 rival rehearsal. Her feedback asks you to preserve the reasoning that made an earlier plan plausible before explaining why it changed.
+## Teaching responsibility
 
-## How to use her critique
+Weeks 1, 6, 7 and 9. Iona helps students test claims against sources and preserve the scope of a verification result when a mandate changes.
 
-Write down the claim being challenged. Decide whether the evidence requires revision or whether your original interpretation still holds. Either response needs a reason. Agreement with the tutor is not a marking criterion.
+## What to bring to a discussion
 
-Bring both versions when discussing a revision. A polished final document alone conceals the useful part of the conversation.
+Bring a specific attempt, its prediction and the observation that surprised you. State what you have already checked and which question remains. The teaching team values a precise account of uncertainty over a polished claim that everything worked.
+
+## Course access
+
+All teaching material and practice activities are directly accessible. Consult the [policies](/policies/) for equivalent browser/campus routes, attribution, feedback and extensions. This profile is part of the fictional course and does not provide live staff contact.

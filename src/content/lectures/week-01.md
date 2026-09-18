@@ -1,44 +1,53 @@
 ---
-title: "The Impossible Contract"
-description: "Write an observable objective and two constraints. Name a specific condition that would make you pause."
+title: "Read the Room"
+description: "Inspect a furnished scene, reconstruct what was present and distinguish observations from interpretations."
 week: 1
 learningOutcomes: ["LO1"]
-activityId: "contract"
-caseFiles: ["E01"]
-teachers: ["mara-voss"]
+skillIds: ["LO1"]
+activityId: "week-01"
+caseFiles: ["PG-01","PG-02"]
+teachers: ["iona-vale"]
 date: 2027-02-22
-related: ["sessions/week-01", "assessments/final-project"]
+related: ["sessions/week-01", "assessments/assignment-1"]
 ---
 
-> The envelope contains a drawing of the Crown. Voss turns it face down. ‘Tell me what changes when you have it.’
+> The room looks ordinary. That is why it is such a useful test.
 
 ## What you will learn
 
-- Write an observable objective and two constraints.
-- Name a specific condition that would make you pause.
+- Record specific observable details without silently adding a cause.
+- Separate a missed detail from a remembered detail that was never present.
+- Transfer a deliberate inspection method to a changed scene.
 
 ## The briefing
 
-A prize is an object. An objective is a change you want to bring about. Those are not interchangeable: obtaining the Crown could satisfy the commission while leaving its underlying problem untouched. Write an objective that another person can recognise as achieved, then add constraints that must remain true along the way.
+Observation is an active sampling process. You cannot inspect every detail at once, so the method you choose changes what you are likely to notice. A sweep by region reduces accidental omissions; a second sweep by object state catches details such as open lids or disconnected parts. Neither method makes perception infallible. Record what you inspected and what you did not.
 
-A useful contract also states when to stop. ‘If the plan gets dangerous’ cannot be checked in this model; ‘if a signed protocol invalidates the sequence we tested’ can. The contract is provisional, but revising it creates a new obligation: identify the evidence that changed your judgement and preserve the earlier version.
+Separate three things: a visible feature, your interpretation of that feature, and information you do not have. A blue lamp is visible; ‘the machine is healthy’ is an interpretation requiring a rule about the lamp. Confidence describes your judgement, not the truth of the claim. When a reconstruction is wrong, distinguish an omission from an invented addition. The remedy for failing to look is different from the remedy for confidently filling a gap.
 
 ## Worked example
 
-‘Get the Crown’ becomes ‘resolve the commission through extraction while every crew member retains agreement and the model uses the current protocol’. The objective is extraction; consent and protocol validity are constraints. A new authoritative rule is a reason to pause. Later evidence may justify replacing extraction itself.
+The clock shows 08:20 and the door is open. Those are supplied observations. A note says ‘I left first’: observing the note does not prove the writer left first. ‘The owner left in a hurry’ adds a causal interpretation not established by the room. Preserve those distinctions even when the narrative feels obvious.
 
 ## A plausible mistake
 
-Adding more adjectives to the objective does not make it testable. ‘A flawless, invisible, perfect operation’ leaves the reader unable to determine what counts. Name the outcome and the conditions separately.
+Staring for longer without a plan can strengthen confidence more than accuracy. Likewise, describing a room as ‘suspicious’ provides no checkable detail. Use object, position and state, then identify what would establish any proposed explanation.
+
+## Supplied rule sheet
+
+- Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
+- The claim that the owner left in a hurry is an inference: the visible objects do not establish intent.
+- Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
+- Transfer: display 14:10; silver flask beside a map; open service hatch; an operator reports a power failure; the open hatch causing it is an inference.
+- Classify three directly supplied scene features as observations, the account's contents as a claim and the proposed explanation as an inference. The existence of a note is itself observable; its content is the claim being classified.
+- Cover the scene to recall its display reading. Reopening it is allowed and should be recorded as assistance.
 
 ## Before the lab
 
-Read E01 and write a one-sentence difference between a prize and an objective (15 minutes). The full [case-file library](/resources/#E01) is available without sign-in.
-
-Compare the three objectives in E01. For each, name a person whose interests it protects and a question it leaves open.
+Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Do not memorise the answer key.
 
 ## What happens next
 
-Your contract governs the Week 6 plan and is explicitly reconsidered in Week 10.
+Use the arrival scene to notice changed equipment before committing the team to a route. The lab produces **observation-record**, which becomes evidence for [the connected assessment](/assessments/assignment-1/).
 
-[Open this week's lab](/sessions/week-01/) · [Read the assessment brief](/assessments/final-project/)
+[Open this week's lab](/sessions/week-01/) · [Download the campus pack](/campus/week-01.md) · [Explore the academy](/academy/)

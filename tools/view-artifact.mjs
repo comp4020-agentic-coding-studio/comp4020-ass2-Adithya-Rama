@@ -1,0 +1,1 @@
+import sharp from "sharp";process.stdout.write((await sharp(process.argv[2]).resize({width:Number(process.argv[3]||1200),withoutEnlargement:true}).jpeg({quality:85}).toBuffer()).toString("base64"));

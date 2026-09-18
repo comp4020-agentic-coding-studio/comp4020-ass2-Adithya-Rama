@@ -1,0 +1,13 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import AcademyScene from "../../components/AcademyScene.astro";
+import PassportTools from "../../components/PassportTools.astro";
+import {weeks} from "../../data/curriculum";
+import {withBase} from "astro-theme-university/url";
+---
+<CourseLayout title="Welcome to the academy." description="An explorable training ground for extraordinary skills. Enter a room, inspect its equipment, then open the complete lab." eyebrow="SLOP UNIVERSITY / TRAINING GROUND" wide>
+<div class="academy-start"><p>Move through the atrium, approach a teaching space and inspect what is inside. You can also travel directly using the room controls. Every lab remains one click away below.</p><a class="button" href={withBase("/operation/")}>Go to Meridian Station ↗</a></div>
+<AcademyScene room="atrium" mode="academy"/>
+<section><p class="eyebrow">DIRECT ACCESS / ALL TWELVE WEEKS</p><h2>Choose a capability.</h2><div class="skill-rows">{weeks.map(w=><a href={withBase("/sessions/week-"+String(w.week).padStart(2,"0")+"/")}><span class="skill-number">{String(w.week).padStart(2,"0")}</span><span><strong>{w.title}</strong><small>{w.room} · {w.skill}</small></span><span aria-hidden="true">↗</span></a>)}</div></section>
+<PassportTools/>
+</CourseLayout>

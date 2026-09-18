@@ -1,70 +1,99 @@
 ---
-title: "A1 — The Intelligence Dossier"
-description: "Understand the Grand Reserve well enough to identify what you cannot yet justify."
+title: "A1 — The Sealed Workshop"
+description: "An individual practical trial combining observation, deliberate recall, spatial reasoning and mechanical diagnosis."
 week: 4
 due: 2027-03-19T17:00:00+11:00
 weight: 20
 participation: individual
-learningOutcomes: ["LO1","LO2","LO3"]
+learningOutcomes: ["LO1","LO2","LO3","LO6"]
 marking:
   mode: weighted
   criteria:
-    - name: "Evidence discrimination"
-      weight: 35
-    - name: "System model"
-      weight: 30
-    - name: "Treatment of uncertainty"
+    - name: "Demonstrated skill"
+      weight: 40
+    - name: "Diagnosis"
       weight: 25
-    - name: "Clarity and traceability"
+    - name: "Transfer"
+      weight: 25
+    - name: "Clarity"
       weight: 10
 spec:
-  - "include the artefacts named in this brief"
-  - "support consequential claims using the supplied sources"
-  - "declare assistance and explain your own contribution"
+  - "demonstrate the capabilities named in the brief with a traceable activity record"
+  - "explain a changed-situation response and a meaningful limitation"
+  - "declare assistance and preserve individual contribution evidence"
 related: ["sessions/week-04"]
 ---
 
 ## The brief
 
-> Understand the Grand Reserve well enough to identify what you cannot yet justify.
+Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. Inspect its scene, carry a short instruction set, orient a replacement connector and diagnose the training mechanism. The context changes the combination of skills; it does not introduce an unpublished rule.
 
-Work individually. Analyse E01–E04; do not jump to a complete operation plan. Your task is to build a defensible basis for later decisions.
+The trial is playable from this page. You can inspect instructions and practise before recording an attempt. Use the [campus trial pack](/campus/assignment-1.md) for the equivalent tabletop route.
 
-## What you submit
+## What you must demonstrate
 
-An **800–1,000-word dossier**, with an evidence ledger and one dependency diagram or equivalent ordered text. Include:
+1. Separate visible scene details from claims and inferred causes.
+2. Retrieve a short ordered set using a strategy you can explain.
+3. Fit a connector using labelled world directions and a stated level.
+4. Select and test a gear configuration while checking the interlock, cam and spring.
+5. Apply at least one capability after a published condition changes.
 
-- An objective and its constraints.
-- The sources and status of your key statements.
-- Three consequential assumptions.
-- Two contradictions or unresolved questions.
-- A model of either the seal protocol or the symbol interpreter, supported by a counterexample.
-- A recommendation about what to investigate next.
+The workshop's name does not imply a real lock task. Its carriage uses the purpose-built Week 4 mechanism.
 
-Diagrams, source tables and the reference list sit outside the word guidance. The playable lab export supplies material; it does not replace the complete dossier.
+## What you hand over
 
-## The central judgement
+- The exported trial record, or equivalent campus event record.
+- A causal model linking input, gear, cam, spring, interlock and output.
+- **350–500 words** explaining two consequential decisions and one changed-situation response.
+- One failed prediction or limitation, with the evidence that revealed it.
+- An attribution and assistance statement.
 
-E02’s receipt supports a recorded witness token, but not the claim that silver alone is sufficient. E03 supports a current protocol while explicitly leaving its future validity unresolved. Explain that difference and show which decision depends on it.
+Include the configuration and attempt date. Diagram labels, source references and the event trace are outside the word guidance. A trial ending is evidence to analyse, not the academic mark.
 
-A model earns its place by explaining a valid sequence and where an invalid one first fails. A beautiful diagram without a stated protocol version is incomplete.
+## Suggested account structure
 
-## Performance standards
+Name the intended result. Quote the observation that shaped the first decision. Explain the mechanism prediction before describing the result. Identify what changed in the transfer task and why the old answer was no longer sufficient.
 
-**Outstanding:** each consequential claim has an appropriate source; the model explains both a valid run and a counterexample; uncertainty changes the investigation recommendation; the document is easy to audit.
+A useful explanation is specific: ‘I selected 24 driven teeth because four input turns must produce two opposite output turns.’ ‘I clicked until it worked’ does not establish the same understanding.
 
-**Competent:** the sources and model are broadly sound, with some thin treatment of uncertainty or alternatives.
+## Independent work and feedback
 
-**Developing:** sources are listed but claims outrun them; the diagram describes steps without prerequisites.
+You may discuss published rules before the trial. Your practical record, model and explanation must be your own. Hints are allowed when declared; concealing assistance weakens traceability.
 
-**Insufficient:** key artefacts are absent, the reasoning contradicts the supplied rules, or authorship is unclear.
+Feedback is scheduled within seven days of the deadline. Use it when taking responsibility for a different system in A2.
 
-## Working independently
+## Criterion-specific performance standards
 
-You may discuss the meaning of a supplied rule, but your ledger, model and prose must be your own. Attribute assistance and copied material. Declared AI assistance does not establish that its output is correct.
+### Demonstrated skill — 40%
 
-Bring one unresolved question to the Week 4 lab. Feedback is scheduled within seven days of the deadline, in time to inform your pair’s plan.
+- **Outstanding:** Shows accurate observation, deliberate recall, spatial transformation and causal mechanism use in the trial.
+- **Competent:** Demonstrates the four capabilities with minor gaps or recoverable errors.
+- **Developing:** Some capabilities are visible, while others depend on unexplained guesses.
+- **Insufficient:** Major capabilities are absent or essential supplied rules are not understood.
 
-## Format and handoff
+### Diagnosis — 25%
 
-Use the downloadable template. Deliver a readable document with diagrams embedded and your source identifiers intact. Keep the editable source and exports. This prototype offers downloads, not a live submission portal. Consult [policies](/policies/) for extensions and alternatives.
+- **Outstanding:** Uses discriminating observations, changes one relevant variable and verifies the repair.
+- **Competent:** Identifies a plausible fault and supplies a reasonable verification.
+- **Developing:** Reaches a working state through trial and error with weak causal explanation.
+- **Insufficient:** No supported fault diagnosis or verification.
+
+### Transfer — 25%
+
+- **Outstanding:** Adapts the learned principles to the unfamiliar arrangement and explains changed dependencies.
+- **Competent:** Completes the changed task with a sound but limited account.
+- **Developing:** Repeats a familiar sequence despite changed conditions.
+- **Insufficient:** No credible attempt to transfer the skill.
+
+### Clarity — 10%
+
+- **Outstanding:** A concise account links every consequential claim to a readable trace or model and declares assistance.
+- **Competent:** The account is understandable and the main evidence is identifiable.
+- **Developing:** Evidence is difficult to follow or claims are only loosely connected.
+- **Insufficient:** Missing account, unusable evidence or unclear authorship.
+
+## Format, export and access
+
+Use the [downloadable template](/templates/assignment-1.md), retain editable source and export a readable record. The website provides downloads and local practice; it does not submit to an institutional system. The browser and campus routes assess the same concepts and problem-solving outcomes. Neither automatically certifies physical dexterity.
+
+All due times use **17:00 Canberra time** on the published date. [Policies and support](/policies/) explain attribution, accessible alternatives, contribution disputes, saving and extensions.

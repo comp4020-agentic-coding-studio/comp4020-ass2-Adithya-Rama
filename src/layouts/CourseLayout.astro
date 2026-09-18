@@ -1,30 +1,29 @@
 ---
 import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
-import { withBase } from "astro-theme-university/url";
-import { siteConfig } from "../site-config";
-import { courseMeta } from "../course-config";
+import {withBase} from "astro-theme-university/url";
+import {siteConfig} from "../site-config";
+import {courseMeta} from "../course-config";
 import "../styles/academy.css";
+import "../styles/mastermind.css";
 interface Props {title:string;description?:string|null;eyebrow?:string;wide?:boolean;home?:boolean}
-const {title,description,eyebrow="THE GLASS CROWN FILES",wide=false,home=false}=Astro.props;
+const {title,description,eyebrow="THE ACADEMY / IMPOSSIBLE SKILLS",wide=false,home=false}=Astro.props;
 ---
 <BaseLayout {...siteConfig} title={title+" — "+courseMeta.code} description={description??undefined} clientRouter={false} colorScheme="light">
-  <div class:list={["academy-page",{wide,home}]}>
-    <div class="course-strip"><a href={withBase("/")}>{courseMeta.code} / MASTERMIND</a><span>{courseMeta.session} · {courseMeta.year}</span></div>
-    <noscript><nav class="paper-nav" aria-label="Course navigation without JavaScript">{siteConfig.links?.map(link=><a href={withBase(link.href)}>{link.text}</a>)}</nav></noscript>
-    {!home && <header class="page-heading"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{description&&<p class="intro">{description}</p>}</header>}
-    <slot />
-    <nav class="secondary-nav" aria-label="Course resources"><a href={withBase("/people/")}>People</a><a href={withBase("/resources/")}>Resources & case files</a><a href={withBase("/policies/")}>Policies & support</a></nav>
-    <p class="course-colophon">SLOP UNIVERSITY · SCHOOL OF IMPOSSIBLE OPERATIONS<br/>An original fictional course. All training systems are invented simulations.</p>
-  </div>
+ <div class:list={["academy-page",{wide,home}]}>
+  <div class="course-strip"><a href={withBase("/")}>{courseMeta.code} / MASTERMIND</a><span>{courseMeta.session} · {courseMeta.year}</span></div>
+  <nav class="course-navigation" aria-label="Course navigation">{siteConfig.links?.map(link=><a href={withBase(link.href)} aria-current={Astro.url.pathname===withBase(link.href)?"page":undefined}>{link.text}</a>)}</nav>
+  {!home&&<header class="page-heading"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{description&&<p class="intro">{description}</p>}</header>}
+  <slot/>
+  <nav class="secondary-nav" aria-label="Course resources"><a href={withBase("/people/")}>People</a><a href={withBase("/resources/")}>Resources & campus packs</a><a href={withBase("/policies/")}>Policies & support</a></nav>
+  <p class="course-colophon">SLOP UNIVERSITY · THE ACADEMY OF IMPOSSIBLE SKILLS<br/>An original fictional course. Progress records practice, not academic certification.</p>
+ </div>
 </BaseLayout>
-
 <script>
-  // The theme prefix-matches the base URL as active on every nested page.
-  const base=import.meta.env.BASE_URL;
-  for(const link of document.querySelectorAll<HTMLAnchorElement>(".at-nav-links a")){
-    const path=new URL(link.href).pathname;
-    const active=location.pathname===path||(path!==base&&location.pathname.startsWith(path));
-    if(active)link.setAttribute("aria-current","page");
-    else link.removeAttribute("aria-current");
-  }
+ import "../scripts/passport-client";
+ const base=import.meta.env.BASE_URL;
+ for(const link of document.querySelectorAll<HTMLAnchorElement>(".at-nav-links a")){
+  const path=new URL(link.href).pathname;
+  const active=location.pathname===path||(path!==base&&location.pathname.startsWith(path));
+  if(active)link.setAttribute("aria-current","page");else link.removeAttribute("aria-current");
+ }
 </script>

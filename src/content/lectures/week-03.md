@@ -1,44 +1,52 @@
 ---
-title: "The Lock That Has No Key"
-description: "Represent the R1 prerequisites in a diagram or ordered text. Explain a failed sequence at its first unsupported action."
+title: "Think in Three Dimensions"
+description: "Reconcile partial views, rotate components and build a model that predicts an unseen view."
 week: 3
-learningOutcomes: ["LO3"]
-activityId: "seals"
-caseFiles: ["E03"]
+learningOutcomes: ["LO2"]
+skillIds: ["LO2"]
+activityId: "week-03"
+caseFiles: ["SP-01","SP-02"]
 teachers: ["mara-voss"]
 date: 2027-03-08
 related: ["sessions/week-03", "assessments/assignment-1"]
 ---
 
-> There is no keyhole on the drawing. There are three words, and every arrow between them is a promise.
+> The drawing is correct. You are holding it the wrong way around.
 
 ## What you will learn
 
-- Represent the R1 prerequisites in a diagram or ordered text.
-- Explain a failed sequence at its first unsupported action.
+- Use a consistent coordinate system across different views.
+- Distinguish rotation from reflection.
+- Test a spatial model by predicting a view not used to construct it.
 
 ## The briefing
 
-A dependency names what must already be true for an action to be valid. Model the state before and after each action rather than guessing an order from the names. Under R1, WITNESS can run from the empty state; SILVER cannot. Once SILVER has run, CROWN requires both recorded tokens.
+A view is a projection: it hides one dimension while preserving others. A front view may show height and left-to-right position but not depth. To combine views, establish the origin and direction labels first. An apparent disagreement may be a changed viewpoint rather than a changed object.
 
-A correct sequence is only one part of a useful explanation. A counterexample exposes why a dependency matters. Trace the first failing action, record its missing prerequisite, and leave the later actions unevaluated. This is a symbolic teaching model, not a diagram of any physical lock.
+Mental rotation asks how the same object appears after movement. Reflection creates a different handed arrangement. Use a labelled feature to track orientation rather than rotating until a picture merely looks familiar. A useful spatial model predicts information you have not yet used. Constructing something that fits only one drawing is weak evidence because many different objects can share a projection. State any unresolved alternatives and choose a new view that would distinguish them.
 
 ## Worked example
 
-WITNESS → SILVER → CROWN works under E03. SILVER → WITNESS → CROWN fails at SILVER because no witness token exists. The failure occurs before the final step, so changing only CROWN cannot fix the missing prerequisite.
+The original L-shaped module has ports north and east. After one clockwise quarter-turn they point east and south; moving it from level 0 to level 1 does not change those directions. A successful placement must satisfy both orientation and level, so correcting one cannot substitute for the other.
 
 ## A plausible mistake
 
-Memorising the three words gives you a brittle answer. If a later protocol changes a prerequisite, the familiar sequence may become invalid. Attach the protocol version to the diagram you export.
+Mirroring a plan to make it match the screen can reverse left and right while leaving its outline plausible. A route then reaches the wrong side of a partition. Keep an asymmetric landmark and annotate the orientation.
+
+## Supplied rule sheet
+
+- The connector begins with ports pointing north and east on level 0.
+- A rotation moves the connector clockwise by 90 degrees; its handedness remains unchanged.
+- Practice target: ports east/south, level 0. Skill check: south/west, level 1. Transfer: west/north, level 2.
+- Moving up a level changes position but not orientation. Levels cycle 0 → 1 → 2 → 0.
+- Before testing, state where the original north port points. World directions remain fixed when the camera changes.
 
 ## Before the lab
 
-Read E03 twice: once for actions, once for prerequisites (15 minutes). The full [case-file library](/resources/#E03) is available without sign-in.
-
-Draw state boxes after each action. Ask your partner to propose an invalid order and locate its earliest failure.
+Read SP-01 coordinate conventions (10 minutes). Sketch an everyday object from above and the side, labelling one shared feature (10 minutes).
 
 ## What happens next
 
-The seal model enters A1, supports Version 1 and becomes the dependency revised in Week 7.
+Reconstruct Meridian's layout and relate maintenance diagrams to the space around you. The lab produces **spatial-model**, which becomes evidence for [the connected assessment](/assessments/assignment-1/).
 
-[Open this week's lab](/sessions/week-03/) · [Read the assessment brief](/assessments/assignment-1/)
+[Open this week's lab](/sessions/week-03/) · [Download the campus pack](/campus/week-03.md) · [Explore the academy](/academy/)

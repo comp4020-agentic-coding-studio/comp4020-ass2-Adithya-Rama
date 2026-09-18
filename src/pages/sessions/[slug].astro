@@ -3,14 +3,17 @@ import {render} from "astro:content";
 import {getPublishedCollection} from "astro-course-university/content";
 import {withBase} from "astro-theme-university/url";
 import CourseLayout from "../../layouts/CourseLayout.astro";
-import Activity from "../../components/Activity.astro";
+import TrainingLab from "../../components/TrainingLab.astro";
+import PassportTools from "../../components/PassportTools.astro";
 import {formatCourseDate} from "../../lib/dates";
 export async function getStaticPaths(){return (await getPublishedCollection("sessions")).map(session=>({params:{slug:session.id},props:{session}}));}
 const {session}=Astro.props;const {Content}=await render(session);const week=session.data.week;
 ---
-<CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")}>
+<CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")} wide>
 <div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
-<p><a href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a> · <a href="#exercise">Go to the exercise</a> · <a href={withBase("/operation/")}>Open your dossier</a></p>
-<Content />
-<div id="exercise"><Activity week={week}/></div>
+<nav class="actions" aria-label="Lab resources"><a class="button primary" href="#exercise">Enter browser lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
+<div id="exercise"><TrainingLab week={week}/></div>
+<PassportTools compact/>
+<section class="teaching-reading"><Content/></section>
+<nav class="actions" aria-label="Week navigation">{week>1&&<a class="button" href={withBase("/sessions/week-"+String(week-1).padStart(2,"0")+"/")}>← Previous lab</a>}<a class="button" href={withBase("/sessions/")}>All labs</a>{week<12&&<a class="button" href={withBase("/sessions/week-"+String(week+1).padStart(2,"0")+"/")}>Next lab →</a>}</nav>
 </CourseLayout>

@@ -1,57 +1,102 @@
 ---
-title: "The Wrong Prize"
-description: "Revise an objective when consequences change. Defend a trade-off against a credible alternative."
+title: "Move Through the Model"
+description: "Predict fictional sensor observations and compare a route model with the actual event trace."
 week: 10
-learningOutcomes: ["LO1","LO6"]
-activityId: "prize"
-caseFiles: ["E10","E01"]
+learningOutcomes: ["LO2","LO6"]
+skillIds: ["LO2","LO6"]
+activityId: "week-10"
+caseFiles: ["SN-01","SN-02"]
 teachers: ["mara-voss"]
 date: 2027-05-14
 checkpointDue: 2027-05-14T17:00:00+10:00
-produces: ["revised-mission"]
-requires: ["mission-contract"]
+produces: ["sensor-route"]
+requires: ["claim-verification"]
 sampleAvailable: true
-assessmentIds: ["fieldwork","final-project"]
-related: ["lectures/week-10","assessments/final-project","assessments/fieldwork"]
+campusPack: "/campus/week-10.md"
+browserActivity: "/sessions/week-10/#activity"
+assessmentIds: ["fieldwork", "final-project"]
+related: ["lectures/week-10", "assessments/final-project", "assessments/fieldwork"]
 spec:
-  - "produce revised-mission with a source-backed explanation"
-  - "state one assumption, alternative or unresolved question"
-  - "save or export the record; browser progress is not a submission"
+  - "demonstrate the named skill and explain a transfer to a changed situation"
+  - "record predictions, observations and remaining uncertainty"
+  - "export the evidence; practice progress is not an academic submission"
 ---
 
 ## Before you arrive
 
-Read E10 and your Week 1 contract (20 minutes). Underline the sentence the new evidence challenges.
+Read SN-01 and classify five sample cells as observed/unobserved with reasons (20 minutes). Write which criterion your first route will prioritise.
 
-Bring mission contract. If you are entering this week directly, use the labelled example in the activity. It supplies a starting point and does not count as your original work.
+Read the [briefing](/lectures/week-10/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-10.md). Both assess the outcomes below.
+
+## What you will learn
+
+- Apply explicit range and visibility rules in a spatial model.
+- Compare predicted sensor events with a recorded trace.
+- Revise a route after a rule or environmental condition changes.
+
+## Supplied case file and rules
+
+- A 5×5 grid uses rows 1–5 from north to south and columns 1–5 from west to east.
+- Start: row 5, column 1. Destination: row 1, column 5. Each action moves one cell north, south, east or west; boundaries prevent leaving the grid.
+- Practice sensor cells: row 3, columns 1–4.
+- Skill-check sensor cells: column 2, rows 2–5. Transfer: column 4, rows 2–5.
+- A contact is counted on each executed step ending in a sensor cell, including revisits. Predict the total before stepping through the route.
+- Contacts are explicit game events, not automatic failure. Reach the destination and reconcile the predicted and observed counts.
+- These are published board-game detection rules, not specifications for real surveillance.
 
 ## The two-hour lab
 
-| Time | Work |
+| Time | Activity |
 | --- | --- |
-| 0–15 min | Read the case file and name the decision the evidence affects. |
-| 15–35 min | Give another team your preferred objective without its justification. Ask them to propose the strongest objection, then answer it using E10. |
-| 35–70 min | Complete the playable exercise below; record a reason before inspecting the feedback. |
-| 70–95 min | Exchange explanations. Challenge one assumption using a specific source. |
-| 95–110 min | Revise the output and explain which part of the feedback changed it. |
-| 110–120 min | Save or export the record and write the closing reflection. |
+| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
+| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
+| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
+| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
+| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+
+## Browser route
+
+Launch the activity below or travel to the Movement Hall in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+
+**Practise.** Plan an eight-step route, predict its contact count, then step through it. Record where the first predicted contact occurs.
+
+**Skill check.** Move the sensor cells to column 2, rows 2–5. Preserve your old route and calculate which steps now contact the sensor before replaying it.
+
+**Transfer.** Use column 4, rows 2–5. Compare two routes with different contact counts and explain which objective would favour each.
+
+## Campus route
+
+[Printable circuit and grid sheet](/campus/circuit-sensor-sheet.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** A 5×5 printed grid, a player counter, four sensor markers, route arrows and a prediction sheet.
+
+**Setup:** Draw a 5×5 grid, mark start and destination, and highlight the published sensor cells for the chosen phase. Keep all cells and rules visible.
+
+**Activity:** Write the full route and predicted contact count before moving. The facilitator records each step ending on a sensor marker, including revisits. Compare traces and repeat with the changed published layout.
+
+The [printable facilitator pack](/campus/week-10.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 
-**revised-mission** is this week's named artefact. The revised mission governs your final run and the consequences criterion in the capstone.
+**sensor-route** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
 
-Include your decision, the case-file identifier, a justification, and one remaining limitation. The fields in the exercise are a starting structure; expand them in your assessment document where the brief requires it.
+Navigate Meridian's instrumented maintenance corridor under a published simulation contract.
+
+## Feedback and explanation
+
+Contacts count steps ending in the highlighted cells, including repeated visits. Reaching the destination without explaining the count is incomplete. A zero-contact route is available, but is not required for sound reasoning.
+
+**Worked reflection:** I predicted one contact when moving north through row 3, column 1. The event trace confirmed it. Moving east along row 5 first avoided that sensor row, but both routes could be explained with the same rule.
 
 ## How to judge the response
 
-Calling a preferred option ‘ethical’ without specifying affected interests turns evaluation into a label. Equally, choosing the most dramatic ending because it feels like a heist disconnects the objective from the evidence.
-
-A strong response explains a particular choice and an alternative. The supplied exemplar is inspectable feedback, not a sentence you must copy. Your confidence or reflection is never assigned an automatic academic grade.
+A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
 
 ## Closing reflection
 
-Which cost of your own decision is hardest to defend?
+Which rule did your first mental model leave out?
 
 ## Afterwards
 
-Export a backup from the [Operation Room](/operation/). This lab record contributes to [Weekly Fieldwork](/assessments/fieldwork/); the final mark uses your best ten records. The [final project brief](/assessments/final-project/) explains its larger use. See [policies](/policies/) for alternatives and missed work.
+Export your record and keep a backup. It contributes to [Weekly Fieldwork](/assessments/fieldwork/), with the best ten of twelve counting. Continue to [the assessment brief](/assessments/final-project/) and consult [policies](/policies/) for access, collaboration and extensions. Exporting does not submit coursework.
