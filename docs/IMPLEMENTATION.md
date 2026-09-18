@@ -1,3 +1,5 @@
+> Historical record: this document describes the original Glass Crown implementation. The current academy is documented in [the redesign handoff](REDESIGN-IMPLEMENTATION.md) and [validation record](REDESIGN-VALIDATION.md).
+
 # MASTERMIND implementation handoff
 
 The website is implemented locally. Read CLAUDE.md before making changes; README.md remains the fixed-platform reference. Publication belongs to Adithya, who explicitly deferred pushing.

@@ -9,3 +9,17 @@ What I really wanted students to learn was how to make and defend decisions unde
 I also wanted the course to separate a good decision from a lucky outcome. A student should be able to fail the fictional heist and still demonstrate excellent reasoning, while another student could reach a successful ending for weak reasons. That became one of the principles behind the assessments: students are rewarded for evidence, reasoning, revision and their ability to defend trade-offs, rather than simply for “winning” the simulation.
 
 The heist theme therefore became more than a visual style. I wanted every week to change the same operation so that the semester feels cumulative: students gather evidence, model the fictional system, form a crew, build a plan, discover its weaknesses, respond to disagreement and eventually defend the choices they made. My aim was for someone to arrive because the idea of a mastermind academy sounds fun, but leave having practised a much broader skill—thinking carefully when the information, people and conditions around a decision refuse to stay fixed.
+
+## Redesign direction supplied after the first implementation
+
+The user explicitly rejected the first result: “i m not satisfied at all with what has come out”. They explained that the original attraction was learning unusual skills people are curious about, including mechanisms, memory, electronics and digital systems. They asked to plan the curriculum again before rebuilding.
+
+They then asked for a “highly interactive” experience with “3d sort of expeirence everywhere be it labs assignemnets or final project” and a game-like learning experience.
+
+During planning the user selected a mastermind skills academy, a recovery mission, both physical and complete browser labs, a third-person character with close-up equipment views, and stylised cinematic visuals. They approved the full learning loop and the complete multi-domain curriculum, with safe fictional and simulated systems.
+
+For collaboration, they explicitly selected a shared mission with distinct role information and tools, one browser/session, screen sharing or rotating control, and solo completion. They required the site to remain self-contained on GitHub Pages, without runtime multiplayer services.
+
+The user then instructed: “implement the plan end-end”.
+
+These are conversation-derived directions, not claims that the user has played or accepted the redesigned implementation. Agent reviews and automated checks are recorded separately.

@@ -1,3 +1,5 @@
+> Historical record: this document describes the original Glass Crown implementation. The current academy is documented in [the redesign handoff](REDESIGN-IMPLEMENTATION.md) and [validation record](REDESIGN-VALIDATION.md).
+
 # Local validation record
 
 Date: 15 September 2026. Reviewer: coding agent. Publication was deferred by Adithya; these are local results.

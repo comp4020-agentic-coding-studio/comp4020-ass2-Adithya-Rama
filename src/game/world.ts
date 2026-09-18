@@ -203,9 +203,35 @@ export class AcademyWorld {
   const book=this.asset('Book');book.position.set(-.23,.02,-.1);book.rotation.y=-.3;observations.add(book);
   const cup=new THREE.Mesh(new THREE.CylinderGeometry(.09,.075,.22,16),materials.green);cup.position.set(.2,.11,.3);observations.add(cup);cup.material=materials.green.clone();this.dynamic.cup=cup;this.dynamic.note=this.text('I left first',-.15,2.2,-3.2,1.5);this.dynamic.door=this.box(.65,1.3,.1,-2.3,2.12,-3.3,materials.green);
   const cover=this.box(2.6,.025,.98,0,1.95,-3,materials.dark);cover.visible=false;this.dynamic.cover=cover;
-  this.equipmentAt(bench,this.week===2?'Memory route · inspect a location':'Observation table · inspect the details',this.week===2?'memory':'observation',new THREE.Vector3(0,1.9,-3));
+  if(this.mode!=='mission')this.equipmentAt(bench,this.week===2?'Memory route · inspect a location':'Observation table · inspect the details',this.week===2?'memory':'observation',new THREE.Vector3(0,1.9,-3));
   if(this.week===2){for(let i=0;i<4;i++){const a=i/4*Math.PI*2;const x=Math.sin(a)*4.6,z=Math.cos(a)*3.5-1;this.cylinder(.45,.12,x,.08,z,materials.bronze);this.dynamic['memorylabel'+i]=this.text(loci[i]!,x,1.4,z,2);this.dynamic['memoryitem'+i]=this.text(memoryItems.practice[i]!,x,1.15,z,1.6,'#9adbc6');const token=this.addAsset(i%2?'Book':'Archive',x,.18,z,.5);this.equipmentAt(token,'Memory location '+(i+1),'memory',new THREE.Vector3(x,.85,z));}}
-  if(this.mode==='mission'){for(const [i,id] of ['lens','spool','tile','map','manifest'].entries()){const obj=this.addAsset(i%2?'Book':'Gear',-2+i,1.55,-3.1,.42);this.equipmentAt(obj,'Inspect '+id,id,new THREE.Vector3(-2+i,1.8,-3.1));}}
+  if(this.mode==='mission')this.makeArrivalProps();
+ }
+ private makeArrivalProps(){
+  if(this.dynamic.observations)this.dynamic.observations.visible=false;
+  for(const id of ['clockLabel','note','door'])if(this.dynamic[id])this.dynamic[id]!.visible=false;
+  const blue=new THREE.MeshStandardMaterial({color:0x477eaf,roughness:.65});
+  const white=new THREE.MeshStandardMaterial({color:0xf2eee0,roughness:.85});
+  for(const [i,id] of ['lens','spool','tile','map','manifest'].entries()){
+   const object=new THREE.Group();object.position.set(-1.4+i*.7,1.57,-3);this.environment.add(object);
+   const part=(geometry:THREE.BufferGeometry,material:THREE.Material,x=0,y=0,z=0)=>{const mesh=new THREE.Mesh(geometry,material);mesh.position.set(x,y,z);mesh.castShadow=true;object.add(mesh);return mesh};
+   if(id==='lens'){
+    part(new THREE.TorusGeometry(.17,.04,8,20),materials.bronze,0,.23);
+    part(new THREE.CircleGeometry(.15,20),materials.glass,0,.23,.005);
+    part(new THREE.BoxGeometry(.045,.18,.035),materials.bronze,0,.025);
+   }else if(id==='spool'){
+    part(new THREE.CylinderGeometry(.13,.13,.26,20),blue,0,.17);
+    for(const y of [.04,.30])part(new THREE.CylinderGeometry(.19,.19,.035,20),blue,0,y);
+    part(new THREE.CylinderGeometry(.04,.04,.34,12),materials.dark,0,.17);
+   }else if(id==='tile'){part(new THREE.BoxGeometry(.37,.055,.37),white,0,.035);}
+   else{
+    const paper=part(new THREE.BoxGeometry(.45,.014,.48),white,0,.012);paper.rotation.y=id==='map'?-.14:.16;
+    for(let row=0;row<4;row++)part(new THREE.BoxGeometry(.28,.003,.013),id==='map'?blue:materials.dark,0,.022,-.15+row*.08);
+    if(id==='map')part(new THREE.BoxGeometry(.013,.004,.34),blue,.10,.024);
+   }
+   this.equipmentAt(object,'Inspect '+id,id,new THREE.Vector3(object.position.x,1.82,-3));
+   this.text(id.toUpperCase(),object.position.x,1.78,-2.65,.6,'#f6dfad');
+  }
  }
  private makeDigital(_bench:THREE.Object3D){
   for(let i=0;i<3;i++){const terminal=this.addAsset('Console',-2.5+i*2.5,0,-3,1.3);this.equipmentAt(terminal,this.week===7?'Permission station '+(i+1):'Archive record '+String.fromCharCode(65+i),this.week===7?'permissions':'files',new THREE.Vector3(-2.5+i*2.5,1.55,-3));this.text(this.week===7?['OBSERVER','TECHNICIAN','REGISTRAR'][i]!:['RECORD A','RECORD B','RECORD C'][i]!,-2.5+i*2.5,2.4,-3,1.8,'#8ed6c4')}
@@ -289,7 +315,7 @@ export class AcademyWorld {
   const values=this.state.values||this.state as Record<string,unknown>;  const phase:TrainingPhase=this.state.phase==='check'||this.state.phase==='transfer'?this.state.phase:'practice';
   for(let i=0;i<25;i++){const cell=this.dynamic['cell'+i];if(cell instanceof THREE.Mesh)cell.material=sensorCells(phase).includes(i)?materials.bronze:(i+Math.floor(i/5))%2?materials.dark:materials.wall}
   for(let i=0;i<4;i++){const label=this.dynamic['memoryitem'+i];if(label){this.rewriteText(label,memoryItems[phase][i]!);label.visible=!values.covered}}
-  if(this.dynamic.clockLabel){
+  if(this.dynamic.clockLabel&&this.mode!=='mission'){
    const times={practice:[8,20],check:[9,40],transfer:[14,10]}[phase]!;
    this.rewriteText(this.dynamic.clockLabel,String(times[0]).padStart(2,'0')+':'+String(times[1]).padStart(2,'0'));
    const minute=times[1]!/60*Math.PI*2,hour=(times[0]!%12+times[1]!/60)/12*Math.PI*2;
@@ -305,7 +331,7 @@ export class AcademyWorld {
   if(this.gears.length){const gear=Number(values.gear||values.follower||24),turns=Number(values.turns||0);const angle=turns*Math.PI*2;this.gearTargets=this.mode==='mission'?[angle,-angle*12/gear]:[angle*gear/12,-angle];if(this.reduced){this.gears[0]!.rotation.z=angle*gear/12;this.gears[1]!.rotation.z=-angle;}if(this.gears[1]!.userData.teeth!==gear){this.gears[1]!.removeFromParent();const g=this.addAsset('Gear'+gear,-.64+(12+gear)*.018+.05,2.2,-3.19);g.userData.teeth=gear;this.gears[1]=g;const item=this.equipment.find(e=>e.id==='gear');if(item){item.mesh=g;item.at.x=g.position.x;}}if(this.dynamic.cam)this.dynamic.cam.position.x=this.gears[1]!.position.x;this.rewriteText(this.dynamic.readout,'12 : '+gear);if(this.dynamic.cam)this.dynamic.cam.rotation.z=Number(values.cam||0)*Math.PI/180;if(this.dynamic.lock)this.dynamic.lock.position.y=values.interlock||values.brake?2.2:2.65;if(this.dynamic.spring)this.dynamic.spring.scale.y=values.spring===false?.6:1;}
   if(this.dynamic.bulb instanceof THREE.Mesh){const lit=Boolean((values.power||values.switchClosed)&&(values.repaired||values.fuse==='sound'||values.fuse==='intact'));const m=this.dynamic.bulb.material as THREE.MeshStandardMaterial;m.color.set(lit?0xffe3a1:0x8b9388);m.emissive.set(lit?0xffbf5e:0);m.emissiveIntensity=lit?1.7:0}
   if(this.dynamic.assembly){this.dynamic.assembly.rotation.y=Number(values.rotation||0)*Math.PI/180;this.dynamic.assembly.position.y=1.6+Number(values.level||0)*.3;}
-  if(this.dynamic.cover)this.dynamic.cover.visible=Boolean(values.covered);if(this.dynamic.observations)this.dynamic.observations.visible=!Boolean(values.covered);
+  if(this.dynamic.cover)this.dynamic.cover.visible=Boolean(values.covered);if(this.dynamic.observations)this.dynamic.observations.visible=this.mode!=='mission'&&!Boolean(values.covered);
   if(this.dynamic.token){const p=Number(values.position||0);this.dynamic.token.position.set(p%5-2,.1,Math.floor(p/5)-1.5)}if(this.dynamic.route)this.dynamic.route.visible=!values.detected;
   if(this.dynamic.selected){const selected=String(values.archive||'B');this.dynamic.selected.position.x=({A:-2.5,B:0,C:2.5} as Record<string,number>)[selected]||0}
   if(this.dynamic.archive)this.dynamic.archive.rotation.z=values.disrupted?.3:0;if(this.selectionHelper&&this.selected)this.selectionHelper.setFromObject(this.selected.mesh);if(this.state.complete)this.status('Skill check complete. Your evidence is available in the lab record.');
@@ -328,7 +354,7 @@ export class AcademyWorld {
  }
  private updateCamera(dt:number){
   const target=this.inspect&&this.selected?this.selected.at.clone():this.player.position.clone().add(new THREE.Vector3(0,1.15,0));const portrait=this.camera.aspect<1.1;
-  const distance=this.inspect?(portrait?5.4:3.6):(portrait?7:6);const desired=target.clone().add(new THREE.Vector3(Math.sin(this.azimuth)*distance,Math.sin(this.pitch)*distance+(this.inspect?.1:.3),Math.cos(this.azimuth)*distance));
+  const distance=this.inspect?(portrait?4.3:3.6):(portrait?7:6);const desired=target.clone().add(new THREE.Vector3(Math.sin(this.azimuth)*distance,Math.sin(this.pitch)*distance+(this.inspect?.1:.3),Math.cos(this.azimuth)*distance));
   desired.x=THREE.MathUtils.clamp(desired.x,-9.5,9.5);desired.z=THREE.MathUtils.clamp(desired.z,-8.1,8.55);desired.y=Math.max(.5,desired.y);const delta=desired.clone().sub(target),length=delta.length();delta.normalize();const hit=this.physics.castRay(new RAPIER.Ray(target,delta),length,true,undefined,undefined,this.collider,this.body);if(hit&&hit.timeOfImpact>.1)desired.copy(target).addScaledVector(delta,Math.max(.5,hit.timeOfImpact-.18));const alpha=this.reduced?1:1-Math.exp(-dt*7);this.camera.position.lerp(desired,alpha);this.camera.lookAt(target);
  }
  dispose(){
@@ -339,16 +365,3 @@ export class AcademyWorld {
   this.root.querySelector<HTMLButtonElement>('[data-world-launch]')!.disabled=false;this.root.querySelector<HTMLSelectElement>('[data-world-travel]')!.replaceChildren();
  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

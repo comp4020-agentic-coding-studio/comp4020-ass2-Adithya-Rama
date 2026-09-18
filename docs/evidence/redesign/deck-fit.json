@@ -1,0 +1,438 @@
+[
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "",
+    "title": "MASTERMINDLearn the artof the impossible.",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "lectures/week-02/",
+    "title": "Build a Memory Palace",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "lectures/week-07/",
+    "title": "Challenge the System",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "lectures/week-11/",
+    "title": "When the Plan Breaks",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "sessions/week-02/",
+    "title": "Build a Memory Palace",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "sessions/week-07/",
+    "title": "Challenge the System",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "sessions/week-11/",
+    "title": "When the Plan Breaks",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "page",
+    "viewport": "desktop",
+    "route": "assessments/assignment-1/",
+    "title": "A1 — The Sealed Workshop",
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 1,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Challenge the System#",
+    "nav": "← Previous1 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 2,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "The unexpected result#",
+    "nav": "← Previous2 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 3,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "State the contract first#",
+    "nav": "← Previous3 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 4,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Three parts of a request#",
+    "nav": "← Previous4 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 5,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Identity and authority#",
+    "nav": "← Previous5 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 6,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Predict the matrix#",
+    "nav": "← Previous6 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 7,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "A reproducible test#",
+    "nav": "← Previous7 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 8,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Repair the actual policy#",
+    "nav": "← Previous8 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 9,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Denying everything fails too#",
+    "nav": "← Previous9 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 10,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Recheck all nine cases#",
+    "nav": "← Previous10 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 11,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "A mandate changes#",
+    "nav": "← Previous11 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 12,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Your decision exercise#",
+    "nav": "← Previous12 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 13,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "A2 checkpoint#",
+    "nav": "← Previous13 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "desktop",
+    "slide": 14,
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "title": "Take it into the lab#",
+    "nav": "← Previous14 / 14Next →"
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "",
+    "title": "MASTERMINDLearn the artof the impossible.",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "lectures/week-02/",
+    "title": "Build a Memory Palace",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "lectures/week-07/",
+    "title": "Challenge the System",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "lectures/week-11/",
+    "title": "When the Plan Breaks",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "sessions/week-02/",
+    "title": "Build a Memory Palace",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "sessions/week-07/",
+    "title": "Challenge the System",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "sessions/week-11/",
+    "title": "When the Plan Breaks",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "page",
+    "viewport": "phone",
+    "route": "assessments/assignment-1/",
+    "title": "A1 — The Sealed Workshop",
+    "width": 390,
+    "scrollWidth": 390
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 1,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Challenge the System#",
+    "nav": "← Previous1 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 2,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "The unexpected result#",
+    "nav": "← Previous2 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 3,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "State the contract first#",
+    "nav": "← Previous3 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 4,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Three parts of a request#",
+    "nav": "← Previous4 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 5,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Identity and authority#",
+    "nav": "← Previous5 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 6,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Predict the matrix#",
+    "nav": "← Previous6 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 7,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "A reproducible test#",
+    "nav": "← Previous7 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 8,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Repair the actual policy#",
+    "nav": "← Previous8 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 9,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Denying everything fails too#",
+    "nav": "← Previous9 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 10,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Recheck all nine cases#",
+    "nav": "← Previous10 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 11,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "A mandate changes#",
+    "nav": "← Previous11 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 12,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Your decision exercise#",
+    "nav": "← Previous12 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 13,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "A2 checkpoint#",
+    "nav": "← Previous13 / 14Next →"
+  },
+  {
+    "kind": "slide",
+    "viewport": "phone",
+    "slide": 14,
+    "scrollHeight": 844,
+    "clientHeight": 844,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "title": "Take it into the lab#",
+    "nav": "← Previous14 / 14Next →"
+  }
+]

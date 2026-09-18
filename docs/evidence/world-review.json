@@ -1,0 +1,94 @@
+{
+  "environment": "Playwright Chromium / SwiftShader software renderer, not physical phone",
+  "issues": [],
+  "overflow": false,
+  "rooms": [
+    {
+      "room": "perception",
+      "calls": "184",
+      "geometries": "105"
+    },
+    {
+      "room": "spatial",
+      "calls": "200",
+      "geometries": "110"
+    },
+    {
+      "room": "mechanics",
+      "calls": "193",
+      "geometries": "109"
+    },
+    {
+      "room": "systems",
+      "calls": "198",
+      "geometries": "110"
+    },
+    {
+      "room": "digital",
+      "calls": "298",
+      "geometries": "160"
+    },
+    {
+      "room": "council",
+      "calls": "355",
+      "geometries": "173"
+    },
+    {
+      "room": "movement",
+      "calls": "245",
+      "geometries": "159"
+    },
+    {
+      "room": "operations",
+      "calls": "197",
+      "geometries": "125"
+    },
+    {
+      "room": "atrium",
+      "calls": "164",
+      "geometries": "121"
+    },
+    {
+      "room": "mechanics",
+      "calls": "193",
+      "geometries": "123"
+    },
+    {
+      "room": "digital",
+      "calls": "298",
+      "geometries": "174"
+    },
+    {
+      "room": "systems",
+      "calls": "198",
+      "geometries": "124"
+    },
+    {
+      "room": "mechanics",
+      "calls": "193",
+      "geometries": "123"
+    },
+    {
+      "room": "digital",
+      "calls": "298",
+      "geometries": "174"
+    },
+    {
+      "room": "systems",
+      "calls": "198",
+      "geometries": "124"
+    },
+    {
+      "room": "mechanics",
+      "calls": "193",
+      "geometries": "123"
+    }
+  ],
+  "contextMessage": "Graphics paused. Your lab work is safe. Use the accessible controls below or reload to restore graphics.",
+  "restoredMessage": "Graphics restored. Your lab work is unchanged.",
+  "failure": {
+    "message": "The 3D room could not open on this device. The complete interactive lab remains available below. Failed to fetch",
+    "canvas": 0,
+    "retry": true
+  }
+}

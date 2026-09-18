@@ -10,6 +10,8 @@
 .training-controls fieldset{background:#f6efdf;border:1px solid #c7b58e}
 .training-controls fieldset>button{margin:.3rem .35rem .3rem 0}
 .training-controls button{white-space:normal;text-align:left}
+/* Small apparatus headings use ink; brand gold remains an accent. */
+.training-lab .training-controls h4{color:#47381e}
 .training-mode-heading{padding-bottom:1rem;border-bottom:1px solid #d7c9ad;margin-bottom:1.3rem}
 .training-mode-heading p:last-child{margin-bottom:0}
 .training-readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.5rem;margin:1.4rem 0}
@@ -45,4 +47,3 @@
 @media(max-width:600px){.training-lab{margin:2rem 0}.training-controls{padding:.8rem}.training-controls fieldset{padding:.7rem}.training-phase{gap:.25rem}.training-phase button{min-width:90px;font-size:.72rem;padding:.55rem}.training-policy{grid-template-columns:1fr}.training-policy h4{margin-bottom:.25rem}.training-check{min-height:36px}.training-readout{grid-template-columns:1fr 1fr}.training-readout>div{padding:.65rem}.training-readout dd{font-size:.9rem}.training-comparison{grid-template-columns:1fr}.training-controls fieldset>button{width:100%;margin:.3rem 0}.training-grid{max-width:320px}.training-grid>span{font-size:.6rem}.training-feedback{padding:1rem}}
 @media(prefers-reduced-motion:reduce){.training-piece{transition:none}}
 @media print{.training-lab{border:0;margin:0}.training-phase,.training-controls,.training-legend,.training-hints{display:none}.training-worksheet{display:block}.training-worksheet>*{display:block}.training-trace{max-height:none;overflow:visible}.training-feedback{break-inside:avoid}.training-comparison{display:block}}
-

@@ -1,3 +1,5 @@
+> Historical record: this document describes the original Glass Crown implementation. The current academy is documented in [the redesign handoff](REDESIGN-IMPLEMENTATION.md) and [validation record](REDESIGN-VALIDATION.md).
+
 # Decision record
 
 Agent-maintained factual log. This is supporting evidence, not Adithya's assessed first-person account.
