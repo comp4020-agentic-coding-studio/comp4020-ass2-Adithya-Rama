@@ -21,13 +21,9 @@ export function registerAcademyScenes() {
         const message = document.createElement('p');
         message.className = 'world-error';
         message.setAttribute('role', 'status');
-        message.textContent = 'The 3D room could not open on this device. The complete interactive lab remains available below. ' + (error instanceof Error ? error.message : 'Please try the lightweight graphics setting.');
+        message.textContent = (root.dataset.mode==='demo'?'The 3D example could not open on this device. The complete transcript, finished example and learning controls remain available below. ':'The 3D room could not open on this device. The complete interactive lab remains available below. ') + (error instanceof Error ? error.message : 'Please try the lightweight graphics setting.');
         root.querySelector('.world-poster-copy')?.append(message);
       } finally { loading.hidden = true; release(); }
     });
   });
 }
-
-
-
-

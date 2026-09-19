@@ -1,0 +1,86 @@
+{
+  "environment": "Final local production preview; Chromium SwiftShader software renderer",
+  "base": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/",
+  "errors": [],
+  "results": [
+    {
+      "name": "demo-final-desktop-fit",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 133.59375,
+        "bottom": 1001.15625,
+        "height": 867.5625
+      },
+      "canvas": {
+        "top": 134.59375,
+        "bottom": 694.59375,
+        "height": 560
+      },
+      "caption": {
+        "top": 880.125,
+        "bottom": 1001.15625,
+        "height": 121.03125
+      },
+      "overflow": false
+    },
+    {
+      "name": "demo-final-mobile-fit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theatre": {
+        "top": 225.03125,
+        "bottom": 909.125,
+        "height": 684.09375
+      },
+      "canvas": {
+        "top": 226.03125,
+        "bottom": 516.03125,
+        "height": 290
+      },
+      "caption": {
+        "top": 694.078125,
+        "bottom": 909.125,
+        "height": 215.046875
+      },
+      "overflow": false
+    },
+    {
+      "name": "live-policy",
+      "before": true,
+      "after": false,
+      "step": "hold"
+    },
+    {
+      "name": "manifest",
+      "step": "reference",
+      "items": [
+        {
+          "id": "Aster",
+          "label": "Aster record",
+          "shape": "book",
+          "color": "#8bbca0",
+          "text": "30 sections / H-3"
+        },
+        {
+          "id": "Cinder",
+          "label": "Cinder record",
+          "shape": "book",
+          "color": "#c89179",
+          "text": "30 sections / H-8"
+        },
+        {
+          "id": "Dawn",
+          "label": "Dawn record",
+          "shape": "book",
+          "color": "#a4afc7",
+          "text": "29 sections / H-1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "environment": "Local production preview; Chromium with SwiftShader",
+  "base": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/",
+  "method": "Used real chapter and Watch controls. No manual scroll or DOM camera injection. Bounds were measured before screenshot helpers could reposition elements.",
+  "errors": [],
+  "results": [
+    {
+      "name": "demo-accepted-long-caption-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 134.84375,
+        "bottom": 1055.875,
+        "height": 921.03125,
+        "width": 1380
+      },
+      "canvas": {
+        "top": 135.84375,
+        "bottom": 695.84375,
+        "height": 560,
+        "width": 1378
+      },
+      "caption": {
+        "top": 881.375,
+        "bottom": 1055.875,
+        "height": 174.5,
+        "width": 1380
+      },
+      "captionText": "The route 20→21→22→23→18→13→8→3 avoids published sensor cells 6, 7 and 12. With Aster verified and cradle support present, the baseline physical recovery completes and is saved as Version 1. Receipt B-RCPT-01 names Venn at DB-1. This separate simulated baseline is retained before the next rehearsal resets to initial custody.",
+      "mode": "watch",
+      "step": "baseline",
+      "phase": "before",
+      "header": {
+        "top": -504.0625,
+        "bottom": -164.75,
+        "height": 339.3125,
+        "width": 1380
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "demo-accepted-long-caption-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theatre": {
+        "top": 135.171875,
+        "bottom": 978.5625,
+        "height": 843.390625,
+        "width": 354.90625
+      },
+      "canvas": {
+        "top": 136.171875,
+        "bottom": 426.171875,
+        "height": 290,
+        "width": 352.90625
+      },
+      "caption": {
+        "top": 604.21875,
+        "bottom": 978.5625,
+        "height": 374.34375,
+        "width": 354.90625
+      },
+      "captionText": "The route 20→21→22→23→18→13→8→3 avoids published sensor cells 6, 7 and 12. With Aster verified and cradle support present, the baseline physical recovery completes and is saved as Version 1. Receipt B-RCPT-01 names Venn at DB-1. This separate simulated baseline is retained before the next rehearsal resets to initial custody.",
+      "mode": "watch",
+      "step": "baseline",
+      "phase": "before",
+      "header": {
+        "top": -973.59375,
+        "bottom": -516.890625,
+        "height": 456.703125,
+        "width": 354.90625
+      },
+      "overflow": false,
+      "theatreFits": false,
+      "captionFits": false
+    }
+  ]
+}

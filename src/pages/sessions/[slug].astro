@@ -5,6 +5,7 @@ import {withBase} from "astro-theme-university/url";
 import CourseLayout from "../../layouts/CourseLayout.astro";
 import TrainingLab from "../../components/TrainingLab.astro";
 import PassportTools from "../../components/PassportTools.astro";
+import DemonstrationLink from "../../components/DemonstrationLink.astro";
 import {formatCourseDate} from "../../lib/dates";
 export async function getStaticPaths(){return (await getPublishedCollection("sessions")).map(session=>({params:{slug:session.id},props:{session}}));}
 const {session}=Astro.props;const {Content}=await render(session);const week=session.data.week;
@@ -12,6 +13,7 @@ const {session}=Astro.props;const {Content}=await render(session);const week=ses
 <CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")} wide>
 <div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
 <nav class="actions" aria-label="Lab resources"><a class="button primary" href="#exercise">Enter browser lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
+<DemonstrationLink id={"lab-"+String(week).padStart(2,"0")}/>
 <div id="exercise"><TrainingLab week={week}/></div>
 <PassportTools compact/>
 <section class="teaching-reading"><Content/></section>

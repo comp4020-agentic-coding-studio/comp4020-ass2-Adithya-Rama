@@ -69,8 +69,21 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  all<HTMLButtonElement>("[data-ending]").forEach(b=>b.addEventListener("click",()=>act({type:"resolve",ending:b.dataset.ending as "physical"|"digital"|"stabilise"})));
  q("[data-export-mission]").addEventListener("click",()=>download(missionMarkdown(state),"mastermind-"+kind+"-"+state.scenario+".md","text/markdown"));
  q("[data-print-mission]").addEventListener("click",()=>{const report=q("[data-mission-print]");report.textContent=missionMarkdown(state);report.hidden=false;document.body.classList.add("printing-mission");window.print();document.body.classList.remove("printing-mission");report.hidden=true;});
+ function replaceActiveMission(reset=false){
+  const saved=reset?undefined:passport.getMission(kind);
+  state=saved??newMission(kind);
+  // A replacement may intentionally omit this trial. Never revive the prior tab state.
+  all<HTMLFormElement>("form").forEach(form=>form.reset());
+  q("[data-inspection]").textContent="";
+  q("[data-measurement]").textContent=state.measured?"A measurement is preserved in this trial's action record.":"";
+  q<HTMLSelectElement>("[data-scenario]").value=state.scenario;
+  q("[data-mission-status]").textContent=reset?"The passport was reset. This trial starts fresh.":saved?"Restored this trial from the selected backup.":"The selected backup has no saved "+titleForKind()+" trial. This trial starts fresh.";
+  render();
+ }
+ function titleForKind(){return kind==="a1"?"workshop":kind==="a2"?"relay":"recovery";}
  window.addEventListener("mastermind:restore",()=>{const saved=passport.getMission(kind);if(saved){state=saved;render();}});
- window.addEventListener("mastermind:reset",()=>{state=newMission(kind);render();});
+ window.addEventListener("mastermind:replace",()=>replaceActiveMission());
+ window.addEventListener("mastermind:reset",()=>replaceActiveMission(true));
  window.addEventListener("mastermind:mission-zone",event=>{const zone=(event as CustomEvent<{zone:Zone}>).detail.zone;if(["arrival","workshop","power","control","archive","dispatch"].includes(zone))act({type:"zone",zone});});
  window.addEventListener("mastermind:interact",event=>{const detail=(event as CustomEvent<{objectId:string;week?:number}>).detail;if(detail.week)return;const id=detail.objectId;if(["lens","spool","tile","map","manifest"].includes(id))act({type:"inspect",item:id});
  else if(id==="crank"||id==="mechanism")act({type:"turn"});

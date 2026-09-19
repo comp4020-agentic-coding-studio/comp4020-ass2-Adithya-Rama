@@ -1,0 +1,52 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import AcademyScene from "../../components/AcademyScene.astro";
+import ExampleDocument from "../../components/ExampleDocument.astro";
+import {demonstrations} from "../../data/demonstrations";
+import {withBase} from "astro-theme-university/url";
+import "../../styles/demonstration.css";
+export function getStaticPaths(){return demonstrations.map(demo=>({params:{id:demo.id},props:{demo}}));}
+const {demo}=Astro.props;
+const json=JSON.stringify(demo).replaceAll("<","\\u003c");
+---
+<CourseLayout title={demo.title} description={demo.subtitle} eyebrow="THE DEMONSTRATION STUDIO / WATCH · INSPECT · TAKE CONTROL" wide>
+<article class="demo-player" data-demo-id={demo.id}>
+<script is:inline type="application/json" data-demo-definition set:html={json}/>
+<div class="demo-context"><div><p class="eyebrow">YOUR SKILL</p><p>{demo.skill}</p></div><div><p class="eyebrow">A NEW SETTING</p><p>{demo.setting}</p></div><div><p class="eyebrow">WHAT CHANGES</p><p>{demo.difference}</p></div></div>
+<div class="demo-mode-bar"><div role="group" aria-label="Demonstration mode"><button type="button" class="primary" data-demo-watch disabled>Watch the worked example</button><button type="button" data-demo-control disabled>Take control</button></div><span data-demo-mode-label>Choose how you want to learn.</span></div>
+<div class="demo-theatre">
+ <AcademyScene room={demo.steps[0]!.before.room} mode="demo"/>
+ <div class="demo-caption"><span data-demo-chapter>01 / {demo.steps.length}</span><div><strong data-demo-caption-title>{demo.steps[0]!.title}</strong><p data-demo-caption>{demo.steps[0]!.narration}</p></div></div>
+</div>
+<div class="demo-transport" role="group" aria-label="Playback and chapter controls">
+ <button type="button" data-demo-previous disabled>← Previous</button><button type="button" data-demo-play disabled>Play</button><button type="button" data-demo-next disabled>Next chapter →</button>
+ <label>Playback pace<select data-demo-speed><option value="0.7">Unhurried</option><option value="1" selected>Standard</option><option value="1.35">Brisk</option></select></label>
+ <button type="button" data-demo-replay disabled>Replay chapter</button>
+</div>
+<div class="demo-progress"><div data-demo-progress-bar></div></div>
+<p data-demo-status class="demo-status" role="status" aria-live="polite">The complete transcript and finished example are available below while the player loads.</p>
+<div class="demo-learning-grid">
+ <section class="demo-coach" aria-labelledby="demo-step-heading"><p class="eyebrow" data-demo-step-eyebrow>THE COACH'S THINKING</p><h2 id="demo-step-heading" data-demo-step-title>{demo.steps[0]!.title}</h2><p data-demo-narration>{demo.steps[0]!.narration}</p>
+ <details open data-demo-why><summary>Why this matters</summary><p data-demo-why-text>{demo.steps[0]!.why}</p></details>
+ <details data-demo-pitfall><summary>A plausible mistake</summary><p data-demo-pitfall-text>{demo.steps[0]!.pitfall}</p></details>
+ <div class="demo-observed" data-demo-observed hidden><p class="eyebrow">WHAT THE DEMONSTRATOR DID</p><dl data-demo-action-summary></dl><p data-demo-outcome></p></div>
+ </section>
+ <section class="demo-practice" aria-labelledby="demo-practice-heading"><p class="eyebrow">YOUR LEARNING CONTROLS</p><h2 id="demo-practice-heading">Make the skill your own.</h2>
+ <label>Coaching style<select data-demo-coaching><option value="guided">Explain as I go</option><option value="independent">Let me attempt it first</option><option value="challenge">Keep hints on request</option></select></label>
+ <p data-demo-prompt>{demo.steps[0]!.prompt}</p>
+ <form data-demo-form hidden><div data-demo-inputs></div><button class="primary" type="submit">Test my decision</button></form>
+ <p data-demo-watch-note>Watch the apparatus change as the coach demonstrates. Take control whenever you want to test the same idea yourself.</p>
+ <div class="actions"><button type="button" data-demo-hint disabled>Give me a cue</button><button type="button" data-demo-narrate hidden>Read the narration aloud</button></div>
+ <p data-demo-hint-text hidden></p><p data-demo-feedback role="status" aria-live="polite"></p>
+ <div class="demo-coaching-result"><p class="eyebrow">BASED ON YOUR ATTEMPTS</p><p data-demo-coaching-result>Watching and practising are recorded separately in this visit. These examples do not change your assessed work or skills passport.</p></div>
+ </section>
+</div>
+<nav class="demo-chapters" aria-label="Demonstration chapters">{demo.steps.map((step,i)=><button type="button" data-demo-jump={i} disabled aria-current={i===0?"step":undefined}><span>{String(i+1).padStart(2,"0")}</span><strong>{step.title}</strong><small data-demo-chapter-state>Ready to explore</small></button>)}</nav>
+<section class="demo-transfer"><p class="eyebrow">NOW TRANSFER THE SKILL</p><h2>Carry the method into your own work.</h2><p>{demo.transfer}</p><div class="actions"><a class="button primary" href={withBase(demo.sourceHref)}>{demo.sourceLabel} ↗</a><button type="button" data-demo-export disabled>Export my demonstration record</button><button type="button" data-demo-reset disabled>Restart this example</button></div></section>
+<section class="demo-finished"><p class="eyebrow">A COMPLETE WORKED SUBMISSION</p><h2>{demo.artifact.title}</h2><p>Example work from this demonstration's scenario. Use it to understand the expected evidence and explanation, then make your own decisions in the assigned activity.</p><a class="button" data-demo-download href={withBase("/examples/"+demo.id+".md")} download={demo.artifact.filename}>Download the complete example</a><details><summary>Read the finished work</summary><ExampleDocument markdown={demo.artifact.markdown}/></details></section>
+<details class="demo-transcript"><summary>Complete transcript and decisions · readable without JavaScript</summary>{demo.steps.map((step,i)=><section><h3>{i+1}. {step.title}</h3><p>{step.narration}</p><p><strong>Why:</strong> {step.why}</p><p><strong>Decision:</strong> {step.prompt}</p><ul>{step.controls.map(c=><li>{c.label}: {Array.isArray(c.expected)?c.expected.map(value=>c.options?.find(o=>o.value===value)?.label??value).join(" → "):typeof c.expected==="boolean"?(c.expected?"Yes":"No"):c.options?.find(o=>o.value===String(c.expected))?.label??String(c.expected)}{c.unit?" "+c.unit:""}</li>)}</ul><p><strong>Result:</strong> {step.success}</p><p><strong>Common mistake:</strong> {step.pitfall}</p></section>)}</details>
+<noscript><p class="callout">The full teaching transcript and worked submission above are available without JavaScript. Live playback and apparatus controls require JavaScript.</p></noscript>
+</article>
+<p class="actions"><a class="button" href={withBase("/demonstrations/")}>← All worked examples</a></p>
+</CourseLayout>
+<script>import "../../scripts/demonstration-client";</script>

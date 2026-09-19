@@ -9,5 +9,6 @@ import {withBase} from "astro-theme-university/url";
 <div class="academy-start"><p>Move through the atrium, approach a teaching space and inspect what is inside. You can also travel directly using the room controls. Every lab remains one click away below.</p><a class="button" href={withBase("/operation/")}>Go to Meridian Station ↗</a></div>
 <AcademyScene room="atrium" mode="academy"/>
 <section><p class="eyebrow">DIRECT ACCESS / ALL TWELVE WEEKS</p><h2>Choose a capability.</h2><div class="skill-rows">{weeks.map(w=><a href={withBase("/sessions/week-"+String(w.week).padStart(2,"0")+"/")}><span class="skill-number">{String(w.week).padStart(2,"0")}</span><span><strong>{w.title}</strong><small>{w.room} · {w.skill}</small></span><span aria-hidden="true">↗</span></a>)}</div></section>
+<section class="callout"><p class="eyebrow">WATCH · INSPECT · TAKE CONTROL</p><h2>See a complete worked example.</h2><p>Sixteen guided 3D scenarios show the learning process and a finished submission. Follow the coach, then take over the apparatus yourself.</p><a class="button primary" href={withBase("/demonstrations/")}>Enter the demonstration studio ↗</a></section>
 <PassportTools/>
 </CourseLayout>

@@ -20,3 +20,7 @@ Keep domain rules independent of graphics. Every activity has semantic interacti
 Version new saves; preserve legacy data for explicit export. Validate imports before replacement. Storage errors retain usable state and same-page export. Render imported text as text. Detect other-tab edits.
 Run pnpm check, pnpm check:evidence and course browser tests. Record actual review observations and failures. Local success does not imply publishing, CI or live acceptance.
 PROCESS.md remains a 400–600-word account edited from the student's supplied reasoning. Never invent personal review, playtesting, citations or acceptance. Preserve honest history, including the rejected first design. No guaranteed grade.
+
+## Worked demonstration studio
+Every lab and every assessment has a complete alternate scenario with a readable finished submission. The studio offers hands-free chapter playback, pause/inspect, optional device narration and learner control of the same 3D equipment. Complete scene snapshots must faithfully represent stated observations, tooth counts, connectors, component faults and source relationships.
+Demonstrations use a separate ephemeral practice record; they must never complete assessed work or mutate the skills passport. Coaching responds to recorded mistakes and hints, with no claims about unseen learning or arbitrary grading of prose. Transcript access is unrestricted. Keep the complete transcript and sample submission readable without JavaScript.

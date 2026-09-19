@@ -1,0 +1,20 @@
+{
+  "theatre": {
+    "top": 165.59375,
+    "bottom": 1079.953125,
+    "height": 914.359375
+  },
+  "stage": {
+    "top": 166.59375,
+    "bottom": 866.59375,
+    "height": 700
+  },
+  "caption": {
+    "top": 932.1875,
+    "bottom": 1079.953125,
+    "height": 147.765625
+  },
+  "viewport": 1080,
+  "header": 303.828125,
+  "method": "Initial desktop poster measurement before starting the renderer; final loaded-scene bounds are recorded separately."
+}

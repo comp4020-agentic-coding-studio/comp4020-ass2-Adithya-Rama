@@ -1,0 +1,3995 @@
+{
+  "generatedAt": "2026-09-19T00:14:06.750Z",
+  "scope": "Chromium layout and semantic controls; no claim about every device, browser or GPU performance",
+  "viewports": [
+    {
+      "name": "small-phone",
+      "width": 320,
+      "height": 667
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "laptop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "phone-landscape",
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "pages": [
+    {
+      "route": "",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "academy/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 14,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-02/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-04/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-07/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 34,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-11/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 28,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/fieldwork/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 43,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 37,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/final-project/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "operation/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 46,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 32,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 44,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "lectures/week-07/",
+      "viewport": "small-phone",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "academy/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 14,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-02/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-04/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-07/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 34,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-11/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 28,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/fieldwork/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 43,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 37,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/final-project/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "operation/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 46,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 32,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 44,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "lectures/week-07/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "academy/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 14,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-02/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-04/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-07/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 34,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-11/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 28,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/fieldwork/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 43,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 37,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/final-project/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "operation/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 46,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 32,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 44,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "lectures/week-07/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "academy/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 14,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-02/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-04/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-07/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 34,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-11/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 28,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/fieldwork/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 43,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 37,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/final-project/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "operation/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 46,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 32,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 44,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "lectures/week-07/",
+      "viewport": "laptop",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "academy/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 14,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-02/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-04/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-07/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 34,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "sessions/week-11/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 28,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/fieldwork/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 43,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 37,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "assessments/final-project/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "operation/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 46,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 32,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 44,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "lectures/week-07/",
+      "viewport": "phone-landscape",
+      "status": 200,
+      "errors": [],
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 6,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "heroBreakpoints": [
+    {
+      "width": 320,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 360,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 380,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 381,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 430,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 600,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 601,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 900,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 901,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 1199,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 1200,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "heroTextClips": []
+    },
+    {
+      "width": 1920,
+      "overflow": false,
+      "heroTextClips": []
+    }
+  ],
+  "navigation": [
+    {
+      "viewport": "small-phone",
+      "keyboardNavigation": "Assessments reached with Enter",
+      "url": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/assessments/"
+    },
+    {
+      "viewport": "tablet-portrait",
+      "keyboardNavigation": "Assessments reached with Enter",
+      "url": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/assessments/"
+    },
+    {
+      "viewport": "tablet-landscape",
+      "keyboardNavigation": "Assessments reached with Enter",
+      "url": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/assessments/"
+    },
+    {
+      "viewport": "laptop",
+      "keyboardNavigation": "Assessments reached with Enter",
+      "url": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/assessments/"
+    },
+    {
+      "viewport": "phone-landscape",
+      "keyboardNavigation": "Assessments reached with Enter",
+      "url": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/assessments/"
+    }
+  ],
+  "resize": [
+    {
+      "viewport": "small-phone",
+      "preserved": true,
+      "actualReadout": "DRIVEN GEAR\n24 teeth\nCAM\n180°\nINTERLOCK\nReleased\nSPRING\nDetached\nOBSERVED OUTPUT\n0 turns",
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "tablet-portrait",
+      "preserved": true,
+      "actualReadout": "DRIVEN GEAR\n24 teeth\nCAM\n180°\nINTERLOCK\nReleased\nSPRING\nDetached\nOBSERVED OUTPUT\n0 turns",
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "tablet-landscape",
+      "preserved": true,
+      "actualReadout": "DRIVEN GEAR\n24 teeth\nCAM\n180°\nINTERLOCK\nReleased\nSPRING\nDetached\nOBSERVED OUTPUT\n0 turns",
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "laptop",
+      "preserved": true,
+      "actualReadout": "DRIVEN GEAR\n24 teeth\nCAM\n180°\nINTERLOCK\nReleased\nSPRING\nDetached\nOBSERVED OUTPUT\n0 turns",
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "phone-landscape",
+      "preserved": true,
+      "actualReadout": "DRIVEN GEAR\n24 teeth\nCAM\n180°\nINTERLOCK\nReleased\nSPRING\nDetached\nOBSERVED OUTPUT\n0 turns",
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 31,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "staticExamples": [
+    {
+      "viewport": "small-phone",
+      "scriptingDisabled": true,
+      "chapterCount": 18,
+      "finishedExampleCharacters": 29243,
+      "containsVersion1": true,
+      "focusedTable": true,
+      "tableBefore": {
+        "tag": "TABLE",
+        "scrollWidth": 445,
+        "clientWidth": 291,
+        "scrollLeft": 0
+      },
+      "tableAfter": 154,
+      "keyboardScroll": true,
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "controlCount": 41,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "phone-landscape",
+      "scriptingDisabled": true,
+      "chapterCount": 18,
+      "finishedExampleCharacters": 29243,
+      "containsVersion1": true,
+      "focusedTable": true,
+      "tableBefore": {
+        "tag": "TABLE",
+        "scrollWidth": 777,
+        "clientWidth": 777,
+        "scrollLeft": 0
+      },
+      "tableAfter": 0,
+      "keyboardScroll": true,
+      "viewportWidth": 844,
+      "documentWidth": 844,
+      "overflow": false,
+      "controlCount": 41,
+      "clippedControls": [],
+      "heroTextClips": [],
+      "navigation": [
+        {
+          "text": "Overview",
+          "href": "/comp4020-ass2-Adithya-Rama/",
+          "visible": true
+        },
+        {
+          "text": "Weeks",
+          "href": "/comp4020-ass2-Adithya-Rama/lectures/",
+          "visible": true
+        },
+        {
+          "text": "Labs",
+          "href": "/comp4020-ass2-Adithya-Rama/sessions/",
+          "visible": true
+        },
+        {
+          "text": "Assessments",
+          "href": "/comp4020-ass2-Adithya-Rama/assessments/",
+          "visible": true
+        },
+        {
+          "text": "Academy",
+          "href": "/comp4020-ass2-Adithya-Rama/academy/",
+          "visible": true
+        },
+        {
+          "text": "Final Mission",
+          "href": "/comp4020-ass2-Adithya-Rama/operation/",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

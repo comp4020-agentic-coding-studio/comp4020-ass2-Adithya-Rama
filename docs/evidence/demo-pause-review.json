@@ -1,0 +1,35 @@
+{
+  "environment": "Local production preview; Chromium SwiftShader software renderer",
+  "initialCheck": "Exact composited screenshot byte comparison failed intermittently on desktop; phone passed.",
+  "decodedComparison": {
+    "width": 1378,
+    "height": 701,
+    "totalPixels": 965978,
+    "differentPixels": 1463,
+    "bounds": {
+      "left": 0,
+      "top": 596,
+      "right": 1377,
+      "bottom": 700
+    },
+    "maximumChannelDifference": 1,
+    "unchanged": "The equipment, instructor and main camera region were unchanged."
+  },
+  "interpretation": "The one-level pixel differences at the lower composited edge are evidence of screenshot/compositing variation, not evidence of continued scene animation.",
+  "revisedCheck": "Compare SHA-256 hashes of every raw WebGL RGBA byte immediately after rendering, and assert more than 10,000 coloured pixels to reject empty buffers. No pixel tolerance is used.",
+  "validation": {
+    "desktopConsecutivePasses": 3,
+    "durationsSeconds": [
+      19.7,
+      19,
+      18.6
+    ],
+    "alsoChecked": [
+      "Takeover controls",
+      "Published cam response",
+      "Unchanged existing browser storage",
+      "No phone-width overflow"
+    ]
+  },
+  "limitations": "These checks use a local software renderer and do not establish physical phone or GPU performance."
+}

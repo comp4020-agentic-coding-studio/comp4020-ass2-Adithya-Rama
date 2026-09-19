@@ -23,3 +23,12 @@ For collaboration, they explicitly selected a shared mission with distinct role 
 The user then instructed: “implement the plan end-end”.
 
 These are conversation-derived directions, not claims that the user has played or accepted the redesigned implementation. Agent reviews and automated checks are recorded separately.
+
+
+## 19 September — Demonstrations and student experience
+
+The user said the direction works and should continue, while asking for more visual polish and skill practice that feels precise, personalised and enjoyable. Their review questions were whether a student understands the skill, sees why it matters, genuinely practises it and wants to return.
+
+They added a specific requirement: every lab, assignment and final project must have a complete, similar but different demonstration scenario, analogous to a finished example website supplied alongside a website assignment. Students should be able to watch a hands-free 3D demonstration or take control themselves. They explicitly asked to make use of 3D skills.
+
+This supports the demonstration-studio extension: sixteen alternate scenarios, causal before/after scenes, selectable coaching, learner controls, complete sample artefacts and a worked recovery project. It does not establish that the user played or accepted every individual activity.

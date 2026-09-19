@@ -14,7 +14,7 @@ const {title,description,eyebrow="THE ACADEMY / IMPOSSIBLE SKILLS",wide=false,ho
   <nav class="course-navigation" aria-label="Course navigation">{siteConfig.links?.map(link=><a href={withBase(link.href)} aria-current={Astro.url.pathname===withBase(link.href)?"page":undefined}>{link.text}</a>)}</nav>
   {!home&&<header class="page-heading"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{description&&<p class="intro">{description}</p>}</header>}
   <slot/>
-  <nav class="secondary-nav" aria-label="Course resources"><a href={withBase("/people/")}>People</a><a href={withBase("/resources/")}>Resources & campus packs</a><a href={withBase("/policies/")}>Policies & support</a></nav>
+  <nav class="secondary-nav" aria-label="Course resources"><a href={withBase("/demonstrations/")}>Demonstration studio</a><a href={withBase("/people/")}>People</a><a href={withBase("/resources/")}>Resources & campus packs</a><a href={withBase("/policies/")}>Policies & support</a></nav>
   <p class="course-colophon">SLOP UNIVERSITY · THE ACADEMY OF IMPOSSIBLE SKILLS<br/>An original fictional course. Progress records practice, not academic certification.</p>
  </div>
 </BaseLayout>

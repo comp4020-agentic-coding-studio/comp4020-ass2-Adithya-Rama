@@ -12,6 +12,8 @@ Several promises became concrete checks: every capability has a later applicatio
 
 The agent's review also exposed mistakes that a passing build did not settle. Equal-sized display gears misrepresented a taught ratio; a phone slide table overflowed; and an open-lamp exercise initially confused supply voltage with a working load. The corrected circuit uses an isolated continuity check. These are documented agent observations in the [redesign decision record](docs/REDESIGN-DECISIONS.md), not playtesting I claim to have performed myself.
 
+I later said the direction worked, but asked for more visual polish and practice that feels precise, personalised and enjoyable. I wanted every lab and assessment to include a complete alternate example, like the demonstration website provided alongside a website-building assignment. That became a studio where students can watch a guided three-dimensional example or take control, then inspect a finished submission. The examples use different conditions, and watching remains separate from completing the assigned work.
+
 My judgement remains necessary for whether the academy is appealing and the skills feel worth learning. Automated tests establish particular behaviours, while rendered inspection checks readability and interaction. Neither proves originality, enjoyment or an HD. I want students to arrive for the unusual premise and leave more capable of understanding systems and responding intelligently when conditions change. Publishing remains my responsibility, so local verification is not presented as live acceptance.
 
 *Edited with coding-agent assistance from my supplied [account and redesign directions](docs/AUTHOR-NOTES.md).*

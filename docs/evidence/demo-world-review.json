@@ -1,0 +1,54 @@
+{
+  "environment": "Local course server, Chromium SwiftShader software renderer",
+  "base": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/",
+  "errors": [],
+  "results": [
+    {
+      "id": "lab-04",
+      "room": "mechanics",
+      "step": "cam",
+      "canvas": 1,
+      "overflow": false
+    },
+    {
+      "id": "lab-01",
+      "room": "perception",
+      "step": "inspect",
+      "canvas": 1,
+      "overflow": false
+    },
+    {
+      "id": "lab-01",
+      "mobile": true,
+      "overflow": false
+    },
+    {
+      "id": "lab-03",
+      "room": "spatial",
+      "step": "rotate",
+      "canvas": 1,
+      "overflow": false
+    },
+    {
+      "id": "lab-07",
+      "room": "digital",
+      "step": "hold",
+      "canvas": 1,
+      "overflow": false
+    },
+    {
+      "id": "lab-11",
+      "room": "operations",
+      "step": "assign",
+      "canvas": 1,
+      "overflow": false
+    },
+    {
+      "id": "lab-07",
+      "liveControl": "custodianApprove",
+      "before": true,
+      "after": false,
+      "method": "Changed a real takeover permission toggle without submitting the answer; inspect the matrix in the paired images."
+    }
+  ]
+}

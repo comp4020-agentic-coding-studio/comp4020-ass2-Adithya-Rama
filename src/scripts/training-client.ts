@@ -18,6 +18,54 @@ function mount(root:HTMLElement) {
   const node=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string,className?:string)=>{
     const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;return el;
   };
+  let checksThisPhase=0;let hintsThisVisit=0;
+  const coach=node('aside',undefined,'training-coaching');
+  coach.setAttribute('aria-label','Your practice focus');
+  const coachTitle=node('h3','Your practice focus');
+  const coachStats=node('p',undefined,'small');
+  const coachNext=node('p');
+  coach.append(coachTitle,coachStats,coachNext);
+  root.querySelector('.training-feedback')!.after(coach);
+  function updateCoaching(){
+    coachStats.textContent=checksThisPhase+' checks in this phase visit · '+hintsThisVisit+' hints opened this visit. These are practice observations, not marks.';
+    const v=state.values;
+    let next='Make one prediction, test it, then use the observed result to decide what to change. No attempt has been diagnosed yet.';
+    if(state.complete)next=week>=11?'Your account is ready for human review. Check it against the actual run and preserve a credible alternative.':
+      state.phase==='transfer'?'You met this changed configuration. Explain which rule transferred and which details needed a new decision.':
+      'You met this configuration. Try the '+(state.phase==='practice'?'skill check':'transfer challenge')+' and make a fresh prediction before operating it.';
+    else if(checksThisPhase>0){
+      next='Use the specific feedback above to revise one choice, then test again. Compare the new result with the previous attempt.';
+      if(week===4){
+        const target=mechanismConfig(state.phase);
+        next=v.interlock?'Your interlock is still engaged. Release it before trying to reposition the cam; changing gears cannot remove this obstruction.':
+         !v.spring?'The return spring is missing in your current setup. Attach it and check the cam before applying another input turn.':
+         Number(v.cam)!==target.cam?'Your cam is at '+v.cam+'°, while this configuration requires '+target.cam+'°. Reposition it, then test the movement.':
+         Math.abs(target.driver/Number(v.gear)*target.inputTurns-target.targetTurns)>.001?'Your '+v.gear+'-tooth follower does not produce the required '+target.targetTurns+' turns. Recalculate the ratio from '+target.driver+' driver teeth and '+target.inputTurns+' input turns.':
+         'The mechanism now has the required ratio and support conditions. Check your direction prediction, then turn it once more to verify.';
+      }
+      if(week===5){
+        const poweredReadings=state.actions.filter(a=>a.startsWith('Measured ')&&a.includes('(power on)'));
+        next=poweredReadings.length===0?'Your trace has no powered voltage reading. Establish the battery reference before deciding which component to replace.':
+         v.repaired&&!v.power?'A replacement is installed, but your supply is still isolated. Restore power and verify both the lamp supply and the lamp output.':
+         v.repaired?'Your current load works. Check whether the trace identifies the original fault before replacement; working afterwards alone does not show diagnosis.':
+         poweredReadings.some(a=>a.startsWith('Measured lamp: 6 V'))?'Your trace shows 6 V at a dark lamp. That supports a working supply, not a working lamp. Isolate power and test continuity before replacement.':
+         'Compare the adjacent readings you actually recorded. Find where 6 V first disappears; isolate the supply before changing that component.';
+      }
+      if(week===7){
+        const mismatches:string[]=[];
+        for(const role of policyRoles)for(const action of policyActions){
+          const allowed=(action==='read'||role==='technician'&&action==='service'||role==='registrar'&&action==='certify')&&!(state.phase==='transfer'&&role==='technician'&&action==='service');
+          if(Boolean(v[role+':'+action])!==allowed)mismatches.push(role+' / '+action);
+        }
+        next=mismatches.length?'Your current policy still differs on '+mismatches.join(', ')+'. Repair the first mismatch, then rerun all combinations so a correction does not remove legitimate access.':
+          'Your current matrix matches the mandate. Run the complete check to verify both allowed and forbidden actions.';
+      }
+      if(week===10)next=Number(v.position)!==4?'Your route currently ends at row '+(Math.floor(Number(v.position)/5)+1)+', column '+(Number(v.position)%5+1)+'. Continue or revise it toward row 1, column 5 before comparing contacts.':
+        'You reached the destination with '+v.detected+' recorded sensor contacts. Compare that count with your prediction, and locate the first entry your prediction missed.';
+    }
+    coachNext.textContent=next;
+  }
+
   const dispatch=()=>{
     window.dispatchEvent(new CustomEvent('mastermind:scene-state',{detail:{week,kind:'training',phase:state.phase,values:state.values,sequence:state.sequence,inspected:state.inspected,feedback:state.feedback,complete:state.complete}}));
   };
@@ -27,10 +75,10 @@ function mount(root:HTMLElement) {
     result.dataset.complete=String(state.complete);
     trace.replaceChildren(...state.actions.slice(-16).map(a=>node('li',a)));
     root.querySelectorAll<HTMLButtonElement>('[data-training-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.trainingPhase===state.phase)));
-    dispatch();
+    updateCoaching();dispatch();
   };
   const checkpoint=()=>window.dispatchEvent(new CustomEvent('mastermind:checkpoint',{detail:{week,state:structuredClone(state),reflection:reflection.value}}));
-  const act=(action:TrainingAction)=>{const focusKey=bench.contains(document.activeElement)?(document.activeElement as HTMLElement)?.dataset.trainingAction:undefined;state=applyTraining(state,action);render();sync();checkpoint();if(focusKey)Array.from(bench.querySelectorAll<HTMLButtonElement>('[data-training-action]')).find(b=>b.dataset.trainingAction===focusKey)?.focus({preventScroll:true});};
+  const act=(action:TrainingAction)=>{const focusKey=bench.contains(document.activeElement)?(document.activeElement as HTMLElement)?.dataset.trainingAction:undefined;if(action.type==='test'||action.type==='crank')checksThisPhase++;state=applyTraining(state,action);render();sync();checkpoint();if(focusKey)Array.from(bench.querySelectorAll<HTMLButtonElement>('[data-training-action]')).find(b=>b.dataset.trainingAction===focusKey)?.focus({preventScroll:true});};
   const p=(text:string,parent:HTMLElement=bench)=>parent.append(node('p',text));
   const button=(text:string,action:TrainingAction,parent:HTMLElement=bench)=>{
     const b=node('button',text);b.type='button';b.dataset.trainingAction=action.type+':'+(action.key??'');b.addEventListener('click',()=>act(action));parent.append(b);return b;
@@ -167,7 +215,7 @@ function mount(root:HTMLElement) {
     b.disabled=false;b.addEventListener('click',()=>{
       const next=b.dataset.trainingPhase as TrainingPhase;if(!phases.includes(next))return;
       if(state.actions.length&&!window.confirm('Start the '+phaseLabels[next].toLowerCase()+' configuration? Export or record this attempt first to keep its evidence.'))return;
-      state=createTraining(week,next);reflection.value='';hint=0;render();sync();checkpoint();
+      state=createTraining(week,next);reflection.value='';hint=0;checksThisPhase=0;render();sync();checkpoint();
     });
   });
   root.querySelector<HTMLButtonElement>('[data-training-test]')!.disabled=false;
@@ -175,7 +223,7 @@ function mount(root:HTMLElement) {
   root.querySelector<HTMLButtonElement>('[data-training-reset]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-reset]')!.addEventListener('click',()=>{
     if(state.actions.length&&!window.confirm('Restart only this activity phase? Saved passport evidence remains available.'))return;
-    state=createTraining(week,state.phase);render();sync();checkpoint();
+    state=createTraining(week,state.phase);checksThisPhase=0;render();sync();checkpoint();
   });
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.addEventListener('click',()=>{
@@ -187,7 +235,7 @@ function mount(root:HTMLElement) {
   const hintButton=root.querySelector<HTMLButtonElement>('[data-training-hint]')!;hintButton.disabled=false;
   hintButton.addEventListener('click',()=>{
     const hints=Array.from(root.querySelectorAll<HTMLElement>('[data-training-hint-text]'));
-    const next=hints[hint];if(next){next.hidden=false;hint++;hintButton.textContent=hint===hints.length?'All hints revealed':'Reveal next hint';}
+    const next=hints[hint];if(next){next.hidden=false;hint++;hintsThisVisit++;hintButton.textContent=hint===hints.length?'All hints revealed':'Reveal next hint';updateCoaching();}
   });
   window.addEventListener('mastermind:interact',((event:CustomEvent<{week:number;objectId:string}>)=>{
     if(event.detail.week!==week)return;
@@ -206,8 +254,8 @@ function mount(root:HTMLElement) {
     const saved=event.detail.drafts?.[String(week)]??[...records].reverse().find((r)=>r&&typeof r==='object'&&'week' in r&&(r as {week:number}).week===week) as {state?:unknown;reflection?:string}|undefined;
     if(saved&&validTraining(saved.state,week)){state=saved.state;reflection.value=typeof saved.reflection==='string'?saved.reflection:'';restoreApplied=true;render();sync();saveStatus.textContent='Restored your most recently recorded attempt for this week.';}
   }) as EventListener);
-  window.addEventListener('mastermind:reset',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;render();sync();});
-  window.addEventListener('mastermind:replace',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;render();sync();});
+  window.addEventListener('mastermind:reset',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;checksThisPhase=0;render();sync();});
+  window.addEventListener('mastermind:replace',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;checksThisPhase=0;render();sync();});
   let printDetails:HTMLDetailsElement[]=[];
   window.addEventListener('beforeprint',()=>{printDetails=Array.from(root.querySelectorAll<HTMLDetailsElement>('details:not([open])'));printDetails.forEach(d=>d.open=true);});
   window.addEventListener('afterprint',()=>{printDetails.forEach(d=>d.open=false);printDetails=[];});
@@ -216,11 +264,3 @@ function mount(root:HTMLElement) {
   window.addEventListener('mastermind:scene-ready',dispatch);
 }
 document.querySelectorAll<HTMLElement>('[data-training-week]').forEach(mount);
-
-
-
-
-
-
-
-

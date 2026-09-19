@@ -27,3 +27,30 @@
  .academy-world .world-tool-label,.academy-world .world-travel-label{display:grid;gap:.3rem;min-width:0}
  .academy-world .world-tool-label select,.academy-world .world-travel-label select{width:100%;max-width:100%;padding:.5rem;font-size:.72rem}
 }
+/* Worked examples use a quiet demonstration stage; lesson controls remain outside the graphics. */
+.world-demo-badge{position:absolute;left:1rem;bottom:1rem;display:flex;align-items:center;gap:.55rem;padding:.6rem .8rem;border:1px solid #d5b37388;border-radius:.3rem;background:#142930ed;color:#f0d6a1;font-size:.66rem;letter-spacing:.12em;pointer-events:none}
+.world-demo-badge>span:first-child{color:#d5ad69;font-size:.9rem}
+.academy-world--demo[data-demo-control=false] .world-object,.academy-world--demo[data-demo-control=false] .world-tool-label,.academy-world--demo .world-travel-label{display:none!important}
+.academy-world--demo .world-hud .world-status{max-width:55%}
+.academy-world--demo .world-toolbar{justify-content:flex-start;gap:1.5rem}
+.academy-world--demo .world-stage{box-shadow:inset 0 0 40px #03182055}
+@media(min-width:601px){.academy-world--demo .world-stage:after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 70px #06181d22;pointer-events:none}}
+@media(max-width:600px){
+ .world-demo-badge{position:static;order:2;padding:.55rem .7rem;border-width:1px 0;background:#1e353b;border-radius:0;font-size:.6rem}
+ .academy-world--demo .world-hud{order:3}.academy-world--demo .world-object{order:4}
+ .academy-world--demo .world-toolbar{gap:.75rem}.academy-world--demo .world-hud .world-status{max-width:55%}
+}
+
+/* Keep the worked scene and its caption together at the marking desktop viewport. */
+@media(min-width:601px){.academy-world--demo .world-stage{height:clamp(300px,calc(100svh - 420px),560px);min-height:300px}}
+
+/* In phone watch mode, keep the apparatus and explanation in one reading view. */
+@media(max-width:600px){
+ .demo-player[data-mode=watch] .academy-world--demo .world-canvas{height:240px}
+ .demo-player[data-mode=watch] .academy-world--demo .world-hud,.demo-player[data-mode=watch] .academy-world--demo .world-demo-badge{display:none}
+ .demo-player[data-mode=watch] .academy-world--demo .world-toolbar{padding:.4rem .7rem}
+ .demo-player[data-mode=watch] .academy-world--demo .world-control-group{display:flex;justify-content:flex-start;width:100%;gap:.4rem}
+ .demo-player[data-mode=watch] .academy-world--demo .world-control-group>label{display:flex;align-items:center;gap:.6rem}
+ .demo-player[data-mode=watch] .academy-world--demo .world-control-group select{width:auto;min-height:44px}
+ .demo-player[data-mode=watch] .academy-world--demo .world-instructions{padding:.45rem .7rem;font-size:.7rem}
+}

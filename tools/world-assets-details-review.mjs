@@ -1,0 +1,32 @@
+import {chromium} from '@playwright/test';
+import {writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const base=process.env.COURSE_BASE_URL||'http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/';
+const page=await browser.newPage({viewport:{width:1920,height:1080}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+try{
+ await page.goto(base+'demonstrations/assessment-final/',{waitUntil:'networkidle'});
+ const definition=await page.locator('[data-demo-definition]').evaluate(node=>JSON.parse(node.textContent));
+ await page.locator('[data-demo-speed]').selectOption('1.35');
+ await page.locator('[data-demo-jump="15"]').click();await page.locator('[data-demo-watch]').click();
+ await page.waitForFunction(()=>{const scene=document.querySelector('[data-academy-world]');return scene?.dataset.worldDemoStep==='rehearse-revision'&&scene.dataset.worldDemoPhase==='after'},undefined,{timeout:90000});
+ await page.locator('[data-demo-play]').click();
+ await page.locator('.demo-theatre').screenshot({path:'docs/evidence/demo-final-detail-revision-desktop.png'});
+ await page.locator('[data-demo-jump="17"]').click();await page.locator('[data-demo-watch]').click();
+ await page.locator('[data-demo-status]').filter({hasText:'The demonstration has finished'}).waitFor({state:'visible',timeout:90000});
+ await page.locator('.demo-theatre').screenshot({path:'docs/evidence/demo-final-detail-ending-desktop.png'});
+ await page.locator('.demo-caption').scrollIntoViewIfNeeded();
+ const caption=await page.locator('.demo-caption').evaluate(node=>{const p=node.querySelector('p'),style=getComputedStyle(p),background=getComputedStyle(node),r=p.getBoundingClientRect();return{text:p.textContent,color:style.color,display:style.display,visibility:style.visibility,opacity:style.opacity,captionBackground:background.backgroundColor,theatreBackground:getComputedStyle(node.parentElement).backgroundColor,top:r.top,bottom:r.bottom,viewportHeight:innerHeight};});
+ await page.locator('.demo-caption').screenshot({path:'docs/evidence/demo-final-detail-caption-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.locator('.demo-caption').scrollIntoViewIfNeeded();
+ await page.locator('.demo-caption').screenshot({path:'docs/evidence/demo-final-detail-caption-mobile.png'});
+ await page.locator('[data-world-canvas]').screenshot({path:'docs/evidence/demo-final-detail-ending-mobile.png'});
+ const report={environment:'Local production preview; Chromium SwiftShader',base,method:'Replayed the revised-plan chapter and final debrief using the real player after the content/layout detail rebuild.',errors,caption,revision:definition.steps[15].after,ending:definition.steps[17].after,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)};
+ await writeFile('docs/evidence/demo-final-detail-review.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+ await page.setViewportSize({width:1920,height:1080});
+ await page.goto(base+'demonstrations/lab-03/',{waitUntil:'networkidle'});
+ await page.locator('[data-demo-speed]').selectOption('1.35');
+ await page.locator('[data-demo-jump="2"]').click();await page.locator('[data-demo-watch]').click();
+ await page.waitForFunction(()=>{const scene=document.querySelector('[data-academy-world]');return scene?.dataset.worldDemoStep==='rotate'&&scene.dataset.worldDemoPhase==='after'},undefined,{timeout:90000});
+ await page.locator('[data-demo-play]').click();
+ await page.locator('[data-world-canvas]').screenshot({path:'docs/evidence/demo-spatial-rotation-after-desktop.png'});
+}finally{await browser.close();}

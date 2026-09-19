@@ -4,6 +4,8 @@
 
 This redesign follows the user's rejection of the abstract Glass Crown implementation and approval of the replacement plan. It combines a third-person, stylised academy, distinct practical learning models, campus alternatives and a recovery capstone. Publication remains user-owned.
 
+The subsequent [worked demonstration studio](DEMONSTRATIONS.md) adds sixteen alternate examples with hands-free 3D playback, learner takeover and complete sample submissions. Its [validation record](DEMONSTRATION-VALIDATION.md) is the current extension checkpoint.
+
 ## Architecture
 
 - Astro renders the full academic course, navigation, static worksheets and assessment descriptions.

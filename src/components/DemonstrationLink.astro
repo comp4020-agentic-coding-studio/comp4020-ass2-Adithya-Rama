@@ -1,0 +1,13 @@
+---
+import {withBase} from "astro-theme-university/url";
+import {demonstrationById} from "../data/demonstrations";
+import "../styles/demonstration.css";
+interface Props {id:string}
+const demo=demonstrationById(Astro.props.id);
+---
+{demo&&<aside class="demo-invitation">
+ <span class="demo-invitation-number" aria-hidden="true">▶</span>
+ <div><p class="eyebrow">SEE THE SKILL IN ACTION · A DIFFERENT SCENARIO</p><h2>{demo.title}</h2><p>{demo.subtitle}</p><p class="small">{demo.estimatedMinutes} minutes · Guided 3D example · Complete sample output</p>
+ <div class="actions"><a class="button primary" href={withBase("/demonstrations/"+demo.id+"/")}>Watch the demonstration ↗</a><a class="button" href={withBase("/demonstrations/"+demo.id+"/")+"?mode=control"}>Practise the example yourself</a></div>
+ </div>
+</aside>}

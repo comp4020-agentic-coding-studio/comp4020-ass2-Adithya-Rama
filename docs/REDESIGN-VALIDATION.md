@@ -6,6 +6,8 @@ Build: local production preview at the repository's GitHub Pages base path.
 
 This record covers the replacement **Academy of Impossible Skills** implementation. Earlier Glass Crown results are historical.
 
+This is the committed academy baseline checkpoint. The later [demonstration validation](DEMONSTRATION-VALIDATION.md) covers the studio extension and current combined checks.
+
 ## Final checks
 
 | Check | Result | Evidence and scope |

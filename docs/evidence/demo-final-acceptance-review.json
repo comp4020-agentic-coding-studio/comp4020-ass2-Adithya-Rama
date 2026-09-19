@@ -1,0 +1,244 @@
+{
+  "environment": "Local production preview; Chromium with SwiftShader",
+  "base": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/",
+  "method": "Used real chapter and Watch controls. No manual scroll or DOM camera injection. Bounds were measured before screenshot helpers could reposition elements.",
+  "errors": [],
+  "results": [
+    {
+      "name": "demo-accepted-spatial-before",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 134.59375,
+        "bottom": 1028.890625,
+        "height": 894.296875,
+        "width": 1380
+      },
+      "canvas": {
+        "top": 135.59375,
+        "bottom": 695.59375,
+        "height": 560,
+        "width": 1378
+      },
+      "caption": {
+        "top": 881.125,
+        "bottom": 1028.890625,
+        "height": 147.765625,
+        "width": 1380
+      },
+      "captionText": "The module turns 90 degrees clockwise while staying on level 0. Its ports now match east and north, but the target is still two levels above.",
+      "mode": "watch",
+      "step": "rotate",
+      "phase": "before",
+      "header": {
+        "top": -442.0625,
+        "bottom": -138.234375,
+        "height": 303.828125,
+        "width": 1380
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "demo-accepted-spatial-after",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 134.59375,
+        "bottom": 1002.15625,
+        "height": 867.5625,
+        "width": 1380
+      },
+      "canvas": {
+        "top": 135.59375,
+        "bottom": 695.59375,
+        "height": 560,
+        "width": 1378
+      },
+      "caption": {
+        "top": 881.125,
+        "bottom": 1002.15625,
+        "height": 121.03125,
+        "width": 1380
+      },
+      "captionText": "The rotation is correct while the height remains unresolved.",
+      "mode": "watch",
+      "step": "rotate",
+      "phase": "after",
+      "header": {
+        "top": -442.0625,
+        "bottom": -138.234375,
+        "height": 303.828125,
+        "width": 1380
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "demo-accepted-spatial-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theatre": {
+        "top": 135.03125,
+        "bottom": 688.109375,
+        "height": 553.078125,
+        "width": 354.90625
+      },
+      "canvas": {
+        "top": 136.03125,
+        "bottom": 376.03125,
+        "height": 240,
+        "width": 352.90625
+      },
+      "caption": {
+        "top": 506.375,
+        "bottom": 688.109375,
+        "height": 181.734375,
+        "width": 354.90625
+      },
+      "captionText": "The module turns 90 degrees clockwise while staying on level 0. Its ports now match east and north, but the target is still two levels above.",
+      "mode": "watch",
+      "step": "rotate",
+      "phase": "before",
+      "header": {
+        "top": -806.59375,
+        "bottom": -463.5,
+        "height": 343.09375,
+        "width": 354.90625
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "mobile-takeover",
+      "canvasHeight": 410,
+      "hud": true,
+      "equipment": true,
+      "form": true,
+      "overflow": false
+    },
+    {
+      "name": "demo-accepted-route-grid",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 134.59375,
+        "bottom": 1028.890625,
+        "height": 894.296875,
+        "width": 1380
+      },
+      "canvas": {
+        "top": 135.59375,
+        "bottom": 695.59375,
+        "height": 560,
+        "width": 1378
+      },
+      "caption": {
+        "top": 881.125,
+        "bottom": 1028.890625,
+        "height": 147.765625,
+        "width": 1380
+      },
+      "captionText": "Cells are numbered 0–24 in rows from top left. Start is 20 and destination 3. Sensors occupy 15, 16 and 11; every step ending on a sensor records one contact.",
+      "mode": "watch",
+      "step": "map",
+      "phase": "before",
+      "header": {
+        "top": -442.0625,
+        "bottom": -138.234375,
+        "height": 303.828125,
+        "width": 1380
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "demo-accepted-long-caption-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theatre": {
+        "top": 134.84375,
+        "bottom": 1055.875,
+        "height": 921.03125,
+        "width": 1380
+      },
+      "canvas": {
+        "top": 135.84375,
+        "bottom": 695.84375,
+        "height": 560,
+        "width": 1378
+      },
+      "caption": {
+        "top": 881.375,
+        "bottom": 1055.875,
+        "height": 174.5,
+        "width": 1380
+      },
+      "captionText": "The route 20→21→22→23→18→13→8→3 avoids published sensor cells 6, 7 and 12. With Aster verified and cradle support present, the baseline physical recovery completes and is saved as Version 1. Receipt B-RCPT-01 names Venn at DB-1. This separate simulated baseline is retained before the next rehearsal resets to initial custody.",
+      "mode": "watch",
+      "step": "baseline",
+      "phase": "before",
+      "header": {
+        "top": -504.0625,
+        "bottom": -164.75,
+        "height": 339.3125,
+        "width": 1380
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    },
+    {
+      "name": "demo-accepted-long-caption-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theatre": {
+        "top": 135.171875,
+        "bottom": 831.734375,
+        "height": 696.5625,
+        "width": 354.90625
+      },
+      "canvas": {
+        "top": 136.171875,
+        "bottom": 376.171875,
+        "height": 240,
+        "width": 352.90625
+      },
+      "caption": {
+        "top": 506.515625,
+        "bottom": 831.734375,
+        "height": 325.21875,
+        "width": 354.90625
+      },
+      "captionText": "The route 20→21→22→23→18→13→8→3 avoids published sensor cells 6, 7 and 12. With Aster verified and cradle support present, the baseline physical recovery completes and is saved as Version 1. Receipt B-RCPT-01 names Venn at DB-1. This separate simulated baseline is retained before the next rehearsal resets to initial custody.",
+      "mode": "watch",
+      "step": "baseline",
+      "phase": "before",
+      "header": {
+        "top": -973.59375,
+        "bottom": -516.890625,
+        "height": 456.703125,
+        "width": 354.90625
+      },
+      "overflow": false,
+      "theatreFits": true,
+      "captionFits": true
+    }
+  ]
+}

@@ -13,8 +13,8 @@ test('academy rooms render, keyboard movement responds, and resources stabilise'
  const scene=page.locator('[data-academy-world]');
  await expect(scene).toHaveAttribute('data-world-room','atrium');
  const first=await scene.getAttribute('data-world-position');
- await page.locator('canvas').focus();await page.keyboard.down('ArrowRight');await page.waitForTimeout(350);await page.keyboard.up('ArrowRight');
- await expect(scene).not.toHaveAttribute('data-world-position',first!);
+ await page.locator('canvas').focus();await page.keyboard.down('ArrowRight');
+ try{await expect(scene).not.toHaveAttribute('data-world-position',first!);}finally{await page.keyboard.up('ArrowRight');}
  for(const room of ['perception','spatial','mechanics','systems','digital','council','movement','operations']){
   await page.locator('[data-world-travel]').selectOption(room);await expect(scene).toHaveAttribute('data-world-room',room);
  }
@@ -74,3 +74,44 @@ test('real WebGL context loss restores rendering without erasing the skill attem
  await page.reload();await expect(page.locator('.training-readout')).toContainText('Released');
 });
 
+
+test('worked example director pauses and takeover remains separate from assessed progress',async({page})=>{
+ await page.goto('demonstrations/lab-04/');
+ const before=await page.evaluate(()=>JSON.stringify({...localStorage}));
+ await page.locator('[data-demo-watch]').click();
+ await expect(page.locator('[data-world-canvas] canvas')).toBeVisible({timeout:45000});
+ await expect(page.locator('[data-world-loading]')).toBeHidden({timeout:45000});
+ await page.locator('[data-demo-jump="2"]').click();
+ const scene=page.locator('[data-academy-world]');
+ await expect(scene).toHaveAttribute('data-world-room','mechanics');
+ await expect(scene).toHaveAttribute('data-world-demo-playing','false');
+ await expect(scene).toHaveAttribute('data-world-demo-step','cam');
+ await page.locator('[data-world-canvas]').scrollIntoViewIfNeeded();
+ await page.waitForTimeout(350);
+ // Compare the exact rendered WebGL pixels, before CSS shadow/clip compositing.
+ // Chromium's composited screenshots can vary by 1/255 at fractional clip edges.
+ const renderedPixels=()=>page.evaluate(()=>new Promise<{hash:string;colouredPixels:number}>(resolve=>{
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+   const canvas=document.querySelector<HTMLCanvasElement>('[data-world-canvas] canvas')!;
+   const gl=canvas.getContext('webgl2')!,pixels=new Uint8Array(gl.drawingBufferWidth*gl.drawingBufferHeight*4);
+   gl.readPixels(0,0,gl.drawingBufferWidth,gl.drawingBufferHeight,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+   let colouredPixels=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]||pixels[i+1]||pixels[i+2])colouredPixels++;
+   crypto.subtle.digest('SHA-256',pixels).then(hash=>resolve({hash:Array.from(new Uint8Array(hash)).map(n=>n.toString(16).padStart(2,'0')).join(''),colouredPixels}));
+  }));
+ }));
+ const paused=await renderedPixels();expect(paused.colouredPixels).toBeGreaterThan(10000);
+ await page.waitForTimeout(500);
+ expect(await renderedPixels()).toEqual(paused);
+ await page.locator('button[data-demo-control]').click();
+ await expect(scene).toHaveAttribute('data-demo-control','true');
+ await expect(page.locator('[data-demo-form]')).toBeVisible();
+ await page.locator('[data-world-equipment]').selectOption({label:'Set the cam angle'});
+ await page.locator('[data-world-use]').click();
+ await expect(page.locator('[data-demo-input="cam"]')).toHaveValue('90');
+ await page.locator('[data-demo-input="cam"]').fill('270');
+ await page.locator('[data-demo-form]').getByRole('button',{name:'Test my decision'}).click();
+ await expect(page.locator('[data-demo-feedback]')).toContainText('cam phase');
+ expect(await page.evaluate(()=>JSON.stringify({...localStorage}))).toBe(before);
+ await page.setViewportSize({width:390,height:844});
+ await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

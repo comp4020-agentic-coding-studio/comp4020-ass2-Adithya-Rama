@@ -1,0 +1,15 @@
+---
+interface Props {markdown:string}
+const blocks=Astro.props.markdown.split(/\n\s*\n/).filter(Boolean);
+const plain=(s:string)=>s.replace(/\*\*/g,"").replace(/\[([^\]]+)\]\([^\)]+\)/g,"$1").replace(/\`/g,"");
+---
+<div class="demo-example-document">
+{blocks.map(block=>{
+ const rows=block.split("\n");
+ if(/^#{1,6} /.test(rows[0]??""))return <section><h3>{plain(rows[0]!.replace(/^#+ /,""))}</h3>{rows.length>1&&<p>{plain(rows.slice(1).join("\n"))}</p>}</section>;
+ if(rows.every(line=>/^[-*] /.test(line)))return <ul>{rows.map(line=><li>{plain(line.slice(2))}</li>)}</ul>;
+ if(rows.every(line=>/^\d+\. /.test(line)))return <ol>{rows.map(line=><li>{plain(line.replace(/^\d+\. /,""))}</li>)}</ol>;
+ if(rows[0]?.startsWith("|"))return <div class="demo-example-table"><table tabindex="0" aria-label="Worked example evidence table"><tbody>{rows.filter(line=>!/^\|?\s*[-:]+\s*\|/.test(line)).map((line,index)=><tr>{line.split("|").slice(1,-1).map(cell=>index===0?<th scope="col">{plain(cell.trim())}</th>:<td>{plain(cell.trim())}</td>)}</tr>)}</tbody></table></div>;
+ return <p>{plain(block)}</p>;
+})}
+</div>

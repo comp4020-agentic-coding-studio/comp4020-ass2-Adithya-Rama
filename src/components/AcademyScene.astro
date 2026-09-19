@@ -1,33 +1,30 @@
 ---
 import '../styles/world.css';
-interface Props { room: string; week?: number; mode?: 'academy' | 'lab' | 'mission' | 'hero' }
+interface Props { room: string; week?: number; mode?: 'academy' | 'lab' | 'mission' | 'hero' | 'demo' }
 const { room, week = 0, mode = 'lab' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const roomNames: Record<string,string> = { atrium:'Academy atrium', perception:'Perception Gallery', spatial:'Spatial Lab', mechanics:'Mechanics Workshop', systems:'Systems Garage', digital:'Digital Observatory', council:'Council Studio', movement:'Movement Hall', operations:'Operations Studio', meridian:'Meridian Station' };
 const weekRooms=['atrium','perception','perception','spatial','mechanics','systems','digital','digital','council','council','movement','operations','operations']; const resolvedRoom=/^\d+$/.test(room)?weekRooms[Number(room)]||'atrium':room; const title = roomNames[resolvedRoom] ?? room.replaceAll('-', ' ');
 ---
-<section class:list={['academy-world', `academy-world--${mode}`]} data-academy-world data-room={resolvedRoom} data-week={week} data-mode={mode} data-base={base} aria-label={`${title} interactive environment`}>
+<section class:list={['academy-world', `academy-world--${mode}`]} data-academy-world data-room={resolvedRoom} data-week={week} data-mode={mode} data-demo-control={mode === 'demo' ? 'false' : undefined} data-base={base} aria-label={`${title} interactive environment`}>
   <div class="world-stage">
     <div class="world-poster">
       <img src={`${base}/world/academy-poster.svg`} width="1200" height="675" alt="An original academy with bronze arches, a central mechanism and illuminated workbenches." loading={mode === 'hero' ? 'eager' : 'lazy'} />
-      <div class="world-poster-copy"><span class="world-eyebrow">SLOPU · FIELD FACILITY 408</span><h2>{title}</h2><p>Explore the room. Inspect its instruments. Put the lesson into motion.</p><button type="button" class="world-launch" data-world-launch>Enter the 3D environment <span aria-hidden="true">↗</span></button><span class="world-download">Loads on request · all equipment also has accessible controls below</span></div>
+      <div class="world-poster-copy"><span class="world-eyebrow">{mode === "demo" ? "SLOPU · GUIDED WORKED EXAMPLE" : "SLOPU · FIELD FACILITY 408"}</span><h2>{title}</h2><p>{mode === "demo" ? "Watch the complete alternate example. Take control of the equipment whenever you are ready." : "Explore the room. Inspect its instruments. Put the lesson into motion."}</p><button type="button" class="world-launch" data-world-launch>{mode === "demo" ? "Open the demonstration stage" : "Enter the 3D environment"} <span aria-hidden="true">↗</span></button><span class="world-download">{mode === "demo" ? "An alternate example · separate from your assessed work" : "Loads on request · all equipment also has accessible controls below"}</span></div>
     </div>
     <div class="world-canvas" data-world-canvas hidden></div>
-    <div class="world-hud" data-world-hud hidden><span class="world-location" data-world-location>{title}</span><span class="world-status" data-world-status role="status" aria-live="polite">Ready to explore.</span></div>
-    <div class="world-object" data-world-object hidden><span data-world-object-label>Equipment</span><button data-world-inspect type="button">Inspect equipment</button><button data-world-use type="button">Use equipment</button><button data-world-exit-inspect type="button" hidden>Return to exploration</button></div>
-    <div class="world-loading" data-world-loading hidden role="status"><span class="world-loader" aria-hidden="true"></span><strong>Opening the academy</strong><span>Preparing the room, character and equipment…</span></div>
+    <div class="world-hud" data-world-hud hidden><span class="world-location" data-world-location>{mode === "demo" ? "WORKED EXAMPLE / " + title : title}</span><span class="world-status" data-world-status role="status" aria-live="polite">Ready to explore.</span></div>
+    <div class="world-demo-badge" data-world-demo-badge hidden><span aria-hidden="true">◉</span><span data-world-demo-mode>WATCHING A WORKED EXAMPLE</span></div><div class="world-object" data-world-object hidden><span data-world-object-label>Equipment</span><button data-world-inspect type="button">Inspect equipment</button><button data-world-use type="button">Use equipment</button><button data-world-exit-inspect type="button" hidden>Return to exploration</button></div>
+    <div class="world-loading" data-world-loading hidden role="status"><span class="world-loader" aria-hidden="true"></span><strong>{mode === "demo" ? "Preparing the demonstration" : "Opening the academy"}</strong><span>Preparing the room, character and equipment…</span></div>
   </div>
   <div class="world-toolbar" data-world-toolbar hidden>
     <div class="world-control-group"><label>Graphics <select data-world-quality><option value="auto">Automatic</option><option value="low">Lightweight</option><option value="high">Detailed</option></select></label><button data-world-pause type="button" aria-pressed="false">Pause</button><button data-world-reset-camera type="button">Reset camera</button></div>
     <label class="world-tool-label">Instrument <select data-world-equipment aria-label="Choose equipment to inspect"></select></label><label class="world-travel-label">Travel <select data-world-travel aria-label="Travel directly to a room"></select></label>
   </div>
-  <details class="world-instructions"><summary>Movement, accessibility and scene information</summary><p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or the arrow keys to move. Hold <kbd>C</kbd> to crouch. Press <kbd>E</kbd> near equipment to inspect it. Drag an empty part of the scene to turn the camera, or tap the floor to walk. The equipment buttons and travel menu work without precise pointer movement. Press <kbd>Escape</kbd> to leave an inspection.</p><p>All lesson actions also have keyboard and touch controls outside the scene. Use the interactive lab below if 3D is unavailable, or open the campus worksheet for a printable activity. Scene movement is practice, never an academic mark.</p></details>
-  <noscript><p class="world-noscript">The illustrated room and all course instructions are available without JavaScript. Follow the static worksheet in this lab to complete the activity.</p></noscript>
+  <details class="world-instructions"><summary>Movement, accessibility and scene information</summary><p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or the arrow keys to move. Hold <kbd>C</kbd> to crouch. Press <kbd>E</kbd> near equipment to inspect it. Drag an empty part of the scene to turn the camera, or tap the floor to walk. The equipment buttons and travel menu work without precise pointer movement. Press <kbd>Escape</kbd> to leave an inspection.</p><p>{mode === "demo" ? "Use the lesson controls outside this scene to practise each decision. The full transcript and completed example remain available if 3D is unavailable. Demonstrations never change assessed progress." : "All lesson actions also have keyboard and touch controls outside the scene. Use the interactive lab below if 3D is unavailable, or open the campus worksheet for a printable activity. Scene movement is practice, never an academic mark."}</p></details>
+  <noscript><p class="world-noscript">{mode === "demo" ? "The complete transcript and finished example below are available without JavaScript." : "The illustrated room and all course instructions are available without JavaScript. Follow the static worksheet in this lab to complete the activity."}</p></noscript>
 </section>
 <script>
   import { registerAcademyScenes } from '../game/boot';
   registerAcademyScenes();
 </script>
-
-
-

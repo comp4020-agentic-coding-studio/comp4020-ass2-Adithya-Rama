@@ -1,0 +1,37 @@
+{
+  "environment": "Rebuilt local production preview; Chromium with SwiftShader",
+  "method": "Real chapter and Watch controls; no manual scroll or injected scene. Targeted verification after moving the two stools outside the grid and fixing overhead north-up framing.",
+  "errors": [],
+  "results": [
+    {
+      "name": "desktop",
+      "theatre": {
+        "top": 134.59375,
+        "bottom": 1028.890625
+      },
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fits": true,
+      "overflow": false,
+      "caption": "Cells are numbered 0–24 in rows from top left. Start is 20 and destination 3. Sensors occupy 15, 16 and 11; every step ending on a sensor records one contact.",
+      "phase": "before"
+    },
+    {
+      "name": "mobile",
+      "theatre": {
+        "top": 135.171875,
+        "bottom": 831.734375
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fits": true,
+      "overflow": false,
+      "caption": "The route 20→21→22→23→18→13→8→3 avoids published sensor cells 6, 7 and 12. With Aster verified and cradle support present, the baseline physical recovery completes and is saved as Version 1. Receipt B-RCPT-01 names Venn at DB-1. This separate simulated baseline is retained before the next rehearsal resets to initial custody.",
+      "phase": "before"
+    }
+  ]
+}

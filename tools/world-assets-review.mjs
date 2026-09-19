@@ -40,5 +40,3 @@ const result={environment:'Playwright Chromium / SwiftShader software renderer, 
 await writeFile('docs/evidence/world-review.json',JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify(result,null,2));
 await browser.close();
-
-

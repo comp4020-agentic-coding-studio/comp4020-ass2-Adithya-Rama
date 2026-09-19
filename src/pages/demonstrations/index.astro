@@ -1,0 +1,10 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import {demonstrations} from "../../data/demonstrations";
+import {withBase} from "astro-theme-university/url";
+import "../../styles/demonstration.css";
+---
+<CourseLayout title="See it. Try it. Make it yours." description="Sixteen complete worked examples. Follow the coach through a different scenario, inspect the reasoning, then take control of the same 3D apparatus." eyebrow="THE DEMONSTRATION STUDIO" wide>
+<section class="demo-library-intro"><div><p class="eyebrow">TWO WAYS INTO THE SAME EXPERIENCE</p><h2>A front-row seat.<br/>Or your hands on the controls.</h2><p>Watch a complete demonstration with chapter controls, adjustable pace, readable captions and a complete transcript. Switch to practice to test predictions, manipulate conditions and get feedback based on your own attempts.</p></div><div><h3>What a complete answer looks like</h3><p>Every example includes its finished evidence, explanation and limitations. Assessment demonstrations use different settings and data from your assigned work. They show how to learn and communicate a method.</p><a class="button primary" href={withBase("/demonstrations/assessment-final/")}>Watch Operation Lamplight ↗</a></div></section>
+{[["lab","TWELVE CAPABILITIES","The lab series."],["assessment","BRING THE SKILLS TOGETHER","Worked assessment projects."]].map(([kind,label,title])=><section><p class="eyebrow">{label}</p><h2>{title}</h2><div class="demo-library">{demonstrations.filter(d=>d.kind===kind).map(d=><article><span class="demo-library-number">{d.week?String(d.week).padStart(2,"0"):"EX"}</span><div><p class="eyebrow">{d.skill}</p><h3><a href={withBase("/demonstrations/"+d.id+"/")}>{d.title}</a></h3><p>{d.subtitle}</p><p class="small">{d.steps.length} chapters · {d.estimatedMinutes} minutes · 3D walkthrough + hands-on practice</p><a href={withBase("/demonstrations/"+d.id+"/")}>Open the worked example →</a></div></article>)}</div></section>)}
+</CourseLayout>

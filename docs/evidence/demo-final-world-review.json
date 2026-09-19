@@ -1,0 +1,212 @@
+{
+  "environment": "Local production preview; Chromium SwiftShader software renderer",
+  "method": "Complete hands-free playback using the actual Watch button at Brisk pace. No injected frames, chapter skipping or timer acceleration.",
+  "base": "http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/",
+  "errors": [],
+  "chapters": [
+    {
+      "chapter": "01 / 18",
+      "title": "State Operation Lamplight's contract",
+      "room": "operations",
+      "step": "contract",
+      "phase": "before",
+      "status": "Playing chapter 1. Pause, inspect or take control whenever you like.",
+      "playing": "true",
+      "elapsedSeconds": 0
+    },
+    {
+      "chapter": "02 / 18",
+      "title": "Assign cross-role dependencies",
+      "room": "council",
+      "step": "crew",
+      "phase": "before",
+      "status": "Chapter 2: Assign cross-role dependencies",
+      "playing": "true",
+      "elapsedSeconds": 23
+    },
+    {
+      "chapter": "03 / 18",
+      "title": "Inspect the storm-damaged arrival desk",
+      "room": "perception",
+      "step": "arrival",
+      "phase": "before",
+      "status": "Chapter 3: Inspect the storm-damaged arrival desk",
+      "playing": "true",
+      "elapsedSeconds": 43
+    },
+    {
+      "chapter": "04 / 18",
+      "title": "Carry a short kit sequence",
+      "room": "perception",
+      "step": "memory",
+      "phase": "before",
+      "status": "Chapter 4: Carry a short kit sequence",
+      "playing": "true",
+      "elapsedSeconds": 63
+    },
+    {
+      "chapter": "05 / 18",
+      "title": "Fit the unfamiliar connector",
+      "room": "spatial",
+      "step": "connector",
+      "phase": "before",
+      "status": "Chapter 5: Fit the unfamiliar connector",
+      "playing": "true",
+      "elapsedSeconds": 83
+    },
+    {
+      "chapter": "06 / 18",
+      "title": "Restore the model lift",
+      "room": "spatial",
+      "step": "connector",
+      "phase": "after",
+      "status": "Chapter 6: Restore the model lift",
+      "playing": "true",
+      "elapsedSeconds": 102
+    },
+    {
+      "chapter": "07 / 18",
+      "title": "Diagnose the support-circuit break",
+      "room": "mechanics",
+      "step": "lift",
+      "phase": "after",
+      "status": "Chapter 7: Diagnose the support-circuit break",
+      "playing": "true",
+      "elapsedSeconds": 124
+    },
+    {
+      "chapter": "08 / 18",
+      "title": "Verify the repaired output",
+      "room": "systems",
+      "step": "verify-power",
+      "phase": "before",
+      "status": "Chapter 8: Verify the repaired output",
+      "playing": "true",
+      "elapsedSeconds": 145
+    },
+    {
+      "chapter": "09 / 18",
+      "title": "Verify the baseline atlas",
+      "room": "digital",
+      "step": "reference",
+      "phase": "before",
+      "status": "Chapter 9: Verify the baseline atlas",
+      "playing": "true",
+      "elapsedSeconds": 162
+    },
+    {
+      "chapter": "10 / 18",
+      "title": "Check the recovery authority",
+      "room": "digital",
+      "step": "policy",
+      "phase": "before",
+      "status": "Chapter 10: Check the recovery authority",
+      "playing": "true",
+      "elapsedSeconds": 182
+    },
+    {
+      "chapter": "11 / 18",
+      "title": "Send a precise environmental-pack instruction",
+      "room": "council",
+      "step": "handoff",
+      "phase": "before",
+      "status": "Chapter 11: Send a precise environmental-pack instruction",
+      "playing": "true",
+      "elapsedSeconds": 210
+    },
+    {
+      "chapter": "12 / 18",
+      "title": "Negotiate supported baseline movement",
+      "room": "council",
+      "step": "council",
+      "phase": "before",
+      "status": "Chapter 12: Negotiate supported baseline movement",
+      "playing": "true",
+      "elapsedSeconds": 227
+    },
+    {
+      "chapter": "13 / 18",
+      "title": "Run and preserve the baseline rehearsal",
+      "room": "council",
+      "step": "council",
+      "phase": "after",
+      "status": "Chapter 13: Run and preserve the baseline rehearsal",
+      "playing": "true",
+      "elapsedSeconds": 249
+    },
+    {
+      "chapter": "14 / 18",
+      "title": "Stop the invalidated movement",
+      "room": "operations",
+      "step": "disruption",
+      "phase": "before",
+      "status": "Chapter 14: Stop the invalidated movement",
+      "playing": "true",
+      "elapsedSeconds": 274
+    },
+    {
+      "chapter": "15 / 18",
+      "title": "Apply the current research authority",
+      "room": "digital",
+      "step": "amend",
+      "phase": "before",
+      "status": "Chapter 15: Apply the current research authority",
+      "playing": "true",
+      "elapsedSeconds": 294
+    },
+    {
+      "chapter": "16 / 18",
+      "title": "Build and test Version 2",
+      "room": "operations",
+      "step": "rehearse-revision",
+      "phase": "before",
+      "status": "Chapter 16: Build and test Version 2",
+      "playing": "true",
+      "elapsedSeconds": 316
+    },
+    {
+      "chapter": "17 / 18",
+      "title": "Execute the current contract",
+      "room": "operations",
+      "step": "final-run",
+      "phase": "before",
+      "status": "Chapter 17: Execute the current contract",
+      "playing": "true",
+      "elapsedSeconds": 337
+    },
+    {
+      "chapter": "18 / 18",
+      "title": "Defend the choice and its consequence",
+      "room": "operations",
+      "step": "debrief",
+      "phase": "before",
+      "status": "Chapter 18: Defend the choice and its consequence",
+      "playing": "true",
+      "elapsedSeconds": 357
+    }
+  ],
+  "rooms": [
+    "operations",
+    "council",
+    "perception",
+    "spatial",
+    "mechanics",
+    "systems",
+    "digital",
+    "movement"
+  ],
+  "ending": {
+    "chapter": "18 / 18",
+    "title": "Defend the choice and its consequence",
+    "room": "operations",
+    "step": "debrief",
+    "phase": "after",
+    "status": "The demonstration has finished. Open the completed example below, or take control and practise the decisions yourself.",
+    "playing": "false"
+  },
+  "expectedChapters": 18,
+  "elapsedSeconds": 389,
+  "passportPreserved": true,
+  "overflow": false,
+  "samplingNote": "Chapter titles were observed as they changed. In three transition samples the room/step attributes still identified the prior rendered frame; those original observations are retained rather than rewritten. The separate room captures and final settled ending verify the rendered scenes. The review helper now waits for the matching rendered step for future runs."
+}
