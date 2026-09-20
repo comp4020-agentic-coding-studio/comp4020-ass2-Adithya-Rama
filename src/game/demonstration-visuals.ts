@@ -36,7 +36,7 @@ export function demonstrationItem(item:DemoItem):THREE.Group {
   for(const y of [.013,.195])add(new THREE.BoxGeometry(.49,.025,.63),surface,0,y);
   add(new THREE.BoxGeometry(.035,.19,.63),surface,-.245,.1);
   if(!item.text)for(let i=0;i<4;i++)add(new THREE.BoxGeometry(.012,.012,.57),surface,-.12+i*.07,.215);
-  if(item.text){add(new THREE.BoxGeometry(.61,.33,.025),dark,0,.43,-.13);const label=printed(item.text,.57,.30);label.position.set(0,.43,-.114);group.add(label)}
+  if(item.text){add(new THREE.BoxGeometry(.045,.22,.045),dark,0,.27,-.13);add(new THREE.BoxGeometry(.61,.33,.025),dark,0,.43,-.13);const label=printed(item.text,.57,.30);label.position.set(0,.43,-.114);group.add(label)}
  }else if(item.shape==='key'){
   add(new THREE.TorusGeometry(.145,.04,10,24),surface,-.13,.1).rotation.x=-Math.PI/2;
   add(new THREE.BoxGeometry(.35,.045,.055),surface,.16,.10);
@@ -53,12 +53,18 @@ export function demonstrationItem(item:DemoItem):THREE.Group {
   add(new THREE.CylinderGeometry(.19,.16,.34,32,1,true),surface,0,.19);
   add(new THREE.TorusGeometry(.178,.015,8,32),surface,0,.365).rotation.x=Math.PI/2;
   add(new THREE.CylinderGeometry(.15,.15,.025,24),dark,0,.17);
-  add(new THREE.TorusGeometry(.105,.025,10,24),surface,.235,.21).rotation.y=0;
+  if(!/jar/i.test(item.label))add(new THREE.TorusGeometry(.105,.025,10,24),surface,.235,.21).rotation.y=0;
+ }else if(item.shape==='flask'){
+  add(new THREE.CylinderGeometry(.15,.13,.42,28),surface,0,.22);
+  add(new THREE.CylinderGeometry(.08,.12,.09,24),surface,0,.47);
+  add(new THREE.CylinderGeometry(.085,.085,.045,24),dark,0,.535);
  }else if(item.shape==='hatch'){
   add(new THREE.BoxGeometry(.57,.54,.06),dark,0,.3);
   add(new THREE.BoxGeometry(.47,.43,.012),new THREE.MeshStandardMaterial({color:0x09171d,roughness:1}),0,.3,.04);
   const hinge=new THREE.Group();hinge.position.set(-.25,.3,.08);group.add(hinge);
-  const door=new THREE.Mesh(new THREE.BoxGeometry(.5,.45,.025),surface);door.position.x=.25;hinge.add(door);
+  const isWindow=/window/i.test(item.label);
+  const door=new THREE.Mesh(new THREE.BoxGeometry(.5,.45,.025),isWindow?new THREE.MeshPhysicalMaterial({color:0xa5c9d0,transparent:true,opacity:.45,roughness:.08,metalness:.15}):surface);door.position.x=.25;hinge.add(door);
+  if(isWindow)for(const [x,y,w,h] of [[.25,.23,.54,.035],[.25,-.23,.54,.035],[0,0,.035,.48],[.5,0,.035,.48],[.25,0,.025,.46]]){const frame=new THREE.Mesh(new THREE.BoxGeometry(w!,h!,.055),surface);frame.position.set(x!,y!,.016);hinge.add(frame);}
   const handle=new THREE.Mesh(new THREE.BoxGeometry(.035,.09,.04),dark);handle.position.set(.43,0,.04);hinge.add(handle);
   hinge.rotation.y=item.open?-1.2:0;
  }else if(item.shape==='paper'){
@@ -87,7 +93,7 @@ export function demonstrationCamera(shot:DemoShot,focus:THREE.Vector3,aspect:num
  const portrait=aspect<1.1,target=focus.clone();let offset:THREE.Vector3;
  // The lowest hanging fixture is at y=4.92; the teaching camera stays below it.
  if(shot==='overhead'){target.y=Math.min(target.y,1.4);offset=new THREE.Vector3(0,Math.max(.8,4.55-target.y),.05);}
- else if(shot==='establishing'){target.y=1.8;offset=new THREE.Vector3(portrait?3.4:5.2,3.7,portrait?8.7:7.5)}
+ else if(shot==='establishing'){target.y=1.8;offset=new THREE.Vector3(portrait?2.5:4.2,2.75,portrait?8.7:7.5)}
  else if(shot==='shoulder')offset=new THREE.Vector3(2.7,1.5,portrait?5.6:4.4);
  else offset=new THREE.Vector3(.5,1.05,portrait?4.3:3.6);
  if(!reduced&&shot!=='overhead')offset.x+=Math.sin(Math.max(0,Math.min(1,progress))*Math.PI)*.22;

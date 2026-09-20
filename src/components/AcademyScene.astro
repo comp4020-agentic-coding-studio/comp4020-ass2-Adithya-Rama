@@ -1,13 +1,15 @@
 ---
 import '../styles/world.css';
 import '../styles/immersive.css';
-interface Props { room: string; week?: number; mode?: 'academy' | 'lab' | 'mission' | 'hero' | 'demo' }
-const { room, week = 0, mode = 'lab' } = Astro.props;
+import SceneContext from './SceneContext.astro';
+interface Props { room: string; week?: number; mode?: 'academy' | 'lab' | 'mission' | 'hero' | 'demo'; contextId?:string }
+const { room, week = 0, mode = 'lab', contextId } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const roomNames: Record<string,string> = { atrium:'Academy atrium', perception:'Perception Gallery', spatial:'Spatial Lab', mechanics:'Mechanics Workshop', systems:'Systems Garage', digital:'Digital Observatory', council:'Council Studio', movement:'Movement Hall', operations:'Operations Studio', meridian:'Meridian Station' };
 const weekRooms=['atrium','perception','perception','spatial','mechanics','systems','digital','digital','council','council','movement','operations','operations']; const resolvedRoom=/^\d+$/.test(room)?weekRooms[Number(room)]||'atrium':room; const title = roomNames[resolvedRoom] ?? room.replaceAll('-', ' ');
 ---
 <section class:list={['academy-world', `academy-world--${mode}`]} data-academy-world data-room={resolvedRoom} data-week={week} data-mode={mode} data-demo-control={mode === 'demo' ? 'false' : undefined} data-base={base} aria-label={`${title} interactive environment`}>
+  <SceneContext contextId={contextId??(mode==='lab'?'lab:'+String(week).padStart(2,'0'):mode==='mission'?'mission:recovery':'academy')} mode={mode} />
   <div class="immersive-bar" data-immersive-bar hidden>
     <div><strong data-immersive-objective>{mode === 'demo' ? 'WORKED EXAMPLE' : 'MISSION IN PROGRESS'}</strong><span data-immersive-input-status role="status">Cursor free · Drag to turn · X locks cursor · Esc exits.</span></div>
     <div class="immersive-actions"><button type="button" data-immersive-controls>Mission &amp; controls</button><button type="button" data-immersive-task>Task controls</button><button type="button" data-immersive-look aria-pressed="false" aria-keyshortcuts="X">Lock cursor (X)</button><button type="button" data-immersive-exit>Exit fullscreen</button></div>
@@ -23,7 +25,7 @@ const weekRooms=['atrium','perception','perception','spatial','mechanics','syste
     <div class="world-loading" data-world-loading hidden role="status"><span class="world-loader" aria-hidden="true"></span><strong>{mode === "demo" ? "Preparing the demonstration" : "Opening the academy"}</strong><span>Preparing the room, character and equipment…</span></div>
   </div>
   <div class="world-toolbar" data-world-toolbar hidden>
-    <div class="world-control-group"><label>Graphics <select data-world-quality><option value="auto">Automatic</option><option value="low">Lightweight</option><option value="high">Detailed</option></select></label><button data-world-pause type="button" aria-pressed="false">Pause</button><button data-world-reset-camera type="button">Reset camera</button><button data-world-zoom-in type="button" aria-label="Zoom in">Zoom +</button><button data-world-zoom-out type="button" aria-label="Zoom out">Zoom −</button><button data-world-fullscreen type="button">Fullscreen mission</button></div>
+    <div class="world-control-group"><label>Graphics <select data-world-quality><option value="auto">Automatic</option><option value="low">Lightweight</option><option value="high">Detailed</option></select></label><button data-world-pause type="button" aria-pressed="false">Pause</button><button data-world-reset-camera type="button">Reset camera</button><button data-world-zoom-in type="button" aria-label="Zoom in">Zoom +</button><button data-world-zoom-out type="button" aria-label="Zoom out">Zoom −</button><button data-world-fullscreen type="button">Fullscreen mission</button><button data-world-guide type="button">Scene guide</button></div>
     <label class="world-tool-label">Instrument <select data-world-equipment aria-label="Choose equipment to inspect"></select></label><label class="world-travel-label">Travel <select data-world-travel aria-label="Travel directly to a room"></select></label>
   </div>
   <aside class="immersive-console" data-immersive-console aria-label="Mission instructions and activity controls" hidden tabindex="-1"><p class="immersive-console-intro">Follow the mission steps here. Perform the practical task first; write your reflection afterwards. Scroll this panel to reach all controls.</p><div data-immersive-content></div></aside>

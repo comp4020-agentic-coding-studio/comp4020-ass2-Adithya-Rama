@@ -2,7 +2,7 @@
 export type DemoRoom = "atrium" | "perception" | "spatial" | "mechanics" | "systems" | "digital" | "council" | "movement" | "operations";
 export type DemoShot = "establishing" | "overhead" | "close" | "shoulder";
 export type DemoValue = string | number | boolean | string[];
-export type DemoItem = {id:string;label:string;shape:"lens"|"spool"|"tile"|"book"|"key"|"beacon"|"clock"|"mug"|"hatch"|"paper";color:string;text?:string;time?:string;open?:boolean};
+export type DemoItem = {id:string;label:string;shape:"lens"|"spool"|"tile"|"book"|"key"|"beacon"|"clock"|"mug"|"hatch"|"paper"|"flask";color:string;text?:string;time?:string;open?:boolean};
 export interface DemoScene {
  room:DemoRoom; shot:DemoShot; focus?:string; values?:Record<string,DemoValue>; items?:DemoItem[]; labels?:string[];
 }

@@ -23,11 +23,11 @@ export const demonstrations:Demonstration[] = [
         "title": "Inspect before interpreting",
         "narration": "The camera reveals a clock reading 11:35, a green mug beside a planting ledger and a closed service hatch. The demonstrator initially calls the room abandoned, then stops: abandonment is not visible.",
         "why": "Specific features are reproducible evidence. A story about them introduces an additional claim.",
-        "prompt": "Record the visible display reading.",
+        "prompt": "What time does the wall clock show? Enter the time as HH:MM.",
         "controls": [
           {
             "id": "clock",
-            "label": "Display reading",
+            "label": "Clock time (HH:MM)",
             "type": "text",
             "initial": "",
             "expected": "11:35",
@@ -52,7 +52,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -105,7 +105,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -142,7 +142,7 @@ export const demonstrations:Demonstration[] = [
         },
         "success": "The record preserves the exact display reading without inventing a cause.",
         "pitfall": "Calling the room abandoned adds a history the scene does not supply.",
-        "hint": "Record characters on the display, not your interpretation of the scene.",
+        "hint": "Read the clock hands: the short hand shows the hour, and each number on the long hand’s scale represents five minutes. Enter HH:MM.",
         "duration": 18
       },
       {
@@ -186,11 +186,11 @@ export const demonstrations:Demonstration[] = [
           "labels": [
             "Note: I checked every tray"
           ],
-          "focus": "ledger",
+          "focus": "note",
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -238,11 +238,11 @@ export const demonstrations:Demonstration[] = [
           "labels": [
             "Claim: every tray checked"
           ],
-          "focus": "ledger",
+          "focus": "note",
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -327,7 +327,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -379,7 +379,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -463,7 +463,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -515,7 +515,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:35"
@@ -591,7 +591,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:50"
@@ -645,7 +645,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:50"
@@ -731,7 +731,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:50"
@@ -784,7 +784,7 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "clock",
-              "label": "Scene display",
+              "label": "Wall clock",
               "shape": "clock",
               "color": "#c69e58",
               "time": "11:50"

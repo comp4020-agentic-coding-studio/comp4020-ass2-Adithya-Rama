@@ -287,7 +287,8 @@ function mount(root:HTMLElement) {
     if(event.detail.week!==week)return;
     const byWeek:Record<number,string>={1:'inspect',2:'inspect',3:'rotate',4:'crank',5:'measure',6:'inspect',7:'test',8:'role',9:'inspect',10:'step',11:'disrupt',12:'test'};
     const id=event.detail.objectId;
-    if(week===4&&['gear','cam','spring','interlock','crank'].includes(id))act({type:id});
+    if(week===1&&['clock','cup','door','note'].includes(id))act({type:'inspect',key:id});
+    else if(week===4&&['gear','cam','spring','interlock','crank'].includes(id))act({type:id});
     else if(week===5&&id.startsWith('measure-'))act({type:'measure',key:id.slice(8)});
     else if(week===5&&id.startsWith('repair-'))act({type:'repair',key:id.slice(7)});
     else if(week===5&&id==='toggle-power')act({type:'power'});

@@ -1,4 +1,6 @@
 import type {Demonstration, DemoValue, DemoFrame} from "../lib/demonstration-types";
+import {getDemoWalkthrough} from "../data/demonstration-walkthroughs";
+import {createDemoNarrator,speechAvailable} from "../lib/demo-speech";
 import {createDemoProgress,checkDemoStep,applyDemoAttempt,advanceDemo,demoCoaching,useDemoHint,setDemoMode,markDemoWatched,assertDemo} from "../lib/demonstration-engine";
 
 function mount(root:HTMLElement){
@@ -10,8 +12,13 @@ function mount(root:HTMLElement){
  const modeFromUrl=new URLSearchParams(location.search).get("mode")==="control"?"control":"watch";
  let progress=createDemoProgress(demo,modeFromUrl);
  let responses:Record<string,DemoValue>={};const cached=new Map<string,Record<string,DemoValue>>();
- let playing=false,pending=false,shownAfter=false,elapsed=0,last=0,frame=0,lastBroadcast=0,waiting:ReturnType<typeof setTimeout>|undefined;
- let speed=1,coaching="guided",sceneReady=false,narrationEnabled=false;
+ type WalkPhase="introduction"|"briefing"|"action"|"outcome"|"completion";
+ const walkthrough=getDemoWalkthrough(demo);
+ let playing=false,shownAfter=false,elapsed=0,last=0,frame=0,lastBroadcast=0;
+ let speed=1,coaching="guided",sceneReady=false,narrationEnabled=true;
+ let phase:WalkPhase="introduction",introSeen=false,finished=false,phaseElapsed=0,phaseBudget=1,segmentVersion=0;
+ let captionWait:ReturnType<typeof setTimeout>|undefined,speechStartFrame=0;
+ const narrator=createDemoNarrator(()=>{stop();announce("Playback paused because another demonstration started.");});
  const step=()=>demo.steps[progress.stepIndex]!;
  const live=el("[data-demo-status]"),inputs=el("[data-demo-inputs]"),feedback=el("[data-demo-feedback]");
  const form=el<HTMLFormElement>("[data-demo-form]");
@@ -39,22 +46,82 @@ function mount(root:HTMLElement){
  function sendMode(){
   window.dispatchEvent(new CustomEvent("mastermind:demo-control",{detail:{active:progress.mode==="control"}}));
   window.dispatchEvent(new CustomEvent("mastermind:demo-playback",{detail:{playing}}));
+  window.dispatchEvent(new CustomEvent("mastermind:demo-narration-phase",{detail:{demoId:demo.id,stepId:step().id,phase,playing}}));
  }
- function stopSpeech(){if("speechSynthesis" in window)window.speechSynthesis.cancel();}
- function narrate(text:string){if(!narrationEnabled||!playing||!("speechSynthesis" in window))return;stopSpeech();const utterance=new SpeechSynthesisUtterance(text);utterance.rate=.9*speed;window.speechSynthesis.speak(utterance);}
+ function stopSpeech(){narrator.cancel();}
  function stop(){
-  playing=false;pending=false;if(waiting)clearTimeout(waiting);cancelAnimationFrame(frame);stopSpeech();sendMode();updateTransport();
+  playing=false;segmentVersion++;if(captionWait)clearTimeout(captionWait);captionWait=undefined;
+  cancelAnimationFrame(frame);cancelAnimationFrame(speechStartFrame);stopSpeech();sendMode();updateTransport();
+ }
+ function phaseText():string{
+  if(phase==="introduction")return walkthrough.introduction;
+  if(phase==="completion")return walkthrough.completion;
+  return walkthrough.steps[step().id]![phase];
+ }
+ const phaseNames:Record<WalkPhase,string>={introduction:"Before we begin",briefing:"What I need to do",action:"Watch my actions",outcome:"What I observed",completion:"My observations and finished submission"};
+ function caption(){
+  root.dataset.demoNarrationPhase=phase;
+  el("[data-demo-narration-phase]").textContent=phaseNames[phase];
+  el("[data-demo-caption-title]").textContent=phase==="introduction"?"Your worked-example briefing":phase==="completion"?"From the attempt to the finished work":step().title;
+  el("[data-demo-caption]").textContent=phaseText();
+  el("[data-demo-narration]").textContent=phaseText();
+ }
+ function updateAudio(){
+  const button=el<HTMLButtonElement>("[data-demo-narrate]");
+  button.disabled=!speechAvailable();
+  button.textContent=!speechAvailable()?"Device narration unavailable":narrationEnabled?"Mute narration":"Enable narration";
+  button.setAttribute("aria-pressed",String(narrationEnabled&&speechAvailable()));
+ }
+ function segment(){
+  if(!playing)return;
+  const token=++segmentVersion;if(captionWait)clearTimeout(captionWait);captionWait=undefined;
+  narrator.cancel();cancelAnimationFrame(speechStartFrame);
+  phaseElapsed=0;phaseBudget=Math.max(1800,readingTime(phaseText())/speed);last=performance.now();
+  if(phase==="action")progress=markDemoWatched(demo,progress);
+  caption();sendFrame();updateTransport();
+  window.dispatchEvent(new CustomEvent("mastermind:demo-narration-phase",{detail:{demoId:demo.id,stepId:step().id,phase,playing:true}}));
+  const done=()=>{if(token===segmentVersion&&playing)advanceSegment();};
+  const captionPlayback=()=>{if(token!==segmentVersion||!playing)return;captionWait=setTimeout(done,phaseBudget);};
+  const speak=()=>{
+   if(token!==segmentVersion||!playing)return;
+   if(!narrationEnabled||!speechAvailable()){captionPlayback();return;}
+   narrator.speak(phaseText(),.9*speed,done,reason=>{
+    if(token!==segmentVersion||!playing)return;
+    narrationEnabled=false;updateAudio();el("[data-demo-audio-status]").textContent=reason;announce(reason);captionPlayback();
+   });
+  };
+  // Paint the changed apparatus before explaining its observed outcome.
+  if(phase==="outcome")speechStartFrame=requestAnimationFrame(()=>{speechStartFrame=requestAnimationFrame(speak);});else speak();
+ }
+ function advanceSegment(){
+  if(!playing)return;
+  if(phase==="introduction"){introSeen=true;phase="briefing";renderStep();}
+  else if(phase==="briefing")phase="action";
+  else if(phase==="action"){phase="outcome";showOutcome(true);}
+  else if(phase==="outcome"){
+   if(progress.stepIndex<demo.steps.length-1){progress=advanceDemo(demo,progress);phase="briefing";renderStep();}
+   else{phase="completion";el<HTMLDetailsElement>(".demo-finished details").open=true;}
+  }else{
+   finished=true;elapsed=duration();stop();el("[data-demo-progress-bar]").style.width="100%";
+   announce("The narrated demonstration has finished. The complete worked submission is open below. Take control to practise the decisions, or transfer the method to your assigned task.");return;
+  }
+  segment();
  }
  function updateTransport(){
   root.dataset.mode=progress.mode;
-  el<HTMLButtonElement>("[data-demo-play]").textContent=pending?"Cancel opening":playing?"Pause":"Play";
+  el<HTMLButtonElement>("[data-demo-play]").textContent=playing?"Pause":"Play";
   el<HTMLButtonElement>("[data-demo-previous]").disabled=progress.stepIndex===0;
   el<HTMLButtonElement>("[data-demo-next]").disabled=progress.stepIndex===demo.steps.length-1||(progress.mode==="control"&&!progress.attempts[step().id]?.completed);
   el<HTMLButtonElement>("[data-demo-watch]").setAttribute("aria-pressed",String(progress.mode==="watch"));
   el<HTMLButtonElement>("button[data-demo-control]").setAttribute("aria-pressed",String(progress.mode==="control"));
   el("[data-demo-mode-label]").textContent=progress.mode==="watch"?"Watch the reasoning and apparatus. Take control at any point.":"You control this example. Test a decision to see its consequences.";
   form.hidden=progress.mode!=="control";el("[data-demo-watch-note]").hidden=progress.mode==="control";
-  el("[data-demo-progress-bar]").style.width=((progress.stepIndex+elapsed/duration())/demo.steps.length*100)+"%";
+  const within=Math.min(.99,phaseElapsed/phaseBudget);
+  const position=phase==="introduction"?within:phase==="completion"?1+demo.steps.length*3+within:1+progress.stepIndex*3+({briefing:0,action:1,outcome:2}[phase])+within;
+  el("[data-demo-progress-bar]").style.width=(finished?100:progress.mode==="watch"?position/(demo.steps.length*3+2)*100:(progress.stepIndex+elapsed/duration())/demo.steps.length*100)+"%";
+  const playerLabel=root.querySelector<HTMLElement>("[data-scene-player-label]");
+  if(playerLabel)playerLabel.textContent=progress.mode==="watch"?"Student demonstrator · observe their method":"You control the student";
+  updateAudio();
   root.querySelectorAll<HTMLButtonElement>("[data-demo-jump]").forEach(button=>{
    const i=Number(button.dataset.demoJump),id=demo.steps[i]!.id;
    if(i===progress.stepIndex)button.setAttribute("aria-current","step");else button.removeAttribute("aria-current");
@@ -140,6 +207,7 @@ function mount(root:HTMLElement){
   el("[data-demo-observed]").hidden=true;feedback.textContent="";
   el<HTMLDetailsElement>("[data-demo-why]").open=coaching==="guided";
   el<HTMLDetailsElement>("[data-demo-pitfall]").open=false;
+  if(progress.mode==="watch")caption();else{root.dataset.demoNarrationPhase="control";el("[data-demo-narration-phase]").textContent="Your turn · try the decision";}
   renderInputs();updateTransport();sendFrame();
   if(focus){const heading=el("[data-demo-step-title]");heading.tabIndex=-1;heading.focus({preventScroll:true});}
  }
@@ -148,37 +216,35 @@ function mount(root:HTMLElement){
  }
  function showOutcome(watched=false){
   shownAfter=true;if(watched)progress=markDemoWatched(demo,progress);
-  actionSummary();el("[data-demo-caption]").textContent=step().success;sendFrame();updateTransport();if(watched)narrate(step().success);
+  actionSummary();el("[data-demo-caption]").textContent=step().success;sendFrame();updateTransport();
  }
  const tick=(now:number)=>{
   if(!playing)return;
-  const dt=Math.min(200,now-last);last=now;elapsed+=dt*speed;
-  if(elapsed>=beforeDuration()&&!shownAfter)showOutcome(true);
-  if(elapsed>=duration()){
-   progress=markDemoWatched(demo,progress);
-   if(progress.stepIndex===demo.steps.length-1){elapsed=duration();stop();announce("The demonstration has finished. Open the completed example below, or take control and practise the decisions yourself.");updateTransport();return;}
-   progress=advanceDemo(demo,progress);renderStep();narrate(step().narration);announce("Chapter "+(progress.stepIndex+1)+": "+step().title);
-  }
+  const dt=Math.min(200,now-last);last=now;phaseElapsed+=dt;
+  const fraction=Math.min(1,phaseElapsed/phaseBudget);
+  elapsed=phase==="introduction"?0:phase==="briefing"?beforeDuration()*.4*fraction:phase==="action"?beforeDuration()*(.4+.6*fraction):phase==="outcome"?beforeDuration()+(duration()-beforeDuration())*fraction:duration();
   if(now-lastBroadcast>120){sendFrame();updateTransport();lastBroadcast=now;}
   frame=requestAnimationFrame(tick);
  };
  function beginPlayback(){
-  pending=false;if(waiting)clearTimeout(waiting);playing=true;last=performance.now();sendMode();updateTransport();narrate(shownAfter?step().success:step().narration);announce("Playing chapter "+(progress.stepIndex+1)+". Pause, inspect or take control whenever you like.");frame=requestAnimationFrame(tick);
+  playing=true;last=performance.now();sendMode();updateTransport();
+  el("[data-demo-audio-status]").textContent=!speechAvailable()?"This browser has no device narration. The complete captions play instead.":narrationEnabled?"Narration is on. Mute it at any time; captions always remain visible.":"Narration is muted. Captions and the apparatus continue together.";
+  announce(phase==="introduction"?"The demonstrator explains the task before starting.":phase==="completion"?"The demonstrator reviews the observations and finished submission.":"Playing chapter "+(progress.stepIndex+1)+". Pause or take control whenever you like.");
+  segment();frame=requestAnimationFrame(tick);
  }
  function requestPlayback(){
-  el(".demo-theatre").scrollIntoView({block:"start",behavior:"instant"});
-  stop();progress=setDemoMode(demo,progress,"watch");sendMode();updateTransport();
-  if(progress.stepIndex===demo.steps.length-1&&elapsed>=duration()){progress={...progress,stepIndex:0};renderStep();}
-  if(sceneReady){beginPlayback();return;}
-  const launch=el<HTMLButtonElement>("[data-world-launch]");
-  if(!launch.disabled)launch.click();
-  pending=true;updateTransport();announce("Opening the 3D demonstration. The transcript remains available.");
-  waiting=setTimeout(()=>{if(!pending)return;beginPlayback();announce("Playing the guided steps. If graphics are still loading, the same decisions and results remain visible in the transcript and apparatus controls.");},8000);
+  if(!root.querySelector('[data-academy-world][data-immersive="true"]'))el(".demo-theatre").scrollIntoView({block:"start",behavior:"instant"});
+  const previousMode=progress.mode;stop();progress=setDemoMode(demo,progress,"watch");
+  if(finished){progress={...progress,stepIndex:0};finished=false;introSeen=false;phase="introduction";renderStep();}
+  else if(previousMode!=="watch"){phase=progress.stepIndex===0&&!introSeen?"introduction":"briefing";renderStep();}
+  if(!sceneReady){const launch=el<HTMLButtonElement>("[data-world-launch]");if(!launch.disabled)launch.click();}
+  // The first spoken briefing starts in the user's Watch/Play gesture, while 3D loads.
+  beginPlayback();
  }
- el("[data-demo-watch]").addEventListener("click",()=>{if(progress.mode!=="watch"){progress=setDemoMode(demo,progress,"watch");renderStep();}requestPlayback();});
- el("[data-demo-play]").addEventListener("click",()=>{if(playing||pending){stop();announce("Paused. Inspect the current decision or take control.");}else requestPlayback();});
+ el("[data-demo-watch]").addEventListener("click",requestPlayback);
+ el("[data-demo-play]").addEventListener("click",()=>{if(playing){stop();announce("Paused. Play repeats the current explanation from its beginning; your chapter and apparatus stay here.");}else requestPlayback();});
  el("button[data-demo-control]").addEventListener("click",()=>{
-  stop();progress=setDemoMode(demo,progress,"control");renderStep();sendMode();
+  stop();progress=setDemoMode(demo,progress,"control");phase="briefing";finished=false;renderStep();sendMode();
   if(!sceneReady&&!el<HTMLButtonElement>("[data-world-launch]").disabled)el<HTMLButtonElement>("[data-world-launch]").click();
   announce("Your turn. "+step().prompt);inputs.querySelector<HTMLElement>("input,select,button")?.focus({preventScroll:true});
  });
@@ -196,9 +262,9 @@ function mount(root:HTMLElement){
   updateTransport();
  });
  el("[data-demo-hint]").addEventListener("click",showHint);
- el<HTMLSelectElement>("[data-demo-coaching]").addEventListener("change",event=>{coaching=(event.target as HTMLSelectElement).value;el<HTMLDetailsElement>("[data-demo-why]").open=coaching==="guided";announce(coaching==="guided"?"The coach explains each step and offers a cue after repeated difficulty.":"Try each decision first. Explanations and hints remain available whenever you want them.");});
- el<HTMLSelectElement>("[data-demo-speed]").addEventListener("change",event=>{speed=Number((event.target as HTMLSelectElement).value);});
- function jump(index:number){stop();progress={...progress,stepIndex:Math.max(0,Math.min(demo.steps.length-1,index))};renderStep(true);sendMode();announce("Chapter "+(progress.stepIndex+1)+". "+step().prompt);}
+ el<HTMLSelectElement>("[data-demo-coaching]").addEventListener("change",event=>{coaching=(event.target as HTMLSelectElement).value;el<HTMLDetailsElement>("[data-demo-why]").open=coaching==="guided";announce(coaching==="guided"?"Guided explanations show each step and offer a cue after repeated difficulty.":"Try each decision first. Explanations and hints remain available whenever you want them.");});
+ el<HTMLSelectElement>("[data-demo-speed]").addEventListener("change",event=>{speed=Number((event.target as HTMLSelectElement).value);if(playing)announce("The new pace applies to the next explanation. The current spoken sentence will finish.");});
+ function jump(index:number){stop();finished=false;introSeen=true;phase="briefing";progress={...progress,stepIndex:Math.max(0,Math.min(demo.steps.length-1,index))};renderStep(true);sendMode();announce("Chapter "+(progress.stepIndex+1)+". "+step().prompt);}
  el("[data-demo-next]").addEventListener("click",()=>{const next=advanceDemo(demo,progress);if(next.stepIndex!==progress.stepIndex)jump(next.stepIndex);});
  el("[data-demo-previous]").addEventListener("click",()=>jump(progress.stepIndex-1));
  el("[data-demo-replay]").addEventListener("click",()=>{jump(progress.stepIndex);if(progress.mode==="watch")requestPlayback();});
@@ -211,15 +277,22 @@ function mount(root:HTMLElement){
   for(const chapter of demo.steps){const attempt=progress.attempts[chapter.id];lines.push("","### "+chapter.title,"Observed: "+(progress.watched?.includes(chapter.id)?"yes":"no"),"Practised successfully: "+(attempt?.completed?"yes":"no"),"Attempts: "+(attempt?.attempts??0)+"; hints shown: "+(attempt?.hints??0));if(attempt?.lastFeedback)lines.push(attempt.lastFeedback);}
   lines.push("","## Transfer",demo.transfer);download(demo.id+"-my-practice.md",lines.join("\n"));
  });
+ el("[data-demo-introduction]").addEventListener("click",()=>{
+  stop();progress={...setDemoMode(demo,progress,"watch"),stepIndex:0};introSeen=false;finished=false;phase="introduction";renderStep();requestPlayback();
+ });
+ el("[data-demo-completion]").addEventListener("click",()=>{
+  stop();progress={...setDemoMode(demo,progress,"watch"),stepIndex:demo.steps.length-1};introSeen=true;finished=false;phase="completion";renderStep();showOutcome(true);el<HTMLDetailsElement>(".demo-finished details").open=true;requestPlayback();
+ });
  const resetDialog=el<HTMLDialogElement>("[data-demo-reset-dialog]");
- el("[data-demo-reset]").addEventListener("click",()=>resetDialog.showModal());
+ el("[data-demo-reset]").addEventListener("click",()=>{stop();resetDialog.showModal();announce("Playback paused while you decide whether to restart. Keeping this example preserves the current chapter and practice record.");});
  el("[data-demo-reset-cancel]").addEventListener("click",()=>resetDialog.close());
- el("[data-demo-reset-confirm]").addEventListener("click",()=>{stop();progress=createDemoProgress(demo,progress.mode);cached.clear();renderStep();sendMode();announce("This example has restarted.");resetDialog.close();});
- if("speechSynthesis" in window){
-  const speech=el<HTMLButtonElement>("[data-demo-narrate]");speech.hidden=false;
-  speech.textContent="Turn narration on";speech.setAttribute("aria-pressed","false");speech.addEventListener("click",()=>{narrationEnabled=!narrationEnabled;speech.setAttribute("aria-pressed",String(narrationEnabled));speech.textContent=narrationEnabled?"Turn narration off":"Turn narration on";if(narrationEnabled)narrate(shownAfter?step().success:step().narration);else stopSpeech();announce(narrationEnabled?"Device narration is enabled during playback. Captions remain visible.":"Narration is off. Captions remain visible.");});
- }
- window.addEventListener("mastermind:scene-ready",()=>{sceneReady=true;sendFrame();sendMode();if(pending)beginPlayback();});
+ el("[data-demo-reset-confirm]").addEventListener("click",()=>{stop();progress=createDemoProgress(demo,progress.mode);cached.clear();introSeen=false;finished=false;phase=progress.mode==="watch"?"introduction":"briefing";renderStep();sendMode();announce("This example has restarted.");resetDialog.close();});
+ el("[data-demo-narrate]").addEventListener("click",()=>{
+  narrationEnabled=!narrationEnabled;updateAudio();stopSpeech();
+  el("[data-demo-audio-status]").textContent=narrationEnabled?"Narration is enabled. It begins with playback; captions stay visible.":"Narration is muted. Captions and the apparatus continue together.";
+  if(playing)segment();
+ });
+ window.addEventListener("mastermind:scene-ready",()=>{sceneReady=true;sendFrame();sendMode();});
  window.addEventListener("mastermind:demo-interact",event=>{
   const id=(event as CustomEvent<{id:string}>).detail?.id;
   if(progress.mode==="watch"){announce("Pause or take control to test this apparatus. "+step().prompt);return;}
@@ -238,7 +311,7 @@ function mount(root:HTMLElement){
   const focus=direct??inputs.querySelector<HTMLElement>("input,select,button");
   focus?.focus({preventScroll:false});announce("Apparatus selected. "+step().prompt);
  });
- document.addEventListener("visibilitychange",()=>{if(document.hidden&&(playing||pending)){stop();announce("Playback paused while you were away.");}});
+ document.addEventListener("visibilitychange",()=>{if(document.hidden&&(playing)){stop();announce("Playback paused while you were away.");}});
  let printDetails:HTMLDetailsElement[]=[];
  window.addEventListener("beforeprint",()=>{
   stop();
@@ -246,7 +319,9 @@ function mount(root:HTMLElement){
  });
  window.addEventListener("afterprint",()=>{printDetails.forEach(details=>details.open=false);printDetails=[];});
  window.addEventListener("pagehide",()=>stop());
- root.querySelectorAll<HTMLButtonElement>("button[data-demo-watch],button[data-demo-control],button[data-demo-play],button[data-demo-next],button[data-demo-previous],button[data-demo-replay],button[data-demo-hint],button[data-demo-jump],button[data-demo-download],button[data-demo-export],button[data-demo-reset]").forEach(button=>button.disabled=false);
- renderStep();sendMode();announce(progress.mode==="control"?"Choose your coaching style and try the first decision.":"Ready. Watch the worked example, or take control to practise.");
+ root.querySelectorAll<HTMLButtonElement>("button[data-demo-watch],button[data-demo-control],button[data-demo-play],button[data-demo-next],button[data-demo-previous],button[data-demo-replay],button[data-demo-hint],button[data-demo-jump],button[data-demo-download],button[data-demo-export],button[data-demo-reset],button[data-demo-introduction],button[data-demo-completion]").forEach(button=>button.disabled=false);
+ if(progress.mode==="control")phase="briefing";
+ renderStep();sendMode();el("[data-demo-audio-status]").textContent=speechAvailable()?"Narration starts when you choose Watch or Play. You can mute it at any time.":"This browser has no device narration. The complete captions are available and will play with the scene.";
+ announce(progress.mode==="control"?"Choose your coaching style and try the first decision.":"Ready. Watch the worked example, or take control to practise.");
 }
 for(const root of document.querySelectorAll<HTMLElement>("[data-demo-id]"))try{mount(root);}catch(error){const status=root.querySelector("[data-demo-status]");if(status)status.textContent="The interactive demonstration could not start. The full transcript and completed example remain available below.";console.error(error);}

@@ -1,0 +1,25 @@
+---
+import {getSceneContext} from '../data/scene-context';
+import '../styles/scene-context.css';
+interface Props { contextId:string; mode:string }
+const {contextId,mode}=Astro.props;
+const context=getSceneContext(contextId);
+---
+<section class="world-context" data-scene-context={contextId} data-immersive-panel="scene-context" aria-label="People and setting">
+ <div class="world-identities">
+  <strong data-scene-player-label>{mode==='demo'?'You · student in Take control':'You · student avatar'}</strong>
+  <span><strong>Dr Mara Voss · instructor</strong> · not a case character</span>
+ </div>
+ <details data-scene-guide>
+  <summary>Scene guide · people, evidence and object placement</summary>
+  <h3>{context.title}</h3>
+  <p>{context.setting}</p>
+  <dl>
+   <dt>Your part</dt><dd data-scene-player-description>{mode==='demo'?'Watch follows a worked solution. Take control lets you move the student avatar and try its decisions. The demonstrator in the explanation is modelling a solution, not an extra witness in the story.':mode==='mission'?'You control the student avatar. The selected crew role determines your available responsibilities and tools; changing roles does not introduce another person into the room.':'The moving student avatar represents you. Inspect the scene and use the lesson controls to record and test your decisions.'}</dd>
+   <dt>Your instructor</dt><dd>Mara stands in the marked teaching bay outside the investigation area. She guides the exercise. Her presence, appearance and idle gestures are not clues about what happened in the case.</dd>
+   <dt>People in this scenario</dt><dd><ul>{context.people.map(person=><li>{person}</li>)}</ul></dd>
+   <dt>What counts as evidence</dt><dd>{context.evidence}</dd>
+   <dt>Why the objects are here</dt><dd>{context.apparatus}</dd>
+  </dl>
+ </details>
+</section>

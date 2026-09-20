@@ -13,7 +13,7 @@ const title=kind==="a1"?"The Sealed Workshop":kind==="a2"?"Restore the Relay":"O
 <section class="mission" data-mission={kind} aria-label={title+" playable trial"}>
  <header class="mission-intro"><div><p class="eyebrow">PLAYABLE {kind==="recovery"?"FINAL MISSION":"ASSESSMENT"}</p><h2>{title}</h2><p>{kind==="a1"?"Inspect. Remember. Reconstruct. Repair. Put four capabilities to work in an unfamiliar workshop.":kind==="a2"?"A silent relay, a faulty circuit and two competing records. Restore the signal through precise collaboration.":"The last intact research archive is inside Meridian Station. Recover it without losing what makes it worth recovering."}</p></div><span class="mission-seal" aria-hidden="true">M<br/>/27</span></header>
  <p class="learner-orientation"><strong>How to play:</strong> follow the Mission Journal. <strong>Go to this objective</strong> selects its role and room for you. Use that room’s labelled controls and read the result. You can complete every practical task, finish the trial and export its record inside full screen.</p>
- <AcademyScene room="meridian" mode="mission" />
+ <AcademyScene room="meridian" mode="mission" contextId={'mission:'+kind} />
  <div data-immersive-panel="mission">
  <section class="learner-guide" aria-label="Mission instructions">
   <p class="eyebrow">{kind==="recovery"?"FINAL PROJECT":"ASSESSMENT"} / PRACTICAL TRIAL</p>

@@ -64,6 +64,8 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
   save();render();
  }
  function render(){
+  const identity=root.querySelector<HTMLElement>('[data-scene-player-label]');
+  if(identity)identity.textContent="You · "+roles[state.role].title;
   q<HTMLSelectElement>("[data-objective]").value=state.declaredObjective; q<HTMLSelectElement>("[data-objective]").disabled=state.log.some(entry=>entry.action!=="objective");
   q("[data-role-title]").textContent=roles[state.role].title+" briefing";q("[data-role-brief]").textContent=roles[state.role].brief;q("[data-role-tools]").textContent="Tools: "+roles[state.role].tools.join(" · ");
   all<HTMLButtonElement>("[data-role]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.role===state.role)));

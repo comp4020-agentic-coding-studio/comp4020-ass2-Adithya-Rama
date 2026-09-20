@@ -1,5 +1,6 @@
 import {describe,it,expect} from 'vitest';
 import {demonstrations} from '../src/data/demonstrations';
+import {getDemoWalkthrough} from '../src/data/demonstration-walkthroughs';
 import {advanceDemo,applyDemoAttempt,assertDemo,checkDemoStep,createDemoProgress,demoCoaching,demoExpectedResponses,markDemoWatched,restartDemo,setDemoMode,useDemoHint} from '../src/lib/demonstration-engine';
 import type {Demonstration,DemoStep} from '../src/lib/demonstration-types';
 const first:DemoStep={
@@ -163,4 +164,38 @@ describe('published demonstration catalog',()=>{
    }
   });
  }
+});
+
+describe('spoken walkthroughs stay aligned with the actual exercise',()=>{
+ it('covers every example and its chapters with a task, actions and completion handoff',()=>{
+  for(const item of demonstrations){
+   const script=getDemoWalkthrough(item);
+   expect(Object.keys(script.steps)).toEqual(item.steps.map(step=>step.id));
+   expect(script.introduction,item.id).toMatch(/I |We /);
+   expect(script.completion,item.id).toContain(item.transfer);
+   for(const step of item.steps){
+    const chapter=script.steps[step.id]!;
+    expect(chapter.briefing).toContain(step.title);
+    expect(chapter.outcome).toContain(step.success);
+    for(const control of step.controls)expect(chapter.action).toContain(control.label);
+   }
+  }
+ });
+ it('speaks readable selected values, denied permissions and ordered dependencies',()=>{
+  const lab=demonstrations.find(item=>item.id==='lab-07')!;
+  expect(getDemoWalkthrough(lab).steps.hold!.action).toContain('to no');
+  const memory=demonstrations.find(item=>item.id==='lab-02')!;
+  expect(getDemoWalkthrough(memory).steps.route!.action).toContain('Gate, then Pool, then Press, then Dome');
+  const observation=demonstrations.find(item=>item.id==='lab-01')!;
+  const altered=structuredClone(observation);
+  altered.steps[0]!.controls[0]!.expected='12:10';
+  expect(getDemoWalkthrough(altered).steps.inspect!.action).toContain('12:10');
+  expect(getDemoWalkthrough(observation).steps.inspect!.action).toContain('11:35');
+ });
+ it('rejects unrecognised examples and new chapters without an authored intention',()=>{
+  expect(()=>getDemoWalkthrough(demo)).toThrow(/Missing worked-example/);
+  const item=structuredClone(demonstrations[0]!);
+  item.steps[0]!.id='unwritten-chapter';
+  expect(()=>getDemoWalkthrough(item)).toThrow(/Missing narrated intention/);
+ });
 });

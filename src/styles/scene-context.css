@@ -1,0 +1,18 @@
+/* Identify teaching roles without adding overlays to the camera view. */
+.academy-world .world-context {background:#ece8dc;color:#19333b;border-bottom:1px solid #b5a889;padding:.65rem .85rem}
+.academy-world .world-identities {display:flex;gap:.4rem 1rem;flex-wrap:wrap;font-size:.75rem;line-height:1.5}
+.academy-world .world-context details {margin:.4rem 0 0;padding:0;border:0}
+.academy-world .world-context summary {font-size:.8rem;line-height:1.5;cursor:pointer;color:#23464b}
+.academy-world .world-context h3 {font-size:1rem!important;line-height:1.35;margin:.7rem 0 .4rem}
+.academy-world .world-context :is(p,li,dt,dd) {font-size:.8rem;line-height:1.6;color:#19333b}
+.academy-world .world-context p {margin:.4rem 0}
+.academy-world .world-context dl {margin:.65rem 0 0}
+.academy-world .world-context dt {font-weight:700;margin-top:.65rem}
+.academy-world .world-context dd {margin:0}
+.academy-world .world-context ul {margin:0;padding-left:1.2rem}
+.academy-world .world-context summary:focus-visible {outline:3px solid #735015;outline-offset:3px}
+.academy-world[data-immersive=true] .immersive-console .world-context {padding:.65rem;margin:0 0 .65rem;border:1px solid #b5a889}
+.academy-world[data-immersive=true] .world-context .world-identities {display:grid;gap:.2rem;font-size:.777778rem}
+.academy-world[data-immersive=true] .world-context details {padding:0;margin:.35rem 0 0}
+@media(max-width:600px){.academy-world .world-identities {display:grid;gap:.2rem}.academy-world .world-context {padding:.65rem}}
+@media print{.world-context {background:white!important;color:black!important}.world-context details {display:block}}

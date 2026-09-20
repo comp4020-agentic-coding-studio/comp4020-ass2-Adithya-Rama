@@ -74,3 +74,27 @@ The final opening-screen review moved the audience and fictional premise into th
 **Implementation rule:** Keep the shared scene input layer authoritative across all labs, demonstrations and assessment missions. Guard delayed pointer-lock responses so they cannot recapture a cursor after release. Give the fullscreen interface its own compact typography and controls; reserve space for scene status and actions instead of overlapping overlays.
 
 **Verification:** The follow-up section in INSTRUCTIONS-AND-FULLSCREEN.md records the actual test and visual review results. This decision responds to the user's screenshot and reported use; it does not claim independent student playtesting. Publication remains with Adithya.
+
+## 2026-09-20 — Explain who is present and stage each room by function
+
+**Observed problem:** Adithya mistook the person behind the demonstration desk for the gardener mentioned in the record. They also asked why the clock, mug, ledger, note and hatch were all on the desk. Inspection found the generic demonstration placement arranged items in an indexed row, retained assigned props under alternate examples and reused instructor/student models for council participants.
+
+**Decision:** Model an intelligible teaching space: wall fixtures stay on walls, working documents share a desk, memory objects occupy separate stations, technical apparatus has appropriate support, and the instructor stays in a marked side teaching bay. Named people represented by accounts or dossiers must remain distinct from the rendered instructor.
+
+**Implementation rule:** Use shared semantic placement and per-scenario people/evidence guides across twelve labs, sixteen demonstrations and the three mission types. Include those guides in the existing fullscreen control portal. Keep current practice/check/transfer facts authoritative and hide covered recall props and their answer labels together.
+
+**Verification:** The accompanying [scene and narration validation record](SCENE-AND-NARRATION-VALIDATION.md) distinguishes rendered inspection, automated checks and remaining limits. No student playtest is inferred from this implementation work.
+
+## 2026-09-20 — A worked example must teach through a complete walkthrough
+
+**User direction:** Adithya requested narration on when choosing Watch, an explanation of what the demonstrator must achieve before beginning, clear statements of each action, and a final account of observations and completed work. This supersedes the earlier default-muted demonstration behaviour.
+
+**Decision:** Author a task introduction and conclusion for each of the sixteen examples, plus a first-person intention for every chapter. Derive spoken control settings from the same typed answers that drive the example. Preserve the distinction between narrated observation and the student's own practice.
+
+**Implementation rule:** Synchronise briefing, action and outcome with the before/after scene, wait for speech completion, and show equivalent captions. Keep mute, pause, replay, takeover and the complete transcript available; use an explicit captions fallback when device speech fails. Sound begins only after the learner starts playback.
+
+**Rendered review corrections:** The all-scene survey found no placement diagnostic errors, but contact-sheet review still exposed incorrect initial council names, a memory example retaining its exit selection and the final crew chapter displaying stakeholder dossiers. The first authored scene now establishes its actual scenario identity; memory selection chooses apparatus; crew allocation and handoff use different named records. The instructor bay was moved inward after its sign clipped at the default camera edge. These are agent observations of the local rendering, not invented student feedback.
+
+**Teaching review:** The sixteen walkthrough scripts were compared with their controls and completed artifacts. The final conclusion names the actual prepared presentation script and delivery plan alongside the dossier and individual defences. Speech lifecycle checks use a controlled voice fixture; they do not claim a listening review of installed device voices.
+
+**Final validation:** The final build and 115 logic checks pass. The integrated desktop/phone browser run passed 89 cases with one deliberate desktop-only case skipped on phone. After the last small fixes, all 18 narration lifecycle cases, four rendered narration cases and eight fullscreen accessibility/layout views passed. See [the validation record](SCENE-AND-NARRATION-VALIDATION.md) for precise scope, retained screenshots and device-voice limits. This decision is recorded in the unsigned local implementation commit containing this entry; no publication was performed.

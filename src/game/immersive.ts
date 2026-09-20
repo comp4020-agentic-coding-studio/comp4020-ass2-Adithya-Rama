@@ -146,12 +146,15 @@ export function registerImmersiveScene(root: HTMLElement) {
     root.setAttribute('aria-modal', 'true');
     bar.hidden = panel.hidden = false;
     const nodes = owner ? [...owner.querySelectorAll<HTMLElement>('[data-immersive-panel]')].filter(node => !node.parentElement?.closest('[data-immersive-panel]')) : [];
+    const context = root.querySelector<HTMLElement>('[data-scene-context]');
+    if (context && !nodes.some(node => node === context || node.contains(context))) nodes.unshift(context);
     // Lab passports live beside the lab, but export/restore must remain usable here.
     if (owner?.matches('[data-training-week]')) {
       const passport = document.querySelector<HTMLElement>('.passport-tools');
       if (passport && !nodes.some(node => node.contains(passport))) nodes.push(passport);
     }
-    if (owner?.matches('[data-training-week]')) nodes.sort((a,b) => Number(b.dataset.immersivePanel === 'lab') - Number(a.dataset.immersivePanel === 'lab'));
+    const priority = (node: HTMLElement) => node.dataset.immersivePanel === 'scene-context' ? 2 : owner?.matches('[data-training-week]') && node.dataset.immersivePanel === 'lab' ? 1 : 0;
+    nodes.sort((a,b) => priority(b) - priority(a));
     for (const node of nodes) {
       const marker = document.createComment('activity returns here after fullscreen');
       node.before(marker); content.append(node); moved.push({node, marker});
@@ -198,6 +201,14 @@ export function registerImmersiveScene(root: HTMLElement) {
   root.querySelector('[data-immersive-exit]')!.addEventListener('click', close);
   root.querySelector('[data-immersive-controls]')!.addEventListener('click', () => { showControls(); panel.scrollTop = 0; });
   taskButton.addEventListener('click', taskControls);
+  root.querySelector('[data-world-guide]')?.addEventListener('click', () => {
+    if (expanded) showControls(false);
+    const guide = root.querySelector<HTMLDetailsElement>('[data-scene-guide]');
+    if (!guide) return;
+    guide.open = true;
+    guide.querySelector<HTMLElement>('summary')?.focus({preventScroll:true});
+    guide.scrollIntoView({block:'start',behavior:'auto'});
+  });
   lookButton.addEventListener('click', toggleLook);
   panel.addEventListener('pointerdown', () => { if (expanded) releaseCursor(); });
   root.addEventListener('mastermind:world-disposed', close);

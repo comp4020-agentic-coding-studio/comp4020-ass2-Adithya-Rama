@@ -8,3 +8,12 @@
 @media print{.demo-theatre,.demo-mode-bar,.demo-transport,.demo-progress,.demo-chapters,.demo-practice,button{display:none!important}.demo-learning-grid{display:block}.demo-example-document{max-width:none;font-size:10pt}.demo-transcript{display:block}.demo-finished details{display:block}}
 
 @media(max-width:600px){.demo-player[data-mode=watch] .demo-caption{padding:.75rem 1rem;gap:.25rem}.demo-player[data-mode=watch] .demo-caption strong{font-size:1rem;line-height:1.4}.demo-player[data-mode=watch] .demo-caption p{line-height:1.5;margin-top:.45rem}}
+.demo-narration-phase{display:block;font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e2c58d;margin-bottom:.5rem}
+.demo-transport .demo-audio-status{flex:1 0 100%;margin:.2rem 0 0;color:#344735;font-size:.75rem;line-height:1.6;overflow-wrap:anywhere}
+.demo-transport [data-demo-narrate]{border-width:2px;font-weight:700}
+.demo-transport [data-demo-narrate][aria-pressed=true]{background:#244b39;color:#fff9e9;border-color:#244b39}
+.demo-transport [data-demo-narrate][aria-pressed=false]{background:#fff9e9;color:#244b39;border-color:#64735a}
+.demo-transcript-bookend{border-left:3px solid #657941;padding:1rem 1.25rem;margin:1rem 0;background:#edf0e1}
+.demo-transcript-bookend h3{margin-top:0}.demo-transcript-bookend p:last-child{margin-bottom:0}
+@media(max-width:600px){.demo-transport [data-demo-narrate],.demo-transport [data-demo-introduction],.demo-transport [data-demo-completion]{flex:1 1 145px;min-height:44px}.demo-transcript-bookend{padding:.8rem 1rem}}
+@media print{.demo-transcript-bookend{background:white;border-color:#666}}

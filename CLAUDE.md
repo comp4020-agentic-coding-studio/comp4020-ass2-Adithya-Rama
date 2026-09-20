@@ -31,6 +31,10 @@ Use serious cinematic openings, precise teaching prose, original characters and 
 
 Build detailed, legible apparatus and original stylised spaces. Show the actual gear teeth, connector directions, fault conditions, evidence and route described by the lesson. Decoration must not obscure teaching information. Do not describe the browser academy as having commercial AAA production scale.
 
+- Place equipment by function: wall clocks and hatches, desk documents, supported rigs and consoles, distributed memory stations and clearly identified route models. Do not reuse a row of tabletop props for every room or leave assigned props underneath an alternate example.
+- Identify the student, instructor and scenario roles. Mara stays in the marked teaching bay outside the investigation area; her presence is not case evidence. People described only in accounts or role dossiers must never be implied to be the instructor.
+- Preserve phase-specific physical facts and hide scene objects, labels and selection outlines together during covered recall. Keep role/evidence guidance available before loading graphics and inside fullscreen.
+
 ## Clear instructions and immersive play
 
 - Every activity must state its goal, name the exact controls to use, explain how a student recognises completion, and identify the record to keep. Define unfamiliar words at first use; “inspect” means reveal and read an object's information.
@@ -46,7 +50,9 @@ Build detailed, legible apparatus and original stylised spaces. Show the actual 
 Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration. Each needs:
 
 - Authored before/after scenes, reasoning, a decision, causal feedback, a plausible mistake and a hint.
-- Hands-free Watch playback with pause, replay, chapter access, adjustable pace and captions; optional device narration is never required.
+- Hands-free Watch playback starts narration after the user's Watch or Play action, with a prominent mute control, pause, replay, chapter access, adjustable pace and matching captions. Never start sound on page load.
+- Narrate the expected task before the first chapter, then the demonstrator's first-person intention, exact action and observed result at each step. End with the observations, remaining limits, finished submission and transfer to the assigned task.
+- Keep speech, captions and before/after scene states coordinated. Wait for functioning narration to finish before advancing; missing or failed device speech must fall back visibly to readable captions. Cancel speech on pause, takeover, chapter changes, hiding or leaving the page. Watching cannot create control attempts.
 - Take Control on the same apparatus, with semantic controls and feedback based on actual attempts and hints.
 - A complete finished submission, a static Markdown download, an unrestricted transcript and an explicit transfer back to the assigned activity.
 

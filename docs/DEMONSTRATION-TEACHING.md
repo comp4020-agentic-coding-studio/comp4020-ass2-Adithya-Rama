@@ -8,7 +8,7 @@ These are authored demonstrations, not records of real students, physical constr
 
 Each demonstration supports two modes through the shared player:
 
-- **Watch:** see the attempted approach, diagnosis, consequence, and finished example.
+- **Watch:** hear the student demonstrator explain the task before beginning, then follow their intention, precise action and observed result in each chapter. Narration starts with Watch or Play; mute and matching captions remain available. The conclusion connects the observations to the complete finished example.
 - **Take over:** reproduce the reasoning by manipulating apparatus parameters, ordering actions, interpreting evidence, or confirming an exact factual detail.
 
 Watching and independently completing controls are recorded separately. Neither is an academic grade. The completed artifact illustrates the expected quality and structure of a response; it is not a file to submit unchanged.

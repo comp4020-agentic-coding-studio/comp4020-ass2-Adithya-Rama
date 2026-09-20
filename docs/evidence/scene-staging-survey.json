@@ -1,0 +1,482 @@
+{
+  "scope": "First built physical-staging revision, before final Watch demonstrator and subsequent visual-review corrections.",
+  "environment": {
+    "browser": "Chromium / Playwright, software WebGL",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "site": "local production preview"
+  },
+  "routes": 31,
+  "arrangements": 74,
+  "automatedIssues": [],
+  "survey": [
+    {
+      "route": "sessions/week-01/",
+      "state": "practice",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "sessions/week-01/",
+      "state": "check",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "sessions/week-01/",
+      "state": "transfer",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "sessions/week-02/",
+      "state": "initial",
+      "scene": "perception",
+      "visibleObjects": 6
+    },
+    {
+      "route": "sessions/week-03/",
+      "state": "initial",
+      "scene": "spatial",
+      "visibleObjects": 3
+    },
+    {
+      "route": "sessions/week-04/",
+      "state": "initial",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "sessions/week-05/",
+      "state": "initial",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "sessions/week-06/",
+      "state": "initial",
+      "scene": "digital",
+      "visibleObjects": 4
+    },
+    {
+      "route": "sessions/week-07/",
+      "state": "initial",
+      "scene": "digital",
+      "visibleObjects": 4
+    },
+    {
+      "route": "sessions/week-08/",
+      "state": "initial",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "sessions/week-09/",
+      "state": "initial",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "sessions/week-10/",
+      "state": "initial",
+      "scene": "movement",
+      "visibleObjects": 3
+    },
+    {
+      "route": "sessions/week-11/",
+      "state": "initial",
+      "scene": "operations",
+      "visibleObjects": 4
+    },
+    {
+      "route": "sessions/week-12/",
+      "state": "initial",
+      "scene": "operations",
+      "visibleObjects": 4
+    },
+    {
+      "route": "demonstrations/lab-01/?mode=control",
+      "state": "inspect",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/lab-01/?mode=control",
+      "state": "recall",
+      "scene": "perception",
+      "visibleObjects": 2
+    },
+    {
+      "route": "demonstrations/lab-02/?mode=control",
+      "state": "baseline",
+      "scene": "perception",
+      "visibleObjects": 6
+    },
+    {
+      "route": "demonstrations/lab-02/?mode=control",
+      "state": "retrieve",
+      "scene": "perception",
+      "visibleObjects": 2
+    },
+    {
+      "route": "demonstrations/lab-03/?mode=control",
+      "state": "axes",
+      "scene": "spatial",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-04/?mode=control",
+      "state": "ratio",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-05/?mode=control",
+      "state": "measure",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-06/?mode=control",
+      "state": "contract",
+      "scene": "digital",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/lab-07/?mode=control",
+      "state": "mandate",
+      "scene": "digital",
+      "visibleObjects": 4
+    },
+    {
+      "route": "demonstrations/lab-08/?mode=control",
+      "state": "discover",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-08/?mode=control",
+      "state": "destination",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-08/?mode=control",
+      "state": "quantity",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-08/?mode=control",
+      "state": "confirm",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-08/?mode=control",
+      "state": "transfer",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-09/?mode=control",
+      "state": "role",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-09/?mode=control",
+      "state": "claim",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-09/?mode=control",
+      "state": "agree",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-09/?mode=control",
+      "state": "change",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/lab-10/?mode=control",
+      "state": "map",
+      "scene": "movement",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-11/?mode=control",
+      "state": "baseline",
+      "scene": "operations",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-12/?mode=control",
+      "state": "objective",
+      "scene": "operations",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-12/?mode=control",
+      "state": "observe",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/lab-12/?mode=control",
+      "state": "restore",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/lab-12/?mode=control",
+      "state": "verify",
+      "scene": "digital",
+      "visibleObjects": 6
+    },
+    {
+      "route": "demonstrations/lab-12/?mode=control",
+      "state": "handoff",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-fieldwork/?mode=control",
+      "state": "identify",
+      "scene": "operations",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-fieldwork/?mode=control",
+      "state": "trace",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-a1/?mode=control",
+      "state": "inspect",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/assessment-a1/?mode=control",
+      "state": "encode",
+      "scene": "perception",
+      "visibleObjects": 6
+    },
+    {
+      "route": "demonstrations/assessment-a1/?mode=control",
+      "state": "recall",
+      "scene": "perception",
+      "visibleObjects": 2
+    },
+    {
+      "route": "demonstrations/assessment-a1/?mode=control",
+      "state": "rotate",
+      "scene": "spatial",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-a1/?mode=control",
+      "state": "ratio",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-a2/?mode=control",
+      "state": "roles",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-a2/?mode=control",
+      "state": "measure",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-a2/?mode=control",
+      "state": "archive",
+      "scene": "digital",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/assessment-a2/?mode=control",
+      "state": "handoff",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-a2/?mode=control",
+      "state": "final-handoff",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "contract",
+      "scene": "operations",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "crew",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "arrival",
+      "scene": "perception",
+      "visibleObjects": 9
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "memory",
+      "scene": "perception",
+      "visibleObjects": 2
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "connector",
+      "scene": "spatial",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "lift",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "circuit",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "reference",
+      "scene": "digital",
+      "visibleObjects": 7
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "handoff",
+      "scene": "council",
+      "visibleObjects": 5
+    },
+    {
+      "route": "demonstrations/assessment-final/?mode=control",
+      "state": "baseline",
+      "scene": "movement",
+      "visibleObjects": 3
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "state": "arrival",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "state": "workshop",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "assessments/assignment-1/",
+      "state": "dispatch",
+      "scene": "movement",
+      "visibleObjects": 3
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "state": "power",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "state": "control",
+      "scene": "digital",
+      "visibleObjects": 4
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "state": "archive",
+      "scene": "operations",
+      "visibleObjects": 4
+    },
+    {
+      "route": "assessments/assignment-2/",
+      "state": "dispatch",
+      "scene": "movement",
+      "visibleObjects": 3
+    },
+    {
+      "route": "operation/",
+      "state": "arrival",
+      "scene": "perception",
+      "visibleObjects": 7
+    },
+    {
+      "route": "operation/",
+      "state": "workshop",
+      "scene": "mechanics",
+      "visibleObjects": 3
+    },
+    {
+      "route": "operation/",
+      "state": "power",
+      "scene": "systems",
+      "visibleObjects": 3
+    },
+    {
+      "route": "operation/",
+      "state": "control",
+      "scene": "digital",
+      "visibleObjects": 4
+    },
+    {
+      "route": "operation/",
+      "state": "archive",
+      "scene": "operations",
+      "visibleObjects": 4
+    },
+    {
+      "route": "operation/",
+      "state": "dispatch",
+      "scene": "movement",
+      "visibleObjects": 3
+    }
+  ],
+  "visualReview": {
+    "contactSheetsReviewed": [
+      "contact-01.png",
+      "contact-02.png",
+      "contact-03.png",
+      "contact-04.png",
+      "contact-05.png",
+      "contact-06.png",
+      "contact-07.png",
+      "contact-08.png",
+      "contact-09.png",
+      "contact-10.png"
+    ],
+    "observations": [
+      "Wall observation fixtures, desk documents, distributed memory stations, supported technical rigs, independent consoles, floor grid and archive pedestal are visible.",
+      "The instructor nameplate clipped at the right edge of the original default camera: bay moved inward.",
+      "Initial council examples showed generic cards because the first frame had no scenario identity at room construction: first authored frame now rebuilds the representation.",
+      "Final crew allocation showed stakeholder cards: crew chapter now shows Lena, Omar, Priya and Jonah, switching to stakeholder cards for handoffs.",
+      "The first memory example retained the exit selection: initial selection now resolves to actual apparatus."
+    ],
+    "limits": "Contact-sheet inspection establishes overall arrangement, not readability of every small 3D label or physical-device performance. Final corrections receive focused browser and screenshot verification separately."
+  }
+}

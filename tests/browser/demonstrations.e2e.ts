@@ -1,6 +1,7 @@
 import {test,expect,type Page} from "@playwright/test";
 import {readFile} from "node:fs/promises";
 import type {Demonstration} from "../../src/lib/demonstration-types";
+import {installSpeechMock} from "./speech-fixture";
 
 test.use({launchOptions:{args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}});
 async function definition(page:Page){return await page.locator("[data-demo-definition]").evaluate(node=>JSON.parse(node.textContent!)) as Demonstration;}
@@ -72,6 +73,7 @@ test("every assessment and lab links to its own example",async({page})=>{
 });
 test("guided 3D playback pauses, shows its result and hands control to the learner",async({page})=>{
  test.setTimeout(90000);
+ await installSpeechMock(page,{autoEndMs:250});
  await page.goto("demonstrations/lab-04/");
  await page.locator("[data-demo-watch]").click();
  await expect(page.locator("[data-world-canvas] canvas")).toBeVisible({timeout:45000});
