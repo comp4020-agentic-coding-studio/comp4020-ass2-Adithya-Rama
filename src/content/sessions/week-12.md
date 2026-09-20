@@ -44,6 +44,8 @@ Read the [briefing](/lectures/week-12/). All starting rules and data are supplie
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MR-01** is the Meridian recovery charter, six areas and four responsibilities. **MR-02** states the requirements for physical recovery, digital recovery and stabilised handover. The final-project mission pack provides the detailed role cards, current archive profiles and resolution record.
+
 - MR-01 authority: recover the research archive from fictional Meridian Station under the published handling and verification rules.
 - Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform.
 - Roles: observer/navigator, systems specialist, investigator, coordinator. Solo mode rotates these roles explicitly.
@@ -61,7 +63,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -70,9 +72,9 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 ### Do these actions in order
 
 1. Open [Operation Last Light](/operation/). Choose a preset, then select **Start new trial** and confirm if prompted. Set the **Declared recovery objective** before choosing a role or operating equipment. Use Baseline first if you are learning the controls. A resumed trial keeps its original objective; starting a new trial unlocks the choice before new actions.
-2. Follow the mission journal across Arrival, Workshop, Power bay, Control room, Archive and Dispatch. Select the responsible role before using its controls; solo practice can switch freely.
-3. Preserve an initial plan as coordinator, complete the mission tasks, and save a separately explained revision when the evidence or equipment changes what you intend to do.
-4. At Dispatch, complete a justified resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
+2. Before the first practical checks, select Coordinator and preserve an initial plan at Dispatch. Follow the mission journal through the six station areas, selecting the responsible role for each control. Solo practice can switch freely.
+3. Have the investigator verify the current signed archive and load profile before the systems specialist configures its support. Pass that result between roles. Preserve a separately explained revision when evidence, equipment or your objective changes, and recheck any dependent equipment or route.
+4. At Dispatch, supply the records required for your chosen resolution, including its receipt, custody or stable-handover evidence. Complete the resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
 5. Return to this lab's after-action controls. Enter the original objective, actual result, three consequential decisions, limitation and alternative. Select **Review record readiness**.
 6. Use the later phases to compare your final run with a contrasting preset. Finish your reflection after the mission; the lab account explains the run and does not replace it.
 
@@ -102,7 +104,9 @@ Complete Operation Last Light and defend the relationship between your objective
 
 The debrief reports the requirements met, missing evidence and unresolved assumptions. A successful ending with unsupported reasoning is not automatically strong academic work. A carefully diagnosed incomplete recovery can still demonstrate substantial skill, while clearly acknowledging what was not achieved.
 
-**Worked reflection:** We selected verified digital recovery after the equipment failure. We preserved the physical archive in place and confirmed the copy against the current signed reference. Our result met the revised objective while leaving the scope of that reference explicit.
+**Worked reflection from the separate demonstration:** I recovered Ash under the twelve-record W-6 request, recorded the confirmed handoff and kept the rainfall recorder at its mast. The support test and identity comparison justified those decisions. My after-action account left calibration unresolved rather than treating a matching digest as scientific validation.
+
+[Inspect this example's complete record](/demonstrations/lab-12/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

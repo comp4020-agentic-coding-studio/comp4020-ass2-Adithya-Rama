@@ -44,6 +44,8 @@ Read the [briefing](/lectures/week-09/). All starting rules and data are supplie
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **RP-01** contains the named Neri, Pell and Sen claims and responsibilities. **RP-02** contains their supporting comparison log, custody mandate and capacity certificate, including the changed handling requirement.
+
 - Operator Neri claims all copies are identical. Comparison log: A=M-42; B=M-99.
 - Custodian Pell permits a verified copy to leave if custody is recorded; the original may remain.
 - Engineer Sen claims the cart supports the original unaided. Certificate: cart capacity 8 units; original 11; stabilising cradle raises supported capacity to 12.
@@ -60,7 +62,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -101,7 +103,9 @@ Work with Meridian's custodian and researcher without mistaking confidence or st
 
 Different digests contradict identical content. Capacity 8 cannot support mass 11 without the supplied cradle. The original mandate supports a verified copy; the transfer mandate calls for stabilising the original for handover.
 
-**Worked reflection:** I checked all three claims rather than judging confidence. Verified-copy recovery met the original mandate. When authenticity required the original, I revised the agreement to stabilisation with supported handover.
+**Worked reflection from the separate demonstration:** Rin's claim was supported by the two matching twelve-section records, and the seven-unit original fit the nine-unit cart. A later remote-access request changed our agreement from planned physical handover to a Cedar copy. We kept the original with Ada and preserved the unexecuted plan.
+
+[Inspect this example's complete record](/demonstrations/lab-09/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

@@ -1,43 +1,59 @@
 import {describe,it,expect} from "vitest";
 import {createTraining} from "../src/lib/training-engine";
-import {newMission,applyMission,missionMarkdown,missionRequirements,scenarioIds,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
+import {newMission,applyMission,missionMarkdown,missionRequirements,scenarioIds,requiredProfile,missionFacts,resolutionText,type MissionState,type Ending,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
 import {newPassport,parsePassport,PassportStore,withEvidence,withMission,SAVE_KEY,LEGACY_KEY,passportMarkdown,type StorageLike} from "../src/lib/passport";
 function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
  let s=newMission(kind,scenario);
  const act=(a:MissionAction)=>{const next=applyMission(s,a);expect(next.success,next.message).toBe(true);s=next.state;};
+ if(kind==="recovery"){
+  act({type:"role",role:"coordinator"});act({type:"plan",text:"Original: verify the source before configuring the cradle and choose a supported route."});
+  act({type:"role",role:"observer"});
+ }
  if(kind!=="a2"){
   for(const item of ["lens","spool","tile","map","manifest"])act({type:"inspect",item});
-  act({type:"recall",items:"lens, spool, tile"});act({type:"orient",degrees:90});
-  act({type:"role",role:"systems"});act({type:"gear",follower:24});act({type:"brake",released:true});act({type:"turn"});
+  const facts=kind==="recovery"?missionFacts.recovery:missionFacts.a1;
+  act({type:"recall",items:facts.order.join(", ")});act({type:"orient",degrees:facts.orientation});
+ }
+ if(kind!=="a1"){
+  act({type:"role",role:"investigator"});act({type:"replica",replica:scenario==="conflicting-archive"?"B":"A"});
+ }
+ if(kind!=="a2"){
+  act({type:"role",role:"systems"});act({type:"gear",follower:kind==="recovery"?requiredProfile(s).follower:24});act({type:"brake",released:true});act({type:"turn"});
  }
  if(kind!=="a1"){
   act({type:"role",role:"systems"});act({type:"measure"});act({type:"fuse",value:"intact"});act({type:"switch",closed:true});
-  act({type:"role",role:"investigator"});act({type:"replica",replica:scenario==="conflicting-archive"?"B":"A"});act({type:"policy",subject:"observer",action:"certify",allowed:false});
+  act({type:"role",role:"investigator"});act({type:"policy",subject:"observer",action:"certify",allowed:false});
   act({type:"role",role:"coordinator"});act({type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check"});
  }
  if(kind==="recovery"){
-  act({type:"agreement",preserve:true,recipient:"Station custodian"});act({type:"plan",text:"Original: use upper route, restore equipment and verify the archive before dispatch."});
+  act({type:"agreement",preserve:true,recipient:"Station custodian"});
   act({type:"role",role:"observer"});act({type:"route",route:scenario==="equipment-failure"?"service":"upper"});
-  act({type:"role",role:"coordinator"});act({type:"plan",text:"Revision: choose the tested available route, preserve the original and use the current signed source."});
+  act({type:"role",role:"coordinator"});act({type:"plan",text:"Revision: use the verified profile, matched cradle and tested route; preserve the original with recorded custody."});
  }
  return s;
 }
+function outcome(state:MissionState,ending:Ending):MissionState{
+ if(state.kind!=="recovery")return state;
+ const s=applyMission(state,{type:"role",role:"coordinator"}).state;
+ const r=applyMission(s,{type:"resolution-evidence",evidence:{ending,recipient:"Station custodian",originalLocation:"Meridian Archive chamber",receipt:requiredProfile(s).receipt,supportConfirmed:true,preservationConfirmed:true,stableConfirmed:true,limitation:"The custodian must arrange the later transport and confirm continuing support."}});
+ expect(r.success,r.message).toBe(true);return r.state;
+}
 describe("integrated recovery rules",()=>{
  it("role tools reject an out-of-role action without changing the state",()=>{const s=newMission();const r=applyMission(s,{type:"turn"});expect(r.success).toBe(false);expect(r.state).toEqual(s);});
- it("a jam requires diagnosis, not repeated force",()=>{let s=newMission();s=applyMission(s,{type:"role",role:"systems"}).state;const r=applyMission(s,{type:"turn"});expect(r.success).toBe(false);expect(r.state.turns).toBe(0);expect(r.state.tasks).not.toContain("mechanism");});
+ it("a jam requires diagnosis, not repeated force",()=>{let s=newMission("a1");s=applyMission(s,{type:"role",role:"systems"}).state;const r=applyMission(s,{type:"turn"});expect(r.success).toBe(false);expect(r.state.turns).toBe(0);expect(r.state.tasks).not.toContain("mechanism");});
  it("measurement is required before a lit lamp establishes diagnosis",()=>{let s=newMission();for(const a of [{type:"role",role:"systems"},{type:"fuse",value:"intact"},{type:"switch",closed:true}] as MissionAction[])s=applyMission(s,a).state;expect(s.tasks).not.toContain("circuit");s=applyMission(s,{type:"measure"}).state;s=applyMission(s,{type:"switch",closed:true}).state;expect(s.tasks).not.toContain("circuit");s=applyMission(s,{type:"switch",closed:false}).state;s=applyMission(s,{type:"fuse",value:"open"}).state;s=applyMission(s,{type:"measure"}).state;s=applyMission(s,{type:"fuse",value:"intact"}).state;s=applyMission(s,{type:"switch",closed:true}).state;expect(s.tasks).toContain("circuit");});
  it("the later authoritative source changes the eligible copy",()=>{let s=newMission("recovery","conflicting-archive");s=applyMission(s,{type:"role",role:"investigator"}).state;expect(applyMission(s,{type:"replica",replica:"A"}).success).toBe(false);expect(applyMission(s,{type:"replica",replica:"B"}).success).toBe(true);});
- it("failed lift dependency affects both dependent routes",()=>{const s=newMission("recovery","equipment-failure");for(const route of ["upper","lift"])expect(applyMission(s,{type:"route",route}).success).toBe(false);expect(applyMission(s,{type:"route",route:"service"}).success).toBe(true);});
+ it("failed lift dependency affects both dependent routes",()=>{const s=applyMission(complete("recovery","equipment-failure"),{type:"role",role:"observer"}).state;for(const route of ["upper","lift"])expect(applyMission(s,{type:"route",route}).success).toBe(false);expect(applyMission(s,{type:"route",route:"service"}).success).toBe(true);});
  it("historical plan remains identical after revision",()=>{let s=newMission();s=applyMission(s,{type:"role",role:"coordinator"}).state;s=applyMission(s,{type:"plan",text:"First plan: inspect, restore equipment, verify and recover."}).state;const first=structuredClone(s.plans[0]);s=applyMission(s,{type:"plan",text:"Revised plan: replace the unavailable route after checking the source."}).state;expect(s.plans[0]).toEqual(first);expect(s.plans[1]!.version).toBe(2);});
  for(const kind of ["a1","a2","recovery"] as const)for(const scenario of scenarioIds)it(kind+" / "+scenario+" has reachable resolutions with reproducible evidence",()=>{
   const s=complete(kind,scenario);expect(complete(kind,scenario)).toEqual(s);
-  for(const ending of ["physical","digital","stabilise"] as const){const r=applyMission(s,{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(missionRequirements[kind]));}
+  for(const ending of ["physical","digital","stabilise"] as const){const r=applyMission(outcome(s,ending),{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(missionRequirements[kind]));}
  });
  it("an early ending exposes missing capabilities instead of pretending success",()=>{const r=applyMission(newMission(),{type:"resolve",ending:"physical"});expect(r.success).toBe(false);expect(r.state.status).toBe("active");expect(r.message).toContain("Inspect");});
 });
 class MemoryStorage implements StorageLike {data=new Map<string,string>();getItem(k:string){return this.data.get(k)??null;}setItem(k:string,v:string){this.data.set(k,v);}removeItem(k:string){this.data.delete(k);}}
 describe("versioned skills passport",()=>{
- it("round-trips a saved lab and a complete mission",()=>{let p=withEvidence(newPassport(),{week:4,phase:"transfer",actions:["Changed gear","Released interlock"],result:"Target reached",reflection:"The ratio explained the required movement.",completed:true,state:{...createTraining(4,"transfer")}});const mission=applyMission(complete(),{type:"resolve",ending:"physical"}).state;p=withMission(p,mission);expect(parsePassport(JSON.stringify(p))).toEqual(p);expect(passportMarkdown(p)).toContain("Target reached");expect(passportMarkdown(p)).toContain("Operation Last Light");});
+ it("round-trips a saved lab and a complete mission",()=>{let p=withEvidence(newPassport(),{week:4,phase:"transfer",actions:["Changed gear","Released interlock"],result:"Target reached",reflection:"The ratio explained the required movement.",completed:true,state:{...createTraining(4,"transfer")}});const mission=applyMission(outcome(complete(),"physical"),{type:"resolve",ending:"physical"}).state;p=withMission(p,mission);expect(parsePassport(JSON.stringify(p))).toEqual(p);expect(passportMarkdown(p)).toContain("Target reached");expect(passportMarkdown(p)).toContain("Operation Last Light");});
  it("malformed and unsupported imports leave the current work intact",()=>{const store=new PassportStore(new MemoryStorage());store.commit(withEvidence(store.state,{week:1,phase:"practice",actions:[],result:"Observed",reflection:"Notes",completed:false}));const before=structuredClone(store.state);for(const raw of ["{broken",JSON.stringify({...before,schemaVersion:99}),JSON.stringify({...before,courseCode:"SLOP9999"})])expect(()=>store.import(raw)).toThrow();expect(store.state).toEqual(before);});
  it("rejects oversized input, unexpected identifiers and nested prototype keys",()=>{expect(()=>parsePassport(" ".repeat(1024*1024+1))).toThrow(/1 MB/);const p={...newPassport(),missions:{recovery:{...newMission(),role:"intruder"}}};expect(()=>parsePassport(JSON.stringify(p))).toThrow();const q=newPassport();q.drafts["1"]={week:1,state:JSON.parse('{"__proto__":{"polluted":true}}'),reflection:""};expect(()=>parsePassport(JSON.stringify(q))).toThrow();});
  it("keeps legacy data when resetting the new passport",()=>{const disk=new MemoryStorage();disk.setItem(LEGACY_KEY,'{"schemaVersion":1}');const store=new PassportStore(disk);store.reset();expect(store.legacy()).toBe('{"schemaVersion":1}');expect(()=>store.import(store.legacy()!)).toThrow(/legacy/);});
@@ -88,7 +104,7 @@ describe("mission state invariants after a successful check",()=>{
   const late=applyMission(start,{type:"objective",objective:"physical"});
   expect(late.success).toBe(false);expect(late.state.declaredObjective).toBe("digital");
   const ready={...complete(),declaredObjective:"digital" as const};
-  const closed=applyMission(ready,{type:"resolve",ending:"stabilise"});
+  const closed=applyMission(outcome(ready,"stabilise"),{type:"resolve",ending:"stabilise"});
   expect(closed.message).toContain("initial objective was digital");
   expect(closed.message).toContain("ending is stabilise");
  });
@@ -106,3 +122,105 @@ describe("mission state invariants after a successful check",()=>{
  });
 });
 
+
+
+describe("final mission synthesis and distinct outcome evidence",()=>{
+ it("has a different packing order and map from the individual workshop",()=>{
+  let final=newMission();expect(applyMission(final,{type:"recall",items:"lens, spool, tile"}).success).toBe(false);
+  expect(applyMission(final,{type:"recall",items:"tile, lens, spool"}).success).toBe(true);
+  expect(applyMission(final,{type:"orient",degrees:90}).success).toBe(false);
+  expect(applyMission(final,{type:"orient",degrees:180}).success).toBe(true);
+  expect(applyMission(final,{type:"inspect",item:"manifest"}).message).toContain("tile, lens, spool");
+  expect(applyMission(final,{type:"inspect",item:"map"}).message).toContain("180");
+ });
+ it.each(scenarioIds)("requires the Investigator profile before Systems can verify the cradle in %s",scenario=>{
+  let s=newMission("recovery",scenario);s=applyMission(s,{type:"role",role:"systems"}).state;
+  s=applyMission(s,{type:"brake",released:true}).state;s=applyMission(s,{type:"gear",follower:requiredProfile(s).follower}).state;
+  expect(applyMission(s,{type:"turn"}).success).toBe(false);
+  s=applyMission(s,{type:"role",role:"investigator"}).state;s=applyMission(s,{type:"replica",replica:requiredProfile(s).id}).state;
+  s=applyMission(s,{type:"role",role:"systems"}).state;s=applyMission(s,{type:"gear",follower:24}).state;
+  expect(applyMission(s,{type:"turn"}).success).toBe(false);
+  s=applyMission(s,{type:"gear",follower:requiredProfile(s).follower}).state;s=applyMission(s,{type:"turn"}).state;
+  expect(s.recovery?.cradleProfile).toBe(requiredProfile(s).id);
+ });
+ it("requires current profile evidence at handoff and route, then invalidates it after equipment changes",()=>{
+  let s=newMission();s=applyMission(s,{type:"role",role:"coordinator"}).state;
+  expect(applyMission(s,{type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check"}).success).toBe(false);
+  s=outcome(complete(),"physical");s=applyMission(s,{type:"role",role:"systems"}).state;
+  s=applyMission(s,{type:"gear",follower:48}).state;
+  expect(s.tasks).not.toContain("mechanism");expect(s.tasks).not.toContain("handoff");expect(s.tasks).not.toContain("route");
+  expect(s.recovery?.resolution).toBeNull();
+  s=applyMission(s,{type:"role",role:"observer"}).state;expect(applyMission(s,{type:"route",route:"service"}).success).toBe(false);
+ });
+ it("a wrong later source invalidates every downstream profile even if corrected again",()=>{
+  let s=outcome(complete(),"digital");s=applyMission(s,{type:"role",role:"investigator"}).state;
+  s=applyMission(s,{type:"replica",replica:"B"}).state;
+  for(const t of ["investigate","mechanism","handoff","route"])expect(s.tasks).not.toContain(t);
+  expect(s.recovery?.resolution).toBeNull();
+  s=applyMission(s,{type:"replica",replica:"A"}).state;
+  expect(s.tasks).toContain("investigate");expect(s.tasks).not.toContain("mechanism");
+ });
+ it("the shared eleven checks cannot complete an ending without its specific record",()=>{
+  const s=complete();
+  for(const ending of ["physical","digital","stabilise"] as const){
+   const r=applyMission(s,{type:"resolve",ending});expect(r.success).toBe(false);expect(r.state.status).toBe("active");expect(r.message).toContain("outcome evidence");
+  }
+  const physical=outcome(s,"physical");
+  expect(applyMission(physical,{type:"resolve",ending:"digital"}).success).toBe(false);
+ });
+ it("requires correct digital receipt, preservation and location, and complete stable handover",()=>{
+  const s=complete("recovery","conflicting-archive");
+  const good=outcome(s,"digital").recovery!.resolution!;
+  for(const changed of [{receipt:"RECEIPT-A36"},{originalLocation:""},{preservationConfirmed:false},{recipient:""}]){
+   const {profile,route,...evidence}={...good,...changed};
+   expect(applyMission(s,{type:"resolution-evidence",evidence}).success).toBe(false);
+  }
+  const stable=outcome(s,"stabilise").recovery!.resolution!;
+  for(const changed of [{stableConfirmed:false},{limitation:"done"},{originalLocation:""}]){
+   const {profile,route,...evidence}={...stable,...changed};
+   expect(applyMission(s,{type:"resolution-evidence",evidence}).success).toBe(false);
+  }
+ });
+ it("exports exact linked evidence and keeps legacy saves explicitly historical",()=>{
+  const finished=applyMission(outcome(complete("recovery","conflicting-archive"),"digital"),{type:"resolve",ending:"digital"}).state;
+  expect(missionMarkdown(finished)).toContain("RECEIPT-B48");expect(missionMarkdown(finished)).toContain("follower 48 teeth");
+  let p=withMission(newPassport(),finished);expect(parsePassport(JSON.stringify(p))).toEqual(p);
+  const legacy=structuredClone(finished);delete legacy.recovery;
+  p=withMission(newPassport(),legacy);const restored=parsePassport(JSON.stringify(p));
+  expect(restored.missions.recovery?.recovery).toBeUndefined();
+  expect(resolutionText(restored.missions.recovery!)).toContain("Legacy recovery record");
+  expect(resolutionText(restored.missions.recovery!)).toContain("no verified linked-profile");
+  expect(applyMission({...legacy,status:"active",ending:null},{type:"inspect",item:"lens"}).success).toBe(false);
+  const damaged=structuredClone(finished);damaged.recovery!.resolution=null;
+  expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:damaged}}))).toThrow();
+ });
+});
+
+
+describe("outcome evidence stays consistent across import and resolution",()=>{
+ it("rejects a different recipient unless the handling agreement is renegotiated",()=>{
+  let s=outcome(complete(),"physical");const {profile,route,...evidence}=s.recovery!.resolution!;
+  const changed=applyMission(s,{type:"resolution-evidence",evidence:{...evidence,recipient:"Different custodian"}});
+  expect(changed.success).toBe(false);expect(changed.message).toContain("renegotiate");
+  s=applyMission(s,{type:"agreement",preserve:true,recipient:"Different custodian"}).state;
+  expect(s.recovery?.resolution).toBeNull();
+  expect(applyMission(s,{type:"resolution-evidence",evidence:{...evidence,recipient:"Different custodian"}}).success).toBe(true);
+ });
+ it("rejects false outcome fields in an active import and again at resolution",()=>{
+  const active=outcome(complete(),"physical");active.recovery!.resolution!.supportConfirmed=false;
+  expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:active}}))).toThrow();
+  expect(applyMission(active,{type:"resolve",ending:"physical"}).success).toBe(false);
+ });
+ it("rejects completed imports whose live equipment or custody no longer supports their task ticks",()=>{
+  const done=applyMission(outcome(complete(),"physical"),{type:"resolve",ending:"physical"}).state;
+  for(const patch of [{fuse:"open"},{switchClosed:false},{measured:false},{replica:"B"},{policyPatched:false},{plans:[]},{agreement:"Preserve original; hand over to Other custodian"}]){
+   expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:{...done,...patch}}}))).toThrow();
+  }
+ });
+});
+
+
+it("completed-run history cannot import an active mission as a completed rehearsal",()=>{
+ const backup={...newPassport(),runs:[newMission()]};
+ expect(()=>parsePassport(JSON.stringify(backup))).toThrow();
+});

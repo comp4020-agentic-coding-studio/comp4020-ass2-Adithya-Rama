@@ -20,6 +20,8 @@ Mark tooth counts and angular reference lines. Mount discs so they can rotate an
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **ME-01** identifies the driver, follower, interlock, cam and spring and their operating rules. **ME-02** supplies the changed input/output and cam requirements for each phase.
+
 - A 12-tooth driving gear externally meshes with a selectable 12-, 24- or 36-tooth driven gear. Output turns = 12 ÷ driven teeth × input turns, in the opposite direction.
 - The model only moves with interlock released, return spring attached and cam at the published angle.
 - An engaged interlock blocks cam adjustment. Release it before changing the cam.
@@ -30,11 +32,13 @@ Mark tooth counts and angular reference lines. Mount discs so they can rotate an
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-Four input turns through a 24-tooth driven gear produce two output turns in the opposite direction. Yet a correct ratio does not guarantee motion: the interlock must be released, the spring attached and the cam set to 180 degrees. Diagnose readiness and ratio separately.
+The separate conservatory lift has an 18-tooth driver and needs three output turns from five input turns. A 30-tooth follower satisfies 18 ÷ 30 × 5 = 3, in the opposite direction. The correct ratio still cannot move a blocked mechanism: the demonstrator releases the interlock, sets the cam to 270 degrees and attaches the spring before testing. A later requirement of two output turns from four input turns needs a 36-tooth follower. The valid readiness conditions remain, while the ratio is recalculated.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -76,9 +80,11 @@ Reflection: Which observation would have disproved your first diagnosis?
 
 The practice, check and transfer gears are 24, 12 and 36 teeth respectively. All rotate opposite the driver. A blocked mechanism requires a readiness diagnosis, while an incorrect output count requires a ratio diagnosis.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I predicted a 24-tooth driven gear for two output turns from four input turns. It still did not move because the interlock blocked the cam. After release, spring attachment and a 180-degree cam setting, the observed output matched the prediction.
+I calculated 18 ÷ 30 × 5 = 3 opposite output turns. The interlock, 270-degree cam and spring checks made that prediction testable. For two turns from four inputs, I changed the follower to 36 teeth and retained the valid readiness conditions.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

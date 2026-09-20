@@ -20,6 +20,8 @@ Prepare a healthy series loop and label both sides of each component. The facili
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **EL-01** is the six-volt circuit and its labelled probe-node rule. **EL-02** supplies the phase faults and diagnostic recording requirements; the campus pack's student record is your measurement sheet.
+
 - The idealised bench model uses a 6 V source, fuse, switch/cable, lamp and common return.
 - Probe labels refer to the node after each named component, measured relative to the common return.
 - With power on, a fuse or cable supply break gives 6 V before the break and 0 V at downstream nodes. An open lamp can still have 6 V at its supply node while remaining dark.
@@ -29,11 +31,13 @@ Prepare a healthy series loop and label both sides of each component. The facili
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-In the practice configuration, battery reads 6 V and the fuse output reads 0 V while powered. The first missing supply localises the model's open fuse. Isolate power before replacement, then restore power and verify the downstream lamp node reads 6 V. That before/after trace distinguishes diagnosis from guessing a component.
+The separate nine-volt beacon permits two simultaneous faults. Its powered trace is 9/9/0/0 V at source, fuse, cable and lamp supply. An isolated cable replacement restores 9 V throughout, but the same lamp stays dark. The first repair was supported and incomplete. An isolated continuity check then identifies an open lamp; replacing it and restoring power produces both 9 V and light. Your assigned cases publish a one-fault model, so derive the diagnosis from their own rules and measurements instead of assuming this example's two defects.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: Which measurement reduced uncertainty most, and which merely repeate
 
 The first zero node localises a supply break in the fuse/cable cases. An open lamp is different: supply voltage remains present, so confirm the load fault using continuity with power isolated. Verify the repaired output, not voltage alone.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-Battery and fuse nodes read 6 V while the cable output read 0 V. I isolated power, replaced the cable and restored power. A 6 V lamp-node reading supported the repair.
+The nine-volt beacon's first trace supported a cable repair. Afterwards every supply point read 9 V, but the lamp remained dark. I preserved that failed verification, isolated power, confirmed an open lamp and replaced it. I verified both light and supply before calling the whole repair complete.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

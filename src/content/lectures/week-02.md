@@ -16,7 +16,7 @@ related: ["sessions/week-02", "assessments/assignment-1"]
 ## What you will learn
 
 - Use ordered locations as retrieval cues.
-- Compare recall using the same scoring rule across two strategies.
+- Compare an unaided attempt with a location-cued attempt, recording item and order scores and the limits of the comparison.
 - Explain why a mnemonic improves retrieval without guaranteeing perfect memory.
 
 ## The briefing
@@ -25,15 +25,19 @@ A memory palace uses a known sequence of places as retrieval cues. Each item rec
 
 Begin with a baseline because a vivid technique can feel effective before you measure it. Score item accuracy separately from order accuracy, and keep the task conditions comparable. A delayed test answers a different question from an immediate test. Avoid claiming a causal improvement from one tiny comparison: material difficulty, rehearsal and prior familiarity also matter. This lab teaches deliberate recall, not photographic memory or an ability to reproduce arbitrary scenes perfectly.
 
-## Worked example
+## Worked example · a different scenario
 
-To recall Compass, Lantern, Coil and Archive, imagine a compass covering the Atrium floor, a lantern shining from the Fountain, a huge coil across the Workshop bench and an archive filling the Observatory telescope. Walk the same route mentally before revealing the list. A remembered torch instead of Lantern is a substitution to inspect, not a score to correct silently.
+In the separate storm-kit example, the first unaided attempt retrieves only Lens and Beacon. The demonstrator then fixes the route Gate → Pool → Press → Dome and associates Lens, Tether, Pocket atlas and Beacon with those places. A Tether splashing in the Pool supplies a distinctive cue. The guided retrieval gets all four, but a later attempt substitutes ‘book’ for Pocket atlas. Keeping that error makes the comparison useful: a stronger map-specific cue can be tested, while one improved attempt does not prove lasting improvement.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-02/).
 
 ## A plausible mistake
 
 Trying to make one elaborate story without stable locations can lose its order. Reading the list repeatedly also tests recognition more than retrieval. Close the list, reconstruct it, then inspect the difference.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MP-01** is the ordered four-location route. **MP-02** supplies the practice, skill-check and transfer item lists. Use the record sheet in the campus pack for your baseline and cued comparison.
 
 - Route: Atrium → Fountain → Workshop → Observatory.
 - Practice list: Compass, Lantern, Coil, Archive.

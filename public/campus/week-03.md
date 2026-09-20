@@ -2,13 +2,13 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Reconcile partial views, rotate components and build a model that predicts an unseen view.
+Track labelled directions through a rotation, change height independently and verify both conditions.
 
 ## Learning outcomes
 
-- Use a consistent coordinate system across different views.
-- Distinguish rotation from reflection.
-- Test a spatial model by predicting a view not used to construct it.
+- Keep world directions fixed while the object or camera moves.
+- Predict where labelled ports move after a clockwise rotation.
+- Change floor level independently and verify direction and height together.
 
 ## Equipment
 
@@ -20,6 +20,8 @@ Cut an L-shaped card with north/east ports and one marked original north tip. Dr
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **SP-01** is the labelled north/east connector and fixed coordinate convention. **SP-02** supplies the target directions and floor levels for the three phases.
+
 - The connector begins with ports pointing north and east on level 0.
 - A rotation moves the connector clockwise by 90 degrees; its handedness remains unchanged.
 - Practice target: ports east/south, level 0. Skill check: south/west, level 1. Transfer: west/north, level 2.
@@ -28,11 +30,13 @@ Cut an L-shaped card with north/east ports and one marked original north tip. Dr
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The original L-shaped module has ports north and east. After one clockwise quarter-turn they point east and south; moving it from level 0 to level 1 does not change those directions. A successful placement must satisfy both orientation and level, so correcting one cannot substitute for the other.
+The separate dome example begins with north and west ports. One clockwise quarter-turn maps them to east and north. The demonstrator then raises the connector from level 0 to level 2 without changing those directions. When a later target calls for level 1 with the same ports, only height changes. A similar-looking mirrored substitute is rejected by checking its labels. In your assigned browser task, the controls test rotation and height; use the fixed compass and the original labelled port to justify both.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -48,7 +52,7 @@ Fit west/north on level 2. Explain which transformation changed orientation and 
 
 ## Facilitation
 
-Students construct using two views and ask for the third only after stating what it would resolve. For a nonvisual route, give coordinate lists and use tactile blocks or verbal position descriptions.
+Before turning the card, students record where each labelled port will face. Rotate it against the fixed north arrow, then move it between level sheets without turning it. A partner checks direction and level separately. For a nonvisual route, use spoken direction mappings and tactile or numbered level markers.
 
 ## Student record
 
@@ -68,15 +72,17 @@ Changed-situation response:
 
 Assistance and hints:
 
-Reflection: What extra view removed uncertainty, and which assumption did it test?
+Reflection: Which labelled port helped you check the rotation, and how did you verify height separately?
 
 ## Explanation — reveal after an attempt
 
 One, two and three clockwise quarter-turns move the north port to east, south and west respectively. Translation to another level does not rotate it. Matching a silhouette without tracking a labelled port can conceal a reflection or orientation error.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I predicted north would become south after two clockwise quarter-turns. I then moved the connector to level 1 without changing its orientation and checked both conditions.
+In the dome example, I predicted north→east and west→north before the quarter-turn. I then raised the connector to level 2. When the target moved to level 1, I changed height alone because the labelled port directions still matched.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

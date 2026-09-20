@@ -1,6 +1,6 @@
 ---
 title: "Get the Message Through"
-description: "Coordinate a recovery task when different people hold different constraints."
+description: "Pass an exact instruction between role views and use read-back to catch a misunderstanding."
 week: 8
 learningOutcomes: ["LO5"]
 skillIds: ["LO5"]
@@ -38,11 +38,13 @@ Read the [briefing](/lectures/week-08/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Convert a vague instruction into a message with action, object, condition and confirmation.
-- Negotiate a sequence that respects constraints held by another role.
+- Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
+- Identify the information a receiver needs without assuming they can see the sender's card.
 - Use read-back to detect a consequential misunderstanding.
 
 ## Supplied case file and rules
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **CO-01** is the analyst's destination, quantity and code for the selected phase. **CO-02** is the operator's receiving task: record those fields, read them back and obtain confirmation. The campus pack explains how to keep the two role views separate.
 
 - The analyst holds the authoritative destination, quantity and verification code. The operator must record and read back all three.
 - Practice handoff: destination Relay; quantity 2; code AMBER.
@@ -60,7 +62,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -101,7 +103,9 @@ Create an explicit agreement between Meridian's operator, investigator and stati
 
 All three fields and acknowledgement matter. A correct destination with the wrong count is still an incomplete shared model. The exercise tests accurate handoff, not speaking speed.
 
-**Worked reflection:** My message named Relay, two units and AMBER. The operator read back a different quantity, so we corrected it before acknowledging. The record shows the misunderstanding and its repair.
+**Worked reflection from the separate demonstration:** The Dome message requested five cases and VIOLET. The operator first repeated four, so we corrected and confirmed all three fields. For Pool, two and SILVER, we made a fresh read-back. The first confirmation could not approve a changed instruction.
+
+[Inspect this example's complete record](/demonstrations/lab-08/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

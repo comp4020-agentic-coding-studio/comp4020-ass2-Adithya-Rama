@@ -10,7 +10,7 @@ Provide a table, labelled work area, printed packs and an accessible seated rout
 
 ## Two-hour structure
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief. Preserve the first prediction before showing the explanation. Hints are teaching material and should be logged rather than penalised automatically.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief. Preserve the first prediction before showing the explanation. Hints are teaching material and should be logged rather than penalised automatically.
 
 ## Equipment and construction
 

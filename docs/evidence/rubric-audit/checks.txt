@@ -1,0 +1,171 @@
+$ pnpm typecheck && pnpm test
+$ astro check
+23:44:19 [content] Syncing content
+23:44:20 [content] Synced content
+23:44:20 [types] Generated 989ms
+23:44:20 [check] Getting diagnostics for Astro files in /home/adithyarama/comp4020/comp4020-ass2-Adithya-Rama...
+src/game/world.ts:50:114 - warning ts(6385): 'PCFSoftShadowMap' is deprecated.
+
+50   this.renderer.toneMappingExposure=1.05;this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+                                                                                                                    ~~~~~~~~~~~~~~~~
+
+src/scripts/mission-client.ts:2:9 - warning ts(6133): 'missionGuides' is declared but its value is never read.
+
+2 import {missionGuides,missionGuide,missionSummaries} from "../data/learner-guidance";
+          ~~~~~~~~~~~~~
+src/scripts/mission-client.ts:1:140 - warning ts(6133): 'requiredProfile' is declared but its value is never read.
+
+1 import {newMission,applyMission,missionRequirements,taskLabels,roles,missionMarkdown,resolutionText,resolutionEvidenceText,currentRecovery,requiredProfile,missionRoleBrief,recoveryProfiles,type Ending,type MissionState,type MissionAction,type MissionKind,type Scenario,type Role,type Zone,type Task} from "../lib/mission-engine";
+                                                                                                                                             ~~~~~~~~~~~~~~~
+
+tests/browser/course.e2e.ts:1:26 - warning ts(6133): 'Page' is declared but its value is never read.
+
+1 import {test,expect,type Page} from "@playwright/test";
+                           ~~~~
+
+tools/world-assets.mjs:86:7 - warning ts(6133): 'handle' is declared but its value is never read.
+
+86 const handle=box(cart,'HandleGrip',[.06,.06,.75],mat.ink,.7,1.43,0);
+         ~~~~~~
+
+Result (114 files): 
+- 0 errors
+- 0 warnings
+- 5 hints
+
+$ pnpm build && vitest run spec
+$ astro build
+23:44:36 [content] Syncing content
+23:44:36 [content] Synced content
+23:44:36 [types] Generated 1.01s
+23:44:36 [build] output: "static"
+23:44:36 [build] mode: "static"
+23:44:36 [build] directory: /home/adithyarama/comp4020/comp4020-ass2-Adithya-Rama/dist/
+23:44:36 [build] Collecting build info...
+23:44:36 [build] ✓ Completed in 1.14s.
+23:44:36 [build] Building static entrypoints...
+23:44:37 [astro-icon] Loaded icons from /home/adithyarama/comp4020/comp4020-ass2-Adithya-Rama/node_modules/.pnpm/astro-theme-university@https+++codeload.github.com+ANUcybernetics+astro-theme-universit_2d210993d5de7996d315958e5d56e2d2/node_modules/astro-theme-university/icons, iconoir
+23:44:37 [assets] Copying fonts (3 files)...
+23:44:38 [vite] ✓ built in 1.17s
+23:44:39 [WARN] [vite] [plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+23:44:39 [vite] ✓ built in 1.80s
+23:44:39 [build] Rearranging server assets...
+
+ generating static routes 
+23:44:39   ├─ /404.html (+26ms) 
+23:44:40   ├─ /academy/index.html (+10ms) 
+23:44:40   ├─ /assessments/assignment-1/index.html (+10ms) 
+23:44:40   ├─ /assessments/assignment-2/index.html (+7ms) 
+23:44:40   ├─ /assessments/fieldwork/index.html (+5ms) 
+23:44:40   ├─ /assessments/final-project/index.html (+4ms) 
+23:44:40   ├─ /assessments/index.html (+7ms) 
+23:44:40   ├─ /course-guide/index.html (+10ms) 
+23:44:40   ├─ /decks/week-07/index.html (+13ms) 
+23:44:40   ├─ /demonstrations/lab-01/index.html (+9ms) 
+23:44:40   ├─ /demonstrations/lab-02/index.html (+7ms) 
+23:44:40   ├─ /demonstrations/lab-03/index.html (+6ms) 
+23:44:40   ├─ /demonstrations/lab-04/index.html (+7ms) 
+23:44:40   ├─ /demonstrations/lab-05/index.html (+9ms) 
+23:44:40   ├─ /demonstrations/lab-06/index.html (+10ms) 
+23:44:40   ├─ /demonstrations/lab-07/index.html (+6ms) 
+23:44:40   ├─ /demonstrations/lab-08/index.html (+8ms) 
+23:44:40   ├─ /demonstrations/lab-09/index.html (+6ms) 
+23:44:40   ├─ /demonstrations/lab-10/index.html (+8ms) 
+23:44:40   ├─ /demonstrations/lab-11/index.html (+8ms) 
+23:44:40   ├─ /demonstrations/lab-12/index.html (+7ms) 
+23:44:40   ├─ /demonstrations/assessment-fieldwork/index.html (+8ms) 
+23:44:40   ├─ /demonstrations/assessment-a1/index.html (+7ms) 
+23:44:40   ├─ /demonstrations/assessment-a2/index.html (+13ms) 
+23:44:40   ├─ /demonstrations/assessment-final/index.html (+8ms) 
+23:44:40   ├─ /demonstrations/index.html (+5ms) 
+23:44:40   ├─ /examples/lab-01.md (+2ms) 
+23:44:40   ├─ /examples/lab-02.md (+2ms) 
+23:44:40   ├─ /examples/lab-03.md (+1ms) 
+23:44:40   ├─ /examples/lab-04.md (+2ms) 
+23:44:40   ├─ /examples/lab-05.md (+1ms) 
+23:44:40   ├─ /examples/lab-06.md (+1ms) 
+23:44:40   ├─ /examples/lab-07.md (+1ms) 
+23:44:40   ├─ /examples/lab-08.md (+1ms) 
+23:44:40   ├─ /examples/lab-09.md (+1ms) 
+23:44:40   ├─ /examples/lab-10.md (+1ms) 
+23:44:40   ├─ /examples/lab-11.md (+1ms) 
+23:44:40   ├─ /examples/lab-12.md (+1ms) 
+23:44:40   ├─ /examples/assessment-fieldwork.md (+2ms) 
+23:44:40   ├─ /examples/assessment-a1.md (+1ms) 
+23:44:40   ├─ /examples/assessment-a2.md (+1ms) 
+23:44:40   ├─ /examples/assessment-final.md (+2ms) 
+23:44:40   ├─ /lectures/week-01/index.html (+5ms) 
+23:44:40   ├─ /lectures/week-02/index.html (+3ms) 
+23:44:40   ├─ /lectures/week-03/index.html (+2ms) 
+23:44:40   ├─ /lectures/week-04/index.html (+3ms) 
+23:44:40   ├─ /lectures/week-05/index.html (+3ms) 
+23:44:40   ├─ /lectures/week-06/index.html (+2ms) 
+23:44:40   ├─ /lectures/week-07/index.html (+3ms) 
+23:44:40   ├─ /lectures/week-08/index.html (+2ms) 
+23:44:40   ├─ /lectures/week-09/index.html (+2ms) 
+23:44:40   ├─ /lectures/week-10/index.html (+3ms) 
+23:44:40   ├─ /lectures/week-11/index.html (+2ms) 
+23:44:40   ├─ /lectures/week-12/index.html (+3ms) 
+23:44:40   ├─ /lectures/index.html (+5ms) 
+23:44:40   ├─ /operation/index.html (+5ms) 
+23:44:40   ├─ /people/iona-vale/index.html (+4ms) 
+23:44:40   ├─ /people/mara-voss/index.html (+2ms) 
+23:44:40   ├─ /people/sol-renn/index.html (+2ms) 
+23:44:40   ├─ /people/index.html (+3ms) 
+23:44:40   ├─ /policies/index.html (+6ms) 
+23:44:40   ├─ /resources/index.html (+5ms) 
+23:44:40   ├─ /sessions/week-01/index.html (+8ms) 
+23:44:40   ├─ /sessions/week-02/index.html (+5ms) 
+23:44:40   ├─ /sessions/week-03/index.html (+4ms) 
+23:44:40   ├─ /sessions/week-04/index.html (+6ms) 
+23:44:40   ├─ /sessions/week-05/index.html (+5ms) 
+23:44:40   ├─ /sessions/week-06/index.html (+6ms) 
+23:44:40   ├─ /sessions/week-07/index.html (+7ms) 
+23:44:40   ├─ /sessions/week-08/index.html (+6ms) 
+23:44:40   ├─ /sessions/week-09/index.html (+6ms) 
+23:44:40   ├─ /sessions/week-10/index.html (+4ms) 
+23:44:40   ├─ /sessions/week-11/index.html (+4ms) 
+23:44:40   ├─ /sessions/week-12/index.html (+6ms) 
+23:44:40   ├─ /sessions/index.html (+5ms) 
+23:44:40   ├─ /index.html (+4ms) 
+23:44:40 ✓ Completed in 510ms.
+
+ generating optimized images 
+23:44:40   ▶ /_astro/card.9ucF3zpb_Z12xXCg.jpeg (reused cache entry) (+2ms) (1/1)
+23:44:40 ✓ Completed in 3ms.
+
+23:44:40 [build] ✓ Completed in 2.45s.
+23:44:41 [astro-theme-university] Search index built.
+23:44:43 [build] Waiting for integration "astro-theme-university", hook "astro:build:done"...
+23:44:46 [astro-theme-university] Checked 60 pages (48 unchanged, reused from cache) — no accessibility violations.
+23:44:46 [astro-theme-university] Checked 60 pages — all internal links respect base.
+23:44:46 [astro-theme-university] Generated llms.txt and llms-full.txt (33 entries).
+23:44:47 [course-graph] Generated course API: 32 nodes, 64 edges, 33 files.
+23:44:47 [astromotion] Checked 1 deck(s) — no structural violations.
+23:44:47 [astro-broken-links-checker] Checking 60 html pages for broken links
+23:44:47 [astro-broken-links-checker] No broken links detected.
+23:44:47 [astro-broken-links-checker] Time to check links: 208 ms
+23:44:47 [build] 60 page(s) built in 10.64s
+23:44:47 [build] Complete!
+
+ RUN  v4.1.10 /home/adithyarama/comp4020/comp4020-ass2-Adithya-Rama
+
+ ✓ spec/data-integrity.test.ts (1 test) 6ms
+ ✓ spec/training-engine.test.ts (23 tests) 18ms
+ ✓ spec/curriculum.test.ts (9 tests) 42ms
+ ✓ spec/example-separation.test.ts (17 tests) 17ms
+ ✓ spec/demonstration.test.ts (51 tests) 86ms
+ ✓ spec/mission-passport.test.ts (44 tests) 108ms
+
+ Test Files  6 passed (6)
+      Tests  145 passed (145)
+   Start at  23:44:48
+   Duration  730ms (transform 1.37s, setup 0ms, import 1.73s, tests 277ms, environment 0ms)
+
+$ node scripts/check-evidence.ts
+✓ reflections/: none needed — an assignment's written account is PROCESS.md
+✓ PROCESS.md: 5 cited commit(s) all resolve

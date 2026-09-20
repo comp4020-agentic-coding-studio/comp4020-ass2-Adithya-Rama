@@ -1,4 +1,18 @@
-# COMP4020 course-site template
+# SLOP4408 — MASTERMIND
+
+A complete fictional Slop University course about observation, memory, systems, evidence and coordinated recovery. Twelve teaching weeks lead into **Operation Last Light**, where students use those capabilities together at Meridian Station.
+
+- [Course website](https://comp4020-agentic-coding-studio.github.io/comp4020-ass2-Adithya-Rama/)
+- [Course guide](https://comp4020-agentic-coding-studio.github.io/comp4020-ass2-Adithya-Rama/course-guide/)
+- [Process account](PROCESS.md) · [Project instructions](CLAUDE.md) · [Reflection and retro notes](reflections/README.md)
+- [Rubric and course-site review](docs/RUBRIC-AUDIT.md)
+
+The site includes twelve practical labs, four assessment briefs, sixteen alternate demonstrations, a fourteen-slide lecture deck and downloadable campus packs. Browser activities save locally and export evidence; they do not submit institutional coursework. A game ending is practice evidence, not an academic grade.
+
+The implementation retains the supplied Astro platform, SlopU branding and fixed validation pipeline. The original platform documentation follows. Local verification and published deployment state are recorded separately in the review documents.
+
+## Original course-site platform documentation
+
 
 A starter template for course-website prototypes in **COMP4020 / COMP8020
 Agentic Coding Studio**. The course provisions a repo from this template for
@@ -8,8 +22,7 @@ site to GitHub Pages.
 
 It ships as a working course website for **Slop University**, the course's
 running fictional institution: an Astro build on the same neutral theme package
-this course's own website uses, wearing the Slop identity. The structure is real
-and the content is placeholder.
+this course's own website uses, wearing the Slop identity. The starter structure is real and its initial content was placeholder. This repository replaces that content with the MASTERMIND course described above.
 
 This file documents the platform, and the platform is fixed: the Slop identity
 (the `astro-theme-slop` branding and palette wired into `src/site-config.ts` and

@@ -1,6 +1,6 @@
 import {z} from "astro/zod";
 import {validTraining} from "./training-engine";
-import {roleIds,scenarioIds,zoneIds,taskIds,missionMarkdown,type MissionState,type MissionKind} from "./mission-engine";
+import {roleIds,scenarioIds,zoneIds,taskIds,missionMarkdown,recoveryModelProblem,resolutionEvidenceProblem,type MissionState,type MissionKind} from "./mission-engine";
 export const SAVE_KEY="mastermind:SLOP4408:v2";
 export const LEGACY_KEY="mastermind:SLOP4408:v1";
 export const MAX_BYTES=1024*1024;
@@ -15,6 +15,17 @@ function boundedValue(value:unknown,depth=0):boolean {
  return false;
 }
 const stateValue=z.custom<Record<string,unknown>>(v=>typeof v==="object"&&v!==null&&!Array.isArray(v)&&boundedValue(v),"Activity state is malformed or too large.");
+const profileId=z.enum(["A","B"]);
+const resolutionSchema=z.strictObject({
+ ending:z.enum(["physical","digital","stabilise"]),recipient:z.string().min(2).max(100),
+ originalLocation:z.string().max(100),receipt:z.string().max(100),supportConfirmed:z.boolean(),
+ preservationConfirmed:z.boolean(),stableConfirmed:z.boolean(),limitation:z.string().max(2000),
+ profile:profileId,route:z.enum(["upper","service","lift"])
+});
+const recoverySchema=z.strictObject({
+ version:z.literal(2),verifiedProfile:profileId.nullable(),cradleProfile:profileId.nullable(),
+ handoffProfile:profileId.nullable(),routeProfile:profileId.nullable(),resolution:resolutionSchema.nullable()
+});
 const missionSchema=z.strictObject({
  kind:z.enum(["recovery","a1","a2"]),scenario:z.enum(scenarioIds),role:z.enum(roleIds),zone:z.enum(zoneIds),status:z.enum(["active","complete"]),
  tasks:z.array(z.enum(taskIds)).max(11),inspected:z.array(z.enum(["lens","spool","tile","map","manifest"])).max(5),
@@ -23,8 +34,13 @@ const missionSchema=z.strictObject({
  route:z.enum(["upper","service","lift"]),handoff:text,agreement:text,
  plans:z.array(z.strictObject({version:z.number().int().positive(),text,route:z.enum(["upper","service","lift"])})).max(50),
  disruptionSeen:z.boolean(),log:z.array(z.strictObject({role:z.enum(roleIds),action:z.string().max(50),message:text,success:z.boolean()})).max(200),
- ending:z.enum(["physical","digital","stabilise"]).nullable(),declaredObjective:z.enum(["physical","digital","stabilise"]).default("physical")
-}).refine(s=>new Set(s.tasks).size===s.tasks.length&&new Set(s.inspected).size===s.inspected.length,"Repeated task identifiers.").refine(s=>s.plans.every((p,i)=>p.version===i+1),"Plan versions must remain in sequence.").refine(s=>(s.status==="complete")===(s.ending!==null),"Mission status and ending disagree.");
+ recovery:recoverySchema.optional(),ending:z.enum(["physical","digital","stabilise"]).nullable(),declaredObjective:z.enum(["physical","digital","stabilise"]).default("physical")
+}).refine(s=>new Set(s.tasks).size===s.tasks.length&&new Set(s.inspected).size===s.inspected.length,"Repeated task identifiers.").refine(s=>s.plans.every((p,i)=>p.version===i+1),"Plan versions must remain in sequence.").refine(s=>(s.status==="complete")===(s.ending!==null),"Mission status and ending disagree.").refine(s=>!s.recovery||s.kind==="recovery","Linked recovery facts belong to final missions.").refine(s=>{
+ if(!s.recovery)return true;
+ const state=s as MissionState;
+ if(s.recovery.resolution&&resolutionEvidenceProblem(state,s.recovery.resolution)!==null)return false;
+ return s.status!=="complete"||(s.recovery.resolution?.ending===s.ending&&recoveryModelProblem(state)===null);
+},"Recovery facts or outcome evidence contradict the current model.");
 export const evidenceSchema=z.strictObject({
  week:z.number().int().min(1).max(12),phase:z.enum(["practice","check","transfer"]),
  actions:z.array(z.string().max(1000)).max(500),result:text,reflection:text,completed:z.boolean(),state:stateValue.optional()
@@ -38,7 +54,7 @@ const passportSchema=z.strictObject({
  records:z.array(recordSchema).max(50),
  drafts:z.record(z.string().regex(/^(?:[1-9]|1[0-2])$/),z.strictObject({week:z.number().int().min(1).max(12),state:stateValue,reflection:text})).default({}),
  missions:z.strictObject({recovery:missionSchema.optional(),a1:missionSchema.optional(),a2:missionSchema.optional()}),
- runs:z.array(missionSchema).max(15),
+ runs:z.array(missionSchema.refine(mission=>mission.status==="complete","Run history accepts completed records only.")).max(15),
  preferences:z.strictObject({motion:z.enum(["system","reduced"]),quality:z.enum(["auto","low","high"]),audio:z.boolean()})
 });
 export type Passport=z.infer<typeof passportSchema>;

@@ -38,11 +38,13 @@ Read the [briefing](/lectures/week-10/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Apply explicit range and visibility rules in a spatial model.
+- Apply the published cell-entry rule to predict sensor contacts along a route.
 - Compare predicted sensor events with a recorded trace.
 - Revise a route after a rule or environmental condition changes.
 
 ## Supplied case file and rules
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **SN-01** is the numbered grid, start, destination and cell-entry contact rule. **SN-02** supplies the published sensor layout for each phase; record which layout governs each route and trace.
 
 - A 5×5 grid uses rows 1–5 from north to south and columns 1–5 from west to east.
 - Start: row 5, column 1. Destination: row 1, column 5. Each action moves one cell north, south, east or west; boundaries prevent leaving the grid.
@@ -61,7 +63,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -104,7 +106,9 @@ Navigate Meridian's instrumented maintenance corridor under a published simulati
 
 Contacts count steps ending in the highlighted cells, including repeated visits. Reaching the destination without explaining the count is incomplete. A zero-contact route is available, but is not required for sound reasoning.
 
-**Worked reflection:** I predicted one contact when moving north through row 3, column 1. The event trace confirmed it. Moving east along row 5 first avoided that sensor row, but both routes could be explained with the same rule.
+**Worked reflection from the separate demonstration:** My first gallery route made one contact; the alternative made zero under the same sensor set. The changed coverage made the alternative record three. I preserved each route and count with its governing map before choosing by the stated objective.
+
+[Inspect this example's complete record](/demonstrations/lab-10/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

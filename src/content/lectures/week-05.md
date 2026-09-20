@@ -25,15 +25,19 @@ A circuit needs a source, a load and a complete conducting path. An interruption
 
 The browser uses a deliberately simplified supply-node model. With power on, probe points read 6 V until a fuse/cable supply break; downstream nodes then read 0 V. An open lamp still has supply voltage, so a dark output with 6 V requires a different check: isolate the power and test continuity through the lamp. It is not a full analogue circuit solver and should not be used to predict arbitrary physical circuits. Diagnose using powered measurements, isolate before changing a part, then restore power and verify the original symptom. Preserve the failed readings: replacing the right part by luck is different from explaining why it was the right part.
 
-## Worked example
+## Worked example · a different scenario
 
-In the practice configuration, battery reads 6 V and the fuse output reads 0 V while powered. The first missing supply localises the model's open fuse. Isolate power before replacement, then restore power and verify the downstream lamp node reads 6 V. That before/after trace distinguishes diagnosis from guessing a component.
+The separate nine-volt beacon permits two simultaneous faults. Its powered trace is 9/9/0/0 V at source, fuse, cable and lamp supply. An isolated cable replacement restores 9 V throughout, but the same lamp stays dark. The first repair was supported and incomplete. An isolated continuity check then identifies an open lamp; replacing it and restoring power produces both 9 V and light. Your assigned cases publish a one-fault model, so derive the diagnosis from their own rules and measurements instead of assuming this example's two defects.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-05/).
 
 ## A plausible mistake
 
 ‘There is 6 V in the circuit’ is too vague to be diagnostic. Measuring the source confirms its voltage but not that the lamp has a complete path. Replacing every component hides which fault caused the symptom.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **EL-01** is the six-volt circuit and its labelled probe-node rule. **EL-02** supplies the phase faults and diagnostic recording requirements; the campus pack's student record is your measurement sheet.
 
 - The idealised bench model uses a 6 V source, fuse, switch/cable, lamp and common return.
 - Probe labels refer to the node after each named component, measured relative to the common return.

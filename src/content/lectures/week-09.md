@@ -25,15 +25,19 @@ A role gives you responsibilities, information and constraints. It does not make
 
 People can be sincere and mistaken, confident and wrong, or hesitant and accurate. Evaluate claims by their content and support. Ask what a claim predicts, inspect an independent record and notice whether the interpretation changes when a contradiction appears. A negotiated agreement can preserve uncertainty: ‘we will move this labelled partial archive under these conditions’ may be more defensible than pretending everybody agrees it is complete.
 
-## Worked example
+## Worked example · a different scenario
 
-Neri's identical-copy claim conflicts with M-42 and M-99. Sen's capacity claim conflicts with the 8-unit cart and 11-unit archive. Pell's mandate supports verified-copy recovery with recorded custody. A mediator can therefore agree to recover a verified copy while leaving the original, without guessing anyone's motives.
+In the separate conservatory council, two twelve-section copies both match R-4, supporting Rin's specific identical-copy claim. The seven-unit original fits the certified nine-unit cart. Under the first request, a recorded physical handover to Mira is feasible. Before dispatch, a replacement request asks for remote access while the original stays with Ada. The agreement therefore changes to a verified Cedar copy, even though the cart still works. The demonstrator preserves the unexecuted first plan and does not turn one corroborated claim into a judgement about Rin's general honesty.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-09/).
 
 ## A plausible mistake
 
 Treating an actor's manner as a lie detector gives unsupported confidence. Ignoring role constraints because a mission seems urgent can also destroy cooperation. Quote the claim, inspect the record and ask a focused follow-up.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **RP-01** contains the named Neri, Pell and Sen claims and responsibilities. **RP-02** contains their supporting comparison log, custody mandate and capacity certificate, including the changed handling requirement.
 
 - Operator Neri claims all copies are identical. Comparison log: A=M-42; B=M-99.
 - Custodian Pell permits a verified copy to leave if custody is recorded; the original may remain.

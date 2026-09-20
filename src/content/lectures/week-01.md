@@ -25,15 +25,19 @@ Observation is an active sampling process. You cannot inspect every detail at on
 
 Separate three things: a visible feature, your interpretation of that feature, and information you do not have. A blue lamp is visible; ‘the machine is healthy’ is an interpretation requiring a rule about the lamp. Confidence describes your judgement, not the truth of the claim. When a reconstruction is wrong, distinguish an omission from an invented addition. The remedy for failing to look is different from the remedy for confidently filling a gap.
 
-## Worked example
+## Worked example · a different scenario
 
-The clock shows 08:20 and the door is open. Those are supplied observations. A note says ‘I left first’: observing the note does not prove the writer left first. ‘The owner left in a hurry’ adds a causal interpretation not established by the room. Preserve those distinctions even when the narrative feels obvious.
+In the separate conservatory example, the wall clock reads 11:35, a green mug stands beside the planting ledger and the service hatch is closed. A note says ‘I checked every tray’: that is the writer's claim, not verification of the trays. Saying the inspection lasted thirty-five minutes adds an inference because no start time is supplied. When a later inspection shows 11:50 and an open hatch, the demonstrator records two changes without inventing who caused them.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-01/).
 
 ## A plausible mistake
 
 Staring for longer without a plan can strengthen confidence more than accuracy. Likewise, describing a room as ‘suspicious’ provides no checkable detail. Use object, position and state, then identify what would establish any proposed explanation.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **PG-01** is the practice-room inventory: clock, cup, door and written account. **PG-02** is the changed inventory for the Skill check and Transfer challenge.
 
 - Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
 - The claim that the owner left in a hurry is an inference: the visible objects do not establish intent.

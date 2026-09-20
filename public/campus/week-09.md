@@ -20,6 +20,8 @@ Print Neri, Pell and Sen role cards with the exact supplied records. Publish the
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **RP-01** contains the named Neri, Pell and Sen claims and responsibilities. **RP-02** contains their supporting comparison log, custody mandate and capacity certificate, including the changed handling requirement.
+
 - Operator Neri claims all copies are identical. Comparison log: A=M-42; B=M-99.
 - Custodian Pell permits a verified copy to leave if custody is recorded; the original may remain.
 - Engineer Sen claims the cart supports the original unaided. Certificate: cart capacity 8 units; original 11; stabilising cradle raises supported capacity to 12.
@@ -29,11 +31,13 @@ Print Neri, Pell and Sen role cards with the exact supplied records. Publish the
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-Neri's identical-copy claim conflicts with M-42 and M-99. Sen's capacity claim conflicts with the 8-unit cart and 11-unit archive. Pell's mandate supports verified-copy recovery with recorded custody. A mediator can therefore agree to recover a verified copy while leaving the original, without guessing anyone's motives.
+In the separate conservatory council, two twelve-section copies both match R-4, supporting Rin's specific identical-copy claim. The seven-unit original fits the certified nine-unit cart. Under the first request, a recorded physical handover to Mira is feasible. Before dispatch, a replacement request asks for remote access while the original stays with Ada. The agreement therefore changes to a verified Cedar copy, even though the cart still works. The demonstrator preserves the unexecuted first plan and does not turn one corroborated claim into a judgement about Rin's general honesty.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: Which assumption about a person did you replace with a question abou
 
 Different digests contradict identical content. Capacity 8 cannot support mass 11 without the supplied cradle. The original mandate supports a verified copy; the transfer mandate calls for stabilising the original for handover.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I checked all three claims rather than judging confidence. Verified-copy recovery met the original mandate. When authenticity required the original, I revised the agreement to stabilisation with supported handover.
+Rin's claim was supported by the two matching twelve-section records, and the seven-unit original fit the nine-unit cart. A later remote-access request changed our agreement from planned physical handover to a Cedar copy. We kept the original with Ada and preserved the unexecuted plan.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

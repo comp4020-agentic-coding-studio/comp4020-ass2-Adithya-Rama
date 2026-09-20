@@ -26,7 +26,7 @@ spec:
 
 Remember four items by linking each one to a place, then retrieve the items without looking at the list.
 
-**What you will produce:** Four place–item associations, recall attempts from changed lists, and an explanation of which cue helped or failed.
+**What you will produce:** Four place–item associations, a recorded unaided baseline and cued recall attempt, changed-list attempts, and an explanation of which cue helped or failed.
 
 **Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
 
@@ -39,10 +39,12 @@ Read the [briefing](/lectures/week-02/). All starting rules and data are supplie
 ## What you will learn
 
 - Use ordered locations as retrieval cues.
-- Compare recall using the same scoring rule across two strategies.
+- Compare an unaided attempt with a location-cued attempt, recording item and order scores and the limits of the comparison.
 - Explain why a mnemonic improves retrieval without guaranteeing perfect memory.
 
 ## Supplied case file and rules
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MP-01** is the ordered four-location route. **MP-02** supplies the practice, skill-check and transfer item lists. Use the record sheet in the campus pack for your baseline and cued comparison.
 
 - Route: Atrium → Fountain → Workshop → Observatory.
 - Practice list: Compass, Lantern, Coil, Archive.
@@ -60,7 +62,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -68,12 +70,12 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 ### Do these actions in order
 
-1. Select **Practice**. Read the four locations in order and the item paired with each one.
-2. In each **Your association** box, describe a memorable imagined interaction between that place and its item. For example, picture an object doing something unusual at the location.
+1. Select **Practice**. For a small baseline, read the item list once before making location associations. Select **Cover list and retrieve**, make an unaided recall attempt and test it. Save that attempt in the passport before revising it. On paper or in your own notes, label it **Baseline** and record exact items present (in any position) and items in their correct positions, each out of four.
+2. Use **Review associations** to reopen the list. Read the four locations in order. In each **Your association** box, describe a memorable imagined interaction between that place and its item.
 3. Use **Walk to next location** to follow the route. Select **Cover list and retrieve**, then enter the item belonging to each location from memory.
-4. Select **Test this configuration**. Compare missing items and order errors. Use **Review associations** if you need to revise a cue; record that assistance afterwards.
+4. Select **Test this configuration** and save this cued attempt separately. On your comparison sheet, record the same two scores: exact items present and correct positions. Keep missing items and substitutions visible. The browser's result checks ordered recall; your two-column comparison is a separate written record.
 5. Try **Skill check** and **Transfer challenge**. They supply different item lists, so create fresh associations and retrieve them rather than reuse the original answers.
-6. After playing, explain which association helped, what you forgot and what you would change. This trains a recall strategy; it does not establish photographic memory.
+6. After playing, compare baseline and cued attempts, explain which cue helped or failed, and state that repeating a list also gives extra rehearsal. Changed lists can differ in difficulty. These small comparisons support a limited account of your attempts, not proof of a lasting memory improvement.
 
 ### Finish and keep your work
 
@@ -103,7 +105,9 @@ Carry a short equipment or instruction sequence between stations while preservin
 
 Compare both item and order scores. A better score suggests the strategy helped in this trial, but one attempt does not prove permanent improvement. An honest account of an error and its repair is stronger than an unsupported claim of perfect recall.
 
-**Worked reflection:** I associated Lantern with the Fountain spraying light. On retrieval I swapped two items, so I kept the route fixed and made those two associations more distinctive.
+**Worked reflection from the separate demonstration:** My storm-kit baseline contained Lens and Beacon only. The location cues helped me retrieve all four items in the guided attempt, but I later substituted ‘book’ for Pocket atlas. I preserved the error and strengthened the atlas cue instead of claiming perfect memory.
+
+[Inspect this example's complete record](/demonstrations/lab-02/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

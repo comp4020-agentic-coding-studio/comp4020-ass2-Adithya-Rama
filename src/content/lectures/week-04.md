@@ -25,15 +25,19 @@ A mechanism transmits motion through connected parts. A gear pair relates the an
 
 In the supplied model, a 12-tooth driving gear meshes externally with a 24-tooth driven gear. One full input turn produces half an output turn in the opposite direction. The cam on the output shaft moves the carriage only when the interlock is released. A stalled carriage can therefore have several causes: absent input, an unmeshed gear, or an engaged interlock. Choose an observation that discriminates between causes instead of changing every part at once.
 
-## Worked example
+## Worked example · a different scenario
 
-Four input turns through a 24-tooth driven gear produce two output turns in the opposite direction. Yet a correct ratio does not guarantee motion: the interlock must be released, the spring attached and the cam set to 180 degrees. Diagnose readiness and ratio separately.
+The separate conservatory lift has an 18-tooth driver and needs three output turns from five input turns. A 30-tooth follower satisfies 18 ÷ 30 × 5 = 3, in the opposite direction. The correct ratio still cannot move a blocked mechanism: the demonstrator releases the interlock, sets the cam to 270 degrees and attaches the spring before testing. A later requirement of two output turns from four input turns needs a 36-tooth follower. The valid readiness conditions remain, while the ratio is recalculated.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-04/).
 
 ## A plausible mistake
 
 Swapping parts until movement appears may reach a working state without explaining the fault. It also destroys the evidence of what mattered. Change one variable, state a prediction and preserve the before/after observations.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **ME-01** identifies the driver, follower, interlock, cam and spring and their operating rules. **ME-02** supplies the changed input/output and cam requirements for each phase.
 
 - A 12-tooth driving gear externally meshes with a selectable 12-, 24- or 36-tooth driven gear. Output turns = 12 ÷ driven teeth × input turns, in the opposite direction.
 - The model only moves with interlock released, return spring attached and cam at the published angle.

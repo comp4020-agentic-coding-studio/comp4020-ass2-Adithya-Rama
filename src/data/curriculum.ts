@@ -56,7 +56,7 @@ export const weeks: WeekDefinition[] = [
       "A statement about an object's location is different from a statement about who moved it.",
       "Check whether your confidence comes from a visible detail or an expectation."
     ],
-    "exemplar": "I recorded the open door and 08:20 display. I marked ‘left in a hurry’ as an inference because the objects did not establish a cause. The note preserved what someone claimed, not independent proof of their account.",
+    "exemplar": "Separate demonstration: I recorded 11:35, the green mug and the closed hatch. I kept ‘I checked every tray’ as the note author's claim. My thirty-five-minute duration estimate lacked a start time. The later 11:50 reading and open hatch showed changes, not who caused them.",
     "activityId": "week-01"
   },
   {
@@ -69,7 +69,7 @@ export const weeks: WeekDefinition[] = [
     "missionUse": "Carry a short equipment or instruction sequence between stations while preserving its order.",
     "objectives": [
       "Use ordered locations as retrieval cues.",
-      "Compare recall using the same scoring rule across two strategies.",
+      "Compare an unaided attempt with a location-cued attempt, recording item and order scores and the limits of the comparison.",
       "Explain why a mnemonic improves retrieval without guaranteeing perfect memory."
     ],
     "materials": [
@@ -80,9 +80,9 @@ export const weeks: WeekDefinition[] = [
     "hints": [
       "Choose the four locations in an order you can reproduce.",
       "Give each item a distinctive association at its place.",
-      "Check exact items and order separately; familiarity alone is not recall."
+      "Record an unaided baseline and cued attempt separately, including item and order scores; extra rehearsal limits the comparison."
     ],
-    "exemplar": "I associated Lantern with the Fountain spraying light. On retrieval I swapped two items, so I kept the route fixed and made those two associations more distinctive.",
+    "exemplar": "Separate demonstration: My storm-kit baseline contained Lens and Beacon only. The location cues helped me retrieve all four items in the guided attempt, but I later substituted ‘book’ for Pocket atlas. I preserved the error and strengthened the atlas cue instead of claiming perfect memory.",
     "activityId": "week-02"
   },
   {
@@ -91,12 +91,12 @@ export const weeks: WeekDefinition[] = [
     "skill": "Spatial reasoning and navigation",
     "room": "Spatial Lab",
     "output": "spatial-model",
-    "summary": "Reconcile partial views, rotate components and build a model that predicts an unseen view.",
+    "summary": "Track labelled directions through a rotation, change height independently and verify both conditions.",
     "missionUse": "Reconstruct Meridian's layout and relate maintenance diagrams to the space around you.",
     "objectives": [
-      "Use a consistent coordinate system across different views.",
-      "Distinguish rotation from reflection.",
-      "Test a spatial model by predicting a view not used to construct it."
+      "Keep world directions fixed while the object or camera moves.",
+      "Predict where labelled ports move after a clockwise rotation.",
+      "Change floor level independently and verify direction and height together."
     ],
     "materials": [
       "SP-01: labelled L-connector",
@@ -108,7 +108,7 @@ export const weeks: WeekDefinition[] = [
       "Track the original north port after each clockwise quarter-turn.",
       "Changing floor level moves the module without rotating it."
     ],
-    "exemplar": "I predicted north would become south after two clockwise quarter-turns. I then moved the connector to level 1 without changing its orientation and checked both conditions.",
+    "exemplar": "Separate demonstration: In the dome example, I predicted north→east and west→north before the quarter-turn. I then raised the connector to level 2. When the target moved to level 1, I changed height alone because the labelled port directions still matched.",
     "activityId": "week-03"
   },
   {
@@ -126,7 +126,7 @@ export const weeks: WeekDefinition[] = [
     ],
     "materials": [
       "ME-01: training carriage mechanism",
-      "ME-02: changed gear and interlock configuration",
+      "ME-02: changed output and cam requirements",
       "Causal diagram sheet"
     ],
     "hints": [
@@ -134,7 +134,7 @@ export const weeks: WeekDefinition[] = [
       "Two externally meshing gears turn in opposite directions.",
       "Check the interlock state before treating resistance as a failed gear."
     ],
-    "exemplar": "I predicted a 24-tooth driven gear for two output turns from four input turns. It still did not move because the interlock blocked the cam. After release, spring attachment and a 180-degree cam setting, the observed output matched the prediction.",
+    "exemplar": "Separate demonstration: I calculated 18 ÷ 30 × 5 = 3 opposite output turns. The interlock, 270-degree cam and spring checks made that prediction testable. For two turns from four inputs, I changed the follower to 36 teeth and retained the valid readiness conditions.",
     "activityId": "week-04"
   },
   {
@@ -160,7 +160,7 @@ export const weeks: WeekDefinition[] = [
       "Compare consecutive nodes against the common return.",
       "Isolate power before replacing a component; then verify the downstream result."
     ],
-    "exemplar": "Battery and fuse nodes read 6 V while the cable output read 0 V. I isolated power, replaced the cable and restored power. A 6 V lamp-node reading supported the repair.",
+    "exemplar": "Separate demonstration: The nine-volt beacon's first trace supported a cable repair. Afterwards every supply point read 9 V, but the lamp remained dark. I preserved that failed verification, isolated power, confirmed an open lamp and replaced it. I verified both light and supply before calling the whole repair complete.",
     "activityId": "week-05"
   },
   {
@@ -174,19 +174,19 @@ export const weeks: WeekDefinition[] = [
     "objectives": [
       "Distinguish an observed record from a conclusion about events.",
       "Compare version records and integrity results without treating filenames as authority.",
-      "Preserve unresolved contradictions in a reproducible timeline."
+      "Keep a decision timeline linking each archive choice to its governing requirement and remaining limits."
     ],
     "materials": [
-      "DI-01: three-file evidence pack",
-      "DI-02: event log and integrity results",
+      "DI-01: three archive-copy records",
+      "DI-02: signed reference and amendment",
       "Timeline worksheet"
     ],
     "hints": [
       "A filename describes a label, not proven authenticity.",
       "Compare the source record, integrity result and modification time.",
-      "A later modification is a question to investigate, not automatic proof of malicious intent."
+      "Keep a written timeline linking each decision to its governing requirement; preserve observations separately from explanations."
     ],
-    "exemplar": "I selected A under M-42 and recorded why B's later timestamp was insufficient. When the signed requirement changed to M-99, I selected B and preserved the earlier decision with its original reference.",
+    "exemplar": "Separate demonstration: North met authenticated R1. I retained it when an unsigned East request arrived. Only authenticated R2 and the separately verified South S2 repair justified my new choice. My timeline keeps the old South, the unchanged decision and the later revision with their sources.",
     "activityId": "week-06"
   },
   {
@@ -212,20 +212,20 @@ export const weeks: WeekDefinition[] = [
       "Check required actions as well as forbidden ones.",
       "The maintenance hold changes technician service, not every permission."
     ],
-    "exemplar": "I denied observer certification and service, restored technician service and registrar certification, then tested all nine cells. Under the maintenance hold I changed only technician/service and preserved the original matrix.",
+    "exemplar": "Separate demonstration: I removed maintainer research access and restored reader access under the observatory embargo charter. After all nine checks passed, a release hold changed only custodian approval. I kept the bug repair and the later policy change as separately justified versions.",
     "activityId": "week-07"
   },
   {
     "week": 8,
     "title": "Get the Message Through",
-    "skill": "Communication and negotiation",
+    "skill": "Structured communication and read-back",
     "room": "Council Studio",
     "output": "handoff-agreement",
-    "summary": "Coordinate a recovery task when different people hold different constraints.",
+    "summary": "Pass an exact instruction between role views and use read-back to catch a misunderstanding.",
     "missionUse": "Create an explicit agreement between Meridian's operator, investigator and station custodian.",
     "objectives": [
-      "Convert a vague instruction into a message with action, object, condition and confirmation.",
-      "Negotiate a sequence that respects constraints held by another role.",
+      "Replace a vague dispatch instruction with a destination, quantity, code and confirmation.",
+      "Identify the information a receiver needs without assuming they can see the sender's card.",
       "Use read-back to detect a consequential misunderstanding."
     ],
     "materials": [
@@ -238,7 +238,7 @@ export const weeks: WeekDefinition[] = [
       "Ask what prevents the other role from acting before assuming reluctance.",
       "Have the receiver repeat the condition in their own words."
     ],
-    "exemplar": "My message named Relay, two units and AMBER. The operator read back a different quantity, so we corrected it before acknowledging. The record shows the misunderstanding and its repair.",
+    "exemplar": "Separate demonstration: The Dome message requested five cases and VIOLET. The operator first repeated four, so we corrected and confirmed all three fields. For Pool, two and SILVER, we made a fresh read-back. The first confirmation could not approve a changed instruction.",
     "activityId": "week-08"
   },
   {
@@ -264,7 +264,7 @@ export const weeks: WeekDefinition[] = [
       "A pause, confident voice or disguise is not reliable evidence of truth.",
       "State your role's responsibility without pretending it overrides every other role."
     ],
-    "exemplar": "I checked all three claims rather than judging confidence. Verified-copy recovery met the original mandate. When authenticity required the original, I revised the agreement to stabilisation with supported handover.",
+    "exemplar": "Separate demonstration: Rin's claim was supported by the two matching twelve-section records, and the seven-unit original fit the nine-unit cart. A later remote-access request changed our agreement from planned physical handover to a Cedar copy. We kept the original with Ada and preserved the unexecuted plan.",
     "activityId": "week-09"
   },
   {
@@ -276,7 +276,7 @@ export const weeks: WeekDefinition[] = [
     "summary": "Predict fictional sensor observations and compare a route model with the actual event trace.",
     "missionUse": "Navigate Meridian's instrumented maintenance corridor under a published simulation contract.",
     "objectives": [
-      "Apply explicit range and visibility rules in a spatial model.",
+      "Apply the published cell-entry rule to predict sensor contacts along a route.",
       "Compare predicted sensor events with a recorded trace.",
       "Revise a route after a rule or environmental condition changes."
     ],
@@ -290,7 +290,7 @@ export const weeks: WeekDefinition[] = [
       "Predict contacts from steps ending in those cells, including revisits.",
       "Rewind before replaying a revised route so the observed count starts at zero."
     ],
-    "exemplar": "I predicted one contact when moving north through row 3, column 1. The event trace confirmed it. Moving east along row 5 first avoided that sensor row, but both routes could be explained with the same rule.",
+    "exemplar": "Separate demonstration: My first gallery route made one contact; the alternative made zero under the same sensor set. The changed coverage made the alternative record three. I preserved each route and count with its governing map before choosing by the stated objective.",
     "activityId": "week-10"
   },
   {
@@ -316,7 +316,7 @@ export const weeks: WeekDefinition[] = [
       "Keep decisions whose supporting evidence still holds.",
       "Give the revised responsibility to a named role and confirm the handoff."
     ],
-    "exemplar": "The east trolley's loss invalidated transport, not the archive identity check. We preserved that finding, assigned the systems specialist to verify a support fixture and postponed movement until the coordinator confirmed it.",
+    "exemplar": "Separate demonstration: The dispatch notice withdrew authority without closing a route. I retained the signed identity result, inserted scope and authorisation checks before sealing, and assigned their owners. Version 1 remained visible. Confirming the plan did not prove dispatch had happened.",
     "activityId": "week-11"
   },
   {
@@ -342,7 +342,7 @@ export const weeks: WeekDefinition[] = [
       "Check that each earlier verification applies to the current scenario version.",
       "Explain the result with evidence from the run rather than a success label."
     ],
-    "exemplar": "We selected verified digital recovery after the equipment failure. We preserved the physical archive in place and confirmed the copy against the current signed reference. Our result met the revised objective while leaving the scope of that reference explicit.",
+    "exemplar": "Separate demonstration: I recovered Ash under the twelve-record W-6 request, recorded the confirmed handoff and kept the rainfall recorder at its mast. The support test and identity comparison justified those decisions. My after-action account left calibration unresolved rather than treating a matching digest as scientific validation.",
     "activityId": "week-12"
   }
 ];

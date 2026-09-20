@@ -1,0 +1,514 @@
+{
+  "capturedAt": "2026-09-20T13:42:03.895Z",
+  "browser": "153.0.8010.12",
+  "pages": [
+    {
+      "name": "home",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDLearn the artof the impossible.",
+        "Learn one skill. Use it in a bigger mission.",
+        "The skills you'vealways wondered about.",
+        "Watch the thinking.Then take the controls.",
+        "Every week changes what you can do.",
+        "Meridian is going dark.The archive must survive.",
+        "Learn. Try. Transfer.",
+        "Show what you can do.",
+        "Three instructors.Very different questions.",
+        "Start anywhere."
+      ],
+      "height": 6335
+    },
+    {
+      "name": "course-guide",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Is this course for you?",
+        "What you will learn",
+        "How the course runs",
+        "The dated teaching schedule",
+        "What you submit and why",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "height": 8184
+    },
+    {
+      "name": "week-02",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Build a Memory Palace",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#"
+      ],
+      "height": 3737
+    },
+    {
+      "name": "week-07",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Challenge the System",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#",
+        "Slide deck and readable summary#"
+      ],
+      "height": 4267
+    },
+    {
+      "name": "week-11",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "When the Plan Breaks",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#"
+      ],
+      "height": 3726
+    },
+    {
+      "name": "assessment",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Final Project — Operation Last Light",
+        "Final example: Operation Lamplight",
+        "Start here: recover the archive as a team#",
+        "The brief#",
+        "Roles and responsibilities#",
+        "How the skills become one operation#",
+        "Mission and resolutions#",
+        "What you hand over#",
+        "Team account and presentation#",
+        "Individual defence#",
+        "Feedback and final-week arrangements#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked"
+      ],
+      "height": 8250
+    },
+    {
+      "name": "policies",
+      "viewport": "desktop",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Policies and support",
+        "The course and its limits#",
+        "Two routes to the same outcomes#",
+        "Collaboration and attribution#",
+        "Disagreement and unavailable teammates#",
+        "Feedback and marks#",
+        "Due times, missed labs and extensions#",
+        "Accessible participation#",
+        "Saving, exports and privacy#",
+        "Original materials and help#"
+      ],
+      "height": 4782
+    },
+    {
+      "name": "home",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDLearn the artof the impossible.",
+        "Learn one skill. Use it in a bigger mission.",
+        "The skills you'vealways wondered about.",
+        "Watch the thinking.Then take the controls.",
+        "Every week changes what you can do.",
+        "Meridian is going dark.The archive must survive.",
+        "Learn. Try. Transfer.",
+        "Show what you can do.",
+        "Three instructors.Very different questions.",
+        "Start anywhere."
+      ],
+      "height": 11163
+    },
+    {
+      "name": "course-guide",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Is this course for you?",
+        "What you will learn",
+        "How the course runs",
+        "The dated teaching schedule",
+        "What you submit and why",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "height": 12810
+    },
+    {
+      "name": "week-02",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Build a Memory Palace",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#"
+      ],
+      "height": 6070
+    },
+    {
+      "name": "week-07",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Challenge the System",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#",
+        "Slide deck and readable summary#"
+      ],
+      "height": 6918
+    },
+    {
+      "name": "week-11",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "When the Plan Breaks",
+        "Read, then try it",
+        "What you will learn#",
+        "The briefing#",
+        "Worked example · a different scenario#",
+        "A plausible mistake#",
+        "Supplied rule sheet#",
+        "Before the lab#",
+        "What happens next#"
+      ],
+      "height": 6150
+    },
+    {
+      "name": "assessment",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Final Project — Operation Last Light",
+        "Final example: Operation Lamplight",
+        "Start here: recover the archive as a team#",
+        "The brief#",
+        "Roles and responsibilities#",
+        "How the skills become one operation#",
+        "Mission and resolutions#",
+        "What you hand over#",
+        "Team account and presentation#",
+        "Individual defence#",
+        "Feedback and final-week arrangements#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked"
+      ],
+      "height": 14218
+    },
+    {
+      "name": "policies",
+      "viewport": "phone",
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Policies and support",
+        "The course and its limits#",
+        "Two routes to the same outcomes#",
+        "Collaboration and attribution#",
+        "Disagreement and unavailable teammates#",
+        "Feedback and marks#",
+        "Due times, missed labs and extensions#",
+        "Accessible participation#",
+        "Saving, exports and privacy#",
+        "Original materials and help#"
+      ],
+      "height": 8436
+    }
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "viewport": "desktop",
+      "title": "Challenge the System#",
+      "nav": "1 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 2,
+      "viewport": "desktop",
+      "title": "The unexpected results#",
+      "nav": "2 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 3,
+      "viewport": "desktop",
+      "title": "State this charter first#",
+      "nav": "3 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 4,
+      "viewport": "desktop",
+      "title": "Three parts of a request#",
+      "nav": "4 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 5,
+      "viewport": "desktop",
+      "title": "Identity and authority#",
+      "nav": "5 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 6,
+      "viewport": "desktop",
+      "title": "Predict this matrix#",
+      "nav": "6 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 7,
+      "viewport": "desktop",
+      "title": "Preserve both failures#",
+      "nav": "7 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 8,
+      "viewport": "desktop",
+      "title": "Make the two repairs#",
+      "nav": "8 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 9,
+      "viewport": "desktop",
+      "title": "Denying everything fails too#",
+      "nav": "9 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 10,
+      "viewport": "desktop",
+      "title": "Recheck all nine cases#",
+      "nav": "10 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 11,
+      "viewport": "desktop",
+      "title": "A release hold arrives#",
+      "nav": "11 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 12,
+      "viewport": "desktop",
+      "title": "Your decision exercise#",
+      "nav": "12 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 13,
+      "viewport": "desktop",
+      "title": "A2: keep a traceable record#",
+      "nav": "13 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 14,
+      "viewport": "desktop",
+      "title": "Derive your own lab policy#",
+      "nav": "14 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 1,
+      "viewport": "phone",
+      "title": "Challenge the System#",
+      "nav": "1 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 2,
+      "viewport": "phone",
+      "title": "The unexpected results#",
+      "nav": "2 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 3,
+      "viewport": "phone",
+      "title": "State this charter first#",
+      "nav": "3 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 4,
+      "viewport": "phone",
+      "title": "Three parts of a request#",
+      "nav": "4 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 5,
+      "viewport": "phone",
+      "title": "Identity and authority#",
+      "nav": "5 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 6,
+      "viewport": "phone",
+      "title": "Predict this matrix#",
+      "nav": "6 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 7,
+      "viewport": "phone",
+      "title": "Preserve both failures#",
+      "nav": "7 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 8,
+      "viewport": "phone",
+      "title": "Make the two repairs#",
+      "nav": "8 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 9,
+      "viewport": "phone",
+      "title": "Denying everything fails too#",
+      "nav": "9 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 10,
+      "viewport": "phone",
+      "title": "Recheck all nine cases#",
+      "nav": "10 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 11,
+      "viewport": "phone",
+      "title": "A release hold arrives#",
+      "nav": "11 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 12,
+      "viewport": "phone",
+      "title": "Your decision exercise#",
+      "nav": "12 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 13,
+      "viewport": "phone",
+      "title": "A2: keep a traceable record#",
+      "nav": "13 / 14",
+      "overflow": false,
+      "textOutside": []
+    },
+    {
+      "slide": 14,
+      "viewport": "phone",
+      "title": "Derive your own lab policy#",
+      "nav": "14 / 14",
+      "overflow": false,
+      "textOutside": []
+    }
+  ],
+  "slowLoad": [
+    {
+      "viewport": "390x844",
+      "latencyMs": 400,
+      "downloadBytesPerSecond": 153600,
+      "cacheDisabled": true,
+      "missionVisible": true,
+      "controlsVisibleAfterMs": 3564,
+      "scope": "Successful HTML/scripts loading; optional 3D world not activated"
+    }
+  ],
+  "errors": []
+}

@@ -20,6 +20,8 @@ Publish the disruption cards as course material. Have teams complete and date th
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **IM-01** is the four-step baseline recovery plan. **IM-02** supplies the east-passage disruption and the transfer case with an unavailable meter and labelled reference readings. Keep separate plan versions.
+
 - Baseline plan: Inspect manifest → Restore relay → Use east passage → Record handover.
 - The initial plan is preserved as an immutable original in the activity.
 - Practice/check disruption: east passage unavailable; west passage open but requires an additional relay check.
@@ -29,11 +31,13 @@ Publish the disruption cards as course material. Have teams complete and date th
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The east passage becomes unavailable after the baseline was recorded. The manifest inspection remains useful. The transport route must change to west and an additional relay verification must precede it. The revised plan records who performs that check and who confirms the handoff, while leaving the original plan visible.
+The separate dispatch example loses its old release authority while its routes and equipment remain available. Its signed identity finding remains useful. Version 2 inserts a recipient-scope check by the investigator and replacement-authorisation recording by the coordinator before sealing, then retains dispatch and receipt. Appending those checks after dispatch would not repair the failed prerequisite. Both plans remain visible, and an acknowledged future plan is not presented as an already completed handover.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: Which part of the original plan did you keep, and what evidence allo
 
 The route disruption changes transport readiness and adds a relay check; it does not invalidate manifest inspection. Reference readings can support a conditional diagnosis, but are not measurements you personally took. A strong revision distinguishes retained evidence from new assumptions.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-The east trolley's loss invalidated transport, not the archive identity check. We preserved that finding, assigned the systems specialist to verify a support fixture and postponed movement until the coordinator confirmed it.
+The dispatch notice withdrew authority without closing a route. I retained the signed identity result, inserted scope and authorisation checks before sealing, and assigned their owners. Version 1 remained visible. Confirming the plan did not prove dispatch had happened.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

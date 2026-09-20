@@ -47,6 +47,8 @@ Read the [briefing](/lectures/week-11/). All starting rules and data are supplie
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **IM-01** is the four-step baseline recovery plan. **IM-02** supplies the east-passage disruption and the transfer case with an unavailable meter and labelled reference readings. Keep separate plan versions.
+
 - Baseline plan: Inspect manifest → Restore relay → Use east passage → Record handover.
 - The initial plan is preserved as an immutable original in the activity.
 - Practice/check disruption: east passage unavailable; west passage open but requires an additional relay check.
@@ -63,7 +65,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -104,7 +106,9 @@ Respond to Meridian's changed equipment or evidence while keeping responsibility
 
 The route disruption changes transport readiness and adds a relay check; it does not invalidate manifest inspection. Reference readings can support a conditional diagnosis, but are not measurements you personally took. A strong revision distinguishes retained evidence from new assumptions.
 
-**Worked reflection:** The east trolley's loss invalidated transport, not the archive identity check. We preserved that finding, assigned the systems specialist to verify a support fixture and postponed movement until the coordinator confirmed it.
+**Worked reflection from the separate demonstration:** The dispatch notice withdrew authority without closing a route. I retained the signed identity result, inserted scope and authorisation checks before sealing, and assigned their owners. Version 1 remained visible. Confirming the plan did not prove dispatch had happened.
+
+[Inspect this example's complete record](/demonstrations/lab-11/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

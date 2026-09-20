@@ -52,6 +52,8 @@ Seeing that a note exists is an observation. The story written on it is the clai
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **PG-01** is the practice-room inventory: clock, cup, door and written account. **PG-02** is the changed inventory for the Skill check and Transfer challenge.
+
 - Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
 - The explanation that the owner left in a hurry is an inference: the visible objects do not establish intent.
 - Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
@@ -68,7 +70,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -111,7 +113,9 @@ Use the arrival scene to notice changed equipment before committing the team to 
 
 Three supplied scene details are observations, the account is a claim and the proposed cause is an inference. The exact display reading is a separate recall check. The classification depends on what is asserted, not whether you personally believe it.
 
-**Worked reflection:** I recorded the open door and 08:20 display. I marked ‘left in a hurry’ as an inference because the objects did not establish a cause. The note preserved what someone claimed, not independent proof of their account.
+**Worked reflection from the separate demonstration:** I recorded 11:35, the green mug and the closed hatch. I kept ‘I checked every tray’ as the note author's claim. My thirty-five-minute duration estimate lacked a start time. The later 11:50 reading and open hatch showed changes, not who caused them.
+
+[Inspect this example's complete record](/demonstrations/lab-01/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

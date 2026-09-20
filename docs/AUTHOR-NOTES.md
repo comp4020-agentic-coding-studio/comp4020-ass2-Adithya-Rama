@@ -32,3 +32,23 @@ The user said the direction works and should continue, while asking for more vis
 They added a specific requirement: every lab, assignment and final project must have a complete, similar but different demonstration scenario, analogous to a finished example website supplied alongside a website assignment. Students should be able to watch a hands-free 3D demonstration or take control themselves. They explicitly asked to make use of 3D skills.
 
 This supports the demonstration-studio extension: sixteen alternate scenarios, causal before/after scenes, selectable coaching, learner controls, complete sample artefacts and a worked recovery project. It does not establish that the user played or accepted every individual activity.
+
+## 20 September — Questions that changed the acceptance criteria
+
+The user said the lab, assessment and project instructions were unclear, including what “observation”, “claim”, “inference”, “inspect” and the six lesson stages meant. They asked for clear instructions throughout the course and a fullscreen mission checklist that would let students finish the practical activity before writing their observations.
+
+They supplied a screenshot showing oversized and overlapping controls and reported that mouse capture prevented selecting answers or scrolling the task panel. They specified an X-key toggle: a free cursor for controls, optional locked-cursor mouse-look, and click-and-drag turning when unlocked.
+
+The user asked who the person behind the desk represented and why all the evidence was on one desk. They then required the instructor to be clearly identified and outside the investigated area, with objects placed by function: a wall clock, a working desk for the mug and ledger, the note beside it, and a wall-mounted hatch. They explicitly asked for that level of detail across all labs, assignments and the project.
+
+They requested narrated worked examples that explain the expected task before starting, state what the demonstrator is doing at each step, and finish by explaining the observations and completed work.
+
+Finally, the user challenged whether every worked example was different from its assigned task: “the worked example isnt same as the task they r assigned to do by themselves?.. that would be an horrible error on our part”. This repeats the separation requirement they had already supplied; it does not claim that they personally audited every example.
+
+The consequential-overlap findings, code changes and browser results that followed are the implementation agent's evidence in [the separation audit](EXAMPLE-SEPARATION-AUDIT.md) and commit [1c215a0](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/1c215a0). The author directions above support refreshing PROCESS.md; they do not establish personal playtesting, learning outcomes, final acceptance of each activity or publication.
+
+## Final review directions
+
+The user requested a thorough check against the rubric, then asked whether the site looked and worked like a real university course website and asked for missing elements to be implemented. They also explicitly asked to keep PROCESS.md, CLAUDE.md and the existing reflections/README.md current.
+
+The resulting course-guide, teaching-consistency and final-mission changes are agent implementation work recorded in [the rubric audit](RUBRIC-AUDIT.md). This request does not establish a grade, a new student playtest or the user's personal acceptance of every change.

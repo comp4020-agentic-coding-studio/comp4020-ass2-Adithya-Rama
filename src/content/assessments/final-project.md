@@ -37,11 +37,11 @@ related: ["sessions/week-12"]
 1. Agree the four responsibilities below. Open **Operation Last Light**, select **Baseline** for a first rehearsal, then select **Start new trial** and confirm if prompted. Choose the **Declared recovery objective** before selecting a role or operating equipment. A resumed trial keeps its initial objective locked; starting a new trial unlocks this choice before new actions.
 2. As **Coordinator**, visit **Dispatch** and use **Preserve this plan version** to record the initial objective, intended route, required checks and what would make you revise it.
 3. As **Observer / Navigator**, visit **Arrival**. Inspect all five objects, hide the notes, check your recall of their packing order, and test the map's orientation.
-4. As **Systems Specialist**, visit **Workshop** and **Power bay**. Set the cradle's required output, release its brake and test it. Measure the circuit fault before replacing the fuse, then restore and verify the load.
-5. As **Investigator**, visit **Control room**. Select the archive supported by the current signed source and repair the permission defect while preserving legitimate access.
-6. As **Coordinator**, visit **Archive**. Agree original preservation and a named recipient, then send a handoff specifying the item, destination and condition.
+4. As **Investigator**, visit **Control room**. Compare the archive with the current signed source. Pass its verified recovery profile to the Systems Specialist. Repair the permission defect while preserving legitimate access.
+5. As **Systems Specialist**, visit **Workshop** and **Power bay**. Use that verified profile to choose the cradle gearing, release its brake and test it. Measure the circuit fault before replacing the fuse, then restore and verify the load. A gearing answer remembered from A1 is insufficient: the final mission publishes different requirements.
+6. As **Coordinator**, visit **Archive**. Agree original preservation and a named recipient. After the verified profile's cradle has been tested, send a handoff specifying the item, destination and condition.
 7. As **Observer / Navigator**, test a route against its power dependencies and the scenario bulletin. As **Coordinator**, return to **Dispatch** and preserve a distinct revision explaining what the evidence or tests changed.
-8. Use the **Mission Journal** to find outstanding objectives. Its **Go to this objective** action selects the relevant role and area. Complete all required capabilities before choosing a resolution at Dispatch.
+8. Use the **Mission Journal** to find outstanding objectives. Its **Go to this objective** action selects the relevant role and area. After the common checks, return to **Dispatch** as Coordinator. Record the evidence for your chosen resolution, then resolve that outcome. A digital receipt, physical custody record and stable handover record are different requirements; see below.
 9. Read the debrief and **Export assessment record**. Rehearse a different published preset, compare the records, then complete and export your final run. Keep both rehearsals as well as the final run.
 10. After playing, assemble the team account, presentation, individual defences and supporting records under **What you hand over**.
 
@@ -64,20 +64,32 @@ Use [the final mission](/operation/) for the browser route or the [campus missio
 
 Roles distribute responsibility without making understanding exclusive. Every student must explain at least one dependency outside their principal role. Solo practice can rotate all roles; the assessed course task remains a group project unless an individual arrangement is recorded.
 
+## How the skills become one operation
+
+The mission has a dependency chain: **signed source → verified archive profile → cradle configuration → supported route and handoff → evidence for the selected ending**. The Investigator's finding changes the Systems Specialist's equipment choice; that test supports the Navigator's route and the Coordinator's handover.
+
+The arrival manifest and map also differ from A1. Read the supplied records again rather than copying an earlier answer. If a source selection or equipment setting changes, dependent checks reopen. Recheck them against the new state and preserve the earlier plan.
+
+All eleven common capability checks establish that the team understands the station. The final evidence record then supports the particular outcome you claim. Completing fields establishes a traceable practice record; your marker still judges the quality of your explanation.
+
 ## Mission and resolutions
 
 Inspect the arrival scene, restore equipment, investigate copies, agree handling, navigate the maintenance area and respond to a published disruption. Then choose a justified resolution:
 
-- **Physical recovery:** verified identity, working support equipment, agreed handling and confirmed custody.
-- **Digital recovery:** verified copy, recorded reference limitations and confirmed receipt; preserve the original's location.
-- **Stabilisation and handover:** verified stable state, named custodian, unresolved issues and a documented handover plan.
+| Resolution | Evidence to record at Dispatch |
+| --- | --- |
+| **Physical recovery** | Name the recipient; confirm supported transport along the tested route and preservation of the original in custody. The record includes the verified archive profile and route. |
+| **Digital recovery** | Name the recipient, enter the receipt code published for the verified profile, record where the original remains and confirm its preservation. In your account, explain what matching the signed reference proves and what it does not prove. |
+| **Stabilisation and handover** | Name the responsible recipient, record the original's location, confirm the stable state and explain a remaining limitation or obligation. Include the next action in the team account. |
+
+A record for one ending does not authorise another. If you change the ending or a dependent check, review and record the applicable evidence again.
 
 No ending is automatically worth more marks. A resolution must meet the objective the team actually claims. If the objective changes, record and defend the change.
 
 ## What you hand over
 
 - Two contrasting rehearsal records using different published presets.
-- A final mission run and its evidence-linked debrief.
+- A final mission run, its outcome-specific evidence record and its evidence-linked debrief.
 - The original team plan and a preserved revision.
 - A role agreement and contribution record.
 - An **800–1,200-word team account**.
@@ -88,7 +100,7 @@ Use the published Baseline, Equipment Failure and Conflicting Archive presets. A
 
 ## Team account and presentation
 
-State the original objective and its constraints. Explain one integrated chain of decisions across roles. Compare the two rehearsals, identify the changed dependency and show the verification used in the final run. End with the unresolved consequence or limitation that matters most.
+State the original objective and its constraints. Explain one integrated chain of decisions across roles: identify who supplied each finding, which later action depended on it and how you checked that action. Compare the two rehearsals, identify the changed dependency and show the verification used in the final run. End with the unresolved consequence or limitation that matters most.
 
 Use the presentation to demonstrate one consequential decision and its alternative. Do not spend the whole ten minutes retelling every movement through the station. Caption recorded media and provide readable diagrams or ordered text.
 

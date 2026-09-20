@@ -2,6 +2,7 @@ import * as THREE from 'three'; import type { DemoFrame } from '../lib/demonstra
 import { demonstrationPlacement, MEMORY_STATIONS, TEACHING_BAY, type SceneSupport } from './scene-layout';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import {missionFacts,recoveryProfiles,type RecoveryProgress} from '../lib/mission-engine';
 import { sensorCells, memoryItems, loci, type TrainingPhase } from '../lib/training-engine'; import RAPIER from '@dimforge/rapier3d-compat';
 
 type RoomId = 'atrium'|'perception'|'spatial'|'mechanics'|'systems'|'digital'|'council'|'movement'|'operations';
@@ -32,7 +33,7 @@ export class AcademyWorld {
  private controller!:RAPIER.KinematicCharacterController;private colliders:RAPIER.Collider[]=[];private demoColliders:RAPIER.Collider[]=[];private equipment:Equipment[]=[];private selected?:Equipment;private selectionHelper?:THREE.BoxHelper;private actionTime=0;
  private animated:THREE.Object3D[]=[];private gears:THREE.Object3D[]=[];private gearTargets=[0,0];private dynamic:Record<string,THREE.Object3D>={};
  private resize?:ResizeObserver;private cleanups:Array<()=>void>=[];private frame=0;private elapsed=0;private last=0;
- private disposed=false;private paused=false;private inspect=false;private moving=false;private keys=new Set<string>();private target?:THREE.Vector3;
+ private sceneRevision=0;private renderedFrames=0;private disposed=false;private paused=false;private inspect=false;private moving=false;private keys=new Set<string>();private target?:THREE.Vector3;
  private azimuth=0;private pitch=.36;private exploreZoom=1;private inspectionZoom=1;private demoZoom=1;private demoYaw=0;private demoPitch=0;private cameraDirty=false;
  private drag?:{x:number;y:number;startX:number;startY:number;moved:boolean};private freeLookPointer?:{x:number;y:number};private lockedMovementReady=false;
  private reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;private ray=new THREE.Raycaster();private pointer=new THREE.Vector2();
@@ -109,6 +110,7 @@ export class AcademyWorld {
   for(const x of [-3.92,3.92])this.box(.10,3.65,.27,x,1.825,-7.15,materials.bronze);
  }
  private buildRoom(){
+  this.sceneRevision++;
   this.colliders.forEach(c=>this.physics.removeCollider(c,true));this.colliders=[];this.demoColliders=[];
   const assetGeometries=new Set<THREE.BufferGeometry>();const retainedMaterials=new Set<THREE.Material>(Object.values(materials));this.kit.traverse(o=>{if(o instanceof THREE.Mesh){assetGeometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])retainedMaterials.add(m);}});
   this.environment.traverse(o=>{if(o instanceof THREE.Mesh){if(o.material instanceof THREE.MeshBasicMaterial&&o.material.map){o.material.map.dispose();o.material.dispose()}if(!assetGeometries.has(o.geometry))o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(!retainedMaterials.has(m))m.dispose();}});
@@ -527,7 +529,14 @@ export class AcademyWorld {
   const points=[];for(let i=0;i<80;i++){const a=i*.5;points.push(new THREE.Vector3(Math.cos(a)*.045,i*.005,Math.sin(a)*.045))}this.dynamic.spring=this.line(points,materials.bronze,.012);this.dynamic.spring.position.set(-1.1,1.66,-3.05);
   this.text('DRIVER',-.65,1.8,-3.04,.65);this.text('FOLLOWER',.65,1.8,-3.04,.8);
   this.equipmentAt(backing,'Training mechanism · gears, cam and interlock','mechanism',new THREE.Vector3(0,2.15,-3.2));
-  this.equipmentAt(handle,'Turn the crank','crank',new THREE.Vector3(-.6,2.2,-3));this.equipmentAt(this.gears[1]!,'Change the driven gear','gear',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(cam,'Set the cam angle','cam',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(this.dynamic.lock!,'Release or engage the interlock','interlock',new THREE.Vector3(1.3,2.2,-3));this.equipmentAt(this.dynamic.spring!,'Attach or detach the return spring','spring',new THREE.Vector3(-1.1,1.8,-3));this.dynamic.readout=this.text('12 : 24',0,3.3,-3.2,1.4,'#f4d599');
+  this.equipmentAt(handle,'Turn the crank','crank',new THREE.Vector3(-.6,2.2,-3));this.equipmentAt(this.gears[1]!,'Change the driven gear','gear',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(cam,'Set the cam angle','cam',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(this.dynamic.lock!,'Release or engage the interlock','interlock',new THREE.Vector3(1.3,2.2,-3));this.equipmentAt(this.dynamic.spring!,'Attach or detach the return spring','spring',new THREE.Vector3(-1.1,1.8,-3));this.dynamic.readout=this.text('12 : 24',0,3.3,-3.2,1.4,'#f4d599');if(this.mode==='mission'){
+   const plaque=this.box(2.2,1.02,.08,-2.75,2.3,-3.2,materials.dark);
+   this.markStaging(plaque,'profile-placard','Cradle requirement placard beside the apparatus','mounted-rig');
+   for(const x of [-3.43,-2.07])this.box(.06,1.79,.07,x,.895,-3.2,materials.bronze);
+   this.dynamic.missionCradle=this.text('CRADLE REQUIREMENT',-2.75,2.57,-3.145,1.95,'#f4d599');
+   this.dynamic.missionCradleRatio=this.text('VERIFY SOURCE FIRST',-2.75,2.3,-3.145,1.95,'#fff2d0');
+   this.dynamic.missionCradleSource=this.text('SIGNED PROFILE',-2.75,2.03,-3.145,1.85,'#b6dfcf');
+  }
  }
  private makeCircuit(_bench:THREE.Object3D){
   const supply=this.mode==='demo'?finiteSceneNumber(this.demo?.values?.sourceVoltage??this.demo?.values?.voltage,6,0,48):6;
@@ -623,7 +632,12 @@ export class AcademyWorld {
    else{
     const paper=part(new THREE.BoxGeometry(.45,.014,.48),white,0,.012);paper.rotation.y=id==='map'?-.14:.16;
     for(let row=0;row<4;row++)part(new THREE.BoxGeometry(.28,.003,.013),id==='map'?blue:materials.dark,0,.022,-.15+row*.08);
-    if(id==='map')part(new THREE.BoxGeometry(.013,.004,.34),blue,.10,.024);
+    if(id==='map'){
+      const arrow=new THREE.Group();arrow.position.set(0,.036,0);object.add(arrow);
+      const shaft=new THREE.Mesh(new THREE.BoxGeometry(.025,.01,.25),materials.bronze);shaft.position.z=-.015;arrow.add(shaft);
+      const tip=new THREE.Mesh(new THREE.ConeGeometry(.065,.105,3),materials.bronze);tip.rotation.x=-Math.PI/2;tip.position.z=-.16;arrow.add(tip);
+      this.dynamic.missionNorth=arrow;
+     }
    }
    this.markStaging(object,id,'Packing inventory: '+id,'desk');this.equipmentAt(object,'Inspect '+id,id,new THREE.Vector3(object.position.x,1.88,-3));
    this.text(id.toUpperCase(),object.position.x,1.78,-2.65,.6,'#f6dfad');
@@ -841,13 +855,26 @@ export class AcademyWorld {
   object.material.map?.dispose();const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;object.material.map=texture;object.material.needsUpdate=true;
  }
  private updateModels(){
-  const values=this.state.values||this.state as Record<string,unknown>;  const phase:TrainingPhase=this.state.phase==='check'||this.state.phase==='transfer'?this.state.phase:'practice';
+  const values=this.state.values||this.state as Record<string,unknown>;
+   if(this.mode==='mission'){
+    const progress=this.state.recovery as RecoveryProgress|undefined,final=this.state.missionKind==='recovery'&&progress?.version===2;
+    const facts=final?missionFacts.recovery:missionFacts.a1;
+    this.rewriteText(this.dynamic.missionManifest,'PACK: '+facts.order.join(' → ').toUpperCase());
+    this.rewriteText(this.dynamic.missionMap,'MAP NORTH: '+facts.orientation+'° CLOCKWISE');
+    if(this.dynamic.missionNorth)this.dynamic.missionNorth.rotation.y=-facts.orientation*Math.PI/180;
+    const profile=progress?.verifiedProfile?recoveryProfiles[progress.verifiedProfile]:null;
+    this.rewriteText(this.dynamic.missionCradle,final?(profile?'VERIFIED PROFILE '+profile.id:'CRADLE REQUIREMENT'):'WORKSHOP CRADLE');
+    this.rewriteText(this.dynamic.missionCradleRatio,final?(profile?'12 : '+profile.follower+' / '+profile.ratio.toUpperCase():'VERIFY ARCHIVE FIRST'):'12 : 24 / HALF-SPEED');
+    this.rewriteText(this.dynamic.missionCradleSource,final?(profile?'SIGNED SOURCE '+profile.source:'ASK THE INVESTIGATOR'):'RELEASE BRAKE TO TEST');
+    this.root.dataset.worldMissionFacts=JSON.stringify({kind:this.state.missionKind||'a1',order:facts.order,orientation:facts.orientation,profile:profile?.id??null,follower:Number(values.follower||24),requiredFollower:final?(profile?.follower??null):24});
+   }
+   const phase:TrainingPhase=this.state.phase==='check'||this.state.phase==='transfer'?this.state.phase:'practice';
   for(let i=0;i<25;i++){const cell=this.dynamic['cell'+i];if(cell instanceof THREE.Mesh)cell.material=sensorCells(phase).includes(i)?materials.bronze:(i+Math.floor(i/5))%2?materials.dark:materials.wall}
   for(let i=0;i<4;i++){const label=this.dynamic['memoryitem'+i];if(label){this.rewriteText(label,memoryItems[phase][i]!);label.visible=!values.covered;}const token=this.dynamic['memorytoken'+i];if(token)token.visible=!values.covered;}
   if(this.room==='perception'&&this.mode!=='mission'&&this.mode!=='demo'&&this.week!==2)this.makeObservationPhase(phase);
 
 
-  if(this.gears.length){const gear=Number(values.gear||values.follower||24),turns=Number(values.turns||0);const angle=turns*Math.PI*2;this.gearTargets=this.mode==='mission'?[angle,-angle*12/gear]:[angle*gear/12,-angle];if(this.reduced){this.gears[0]!.rotation.z=angle*gear/12;this.gears[1]!.rotation.z=-angle;}if(this.gears[1]!.userData.teeth!==gear){this.gears[1]!.removeFromParent();const g=this.addAsset('Gear'+gear,-.64+(12+gear)*.018+.05,2.2,-3.19);g.userData.teeth=gear;this.gears[1]=g;const item=this.equipment.find(e=>e.id==='gear');if(item){item.mesh=g;item.at.x=g.position.x;}}if(this.dynamic.cam)this.dynamic.cam.position.x=this.gears[1]!.position.x;if(this.dynamic.camDial)this.dynamic.camDial.position.x=this.gears[1]!.position.x;this.rewriteText(this.dynamic.readout,'12 : '+gear);if(this.dynamic.cam)this.dynamic.cam.rotation.z=Number(values.cam||0)*Math.PI/180;if(this.dynamic.lock)this.dynamic.lock.position.y=values.interlock||values.brake?2.2:2.65;if(this.dynamic.spring){this.dynamic.spring.rotation.z=values.spring===false?Math.PI/2:0;this.dynamic.spring.position.z=values.spring===false?-2.7:-3.05;}}
+  if(this.gears.length){const gear=Number(values.gear||values.follower||24),turns=Number(values.turns||0);const angle=turns*Math.PI*2;this.gearTargets=this.mode==='mission'?[angle,-angle*12/gear]:[angle*gear/12,-angle];if(this.reduced){this.gears[0]!.rotation.z=angle*gear/12;this.gears[1]!.rotation.z=-angle;}if(this.gears[1]!.userData.teeth!==gear){this.gears[1]!.removeFromParent();const g=gear===48?demonstrationGear(48):this.asset('Gear'+gear);g.position.set(-.64+(12+gear)*.018+.05,2.2,-3.19);this.environment.add(g);g.userData.teeth=gear;this.gears[1]=g;const item=this.equipment.find(e=>e.id==='gear');if(item){item.mesh=g;item.at.x=g.position.x;}}if(this.dynamic.cam)this.dynamic.cam.position.x=this.gears[1]!.position.x;if(this.dynamic.camDial)this.dynamic.camDial.position.x=this.gears[1]!.position.x;this.rewriteText(this.dynamic.readout,'12 : '+gear);if(this.dynamic.cam)this.dynamic.cam.rotation.z=Number(values.cam||0)*Math.PI/180;if(this.dynamic.lock)this.dynamic.lock.position.y=values.interlock||values.brake?2.2:2.65;if(this.dynamic.spring){this.dynamic.spring.rotation.z=values.spring===false?Math.PI/2:0;this.dynamic.spring.position.z=values.spring===false?-2.7:-3.05;}}
   if(this.dynamic.bulb instanceof THREE.Mesh){const lit=Boolean((values.power||values.switchClosed)&&(values.repaired||values.fuse==='sound'||values.fuse==='intact'));const m=this.dynamic.bulb.material as THREE.MeshStandardMaterial;m.color.set(lit?0xffe3a1:0x8b9388);m.emissive.set(lit?0xffbf5e:0);m.emissiveIntensity=lit?1.7:0}
   if(this.dynamic.assembly){this.updateDemoConnectors(['north','east']);this.dynamic.assembly.rotation.y=-Number(values.rotation||0)*Math.PI/180;this.dynamic.assembly.position.y=1.6+Number(values.level||0)*.3;}
   if(this.dynamic.cover)this.dynamic.cover.visible=Boolean(values.covered);if(this.dynamic.observations)this.dynamic.observations.visible=this.mode!=='mission'&&!Boolean(values.covered);
@@ -858,7 +885,7 @@ export class AcademyWorld {
  private setQuality(value:string){this.low=value==='low'||(value==='auto'&&(innerWidth<700||(navigator.hardwareConcurrency||4)<4));this.renderer.setPixelRatio(this.low?Math.min(devicePixelRatio,1.2):Math.min(devicePixelRatio,1.8));this.renderer.shadowMap.enabled=!this.low;this.resizeView();}
  private resizeView(){const w=this.stage.clientWidth||640,h=this.stage.clientHeight||400;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();this.cameraDirty=true;}
  private status(message:string){if(message===this.statusText)return;this.statusText=message;this.root.querySelector<HTMLElement>('[data-world-status]')!.textContent=message;}
- private tick=(time:number)=>{if(this.disposed)return;const dt=Math.min((time-this.last)/1000||.016,.045);this.last=time;this.elapsed+=dt;if((!this.paused||this.cameraDirty)&&!document.hidden){if(!this.paused){this.move(dt);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));}this.updateCamera(dt);this.updateStudentLabel();this.renderer.render(this.scene,this.camera);this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);this.root.dataset.worldCamera=this.camera.position.toArray().map(value=>value.toFixed(3)).join(',');}this.frame=requestAnimationFrame(this.tick);}
+ private tick=(time:number)=>{if(this.disposed)return;const dt=Math.min((time-this.last)/1000||.016,.045);this.last=time;this.elapsed+=dt;if((!this.paused||this.cameraDirty)&&!document.hidden){if(!this.paused){this.move(dt);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));}this.updateCamera(dt);this.updateStudentLabel();this.renderer.render(this.scene,this.camera);this.root.dataset.worldRenderCount=String(++this.renderedFrames);this.root.dataset.worldRenderedRevision=String(this.sceneRevision);this.root.dataset.worldRenderedRoom=this.room;this.root.dataset.worldRenderedZone=this.zone;this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);this.root.dataset.worldCamera=this.camera.position.toArray().map(value=>value.toFixed(3)).join(',');}this.frame=requestAnimationFrame(this.tick);}
  private move(dt:number){if(this.mode==='demo'&&!this.demoControlled){this.player.visible=true;this.updateDemonstratorGesture(dt);return;}this.player.visible=!this.inspect;
   const movement=new THREE.Vector3();
   if(!this.inspect){const forward=Number(this.keys.has('s')||this.keys.has('arrowdown'))-Number(this.keys.has('w')||this.keys.has('arrowup'));const side=Number(this.keys.has('d')||this.keys.has('arrowright'))-Number(this.keys.has('a')||this.keys.has('arrowleft'));movement.set(side,0,forward).applyAxisAngle(new THREE.Vector3(0,1,0),this.azimuth);

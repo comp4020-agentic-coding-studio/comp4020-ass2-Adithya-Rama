@@ -33,7 +33,7 @@ related: ["sessions/week-04"]
 3. Select **Observer / Navigator** and **Arrival**. Use all five **Inspect…** buttons, read their details, hide the inspection notes, enter the packing order and select **Check recall**. Use the map to choose **Clockwise rotation of north**, then **Test orientation**.
 4. Select **Systems Specialist** and **Workshop**. Read the required output, choose a **Follower gear**, release the holding brake and select **Turn input once**. Use the feedback to diagnose an incorrect ratio or blocked mechanism.
 5. Check the **Mission Journal**. Its four workshop objectives should be complete. Open **Dispatch** and select **Finish workshop trial**, then **Export assessment record**.
-6. Keep at least one changed-condition attempt from Labs 1–4 with this record. The compact trial combines the skills; the linked labs supply the detailed classification, connector-level, cam/spring and transfer evidence used in your explanation.
+6. Keep your existing Lab 1 classification record, Lab 3 connector-and-level record and Lab 4 cam/spring record with the trial export. Include at least one changed-condition attempt from Labs 1–4. Use the submission table below to identify the evidence for each capability.
 7. After playing, use the assessment template to assemble the exported record, causal model, explanation and limitation listed below. Declare hints or other assistance.
 
 **You are finished when:** the workshop trial has a debrief, you have kept the practical and transfer evidence, and every item under **What you hand over** is present. A successful trial alone is not a complete assessment.
@@ -42,7 +42,7 @@ related: ["sessions/week-04"]
 
 ## The brief
 
-Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. Inspect its scene, carry a short instruction set, orient a replacement connector and diagnose the training mechanism. The context changes the combination of skills; it does not introduce an unpublished rule.
+Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. In the browser trial, inspect its scene, recall the packing order, interpret the map and prepare the geared cradle. Your lab records show the more detailed observation classification, connector positioning and mechanism checks. The context combines skills you have already practised.
 
 The trial is playable from this page. You can inspect instructions and practise before recording an attempt. Use the [campus trial pack](/campus/assignment-1.md) for the equivalent tabletop route.
 
@@ -58,11 +58,19 @@ The workshop's name does not imply a real lock task. Its carriage uses the purpo
 
 ## What you hand over
 
-- The exported trial record, or equivalent campus event record.
-- A causal model linking input, gear, cam, spring, interlock and output.
-- **350–500 words** explaining two consequential decisions and one changed-situation response.
-- One failed prediction or limitation, with the evidence that revealed it.
-- An attribution and assistance statement.
+### Where each submission item comes from
+
+Assemble one labelled bundle using the [assessment template](/templates/assignment-1.md). Reuse the relevant records you made in the labs; a record can support more than one requirement.
+
+| Submission item | Where to get it and what to include |
+| --- | --- |
+| **Completed workshop record** | At Dispatch, finish the trial and select **Export assessment record**. This records scene inspection, ordered recall, map orientation and the gear/brake test. Campus students use the [campus trial event record](/campus/assignment-1.md). |
+| **Detailed skill and transfer evidence** | Keep your [Lab 1](/sessions/week-01/) statement classifications, [Lab 3](/sessions/week-03/) connector directions and level, and [Lab 4](/sessions/week-04/) interlock, cam and spring checks. Record each relevant attempt in the skills passport, then **Export learning record**; equivalent completed campus worksheets also work. Include at least one changed-condition attempt from Labs 1–4 and label its phase. |
+| **Causal model** | Draw or write your own labelled chain linking input, gear, cam, spring, interlock and output, using the Week 4 rules and your observations. Show what each part changes and what can block movement. |
+| **350–500-word account** | Write your own explanation of two consequential decisions and one changed-situation response. Include one failed prediction or limitation and point to the record that revealed it. |
+| **Attribution and assistance statement** | Name any collaborators in permitted preparation, sources, hints, worked examples or AI assistance you used, and explain what remained your own work. |
+
+**The browser trial has four objectives.** The statement-classification form, connector height controls and adjustable cam/spring are in the linked labs. Their saved records provide those parts of the assessment evidence.
 
 Include the configuration and attempt date. Diagram labels, source references and the event trace are outside the word guidance. A trial ending is evidence to analyse, not the academic mark.
 
@@ -70,7 +78,7 @@ Include the configuration and attempt date. Diagram labels, source references an
 
 Name the intended result. Quote the observation that shaped the first decision. Explain the mechanism prediction before describing the result. Identify what changed in the transfer task and why the old answer was no longer sufficient.
 
-A useful explanation is specific: ‘I selected 24 driven teeth because four input turns must produce two opposite output turns.’ ‘I clicked until it worked’ does not establish the same understanding.
+A useful explanation is specific. In the separate Week 4 demonstration: ‘With an eighteen-tooth driver, I selected thirty driven teeth because five input turns must produce three opposite output turns: 18 ÷ 30 × 5 = 3.’ Use your own assigned measurements and calculation. ‘I clicked until it worked’ does not establish the same understanding.
 
 ## Independent work and feedback
 

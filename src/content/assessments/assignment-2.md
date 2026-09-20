@@ -38,7 +38,7 @@ related: ["sessions/week-08"]
 4. Select **Investigator** and **Control room**. Compare the archive records with the current signed source and use **Verify selected archive**. In the permission form, repair the named defect with **Apply policy and run checks**.
 5. Select **Coordinator** and **Archive**. Complete the item, destination and condition fields, read them back to your partner, then **Send structured handoff**. Four role labels represent tools and responsibilities; two students rotate between the roles needed for this trial.
 6. Check the **Mission Journal** for the four relay objectives. Open **Dispatch**, select **Finish relay trial**, then **Export assessment record**. Preserve the initial checkpoint separately.
-7. Complete the published changed-condition case. Use the Conflicting archive trial for the amended source, or the maintenance hold in Lab 7; also keep the full policy checks and changed-card read-back from Labs 7–8. Export the revised work without discarding the earlier record.
+7. Complete a published revision case: the **Conflicting archive** trial or the maintenance hold in [Lab 7](/sessions/week-07/). Keep the full Lab 7 permission matrices and the changed-card read-back from [Lab 8](/sessions/week-08/). Export the revised work and retain the initial checkpoint; the submission table below identifies each source.
 8. After playing, assemble the joint explanation and both contribution statements using **What you hand over** below.
 
 **You are finished when:** you have a completed relay record, a preserved checkpoint and revision, evidence of role rotation, and the full submission bundle. The compact trial does not replace the lab records that demonstrate all nine policy checks and read-back under changed conditions.
@@ -59,19 +59,24 @@ The relay challenge combines the Week 5 circuit, Week 6 archive comparison, Week
 
 ## What you hand over
 
-- Both role records, showing at least one meaningful rotation.
-- A measured circuit fault and verification trace.
-- A source-backed archive selection.
-- Before/after permission matrices, including positive and negative checks.
-- A complete destination/quantity/code handoff with acknowledgement.
-- A **500–700-word joint explanation**.
-- A responsibilities table and individual contribution statement from each person.
+### Where each submission item comes from
 
-The explanation should connect diagnosis, evidence and communication. Describe one misunderstanding or uncertainty even when it was resolved before the final attempt.
+Assemble one labelled bundle using the [assessment template](/templates/assignment-2.md). One export can support several rows; identify the relevant actions or sections.
+
+| Submission item | Where to get it and what to include |
+| --- | --- |
+| **Completed relay record** | At Dispatch, finish the trial and select **Export assessment record**. Keep the original circuit measurement, repair and verification, the archive selection, permission repair and item/destination/condition handoff. Alongside the export, identify the signed source shown in the Control room and explain how the selected copy matches it. Campus students use the [campus trial event record](/campus/assignment-2.md). |
+| **Full permission audit** | Use [Lab 7](/sessions/week-07/) or its campus worksheet. Preserve the faulty and repaired matrices, showing the expected and observed results for all nine role/action combinations, including permitted and denied actions. The trial's single permission repair is the compact check; this record supplies the full audit. |
+| **Acknowledged handoff under changed conditions** | Use [Lab 8](/sessions/week-08/) or its campus role cards. Keep the destination, quantity, code and acknowledgement, including a changed-card attempt. Record what the receiver read back and what the sender confirmed. The relay trial records item, destination and condition; the lab provides the quantity/code read-back evidence. |
+| **Initial checkpoint and revision** | Export the initial work by the checkpoint and keep that file. Then retain the amended-archive trial or Lab 7 maintenance-hold record, identifying the new authority and what changed. Save relevant lab attempts in the skills passport and use **Export learning record** for the readable evidence. |
+| **500–700-word joint explanation** | Write how diagnosis, evidence and communication affected your decisions. Explain the changed condition and one misunderstanding or uncertainty, including how you addressed it. Refer to the labelled records above. |
+| **Responsibilities and contributions** | Add a table naming who operated and who read/recorded at each stage, including at least one meaningful swap. Each student writes an individual contribution statement and declares assistance. The event log's role labels need your names and account to establish who did the work. |
+
+The practical evidence and your explanation together form the submission. Keep the original checkpoint and revised files separately so the change can be followed.
 
 ## The changed situation
 
-Choose the published maintenance hold or amended archive reference as a revision case. Preserve the old decision, state the new authority and change only the affected expectations. Complete a fresh handoff using the new authoritative card.
+Choose the published maintenance hold or amended archive reference as a revision case. Preserve the old decision, state the new authority and change only the affected expectations. For your changed handoff evidence, complete Lab 8’s **Transfer challenge** using its published destination, quantity and code, then document the read-back and acknowledgement. Name the revision case and the handoff case in your account so each record is clear.
 
 A justified change of archive copy is stronger than repeating a once-correct selection after the reference changes. Denying all permissions is not a useful repair when legitimate read and certification work must continue.
 

@@ -2,7 +2,7 @@ import {describe,it,expect} from 'vitest';
 import {demonstrationById,demonstrations} from '../src/data/demonstrations';
 import {getDemoWalkthrough} from '../src/data/demonstration-walkthroughs';
 import {phases,memoryItems,observationFacts,spatialTarget,rotatedPorts,mechanismConfig,createTraining,handoffTarget,sensorCells,applyTraining} from '../src/lib/training-engine';
-import {applyMission,newMission} from '../src/lib/mission-engine';
+import {applyMission,newMission,requiredProfile} from '../src/lib/mission-engine';
 
 const chapter=(id:string,step:string)=>demonstrationById(id).steps.find(s=>s.id===step)!;
 const answer=(id:string,step:string,control:string)=>chapter(id,step).controls.find(c=>c.id===control)!.expected;
@@ -127,13 +127,21 @@ describe('worked examples require fresh assigned-task decisions',()=>{
   expect(applyMission(state,{type:'orient',degrees:Number(answer('assessment-a1','rotate','orientation'))}).success).toBe(false);
   expect(applyMission(state,{type:'recall',items:(answer('assessment-a1','recall','items') as string[]).join(',')}).success).toBe(false);
  });
- it('the capstone example cannot supply the assigned mission settings',()=>{
-  let state=newMission();state.role='systems';
-  state=applyMission(state,{type:'gear',follower:Number(answer('assessment-final','lift','gearFollower'))}).state;
-  state=applyMission(state,{type:'brake',released:true}).state;
-  expect(applyMission(state,{type:'turn'}).success).toBe(false);
-  state.role='observer';
-  expect(applyMission(state,{type:'orient',degrees:Number(answer('assessment-final','connector','orientation'))}).success).toBe(false);
+ it('the capstone example requires a different complete recovery calculation and configuration',()=>{
+  const demoLift=chapter('assessment-final','lift');
+  const demoFollower=Number(answer('assessment-final','lift','gearFollower'));
+  for(const scenario of ['baseline','conflicting-archive'] as const){
+   let state=newMission('recovery',scenario);state.role='investigator';
+   state=applyMission(state,{type:'replica',replica:requiredProfile(state).id}).state;
+   state.role='systems';
+   state=applyMission(state,{type:'gear',follower:demoFollower}).state;
+   state=applyMission(state,{type:'brake',released:true}).state;
+   // A follower tooth count can coincide; its driver and required ratio still differ.
+   expect(Number(demoLift.before.values!.gearDriver)/demoFollower).not.toBe(state.driver/requiredProfile(state).follower);
+   expect(applyMission(state,{type:'turn'}).success).toBe(scenario==='baseline');
+   state.role='observer';
+   expect(applyMission(state,{type:'orient',degrees:Number(answer('assessment-final','connector','orientation'))}).success).toBe(false);
+  }
   expect(demonstrationById('assessment-final').artifact.markdown).toContain('Halcyon');
   expect(demonstrationById('lab-12').artifact.markdown).toContain('Lark');
  });

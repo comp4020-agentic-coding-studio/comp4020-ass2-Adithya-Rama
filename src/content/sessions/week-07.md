@@ -44,6 +44,8 @@ Read the [briefing](/lectures/week-07/). All starting rules and data are supplie
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **CY-01** is the intended role/action policy. **CY-02** is the faulty starting matrix and the nine decisions to test against that policy. The maintenance hold is the published transfer condition.
+
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
 - The initial faulty matrix grants the observer all actions while failing to grant technician service and registrar certification.
@@ -60,7 +62,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -101,7 +103,9 @@ Repair Meridian's local recovery policy without blocking the work the team is au
 
 A complete repair preserves useful operations as well as denying unauthorised ones. The transfer hold affects one cell: technician/service. Denying every action fails the published policy.
 
-**Worked reflection:** I denied observer certification and service, restored technician service and registrar certification, then tested all nine cells. Under the maintenance hold I changed only technician/service and preserved the original matrix.
+**Worked reflection from the separate demonstration:** I removed maintainer research access and restored reader access under the observatory embargo charter. After all nine checks passed, a release hold changed only custodian approval. I kept the bug repair and the later policy change as separately justified versions.
+
+[Inspect this example's complete record](/demonstrations/lab-07/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

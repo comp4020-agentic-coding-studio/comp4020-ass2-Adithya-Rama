@@ -1,6 +1,6 @@
 ---
 title: "Challenge the System"
-description: "Week 7: inspect an invented permission model, repair its policy and verify both allowed and denied actions."
+description: "Week 7: learn policy repair through the separate observatory embargo example, then derive the assigned recovery policy."
 ---
 
 import DeckNav from "../components/DeckNav.astro";
@@ -12,39 +12,39 @@ Week 7 · MASTERMIND
 A recognised identity is not a permission.
 
 ```notes
-Open with the observer role selected. Ask whether knowing who someone is establishes what they may do. Accept a concrete counterexample.
+Open the separate observatory example. Ask whether knowing someone's job establishes every action they may take. The assigned recovery lab uses its own roles and mandate; keep the two charters distinct.
 ```
 
 <DeckNav slide={1} total={14} />
 
 ---
 
-## The unexpected result
+## The unexpected results
 
-An observer can certify the archive.
+A maintainer can read embargoed research.
 
-A registrar cannot.
+A reader cannot read it.
 
-Both results contradict the mandate.
+Both results contradict this charter.
 
 ```notes
-Show the initial faulty matrix: observer has read, service and certify; other roles have read only. Distinguish an unauthorised success from a legitimate operation wrongly denied.
+These are the alternate observatory's two faults. Record the role, requested action, expected result and observed result before changing a cell. One fault grants too much; the other blocks required work.
 ```
 
 <DeckNav slide={2} total={14} />
 
 ---
 
-## State the contract first
+## State this charter first
 
-Everyone may read.
+Readers may read research.
 
-Technicians may service the cart.
+Maintainers may service equipment.
 
-Registrars may certify the archive.
+Custodians may read and approve release.
 
 ```notes
-Have students paraphrase the rule. No role may infer authority from a button being available. The contract determines expected results.
+The maintainer may not read embargoed research. Every unlisted combination is denied. Have students explain why equipment responsibility does not imply permission to see its research data.
 ```
 
 <DeckNav slide={3} total={14} />
@@ -53,14 +53,14 @@ Have students paraphrase the rule. No role may infer authority from a button bei
 
 ## Three parts of a request
 
-**Subject:** observer
+**Subject:** maintainer
 
-**Action:** certify
+**Action:** read
 
-**Object:** archive
+**Object:** embargoed research
 
 ```notes
-Ask which part changes when the same person requests read instead of certify. Explain that the simplified model fixes an object for each action; real systems may need finer distinctions.
+Changing the requested action to service changes the relevant object to equipment. The simplified table fixes one object per action. Ask which record establishes authority for each request.
 ```
 
 <DeckNav slide={4} total={14} />
@@ -73,58 +73,56 @@ Identity answers **who**.
 
 Permission answers **may they do this**.
 
-The second question must still be asked.
+A job title does not grant every right.
 
 ```notes
-Avoid treating an account or badge as universal authority. All examples remain in the local fictional simulator.
+Explain why this model recognises the maintainer but still denies research reading. All examples remain in the local fictional simulator.
 ```
 
 <DeckNav slide={5} total={14} />
 
 ---
 
-## Predict the matrix
+## Predict this matrix
 
-| Role | Read | Service | Certify |
+| Role | Read | Service | Approve |
 | --- | --- | --- | --- |
-| Observer | Allow | Deny | Deny |
-| Technician | Allow | Allow | Deny |
-| Registrar | Allow | Deny | Allow |
+| Reader | Allow | Deny | Deny |
+| Maintainer | Deny | Allow | Deny |
+| Custodian | Allow | Deny | Allow |
 
 ```notes
-Give pairs two minutes to predict all nine cells before revealing the completed matrix. Ask one student to justify a positive case and another a negative case.
+Ask pairs to cover the table and derive the nine cells from slide 3 before checking. Require a justification for maintainer/read DENY and maintainer/service ALLOW. This table is the demonstration charter, not the assigned lab answer.
 ```
 
 <DeckNav slide={6} total={14} />
 
 ---
 
-## A reproducible test
+## Preserve both failures
 
-Observer → certify archive
+Maintainer → read: **deny expected, allow observed**.
 
-**Expected:** deny
-
-**Observed before repair:** allow
+Reader → read: **allow expected, deny observed**.
 
 ```notes
-A useful failure record identifies the case and the expected result. It should not simply say that the application is insecure.
+A useful audit retains both excess access and missing access. Ask what would be lost if the original policy were overwritten before these results were recorded.
 ```
 
 <DeckNav slide={7} total={14} />
 
 ---
 
-## Repair the actual policy
+## Make the two repairs
 
-Remove observer service and certification.
+Deny maintainer research reading.
 
-Restore technician service.
+Restore reader research reading.
 
-Restore registrar certification.
+Preserve the seven valid decisions.
 
 ```notes
-The complete repair changes four cells. Removing only observer certification leaves both excess authority and missing legitimate capability.
+Do not remove maintainer service or custodian duties. Students should connect each edit to one failed expected-versus-observed test, rather than changing a whole role at once.
 ```
 
 <DeckNav slide={8} total={14} />
@@ -135,12 +133,12 @@ The complete repair changes four cells. Removing only observer certification lea
 
 No unauthorised operation succeeds.
 
-But nobody can do their job.
+But the reader cannot do required work.
 
-Useful access is part of the requirement.
+Useful access is part of the contract.
 
 ```notes
-Ask what a test suite containing only forbidden cases would miss. Connect the example to why regression tests must include positive cases.
+Ask what a test suite containing only forbidden cases would miss. Connect the reader's false denial to the need for positive as well as negative tests.
 ```
 
 <DeckNav slide={9} total={14} />
@@ -149,30 +147,30 @@ Ask what a test suite containing only forbidden cases would miss. Connect the ex
 
 ## Recheck all nine cases
 
-The forbidden action now fails.
+Reader reading succeeds.
 
-The required action still succeeds.
+Maintainer reading fails; service succeeds.
 
-Unrelated rights remain correct.
+Custodian reading and approval succeed.
 
 ```notes
-Students compare before/after matrices. Require all nine expectations, not a screenshot of one passing button.
+Check the other denied combinations as well. Retain the before/after tables with the same governing charter so the repair is reproducible.
 ```
 
 <DeckNav slide={10} total={14} />
 
 ---
 
-## A mandate changes
+## A release hold arrives
 
-A published maintenance hold suspends service.
+Custodian approval is suspended.
 
-Read access remains.
+Research reading is unchanged.
 
-Registrar certification remains.
+Maintainer service is unchanged.
 
 ```notes
-This is new authoritative material, not a secret trick or evidence the earlier matrix was wrong. Preserve the earlier matrix with its original mandate.
+This signed notice changes an authorised expectation. It is not evidence the earlier repair was wrong. Preserve Version 1 under the old charter, then record Version 2 under the release hold.
 ```
 
 <DeckNav slide={11} total={14} />
@@ -181,48 +179,48 @@ This is new authoritative material, not a secret trick or evidence the earlier m
 
 ## Your decision exercise
 
-Which cell changes under the hold?
+Which cell changes under the release hold?
 
-What should stay unchanged?
+Which permissions should remain?
 
-What would you test first?
+What would a global denial break?
 
 ```notes
-Allow two minutes. Answer: technician/service changes to deny. First check that denial, then check reads and registrar certification. Discuss why global denial overreaches.
+Allow two minutes before discussing. Custodian/approve changes from allow to deny. Reader/read, custodian/read and maintainer/service remain allowed; all other denials remain. Retest all nine cases.
 ```
 
 <DeckNav slide={12} total={14} />
 
 ---
 
-## A2 checkpoint
+## A2: keep a traceable record
 
 Preserve the diagnosis and source comparison.
 
-Export both permission matrices.
+Keep both justified policy versions.
 
-Label each role's contribution.
+Label each person's contribution.
 
 ```notes
-The checkpoint is 23 April at 17:00 Canberra time. Final A2 follows the Week8 communication lab on 30 April. Explain that an export is not an institutional submission.
+The checkpoint is 23 April at 17:00 Canberra time; final A2 follows on 30 April. Its required policy evidence comes from the assigned recovery mandate, not a copied observatory matrix. Explain that an export is not institutional submission.
 ```
 
 <DeckNav slide={13} total={14} />
 
 ---
 
-## Take it into the lab
+## Derive your own lab policy
+
+Read the recovery mandate.
 
 Predict → test → repair → recheck.
 
-Apply the maintenance hold.
-
-Explain what changed and why.
+Then apply its maintenance hold.
 
 [Open the Week 7 lab](/sessions/week-07/)
 
 ```notes
-The HTML briefing is the readable summary. Browser and tabletop routes use the same matrix and published hold. Close by asking students to name a legitimate action their fix must preserve.
+The assigned lab uses observer, technician and registrar roles and a different reading rule. Ask students to derive it afresh from its published mandate. Transfer the audit method, not the nine answers from this observatory example. Its maintenance hold also differs from the demonstration's release hold.
 ```
 
 <DeckNav slide={14} total={14} />

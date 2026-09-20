@@ -2,12 +2,12 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Coordinate a recovery task when different people hold different constraints.
+Pass an exact instruction between role views and use read-back to catch a misunderstanding.
 
 ## Learning outcomes
 
-- Convert a vague instruction into a message with action, object, condition and confirmation.
-- Negotiate a sequence that respects constraints held by another role.
+- Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
+- Identify the information a receiver needs without assuming they can see the sender's card.
 - Use read-back to detect a consequential misunderstanding.
 
 ## Equipment
@@ -20,6 +20,8 @@ Print separate analyst cards for Relay/2/AMBER, Archive/3/COPPER and Dispatch/1/
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **CO-01** is the analyst's destination, quantity and code for the selected phase. **CO-02** is the operator's receiving task: record those fields, read them back and obtain confirmation. The campus pack explains how to keep the two role views separate.
+
 - The analyst holds the authoritative destination, quantity and verification code. The operator must record and read back all three.
 - Practice handoff: destination Relay; quantity 2; code AMBER.
 - Skill check: destination Archive; quantity 3; code COPPER.
@@ -29,11 +31,13 @@ Print separate analyst cards for Relay/2/AMBER, Archive/3/COPPER and Dispatch/1/
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The analyst's card says Relay, two units, AMBER. ‘Send it there’ leaves the object count and destination ambiguous. A precise message says ‘Deliver two units to Relay, verification code AMBER; read back before dispatch.’ If the operator repeats Archive, the mismatch is caught before acting.
+In the separate example, the analyst requests Dome, five cases, VIOLET. The operator reads back four cases. That mismatch is kept in the record and corrected before confirmation. A later card requests Pool, two cases, SILVER, so the demonstrator repeats the complete read-back rather than reusing the first acknowledgement. The method transfers; the message itself changes.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: What did the other role know that changed your plan?
 
 All three fields and acknowledgement matter. A correct destination with the wrong count is still an incomplete shared model. The exercise tests accurate handoff, not speaking speed.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-My message named Relay, two units and AMBER. The operator read back a different quantity, so we corrected it before acknowledging. The record shows the misunderstanding and its repair.
+The Dome message requested five cases and VIOLET. The operator first repeated four, so we corrected and confirmed all three fields. For Pool, two and SILVER, we made a fresh read-back. The first confirmation could not approve a changed instruction.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

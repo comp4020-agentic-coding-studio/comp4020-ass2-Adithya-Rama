@@ -26,7 +26,7 @@ spec:
 
 Choose the archive copy supported by the current signed requirement, rather than guessing from its name or timestamp.
 
-**What you will produce:** A comparison of at least two copies, a justified choice under the original requirement, and a revised choice under the amendment.
+**What you will produce:** A comparison of at least two copies and a short written decision timeline showing the original requirement, your supported choice, the amendment and your revised choice.
 
 **Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
 
@@ -40,9 +40,11 @@ Read the [briefing](/lectures/week-06/). All starting rules and data are supplie
 
 - Distinguish an observed record from a conclusion about events.
 - Compare version records and integrity results without treating filenames as authority.
-- Preserve unresolved contradictions in a reproducible timeline.
+- Keep a decision timeline linking each archive choice to its governing requirement and remaining limits.
 
 ## Supplied case file and rules
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **DI-01** is the three archive records with their timestamps, section counts and digests. **DI-02** supplies the original signed reference and its amendment. Record your comparison and source changes in the decision timeline; there is no separate event-log download.
 
 - Archive A: 10:10; 24 sections; digest M-42 matches the signed source manifest.
 - Archive B: 10:35; 24 sections; digest M-99 differs because of a later annotation.
@@ -60,7 +62,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -73,7 +75,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 3. Choose a copy in **Which copy satisfies this manifest?** and select **Test this configuration**.
 4. Try **Skill check** and explain your choice using at least two compared records. The unchanged manifest still has authority; a newer file alone does not change it.
 5. Select **Transfer challenge**. Read the amended signed manifest and repeat the comparison against its new requirement.
-6. After playing, preserve both decisions in your account. Name the document that changed the requirement and explain why a previously justified choice can become unsuitable.
+6. After playing, make a short timeline on paper or in your own document. Use four columns: **stage or source time**, **authority in force**, **observed count/checksum**, and **decision with its limit**. Include the original choice and amendment, preserving the earlier row. The browser export supplies the action trace; this written table supplies your explanation. Do not invent an event time the record does not give.
 
 ### Finish and keep your work
 
@@ -101,7 +103,9 @@ Identify which archive copy can support a defensible recovery decision.
 
 A satisfies the original 24-section M-42 requirement. B satisfies the amended M-99 requirement. C is incomplete. Changing the choice is justified by a changed authority, not simply by preferring the newest file.
 
-**Worked reflection:** I selected A under M-42 and recorded why B's later timestamp was insufficient. When the signed requirement changed to M-99, I selected B and preserved the earlier decision with its original reference.
+**Worked reflection from the separate demonstration:** North met authenticated R1. I retained it when an unsigned East request arrived. Only authenticated R2 and the separately verified South S2 repair justified my new choice. My timeline keeps the old South, the unchanged decision and the later revision with their sources.
+
+[Inspect this example's complete record](/demonstrations/lab-06/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

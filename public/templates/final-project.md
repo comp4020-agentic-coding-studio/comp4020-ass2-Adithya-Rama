@@ -14,6 +14,28 @@ Scenario / route / attempt date:
 
 Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
 
+## Cross-role dependency record
+
+| Current evidence or source | Responsible role | Finding or verified result | Which later action depends on it? | How was that action checked? |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+Trace the signed source through the archive profile, equipment configuration, route and handover. Explain one dependency outside your main role. Include the actual exported values rather than copying a demonstration.
+
+## Outcome-specific evidence
+
+Chosen ending and relation to the initial objective:
+
+Verified archive/profile and tested route:
+
+Named recipient or responsible custodian:
+
+- **Physical recovery:** supported transport and preservation/custody confirmations.
+- **Digital recovery:** matching receipt, original location and preservation; explain the reference's limits.
+- **Stabilisation:** stable-state confirmation, original location, remaining limitation and next action.
+
+Complete the section appropriate to your ending. Attach the exported outcome record; retain earlier records if your objective changed.
+
 ## Changed-situation response
 
 Preserve the initial version; explain the authority or observation requiring a revision.
@@ -26,12 +48,10 @@ Follow the word guidance and deliverables in the published brief.
 
 ## Individual contribution / defence
 
-## Required items
-
 ## What you hand over
 
 - Two contrasting rehearsal records using different published presets.
-- A final mission run and its evidence-linked debrief.
+- A final mission run, its outcome-specific evidence record and its evidence-linked debrief.
 - The original team plan and a preserved revision.
 - A role agreement and contribution record.
 - An **800–1,200-word team account**.

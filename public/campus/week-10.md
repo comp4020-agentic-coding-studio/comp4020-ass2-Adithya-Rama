@@ -6,7 +6,7 @@ Predict fictional sensor observations and compare a route model with the actual 
 
 ## Learning outcomes
 
-- Apply explicit range and visibility rules in a spatial model.
+- Apply the published cell-entry rule to predict sensor contacts along a route.
 - Compare predicted sensor events with a recorded trace.
 - Revise a route after a rule or environmental condition changes.
 
@@ -20,6 +20,8 @@ Draw a 5×5 grid, mark start and destination, and highlight the published sensor
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **SN-01** is the numbered grid, start, destination and cell-entry contact rule. **SN-02** supplies the published sensor layout for each phase; record which layout governs each route and trace.
+
 - A 5×5 grid uses rows 1–5 from north to south and columns 1–5 from west to east.
 - Start: row 5, column 1. Destination: row 1, column 5. Each action moves one cell north, south, east or west; boundaries prevent leaving the grid.
 - Practice sensor cells: row 3, columns 1–4.
@@ -30,11 +32,13 @@ Draw a 5×5 grid, mark start and destination, and highlight the published sensor
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The practice route north, north, north, north, east, east, east, east reaches the destination and contacts the sensor at row 3, column 1 once. Travelling east along row 5 before moving north along column 5 reaches the same destination with zero contacts. Both are valid routes; the learning question is whether the prediction matches the rule.
+The separate gallery example numbers cells 0–24 from top left. Its first route is 20→15→10→5→0→1→2→3; with sensors at 15, 16 and 11, it records one contact. An equally long route through 20→21→22→23→18→13→8→3 records none. When the published sensors move to 21, 22 and 23, that second route records three contacts. The earlier zero remains correct under the earlier rule. Your assigned lab uses its own row/column map and destination; copy the counting method, not these cell numbers.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -76,9 +80,11 @@ Reflection: Which rule did your first mental model leave out?
 
 Contacts count steps ending in the highlighted cells, including repeated visits. Reaching the destination without explaining the count is incomplete. A zero-contact route is available, but is not required for sound reasoning.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I predicted one contact when moving north through row 3, column 1. The event trace confirmed it. Moving east along row 5 first avoided that sensor row, but both routes could be explained with the same rule.
+My first gallery route made one contact; the alternative made zero under the same sensor set. The changed coverage made the alternative record three. I preserved each route and count with its governing map before choosing by the stated objective.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

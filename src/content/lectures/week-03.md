@@ -1,6 +1,6 @@
 ---
 title: "Think in Three Dimensions"
-description: "Reconcile partial views, rotate components and build a model that predicts an unseen view."
+description: "Track labelled directions through a rotation, change height independently and verify both conditions."
 week: 3
 learningOutcomes: ["LO2"]
 skillIds: ["LO2"]
@@ -15,25 +15,29 @@ related: ["sessions/week-03", "assessments/assignment-1"]
 
 ## What you will learn
 
-- Use a consistent coordinate system across different views.
-- Distinguish rotation from reflection.
-- Test a spatial model by predicting a view not used to construct it.
+- Keep world directions fixed while the object or camera moves.
+- Predict where labelled ports move after a clockwise rotation.
+- Change floor level independently and verify direction and height together.
 
 ## The briefing
 
-A view is a projection: it hides one dimension while preserving others. A front view may show height and left-to-right position but not depth. To combine views, establish the origin and direction labels first. An apparent disagreement may be a changed viewpoint rather than a changed object.
+Establish world north, east and up before moving a component. Camera movement changes what faces you on screen; it does not change those directions. A port can appear on the left from one viewpoint and on the right from another while remaining the same world-facing port. Track a labelled feature rather than trusting its screen position.
 
-Mental rotation asks how the same object appears after movement. Reflection creates a different handed arrangement. Use a labelled feature to track orientation rather than rotating until a picture merely looks familiar. A useful spatial model predicts information you have not yet used. Constructing something that fits only one drawing is weak evidence because many different objects can share a projection. State any unresolved alternatives and choose a new view that would distinguish them.
+Rotation changes a component's orientation. Translation changes its position: lifting the connector to another floor does not turn its ports. Predict where the original north tip will point before pressing the rotation control, then test that prediction separately from the height requirement. Reflection would create a different handed arrangement, which is why labels matter when comparing the alternate example's substitute. Your assigned task tests rotation and height; it does not ask you to reconstruct a hidden solid from several projections.
 
-## Worked example
+## Worked example · a different scenario
 
-The original L-shaped module has ports north and east. After one clockwise quarter-turn they point east and south; moving it from level 0 to level 1 does not change those directions. A successful placement must satisfy both orientation and level, so correcting one cannot substitute for the other.
+The separate dome example begins with north and west ports. One clockwise quarter-turn maps them to east and north. The demonstrator then raises the connector from level 0 to level 2 without changing those directions. When a later target calls for level 1 with the same ports, only height changes. A similar-looking mirrored substitute is rejected by checking its labels. In your assigned browser task, the controls test rotation and height; use the fixed compass and the original labelled port to justify both.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-03/).
 
 ## A plausible mistake
 
 Mirroring a plan to make it match the screen can reverse left and right while leaving its outline plausible. A route then reaches the wrong side of a partition. Keep an asymmetric landmark and annotate the orientation.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **SP-01** is the labelled north/east connector and fixed coordinate convention. **SP-02** supplies the target directions and floor levels for the three phases.
 
 - The connector begins with ports pointing north and east on level 0.
 - A rotation moves the connector clockwise by 90 degrees; its handedness remains unchanged.

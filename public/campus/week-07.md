@@ -20,6 +20,8 @@ Print the intended policy and a separate faulty policy. Assign one student to pr
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **CY-01** is the intended role/action policy. **CY-02** is the faulty starting matrix and the nine decisions to test against that policy. The maintenance hold is the published transfer condition.
+
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
 - The initial faulty matrix grants the observer all actions while failing to grant technician service and registrar certification.
@@ -29,11 +31,13 @@ Print the intended policy and a separate faulty policy. Assign one student to pr
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The faulty matrix allows observer certification but denies registrar certification. Fixing only the first cell removes one unauthorised operation while leaving legitimate work blocked. The repaired matrix must permit every role to read, technician to service and registrar to certify, while denying the other actions.
+The separate observatory charter gives readers research access, maintainers equipment service without research access, and custodians research access plus release approval. Its faulty table wrongly allows maintainer reading and blocks reader reading. The demonstrator corrects those two decisions, preserves the other seven and tests the complete table. A later release hold suspends only custodian approval. This is a different charter from your assigned recovery policy: derive each table from its own governing document.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: Which permitted action could a careless repair have broken?
 
 A complete repair preserves useful operations as well as denying unauthorised ones. The transfer hold affects one cell: technician/service. Denying every action fails the published policy.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I denied observer certification and service, restored technician service and registrar certification, then tested all nine cells. Under the maintenance hold I changed only technician/service and preserved the original matrix.
+I removed maintainer research access and restored reader access under the observatory embargo charter. After all nine checks passed, a release hold changed only custodian approval. I kept the bug repair and the later policy change as separately justified versions.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

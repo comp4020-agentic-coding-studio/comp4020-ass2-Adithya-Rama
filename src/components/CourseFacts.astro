@@ -1,0 +1,26 @@
+---
+import {courseMeta} from "../course-config";
+import {weeklyWorkloadHours} from "../data/course-handbook";
+import {withBase} from "astro-theme-university/url";
+interface Props {showGuideLink?: boolean}
+const {showGuideLink = true} = Astro.props;
+---
+<section class="course-facts" aria-label="Course at a glance">
+  <dl>
+    <div><dt>Course</dt><dd>{courseMeta.code}</dd></div>
+    <div><dt>Teaching period</dt><dd>{courseMeta.session}, {courseMeta.year}</dd></div>
+    <div><dt>Level</dt><dd>{courseMeta.level} · undergraduate</dd></div>
+    <div><dt>Weekly workload</dt><dd>About {weeklyWorkloadHours} hours</dd></div>
+  </dl>
+  {showGuideLink && <a href={withBase("/course-guide/")}>Course guide &amp; getting started →</a>}
+</section>
+<style>
+  .course-facts {margin: 1.5rem 0; padding: 1rem 0; border-block: 1px solid var(--academy-line);}
+  .course-facts dl {display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem 1.4rem; margin: 0;}
+  .course-facts dl > div {min-width: 0;}
+  .course-facts dt {font-size: .76rem; color: var(--academy-muted); line-height: 1.5;}
+  .course-facts dd {margin: .2rem 0 0; font-size: .93rem; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere;}
+  .course-facts > a {display: inline-block; margin-top: .9rem; font-size: .86rem; line-height: 1.5; padding-block: .25rem;}
+  @media (max-width: 680px) {.course-facts dl {grid-template-columns: repeat(2, minmax(0, 1fr));}}
+  @media print {.course-facts {break-inside: avoid;}}
+</style>

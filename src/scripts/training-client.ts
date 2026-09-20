@@ -28,7 +28,7 @@ function mount(root:HTMLElement) {
     const nextIndex=milestones.findIndex(done=>!done);
     const next=root.querySelector<HTMLElement>('[data-lab-next]')!;
     const nextText=state.complete&&week!==12||state.complete&&milestones[0]
-      ? 'This configuration is complete. Open After playing below, explain the attempt and select Record attempt in skills passport before changing phase. '+(state.phase==='transfer'?'You can then export your learning record.':'Next, try '+(state.phase==='practice'?'Skill check':'Transfer challenge')+' with its changed conditions.')
+      ? 'This configuration is complete. Open After playing below, explain the attempt and select Record attempt in skills passport before changing phase. '+(state.phase==='transfer'?'You can then export your learning record.':state.phase==='practice'?'Next, use Skill check to test your method against its published conditions.':'Next, try Transfer challenge with its changed conditions.')
       : guide.steps[nextIndex<0?guide.steps.length-1:nextIndex]!.action;
     if(next.textContent!==nextText)next.textContent=nextText;
     root.querySelector<HTMLElement>('[data-guidance-phase]')!.textContent=phaseLabels[state.phase];
@@ -130,7 +130,7 @@ function mount(root:HTMLElement) {
   function render(){
     bench.replaceChildren();const v=state.values,phase=state.phase;
     const top=node('div',undefined,'training-mode-heading');top.append(node('span',phaseLabels[phase],'eyebrow'));
-    top.append(node('p',phase==='practice'?'Learn the controls and inspect the example. Hints are always available.':phase==='check'?'Try the changed configuration. Explain the result you observe.':'Apply the capability to a changed context; an earlier answer may no longer satisfy the requirement.'));
+    top.append(node('p',phase==='practice'?'Learn the controls and inspect the example. Hints are always available.':phase==='check'?'Test your method against the published conditions. Explain the result you observe.':'Apply the capability to a changed context; an earlier answer may no longer satisfy the requirement.'));
     bench.append(top);
     if(week===1){
       const f=group(v.covered?'Scene covered — reconstruct it':'Observation scene');
@@ -276,7 +276,7 @@ function mount(root:HTMLElement) {
     if(reflection.value.trim().length<20){saveStatus.textContent='Add a brief explanation of what you tried, observed and would change (at least 20 characters).';reflection.focus();return;}
     const detail={week,phase:state.phase,actions:state.actions,result:state.feedback,reflection:reflection.value.trim(),completed:state.complete,state:structuredClone(state)};
     window.dispatchEvent(new CustomEvent('mastermind:evidence',{detail}));
-    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+(state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':'When ready, select '+(state.phase==='practice'?'Skill check':'Transfer challenge')+' to try changed conditions.');
+    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+(state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':state.phase==='practice'?'When ready, select Skill check to test your method against its published conditions.':'When ready, select Transfer challenge to try changed conditions.');
   });
   const hintButton=root.querySelector<HTMLButtonElement>('[data-training-hint]')!;hintButton.disabled=false;
   hintButton.addEventListener('click',()=>{

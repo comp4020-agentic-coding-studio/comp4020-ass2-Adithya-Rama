@@ -44,6 +44,8 @@ Read the [briefing](/lectures/week-04/). All starting rules and data are supplie
 
 ## Supplied case file and rules
 
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **ME-01** identifies the driver, follower, interlock, cam and spring and their operating rules. **ME-02** supplies the changed input/output and cam requirements for each phase.
+
 - A 12-tooth driving gear externally meshes with a selectable 12-, 24- or 36-tooth driven gear. Output turns = 12 ÷ driven teeth × input turns, in the opposite direction.
 - The model only moves with interlock released, return spring attached and cam at the published angle.
 - An engaged interlock blocks cam adjustment. Release it before changing the cam.
@@ -61,7 +63,7 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
 | 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
 | 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Test: attempt the changed configuration and preserve the result. |
+| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
@@ -104,7 +106,9 @@ Diagnose Meridian's recovery carriage without treating a jam as an unexplained o
 
 The practice, check and transfer gears are 24, 12 and 36 teeth respectively. All rotate opposite the driver. A blocked mechanism requires a readiness diagnosis, while an incorrect output count requires a ratio diagnosis.
 
-**Worked reflection:** I predicted a 24-tooth driven gear for two output turns from four input turns. It still did not move because the interlock blocked the cam. After release, spring attachment and a 180-degree cam setting, the observed output matched the prediction.
+**Worked reflection from the separate demonstration:** I calculated 18 ÷ 30 × 5 = 3 opposite output turns. The interlock, 270-degree cam and spring checks made that prediction testable. For two turns from four inputs, I changed the follower to 36 teeth and retained the valid readiness conditions.
+
+[Inspect this example's complete record](/demonstrations/lab-04/). Use your own assigned scenario and observations for your reflection.
 
 ## How to judge the response
 

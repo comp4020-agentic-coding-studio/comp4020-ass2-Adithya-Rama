@@ -26,15 +26,19 @@ An access decision relates a subject, an action and an object. Authentication id
 
 Define the intended policy before testing. Otherwise an unexpected result cannot be judged against a clear contract. For each case, record role, action, expected result and observed result. A repair must remove unauthorised actions while preserving legitimate ones. Denying every operation fails the system's purpose. Regression checks revisit the whole matrix after a change so a narrow fix does not quietly break another role. When the published mandate changes, preserve the earlier matrix and document which expectation changes.
 
-## Worked example
+## Worked example · a different scenario
 
-The faulty matrix allows observer certification but denies registrar certification. Fixing only the first cell removes one unauthorised operation while leaving legitimate work blocked. The repaired matrix must permit every role to read, technician to service and registrar to certify, while denying the other actions.
+The separate observatory charter gives readers research access, maintainers equipment service without research access, and custodians research access plus release approval. Its faulty table wrongly allows maintainer reading and blocks reader reading. The demonstrator corrects those two decisions, preserves the other seven and tests the complete table. A later release hold suspends only custodian approval. This is a different charter from your assigned recovery policy: derive each table from its own governing document.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-07/).
 
 ## A plausible mistake
 
 Hiding the certify button changes the interface without establishing the policy used by an action. Conversely, disabling all buttons prevents useful work. The model must check the role/action/object relationship each time, independent of how an action was selected.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **CY-01** is the intended role/action policy. **CY-02** is the faulty starting matrix and the nine decisions to test against that policy. The maintenance hold is the published transfer condition.
 
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
@@ -57,6 +61,6 @@ Repair Meridian's local recovery policy without blocking the work the team is au
 
 [Open the fourteen-slide teaching deck](/decks/week-07/).
 
-The deck moves from unexpected observer certification to an explicit role/action/object model. It distinguishes identity from permission, builds expected-versus-observed tests, repairs the faulty matrix and checks both legitimate and denied actions. A maintenance hold then changes the technician's authority; the earlier matrix remains evidence of the earlier policy. Speaker notes contain discussion prompts and answers.
+The deck uses the separate observatory embargo example. A maintainer is wrongly allowed to read research while a reader is wrongly refused. It builds expected-versus-observed tests, repairs those two cells and retests all nine combinations. A signed release hold then suspends custodian approval while preserving the earlier matrix under its original charter. Speaker notes contain discussion prompts and answers.
 
-The complete example is small enough to inspect: every role reads the shared briefing; only a technician services the cart; only a registrar certifies the archive. The transfer hold suspends service while retaining read and certification rights. Preserve both matrices for the A2 checkpoint and explain why a changed mandate requires a changed test expectation.
+The assigned lab has a different recovery mandate: derive its observer, technician and registrar permissions from that document, then apply its maintenance hold. Preserve both assigned matrices for A2 and explain why each expectation follows from the authority in force. The deck demonstrates the method; its completed table is not your lab submission.

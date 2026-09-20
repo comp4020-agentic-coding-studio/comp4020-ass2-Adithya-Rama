@@ -17,7 +17,7 @@ related: ["sessions/week-06", "assessments/assignment-2"]
 
 - Distinguish an observed record from a conclusion about events.
 - Compare version records and integrity results without treating filenames as authority.
-- Preserve unresolved contradictions in a reproducible timeline.
+- Keep a decision timeline linking each archive choice to its governing requirement and remaining limits.
 
 ## The briefing
 
@@ -25,15 +25,19 @@ Digital investigation begins with a defined question and a preserved source set.
 
 Build a timeline with separate columns for record, direct observation and interpretation. Two records may share a source and therefore provide less independent support than they appear to. Keep competing explanations alive until evidence separates them. An inconsistency should change your investigation plan: name the next record or test that could resolve it. Do not fill a timeline gap with a confident story merely because the story is plausible.
 
-## Worked example
+## Worked example · a different scenario
 
-A and B each contain 24 sections, but their digests differ. Under the original signed reference M-42, A is the matching copy even though B has a later timestamp. When an amended authoritative reference requires M-99, the defensible choice becomes B. The historical result about A remains true under the earlier requirement.
+In the separate weather-ledger example, authenticated R1 requires eighteen sections and Q-7. North matches both; its being newest is incidental. A later unsigned request proposes East/Q-9, but the authority register has not authenticated it, so North remains justified. Authenticated R2 later requires eighteen sections and Q-12, and a repair receipt supplies South version S2 with those properties. The demonstrator checks the new authority and repaired copy separately, then selects South S2 while keeping the incomplete original South and both earlier decisions.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-06/).
 
 ## A plausible mistake
 
 Selecting the newest file because it is ‘latest’ confuses recency with correctness. Treating any mismatch as deliberate tampering adds intent that the records do not supply. Preserve exact observations before suggesting causes.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **DI-01** is the three archive records with their timestamps, section counts and digests. **DI-02** supplies the original signed reference and its amendment. Record your comparison and source changes in the decision timeline; there is no separate event-log download.
 
 - Archive A: 10:10; 24 sections; digest M-42 matches the signed source manifest.
 - Archive B: 10:35; 24 sections; digest M-99 differs because of a later annotation.

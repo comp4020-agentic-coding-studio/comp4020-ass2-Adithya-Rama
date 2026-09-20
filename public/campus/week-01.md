@@ -20,6 +20,8 @@ Print the five scene statements and arrange simple cup, clock and door cards to 
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **PG-01** is the practice-room inventory: clock, cup, door and written account. **PG-02** is the changed inventory for the Skill check and Transfer challenge.
+
 - Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
 - The claim that the owner left in a hurry is an inference: the visible objects do not establish intent.
 - Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
@@ -29,11 +31,13 @@ Print the five scene statements and arrange simple cup, clock and door cards to 
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-The clock shows 08:20 and the door is open. Those are supplied observations. A note says ‘I left first’: observing the note does not prove the writer left first. ‘The owner left in a hurry’ adds a causal interpretation not established by the room. Preserve those distinctions even when the narrative feels obvious.
+In the separate conservatory example, the wall clock reads 11:35, a green mug stands beside the planting ledger and the service hatch is closed. A note says ‘I checked every tray’: that is the writer's claim, not verification of the trays. Saying the inspection lasted thirty-five minutes adds an inference because no start time is supplied. When a later inspection shows 11:50 and an open hatch, the demonstrator records two changes without inventing who caused them.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
@@ -75,9 +79,11 @@ Reflection: Which error came from failing to inspect, and which came from expect
 
 Three supplied scene details are observations, the account is a claim and the proposed cause is an inference. The exact display reading is a separate recall check. The classification depends on what is asserted, not whether you personally believe it.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I recorded the open door and 08:20 display. I marked ‘left in a hurry’ as an inference because the objects did not establish a cause. The note preserved what someone claimed, not independent proof of their account.
+I recorded 11:35, the green mug and the closed hatch. I kept ‘I checked every tray’ as the note author's claim. My thirty-five-minute duration estimate lacked a start time. The later 11:50 reading and open hatch showed changes, not who caused them.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

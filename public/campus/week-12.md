@@ -20,6 +20,8 @@ Lay out the six station areas, publish the chosen preset and assign roles. Keep 
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **MR-01** is the Meridian recovery charter, six areas and four responsibilities. **MR-02** states the requirements for physical recovery, digital recovery and stabilised handover. The [final-project mission pack](./final-project.md) provides the detailed role cards, current archive profiles and resolution record.
+
 - MR-01 authority: recover the research archive from fictional Meridian Station under the published handling and verification rules.
 - Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform.
 - Roles: observer/navigator, systems specialist, investigator, coordinator. Solo mode rotates these roles explicitly.
@@ -30,15 +32,17 @@ Lay out the six station areas, publish the chosen preset and assign roles. Keep 
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-A team initially intends physical recovery. Its equipment test finds the level trolley unavailable, but archive A still matches the published reference. Digital recovery may satisfy a revised research-access objective if verification and custody are recorded. It does not satisfy an unchanged requirement to return the physical container. The team must state the objective change rather than claim both outcomes are equivalent.
+The separate rainfall-recorder example aims to recover verified data while keeping the original recorder stable. The demonstrator records a 16:25 display and an amber service lamp, tests the prepared support lift for two opposite output turns, and compares copies with the twelve-record W-6 request. Ash matches; Birch does not. A confirmed handoff transfers Ash while the recorder stays at its mast. The result meets the stated objective, but matching a reference does not answer the remaining calibration question.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
-Use the Baseline preset to check controls and role handoffs. Label this run as rehearsal and identify one weak dependency before starting the assessed record.
+Use the Baseline preset and current published mission pack. Preserve the team plan before practical checks. The investigator verifies the current archive and load profile before the systems specialist configures support; the navigator then checks its route dependencies. Label this run as rehearsal and preserve the evidence for one weak dependency before starting the assessed record.
 
 ## Skill check
 
@@ -50,7 +54,7 @@ Compare the final run with a contrasting rehearsal. Explain whether the same app
 
 ## Facilitation
 
-A facilitator applies published domain rules and records events without inventing obstacles. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
+A facilitator applies the current mission pack rules and records events without inventing obstacles. A changed source can change the required load profile, so confirm which equipment and route checks need repeating. Require the receipt, custody or stable-handover records for the selected resolution. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
 
 ## Student record
 
@@ -76,9 +80,11 @@ Reflection: What would you now teach your Week 1 self about becoming capable?
 
 The debrief reports the requirements met, missing evidence and unresolved assumptions. A successful ending with unsupported reasoning is not automatically strong academic work. A carefully diagnosed incomplete recovery can still demonstrate substantial skill, while clearly acknowledging what was not achieved.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-We selected verified digital recovery after the equipment failure. We preserved the physical archive in place and confirmed the copy against the current signed reference. Our result met the revised objective while leaving the scope of that reference explicit.
+I recovered Ash under the twelve-record W-6 request, recorded the confirmed handoff and kept the rainfall recorder at its mast. The support test and identity comparison justified those decisions. My after-action account left calibration unresolved rather than treating a matching digest as scientific validation.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 

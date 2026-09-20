@@ -6,6 +6,8 @@ Build and maintain **SLOP4408 — MASTERMIND: The Academy of Impossible Skills**
 
 A good course gives students a reason to practise and makes each week change what they can do. The learning cycle is **briefing → guided practice → skill check → transfer under changed conditions → evidence for the final mission**. The theme must support that cycle. A successful game ending is not an academic grade.
 
+The course-design references support concrete rules: [How to Make Almost Anything](https://fab.cba.mit.edu/classes/863.25/) informs capability accumulation into a larger project; [ANU teaching pages](https://comp.anu.edu.au/courses/comp1720/lectures/) inform direct access to dated materials. Preserve those educational choices without copying another course's wording or claiming personal research that was not supplied.
+
 ## Fixed platform
 
 - Read `README.md` before changing platform integration. Keep Astro, strict TypeScript, the four existing content collections and required keys, the generated course API, SlopU marks and palette, the build/deployment workflow and secret checks.
@@ -19,11 +21,12 @@ A good course gives students a reason to practise and makes each week change wha
 
 - Every week must teach a distinct capability: observation, recall, spatial reasoning, mechanisms, electronics, digital investigation, fictional permissions, communication, negotiation, simulated sensors, revision or recovery.
 - Each briefing needs an explanation, worked example, plausible mistake, objectives and preparation. Each lab needs supplied rules, its two-hour schedule, meaningful controls, specific feedback, a named output, reflection and a later use for that output.
-- Practice, check and transfer must change consequential conditions. Renaming the same exercise does not establish transfer. Campus and browser routes must include enough material to complete the activity independently.
+- Practice establishes the method; Skill check retests it against its published conditions and may retain the same model. Transfer must change a consequential condition and require a new decision. State these differences accurately in pages and live feedback: renaming the same exercise does not establish transfer. Campus and browser routes must include enough material to complete the activity independently.
 - Use original fictional systems. Do not add real intrusion, vehicle-bypass or evasion procedures. Describe memory as trained recall; do not promise photographic memory or infer deception from demeanour.
 - Assessments remain **10% Fieldwork / 20% individual workshop / 25% paired relay / 45% four-role recovery**. Fieldwork counts the best ten of twelve records. Preserve published participation modes, rubric totals and deliverables.
 - Make roles matter through different information, responsibilities and tools. Support shared-screen or rotating control and solo role switching. Preserve earlier plans, revisions and contrasting runs.
 - Reward evidence, diagnosis, transfer and explanation. Open prose and reflection require human judgement; completion checks must not masquerade as academic grading.
+- A final resolution must state which recorded actions and conditions support that particular ending. Define any common prerequisite objectives explicitly, preserve the declared objective and revisions, and explain changes or limits in the debrief. Do not present the same generic completion text as evidence that every recovery outcome is equally supported.
 
 ## Voice and presentation
 
@@ -38,6 +41,7 @@ Build detailed, legible apparatus and original stylised spaces. Show the actual 
 ## Clear instructions and immersive play
 
 - Every activity must state its goal, name the exact controls to use, explain how a student recognises completion, and identify the record to keep. Define unfamiliar words at first use; “inspect” means reveal and read an object's information.
+- Maintain a conventional Course guide with audience, prerequisites, canonical course identity/outcomes, weekly workload, dated timetable, assessment links, preparation, accessible routes and routed help. Derive dates, weights and staff identities from existing records. Keep the six primary navigation links; expose the guide through a compact homepage facts strip and secondary navigation. Do not invent live staff contacts, enrolment services, credit approval or unassigned appointment times.
 - Distinguish the six timetable stages from the activity's actual objectives. Keep worked demonstrations, assigned labs, compressed assessment trials and supporting written deliverables explicit.
 - Show a live mission checklist based on recorded actions and domain checks. Never treat a checklist tick as proof of understanding. Preserve direct access to any week.
 - Fullscreen must contain the actual instructions, inputs, role/area choices, feedback, completion and export controls. Move the existing controls instead of cloning them; entering or leaving fullscreen must preserve state and listeners.
@@ -49,7 +53,7 @@ Build detailed, legible apparatus and original stylised spaces. Show the actual 
 
 Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration.
 
-Compare each example with its assigned browser and campus cases, including Practice, Skill check and Transfer. Share the capability, method and submission standard; require fresh interpretation of the actual evidence, constraints and decisions. Renaming people or replacing numbers is insufficient when the full answer pattern and reasoning remain unchanged. Preserve a per-example comparison and protect consequential differences with tests; do not call a non-empty “difference” label proof of separation.
+Compare each example with its assigned browser and campus cases, including Practice, Skill check and Transfer. Share the capability, method and submission standard; require fresh interpretation of the actual evidence, constraints and decisions. Renaming people or replacing numbers is insufficient when the full answer pattern and reasoning remain unchanged. Preserve a per-example comparison and protect consequential differences with tests; do not call a non-empty “difference” label proof of separation. Apply this review across the whole site: briefing prose, slide decks, lab explanations, reflection exemplars, campus packs, narrated scenes and finished submissions. A distinct 3D demonstration does not excuse an assigned solution copied into a prose example. Keep published rules accessible while ensuring examples still require a fresh interpretation of the assigned case.
 
 Each needs:
 
@@ -82,9 +86,12 @@ Use the existing checks to protect the course's promises:
 | Causal activity rules and changed conditions | `spec/training-engine.test.ts` |
 | Preserved plans, valid missions and safe saves | `spec/mission-passport.test.ts` |
 | Complete alternate examples and honest practice records | `spec/demonstration.test.ts` |
+| Consequential differences between examples and assigned tasks | `spec/example-separation.test.ts` plus site-wide content review |
 | Real controls, reload/restore, printing and graphics recovery | `tests/browser/` |
 
 Run `pnpm check` and `pnpm check:evidence`. Run the relevant browser journeys when interaction, persistence, navigation or layout changes; retain the complete browser command `pnpm test:browser`. Never weaken a check to conceal a defect.
+
+Supporting local review helpers are `mise exec -- node tools/rubric-review.mjs` (selected course pages, the deck and throttled loading) and `mise exec -- node tools/rubric-keyboard-review.mjs` (the Week 7 practical task, resize and save using keyboard input). They expect the production preview at `http://127.0.0.1:4321/comp4020-ass2-Adithya-Rama/` and write to `.browser-rubric-audit/`. Run them sequentially. Inspect their reports and captured pages; they supplement the fixed checks and browser suite, and do not establish deployed or student acceptance. Record final scope in `docs/RUBRIC-AUDIT.md`.
 
 Inspect the rendered result at **1920×1080** and **390×844**, plus relevant intermediate widths. Check resizing during an activity, keyboard navigation, reduced motion, slow loading and graphics failure. Measure text inside its container: hidden overflow can conceal clipping despite a passing document-width check. Inspect actual apparatus and the longest caption; a successful screenshot capture alone is not a visual review.
 
@@ -96,6 +103,6 @@ Inspect current files and history before continuing. Make reviewable changes: es
 
 `PROCESS.md` is the student's **400–600-word narrative**, edited from their supplied account and directions in `docs/AUTHOR-NOTES.md`. Cite real commits beside the claims they support. Explain how the course-design position changed the harness and what was deliberately left to human judgement. Do not fabricate personal testing, acceptance, failures, dates or a retroactive decision history.
 
-`reflections/README.md` is optional preparation for the Assignment 2 retro; it does not replace `PROCESS.md` and is not a separately required submission. Keep it consistent with the same account.
+`reflections/README.md` is optional preparation for the Assignment 2 retro; it does not replace `PROCESS.md` and is not a separately required submission. Keep it consistent with the same account. After consequential course or interaction changes, review PROCESS.md, this harness and reflections/README.md together; update only claims supported by actual directions, commits and observations.
 
-Use `docs/FINAL-COMPLETENESS-AUDIT.md` for feature traceability, `docs/DEMONSTRATION-TEACHING.md` for alternate scenarios, and `docs/DEMONSTRATION-VALIDATION.md` for recorded checks. Preserve earlier evidence with its date and scope; do not present historical results as a fresh run. Local verification does not establish deployment or live acceptance.
+Use `docs/RUBRIC-AUDIT.md` for the latest rubric and university-course review, `docs/FINAL-COMPLETENESS-AUDIT.md` for earlier feature traceability, `docs/DEMONSTRATION-TEACHING.md` for alternate scenarios, and `docs/DEMONSTRATION-VALIDATION.md` for recorded checks. Preserve earlier evidence with its date and scope; do not present historical results as a fresh run. Local verification does not establish deployment or live acceptance.

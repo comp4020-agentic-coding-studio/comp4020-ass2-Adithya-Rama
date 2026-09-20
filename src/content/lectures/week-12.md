@@ -21,19 +21,23 @@ related: ["sessions/week-12", "assessments/final-project"]
 
 ## The briefing
 
-Integration means choosing when a capability is relevant and combining it with others. The final mission does not announce every exercise as a familiar weekly puzzle. You must recognise that a changed lamp is an observation problem, a stalled carriage requires diagnosis, conflicting copies require investigation and an unresolved custodian concern requires negotiation.
+Integration means deciding how one capability changes the next person's work. The investigator verifies a current signed archive and its load profile; the systems specialist uses that result to configure support; the navigator checks a route against the available equipment; the coordinator confirms custody and the handoff. An amended source can therefore require a new support check, not merely a different archive label. The mission journal helps you find the controls, while your account must explain these dependencies and what you rechecked when they changed.
 
 A resolution is defensible when its requirements and limitations are explicit. Physical recovery, verified digital recovery and stabilisation with handover solve different versions of the objective. None is intrinsically the cleverest ending. Compare the result with what you intended, explain what changed and identify where sound reasoning was limited by incomplete evidence. Individual defence matters because a group record can conceal who understood a crucial decision.
 
-## Worked example
+## Worked example · a different scenario
 
-A team initially intends physical recovery. Its equipment test finds the level trolley unavailable, but archive A still matches the published reference. Digital recovery may satisfy a revised research-access objective if verification and custody are recorded. It does not satisfy an unchanged requirement to return the physical container. The team must state the objective change rather than claim both outcomes are equivalent.
+The separate rainfall-recorder example aims to recover verified data while keeping the original recorder stable. The demonstrator records a 16:25 display and an amber service lamp, tests the prepared support lift for two opposite output turns, and compares copies with the twelve-record W-6 request. Ash matches; Birch does not. A confirmed handoff transfers Ash while the recorder stays at its mast. The result meets the stated objective, but matching a reference does not answer the remaining calibration question.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-12/).
 
 ## A plausible mistake
 
 Treating the ending screen as the assessment omits the actual evidence of skill. Conversely, explaining every failure as bad luck can hide a missed check. Identify what the team could know, what it tested and what the result shows.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MR-01** is the Meridian recovery charter, six areas and four responsibilities. **MR-02** states the requirements for physical recovery, digital recovery and stabilised handover. The final-project mission pack provides the detailed role cards, current archive profiles and resolution record.
 
 - MR-01 authority: recover the research archive from fictional Meridian Station under the published handling and verification rules.
 - Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform.

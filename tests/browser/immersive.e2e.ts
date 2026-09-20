@@ -1,4 +1,5 @@
 import {readFile} from 'node:fs/promises';
+import {recordOutcome} from './mission-helpers';
 import {test,expect,type Page,type Locator} from '@playwright/test';
 
 test.use({launchOptions:{args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}});
@@ -312,13 +313,14 @@ test('the final project keeps roles, areas, plan versions, resolution and export
  await panel.locator('[data-plan] button').click();
  await role('observer');await zone('arrival');
  for(const item of ['lens','spool','tile','map','manifest'])await panel.locator('[data-inspect="'+item+'"]').click();
- await panel.locator('[data-recall] input').fill('lens, spool, tile');await panel.locator('[data-recall] button').click();
- await panel.locator('[data-orient] select').selectOption('90');await panel.locator('[data-orient] button').click();
+ await panel.locator('[data-recall] input').fill('tile, lens, spool');await panel.locator('[data-recall] button').click();
+ await panel.locator('[data-orient] select').selectOption('180');await panel.locator('[data-orient] button').click();
+ await role('investigator');await zone('control');await panel.locator('[data-replica] select').selectOption('A');await panel.locator('[data-replica] button').click();
  await role('systems');await zone('workshop');
- await panel.locator('[data-follower]').selectOption('24');await panel.locator('[data-brake]').check();await panel.locator('[data-turn]').click();
+ await panel.locator('[data-follower]').selectOption('36');await panel.locator('[data-brake]').check();await panel.locator('[data-turn]').click();
  await zone('power');await panel.locator('[data-measure]').click();await panel.locator('[data-fuse]').selectOption('intact');await panel.locator('[data-switch]').check();
  await role('investigator');await zone('control');
- await panel.locator('[data-replica] select').selectOption('A');await panel.locator('[data-replica] button').click();await panel.locator('[data-policy] button').click();
+ await panel.locator('[data-policy] button').click();
  await role('coordinator');await zone('archive');
  await panel.locator('[data-agreement] input[type=checkbox]').check();await panel.locator('[data-agreement] input[name=recipient]').fill('Meridian custodian');await panel.locator('[data-agreement] button').click();
  await panel.locator('[data-handoff] [name=item]').selectOption('verified archive');await panel.locator('[data-handoff] [name=destination]').selectOption('dispatch');await panel.locator('[data-handoff] [name=condition]').selectOption('after integrity check');await panel.locator('[data-handoff] button').click();
@@ -328,6 +330,7 @@ test('the final project keeps roles, areas, plan versions, resolution and export
  await panel.locator('[data-plan] button').click();
  await expect(panel.locator('[data-plans]')).toContainText('Version 1:');
  await expect(panel.locator('[data-plans]')).toContainText('Version 2:');
+ await recordOutcome(panel,'digital');
  await panel.locator('[data-ending="digital"]').click();
  await expect(panel.locator('[data-debrief]')).toBeVisible();
  await expect(panel.locator('[data-ending-text]')).toContainText('Verified digital copy recovered');

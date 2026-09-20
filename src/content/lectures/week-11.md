@@ -25,15 +25,19 @@ Improvisation is disciplined adaptation under changed conditions. It begins by l
 
 Preserve a baseline before receiving the disruption. A revision record should connect the new evidence to the changed action, role, verification and consequence. Team coordination matters because a technically correct change can fail if another role continues executing the old plan. Use an explicit handoff and read-back. Disagreement is useful when it exposes a constraint; record how it was resolved rather than describing the team as automatically unanimous.
 
-## Worked example
+## Worked example · a different scenario
 
-The east passage becomes unavailable after the baseline was recorded. The manifest inspection remains useful. The transport route must change to west and an additional relay verification must precede it. The revised plan records who performs that check and who confirms the handoff, while leaving the original plan visible.
+The separate dispatch example loses its old release authority while its routes and equipment remain available. Its signed identity finding remains useful. Version 2 inserts a recipient-scope check by the investigator and replacement-authorisation recording by the coordinator before sealing, then retains dispatch and receipt. Appending those checks after dispatch would not repair the failed prerequisite. Both plans remain visible, and an acknowledged future plan is not presented as an already completed handover.
+
+[Watch this separate example and inspect its finished record](/demonstrations/lab-11/).
 
 ## A plausible mistake
 
 Overwriting the original plan makes the revision impossible to assess. Calling any new action ‘improvisation’ also evades the question of whether it meets the original objective. Preserve the earlier state and identify whether the objective itself has changed.
 
 ## Supplied rule sheet
+
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **IM-01** is the four-step baseline recovery plan. **IM-02** supplies the east-passage disruption and the transfer case with an unavailable meter and labelled reference readings. Keep separate plan versions.
 
 - Baseline plan: Inspect manifest → Restore relay → Use east passage → Record handover.
 - The initial plan is preserved as an immutable original in the activity.

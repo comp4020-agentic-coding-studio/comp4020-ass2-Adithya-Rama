@@ -1,0 +1,50 @@
+[
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "keyboardOnly": true,
+    "visited": [
+      "observer/read",
+      "observer/service",
+      "observer/certify",
+      "technician/read",
+      "technician/service",
+      "technician/certify",
+      "registrar/read",
+      "registrar/service",
+      "registrar/certify"
+    ],
+    "tested": true,
+    "saved": true,
+    "resizePreserved": true,
+    "feedback": "All nine policy checks pass, including allowed and forbidden actions. Retest both after changing a permission; denying every action would also fail the published requirements.",
+    "saveStatus": "This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. When ready, select Skill check to test your method against its published conditions.",
+    "ok": true
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "keyboardOnly": true,
+    "visited": [
+      "observer/read",
+      "observer/service",
+      "observer/certify",
+      "technician/read",
+      "technician/service",
+      "technician/certify",
+      "registrar/read",
+      "registrar/service",
+      "registrar/certify"
+    ],
+    "tested": true,
+    "saved": true,
+    "resizePreserved": true,
+    "feedback": "All nine policy checks pass, including allowed and forbidden actions. Retest both after changing a permission; denying every action would also fail the published requirements.",
+    "saveStatus": "This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. When ready, select Skill check to test your method against its published conditions.",
+    "ok": true
+  }
+]

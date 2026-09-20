@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-09-20T14:09:35.909492+00:00",
+  "scope": "Local revised candidate; no deployment in this turn",
+  "initialCommit": "1c215a0",
+  "browser": "Chromium 153.0.8010.12",
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "logicContentTests": 145,
+  "builtPages": 60,
+  "processCommitReferences": 5,
+  "browserChecksPassed": 185,
+  "browserChecksSkipped": 1,
+  "skipReason": "Desktop-only academy keyboard movement/resource stability case is excluded on phone; phone-specific world and touch cases passed.",
+  "browserRunDuration": "22.6 minutes",
+  "staticPageViews": 14,
+  "slideViews": 28,
+  "keyboardOnlyLab": {
+    "week": 7,
+    "phase": "practice",
+    "saved": true,
+    "resizing": true
+  },
+  "limitations": [
+    "Local Chromium rather than the marker deployed Chrome session",
+    "No new student playtest",
+    "No audible installed-voice review",
+    "No physical apparatus validation"
+  ]
+}

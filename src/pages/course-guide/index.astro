@@ -1,0 +1,144 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import CourseFacts from "../../components/CourseFacts.astro";
+import WeekSchedule from "../../components/WeekSchedule.astro";
+import AssessmentSummary from "../../components/AssessmentSummary.astro";
+import PassportTools from "../../components/PassportTools.astro";
+import {getPublishedCollection} from "astro-course-university/content";
+import {withBase} from "astro-theme-university/url";
+import {courseMeta} from "../../course-config";
+import {learningOutcomes} from "../../data/curriculum";
+import {courseHandbook, weeklyWorkloadHours} from "../../data/course-handbook";
+import {formatCourseDate} from "../../lib/dates";
+const people = await getPublishedCollection("people");
+const support = courseHandbook.support.map(entry => ({
+  ...entry,
+  person: people.find(person => person.id === entry.personId),
+}));
+---
+<CourseLayout title="Course guide" description="Who the course is for, how each week works, what to prepare, and where to find help." eyebrow="SLOP UNIVERSITY / START HERE">
+  <p class="guide-course-name"><strong>{courseMeta.code} — {courseMeta.title}</strong></p>
+  <CourseFacts showGuideLink={false}/>
+  <nav class="guide-contents" aria-label="On this page">
+    <a href="#entry">Entry &amp; preparation</a>
+    <a href="#outcomes">Learning outcomes</a>
+    <a href="#weekly-rhythm">How it runs</a>
+    <a href="#timetable">Timetable</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#help">Getting help</a>
+    <a href="#keep-your-work">Save &amp; back up</a>
+  </nav>
+
+  <section id="entry">
+    <h2>Is this course for you?</h2>
+    <p>{courseHandbook.audience} The semester follows one recovery operation at Meridian Station: learn to notice, test, coordinate and adapt before the team brings its skills together.</p>
+    <p><strong>Prerequisites:</strong> {courseHandbook.prerequisites}</p>
+    <p><strong>What fourth-year means here:</strong> the individual models start with accessible rules. The advanced work is combining them, evaluating uncertain evidence, responding to changed conditions and defending decisions with other people.</p>
+    <h3>Before your first lab</h3>
+    <ol class="guide-checklist">
+      {courseHandbook.preparation.map(item => <li>{item}</li>)}
+    </ol>
+    <p><a href={withBase("/lectures/week-01/")}>Read the first briefing</a> · <a href={withBase("/sessions/week-01/")}>Open Lab 1: Read the Room</a></p>
+  </section>
+
+  <section id="outcomes">
+    <h2>What you will learn</h2>
+    <p>By the end of the course, you should be able to:</p>
+    <ol class="outcome-list">
+      {learningOutcomes.map(outcome => <li><span>{outcome.id}</span><div><strong>{outcome.title}</strong><span>{outcome.description}</span></div></li>)}
+    </ol>
+    <p class="small">Each week's briefing identifies its outcomes. The lab produces evidence that you use in the workshop, relay or final recovery.</p>
+  </section>
+
+  <section id="weekly-rhythm">
+    <h2>How the course runs</h2>
+    <p>Plan for approximately <strong>{weeklyWorkloadHours} hours per teaching week</strong>. Allow more time around the larger assessment deadlines.</p>
+    <dl class="guide-rhythm">
+      <div><dt>Monday · {courseHandbook.workload.briefingHours} hour</dt><dd><strong>Briefing.</strong> Learn the idea, inspect a worked example and identify the prediction you will test in the lab.</dd></div>
+      <div><dt>Friday · {courseHandbook.workload.labHours} hours</dt><dd><strong>Lab.</strong> Practise with feedback, complete the skill check, then try the transfer challenge with changed conditions.</dd></div>
+      <div><dt>Independent · about {courseHandbook.workload.independentHours} hours</dt><dd><strong>Prepare and explain.</strong> Read the supplied material, revisit difficult steps and organise the evidence and written work required by the assessment.</dd></div>
+    </dl>
+    <p><strong>After playing:</strong> explain the result, save the phase's attempt in your skills passport and export a backup. A worked example demonstrates a different scenario; watching or completing it does not complete your assigned lab.</p>
+    <h3>Choose your learning route</h3>
+    <div class="guide-routes">
+      <article>
+        <h4>Browser route</h4>
+        <p>Use a current browser on a computer, tablet or phone. The supplied controls support keyboard, touch and pointer input. Headphones are optional; narration has captions.</p>
+        <p>The standard activity controls remain available alongside the 3D scene. If graphics are unavailable, use those controls; without JavaScript, use the complete downloadable worksheet.</p>
+      </article>
+      <article>
+        <h4>Campus or paper route</h4>
+        <p>Each campus pack lists its equipment, facilitator setup, rules and record sheet. Read that list before the session; you do not need to purchase apparatus to take the browser or paper route.</p>
+        <p>Keep equivalent evidence of prediction, action, result and transfer. Label a simulated result accurately; it is different from a measurement on physical equipment.</p>
+      </article>
+    </div>
+    <p><a href={withBase("/resources/")}>Find all supplied materials and campus packs</a> · <a href={withBase("/policies/")}>Read accessible participation arrangements</a></p>
+  </section>
+
+  <section id="timetable">
+    <h2>The dated teaching schedule</h2>
+    <p>{courseMeta.session}, {courseMeta.year}: <strong>{formatCourseDate(courseMeta.startDate)}–{formatCourseDate(courseMeta.endDate)}</strong>. Each row links directly to its briefing and lab. The teaching pause appears between Weeks 6 and 7.</p>
+    <p class="small">These are teaching dates, not booked appointment times. All published assessment deadlines use Canberra time.</p>
+    <WeekSchedule/>
+  </section>
+
+  <section id="assessment">
+    <h2>What you submit and why</h2>
+    <p>Keep individual weekly records, combine Weeks 1–4 in A1, work with a partner on Weeks 5–8 in A2, then form a team of four for the final recovery. The best ten of twelve Fieldwork records count.</p>
+    <AssessmentSummary/>
+    <p>Open each brief for its complete deliverables, rubric, checkpoint and downloadable template. Practical completion supplies evidence; you also need the explanation and contribution records named in the brief. A game ending does not determine your academic mark.</p>
+    <p><strong>Feedback:</strong> lab controls provide immediate explanations; major-task feedback is scheduled within seven days in the taught course. Refer to a specific attempt or criterion when seeking clarification.</p>
+    <p><a href={withBase("/assessments/")}>Open assessment briefs and templates</a> · <a href={withBase("/demonstrations/")}>See complete alternate submissions</a> · <a href={withBase("/policies/")}>Check collaboration, AI attribution, missed labs and extensions</a></p>
+  </section>
+
+  <section id="help">
+    <h2>Where to get help</h2>
+    <p>Start with the lab's named objective, supplied rules and worked example. If an instruction is still unclear, identify the step, what you tried and what happened. These are fictional staff responsibilities within the course prototype; the profiles do not provide live contact accounts. In the taught course, bring unresolved questions to Monday briefings or Friday labs.</p>
+    <div class="guide-support">
+      {support.map(entry => entry.person && <article>
+        <h3><a href={withBase("/people/" + entry.person.id + "/")}>{entry.person.data.title}</a></h3>
+        <p class="small">{entry.person.data.role}</p>
+        <p><strong>Ask about:</strong> {entry.question}</p>
+        <p>{entry.bring}</p>
+      </article>)}
+    </div>
+    <h3>If you cannot continue an activity</h3>
+    <ul>
+      <li><strong>The camera or graphics get in the way:</strong> use the labelled task controls. In fullscreen, press X to release a locked cursor; use the on-screen controls on touch devices.</li>
+      <li><strong>Saving is unavailable:</strong> export from the current page before leaving it. Local storage is not a shared team workspace.</li>
+      <li><strong>You need a different participation route or a teammate is unavailable:</strong> preserve completed work and follow the individual-arrangement and contribution guidance in the policies.</li>
+    </ul>
+    <p><a href={withBase("/policies/")}>Read the complete support and course policies →</a></p>
+  </section>
+
+  <section id="keep-your-work">
+    <h2>Keep your work between sessions</h2>
+    <p>Use the same browser to resume, or export a JSON backup and restore it on the next device. Keep readable learning records and assessment exports with your written explanation. <strong>Exporting saves a file; it does not submit an assignment.</strong></p>
+    <PassportTools compact/>
+  </section>
+</CourseLayout>
+<style>
+  .guide-course-name {font-size: 1.05rem;}
+  .guide-contents {display: flex; flex-wrap: wrap; gap: .35rem 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--academy-line);}
+  .guide-contents a {font-size: .87rem; line-height: 1.5; padding-block: .45rem;}
+  section[id] {scroll-margin-top: 7rem;}
+  .guide-checklist li {margin-bottom: .6rem;}
+  .guide-rhythm {margin: 1.5rem 0;}
+  .guide-rhythm > div {display: grid; grid-template-columns: minmax(10rem, 1fr) minmax(0, 2.4fr); gap: 1.2rem; padding: 1rem 0; border-bottom: 1px solid var(--academy-line);}
+  .guide-rhythm dt {font-weight: 700; line-height: 1.6;}
+  .guide-rhythm dd {margin: 0; line-height: 1.75;}
+  .guide-routes {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 1.2rem 0;}
+  .guide-routes article {border-top: 2px solid var(--academy-line); padding-top: 1rem; min-width: 0;}
+  .guide-routes h4 {font-size: 1.05rem; line-height: 1.4; margin: 0 0 .7rem; color: var(--academy-ink);}
+  .guide-support article {padding: .5rem 0 1rem; border-bottom: 1px solid var(--academy-line);}
+  .guide-support h3 {margin-bottom: .35rem;}
+  .guide-support p {margin-bottom: .6rem;}
+  @media (max-width: 620px) {
+    .guide-rhythm > div, .guide-routes {grid-template-columns: 1fr; gap: .55rem;}
+    .guide-routes {gap: 1rem;}
+  }
+  @media print {
+    .guide-rhythm > div, .guide-support article, .guide-routes article {break-inside: avoid;}
+    section[id] {scroll-margin-top: 0;}
+  }
+</style>

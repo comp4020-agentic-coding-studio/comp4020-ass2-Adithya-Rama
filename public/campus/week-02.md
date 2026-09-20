@@ -7,7 +7,7 @@ Build a stable route, attach distinctive associations and compare recall with a 
 ## Learning outcomes
 
 - Use ordered locations as retrieval cues.
-- Compare recall using the same scoring rule across two strategies.
+- Compare an unaided attempt with a location-cued attempt, recording item and order scores and the limits of the comparison.
 - Explain why a mnemonic improves retrieval without guaranteeing perfect memory.
 
 ## Equipment
@@ -20,6 +20,8 @@ Place location cards around a room or in a row on a table. Provide a seated, vis
 
 ## Complete supplied rules
 
+**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **MP-01** is the ordered four-location route. **MP-02** supplies the practice, skill-check and transfer item lists. Use the record sheet in the campus pack for your baseline and cued comparison.
+
 - Route: Atrium → Fountain → Workshop → Observatory.
 - Practice list: Compass, Lantern, Coil, Archive.
 - Skill-check list: Lens, Battery, Map, Seal.
@@ -29,15 +31,17 @@ Place location cards around a room or in a row on a table. Provide a seated, vis
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 worked example; 30–60 practice; 60–80 changed skill check; 80–105 transfer; 105–120 debrief and export.
+0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
 
-## Worked example
+## Worked example · a different scenario
 
-To recall Compass, Lantern, Coil and Archive, imagine a compass covering the Atrium floor, a lantern shining from the Fountain, a huge coil across the Workshop bench and an archive filling the Observatory telescope. Walk the same route mentally before revealing the list. A remembered torch instead of Lantern is a substitution to inspect, not a score to correct silently.
+In the separate storm-kit example, the first unaided attempt retrieves only Lens and Beacon. The demonstrator then fixes the route Gate → Pool → Press → Dome and associates Lens, Tether, Pocket atlas and Beacon with those places. A Tether splashing in the Pool supplies a distinctive cue. The guided retrieval gets all four, but a later attempt substitutes ‘book’ for Pocket atlas. Keeping that error makes the comparison useful: a stronger map-specific cue can be tested, while one improved attempt does not prove lasting improvement.
+
+This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
 
 ## Practice
 
-Attempt the four-item practice list without a prescribed method, then build associations at the four fixed places. Cover the list and retrieve in order. Record the baseline separately.
+Read the four-item practice list once without making location associations, cover it and write an unaided baseline. Keep that answer unchanged. Then build associations at the four fixed places, cover the list and retrieve again. Keep both attempts and score them by the same two rules below. Reusing the list adds rehearsal, so an improvement cannot be attributed to the memory method alone.
 
 ## Skill check
 
@@ -49,9 +53,16 @@ Use Sample, Receipt, Sensor and Capsule. Then explain when a checklist would be 
 
 ## Facilitation
 
-Students complete a baseline independently, create associations and retrieve with the list concealed. A partner scores against the declared rules. Do not use public ranking, compulsory speed tests or claims about intelligence.
+Students complete a baseline independently, create associations and retrieve with the list concealed. For each attempt, a partner counts exact target items present anywhere and target items in their correct positions, each out of four; count each target item only once. Keep substitutions and omissions visible. Record any reopened list or other assistance. Do not use public ranking, compulsory speed tests or claims about intelligence.
 
 ## Student record
+
+Keep both original answer lists alongside this comparison.
+
+| Attempt | Exact target items present, /4 | Correct positions, /4 | Assistance or repeated exposure |
+| --- | --- | --- | --- |
+| Unaided baseline | | | |
+| Location-cued attempt | | | |
 
 Name / role:
 
@@ -75,9 +86,11 @@ Reflection: Which cue helped you retrieve an item, and what would make that cue 
 
 Compare both item and order scores. A better score suggests the strategy helped in this trial, but one attempt does not prove permanent improvement. An honest account of an error and its repair is stronger than an unsupported claim of perfect recall.
 
-## Example reflection
+## Example reflection · separate demonstration
 
-I associated Lantern with the Fountain spraying light. On retrieval I swapped two items, so I kept the route fixed and made those two associations more distinctive.
+My storm-kit baseline contained Lens and Beacon only. The location cues helped me retrieve all four items in the guided attempt, but I later substituted ‘book’ for Pocket atlas. I preserved the error and strengthened the atlas cue instead of claiming perfect memory.
+
+Write your own reflection from your assigned scenario; do not copy this account.
 
 ## Evidence and limitations
 
