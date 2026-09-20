@@ -76,6 +76,6 @@ Inspect current files and history before continuing. Make reviewable changes: es
 
 `PROCESS.md` is the student's **400–600-word narrative**, edited from their supplied account and directions in `docs/AUTHOR-NOTES.md`. Cite real commits beside the claims they support. Explain how the course-design position changed the harness and what was deliberately left to human judgement. Do not fabricate personal testing, acceptance, failures, dates or a retroactive decision history.
 
-`REFLECTION.md` is optional preparation for the Assignment 2 retro; it does not replace `PROCESS.md` and is not a separately required submission. Keep it consistent with the same account.
+`reflections/README.md` is optional preparation for the Assignment 2 retro; it does not replace `PROCESS.md` and is not a separately required submission. Keep it consistent with the same account.
 
 Use `docs/FINAL-COMPLETENESS-AUDIT.md` for feature traceability, `docs/DEMONSTRATION-TEACHING.md` for alternate scenarios, and `docs/DEMONSTRATION-VALIDATION.md` for recorded checks. Preserve earlier evidence with its date and scope; do not present historical results as a fresh run. Local verification does not establish deployment or live acceptance.
