@@ -16,7 +16,7 @@ test("complete a recovery, preserve revisions, and download its actual debrief",
  await page.reload();await expect(page.locator("[data-debrief]")).toBeVisible();
 });
 test("changed equipment supports the alternative recovery ending",async({page})=>{
- await mission(page,"equipment-failure");await recordOutcome(page,"stabilise");await page.locator('[data-ending="stabilise"]').click();await expect(page.locator("[data-ending-text]")).toContainText("Archive stabilised");await expect(page.locator("[data-ending-text]")).toContainText("service route");
+ await mission(page,"equipment-failure");await recordOutcome(page,"stabilise");await page.locator('[data-ending="stabilise"]').click();await expect(page.locator("[data-ending-text]")).toContainText("Archive stabilised");await expect(page.locator("[data-ending-text]")).toContainText("no transport route required");await expect(page.locator("[data-ending-text]")).toContainText("The initial objective was physical; the ending is stabilise");await expect(page.locator("[data-ending-text]")).toContainText("did not require the unavailable transport lift");
 });
 test("a changed signed source supports verified digital recovery",async({page})=>{
  await mission(page,"conflicting-archive");await recordOutcome(page,"digital","B");await page.locator('[data-ending="digital"]').click();await expect(page.locator("[data-ending-text]")).toContainText("Verified digital copy recovered");await expect(page.locator("[data-ending-text]")).toContainText("later source");
@@ -37,7 +37,7 @@ test("blocked browser storage still downloads this tab's mission",async({page})=
  const downloaded=page.waitForEvent("download");await page.locator('[data-passport-export="json"]').click();const raw=await readFile((await (await downloaded).path())!,"utf8");expect(raw).toContain("Bronze lens");
 });
 test("teaching and full worksheets remain available without JavaScript",async({browser,baseURL})=>{
- const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const page=await context.newPage();await page.goto(new URL("sessions/week-04/",baseURL!).href);await page.locator(".training-worksheet summary").click();await expect(page.locator(".training-worksheet")).toContainText("Output turns");await expect(page.getByRole("navigation",{name:"Course navigation",exact:true})).toBeVisible();await context.close();
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const page=await context.newPage();await page.goto(new URL("sessions/week-04/",baseURL!).href);await page.locator(".training-worksheet summary").click();await expect(page.locator(".training-worksheet")).toContainText("Output = driver teeth");await expect(page.locator(".training-worksheet")).toContainText("record a diagnosis before changing parts");await expect(page.locator(".training-worksheet")).toContainText("mechanism-diagnosis");await expect(page.getByRole("navigation",{name:"Course navigation",exact:true})).toBeVisible();await context.close();
 });
 test("reduced motion and slow scene loading leave course controls usable",async({page})=>{
  await page.emulateMedia({reducedMotion:"reduce"});

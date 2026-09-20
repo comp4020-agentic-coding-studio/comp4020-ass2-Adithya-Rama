@@ -1,6 +1,6 @@
 ---
 title: "Follow the Digital Trace"
-description: "Compare supplied records, separate file labels from evidence and reconstruct an event sequence."
+description: "Resolve conflicting records by separating authority, integrity and completeness while preserving a decision timeline."
 week: 6
 learningOutcomes: ["LO4"]
 skillIds: ["LO4"]
@@ -11,22 +11,36 @@ date: 2027-03-29
 related: ["sessions/week-06", "assessments/assignment-2"]
 ---
 
-> **Your field application — The Authentic Archive:** Release the archive copy that actually satisfies the signed recovery order. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** Choose a record that supports a stated request. Explain why its label, timestamp or apparent completeness alone is insufficient.
 
 
 > Three files claim to be the last copy. Filenames are not witnesses.
 
 ## What you will learn
 
-- Distinguish an observed record from a conclusion about events.
-- Compare version records and integrity results without treating filenames as authority.
-- Keep a decision timeline linking each archive choice to its governing requirement and remaining limits.
+- Separate authority, content comparison and completeness evidence.
+- Compare candidate records against explicit criteria rather than labels alone.
+- Preserve the decision timeline when an authenticated instruction changes.
 
 ## The briefing
 
-Digital investigation begins with a defined question and a preserved source set. A timestamp records something about a system's clock and event type; it does not automatically establish when the underlying content was created. A checksum comparison can establish equality against a trusted reference, but cannot establish the truth of the content itself.
+### Three questions need different evidence
 
-Build a timeline with separate columns for record, direct observation and interpretation. Two records may share a source and therefore provide less independent support than they appear to. Keep competing explanations alive until evidence separates them. An inconsistency should change your investigation plan: name the next record or test that could resolve it. Do not fill a timeline gap with a confident story merely because the story is plausible.
+Ask what the requester authorises, whether the copy matches a reference and whether it contains the required sections. The signed manifest states the requirement. A matching digest is the supplied comparison of content. A section count checks completeness against the requested scope.
+
+A recent timestamp can indicate a later edit without showing authorisation. A matching identifier does not establish scientific truth, suitable interpretation or ownership. State precisely what each record supports.
+
+### Compare before selecting
+
+Compare at least two copies using source, timestamp, section count, comparison result and fit to the mandate. Reject a copy for a named requirement rather than labelling it vaguely “unreliable.” If the requirement is missing or ambiguous, ask for clarification instead of inventing authority.
+
+Treat an authenticated amendment as a new instruction with a source. An unsigned message can prompt investigation but cannot silently replace the governing record. The separate demonstration illustrates this distinction; the assigned evidence still needs its own analysis.
+
+### Preserve changing authority
+
+A timeline records which authority governed a decision and what evidence was then available. Append the amendment and revised choice instead of rewriting the earlier row. This separates a reasonable earlier choice from an error under its own conditions.
+
+Include a limit: a complete matching copy under the current instruction does not establish every fact about the archive. Pass that limit to the next role along with the selection.
 
 ## Worked example · a different scenario
 
@@ -55,6 +69,6 @@ Read DI-01 and DI-02 (20 minutes). Write one statement the digest comparison est
 
 ## What happens next
 
-Identify which archive copy can support a defensible recovery decision. The lab produces **evidence-timeline**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
+A2 uses this record to justify instructions to another role. Every final approach needs source evidence, but matching a digest does not itself choose the recovery objective.
 
-[Open this week's lab](/sessions/week-06/) · [Download the campus pack](/campus/week-06.md) · [Explore the academy](/academy/)
+Keep **evidence-timeline** from [this week's lab](/sessions/week-06/). [Download the campus pack](/campus/week-06.md).

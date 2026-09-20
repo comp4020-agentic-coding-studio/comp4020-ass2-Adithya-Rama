@@ -1,10 +1,11 @@
+import { observationInvestigations, memoryMethods, memoryStrategyFits, mechanismFault, circuitEvidenceSupports, evaluateAgreement, routeObjectiveSatisfied } from './training-challenges';
 import { labOperation } from '../data/lab-operations';
 import { createFieldOperation, applyFieldOperation, validFieldOperation, type FieldOperationState, type FieldOperationAction } from './field-operation';
 /** Authored teaching models shared by spatial and HTML presentations. */
 export type TrainingPhase = 'practice' | 'check' | 'transfer';
 export type Value = string | number | boolean;
 export interface TrainingState {
-  week: number; phase: TrainingPhase; values: Record<string, Value>; sequence: string[];
+  learningVersion?: 2; week: number; phase: TrainingPhase; values: Record<string, Value>; sequence: string[];
   inspected: string[]; actions: string[]; feedback: string; complete: boolean;
   /** Domain completion and enacted mission completion are intentionally separate. */
   field?: FieldOperationState;
@@ -55,7 +56,7 @@ export function createTraining(week:number, phase:TrainingPhase='practice'):Trai
   if(week===1)values.covered=false;
   if(week===2){values.covered=false;loci.forEach((_,i)=>values['locus'+i]='');}
   if(week===3){values.rotation=0;values.level=0;values.prediction='';}
-  if(week===4){values.gear=24;values.cam=0;values.spring=false;values.interlock=true;values.turns=0;values.prediction='';}
+  if(week===4){values.gear=phase==='transfer'?36:24;values.cam=phase==='transfer'?90:180;values.spring=phase!=='transfer';values.interlock=phase==='practice';values.turns=0;values.prediction='';}
   if(week===5){values.power=false;values.fault=phase==='practice'?'fuse':phase==='check'?'cable':'lamp';values.repaired=false;values.meter='No measurement yet';}
   if(week===6)values.archive='';
   if(week===7)for(const role of policyRoles)for(const action of policyActions)values[role+':'+action]=action==='read'||role==='observer';
@@ -64,7 +65,7 @@ export function createTraining(week:number, phase:TrainingPhase='practice'):Trai
   if(week===10){values.position=20;values.detected=0;values.steps=0;values.prediction='';}
   if(week===11){values.disrupted=false;values.original=initialPlan.join(' → ');values.revision='';values.reason='';values.replacement='';values.dependencyChecked=false;}
   if(week===12){values.objective='';values.evidence='';values.alternative='';}
-  return {week,phase,values,sequence:[],inspected:[],actions:[],feedback:'Inspect the supplied rules, then try the controls. Practice can be repeated without a time limit.',complete:false,field:createFieldOperation(labOperation(week,phase))};
+  return {learningVersion:2,week,phase,values,sequence:[],inspected:[],actions:[],feedback:'Inspect the supplied rules, then try the controls. Practice can be repeated without a time limit.',complete:false,field:createFieldOperation(labOperation(week,phase))};
 }
 export function mechanismConfig(phase:TrainingPhase) {
   return {driver:12,inputTurns:phase==='transfer'?6:4,targetTurns:phase==='check'?4:2,cam:phase==='transfer'?90:180};
@@ -92,28 +93,47 @@ export function applyTraining(previous:TrainingState,action:TrainingAction,conte
   const {week,phase}=s;const v=s.values;
   const fieldSpec=labOperation(week,phase);
   const invalidate=()=>{s.complete=false;if(s.field)s.field=applyFieldOperation(fieldSpec,s.field,{type:'proof',verified:false}).state;};
-  if(!['inspect','cover','role','test','crank'].includes(action.type))invalidate();
+  if(!['inspect','cover','role','test','crank','probe','investigate','recall-trial','measure','continuity'].includes(action.type))invalidate();
   const log=(line:string)=>{const bounded=line.slice(0,600); const match=bounded.match(/^Set ([^=]+) = /); if(match&&s.actions.at(-1)?.startsWith('Set '+match[1]+' = '))s.actions[s.actions.length-1]=bounded;else s.actions.push(bounded);if(s.actions.length>160)s.actions.shift();};
   const see=(id:string)=>{if(!s.inspected.includes(id))s.inspected.push(id);};
   const finish=(ok:boolean,yes:string,no:string)=>{
     s.complete=ok;s.field=applyFieldOperation(fieldSpec,s.field??createFieldOperation(fieldSpec),{type:'proof',verified:ok}).state;
-    s.feedback=(ok?yes:no)+(ok?' Skill verified. Return to the mission actions: apply the result and confirm its consequence.':'');log(s.feedback);
+    s.feedback=(ok?yes:no)+(ok?(labRequiresEnactment(week)?' Skill verified. Apply the result at the mission station and confirm its consequence.':' Practical record ready. Explain the evidence and save your attempt. The field extension is optional.'):'');log(s.feedback);
   };
   if(action.type==='set'&&action.key&&typeof action.value!=='undefined'){
-    const allowed=/^(classification\d|recall\d|locus\d|association\d|prediction|archive|destination|quantity|code|acknowledged|role|proposal|revision|reason|objective|evidence|alternative|replacement|observer:(read|service|certify)|technician:(read|service|certify)|registrar:(read|service|certify))$/;
+    const allowed=/^(classification\d|recall\d|locus\d|association\d|followup|conclusion|memoryMethod|memoryStrategy|diagnosis|custody|verification|responsibility|timing|routeObjective|prediction|archive|destination|quantity|code|acknowledged|role|proposal|revision|reason|objective|evidence|alternative|replacement|observer:(read|service|certify)|technician:(read|service|certify)|registrar:(read|service|certify))$/;
     if(!allowed.test(action.key))return previous;
     if(week===11&&action.key==='replacement')v.dependencyChecked=false;
+    if(week===4&&action.key==='diagnosis'&&v.diagnosis!==action.value)v.diagnosed=false;
     v[action.key]=typeof action.value==='string'?action.value.slice(0,4000):action.value;s.complete=false;log('Set '+action.key+' = '+String(v[action.key]));return s;
   }
   if(week===1){
     if(action.type==='inspect'){const facts=observationFacts[phase];const id=action.key??facts[s.actions.filter(a=>a.startsWith('Inspected ')).length%facts.length]!.id;const fact=facts.find(f=>f.id===id);if(fact){see(id);s.feedback=fact.label;log('Inspected '+fact.label);}}
     if(action.type==='cover'){v.covered=!v.covered;log(v.covered?'Covered scene for recall':'Reopened scene');}
-    if(action.type==='test'){const correct=observationFacts[phase].filter((f,i)=>v['classification'+i]===f.category).length;finish(['clock','cup','door','note'].every(id=>s.inspected.includes(id))&&s.actions.some(a=>a.startsWith('Covered scene'))&&correct===5&&v.recall0===(phase==='practice'?'08:20':phase==='check'?'09:40':'14:10'),'All five statements distinguished and the display recalled. A note is evidence that a claim was made; its contents still need checking.',correct+'/5 statement categories agree with the supplied scene. Inspect all four objects and cover the scene for a recall attempt. Recheck whether a sentence reports a visible fact, someone’s account, or your explanation. Check the recalled display separately.');}
+    if(action.type==='investigate'){
+      const investigation=observationInvestigations[phase];const test=investigation.tests.find(t=>t.id===v.followup);
+      if(test){see('investigation:'+test.id);s.feedback=test.result;log('Follow-up '+test.id+': '+test.result);}else s.feedback='Choose a follow-up investigation before running it.';
+    }
+    if(action.type==='test'){
+      const correct=observationFacts[phase].filter((f,i)=>v['classification'+i]===f.category).length;const investigation=observationInvestigations[phase];
+      finish(['clock','cup','door','note'].every(id=>s.inspected.includes(id))&&correct===5&&s.inspected.includes('investigation:'+investigation.useful)&&v.conclusion===investigation.supported,
+        'Your account distinguishes the five statements and uses a follow-up record to test an explanation. The bounded conclusion preserves what remains unknown.',
+        correct+'/5 categories agree with the scene. Inspect the four objects, distinguish the statements, choose an investigation that separates the competing explanations, and select a conclusion no stronger than its evidence. Recall is optional in this observation lab.');
+    }
   }
   if(week===2){
     if(action.type==='inspect'){const i=s.actions.filter(a=>a.startsWith('Visited ')).length%4;see(loci[i]!);s.feedback=loci[i]+': associate '+memoryItems[phase][i]+' with a vivid image here. Your image can be unusual, but keep the route fixed.';log('Visited '+loci[i]);}
     if(action.type==='cover'){v.covered=!v.covered;log(v.covered?'Entered recall without item list':'Reopened encoding list');}
-    if(action.type==='test'){const correct=memoryItems[phase].filter((item,i)=>String(v['recall'+i]??'').trim().toLowerCase()===item.toLowerCase()).length;finish(loci.every(place=>s.inspected.includes(place))&&s.actions.some(a=>a.startsWith('Entered recall'))&&correct===4,'All four items retrieved in order. Compare with your earlier attempt; this demonstrates this retrieval task, not photographic memory.',correct+'/4 items retrieved in the correct locations. Visit all four route locations and cover the list before recalling. Revisit the association at each missing location, then cover the list and try again.');}
+    if(action.type==='recall-trial'){
+      const method=String(v.memoryMethod??'');
+      if(!memoryMethods.includes(method as typeof memoryMethods[number])){s.feedback='Choose a retrieval method first.';return s;}
+      if(!v.covered){s.feedback='Cover the encoding list before recording a trial. Written notes remain available only in the notes condition.';return s;}
+      const correct=memoryItems[phase].filter((item,i)=>String(v['recall'+i]??'').trim().toLowerCase()===item.toLowerCase()).length;
+      v['score-'+method]=correct;s.feedback=method+': '+correct+'/4 items in order. This is a disclosed practice comparison, not a controlled memory experiment or a grade. Repetition can itself improve recall.';log('Retrieval trial '+method+': '+correct+'/4');
+    }
+    if(action.type==='test')finish(loci.every(place=>s.inspected.includes(place))&&memoryMethods.every(method=>typeof v['score-'+method]==='number')&&memoryStrategyFits(phase,v.memoryStrategy),
+      'Three strategy trials are recorded. Your selected method fits the stated use; compare its errors and limits in your account. Imperfect recall does not block completion.',
+      'Visit the four locations, record one covered trial for each method, then choose a strategy suited to this context. A later audited handover needs a durable written record; an unavailable record needs a temporary cue plus later reconciliation.');
   }
   if(week===3){
     if(action.type==='rotate'){v.rotation=(Number(v.rotation)+90)%360;log('Rotated module to '+v.rotation+'°');}
@@ -121,18 +141,29 @@ export function applyTraining(previous:TrainingState,action:TrainingAction,conte
     if(action.type==='test'){const t=spatialTarget(phase);finish(v.rotation===t.rotation&&v.level===t.level&&v.prediction==='north becomes '+rotatedPorts(t.rotation)[0],'Both connector directions and floor level match. Rotation changed orientation; translation changed location without changing the module.','Current ports: '+rotatedPorts(Number(v.rotation)).join(' and ')+'; level '+v.level+'. Match the target pair and level, then state where the original north port moved.');}
   }
   if(week===4){
+    if(action.type==='probe'){
+      const key=String(action.key??'');const readings:Record<string,string>={interlock:v.interlock?'Holding brake is engaged.':'Holding brake is released.',spring:v.spring?'Return spring is attached.':'Return spring is absent.',cam:'Cam datum reads '+v.cam+' degrees.',ratio:'Driver '+mechanismConfig(phase).driver+' teeth; follower '+v.gear+' teeth.'};
+      if(readings[key]){see('probe:'+key);s.feedback=readings[key]!;log('Mechanism inspection '+key+': '+s.feedback);}
+    }
+    if(action.type==='diagnose'){
+      const fault=mechanismFault(phase);const unchanged=!s.actions.some(a=>/^(Installed |Interlock |Return spring |Cam set)/.test(a));
+      v.diagnosed=unchanged&&v.diagnosis===fault&&s.inspected.includes('probe:'+fault);
+      s.feedback=v.diagnosed?'Your selected fault is supported by an inspection of the original configuration. Now test a correction.':'The diagnosis needs a relevant original inspection. If you changed the apparatus before recording evidence, restart; a successful adjustment alone does not establish the initial fault.';log('Recorded mechanism diagnosis: '+s.feedback);
+    }
     if(action.type==='gear'){v.gear=Number(v.gear)===12?24:Number(v.gear)===24?36:12;v.turns=0;log('Installed '+v.gear+'-tooth driven gear');}
     if(action.type==='interlock'){v.interlock=!v.interlock;log('Interlock '+(v.interlock?'engaged':'disengaged'));}
     if(action.type==='spring'){v.spring=!v.spring;log('Return spring '+(v.spring?'attached':'detached'));}
-    if(action.type==='cam'){if(v.interlock){s.feedback='The engaged interlock physically blocks the cam. Release the interlock before positioning it.';log(s.feedback);}else{v.cam=(Number(v.cam)+90)%360;log('Cam set to '+v.cam+'°');}}
-    if(action.type==='crank'||action.type==='test'){const r=mechanismResult(s);if(r.moving)v.turns=r.output;finish(r.moving&&r.matches&&v.prediction==='opposite','The output turns '+r.output+' times opposite the driver. Gear teeth determine the ratio; the spring, cam and released interlock determine whether the mechanism can move.',!r.moving?'The mechanism is blocked. Inspect the interlock, return spring and cam position; changing the gear cannot remove a physical obstruction.':'It moves '+r.output.toFixed(2)+' output turns. Compare the target with driver teeth ÷ driven teeth × input turns, and predict the direction.');}
+    if(action.type==='cam'){if(v.interlock){s.feedback='The engaged interlock physically blocks the cam. No cam movement occurred.';log(s.feedback);}else{v.cam=(Number(v.cam)+90)%360;log('Cam set to '+v.cam+'°');}}
+    if(action.type==='crank'||action.type==='test'){const r=mechanismResult(s);if(r.moving)v.turns=r.output;finish(r.moving&&r.matches&&v.prediction==='opposite'&&v.diagnosed===true&&v.diagnosis===mechanismFault(phase),
+      'The recorded diagnosis led to '+r.output+' opposite output turns. Your original inspection and the corrected result support the causal account.',
+      !r.moving?'The mechanism does not move. Select an inspection that distinguishes a holding brake, missing return or incorrect cam datum before changing parts.':!r.matches?'The measured output is '+r.output+'. Compare its ratio with the specified output; movement alone is insufficient.':!v.diagnosed?'The apparatus meets the output, but an original fault diagnosis was not recorded. Restart and investigate before correcting.':'Check the direction prediction against the observed motion.');}
   }
   if(week===5){
     if(action.type==='power'){v.power=!v.power;log('Power '+(v.power?'on':'isolated'));}
     if(action.type==='measure'){const node=action.key??['battery','fuse','cable','lamp'][s.actions.filter(a=>a.startsWith('Measured ')).length%4]!;see(node);const reading=circuitReading(s,node);v.meter=node+': '+reading+' V';s.feedback=String(v.meter)+'. Measure relative to the common return. A zero reading with power off does not identify a fault.';log('Measured '+v.meter+(v.power?' (power on)':' (isolated)'));}
     if(action.type==='continuity'){const part=action.key??'lamp';if(v.power){s.feedback='Isolate power before a continuity test. No resistance test was made.';log(s.feedback);}else{const open=!v.repaired&&part===v.fault;v.meter=part+': '+(open?'open circuit':'continuous');s.feedback=String(v.meter)+'. Continuity tests a disconnected component, separately from its supply voltage.';log('Continuity '+part+': '+(open?'open':'continuous')+' (isolated)');}}
     if(action.type==='repair'){const part=action.key;if(v.power){s.feedback='Isolate power before changing a component. No repair was made.';log(s.feedback);}else if(part===v.fault){v.repaired=true;log('Replaced failed '+part);s.feedback='Replacement installed. Restore power and measure the lamp supply to verify the whole circuit.';}else{log('Inspected/replaced working '+part);s.feedback='That component was not the open circuit. Use consecutive measurements to isolate where voltage first disappears.';}}
-    if(action.type==='test'){const verified=circuitReading(s,'lamp')===6&&v.repaired===true;const diagnosed=s.actions.some(a=>(a.startsWith('Measured '+v.fault+': 0 V')&&a.includes('(power on)'))||a==='Continuity '+v.fault+': open (isolated)');finish(verified&&diagnosed,'The open circuit was located by measurement, replaced with power isolated, and verified with both 6 V at the lamp supply and a lit lamp. Supply voltage alone does not prove that the load works.',verified?'The lamp receives 6 V, but your trace lacks a powered measurement locating the original fault. Retry the scenario and diagnose before replacing.':'The lamp is not verified as working. Compare supply readings; if the dark lamp has 6 V, isolate power and test the lamp’s continuity.');}
+    if(action.type==='test'){const verified=circuitReading(s,'lamp')===6&&v.repaired===true;const diagnosed=circuitEvidenceSupports(s,String(v.fault));const lastRepair=s.actions.findLastIndex(a=>a.startsWith('Replaced failed '));const measuredAfter=s.actions.slice(lastRepair+1).includes('Measured lamp: 6 V (power on)');finish(verified&&diagnosed&&measuredAfter,'The open circuit was located by measurement, replaced with power isolated, and verified with both 6 V at the lamp supply and a lit lamp. Supply voltage alone does not prove that the load works.',verified?'The lamp works, but the trace lacks a discriminating original measurement pair (upstream 6 V and downstream 0 V), isolated open continuity, or a lamp supply measurement after repair. Preserve those readings before claiming diagnosis and verification.':'The lamp is not verified as working. Compare supply readings; if the dark lamp has 6 V, isolate power and test the lamp’s continuity.');}
   }
   if(week===6){
     if(action.type==='inspect'){const file=archiveFiles.find(f=>f.id===(action.key??archiveFiles[s.actions.filter(a=>a.startsWith('Inspected Archive')).length%3]!.id));if(file){see(file.id);s.feedback=file.name+': '+file.body;log('Inspected '+file.name+' '+file.time+' '+file.hash);}}
@@ -147,14 +178,16 @@ export function applyTraining(previous:TrainingState,action:TrainingAction,conte
   }
   if(week===9){
     if(action.type==='inspect'){const claim=councilClaims.find(c=>c.id===(action.key??councilClaims[s.actions.filter(a=>a.startsWith('Verified claim')).length%3]!.id));if(claim){see(claim.id);s.feedback=claim.speaker+': '+claim.record;log('Verified claim from '+claim.speaker);}}
-    if(action.type==='test'){const correct=phase==='transfer'?'stabilise':'copy';finish(v.proposal===correct&&s.inspected.length>=3,phase==='transfer'?'The new authenticity mandate requires retaining the original; stabilising it for supported handover satisfies that constraint. The earlier copy agreement cannot simply be reused.':'Verified-copy recovery satisfies the mandate and preserves the custodian’s original. You checked claims against records, without pretending body language proved honesty.','Inspect all three records and choose a proposal that fits the current mandate and capacity. A confident claim does not override the written constraint.');}
+    if(action.type==='test'){const agreement=evaluateAgreement(s);finish(agreement.feasible&&['operator','custodian','engineer'].every(id=>s.inspected.includes(id)),
+      'The proposed terms are feasible. '+agreement.cost+' This is one defensible agreement, not the uniquely best agreement. Explain whose priorities it serves and what they concede.',
+      (!['operator','custodian','engineer'].every(id=>s.inspected.includes(id))?'Inspect all three records. ':'')+agreement.reasons.join(' '));}
   }
   if(week===10){
-    if(action.type==='route'&&action.key){if(s.sequence.length<24)s.sequence.push(action.key);log('Planned '+action.key);}
-    if(action.type==='undo'){s.sequence.pop();log('Removed final route step');}
-    if(action.type==='step'){const index=Number(v.steps),move=s.sequence[index];if(!move){s.feedback='Add a route before stepping. The start is row 5, column 1; the destination is row 1, column 5.';return s;}const pos=Number(v.position),r=Math.floor(pos/5),c=pos%5;let next=pos;if(move==='north'&&r>0)next-=5;if(move==='south'&&r<4)next+=5;if(move==='east'&&c<4)next++;if(move==='west'&&c>0)next--;v.position=next;v.steps=index+1;if(next!==pos&&sensorCells(phase).includes(next))v.detected=Number(v.detected)+1;log('Step '+move+' to cell '+(next+1));s.feedback='Position row '+(Math.floor(next/5)+1)+', column '+(next%5+1)+'. Recorded sensor contacts: '+v.detected+'.';}
-    if(action.type==='rewind'){v.position=20;v.steps=0;v.detected=0;log('Rewound route to start');}
-    if(action.type==='test'){finish(v.position===4&&String(v.detected)===String(v.prediction),'You reached dispatch and your predicted sensor contacts match the observed run. A contact is a game event to explain, not an automatic academic penalty.','Reach row 1, column 5 and compare the number of contacts with your prediction. Visible bronze cells detect entry; walls stop movement. You may rewind and revise.');}
+    if(action.type==='route'&&action.key&&['north','east','south','west'].includes(action.key)){if(Number(v.steps)>0){v.position=20;v.steps=0;v.detected=0;s.inspected=s.inspected.filter(id=>!id.startsWith('route-'));log('Route edited: earlier run cleared; make a fresh prediction and execute from start.');}if(s.sequence.length<24)s.sequence.push(action.key);log('Planned '+action.key);}
+    if(action.type==='undo'){s.sequence.pop();v.position=20;v.steps=0;v.detected=0;s.inspected=s.inspected.filter(id=>!id.startsWith('route-'));log('Removed final route step; earlier run cleared.');}
+    if(action.type==='step'){const index=Number(v.steps);if(index===0){if(!['dispatch','support','survey'].includes(String(v.routeObjective))||!/^\d{1,2}$/.test(String(v.prediction??''))){s.feedback='Choose the route objective and record a numeric contact prediction before executing. These decisions are preserved with the run.';return s;}v.routeGoal=v.routeObjective!;v.routePrediction=v.prediction!;}const move=s.sequence[index];if(!move){s.feedback='Add a route before stepping. The start is row 5, column 1; the destination is row 1, column 5.';return s;}const pos=Number(v.position),r=Math.floor(pos/5),c=pos%5;let next=pos;if(move==='north'&&r>0)next-=5;if(move==='south'&&r<4)next+=5;if(move==='east'&&c<4)next++;if(move==='west'&&c>0)next--;v.position=next;v.steps=index+1;see('route-cell-'+next);if(next!==pos&&sensorCells(phase).includes(next)){v.detected=Number(v.detected)+1;see('route-sensor-'+next);}log('Step '+move+' to cell '+(next+1));s.feedback='Position row '+(Math.floor(next/5)+1)+', column '+(next%5+1)+'. Recorded sensor contacts: '+v.detected+'.';}
+    if(action.type==='rewind'){v.position=20;v.steps=0;v.detected=0;s.inspected=s.inspected.filter(id=>!id.startsWith('route-'));log('Rewound route to start');}
+    if(action.type==='test'){finish(v.position===4&&String(v.detected)===String(v.prediction)&&v.routeGoal===v.routeObjective&&String(v.routePrediction)===String(v.prediction)&&routeObjectiveSatisfied(s),'The observed route meets your selected objective and its contact prediction. Compare a credible route serving another objective; zero contacts are not automatically better.','Reach row 1, column 5, match your predicted contacts and meet the selected objective: dispatch within eight moves, support via the centre, or survey at least two distinct sensor cells. The objective and prediction must be recorded before execution; rewind before revising either.');}
   }
   if(week===11){
     if(action.type==='disrupt'){v.disrupted=true;s.feedback=phase==='transfer'?'The meter is unavailable. Use the supplied reference readings and isolate uncertainty before choosing equipment.':'The east passage is unavailable. The west passage remains open, but requires an additional relay check.';log('Published disruption; original plan preserved');}
@@ -173,7 +206,7 @@ export function applyTraining(previous:TrainingState,action:TrainingAction,conte
 }
 export function validTraining(value:unknown,week:number):value is TrainingState {
   if(!value||typeof value!=='object')return false;const s=value as TrainingState;
-  if(s.week!==week||!phases.includes(s.phase)||typeof s.complete!=='boolean'||typeof s.feedback!=='string'||s.feedback.length>=8000
+  if((s.learningVersion!==undefined&&s.learningVersion!==2)||s.week!==week||!phases.includes(s.phase)||typeof s.complete!=='boolean'||typeof s.feedback!=='string'||s.feedback.length>=8000
     ||!s.values||typeof s.values!=='object'||Array.isArray(s.values)||Object.keys(s.values).length>=100
     ||![s.sequence,s.inspected,s.actions].every(list=>Array.isArray(list)&&list.length<=160&&list.every(v=>typeof v==='string'&&v.length<8000)))return false;
   const base=createTraining(week,s.phase).values;
@@ -182,10 +215,11 @@ export function validTraining(value:unknown,week:number):value is TrainingState 
   if(week===3&&(![0,90,180,270].includes(Number(s.values.rotation))||![0,1,2].includes(Number(s.values.level))))return false;
   if(week===4&&(![12,24,36].includes(Number(s.values.gear))||![0,90,180,270].includes(Number(s.values.cam))||Number(s.values.turns)<0||Number(s.values.turns)>6))return false;
   if(week===5&&s.values.fault!==base.fault)return false;
+  if(week===2&&memoryMethods.some(method=>s.values['score-'+method]!==undefined&&(!Number.isInteger(s.values['score-'+method])||Number(s.values['score-'+method])<0||Number(s.values['score-'+method])>4)))return false;
   if(week===10&&(!Number.isInteger(s.values.position)||Number(s.values.position)<0||Number(s.values.position)>24||!Number.isInteger(s.values.steps)||Number(s.values.steps)<0||Number(s.values.steps)>24||!Number.isInteger(s.values.detected)||Number(s.values.detected)<0||Number(s.values.detected)>24||s.sequence.some(d=>!['north','east','south','west'].includes(d))))return false;
   if(s.field!==undefined&&(!validFieldOperation(s.field,labOperation(week,s.phase))||s.field.verified!==s.complete))return false;
   if(week===11&&s.values.original!==initialPlan.join(' → '))return false;
-  if(s.field?.verified&&week<12&&!applyTraining({...s,field:undefined},{type:'test'}).complete)return false;
+  if(s.learningVersion===2&&s.field?.verified&&week<12&&!applyTraining({...s,field:undefined},{type:'test'}).complete)return false;
   return true;
 }
 
@@ -202,6 +236,7 @@ export function applyTrainingField(previous:TrainingState,action:FieldOperationA
   const result=applyFieldOperation(spec,field,action);
   return {...previous,field:result.state,feedback:result.message,actions:[...previous.actions,'Mission: '+result.message].slice(-160)};
 }
+export function labRequiresEnactment(week:number):boolean { return [3,4,5,8].includes(week); }
 export function trainingMissionComplete(state:TrainingState):boolean {
-  return state.complete&&state.field?.delivered===true;
+  return state.complete&&(!labRequiresEnactment(state.week)||state.field?.delivered===true);
 }

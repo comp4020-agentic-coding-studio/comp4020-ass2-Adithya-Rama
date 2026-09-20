@@ -10,6 +10,14 @@ Scenario / route / attempt date:
 
 ## Evidence and initial prediction
 
+## Sender and receiver information
+
+Which student held the source and measurement record? Which held the receiving conditions? Record the requested information, exact read-back code, profile confirmation and a corrected misunderstanding. Preserve both roles’ records before and after swapping.
+
+## Diagnostic evidence and its limits
+
+Link your Lab 5 trace showing how you selected a test. Then identify what the relay’s one combined supply-and-fuse measurement establishes and what it does not demonstrate by itself.
+
 ## Practical record
 
 Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
@@ -35,7 +43,7 @@ Follow the word guidance and deliverables in the published brief.
 ## What you hand over
 
 - Both role records, showing at least one meaningful rotation.
-- A measured circuit fault and verification trace.
+- The Lab 5 independent diagnosis trace (competing explanations, chosen discriminating test, original readings, justified repair and verification), plus the compact relay’s supplied measurement and load verification.
 - A source-backed archive selection.
 - Before/after permission matrices, including positive and negative checks.
 - A complete destination/quantity/code handoff with acknowledgement.

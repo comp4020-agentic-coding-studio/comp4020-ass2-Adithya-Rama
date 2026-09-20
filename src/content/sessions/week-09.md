@@ -1,6 +1,6 @@
 ---
 title: "Play the Part"
-description: "Represent a professional role, test contradictory claims and negotiate a justified agreement."
+description: "Negotiate legitimate responsibilities using verified records, multiple feasible proposals and explicit costs and obligations."
 week: 9
 learningOutcomes: ["LO1","LO5"]
 skillIds: ["LO1","LO5"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Custodian’s Terms.** Secure an agreement the custodian can honour while protecting the original and respecting the support limit.
+**Your task:** Reach an agreement among Neri, Pell and Sen without treating their different responsibilities as an obstacle to click away.
 
-Confident accounts contradict the comparison log, mandate and cart certificate. Without a feasible agreement the custodian cannot release the requested record.
+**What you will produce:** Record two feasible proposals, who gains or bears costs, the term another role challenged, its revision and named obligations. A feasibility tick does not establish that a negotiation happened.
 
-**What you will produce:** Three checked claims, an evidence-based agreement, and a revised agreement when the handling requirement changes.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,64 +38,77 @@ Read the [briefing](/lectures/week-09/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Act within an assigned role's responsibilities while recognising other legitimate interests.
-- Evaluate a claim using records rather than appearance or manner.
-- Negotiate an agreement that identifies unresolved evidence.
+- Check specific claims without inferring honesty from appearance.
+- Compare feasible proposals with distinct costs and responsibilities.
+- Negotiate and revise explicit custody, verification, responsibility and timing terms.
 
 ## Supplied case file and rules
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **RP-01** contains the named Neri, Pell and Sen claims and responsibilities. **RP-02** contains their supporting comparison log, custody mandate and capacity certificate, including the changed handling requirement.
+**RP-01** gives responsibilities and claims. **RP-02** gives comparison, mandate, capacity and timing records.
 
-- Operator Neri claims all copies are identical. Comparison log: A=M-42; B=M-99.
-- Custodian Pell permits a verified copy to leave if custody is recorded; the original may remain.
-- Engineer Sen claims the cart supports the original unaided. Certificate: cart capacity 8 units; original 11; stabilising cradle raises supported capacity to 12.
-- Practice/check mandate allows verified-copy recovery while preserving the original.
-- Transfer authenticity mandate requires retaining the original for a supported handover; choose stabilisation rather than reusing the copy agreement.
-- Inspect all three records. Appearance, confidence and hesitation are not evidence of honesty.
+- Neri needs useful access and claims the copies are identical. Comparison log: A=M-42, B=M-99.
+- Pell must maintain named, recorded custody. Independent verification against the current authority is required for any agreement.
+- Sen claims the cart can carry the original unaided. Certificate: cart capacity 8 units; original 11 units; certified cradle support raises capacity to 12.
+- Options: verified copy, monitored stabilisation, or supported original with custodian escort. Unsupported immediate movement cannot exceed the published capacity.
+- Timing/roles: a copy can be received and verified this shift; stabilisation needs a responsible monitor and scheduled review; certified support crew with custodian escort arrives next shift.
+- Practice mandate: enable access while protecting provenance; a documented deferral may be negotiated.
+- Skill-check mandate: the original must remain on site today.
+- Transfer mandate: original provenance is required; a digital copy alone does not fulfil it.
+- For each mandate, compare at least two feasible agreements. Specify custody, verification, responsibility and timing. Explain a real cost and a concession; feasibility is not an automatic academic ranking.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Assign roles; each records a legitimate concern and limit. |
+| 10–30 minutes | Review the alternate council and separate corroboration from general trust. |
+| 30–60 minutes | Check assigned records and propose two feasible agreements. |
+| 60–80 minutes | Hold the council: challenge a term and revise an offer while an observer records costs. |
+| 80–105 minutes | Apply the changed mandate, preserve the earlier offer and renegotiate. |
+| 105–120 minutes | Keep agreed terms, a rejected feasible alternative, remaining obligation and contribution record. |
 
 ## In-person lab · preferred route
 
 **Equipment:** Three named role cards, comparison log, custody mandate, cart certificate and an agreement sheet. Acting and costumes are optional.
 
-**Setup:** Print Neri, Pell and Sen role cards with the exact supplied records. Publish the original mandate, then the transfer mandate. Actors may explain a position but may not invent decisive evidence.
+**Setup:** Print Neri, Pell and Sen role cards with the exact supplied records. Publish the practice, check and transfer mandates, which leave more than one feasible agreement. Actors may explain a position but may not invent decisive evidence.
 
-**What you do together:** Rotate roles after the first council. Observers note the claim, question and record used rather than rating acting quality. Debrief how each role's constraints shaped the agreement.
+**What you do together:** Hold a council with Neri, Pell and Sen role cards. Compare feasible copy, monitored-deferral and supported-original offers under each mandate, negotiate a concession and record costs and obligations.
 
 The [printable facilitator pack](/campus/week-09.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Select **Practice**. Read the recovery mandate: it states what the agreement must achieve and preserve.
-2. For each speaker, select **Check … against the record**. Compare the claim with the archive comparison, custody condition or cart capacity shown.
-3. In **Propose an agreement**, choose the option supported by the mandate and those records. Confidence or hesitation is not evidence that somebody is right or wrong.
-4. Select **Test this configuration**. If your agreement fails, identify the specific handling, capacity or objective requirement it misses.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Use **Skill check** to explain the agreement from another role's perspective. Then open **Transfer challenge** and read the changed requirement before choosing again.
-6. After playing, explain one contradicted claim, one legitimate concern and why the changed mandate affects your agreement.
+1. Choose **Practice** and inspect Neri, Pell and Sen's records. Separate their responsibilities from their factual claims.
+2. Draft two feasible proposals on the agreement sheet before selecting one: copy, monitored stabilisation or supported original.
+3. In the agreement controls, choose custody, verification, responsibility and timing terms. Match the actual mandate and capacity; record each role's concern and the proposed concession.
+4. Select **Test this configuration**. Read constraint failures or the cost of the feasible offer. The feedback does not rank its fairness or grade your negotiation.
+5. Save the selected agreement and the rejected alternative. The field extension may stage the agreed consequence but is optional for this council task.
+6. Apply **Skill check** and **Transfer challenge** mandates. Renegotiate rather than repeating the earlier answer. Preserve whose obligation changes and what remains unresolved.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Present the evidence-backed agreement**. The scene and mission record now show the consequence: The custodian accepts the supported proposal and issues the appropriate custody authority.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Present the evidence-backed agreement**. The scene and mission record now show the consequence: The custodian accepts the supported proposal and issues the appropriate custody authority.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the custody terms are recorded** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the custody terms are recorded** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -107,21 +118,32 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**claim-verification** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**claim-verification**
 
-Work with Meridian's custodian and researcher without mistaking confidence or status for evidence.
+Record two feasible proposals, who gains or bears costs, the term another role challenged, its revision and named obligations. A feasibility tick does not establish that a negotiation happened.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+The final team must defend a recovery objective and agree custody and monitoring obligations. This lab practises the judgement behind that agreement.
 
 ## Feedback and explanation
 
-Different digests contradict identical content. Capacity 8 cannot support mass 11 without the supplied cradle. The original mandate supports a verified copy; the transfer mandate calls for stabilising the original for handover.
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+Several agreements can meet a mandate. Their costs differ: immediate copy access preserves the original but transfers no physical provenance; monitoring delays service and occupies a role; supported transport waits for the crew. Explain whose obligation is changed and obtain agreement. The software checks feasibility, not fairness or negotiation quality.
 
 **Worked reflection from the separate demonstration:** Rin's claim was supported by the two matching twelve-section records, and the seven-unit original fit the nine-unit cart. A later remote-access request changed our agreement from planned physical handover to a Cedar copy. We kept the original with Ada and preserved the unexecuted plan.
 
 [Inspect this example's complete record](/demonstrations/lab-09/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Record two feasible proposals, who gains or bears costs, the term another role challenged, its revision and named obligations. A feasibility tick does not establish that a negotiation happened.
 
 ## Closing reflection
 

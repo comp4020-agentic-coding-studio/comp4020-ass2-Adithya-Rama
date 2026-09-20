@@ -1,6 +1,6 @@
 ---
 title: "Build a Memory Palace"
-description: "Build a stable route, attach distinctive associations and compare recall with a baseline."
+description: "Compare unaided recall, location cues and written notes, then choose a retrieval strategy appropriate to the task."
 week: 2
 learningOutcomes: ["LO1"]
 skillIds: ["LO1"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Silent Dispatch.** Carry the correct four-item recovery manifest through an area where the written list must remain covered.
+**Your task:** Prepare an instruction handoff. Compare three ways of keeping details available and decide when memory is useful and when an external record is better.
 
-Dispatch will prepare the wrong kit if an item is lost or reordered. Build a route of memory cues, then retrieve the manifest without reopening it.
+**What you will produce:** Keep three labelled trials—unaided, location cues and written notes—with item score, order score, assistance and context. Recommend a strategy when notes are available and when they are not.
 
-**What you will produce:** Four place–item associations, a recorded unaided baseline and cued recall attempt, changed-list attempts, and an explanation of which cue helped or failed.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,33 +38,44 @@ Read the [briefing](/lectures/week-02/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Use ordered locations as retrieval cues.
-- Compare an unaided attempt with a location-cued attempt, recording item and order scores and the limits of the comparison.
-- Explain why a mnemonic improves retrieval without guaranteeing perfect memory.
+- Record separate unaided, location-cued and written-note trials without concealing errors or assistance.
+- Compare exact-item and order accuracy while identifying rehearsal limits.
+- Choose a strategy based on note access, exactness and shared verification.
 
 ## Supplied case file and rules
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MP-01** is the ordered four-location route. **MP-02** supplies the practice, skill-check and transfer item lists. Use the record sheet in the campus pack for your baseline and cued comparison.
+**MP-01** is the four-location route. **MP-02** supplies lists and contexts; use the student record for the comparison.
 
 - Route: Atrium → Fountain → Workshop → Observatory.
-- Practice list: Compass, Lantern, Coil, Archive.
-- Skill-check list: Lens, Battery, Map, Seal.
-- Transfer list: Sample, Receipt, Sensor, Capsule.
-- Associate one item with each place. Score exact items and correct ordered locations out of four.
-- Timing is optional. Record whether the list was covered and whether cues were revisited. No photographic-memory claim follows from a successful trial.
+- Practice: Compass, Lantern, Coil, Archive. Context: a short spoken briefing with your hands occupied; the receiver keeps the printed record for checking.
+- Skill check: Lens, Battery, Map, Seal. Context: tomorrow's audit needs exact order available to someone absent today.
+- Transfer: Sample, Receipt, Sensor, Capsule. Context: a brief equipment outage prevents the receiver opening the written record; reconcile with it afterwards.
+- Record one unaided trial, one location-cue trial and one written-note trial for each phase you discuss. A separate note remains available in the written-note condition.
+- Score exact items and correct positions separately out of four. Imperfect recall can complete this investigation when the trials and suitable strategy are recorded.
+- Record assistance, list reuse and extra rehearsal; this practice comparison is not a controlled experiment or proof of photographic memory.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Predict which strategy helps when instructions must be exact and notes may be unavailable. |
+| 10–30 minutes | Attempt unaided retrieval and preserve errors before seeing the worked mnemonic. |
+| 30–60 minutes | Build four place–item associations; retrieve and compare with the baseline. |
+| 60–80 minutes | Perform a written-note trial and compare accuracy and shared verification. |
+| 80–105 minutes | Use the changed list and access condition; choose and justify a strategy. |
+| 105–120 minutes | Keep all three trials and state what the comparison cannot establish. |
 
 ## In-person lab · preferred route
 
@@ -74,32 +83,32 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Equipment:** Four location cards, the three item lists, opaque cover sheets and a recall comparison sheet. Real walking is optional.
 
-**Setup:** Place location cards around a room or in a row on a table. Provide a seated, visual or spoken route with the same order. Give each student their own list copy.
+**Setup:** Place location cards around a room or in a row on a table. Provide a seated, visual or spoken route with the same order. Give each student their own list copy and a separate note sheet; permit that note in the written-note condition only.
 
-**What you do together:** Students complete a baseline independently, create associations and retrieve with the list concealed. A partner scores against the declared rules. Do not use public ranking, compulsory speed tests or claims about intelligence.
+**What you do together:** Compare covered unaided retrieval, location cues and written-note use. Keep errors and assistance, then choose a strategy for a hands-occupied briefing, later audit or temporary record outage.
 
 The [printable facilitator pack](/campus/week-02.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Select **Practice**. For a small baseline, read the item list once before making location associations. Select **Cover list and retrieve**, make an unaided recall attempt and test it. Save that attempt in the passport before revising it. On paper or in your own notes, label it **Baseline** and record exact items present (in any position) and items in their correct positions, each out of four.
-2. Use **Review associations** to reopen the list. Read the four locations in order. In each **Your association** box, describe a memorable imagined interaction between that place and its item.
-3. Use **Walk to next location** to follow the route. Select **Cover list and retrieve**, then enter the item belonging to each location from memory.
-4. Select **Test this configuration** and save this cued attempt separately. On your comparison sheet, record the same two scores: exact items present and correct positions. Keep missing items and substitutions visible. The browser's result checks ordered recall; your two-column comparison is a separate written record.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** and **Transfer challenge**. They supply different item lists, so create fresh associations and retrieve them rather than reuse the original answers.
-6. After playing, compare baseline and cued attempts, explain which cue helped or failed, and state that repeating a list also gives extra rehearsal. Changed lists can differ in difficulty. These small comparisons support a limited account of your attempts, not proof of a lasting memory improvement.
+1. Select **Practice**, read the list once and choose **Unaided** as the retrieval method. Cover the list, enter your recalled items and select **Record retrieval trial**. Preserve mistakes.
+2. Reopen the list with **Review associations**. Write a place–item association at each location and visit the four stops with **Walk to next location**.
+3. Choose **Location cues**, cover the list and record another trial. Score exact items separately in your written comparison; the browser records positions out of four.
+4. Choose **Written notes**, keep a separate written checklist available, cover the encoding list and record this third trial. Disclose the note use rather than presenting this as unaided recall.
+5. Choose a strategy fitting the displayed context: location cues, written notes or combined temporary cues and later reconciliation. Select **Test this configuration**; perfect recall is not required. Save the comparison before switching.
+6. Try the changed lists and contexts in **Skill check** and **Transfer challenge**. Explain when an external record is preferable and why repeated exposure limits your conclusions.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Send the recalled kit manifest**. The scene and mission record now show the consequence: The dispatch board displays the correctly recalled kit in route order, making the equipment available to the next team.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Share retrieval comparison**. The scene and mission record now show the consequence: The shared record preserves retrieval errors and the proposed durable record. It does not certify perfect or unaided recall.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm dispatch prepared the kit** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select the comparison's labelled acknowledgement at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -109,21 +118,32 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**recall-strategy** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**recall-strategy**
 
-Carry a short equipment or instruction sequence between stations while preserving its order.
+Keep three labelled trials—unaided, location cues and written notes—with item score, order score, assistance and context. Recommend a strategy when notes are available and when they are not.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+Memory is optional support in A1 and handoffs. The final project does not require recall when an accurate external record serves the objective better.
 
 ## Feedback and explanation
 
-Compare both item and order scores. A better score suggests the strategy helped in this trial, but one attempt does not prove permanent improvement. An honest account of an error and its repair is stronger than an unsupported claim of perfect recall.
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+Compare all three methods, including errors and assistance. Durable written records support later audit and other people; temporary cues can help when notes cannot be consulted. Explain later reconciliation and the limits of your small, repeated-list comparison. Perfect recall is not required.
 
 **Worked reflection from the separate demonstration:** My storm-kit baseline contained Lens and Beacon only. The location cues helped me retrieve all four items in the guided attempt, but I later substituted ‘book’ for Pocket atlas. I preserved the error and strengthened the atlas cue instead of claiming perfect memory.
 
 [Inspect this example's complete record](/demonstrations/lab-02/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep three labelled trials—unaided, location cues and written notes—with item score, order score, assistance and context. Recommend a strategy when notes are available and when they are not.
 
 ## Closing reflection
 

@@ -1,6 +1,6 @@
 ---
 title: "Think in Three Dimensions"
-description: "Track labelled directions through a rotation, change height independently and verify both conditions."
+description: "Reconcile a fixed diagram with a differently oriented scene, predict its transformation, then verify direction and height independently."
 week: 3
 learningOutcomes: ["LO2"]
 skillIds: ["LO2"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Broken Connection.** Reconnect the gallery passage by aligning a service module with the building’s connectors and level.
+**Your task:** Reconnect a service module from its diagram. Identify whether a mismatch comes from the observer's view, module rotation or floor level.
 
-The passage is isolated because its module faces the wrong way. Raising it cannot correct a rotation, and camera direction is not map north.
+**What you will produce:** Keep a before/after sketch or text model, the prediction made before manipulation, an alternative configuration and evidence separating a level error from an orientation error.
 
-**What you will produce:** The matched connectors for the three targets, a prediction of where the original north port moves, and a labelled spatial explanation.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,9 +38,9 @@ Read the [briefing](/lectures/week-03/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Keep world directions fixed while the object or camera moves.
-- Predict where labelled ports move after a clockwise rotation.
-- Change floor level independently and verify direction and height together.
+- Keep world directions fixed while the object or viewpoint changes.
+- Predict both labelled ports before rotating and test the prediction.
+- Diagnose direction and level errors separately using a transformation record.
 
 ## Supplied case file and rules
 
@@ -54,18 +52,28 @@ Read the [briefing](/lectures/week-03/). All starting rules and data are supplie
 - Moving up a level changes position but not orientation. Levels cycle 0 → 1 → 2 → 0.
 - Before testing, state where the original north port points. World directions remain fixed when the camera changes.
 
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
+
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Compare the scene and diagram; identify their reference frames. |
+| 10–30 minutes | Predict the marked port in the alternate example before it turns. |
+| 30–60 minutes | Work in pairs: one predicts, one operates, then exchange roles. |
+| 60–80 minutes | Independently meet the second target; separate direction and height adjustments. |
+| 80–105 minutes | Reconcile the third target from a changed viewpoint. |
+| 105–120 minutes | Keep the transformation sketch and a counterexample to confusing rotation with translation. |
 
 ## In-person lab · preferred route
 
@@ -75,11 +83,11 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Cut an L-shaped card with north/east ports and one marked original north tip. Draw three floor levels. Rotate clockwise in quarter-turns; move the same card between levels without turning it.
 
-**What you do together:** Before turning the card, students record where each labelled port will face. Rotate it against the fixed north arrow, then move it between level sheets without turning it. A partner checks direction and level separately. For a nonvisual route, use spoken direction mappings and tactile or numbered level markers.
+**What you do together:** Predict a labelled connector's directions and height before moving it. Compare the fixed diagram with a changed viewpoint, test orientation and translation independently, then connect the model.
 
 The [printable facilitator pack](/campus/week-03.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
@@ -108,11 +116,18 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**spatial-model** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**spatial-model**
 
-Reconstruct Meridian's layout and relate maintenance diagrams to the space around you.
+Keep a before/after sketch or text model, the prediction made before manipulation, an alternative configuration and evidence separating a level error from an orientation error.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A1 relates an unfamiliar workshop diagram to its connector. A physical final recovery may need this capability; a digital operation need not invent a transport problem.
 
 ## Feedback and explanation
+
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
 
 One, two and three clockwise quarter-turns move the north port to east, south and west respectively. Translation to another level does not rotate it. Matching a silhouette without tracking a labelled port can conceal a reflection or orientation error.
 
@@ -120,9 +135,13 @@ One, two and three clockwise quarter-turns move the north port to east, south an
 
 [Inspect this example's complete record](/demonstrations/lab-03/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep a before/after sketch or text model, the prediction made before manipulation, an alternative configuration and evidence separating a level error from an orientation error.
 
 ## Closing reflection
 

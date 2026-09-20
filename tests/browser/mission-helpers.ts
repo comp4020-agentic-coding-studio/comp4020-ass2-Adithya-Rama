@@ -20,7 +20,7 @@ export async function completeRecovery(page:Page,scenario:Scenario="baseline"){
  await page.locator('[data-handoff] [name=item]').selectOption("verified archive");await page.locator('[data-handoff] [name=destination]').selectOption("dispatch");await page.locator('[data-handoff] [name=condition]').selectOption("after integrity check");await page.locator("[data-handoff] button").click();
  await role("observer");await page.locator("[data-route] select").selectOption(scenario==="equipment-failure"?"service":"upper");await page.locator("[data-route] button").click();
  await role("coordinator");await zone("dispatch");await page.locator("[data-plan] textarea").fill("Revised plan: retain the verified profile and its tested cradle, use the available route and preserve the original with recorded custody.");await page.locator("[data-plan] button").click();
- await expect(page.locator("[data-mission-progress]")).toContainText("11 / 11");
+ await expect(page.locator("[data-mission-progress]")).toContainText(scenario==="equipment-failure"?"8 / 8":"9 / 9");
  await performField(page);
 }
 
@@ -53,6 +53,11 @@ export async function performField(scope:Page|Locator){
 export async function recordOutcome(scope:Page|Locator,ending:Ending,profile:"A"|"B"="A",recipient="Meridian custodian"){
  const form=scope.locator("[data-resolution-evidence]");
  await form.locator("[data-outcome-choice]").selectOption(ending);
+ await scope.locator('[data-role="coordinator"]').click();await scope.locator('[data-zone="dispatch"]').click();
+ if(!(await scope.locator("[data-plans] h4").last().textContent())?.includes("/ "+ending+" /")){
+  await scope.locator("[data-plan] textarea").fill("Changed objective to "+ending+": preserve the original intention, choose the relevant evidence and explain why unrelated checks can be omitted.");
+  await scope.locator("[data-plan] button").click();
+ }
  await performField(scope);
  await form.locator('[name="recipient"]').fill(recipient);
  if(ending==="physical"){await form.locator('[name="support"]').check();await form.locator('[name="preserve-physical"]').check();}
@@ -65,6 +70,7 @@ export async function recordOutcome(scope:Page|Locator,ending:Ending,profile:"A"
   await form.locator('[name="stable"]').check();await form.locator('[name="stable-location"]').fill("Meridian supported cradle");
   await form.locator('[name="limitation"]').fill("The receiving custodian must arrange onward transport and continue the stability checks.");
  }
+ await form.locator('[name="limitation"]').fill("The team chose this objective because its evidence supports the required consequence. We omitted unrelated checks, rejected an unsupported alternative and retain the custodian’s monitoring obligation.");
  await form.locator("button").click();
  await expect(scope.locator("[data-outcome-status]")).toContainText("Recorded outcome: "+ending);
 }

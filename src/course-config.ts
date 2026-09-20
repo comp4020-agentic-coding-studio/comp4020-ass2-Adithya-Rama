@@ -55,6 +55,6 @@ export const courseMeta = slopCourseMetaSchema.parse({
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:
-    "Study observation, memory, systems, digital evidence and teamwork through in-person briefings and practical labs, with an equivalent online option. Apply skills from the semester in a team recovery at fictional Meridian Station.",
-  tags: ["Interactive learning", "Problem solving", "Recovery missions"],
+    "Investigate fictional field situations, diagnose unreliable model systems and coordinate decisions with incomplete information. In-person teaching is preferred, with an equivalent online academy and a final team operation.",
+  tags: ["Interactive learning", "Problem solving", "Field operations"],
 }) satisfies CourseMetaInput;

@@ -2,34 +2,40 @@
 
 Individual · 20% · due 19 March 2027, 17:00 Canberra time.
 
-## Equipment
+## Challenge
 
-Use the Week 1 scene cards, four memory locations, Week 3 L-connector and three level sheets, and Week 4 paper mechanism or printed controls. Read the facilitator guide before construction. The campus apparatus remains an unvalidated teaching design; exact conceptual actions can be represented by cards.
+Investigate a carriage that cannot yet make a justified transfer. Choose inspections and tests that distinguish an incorrect movement ratio, an orientation mistake and a holding condition. Predict before changing a component. Keep the first result, including failures.
 
-## Scene and instructions
+In-person is preferred. Use labelled paper models or supplied apparatus; an additional browser run is not required. Do not claim physical apparatus validation from a paper result.
 
-The workshop check scene contains a 09:40 clock, an amber cup on a shelf, a closed door and a note claiming the sample is intact. Deliberate concealment is an inference, not an observed fact. Record classifications before consulting the answer.
+## Supplied information and controls
 
-Carry Lens, Battery, Map and Seal in that order using Atrium, Fountain, Workshop and Observatory. Conceal the list for recall.
+- Arrival inventory: bronze lens in the left mount; blue spool below the navigation board; white tile beside the manifest.
+- Packing manifest: lens → spool → tile. Written notes are permitted; recall is an optional information aid.
+- Transport map: north is rotated 90° clockwise from the entrance. Use world direction, not where your body or camera faces.
+- Carriage: 12-tooth driver; available followers 24, 36, 48 teeth; required opposite-direction output is half the input speed.
+- Governing rule: output turns = driver teeth ÷ follower teeth × input turns. A holding brake can block movement. The initial model has a 36-tooth follower and engaged brake.
 
-Fit the L-connector so its original north/east ports become south/west on level 1. Predict where the original north port moves.
+Available actions are Inspect, select follower, engage/release brake, turn input once and test orientation. A facilitator supplies the observed result of the requested action using the governing model. The facilitator does not choose your next test or repair.
 
-Operate the carriage for four output turns from four input turns. The driver has 12 teeth. Available driven gears have 12, 24 and 36 teeth. The interlock must be released, spring attached and cam at 180 degrees. Output direction is opposite.
+## Independent investigation record
 
-## Transfer
+Before each consequential action write:
+1. Which explanations remain plausible?
+2. What result do you predict?
+3. Which result would make you change your explanation?
+4. What actually happened, and what does it establish?
 
-Change the carriage requirement to two output turns from six input turns and cam 90 degrees. Preserve the initial configuration and explain both changes. The appropriate driven gear is now 36 teeth.
+When the evidence supports release, collect the workshop case token and move through Workshop threshold → Orientation turn → Receiving lane. Hand it to the receiving point. Record its release and receipt; a working gear alone is not delivery.
 
-## Facilitator procedure
+## Detailed skill and transfer evidence
 
-Give the student the complete rule sheet; no secret rules apply. Preserve predictions before manipulation. Record requested hints. Allow pausing and explicit button/card actions instead of manual precision. The facilitator applies the published model but does not supply the student's rationale.
+Attach the Week 1 observation/classification record, Week 2 comparison of information aids, Week 3 connector prediction and Week 4 full mechanism checks. These supplied lab records establish detailed capabilities beyond the compact workshop model.
 
-## Evidence
+For transfer, use an assigned changed-condition lab case. Identify the relationship that changed, choose a new test and preserve the earlier prediction. Explain why copying the original configuration is insufficient. Do not copy the botanical worked example's calculation.
 
-Record scene classifications, ordered recall, rotation/level prediction, mechanism state, transfer and explanation. Submit the equivalent event record, causal model and 350–500 words required by the website. The original mechanism uses a 12-tooth driven gear; its transfer uses 36. The connector needs two clockwise quarter-turns and one level change.
+## Submission and feedback
 
-See the published brief for criterion-specific descriptors. This pack does not submit work or certify dexterity.
+Submit your event trace, causal model, 350–500-word explanation and attribution. Explain two consequential decisions, a changed-situation response and a limitation. Justify when memory helped or when notes were more dependable; recollection is not intrinsically better.
 
-## Performed release and delivery
-
-After the verified carriage task, the facilitator releases a case token. Collect it, then move it through Workshop threshold → Orientation turn → Receiving lane before handing it to the receiving point. Record release, collection, each checkpoint and handover. The worksheet route represents the same operation as the browser; it does not certify physical handling dexterity.
+Use the published rubric. The conceptual checks establish practice evidence; a person assesses diagnosis, transfer and explanation. Hints and reading the worked explanation remain available when declared.

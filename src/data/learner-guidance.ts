@@ -7,23 +7,23 @@ export interface LabGuide { goal: string; success: string; steps: LabInstruction
 /** Instructions describe real controls; the teaching engines decide practical completion. */
 export const labGuides: Record<number, LabGuide> = {
   1: {
-    goal: 'Report what the room shows, remember its display, and separate a visible fact from a reported claim or an explanation.',
-    success: 'Recall the display and classify all five statements correctly, then record what confused you or changed your answer.',
+    goal: 'Distinguish what you observed, what somebody asserted and what you inferred; then choose a useful test of an explanation.',
+    success: 'Inspect four objects, classify five statements, run a discriminating follow-up and record a conclusion bounded by the new evidence. Recall is optional.',
     steps: [
-      { title: 'Look at all four objects', action: 'Select each Inspect button. Read its finding in Feedback below; remember the display reading and object positions. Inspect means examine, not repair.' },
-      { title: 'Hide the scene and remember', action: 'Select Cover scene and recall. Enter the display reading as HH:MM. Reopen the scene if needed; mention that support in your record.' },
-      { title: 'Classify all five statements', action: 'Choose Observed fact for a directly visible detail, Someone’s claim for the content of a report, and An inferred explanation for a proposed cause.' },
-      { title: 'Check your account', action: 'Select Test this configuration. Read the explanation; revise a category or the recalled time if needed, then test again.' },
+      {title:'Inspect the scene',action:'Select Inspect clock, cup, door and note. Read the findings; the instructor is not a person from the case.'},
+      {title:'Distinguish the statements',action:'Classify the five sentences as visible observation, reported claim or inferred explanation. The note’s content is a claim even though the paper is visible.'},
+      {title:'Investigate a competing explanation',action:'Read the question under Test an explanation. Choose a follow-up investigation, then Run selected investigation. Select a conclusion that fits its result without inventing a cause.'},
+      {title:'Check and preserve the account',action:'Select Test this configuration. Correct unsupported categories or conclusions, then explain the remaining uncertainty and save the practical record. The field extension is optional.'},
     ],
   },
   2: {
-    goal: 'Use four familiar locations as cues to retrieve four items in a fixed order.',
-    success: 'Retrieve the four item names at the correct locations; explain which association helped or failed.',
-    steps: [
-      { title: 'Make four memory cues', action: 'Read the route. In each Your association field, imagine the named item doing something distinctive at that location.' },
-      { title: 'Walk the route in order', action: 'Select Walk to next location four times. Picture your association at each place instead of repeatedly reading the item list.' },
-      { title: 'Hide the list and retrieve', action: 'Select Cover list and retrieve. Enter the item remembered at each of the four locations.' },
-      { title: 'Compare recall with the list', action: 'Select Test this configuration. If an item is missing, review its association, cover the list again and retry.' },
+    goal:'Compare unaided retrieval, location cues and a written record, then choose what the actual task needs.',
+    success:'Record a covered trial for all three methods and select a context-appropriate strategy. Perfect recall is not required.',
+    steps:[
+      {title:'Inspect the route and items',action:'Visit all four locations with Walk to next location. Record one association per location if using cues; disclose earlier exposure to the list.'},
+      {title:'Record three comparison trials',action:'Choose Retrieval method for this trial, Cover list and retrieve, enter remembered items, and select Record retrieval trial. Repeat for unaided, location cues and written notes. Notes remain visible only in that condition.'},
+      {title:'Choose a method for the use',action:'Read Use context and select Which strategy suits this use? A temporary spoken account and a later audited handover do not have the same requirements.'},
+      {title:'Explain the comparison',action:'Select Test this configuration and discuss scores, repeated exposure and the limits of each method. Save the experiment; no compulsory delivery or perfect-memory score is needed.'},
     ],
   },
   3: {
@@ -41,7 +41,7 @@ export const labGuides: Record<number, LabGuide> = {
     success: 'The output turns the required number of times in the predicted direction, with the cam, spring and interlock correctly configured.',
     steps: [
       { title: 'Predict the movement', action: 'Read the input turns, required output and cam angle below. Calculate output = driver teeth ÷ driven teeth × input turns; select the output direction.' },
-      { title: 'Set up the mechanism', action: 'Choose a driven gear. Release interlock before rotating the cam to the required angle, then attach the return spring.' },
+      { title: 'Diagnose before correcting', action: 'Use Inspect holding brake, return spring, cam datum or gear tooth counts. Select Diagnosis of the original fault, then Record diagnosis before changing any setting.' },
       { title: 'Operate the crank', action: 'Select Turn the crank. Compare Observed output with the target. If blocked, check the support conditions before changing the gear.' },
       { title: 'Verify and diagnose', action: 'Use Test this configuration after corrections. A matching gear ratio alone is insufficient if the mechanism cannot move.' },
     ],
@@ -50,7 +50,7 @@ export const labGuides: Record<number, LabGuide> = {
     goal: 'Locate the faulty component using measurements before replacing it, then prove the lamp works.',
     success: 'Your action trace includes evidence of the original fault, a replacement with power isolated, and a working lamp after power is restored.',
     steps: [
-      { title: 'Measure before replacing', action: 'Select Switch on, then Measure battery, fuse, cable and lamp. Read the meter after each measurement and find where voltage first disappears.' },
+      { title: 'Choose discriminating measurements', action: 'Select Switch on and choose measurement points. A powered upstream 6 V plus adjacent downstream 0 V narrows a supply break; an isolated open continuity test can distinguish a failed component.' },
       { title: 'Isolate and diagnose', action: 'Select Isolate power. If the lamp was dark despite a 6 V supply, use Test lamp continuity. Continuity checks whether the disconnected part has a complete path.' },
       { title: 'Repair the diagnosed part', action: 'With power isolated, choose Replace for the component supported by your readings. Restore power, measure the lamp supply and check whether the lamp lights.' },
       { title: 'Verify the evidence', action: 'Select Test this configuration. If you repaired before measuring the original fault, restart this phase and preserve that measurement first.' },
@@ -88,19 +88,19 @@ export const labGuides: Record<number, LabGuide> = {
   },
   9: {
     goal: 'Negotiate an agreement that fits the evidence, capacity and current mandate.',
-    success: 'Check all three people’s statements against their records and choose an agreement that satisfies the current requirement.',
+    success: 'Check the records and negotiate feasible custody, verification, responsibility and timing terms; explain the costs of an alternative.',
     steps: [
       { title: 'Read the recovery mandate', action: 'Read what must be recovered and what must be preserved. The transfer phase changes the requirement for the original.' },
       { title: 'Check all three accounts', action: 'Select Check … against the record for each person. Compare the claim with the document revealed below it; confidence is not proof.' },
-      { title: 'Propose an agreement', action: 'Choose a proposal that meets the mandate and carrying-capacity constraint. Consider which alternative fails and why.' },
-      { title: 'Test the agreement', action: 'Select Test this configuration. Use the explanation to check the exact constraint your proposal satisfies or violates.' },
+      { title: 'Negotiate the actual terms', action: 'Choose a proposal, custody terms, verification, continuing responsibility and timing. The published constraints permit more than one agreement; each has a cost.' },
+      { title: 'Compare feasible agreements', action: 'Select Test this configuration. Revise infeasible terms, then compare a feasible alternative. Feedback states costs; explain why the recommended concession is justified.' },
     ],
   },
   10: {
-    goal: 'Predict what a published sensor model will record along a route, then compare the prediction with an actual run.',
-    success: 'Reach row 1, column 5 and correctly predict the recorded number of entries into sensor cells.',
+    goal: 'Choose a route serving fast dispatch, a support visit or a sensor survey; test its dependencies and predicted contacts.',
+    success: 'Reach dispatch with a matching contact prediction and satisfy the chosen objective: eight moves, centre support or two surveyed sensors.',
     steps: [
-      { title: 'Plan a route', action: 'Read the bronze sensor cells. Use Add north/east/south/west to build a route from row 5, column 1 to row 1, column 5; Undo final step corrects the plan.' },
+      { title: 'Choose an objective and plan', action: 'Select What should this route accomplish? Read its condition and the bronze sensor cells, then use Add north/east/south/west. The centre support point is row 3, column 3.' },
       { title: 'Predict contacts before moving', action: 'Enter Predicted sensor contacts. Count every entry into a marked cell, including repeated entries; a boundary move stays in place.' },
       { title: 'Run one move at a time', action: 'Select Execute next step until the route is complete. Watch Current row, Current column and Sensor contacts. Rewind returns to the start.' },
       { title: 'Compare prediction and result', action: 'Select Test this configuration. If they differ, locate the missed contact, revise your route or explanation, then rewind and rerun.' },
@@ -134,16 +134,16 @@ export function labMilestones(state: TrainingState): boolean[] {
   const filled=(key:string)=>String(v[key]??'').trim().length>0;
   const checked=state.complete;
   switch(state.week){
-    case 1:return [state.inspected.filter(id=>['clock','cup','door','note'].includes(id)).length===4,did('Covered scene')&&filled('recall0'),Array.from({length:5},(_,i)=>filled('classification'+i)).every(Boolean),checked];
-    case 2:return [Array.from({length:4},(_,i)=>filled('association'+i)).every(Boolean),state.inspected.length>=4,Array.from({length:4},(_,i)=>filled('recall'+i)).every(Boolean),checked];
+    case 1:return [state.inspected.filter(id=>['clock','cup','door','note'].includes(id)).length===4,Array.from({length:5},(_,i)=>filled('classification'+i)).every(Boolean),state.inspected.some(id=>id.startsWith('investigation:'))&&filled('conclusion'),checked];
+    case 2:return [state.inspected.length>=4,['unaided','loci','notes'].every(method=>typeof v['score-'+method]==='number'),filled('memoryStrategy'),checked];
     case 3:return [did('Rotated module')||did('Moved module'),did('Rotated module'),filled('prediction'),checked];
-    case 4:return [filled('prediction'),!v.interlock&&Boolean(v.spring)&&Number(v.cam)>0,Number(v.turns)>0,checked];
-    case 5:return [did('Measured battery')&&state.inspected.length>=4,did('Power isolated'),Boolean(v.repaired)&&Boolean(v.power),checked];
+    case 4:return [filled('prediction'),Boolean(v.diagnosed),Number(v.turns)>0,checked];
+    case 5:return [state.actions.filter(a=>a.startsWith('Measured ')).length>=2||did('Continuity '),did('Power isolated'),Boolean(v.repaired)&&Boolean(v.power),checked];
     case 6:return [state.inspected.length>0,state.inspected.length>=2,filled('archive'),checked];
     case 7:return [did('Set '),did('Set '),did('Policy mismatches:')||checked,checked];
     case 8:return [did('Switched to operator')||filled('destination'),did('Switched to operator'),filled('destination')&&filled('quantity')&&filled('code')&&Boolean(v.acknowledged),checked];
-    case 9:return [state.inspected.length>0,state.inspected.length>=3,filled('proposal'),checked];
-    case 10:return [state.sequence.length>0,filled('prediction'),Number(v.position)===4,checked];
+    case 9:return [state.inspected.length>0,state.inspected.length>=3,['proposal','custody','verification','responsibility','timing'].every(filled),checked];
+    case 10:return [state.sequence.length>0&&filled('routeObjective'),filled('prediction'),Number(v.position)===4,checked];
     case 11:return [Boolean(v.disrupted),Boolean(v.disrupted),String(v.revision??'').trim().length>=30&&String(v.reason??'').trim().length>=30,checked];
     case 12:return [false,filled('objective'),String(v.evidence??'').trim().length>=30&&String(v.alternative??'').trim().length>=30,checked];
     default:return [false,false,false,false];
@@ -152,14 +152,14 @@ export function labMilestones(state: TrainingState): boolean[] {
 
 export interface MissionInstruction { role:Role; zone:Zone; action:string; success:string }
 export const missionGuides: Record<Task,MissionInstruction> = {
-  observe:{role:'observer',zone:'arrival',action:'Select all five Inspect buttons: lens, spool, tile, map and manifest. Read each finding directly beneath the buttons. Inspect means reveal and read the object’s information.',success:'All five items have been inspected.'},
+  observe:{role:'observer',zone:'arrival',action:'Inspect the inventory and source records needed for your proposed conclusion. Read findings beneath the controls. The map is needed for transport; an observation reports what a record actually shows.',success:'The required inventory and identity records have been inspected; the map is additionally needed for transport.'},
   recall:{role:'observer',zone:'arrival',action:'Read the manifest, select Hide inspection notes, then enter its three item names in order, separated by commas. Select Check recall.',success:'The three items and their order match the manifest.'},
   orient:{role:'observer',zone:'arrival',action:'Inspect the map. Use its north arrow to choose the clockwise rotation, then select Test orientation. The camera’s view does not change the map’s north.',success:'Your chosen rotation matches the supplied map.'},
-  mechanism:{role:'systems',zone:'workshop',action:'Read the required half-speed output. Choose a follower using output = 12 ÷ follower teeth, release the holding brake, then select Turn input once.',success:'The released mechanism produces half-speed output.'},
+  mechanism:{role:'systems',zone:'workshop',action:'Read the required output. Predict a result using output = 12 ÷ follower teeth, then choose a test of the ratio or holding condition. Use Turn input once to compare the model with observed movement.',success:'The released mechanism produces half-speed output.'},
   circuit:{role:'systems',zone:'power',action:'Select Measure supply and fuse before replacing anything. Keep the load switch open while changing the fuse, then close it and check the lamp readout.',success:'The original fault was measured and the repaired circuit powers the lamp.'},
   investigate:{role:'investigator',zone:'control',action:'Read the current signed source and both copy records. Choose the complete copy with the matching checksum, then select Verify selected archive. A later timestamp alone is insufficient.',success:'The selected archive matches the current signed source.'},
   permission:{role:'investigator',zone:'control',action:'Read the allowed role/action pairs and locate the extra permission. Select its Subject, Action and new decision, then Apply policy and run checks.',success:'The inappropriate permission is removed and legitimate access still works.'},
-  handoff:{role:'coordinator',zone:'archive',action:'Tell the receiver which item, destination and condition apply. The receiver needs a verified archive at Dispatch after its integrity check. Set all three fields, then Send structured handoff.',success:'The handoff specifies all three details without ambiguity.'},
+  handoff:{role:'coordinator',zone:'archive',action:'Tell the receiver which item, destination and condition apply. Ask the receiving role for its acceptance requirements. Set the item, destination and condition, then Send structured handoff; the relay also requires the receiver’s exact read-back code.',success:'The handoff specifies all three details without ambiguity.'},
   agreement:{role:'coordinator',zone:'archive',action:'Read the custodian’s requirement. Commit to preserving the original, name the person or role receiving the archive, and select Negotiate handling agreement.',success:'Both preservation and a named recipient are recorded.'},
   route:{role:'observer',zone:'archive',action:'Read the scenario bulletin and route dependencies. Choose a route supported by the available equipment, then Test route dependencies. A failed dependency needs another route or a repair.',success:'The chosen route is supported by the current scenario and power state.'},
   revision:{role:'coordinator',zone:'dispatch',action:'Preserve Version 1 before testing your assumptions. After investigation, enter a different Version 2 explaining the changed step, evidence and responsibility. Select Preserve this plan version again.',success:'Two distinct plans remain visible; their quality is assessed through your explanation.'},
@@ -167,15 +167,15 @@ export const missionGuides: Record<Task,MissionInstruction> = {
 export function missionGuide(task:Task,kind:MissionKind):MissionInstruction {
  const base=missionGuides[task];if(kind!=="recovery")return base;
  const overrides:Partial<Record<Task,Pick<MissionInstruction,"action"|"success">>>={
-  mechanism:{action:"First ask Investigator to verify the signed archive profile. Read its required output: A uses a 36-tooth follower (one-third speed); B uses 48 teeth (one-quarter speed). Release the brake and select Turn input once.",success:"The tested cradle matches the currently verified archive profile."},
+  mechanism:{action:"First ask Investigator to verify the signed archive profile. Read the required output and calculate a candidate ratio. Choose a test that distinguishes gearing from a holding condition. Physical recovery and stabilisation require this support; digital transmission does not.",success:"The tested cradle matches the currently verified archive profile."},
   investigate:{action:"Compare both copies with the current signed source. Select Verify selected archive. Give the resulting profile to Systems: it determines the cradle gearing and the evidence needed at Dispatch.",success:"The current signed copy and its recovery profile are verified."},
-  handoff:{action:"Wait for the Investigator’s archive verification and Systems’ matching cradle test. Send verified archive to dispatch after integrity check. The record binds this handoff to the verified profile.",success:"All three fields are precise and the handoff records the current tested archive profile."},
+  handoff:{action:"Establish the verified profile and whichever equipment checks your objective requires. Ask the receiver which item, destination and condition they need, then compose the handoff. A digital approach has no cradle dependency.",success:"All three fields are precise and the handoff records the current tested archive profile."},
   route:{action:"Check the verified profile, tested cradle and matching handoff first. Read the disruption bulletin, then test an available route. Upper and lift also require restored power; equipment failure makes both unavailable.",success:"The route is tested against current equipment and the same verified profile as the handoff."},
  };
  return {...base,...overrides[task]};
 }
 export const missionSummaries:Record<MissionKind,{goal:string;after:string}>= {
-  a1:{goal:'Complete four workshop tasks: inspect the scene, recall the manifest, orient the map and restore the cradle. Then finish the trial at Dispatch.',after:'Export the trial record. Prepare your causal model, 350–500-word explanation, one failed prediction or limitation, and attribution using the assessment brief.'},
+  a1:{goal:'Investigate the scene, reconstruct its transport orientation and test a model that releases the cradle. Recall is optional; reliable notes are allowed. Then finish the trial at Dispatch.',after:'Export the trial record. Prepare your causal model, 350–500-word explanation, one failed prediction or limitation, and attribution using the assessment brief.'},
   a2:{goal:'Complete four relay tasks: diagnose the circuit, verify the archive, repair permissions and communicate a precise handoff. Then finish at Dispatch.',after:'Export the trial record. Add your evidence, before/after policy, handoff and contribution records, plus the 500–700-word joint explanation required by the brief.'},
-  recovery:{goal:'Coordinate the four roles to recover Meridian’s archive. Preserve a first plan, complete all eleven practical objectives, revise your plan, then record evidence for your chosen resolution at Dispatch. The verified archive determines the cradle setup, and each ending needs its own receipt or custody record.',after:'Export this run and complete a contrasting rehearsal. Assemble the two rehearsal records, final run, plan history, role agreement, 800–1,200-word team account, presentation and individual defences listed in the final brief.'},
+  recovery:{goal:'Coordinate the four roles to recover Meridian’s archive. Preserve a first plan, complete the objective’s relevant practical objectives, revise your plan, then record evidence for your chosen resolution at Dispatch. The chosen objective determines which equipment is relevant. Justify omitted checks and a credible alternative; each ending needs its own receipt, custody or monitoring record.',after:'Export this run and complete a contrasting rehearsal. Assemble the two rehearsal records, final run, plan history, role agreement, 800–1,200-word team account, presentation and individual defences listed in the final brief.'},
 };

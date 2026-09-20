@@ -32,11 +32,15 @@ const support = courseHandbook.support.map(entry => ({
   <section id="overview">
     <h2>Course overview</h2>
     <p>{courseHandbook.overview}</p>
+    <p><strong>{courseHandbook.question}</strong></p>
+    <dl class="guide-rhythm">{courseHandbook.capabilities.map(capability=><div><dt>{capability.title}</dt><dd><strong>{capability.question}</strong> {capability.description}</dd></div>)}</dl>
+    <h3>How support changes as you learn</h3>
+    <p>A worked example explains the demonstrator’s decisions. Guided practice supplies prompts and feedback. In independent challenges, you choose the next useful observation or test; instructions still explain the controls, rules, objective and evidence to keep. Assessment asks you to justify those choices. Hints remain available and should be declared.</p>
     <p><strong>Mode of study:</strong> {courseHandbook.delivery} Campus sessions centre on facilitated investigation, shared apparatus or paper models, discussion and teamwork. The online academy provides equivalent model-based practice for students who cannot attend, and supports preparation and revision between classes.</p>
   </section>
   <section id="entry">
     <h2>Is this course for you?</h2>
-    <p>{courseHandbook.audience} The semester follows one recovery operation at Meridian Station: learn to notice, test, coordinate and adapt before the team brings its skills together.</p>
+    <p>{courseHandbook.audience} The semester develops four connected capabilities through varied situations. Recovery at Meridian Station is the final application, rather than the story of every lab.</p>
     <p><strong>Prerequisites:</strong> {courseHandbook.prerequisites}</p>
     <p><strong>What fourth-year means here:</strong> the individual models start with accessible rules. The advanced work is combining them, evaluating uncertain evidence, responding to changed conditions and defending decisions with other people.</p>
     <h3>Before your first lab</h3>
@@ -65,21 +69,20 @@ const support = courseHandbook.support.map(entry => ({
     </dl>
     <p><strong>After each activity:</strong> explain the result and keep your station sheet or online learning record. Online participants can save the phase's attempt in their skills passport and export a backup. A worked example demonstrates a different scenario; watching or completing it does not complete your assigned lab.</p>
     <h3>Inside the online practical environment</h3>
-    <p>Every playable activity gives you a practical job. The skill you are learning helps resolve its obstacle. Follow the current objective in the scene and the <strong>Field operation</strong> panel:</p>
+    <p>Read the activity’s objective and completion conditions before using the controls. There is no universal delivery sequence: an investigation finishes with a defensible account, a diagnostic experiment with a verified result, and a negotiation with an agreement whose limits are clear.</p>
     <ol class="guide-checklist">
-      <li><strong>Accept the objective.</strong> Read what must reach whom, what is going wrong and why your intervention matters.</li>
-      <li><strong>Inspect the mission station.</strong> Establish the obstacle, then inspect the task equipment and supplied records. The instructor is your guide; only identified scenario people and objects supply evidence.</li>
-      <li><strong>Investigate and test.</strong> Use the labelled equipment controls to practise the week's skill. Feedback explains what your solution supports and what still needs attention.</li>
-      <li><strong>Put the solution into effect.</strong> Return to the mission station and operate it. A supported intervention changes the scene: a passage opens, a cradle rises, a beacon lights or a verified record is released.</li>
-      <li><strong>Complete the handover.</strong> Collect the named case or record, visit its marked checkpoints in order and use the receiving station. The action record confirms what was delivered.</li>
-      <li><strong>Debrief after the action.</strong> Explain the evidence, decisions and limits; save and export the required record. In an assessment, also complete its outcome evidence and written deliverables.</li>
+      <li><strong>Establish the question.</strong> State what you need to know or achieve, and which rule would make an answer acceptable.</li>
+      <li><strong>Choose a useful observation or test.</strong> Ask what its possible results would distinguish. The instructor is your guide; only identified scenario records and equipment supply evidence.</li>
+      <li><strong>Predict, act and compare.</strong> Keep your prediction separate from the observed result. A failed prediction can improve the next decision.</li>
+      <li><strong>Complete the relevant practical outcome.</strong> Apparatus and communication tasks include their required intervention or handoff. Other labs can end with their tested learning record; their scene delivery is an optional extension.</li>
+      <li><strong>Explain and save.</strong> Record what the result supports, an alternative and a remaining limit. The final mission adds approach-specific execution and receiving evidence.</li>
     </ol>
     <p><strong>Start by watching:</strong> an alternate worked example narrates the brief, demonstrates its investigation and intervention, then reviews the completed work. Choose <em>Take control</em> to try that example yourself. Return to your assigned activity for its different conditions.</p>
     <p><strong>Inside the scene:</strong> drag to look around and scroll over the scene to zoom. In fullscreen, X switches between a free cursor for the task panel and mouse-look. Mission controls move your character to the selected station before recording its action. If graphics are paused or unavailable, the same controls perform the action directly.</p>
     <p><strong>If a previously cleared objective reopens:</strong> a supporting answer or requirement changed. Re-test it and repeat the affected intervention and handover; the earlier action record remains visible.</p>
     <h3>In-person teaching and the online option</h3>
     <div class="guide-routes">
-      <article><h4>In person · preferred</h4><p>Attend the Monday briefing and Friday facilitated lab. Inspect the supplied models, make predictions, compare results with classmates and carry out the published mission using its station sheets and role packs.</p><p>Each campus pack lists equipment, setup and a paper alternative. Read its preparation section before class. Keep a dated practical record and receiver acknowledgement; completing an additional online run is not required.</p></article>
+      <article><h4>In person · preferred</h4><p>Attend the Monday briefing and Friday facilitated lab. Inspect the supplied models, make predictions, compare results with classmates and carry out the published mission using its station sheets and role packs.</p><p>Each campus pack lists equipment, setup and a paper alternative. Read the preparation section in the weekly briefing before class. Keep a dated practical record and, where the activity requires one, a receiver acknowledgement; completing an additional online run is not required.</p></article>
       <article><h4>Online · if you cannot attend</h4><p>Use the published briefing, complete narrated example and 3D activity to practise the same concepts and keep the same evidence. Online pairs and groups may share a screen and rotate control while preserving individual contribution records.</p><p>Use keyboard, touch or pointer controls. Captions accompany narration. Standard controls work without 3D graphics, and printable worksheets support study without JavaScript. No live class stream or online enrolment service is provided by this prototype.</p></article>
     </div>
     <p><a href={withBase("/resources/")}>Find all supplied materials and campus packs</a> · <a href={withBase("/policies/")}>Read accessible participation arrangements</a></p>

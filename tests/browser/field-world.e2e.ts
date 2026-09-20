@@ -49,6 +49,7 @@ test('paused graphics retain an explicit usable mission-control path',async({pag
  await page.locator('[data-world-launch]').click();
  await expect(page.locator('[data-world-canvas] canvas')).toBeVisible({timeout:45000});
  await page.locator('[data-world-pause]').click();
+ await page.locator('[data-optional-field-extension] > summary').click();
  await page.locator('[data-field-inspect]').click();
  await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','investigating');
  await expect(page.locator('[data-world-pause]')).toHaveAttribute('aria-pressed','true');

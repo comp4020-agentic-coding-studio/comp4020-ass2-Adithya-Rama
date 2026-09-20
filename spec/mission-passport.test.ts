@@ -1,6 +1,6 @@
 import {describe,it,expect} from "vitest";
 import {createTraining} from "../src/lib/training-engine";
-import {newMission,applyMission,missionMarkdown,missionRequirements,scenarioIds,requiredProfile,missionFacts,resolutionText,missionFieldSpec,type MissionState,type Ending,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
+import {newMission,applyMission,missionMarkdown,missionRequirements,requiredMissionTasks,missionProofProblem,relayReadback,scenarioIds,requiredProfile,missionFacts,resolutionText,missionFieldSpec,type MissionState,type Ending,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
 import {newPassport,parsePassport,PassportStore,withEvidence,withMission,SAVE_KEY,LEGACY_KEY,passportMarkdown,type StorageLike} from "../src/lib/passport";
 function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
  let s=newMission(kind,scenario);
@@ -23,7 +23,7 @@ function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
  if(kind!=="a1"){
   act({type:"role",role:"systems"});act({type:"measure"});act({type:"fuse",value:"intact"});act({type:"switch",closed:true});
   act({type:"role",role:"investigator"});act({type:"policy",subject:"observer",action:"certify",allowed:false});
-  act({type:"role",role:"coordinator"});act({type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check"});
+  act({type:"role",role:"coordinator"});act({type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check",acknowledgement:relayReadback(s)});
  }
  if(kind==="recovery"){
   act({type:"agreement",preserve:true,recipient:"Station custodian"});
@@ -35,7 +35,11 @@ function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
 function perform(state:MissionState,ending:Ending=state.resolutionChoice??state.declaredObjective):MissionState{
  let s=state;
  const act=(a:MissionAction)=>{const r=applyMission(s,a);expect(r.success,r.message).toBe(true);s=r.state;};
- if(s.kind==="recovery"&&s.resolutionChoice!==ending)act({type:"resolution-choice",ending});
+ if(s.kind==="recovery"&&s.resolutionChoice!==ending){
+  act({type:"resolution-choice",ending});act({type:"role",role:"coordinator"});
+  act({type:"plan",text:"Changed approach to "+ending+": revise the required equipment and custody evidence; retain the earlier plan and explain omitted checks."});
+ }
+ if(s.kind==="recovery"&&s.plans.at(-1)?.objective!==ending){act({type:"role",role:"coordinator"});act({type:"plan",text:"Current "+ending+" plan: retain evidence, justify scope, explain an alternative and record the continuing obligation."});}
  act({type:"zone",zone:"dispatch"});
  if(!s.field?.delivered){
   act({type:"field",action:{type:"inspect"}});act({type:"field",action:{type:"proof",verified:true}});
@@ -60,7 +64,7 @@ describe("integrated recovery rules",()=>{
  it("historical plan remains identical after revision",()=>{let s=newMission();s=applyMission(s,{type:"role",role:"coordinator"}).state;s=applyMission(s,{type:"plan",text:"First plan: inspect, restore equipment, verify and recover."}).state;const first=structuredClone(s.plans[0]);s=applyMission(s,{type:"plan",text:"Revised plan: replace the unavailable route after checking the source."}).state;expect(s.plans[0]).toEqual(first);expect(s.plans[1]!.version).toBe(2);});
  for(const kind of ["a1","a2","recovery"] as const)for(const scenario of scenarioIds)it(kind+" / "+scenario+" has reachable resolutions with reproducible evidence",()=>{
   const s=complete(kind,scenario);expect(complete(kind,scenario)).toEqual(s);
-  for(const ending of (kind==="recovery"?["physical","digital","stabilise"]:kind==="a1"?["physical"]:["digital"]) as Ending[]){const r=applyMission(outcome(s,ending),{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(missionRequirements[kind]));}
+  for(const ending of (kind==="recovery"?["physical","digital","stabilise"]:kind==="a1"?["physical"]:["digital"]) as Ending[]){const r=applyMission(outcome(s,ending),{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(requiredMissionTasks(r.state)));}
  });
  it("an early ending exposes missing capabilities instead of pretending success",()=>{const r=applyMission(newMission(),{type:"resolve",ending:"physical"});expect(r.success).toBe(false);expect(r.state.status).toBe("active");expect(r.message).toContain("Inspect");});
 });
@@ -174,7 +178,7 @@ describe("final mission synthesis and distinct outcome evidence",()=>{
   s=applyMission(s,{type:"replica",replica:"A"}).state;
   expect(s.tasks).toContain("investigate");expect(s.tasks).not.toContain("mechanism");
  });
- it("the shared eleven checks cannot complete an ending without its specific record",()=>{
+ it("required capability evidence cannot complete an ending without its specific record",()=>{
   const s=complete();
   for(const ending of ["physical","digital","stabilise"] as const){
    const r=applyMission(s,{type:"resolve",ending});expect(r.success).toBe(false);expect(r.state.status).toBe("active");expect(r.message).toContain("outcome evidence");
@@ -228,7 +232,7 @@ describe("outcome evidence stays consistent across import and resolution",()=>{
  });
  it("rejects completed imports whose live equipment or custody no longer supports their task ticks",()=>{
   const done=applyMission(outcome(complete(),"physical"),{type:"resolve",ending:"physical"}).state;
-  for(const patch of [{fuse:"open"},{switchClosed:false},{measured:false},{replica:"B"},{policyPatched:false},{plans:[]},{agreement:"Preserve original; hand over to Other custodian"}]){
+  for(const patch of [{fuse:"open"},{switchClosed:false},{measured:false},{replica:"B"},{plans:[]},{agreement:"Preserve original; hand over to Other custodian"}]){
    expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:{...done,...patch}}}))).toThrow();
   }
  });
@@ -294,10 +298,98 @@ describe("performed assessment missions",()=>{
   const ready=outcome(complete(),"digital");
   const invalid=structuredClone(ready);invalid.field!.visited=["unpublished route"];
   expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:invalid}}))).toThrow();
-  const historical=structuredClone(ready);delete historical.field;delete historical.resolutionChoice;
+  const historical=structuredClone(ready);historical.recovery!.version=2;delete historical.field;delete historical.resolutionChoice;
   const restored=parsePassport(JSON.stringify({...newPassport(),missions:{recovery:historical}})).missions.recovery!;
   expect(restored.field).toBeUndefined();
-  expect(resolutionText(restored)).toContain("predates performed transport");
+  expect(resolutionText(restored)).toContain("Legacy recovery record");
   expect(applyMission(restored,{type:"field",action:{type:"execute"}}).success).toBe(false);
+ });
+});
+
+/** Complete only the capabilities which cause this outcome, without ceremonial extra checks. */
+function conditionalMission(ending:Ending,scenario:Scenario="baseline",route="service"):MissionState {
+ let s=newMission("recovery",scenario);
+ const act=(a:MissionAction)=>{const r=applyMission(s,a);expect(r.success,r.message).toBe(true);s=r.state;};
+ act({type:"objective",objective:ending});
+ act({type:"role",role:"coordinator"});act({type:"plan",text:"Initial plan: select evidence for "+ending+" and explain why unrelated equipment is unnecessary."});
+ act({type:"role",role:"observer"});
+ for(const item of ["lens","spool","tile","manifest"])act({type:"inspect",item});
+ if(ending==="physical"){act({type:"inspect",item:"map"});act({type:"orient",degrees:180});}
+ act({type:"role",role:"investigator"});act({type:"replica",replica:requiredProfile(s).id});
+ if(ending==="digital")act({type:"policy",subject:"observer",action:"certify",allowed:false});
+ act({type:"role",role:"systems"});
+ if(ending!=="digital"){act({type:"gear",follower:requiredProfile(s).follower});act({type:"brake",released:true});act({type:"turn"});}
+ if(ending!=="physical"||route!=="service"){act({type:"measure"});act({type:"fuse",value:"intact"});act({type:"switch",closed:true});}
+ act({type:"role",role:"coordinator"});act({type:"agreement",preserve:true,recipient:"Station custodian"});
+ act({type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check"});
+ if(ending==="physical"){act({type:"role",role:"observer"});act({type:"route",route});}
+ act({type:"role",role:"coordinator"});act({type:"plan",text:"Revision: current authority supports "+ending+"; preserve custody, reject an unsupported alternative and assign remaining monitoring."});
+ return outcome(s,ending);
+}
+describe("conditional final scope and independent evidence",()=>{
+ for(const ending of ["physical","digital","stabilise"] as const)for(const scenario of scenarioIds){
+  it(ending+" in "+scenario+" is reachable without irrelevant tasks",()=>{
+   const s=conditionalMission(ending,scenario);
+   expect(s.tasks).not.toContain("recall");
+   expect(s.tasks).toHaveLength(requiredMissionTasks(s).length);
+   if(ending!=="physical"){expect(s.tasks).not.toContain("orient");expect(s.tasks).not.toContain("route");expect(s.inspected).not.toContain("map");}
+   if(ending==="digital"){expect(s.tasks).not.toContain("mechanism");expect(s.recovery!.cradleProfile).toBeNull();}
+   else expect(s.tasks).not.toContain("permission");
+   if(ending==="physical"){expect(s.tasks).not.toContain("circuit");expect(s.fuse).toBe("open");}
+   const finished=applyMission(s,{type:"resolve",ending});
+   expect(finished.success,finished.message).toBe(true);
+   expect(parsePassport(JSON.stringify(withMission(newPassport(),finished.state))).missions.recovery).toEqual(finished.state);
+  });
+ }
+ it("physical lift power is required only for the routes that depend on it",()=>{
+  const service=conditionalMission("physical");
+  expect(requiredMissionTasks(service)).not.toContain("circuit");
+  let lift=applyMission(service,{type:"role",role:"observer"}).state;
+  lift=applyMission(lift,{type:"route",route:"lift"}).state;
+  expect(requiredMissionTasks(lift)).toContain("circuit");
+  expect(missionProofProblem(lift)).toContain("6 V circuit");
+  expect(lift.field?.delivered).toBe(false);
+ });
+ it("an unrelated cradle edit does not erase a digital receipt; a source edit does",()=>{
+  let s=conditionalMission("digital");
+  const field=structuredClone(s.field),evidence=structuredClone(s.recovery!.resolution);
+  s=applyMission(s,{type:"role",role:"systems"}).state;s=applyMission(s,{type:"gear",follower:48}).state;
+  expect(s.field).toEqual(field);expect(s.recovery!.resolution).toEqual(evidence);
+  s=applyMission(s,{type:"role",role:"investigator"}).state;s=applyMission(s,{type:"replica",replica:"B"}).state;
+  expect(s.recovery!.resolution).toBeNull();expect(s.field?.delivered).toBe(false);
+ });
+ it("stationary support needs working power and cannot be completed as a checkbox-only shortcut",()=>{
+  let s=conditionalMission("stabilise");
+  s=applyMission(s,{type:"role",role:"systems"}).state;s=applyMission(s,{type:"switch",closed:false}).state;
+  expect(missionProofProblem(s)).toContain("6 V circuit");
+  expect(s.field?.delivered).toBe(false);expect(s.recovery!.resolution).toBeNull();
+ });
+ it("a changed objective withdraws performance and adds its missing causal requirements",()=>{
+  const digital=conditionalMission("digital");
+  const physical=applyMission(digital,{type:"resolution-choice",ending:"physical"}).state;
+  expect(physical.declaredObjective).toBe("digital");expect(physical.recovery!.resolution).toBeNull();
+  expect(physical.field?.delivered).toBe(false);
+  expect(requiredMissionTasks(physical)).toContain("mechanism");
+  expect(missionProofProblem(physical)).not.toBeNull();
+ });
+ it("every outcome needs a scope/alternative/remaining-obligation account",()=>{
+  for(const ending of ["physical","digital","stabilise"] as const){
+   const s=conditionalMission(ending),{profile,route,...evidence}=s.recovery!.resolution!;
+   expect(applyMission(s,{type:"resolution-evidence",evidence:{...evidence,limitation:"done"}}).success).toBe(false);
+  }
+ });
+ it("keeps v2 final evidence historical, without giving it v3 completion credit",()=>{
+  const old=conditionalMission("physical");old.recovery!.version=2;
+  const saved=parsePassport(JSON.stringify({...newPassport(),missions:{recovery:old}})).missions.recovery!;
+  expect(saved.recovery!.version).toBe(2);
+  expect(applyMission(saved,{type:"plan",text:"A new conditional plan should require a fresh run."}).success).toBe(false);
+  expect(resolutionText(saved)).toContain("Legacy recovery record");
+ });
+ it("receiver code and current source are required for the relay and stale read-back is withdrawn",()=>{
+  let s=complete("a2");s=applyMission(s,{type:"role",role:"coordinator"}).state;
+  const wrong=applyMission(s,{type:"handoff",item:"verified archive",destination:"dispatch",condition:"after integrity check",acknowledgement:"RELAY-B-SECOND"});
+  expect(wrong.success).toBe(false);expect(wrong.state.tasks).not.toContain("handoff");
+  s=applyMission(s,{type:"role",role:"investigator"}).state;s=applyMission(s,{type:"replica",replica:"B"}).state;
+  expect(s.relayAcknowledgement).toBe("");expect(s.field?.delivered).toBe(false);
  });
 });

@@ -29,10 +29,12 @@ test('academy rooms render, keyboard movement responds, and resources stabilise'
 test('mechanism scene uses authoritative equipment actions and stays readable on phone',async({page})=>{
  await page.goto('sessions/week-04/');await enter(page);
  await expect(page.locator('[data-academy-world]')).toHaveAttribute('data-world-room','mechanics');
+ await page.getByRole('button',{name:'Inspect holding brake',exact:true}).click();
+ await page.getByRole('button',{name:'Inspect cam datum',exact:true}).click();
  await page.locator('[data-world-equipment]').selectOption({label:'Release or engage the interlock'});
  await page.locator('[data-world-use]').click();await expect(page.locator('.training-readout')).toContainText('Released');
  await page.locator('[data-world-equipment]').selectOption({label:'Set the cam angle'});
- await page.locator('[data-world-use]').click();await expect(page.locator('.training-readout')).toContainText('90°');
+ await page.locator('[data-world-use]').click();await expect(page.locator('.training-readout')).toContainText('270°');
  await page.setViewportSize({width:390,height:844});
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  const canvas=await page.locator('[data-world-canvas]').boundingBox(),controls=await page.locator('[data-world-object]').boundingBox();

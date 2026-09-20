@@ -1,6 +1,6 @@
 ---
 title: "Understand the Mechanism"
-description: "Predict a training mechanism's motion, locate a failed dependency and verify a repair."
+description: "Distinguish mechanism faults using selected inspections, predict motion and verify a targeted repair."
 week: 4
 learningOutcomes: ["LO2","LO3"]
 skillIds: ["LO2","LO3"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Suspended Cradle.** Raise a recovery cradle to its receiving platform without forcing its blocked mechanism.
+**Your task:** A carriage does not behave as required. Identify the failed dependency, choose a test that distinguishes it from an alternative and verify the repaired motion.
 
-The support is locked, its return spring is absent and its output must match the lift specification. A correct gear alone cannot move it.
+**What you will produce:** Keep candidate faults, the selected inspection and its prediction, observed evidence, diagnosis before repair, change made and verified final movement. Name one condition retained.
 
-**What you will produce:** A gear prediction, a trace of the mechanism test, a changed-configuration attempt and an explanation of a blocked or incorrect result.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,34 +38,45 @@ Read the [briefing](/lectures/week-04/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Predict relative speed and direction in a simple gear pair.
-- Trace how an interlock and cam control an output.
-- Diagnose a fault through observations that distinguish competing causes.
+- Predict gear direction and movement from the published relation.
+- Use inspections to distinguish causes before changing apparatus.
+- Verify a targeted repair against the whole required motion and changed target.
 
 ## Supplied case file and rules
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **ME-01** identifies the driver, follower, interlock, cam and spring and their operating rules. **ME-02** supplies the changed input/output and cam requirements for each phase.
+**ME-01** gives the mechanism rules and inspection options. **ME-02** gives the target and initial inspection cards for each phase.
 
-- A 12-tooth driving gear externally meshes with a selectable 12-, 24- or 36-tooth driven gear. Output turns = 12 ÷ driven teeth × input turns, in the opposite direction.
-- The model only moves with interlock released, return spring attached and cam at the published angle.
-- An engaged interlock blocks cam adjustment. Release it before changing the cam.
-- Practice: four input turns must produce two output turns, cam 180 degrees.
-- Skill check: four input turns must produce four output turns, cam 180 degrees.
-- Transfer: six input turns must produce two output turns, cam 90 degrees.
-- This is an educational carriage mechanism, not a commercial lock or bypass procedure.
+- A 12-tooth driver externally meshes with a selectable 12-, 24- or 36-tooth follower. Output turns = 12 ÷ follower teeth × input turns; direction is opposite.
+- Motion requires a released interlock, attached return spring and specified cam angle. An engaged interlock blocks cam adjustment.
+- Practice: four input turns must produce two outputs; cam datum 180 degrees.
+- Skill check: four input turns must produce four outputs; datum 180 degrees.
+- Transfer: six input turns must produce two outputs; datum 90 degrees.
+- Choose inspections of brake/interlock, return spring, cam datum or gear teeth. Record evidence and a diagnosis **before** using adjustment controls.
+- One initial fault exists in each phase. Its identity is not supplied in the task; compare the revealed conditions with the rules.
+- After a targeted correction, verify movement, direction and the required return. This is an educational mechanism, not a commercial lock.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Draw the input-to-output chain and list two explanations for a stalled carriage. |
+| 10–30 minutes | Use the alternate example to predict an informative inspection. |
+| 30–60 minutes | Inspect the first mechanism, record a diagnosis, then repair and test. |
+| 60–80 minutes | Diagnose the second initial fault independently; preserve evidence before changing controls. |
+| 80–105 minutes | Meet changed motion/cam requirements and distinguish target changes from component faults. |
+| 105–120 minutes | Compare diagnostic traces and retain a rejected explanation with evidence against it. |
 
 ## In-person lab · preferred route
 
@@ -75,24 +84,24 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Equipment:** Printed gear discs labelled 12, 24 and 36; card cam and follower; cardboard carriage; paper fasteners; a removable interlock tab. Use an animation or facilitator model if fabrication is unavailable.
 
-**Setup:** Mark tooth counts and angular reference lines. Mount discs so they can rotate and demonstrate the labelled relationship; a facilitator may manually track ratios on paper. Build the cam/follower as a conceptual model. This construction is a proposed classroom apparatus, not physically validated equipment.
+**Setup:** Mark tooth counts and angular reference lines. Mount discs so they can rotate and demonstrate the labelled relationship; a facilitator may manually track ratios on paper. Build the cam/follower as a conceptual model. Use the campus pack's three initial configurations and reveal requested inspections before students adjust them. This construction is a proposed classroom apparatus, not physically validated equipment.
 
-**What you do together:** Students predict movement before the facilitator operates the model. Change a single fault between trials. Keep hands away from moving contact points and operate only low-force paper/card parts. Record theoretical predictions separately from imperfections in the constructed model.
+**What you do together:** Investigate a faulty gear/cam model using requested inspection cards. Record a diagnosis before changing it, make a targeted correction and verify the required output and return.
 
 The [printable facilitator pack](/campus/week-04.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Select **Practice**. Read the driver teeth, input turns, required output turns and cam angle. Predict the follower size using output turns = driver teeth ÷ follower teeth × input turns.
-2. Use **Change driven gear (12 → 24 → 36)** to select the size you predicted. Select the expected output direction.
-3. Select **Release interlock**, then use **Rotate cam 90°** until the displayed cam matches the requirement. Select **Attach return spring**.
-4. Select **Turn the crank** and read the observed output and feedback. A correct gear ratio will not overcome an engaged interlock or missing spring. Use **Test this configuration** to check the full arrangement.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** and **Transfer challenge**. Recalculate for their changed input/output requirements and read the new cam requirement before operating.
-6. After playing, explain your prediction and the evidence for one repair. Distinguish a wrong gear ratio from a mechanism that cannot move.
+1. Select **Practice** and read the target output and cam requirement. Predict direction and movement; list two candidate faults.
+2. Choose an inspection control for the brake/interlock, spring, cam or gear. Explain what the result can distinguish. Do this before changing apparatus.
+3. Select the supported **Diagnosis** and **Record diagnosis**. If you already changed parts, restart this phase and preserve the original evidence first.
+4. Make the targeted adjustment using **Release interlock**, **Change driven gear**, **Rotate cam** or **Attach return spring** as appropriate. The instructions do not tell you which fault the phase contains.
+5. Select expected direction, then **Turn the crank** and **Test this configuration**. Compare actual movement with the whole target. Complete the apparatus consequence described below and save the attempt.
+6. Repeat independently for **Skill check** and **Transfer challenge**. Diagnose each initial configuration, recalculate its target and retain evidence for a rejected explanation.
 
 ### Put your solution into effect
 
@@ -110,21 +119,32 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**mechanism-diagnosis** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**mechanism-diagnosis**
 
-Diagnose Meridian's recovery carriage without treating a jam as an unexplained obstacle.
+Keep candidate faults, the selected inspection and its prediction, observed evidence, diagnosis before repair, change made and verified final movement. Name one condition retained.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A1 combines mechanism diagnosis with observation and spatial modelling. Physical recovery and stabilisation can need a support mechanism; digital recovery need not repeat an unrelated cradle exercise.
 
 ## Feedback and explanation
 
-The practice, check and transfer gears are 24, 12 and 36 teeth respectively. All rotate opposite the driver. A blocked mechanism requires a readiness diagnosis, while an incorrect output count requires a ratio diagnosis.
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+The diagnosis must precede adjustment. Compare the original inspection with the model's requirements; verify actual output after the targeted correction. A working final arrangement without evidence of the initial condition does not establish which fault caused the failure.
 
 **Worked reflection from the separate demonstration:** I calculated 18 ÷ 30 × 5 = 3 opposite output turns. The interlock, 270-degree cam and spring checks made that prediction testable. For two turns from four inputs, I changed the follower to 36 teeth and retained the valid readiness conditions.
 
 [Inspect this example's complete record](/demonstrations/lab-04/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep candidate faults, the selected inspection and its prediction, observed evidence, diagnosis before repair, change made and verified final movement. Name one condition retained.
 
 ## Closing reflection
 

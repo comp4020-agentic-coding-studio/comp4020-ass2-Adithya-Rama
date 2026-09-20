@@ -1,7 +1,14 @@
 /** Course-owned participation facts. Dates, outcomes and assessment records
  * remain in their existing canonical sources. */
 export const courseHandbook = {
-  overview: "A fourth-year course in observation, memory, systems and collaborative problem-solving. Learn to investigate unfamiliar situations, test solutions and coordinate a recovery through briefings, practical labs and a cumulative team project.",
+  question: "How can a team complete a fictional field operation when its information is incomplete, its equipment is unreliable, and its members have different responsibilities?",
+  overview: "Learn to investigate unfamiliar field situations, diagnose model systems and coordinate decisions when no one person has the whole picture. Guided experiments develop into independent challenges, then a team operation at fictional Meridian Station.",
+  capabilities: [
+    {title:"Observe",question:"What is present, and what have we missed?",description:"Build a reliable record, distinguish a report from an observation, and choose memory aids that suit the task."},
+    {title:"Investigate",question:"Which explanation does the evidence support?",description:"Compare sources, test competing claims and state what remains unknown."},
+    {title:"Diagnose",question:"What does this system need, and what has failed?",description:"Use spatial and causal models to choose informative tests before changing equipment."},
+    {title:"Coordinate",question:"How can different responsibilities support one decision?",description:"Exchange information, negotiate feasible terms, revise dependencies and confirm the resulting action."},
+  ],
   academicUnit: "Academy of Impossible Skills",
   convenorId: "mara-voss",
   delivery: "In person (preferred), with an online option for students unable to attend campus.",

@@ -1,12 +1,15 @@
-import {PassportStore,parsePassport,passportHasWork,passportMarkdown,withEvidence,type EvidenceInput} from "../lib/passport";
+import {PassportStore,parsePassport,passportHasWork,passportMarkdown,withEvidence,withCheckpoint,type EvidenceInput} from "../lib/passport";
 let storage:Storage|undefined;try{storage=window.localStorage;}catch{}
 export const passport=new PassportStore(storage);
 export function download(text:string,name:string,type="text/plain"){
  const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
+function updatePassportCount(){
+ document.querySelectorAll<HTMLElement>("[data-passport-count]").forEach(e=>e.textContent=passport.state.records.length+" practice records · "+passport.state.labHistory.length+" preserved historical lab records · "+passport.state.runs.length+" completed trials · saved "+new Date(passport.state.updatedAt).toLocaleString());
+}
 export function announcePassport(){
  document.querySelectorAll<HTMLElement>("[data-passport-status]").forEach(e=>e.textContent=passport.message);
- document.querySelectorAll<HTMLElement>("[data-passport-count]").forEach(e=>e.textContent=passport.state.records.length+" practice records · "+passport.state.runs.length+" completed trials · saved "+new Date(passport.state.updatedAt).toLocaleString());
+ updatePassportCount();
  window.dispatchEvent(new CustomEvent("mastermind:restore",{detail:{records:passport.state.records,drafts:passport.state.drafts,missions:passport.state.missions}}));
 }
 function initialise(){
@@ -20,7 +23,7 @@ function initialise(){
   dialog.querySelector("[data-dialog-confirm]")?.addEventListener("click",()=>{pending?.();pending=undefined;dialog.close();announcePassport();});
   dialog.querySelector("[data-dialog-cancel]")?.addEventListener("click",()=>{pending=undefined;dialog.close();});
   region.querySelector("[data-passport-archive]")?.addEventListener("click",()=>confirm("Export and clear completed-run history?","A JSON backup will download before clearing historical runs. Your active missions and lab work remain.",()=>{download(JSON.stringify(passport.state,null,2),"mastermind-history-backup.json","application/json");const next=structuredClone(passport.state);next.runs=[];next.revision++;next.updatedAt=new Date().toISOString();passport.commit(next);}));
-  region.querySelector("[data-passport-reset]")?.addEventListener("click",()=>confirm("Reset this skills passport?","Export a backup first. This clears new training records and missions. The legacy dossier is preserved.",()=>{passport.reset();window.dispatchEvent(new CustomEvent("mastermind:reset"));}));
+  region.querySelector("[data-passport-reset]")?.addEventListener("click",()=>confirm("Reset this skills passport?","Export a backup first. This clears current and archived lab records, drafts and missions. The separate legacy dossier is preserved.",()=>{passport.reset();window.dispatchEvent(new CustomEvent("mastermind:reset"));}));
   region.querySelector<HTMLInputElement>("[data-passport-import]")?.addEventListener("change",async event=>{
    const input=event.target as HTMLInputElement;const file=input.files?.[0];if(!file)return;
    try {
@@ -49,8 +52,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 window.addEventListener("mastermind:checkpoint",event=>{
  const detail=(event as CustomEvent<{week:number;state:Record<string,unknown>;reflection:string}>).detail;
  try {
-  const next=structuredClone(passport.state);next.drafts[String(detail.week)]=detail;next.selectedWeek=detail.week;next.revision++;next.updatedAt=new Date().toISOString();
-  const checked=parsePassport(JSON.stringify(next));passport.commit(checked);
+  passport.commit(withCheckpoint(passport.state,detail));updatePassportCount();
   document.querySelectorAll<HTMLElement>("[data-passport-status]").forEach(e=>e.textContent=passport.message);
  }catch(error){passport.message=error instanceof Error?error.message:"This checkpoint could not be saved. Export your learning record.";
  document.querySelectorAll<HTMLElement>("[data-passport-status]").forEach(e=>e.textContent=passport.message);}

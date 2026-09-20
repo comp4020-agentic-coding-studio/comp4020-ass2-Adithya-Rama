@@ -1,6 +1,6 @@
 # SLOP4408 — MASTERMIND
 
-A complete fictional Slop University course about observation, memory, systems, evidence and coordinated recovery. Twelve teaching weeks lead into **Operation Last Light**, where students use those capabilities together at Meridian Station.
+A complete fictional Slop University course asking how a team completes a field operation with incomplete information, unreliable equipment and different responsibilities. Twelve weeks develop observation, investigation, diagnosis and coordination, leading into **Operation Last Light** at Meridian Station. In-person teaching is preferred; the online academy provides an equivalent practice route.
 
 - [Course website](https://comp4020-agentic-coding-studio.github.io/comp4020-ass2-Adithya-Rama/)
 - [Course guide](https://comp4020-agentic-coding-studio.github.io/comp4020-ass2-Adithya-Rama/course-guide/)

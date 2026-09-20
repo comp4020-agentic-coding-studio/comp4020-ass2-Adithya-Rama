@@ -1,4 +1,4 @@
-import {newMission,applyMission,missionRequirements,taskLabels,roles,missionMarkdown,resolutionText,resolutionEvidenceText,currentRecovery,missionRoleBrief,recoveryProfiles,missionFieldSpec,type Ending,type MissionState,type MissionAction,type MissionKind,type Scenario,type Role,type Zone,type Task} from "../lib/mission-engine";
+import {newMission,applyMission,requiredMissionTasks,missionScope,relayReadback,taskLabels,roles,missionMarkdown,resolutionText,resolutionEvidenceText,currentRecovery,missionRoleBrief,recoveryProfiles,missionFieldSpec,type Ending,type MissionState,type MissionAction,type MissionKind,type Scenario,type Role,type Zone,type Task} from "../lib/mission-engine";
 import {missionGuide,missionSummaries} from "../data/learner-guidance";
 import {withMission} from "../lib/passport";
 import {passport,announcePassport,download} from "./passport-client";
@@ -19,14 +19,14 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  type Objective=Task|"first-plan"|"finish"|"debrief"|"legacy"|"field";
  let focusedObjective:Task|"first-plan"|null=null;
  function currentObjective():Objective{
-  if(!state.field||(kind==="recovery"&&!currentRecovery(state)))return "legacy";
+  if(!state.field||(kind==="recovery"&&!currentRecovery(state))||(kind==="a2"&&state.relayAcknowledgement===undefined))return "legacy";
   if(state.status==="complete")return "debrief";
   if(!state.field.inspected)return "field";
   if(focusedObjective==="first-plan"&&state.plans.length)focusedObjective=null;
-  if(focusedObjective&&focusedObjective!=="first-plan"&&state.tasks.includes(focusedObjective))focusedObjective=null;
+  if(focusedObjective&&focusedObjective!=="first-plan"&&(state.tasks.includes(focusedObjective)||!requiredMissionTasks(state).includes(focusedObjective)))focusedObjective=null;
   if(focusedObjective)return focusedObjective;
   if(kind==="recovery"&&state.plans.length===0)return "first-plan";
-  return missionRequirements[kind].find(task=>!state.tasks.includes(task))??(state.field.delivered?"finish":"field");
+  return requiredMissionTasks(state).find(task=>!state.tasks.includes(task))??(state.field.delivered?"finish":"field");
  }
  function goToObjective(objective:Objective){
   if(objective==="legacy"){q("[data-legacy-mission]").scrollIntoView({block:"nearest",behavior:"auto"});return;}
@@ -60,7 +60,7 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
    success.textContent=state.field?.inspected?"Done when the receiving point confirms the performed handover. Opening the record panel alone does not finish it.":"Done when the mission problem is recorded; then investigate its equipment.";
   }else if(objective==="first-plan"){
    title.textContent="First, preserve the plan you intend to test";
-   action.textContent="You have inspected the problem. At Dispatch, use Coordinator to write an initial sequence naming your route, the evidence you need and who checks it. Select Preserve this plan version. Later, keep it and add a separate revision.";
+   action.textContent="You have inspected the problem. At Dispatch, use Coordinator to write an initial sequence naming your objective, necessary checks, checks you can omit with reasons and who verifies each dependency. Select Preserve this plan version. Later, keep it and add a separate revision.";
    success.textContent="Done when Version 1 appears in the preserved plan history. No long reflection is required during equipment tasks.";
   }else if(objective==="finish"){
    title.textContent=kind==="recovery"?"Choose and explain the recovery outcome":"Finish the practical trial";
@@ -97,7 +97,7 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
   const available:Zone[]=kind==="a1"?["arrival","workshop","dispatch"]:kind==="a2"?["power","control","archive","dispatch"]:["arrival","workshop","power","control","archive","dispatch"];
   all<HTMLButtonElement>("[data-zone]").forEach(b=>{b.hidden=!available.includes(b.dataset.zone as Zone);b.setAttribute("aria-current",b.dataset.zone===state.zone?"location":"false");});
   all("[data-zone-panel]").forEach(p=>{p.hidden=p.dataset.zonePanel!==state.zone;});
-  q("[data-objectives]").replaceChildren(...missionRequirements[kind].map(t=>{
+  q("[data-objectives]").replaceChildren(...requiredMissionTasks(state).map(t=>{
    const li=document.createElement("li"),done=state.tasks.includes(t),guide=guideFor(t);
    const label=document.createElement("strong");label.textContent=(done?"✓ ":"○ ")+taskLabels[t];li.append(label);li.classList.toggle("done",done);
    const details=document.createElement("details"),summary=document.createElement("summary");summary.textContent="How to complete this objective";
@@ -106,26 +106,29 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
    const go=document.createElement("button");go.type="button";go.textContent=done?"Revisit "+taskLabels[t].toLowerCase():"Go to "+taskLabels[t].toLowerCase();go.dataset.guideTask=t;go.addEventListener("click",()=>goToObjective(t));
    details.append(summary,instruction,criterion,go);li.append(details);return li;
   }));
-  q("[data-mission-progress]").textContent=missionRequirements[kind].filter(t=>state.tasks.includes(t)).length+" / "+missionRequirements[kind].length+" capabilities demonstrated";
+  const scopeNote=root.querySelector<HTMLElement>("[data-mission-scope]");if(scopeNote)scopeNote.textContent=missionScope(state);
+  q("[data-mission-progress]").textContent=requiredMissionTasks(state).filter(t=>state.tasks.includes(t)).length+" / "+requiredMissionTasks(state).length+" required conditions recorded for "+(kind==="recovery"?(state.resolutionChoice??state.declaredObjective):"this trial");
   q<HTMLSelectElement>("[data-follower]").value=String(state.follower);q<HTMLInputElement>("[data-brake]").checked=!state.brake;
   q("[data-mechanism-readout]").textContent="Ratio "+state.driver+":"+state.follower+" · output "+(state.driver/state.follower).toFixed(2)+" turns · brake "+(state.brake?"engaged":"released")+" · input turns "+state.turns;
   q<HTMLSelectElement>("[data-fuse]").value=state.fuse;q<HTMLInputElement>("[data-switch]").checked=state.switchClosed;
   q("[data-circuit-readout]").textContent="Lamp "+(state.fuse==="intact"&&state.switchClosed?"ON":"OFF")+" · measurement "+(state.measured?"recorded":"not yet recorded");
-  const legacy=!state.field||(kind==="recovery"&&!currentRecovery(state)),legacyNotice=q<HTMLElement>("[data-legacy-mission]");
+  const legacy=!state.field||(kind==="recovery"&&!currentRecovery(state))||(kind==="a2"&&state.relayAcknowledgement===undefined),legacyNotice=q<HTMLElement>("[data-legacy-mission]");
   legacyNotice.hidden=!legacy;legacyNotice.textContent=legacy?resolutionText(state):"";
-  root.dataset.missionRules=legacy?"legacy":"field-1";
+  root.dataset.missionRules=legacy?"legacy":kind==="recovery"?"conditional-3":"field-1";
   const records=q("[data-archive-records]");records.replaceChildren();
   const source=state.scenario==="conflicting-archive"?"Current signed source, revision 2: M27-B. This supersedes the early M27-A record.":"Current signed source, revision 1: M27-A.";
-  [source,"Archive A: checksum M27-A; complete sequence; recorded 09:10.","Archive B: checksum M27-B; complete sequence; recorded 09:25.",...(kind==="recovery"?Object.values(recoveryProfiles).map(profile=>"Recovery profile "+profile.id+": "+profile.follower+" follower teeth, "+profile.ratio+" output; verified receiving receipt "+profile.receipt+"."):[]),"A later timestamp is evidence of recency, not of integrity."].forEach(line=>{const p=document.createElement("p");p.textContent=line;records.append(p);});
+  [source,"Archive A: checksum M27-A; complete sequence; recorded 09:10.","Archive B: checksum M27-B; complete sequence; recorded 09:25.",...(kind==="recovery"?Object.values(recoveryProfiles).map(profile=>"Recovery profile "+profile.id+": "+profile.ratio+" output requirement; source "+profile.source+"."):[]),"A later timestamp is evidence of recency, not of integrity."].forEach(line=>{const p=document.createElement("p");p.textContent=line;records.append(p);});
   if(kind==="recovery"){
    const verified=state.recovery?.verifiedProfile?recoveryProfiles[state.recovery.verifiedProfile]:null;
-   q("[data-profile-status]").textContent=verified?"Verified profile "+verified.id+" / "+verified.source+": use "+verified.follower+" follower teeth for "+verified.ratio+" output. Cradle test: "+(state.recovery?.cradleProfile===verified.id?"recorded":"required")+".":"The Investigator must verify the current archive before the cradle can be tested.";
+   q("[data-profile-status]").textContent=verified?"Verified profile "+verified.id+" / "+verified.source+": requires "+verified.ratio+" output. Derive the follower from driver ÷ follower; support test: "+(state.recovery?.cradleProfile===verified.id?"recorded":"required")+".":"The Investigator must verify the current archive before the cradle can be tested.";
    q("[data-digital-receipt]").textContent=verified&&state.field?.executed&&state.resolutionChoice==="digital"?"Receiving terminal receipt: "+verified.receipt+". Record this after collecting it and completing the receiving check.":"The receiving receipt appears after you transmit the verified copy in the field operation.";
    q("[data-outcome-status]").textContent=state.recovery?.resolution?resolutionEvidenceText(state):"No current outcome evidence recorded. Changed equipment or linked decisions require a fresh outcome record.";
    updateOutcomeFields();
   }
+  const receiver=root.querySelector<HTMLElement>("[data-relay-receiving-card]");
+  if(receiver)receiver.textContent=state.role==="coordinator"?"Receiver's acceptance card: verified archive; Dispatch; after integrity check. Current read-back code: "+relayReadback(state)+". Ask the sending analyst which profile was verified before acknowledging.":"The receiving card belongs to Coordinator. In pair work, ask your receiver; solo practice can switch roles.";
   q("[data-disruption]").textContent=state.scenario==="equipment-failure"?"Equipment Failure bulletin: lift supply unavailable. Upper passage and lift share that dependency. Service passage is independent.":state.scenario==="conflicting-archive"?"Conflicting Archive bulletin: signed source revision 2 supersedes the original checksum. Reconsider the preferred replica.":"Baseline bulletin: the supplied systems behave as documented. Test assumptions before preserving a revised plan.";
-  q("[data-plans]").replaceChildren(...state.plans.map(p=>{const section=document.createElement("section");const h=document.createElement("h4");h.textContent="Version "+p.version+" / "+p.route;const body=document.createElement("p");body.textContent=p.text;section.append(h,body);return section;}));
+  q("[data-plans]").replaceChildren(...state.plans.map(p=>{const section=document.createElement("section");const h=document.createElement("h4");h.textContent="Version "+p.version+" / "+(p.objective??"historical")+" / "+p.route;const body=document.createElement("p");body.textContent=p.text;section.append(h,body);return section;}));
   q("[data-action-log]").replaceChildren(...state.log.slice(-25).map(l=>{const li=document.createElement("li");li.textContent=roles[l.role].title+": "+l.message;return li;}));
   q("[data-debrief]").hidden=state.status!=="complete";q("[data-ending-title]").textContent=kind==="a1"?"Workshop trial complete.":kind==="a2"?"Relay trial complete.":state.ending==="physical"?"The original returns.":state.ending==="digital"?"The knowledge survives.":"A responsible handover.";q("[data-ending-text]").textContent=resolutionText(state);
   const history=passport.state.runs.filter(r=>r.kind===kind),comparison=q("[data-run-comparison]");comparison.replaceChildren();
@@ -163,7 +166,7 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  form("[data-replica]",d=>act({type:"replica",replica:str(d,"replica") as "A"|"B"}));
  form("[data-policy]",d=>act({type:"policy",subject:str(d,"subject"),action:str(d,"action"),allowed:str(d,"decision")==="allow"}));
  form("[data-agreement]",d=>act({type:"agreement",preserve:d.has("preserve"),recipient:str(d,"recipient")}));
- form("[data-handoff]",d=>act({type:"handoff",item:str(d,"item"),destination:str(d,"destination"),condition:str(d,"condition")}));
+ form("[data-handoff]",d=>act({type:"handoff",item:str(d,"item"),destination:str(d,"destination"),condition:str(d,"condition"),acknowledgement:str(d,"acknowledgement")}));
  form("[data-route]",d=>act({type:"route",route:str(d,"route")}));
  form("[data-plan]",d=>act({type:"plan",text:str(d,"text")}));
  if(kind==="recovery"){

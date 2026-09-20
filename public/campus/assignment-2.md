@@ -2,36 +2,54 @@
 
 Pairs · 25% · checkpoint 23 April; final 30 April 2027, 17:00 Canberra time.
 
-## Role division
+## Challenge and information split
 
-The operator holds the labelled circuit and permission matrix. The analyst holds the archive records and handoff card. Both can request information. Rotate roles after a complete stage and label each contribution.
+Restore a silent relay and establish that the correct record reached the receiving desk. In-person is preferred. Divide these cards between two students; do not give one person both responsibilities for the whole run. Swap after the checkpoint or during the revised run.
 
-## Equipment and supplied records
+**Sender — Systems/Investigator:** owns the equipment controls, original measurements, source and copy records. Brings the independent Lab 5 diagnosis trace, verifies the supplied relay before replacement and justifies integrity/permission.
 
-Use the Week 5 circuit cards: 6 V source, intact fuse, open cable and lamp. Powered readings at battery/fuse/cable/lamp are 6/6/0/0 V in the authored model. Isolate before replacement; a repaired powered circuit reads 6/6/6/6 V.
+**Receiver — Coordinator:** owns the destination, acceptance conditions and acknowledgement code. Must question incomplete messages, read back the actual profile and identify a stale instruction.
 
-Archive A has 24 sections, timestamp 10:10, digest M-42. B has 24 sections, 10:35, digest M-99 after annotation. C has 23 sections, 10:05, digest M-17. Original signed reference requires 24 sections and M-42.
+Observer is an optional audit responsibility. Solo practice may switch cards openly; the assessed task remains paired unless an arrangement is recorded.
 
-Initial policy gives observer read/service/certify; technician and registrar have read only. Intended policy gives all read, technician service, registrar certify; other cells deny.
+## Sender card
 
-Handoff card: Archive / 3 / COPPER. Operator must read back all fields and acknowledge.
+Supply: 6 V through fuse, switch, load and return. The load is dark. This compact relay supplies a combined source-and-fuse check. Predict its result, record the finding before replacement and verify the load afterwards. Independent selection among discriminating measurements is established in the attached Week 5 record, not by this single supplied check. Isolate before replacement. Ask the facilitator for a requested test result; use the separate [assessment facilitator sheet](assessment-facilitator.md).
 
-## Checkpoint
+Archive A: complete sequence, content reference M27-A, recorded 09:10.
+Archive B: complete sequence, content reference M27-B, recorded 09:25.
+Original signed source: M27-A. Recency alone does not establish authority.
 
-Preserve diagnosis before repair, verified circuit result, archive selection and complete repaired nine-cell matrix. Correct archive under the original mandate is A. The cable fault must be localised by measurement before replacement.
+Permission mandate: Observer/read, Technician/service, Registrar/certify.
+Installed policy permits these three and Observer/certify. Derive the justified change; check legitimate actions remain usable.
 
-## Revision
+Send the verified profile and supporting evidence. Ask the receiver for its acceptance card rather than inventing a destination or assuming acknowledgement.
 
-Choose and label one published change:
-- Maintenance hold suspends technician service; preserve read and registrar certification.
-- Amended signed reference requires M-99; B is now the matching authorised copy.
+## Receiver card
 
-Complete a new handoff: Dispatch / 1 / IVORY. Preserve earlier records and explain the changed requirement.
+Destination: Dispatch.
+Accepted item: verified archive.
+Required condition: after integrity check.
+Original receiving code: RELAY-A-FIRST.
 
-## Evidence and interpretation
+Read back the item, destination, condition, verified profile and current code. The sender confirms or corrects this message. Preserve any misunderstanding, including its correction. Agreement by nodding is not a precise read-back.
 
-Provide both roles' records, before/after matrix, source comparison, handoff and contribution statements with the 500–700-word joint account. Use the website's criterion descriptors. There is no requirement for acting speed or hidden information after debrief.
+## Checkpoint and changed requirement
 
-## Performed transmission and acknowledgement
+Preserve the original fault evidence, repair verification, source comparison, policy expectations and read-back. At the checkpoint label each person's actions.
 
-After diagnosis, verified source, permission repair and the precise handoff are complete, operate the relay terminal card. The facilitator supplies a receiving acknowledgement. Collect it, read it back at Check the receiving terminal and deliver it to the receiving point. Preserve the original and revised transmission records. A working lamp alone does not establish that the record was received.
+For the revised run swap responsibilities. The new signed source is M27-B; the original source remains in the history. The receiving card now says RELAY-B-SECOND. The destination and integrity condition remain the same.
+
+Identify what changes and what can remain. A stale acknowledgement or previously correct copy is insufficient. The equipment-failure preset does not by itself establish an archive change; choose the explicit changed-source case for this task.
+
+## Perform and verify
+
+Once the diagnosed supply, justified source, policy and precise handoff support the transmission, operate the relay terminal. The facilitator provides a receiving acknowledgement. Collect it, check the receiving terminal and deliver the acknowledgement to the receiver.
+
+A working lamp is not proof of receipt; a receipt for the wrong source is not correct delivery.
+
+## Submission
+
+Attach the Week 5 independent diagnosis record: competing causes, chosen test, original readings, repair and verification under a changed condition. Keep original and revised relay records, both students' messages, the full nine-cell permission audit from Week 7 and changed-card communication evidence from Week 8. Submit the 500–700-word joint explanation, responsibility table and individual contribution statements required by the brief.
+
+Record source authority, remaining uncertainty, a consequential misunderstanding and how you corrected it. The model checks conditions; the tutor judges reasoning and collaboration.

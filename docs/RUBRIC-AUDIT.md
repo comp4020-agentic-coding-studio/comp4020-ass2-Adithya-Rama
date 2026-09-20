@@ -1,5 +1,7 @@
 # Assignment 2 rubric and course-site review
 
+**Latest curriculum revision:** the [independent-learning review](INDEPENDENT-LEARNING-REVIEW.md) records the accepted critique, varied weekly outcomes, deeper diagnosis and negotiation, conditional final requirements and current verification. Counts and observations below belong to earlier reviews.
+
 **Latest course presentation review:** the [21 September course overview and study-mode review](COURSE-OVERVIEW-REVIEW.md) records the academic-first homepage, preferred in-person delivery, equivalent online routes and new responsive checks.
 
 **Subsequent iteration:** the [21 September performed-mission review](FIELD-MISSIONS.md) records the author's later agent-experience direction, implementation and updated validation. This audit retains the findings and counts from its earlier review.

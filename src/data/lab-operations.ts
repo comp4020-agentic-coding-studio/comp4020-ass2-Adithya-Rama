@@ -17,11 +17,11 @@ export const labOperations:Record<number,LabOperation> = {
     phases:{practice:'Inspect the 08:20 gallery and identify which statements support an entry briefing.',check:'A second room reports 09:40. Build a fresh briefing from its actual objects.',transfer:'Separate the reported power failure from the unsupported claim that the open hatch caused it.'}
   },
   2:{
-    title:'The Silent Dispatch',objective:'Carry the correct four-item recovery manifest through an area where the written list must remain covered.',
-    problem:'Dispatch will prepare the wrong kit if an item is lost or reordered. Build a route of memory cues, then retrieve the manifest without reopening it.',
-    consequence:'The dispatch board displays the correctly recalled kit in route order, making the equipment available to the next team.',
-    actionLabel:'Send the recalled kit manifest',resolveLabel:'Confirm dispatch prepared the kit',
-    effect:'signal',cargoLabel:'Recalled kit manifest',checkpoints:['Dispatch channel'],
+    title:'The Memory Trial',objective:'Choose a reliable way to remember or record a short manifest for its actual use.',
+    problem:'A temporary spoken briefing and a later audited handover need different support. Compare unaided recall, location cues and written records, including their errors and limits.',
+    consequence:'Control receives the strategy comparison, including recorded errors and the proposed use of a durable record. The receipt does not certify perfect or unaided recall.',
+    actionLabel:'Share the retrieval comparison',resolveLabel:'Confirm the comparison was received',
+    effect:'signal',cargoLabel:'Retrieval strategy comparison',checkpoints:['Dispatch channel'],
     phases:{practice:'Encode Compass, Lantern, Coil and Archive along the four-place route.',check:'Prepare Lens, Battery, Map and Seal. Rebuild the associations.',transfer:'The order changes to Sample, Receipt, Sensor and Capsule; replace the old associations.'}
   },
   3:{
@@ -34,7 +34,7 @@ export const labOperations:Record<number,LabOperation> = {
   },
   4:{
     title:'The Suspended Cradle',objective:'Raise a recovery cradle to its receiving platform without forcing its blocked mechanism.',
-    problem:'The support is locked, its return spring is absent and its output must match the lift specification. A correct gear alone cannot move it.',
+    problem:'The cradle stalls or misses its required output. Brake, return support, cam datum and gearing are possible explanations. Choose an inspection before changing its configuration.',
     consequence:'The tested mechanism drives the cradle to its receiving platform and opens the supported handover point.',
     actionLabel:'Engage the tested cradle drive',resolveLabel:'Confirm the cradle reached its platform',
     effect:'lift',cargoLabel:'Cradle commissioning record',checkpoints:['Receiving platform'],
@@ -46,7 +46,7 @@ export const labOperations:Record<number,LabOperation> = {
     consequence:'The measured and repaired circuit powers the approach beacon; the receiving crew acknowledges the signal.',
     actionLabel:'Connect the verified beacon circuit',resolveLabel:'Confirm the approach signal is received',
     effect:'power',cargoLabel:'Beacon verification receipt',checkpoints:['Approach receiver'],
-    phases:{practice:'Locate the open fuse by measurement before an isolated replacement.',check:'The fault moved into the cable; the same repair choice will fail.',transfer:'The dark lamp still receives 6 V. Isolate it and test continuity to identify the failed load.'}
+    phases:{practice:'The beacon is dark. Choose measurements that discriminate a supply break from a failed load.',check:'A second beacon has a different original fault. Reusing the earlier replacement without evidence is insufficient.',transfer:'The third beacon may have working supply voltage but no light. Choose evidence that tests the load separately.'}
   },
   6:{
     title:'The Authentic Archive',objective:'Release the archive copy that actually satisfies the signed recovery order.',
@@ -78,7 +78,7 @@ export const labOperations:Record<number,LabOperation> = {
     consequence:'The custodian accepts the supported proposal and issues the appropriate custody authority.',
     actionLabel:'Present the evidence-backed agreement',resolveLabel:'Confirm the custody terms are recorded',
     effect:'custody',cargoLabel:'Authorised custody record',checkpoints:['Custodian acknowledgement'],
-    phases:{practice:'Arrange a verified-copy handover that preserves the original.',check:'Recheck every account against the mandate before confirming the agreement.',transfer:'Physical provenance becomes essential. Stabilise the original for supported handover instead of offering only a copy.'}
+    phases:{practice:'Negotiate copy, stabilisation or supported-original terms, including responsibility, verification, timing and costs.',check:'A new constraint keeps the original on site today. Find more than one defensible agreement.',transfer:'Physical provenance becomes essential. Reconsider the terms and compare monitored protection with a supported-original move.'}
   },
   10:{
     title:'The Surveyed Passage',objective:'Guide the team across a published sensor grid and accurately report what its passage records.',
@@ -86,7 +86,7 @@ export const labOperations:Record<number,LabOperation> = {
     consequence:'The surveyed route reaches dispatch with its observed contact count attached.',
     actionLabel:'Commit the surveyed passage record',resolveLabel:'Confirm dispatch received the route account',
     effect:'route',cargoLabel:'Surveyed route and contact record',checkpoints:['Route receiver'],
-    phases:{practice:'Traverse from row 5 column 1 to row 1 column 5 with horizontal sensor coverage.',check:'The strip moves to column 2; predict contacts before stepping.',transfer:'The strip moves to column 4. Rehearse the changed route and explain its contacts.'}
+    phases:{practice:'Choose fast dispatch, centre support or survey; plan for that objective across horizontal coverage.',check:'The strip moves to column 2; predict contacts before stepping.',transfer:'The strip moves to column 4. Rehearse the changed route and explain its contacts.'}
   },
   11:{
     title:'The Route That Failed',objective:'Keep recovery moving after a disruption while preserving the plan that depended on the old condition.',

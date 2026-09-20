@@ -1,6 +1,6 @@
 ---
 title: "Move Through the Model"
-description: "Predict fictional sensor observations and compare a route model with the actual event trace."
+description: "Choose a route for an explicit objective, predict its published sensor events and compare its dependencies with an alternative."
 week: 10
 learningOutcomes: ["LO2","LO6"]
 skillIds: ["LO2","LO6"]
@@ -11,26 +11,40 @@ date: 2027-05-10
 related: ["sessions/week-10", "assessments/final-project"]
 ---
 
-> **Your field application — The Surveyed Passage:** Guide the team across a published sensor grid and accurately report what its passage records. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** Plan a journey for its purpose: fast dispatch, support through a checkpoint or deliberate sampling of instrumented cells.
 
 
 > The hall does exactly what its rules say. Your model might not.
 
 ## What you will learn
 
-- Apply the published cell-entry rule to predict sensor contacts along a route.
-- Compare predicted sensor events with a recorded trace.
-- Revise a route after a rule or environmental condition changes.
+- Compare routes against an explicit objective and its distinct conditions.
+- Predict a step-by-step contact trace using the cell-entry rule.
+- Revise route or prediction after a changed map and defend the trade-off.
 
 ## The briefing
 
-A sensor model describes which observations a fictional system produces. This lab uses a transparent board-game rule: entering a highlighted sensor cell records a contact. It deliberately avoids hidden real-world surveillance assumptions. Every student can inspect the complete detection set before moving.
+### A route needs an objective
 
-A route and its prediction are separate artefacts. Two routes can reach the same destination while producing different observation traces. A shorter path, fewer contacts and easier verification are different objectives; state which you are pursuing. Preserve the predicted count, execute one step at a time and locate the first disagreement. When the sensor layout changes, recompute affected steps instead of assuming a previously successful route still has the same result. Contact is a modelled event to explain, not an academic penalty.
+The shortest route and fewest-contact route answer different questions. A support task may require a checkpoint that lengthens the trip. A survey may require deliberate sensor contact. Decide what must be achieved before labelling a count good or bad.
+
+Each step ending in a marked cell produces one contact, including revisits. This is an explicit board-game model, not a description of real surveillance or evasion.
+
+### Predict a trace as well as a total
+
+Write moves and predicted contact positions before execution. If the total differs, compare traces to find the first mismatch. A final total can conceal opposite errors that cancel out.
+
+Check boundaries, destination and objective-specific conditions. A correct contact prediction cannot rescue a route missing its required service stop. Extra contacts are not automatically failures when surveying is the objective.
+
+### Compare and revise
+
+Keep two candidate routes under the same map and objective. Record move count, expected contacts and required stops, then choose and execute. Preserve the earlier map when coverage changes.
+
+You may retain the geometry and revise the prediction, or change the route because its suitability changed. Explain which response follows from the objective. A changed route is not intrinsically more thoughtful than a justified unchanged one.
 
 ## Worked example · a different scenario
 
-The separate gallery example numbers cells 0–24 from top left. Its first route is 20→15→10→5→0→1→2→3; with sensors at 15, 16 and 11, it records one contact. An equally long route through 20→21→22→23→18→13→8→3 records none. When the published sensors move to 21, 22 and 23, that second route records three contacts. The earlier zero remains correct under the earlier rule. Your assigned lab uses its own row/column map and destination; copy the counting method, not these cell numbers.
+The separate gallery example numbers cells 0–24 from top left. Its first route is 20→15→10→5→0→1→2→3; with sensors at 15, 16 and 11, it records one contact. An equally long route through 20→21→22→23→18→13→8→3 records none. When the published sensors move to 21, 22 and 23, that second route records three contacts. The earlier zero remains correct under the earlier rule. Your assigned lab uses its own row/column map and destination; copy the counting method, not these cell numbers. A later survey objective requires three instrument contacts. Under that requirement the three-contact route is useful, while a route chosen simply to avoid every contact would miss the objective.
 
 [Watch this separate example and inspect its finished record](/demonstrations/lab-10/).
 
@@ -49,6 +63,8 @@ Treating a diagram as an exact real-world sensor specification overextends the e
 - A contact is counted on each executed step ending in a sensor cell, including revisits. Predict the total before stepping through the route.
 - Contacts are explicit game events, not automatic failure. Reach the destination and reconcile the predicted and observed counts.
 - These are published board-game detection rules, not specifications for real surveillance.
+- Select an objective before planning: **Fast dispatch** reaches the goal within eight moves; **Support** visits centre row 3, column 3 before the goal; **Survey** visits at least two distinct sensor cells before the goal.
+- All objectives need a correct predicted contact count. Zero contacts are not automatically best.
 
 ## Before the lab
 
@@ -56,6 +72,6 @@ Read SN-01 and classify five sample cells as observed/unobserved with reasons (2
 
 ## What happens next
 
-Navigate Meridian's instrumented maintenance corridor under a published simulation contract. The lab produces **sensor-route**, which becomes evidence for [the connected assessment](/assessments/final-project/).
+A physical final recovery needs a route suited to its load and equipment. Digital and stabilisation approaches need relevant evidence rather than compulsory token navigation.
 
-[Open this week's lab](/sessions/week-10/) · [Download the campus pack](/campus/week-10.md) · [Explore the academy](/academy/)
+Keep **sensor-route** from [this week's lab](/sessions/week-10/). [Download the campus pack](/campus/week-10.md).

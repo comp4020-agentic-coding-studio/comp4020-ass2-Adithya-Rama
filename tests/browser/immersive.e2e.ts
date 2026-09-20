@@ -227,12 +227,13 @@ test('all mechanism phases can be completed, explained and saved inside fullscre
    await expect(scene).toHaveAttribute('data-immersive','true');
   }
   const c=panel.locator('[data-training-controls]');
-  await c.getByRole('button',{name:'Release interlock',exact:true}).click();
-  await c.getByRole('button',{name:'Rotate cam 90°',exact:true}).click();
-  if(phase!=='transfer')await c.getByRole('button',{name:'Rotate cam 90°',exact:true}).click();
-  await c.getByRole('button',{name:'Attach return spring',exact:true}).click();
-  const changes=phase==='check'?2:phase==='transfer'?1:0;
-  for(let i=0;i<changes;i++)await c.getByRole('button',{name:'Change driven gear (12 → 24 → 36)',exact:true}).click();
+  const diagnostic=phase==='practice'?{inspect:'holding brake',fault:'interlock'}:phase==='check'?{inspect:'gear tooth counts',fault:'ratio'}:{inspect:'return spring',fault:'spring'};
+  await c.getByRole('button',{name:'Inspect '+diagnostic.inspect,exact:true}).click();
+  await c.getByLabel('Diagnosis of the original fault').selectOption(diagnostic.fault);
+  await c.getByRole('button',{name:'Record diagnosis',exact:true}).click();
+  if(phase==='practice')await c.getByRole('button',{name:'Release interlock',exact:true}).click();
+  if(phase==='transfer')await c.getByRole('button',{name:'Attach return spring',exact:true}).click();
+  if(phase==='check')for(let i=0;i<2;i++)await c.getByRole('button',{name:'Change driven gear (12 → 24 → 36)',exact:true}).click();
   await c.getByLabel('Predict output direction relative to the driver').selectOption('opposite');
   await panel.locator('[data-training-test]').click();
   await expect(panel.locator('[data-training-result]')).toHaveAttribute('data-skill-verified','true');
@@ -250,7 +251,7 @@ test('all mechanism phases can be completed, explained and saved inside fullscre
   // The written account follows the completed practical check, still in the same fullscreen panel.
   const disclosure=reflection.locator('xpath=ancestor::details[1]');
   if(await disclosure.count())await disclosure.evaluate(node=>(node as HTMLDetailsElement).open=true);
-  await reflection.fill('I released the interlock before setting the cam and verified the gear ratio against the changed input turns in '+phase+'.');
+  await reflection.fill('I inspected a discriminating dependency, recorded the original diagnosis, corrected only the supported fault and verified output in '+phase+'.');
   await panel.locator('[data-training-save]').click();
   await expect(panel.locator('[data-training-save-status]')).toContainText('local skills passport');
  }
@@ -267,7 +268,7 @@ test('all mechanism phases can be completed, explained and saved inside fullscre
  await scene.locator('[data-immersive-exit]').click();
  await page.reload();
  await expect(page.locator('[data-training-reflection]')).toHaveValue(/in transfer/);
- await expect(page.locator('.training-readout')).toContainText('90°');
+ expect(await page.locator('.training-readout').textContent()).toBe(finalReadout);
 });
 
 test('A1 can be completed and its real assessment record exported without leaving fullscreen',async({page})=>{
@@ -304,7 +305,7 @@ test('A2 keeps paired restoration controls and the exported relay record inside 
  await panel.locator('[data-role="investigator"]').click();await panel.locator('[data-zone="control"]').click();
  await panel.locator('[data-replica] select').selectOption('A');await panel.locator('[data-replica] button').click();await panel.locator('[data-policy] button').click();
  await panel.locator('[data-role="coordinator"]').click();await panel.locator('[data-zone="archive"]').click();
- await panel.locator('[data-handoff] [name=item]').selectOption('verified archive');await panel.locator('[data-handoff] [name=destination]').selectOption('dispatch');await panel.locator('[data-handoff] [name=condition]').selectOption('after integrity check');await panel.locator('[data-handoff] button').click();
+ await panel.locator('[data-handoff] [name=item]').selectOption('verified archive');await panel.locator('[data-handoff] [name=destination]').selectOption('dispatch');await panel.locator('[data-handoff] [name=condition]').selectOption('after integrity check');await panel.locator('[data-handoff] [name=acknowledgement]').fill('RELAY-A-FIRST');await panel.locator('[data-handoff] button').click();
  await panel.locator('[data-zone="dispatch"]').click();await performField(panel);await panel.locator('[data-ending="digital"]').click();
  await expect(panel.locator('[data-debrief]')).toBeVisible();
  const download=page.waitForEvent('download');await panel.locator('[data-export-mission]').click();

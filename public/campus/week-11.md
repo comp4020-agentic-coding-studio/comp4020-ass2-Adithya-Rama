@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Preserve a working plan, diagnose a disruption and coordinate a justified revision.
+## The task
 
-## Field operation — The Route That Failed
+An agreed plan loses a dependency. Decide what must change, what remains valid and whether the objective is still defensible.
 
-**Objective:** Keep recovery moving after a disruption while preserving the plan that depended on the old condition.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** Version 1 no longer works. A new paragraph alone cannot reopen a passage: select and rehearse the replacement dependency before committing it.
-
-After the skill check, put the result into effect: **Activate the rehearsed replacement plan**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The rehearsed alternative becomes active. Version 1 remains in the journal so the reason for the change stays visible.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the revised route is in use**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Learning outcomes
 
-- Identify which dependencies a disruption invalidates.
-- Preserve the original plan and explain each consequential revision.
-- Reassign work through an explicit, verified handoff.
+- Classify earlier decisions as retained, requiring retest or invalidated.
+- Compare a minimal revision with an alternative and explain objective changes.
+- Rehearse a replacement, assign responsibility and preserve Version 1.
 
 ## Equipment
 
@@ -32,7 +26,7 @@ Publish the disruption cards as course material. Have teams complete and date th
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **IM-01** is the four-step baseline recovery plan. **IM-02** supplies the east-passage disruption and the transfer case with an unavailable meter and labelled reference readings. Keep separate plan versions.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **IM-01** is the four-step baseline recovery plan. **IM-02** supplies the east-passage disruption and the transfer case with an unavailable meter and labelled reference readings. Keep separate plan versions.
 
 - Baseline plan: Inspect manifest → Restore relay → Use east passage → Record handover.
 - The initial plan is preserved as an immutable original in the activity.
@@ -43,68 +37,59 @@ Publish the disruption cards as course material. Have teams complete and date th
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Mark the conditions behind the baseline and preserve dated Version 1. |
+| 10–30 minutes | Inspect the alternate authority disruption and identify retained findings. |
+| 30–60 minutes | Publish the route disruption and map affected dependencies before proposing responses. |
+| 60–80 minutes | Rehearse a replacement and obtain read-back from the changed role. |
+| 80–105 minutes | Address unavailable measurement equipment and distinguish reference evidence from new measurement. |
+| 105–120 minutes | Compare versions, one retained decision and a stopping condition. |
 
 ## Worked example · a different scenario
 
 The separate dispatch example loses its old release authority while its routes and equipment remain available. Its signed identity finding remains useful. Version 2 inserts a recipient-scope check by the investigator and replacement-authorisation recording by the coordinator before sealing, then retains dispatch and receipt. Appending those checks after dispatch would not repair the failed prerequisite. Both plans remain visible, and an acknowledged future plan is not presented as an already completed handover.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-11/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Record and inspect the four-step baseline, then reveal the published east-passage disruption. Identify the exact dependency that fails.
+Preserve Version 1 and annotate its dependencies before publishing the route disruption.
 
 ## Skill check
 
-Preserve the original, create a west-passage revision with relay verification, and explain who confirms the change before the team proceeds.
+Compare a minimal revision with another response, rehearse the selected dependency and obtain responsibility read-back.
 
 ## Transfer challenge
 
-Work with the missing-meter disruption and supplied 6/6/0/0 V reference readings. Explain what they support, what you cannot independently verify and whether to proceed or choose another resolution.
-
-## Facilitation
-
-The facilitator records decisions and checks whether all roles receive the changed plan. Avoid surprise rules or performance theatre. Allow the team to pause, inspect evidence and replay the revised sequence.
-
-## Rehearse before authorising
-
-For the passage closure, assign a relay check and demonstrate its passing result before moving the route token west. For the unavailable meter, use the supplied 6/6/0/0 V trace; mark its provenance and the absence of a live confirmation. Preserve both the unchanged Version 1 and the tested Version 2. The factual dependency can be checked; the quality of your explanation requires human judgement.
+Use the unavailable-meter condition. State provenance and limits of reference readings; identify what still needs verification.
 
 ## Student record
 
-Name / role:
+**Named output: revised-plan.**
 
-Scenario and route used:
+Keep both versions, affected-dependency table, retained decision, two candidate responses, replacement test, owner and stopping condition. Label supplied evidence you did not measure.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which part of the original plan did you keep, and what evidence allowed you to keep it?
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Explanation — reveal after an attempt
 
 The route disruption changes transport readiness and adds a relay check; it does not invalidate manifest inspection. Reference readings can support a conditional diagnosis, but are not measurements you personally took. A strong revision distinguishes retained evidence from new assumptions.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-The dispatch notice withdrew authority without closing a route. I retained the signed identity result, inserted scope and authorisation checks before sealing, and assigned their owners. Version 1 remained visible. Confirming the plan did not prove dispatch had happened.
+## Reflection and later use
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Which part of the original plan did you keep, and what evidence allowed you to keep it?
+
+The final project needs a reasoned change between contrasting rehearsals. Explain why its chosen objective remains feasible or why the team deliberately revises it.
 
 ## Evidence and limitations
 
-Save as **revised-plan**. Respond to Meridian's changed equipment or evidence while keeping responsibility and verification clear. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **revised-plan** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.

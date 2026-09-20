@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Test an invented permission system, repair an overbroad rule and check legitimate access still works.
+## The task
 
-## Field operation — The Wrong Authority
+Make a records system useful to authorised people while preventing actions outside their responsibilities.
 
-**Objective:** Restore useful control-desk access without giving an observer permission to service or certify equipment.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** The damaged policy blocks legitimate work and authorises the wrong role. Closing every permission would stop the recovery too.
-
-After the skill check, put the result into effect: **Deploy the verified access policy**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The corrected policy is deployed: allowed actions illuminate, forbidden actions remain denied, and the authorised gate responds.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm authorised control is restored**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Learning outcomes
 
-- Distinguish identity, object and requested action in an access decision.
-- Demonstrate a fault using an explicit expected-versus-observed test.
-- Repair the fictional policy and test both denied and permitted operations.
+- Derive expected decisions from governing clauses.
+- Test useful and prohibited operations and diagnose discrepancies.
+- Separate a behaviour repair from an authorised policy revision.
 
 ## Equipment
 
@@ -32,75 +26,70 @@ Print the intended policy and a separate faulty policy. Assign one student to pr
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **CY-01** is the intended role/action policy. **CY-02** is the faulty starting matrix and the nine decisions to test against that policy. The maintenance hold is the published transfer condition.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **CY-01** is the intended role/action policy. **CY-02** is the faulty starting matrix and the nine decisions to test against that policy. The maintenance hold is the published transfer condition.
 
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
-- The initial faulty matrix grants the observer all actions while failing to grant technician service and registrar certification.
+- The starting matrix is supplied by the activity. Derive expectations from the mandate and compare them with that matrix; record discrepancies yourself.
 - Repair all nine role/action decisions and test both allowed and denied actions.
 - Transfer: a published maintenance hold suspends technician service; read access and registrar certification remain unchanged.
 - All requests operate within the local fictional simulation.
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Read the mandate and derive expected decisions before seeing observed results. |
+| 10–30 minutes | Study the alternate embargo charter and identify why its table cannot be copied. |
+| 30–60 minutes | Test the assigned matrix, record discrepancies and repair unsupported decisions. |
+| 60–80 minutes | Exchange matrices and independently retest useful access and prohibitions. |
+| 80–105 minutes | Apply the maintenance hold, preserving the first table and its authority. |
+| 105–120 minutes | Assemble before/after evidence, coverage limits and the effect on A2. |
 
 ## Worked example · a different scenario
 
 The separate observatory charter gives readers research access, maintainers equipment service without research access, and custodians research access plus release approval. Its faulty table wrongly allows maintainer reading and blocks reader reading. The demonstrator corrects those two decisions, preserves the other seven and tests the complete table. A later release hold suspends only custodian approval. This is a different charter from your assigned recovery policy: derive each table from its own governing document.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-07/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Inspect the faulty matrix. Predict all nine expected decisions, change the mismatches and run the complete check.
+Derive a nine-case expected table, then compare observed decisions and repair unsupported behaviour.
 
 ## Skill check
 
-Test observer certification denied, registrar certification allowed, technician service allowed and the other six matrix entries. Preserve the repaired matrix.
+Exchange tables and independently verify permitted and prohibited actions.
 
 ## Transfer challenge
 
-Apply the published maintenance hold by denying technician service while retaining all read access and registrar certification. Explain why the hold is a changed rule, not a discovered identity.
-
-## Facilitation
-
-Students predict all nine matrix cells before checking. The facilitator applies the written rules exactly. Publish the maintenance hold only after preserving the initial matrix; compare the one changed expectation.
+Apply the maintenance hold; preserve both tables and justify which expectation changed.
 
 ## Student record
 
-Name / role:
+**Named output: permission-audit.**
 
-Scenario and route used:
+Keep both authority versions, expected and observed results for all nine combinations, repaired cells and reasons for each changed expectation.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which permitted action could a careless repair have broken?
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Explanation — reveal after an attempt
 
 A complete repair preserves useful operations as well as denying unauthorised ones. The transfer hold affects one cell: technician/service. Denying every action fails the published policy.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-I removed maintainer research access and restored reader access under the observatory embargo charter. After all nine checks passed, a release hold changed only custodian approval. I kept the bug repair and the later policy change as separately justified versions.
+## Reflection and later use
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Which permitted action could a careless repair have broken?
+
+A2 needs legitimate relay access. The digital final approach uses the appropriate local policy; physical handover does not gain an arbitrary software gate.
 
 ## Evidence and limitations
 
-Save as **permission-audit**. Repair Meridian's local recovery policy without blocking the work the team is authorised to perform. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **permission-audit** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.

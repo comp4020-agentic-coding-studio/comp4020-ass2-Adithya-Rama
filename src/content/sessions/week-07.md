@@ -1,6 +1,6 @@
 ---
 title: "Challenge the System"
-description: "Test an invented permission system, repair an overbroad rule and check legitimate access still works."
+description: "Translate authority into testable permissions, diagnose deviations and preserve policy versions when requirements change."
 week: 7
 learningOutcomes: ["LO4"]
 skillIds: ["LO4"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Wrong Authority.** Restore useful control-desk access without giving an observer permission to service or certify equipment.
+**Your task:** Make a records system useful to authorised people while preventing actions outside their responsibilities.
 
-The damaged policy blocks legitimate work and authorises the wrong role. Closing every permission would stop the recovery too.
+**What you will produce:** Keep both authority versions, expected and observed results for all nine combinations, repaired cells and reasons for each changed expectation.
 
-**What you will produce:** Before/after permission tables, checks of all nine combinations, and the changed table for the maintenance hold.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,9 +38,9 @@ Read the [briefing](/lectures/week-07/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Distinguish identity, object and requested action in an access decision.
-- Demonstrate a fault using an explicit expected-versus-observed test.
-- Repair the fictional policy and test both denied and permitted operations.
+- Derive expected decisions from governing clauses.
+- Test useful and prohibited operations and diagnose discrepancies.
+- Separate a behaviour repair from an authorised policy revision.
 
 ## Supplied case file and rules
 
@@ -50,23 +48,33 @@ Read the [briefing](/lectures/week-07/). All starting rules and data are supplie
 
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
-- The initial faulty matrix grants the observer all actions while failing to grant technician service and registrar certification.
+- The starting matrix is supplied by the activity. Derive expectations from the mandate and compare them with that matrix; record discrepancies yourself.
 - Repair all nine role/action decisions and test both allowed and denied actions.
 - Transfer: a published maintenance hold suspends technician service; read access and registrar certification remain unchanged.
 - All requests operate within the local fictional simulation.
 
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
+
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Read the mandate and derive expected decisions before seeing observed results. |
+| 10–30 minutes | Study the alternate embargo charter and identify why its table cannot be copied. |
+| 30–60 minutes | Test the assigned matrix, record discrepancies and repair unsupported decisions. |
+| 60–80 minutes | Exchange matrices and independently retest useful access and prohibitions. |
+| 80–105 minutes | Apply the maintenance hold, preserving the first table and its authority. |
+| 105–120 minutes | Assemble before/after evidence, coverage limits and the effect on A2. |
 
 ## In-person lab · preferred route
 
@@ -74,11 +82,11 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Print the intended policy and a separate faulty policy. Assign one student to propose requests and another to act as the rule interpreter; rotate roles after the repair.
 
-**What you do together:** Students predict all nine matrix cells before checking. The facilitator applies the written rules exactly. Publish the maintenance hold only after preserving the initial matrix; compare the one changed expectation.
+**What you do together:** Derive the nine expected permissions from the mandate, test the faulty matrix and repair discrepancies. Preserve both matrices when the maintenance hold changes the authority.
 
 The [printable facilitator pack](/campus/week-07.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
@@ -88,16 +96,16 @@ Keep the same prediction, changed-condition attempt and explanation as the onlin
 2. In **Repair the access policy**, tick an **Allow…** box to permit that action for that role; untick it to deny it. Compare all three actions for each of the three roles with the mandate.
 3. Select **Test this configuration** to check all nine combinations. Read both kinds of failure: an action wrongly allowed and an authorised action wrongly blocked.
 4. Correct the specific mismatches, then check the entire table again. Denying everything does not meet the task.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge**. The transfer maintenance hold changes technician service permission; preserve the other legitimate permissions.
+5. Before switching, select **Record attempt in skills passport**. The field extension is optional; save the learning record after each phase. Try **Skill check**, then **Transfer challenge**. The transfer maintenance hold changes technician service permission; preserve the other legitimate permissions.
 6. After playing, include the original and repaired tables and explain one allowed action and one refused action. State what changed under the hold.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Deploy the verified access policy**. The scene and mission record now show the consequence: The corrected policy is deployed: allowed actions illuminate, forbidden actions remain denied, and the authorised gate responds.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Deploy the verified access policy**. The scene and mission record now show the consequence: The corrected policy is deployed: allowed actions illuminate, forbidden actions remain denied, and the authorised gate responds.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm authorised control is restored** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm authorised control is restored** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -107,11 +115,18 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**permission-audit** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**permission-audit**
 
-Repair Meridian's local recovery policy without blocking the work the team is authorised to perform.
+Keep both authority versions, expected and observed results for all nine combinations, repaired cells and reasons for each changed expectation.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A2 needs legitimate relay access. The digital final approach uses the appropriate local policy; physical handover does not gain an arbitrary software gate.
 
 ## Feedback and explanation
+
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
 
 A complete repair preserves useful operations as well as denying unauthorised ones. The transfer hold affects one cell: technician/service. Denying every action fails the published policy.
 
@@ -119,9 +134,13 @@ A complete repair preserves useful operations as well as denying unauthorised on
 
 [Inspect this example's complete record](/demonstrations/lab-07/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep both authority versions, expected and observed results for all nine combinations, repaired cells and reasons for each changed expectation.
 
 ## Closing reflection
 

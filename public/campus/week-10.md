@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Predict fictional sensor observations and compare a route model with the actual event trace.
+## The task
 
-## Field operation — The Surveyed Passage
+Plan a journey for its purpose: fast dispatch, support through a checkpoint or deliberate sampling of instrumented cells.
 
-**Objective:** Guide the team across a published sensor grid and accurately report what its passage records.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** An untested route can miss sensor contacts. The team needs an observed route and its limitations, not an unsupported promise of being unseen.
-
-After the skill check, put the result into effect: **Commit the surveyed passage record**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The surveyed route reaches dispatch with its observed contact count attached.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm dispatch received the route account**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Learning outcomes
 
-- Apply the published cell-entry rule to predict sensor contacts along a route.
-- Compare predicted sensor events with a recorded trace.
-- Revise a route after a rule or environmental condition changes.
+- Compare routes against an explicit objective and its distinct conditions.
+- Predict a step-by-step contact trace using the cell-entry rule.
+- Revise route or prediction after a changed map and defend the trade-off.
 
 ## Equipment
 
@@ -32,7 +26,7 @@ Draw a 5×5 grid, mark start and destination, and highlight the published sensor
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **SN-01** is the numbered grid, start, destination and cell-entry contact rule. **SN-02** supplies the published sensor layout for each phase; record which layout governs each route and trace.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **SN-01** is the numbered grid, start, destination and cell-entry contact rule. **SN-02** supplies the published sensor layout for each phase; record which layout governs each route and trace.
 
 - A 5×5 grid uses rows 1–5 from north to south and columns 1–5 from west to east.
 - Start: row 5, column 1. Destination: row 1, column 5. Each action moves one cell north, south, east or west; boundaries prevent leaving the grid.
@@ -41,70 +35,75 @@ Draw a 5×5 grid, mark start and destination, and highlight the published sensor
 - A contact is counted on each executed step ending in a sensor cell, including revisits. Predict the total before stepping through the route.
 - Contacts are explicit game events, not automatic failure. Reach the destination and reconcile the predicted and observed counts.
 - These are published board-game detection rules, not specifications for real surveillance.
+- Select an objective before planning: **Fast dispatch** reaches the goal within eight moves; **Support** visits centre row 3, column 3 before the goal; **Survey** visits at least two distinct sensor cells before the goal.
+- All objectives need a correct predicted contact count. Zero contacts are not automatically best.
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Compare dispatch, support and survey objectives and why their routes differ. |
+| 10–30 minutes | Inspect the alternate route example and locate contacts step by step. |
+| 30–60 minutes | Choose an objective and compare two routes by moves, checkpoints and contacts. |
+| 60–80 minutes | Execute the selection and find the first mismatch; test the second layout independently. |
+| 80–105 minutes | Apply changed coverage and decide whether route, prediction or both must change. |
+| 105–120 minutes | Keep both routes, maps, trace and an objective-based justification. |
 
 ## Worked example · a different scenario
 
-The separate gallery example numbers cells 0–24 from top left. Its first route is 20→15→10→5→0→1→2→3; with sensors at 15, 16 and 11, it records one contact. An equally long route through 20→21→22→23→18→13→8→3 records none. When the published sensors move to 21, 22 and 23, that second route records three contacts. The earlier zero remains correct under the earlier rule. Your assigned lab uses its own row/column map and destination; copy the counting method, not these cell numbers.
+The separate gallery example numbers cells 0–24 from top left. Its first route is 20→15→10→5→0→1→2→3; with sensors at 15, 16 and 11, it records one contact. An equally long route through 20→21→22→23→18→13→8→3 records none. When the published sensors move to 21, 22 and 23, that second route records three contacts. The earlier zero remains correct under the earlier rule. Your assigned lab uses its own row/column map and destination; copy the counting method, not these cell numbers. A later survey objective requires three instrument contacts. Under that requirement the three-contact route is useful, while a route chosen simply to avoid every contact would miss the objective.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-10/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Plan an eight-step route, predict its contact count, then step through it. Record where the first predicted contact occurs.
+Choose one objective. Draw two routes, predict costs and contacts, then execute the chosen path.
 
 ## Skill check
 
-Move the sensor cells to column 2, rows 2–5. Preserve your old route and calculate which steps now contact the sensor before replaying it.
+Use the second sensor layout and independently verify that the route serves its selected objective.
 
 ## Transfer challenge
 
-Use column 4, rows 2–5. Compare two routes with different contact counts and explain which objective would favour each.
-
-## Facilitation
-
-Write the full route and predicted contact count before moving. The facilitator records each step ending on a sensor marker, including revisits. Compare traces and repeat with the changed published layout.
+Use the changed coverage and compare an alternative objective. Explain why fewer contacts do not settle the choice.
 
 ## Student record
 
-Name / role:
+**Named output: sensor-route.**
 
-Scenario and route used:
+Keep the objective, two routes with costs and dependencies, prediction before movement, actual trace and reason for selecting one.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which rule did your first mental model leave out?
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Explanation — reveal after an attempt
 
-Contacts count steps ending in the highlighted cells, including repeated visits. Reaching the destination without explaining the count is incomplete. A zero-contact route is available, but is not required for sound reasoning.
+Check objective, destination and predicted trace together. Dispatch, centre support and deliberate survey have different conditions. An extra contact can be justified, while a zero-contact route missing its required checkpoint fails its purpose.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-My first gallery route made one contact; the alternative made zero under the same sensor set. The changed coverage made the alternative record three. I preserved each route and count with its governing map before choosing by the stated objective.
+## Facilitator evidence cards · reveal on request
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Fast dispatch must reach row 1, column 5 within eight executed moves. Support must visit row 3, column 3 on the way. Survey must enter at least two different sensor cells. All routes need the correct predicted contact count. Repeated entry counts as another contact but does not make a second distinct sensor.
+
+Reject a route that satisfies a preferred contact count but misses its objective. Accept additional contacts where the objective and trace support them. Ask for a contrasting candidate rather than rewarding one shortest route by habit.
+
+The full pack remains available for accessible and solo study. Label assistance if you inspected all cards before choosing a test. No hidden rules or secret grading are involved.
+
+## Reflection and later use
+
+Which rule did your first mental model leave out?
+
+A physical final recovery needs a route suited to its load and equipment. Digital and stabilisation approaches need relevant evidence rather than compulsory token navigation.
 
 ## Evidence and limitations
 
-Save as **sensor-route**. Navigate Meridian's instrumented maintenance corridor under a published simulation contract. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **sensor-route** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.
 
 ## Printable model sheet
 

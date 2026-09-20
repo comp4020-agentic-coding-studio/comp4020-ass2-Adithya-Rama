@@ -2,113 +2,87 @@
 
 Groups of four · 45% · due 28 May 2027, 17:00 Canberra time.
 
-This is the assigned Meridian Station task. Operation Lamplight at Halcyon is a separate worked example. These cards provide the same rule-based reasoning as the browser mission; a table, paper and pencils are sufficient. They do not certify physical equipment-handling skill.
+This is the assigned Meridian Station operation. Operation Lamplight at Halcyon is a different worked example. In-person teaching is preferred; the online mission provides an equivalent reasoning route. Paper models do not certify physical equipment-handling skill.
 
-## Mission and roles
+## Your responsibility
 
-Recover the last intact research archive under the published identity, support and handling rules. Place six labelled areas on a table: Arrival, Workshop, Power Bay, Control Room, Archive and Dispatch. Movement between teaching areas is unrestricted; the recovery route is a separate decision.
+Decide how the team can protect the last intact research archive. Choose physical recovery, verified digital recovery or stabilisation and handover. The objective determines your tests; it is not necessary to operate every apparatus. All approaches require equally careful evidence, a credible alternative and an accountable next action.
 
-Assign Observer / Navigator, Systems Specialist, Investigator and Coordinator. Keep the declared objective visible. Record each action with its responsible role, observation, result and downstream dependency.
+Lay out six labelled areas: Arrival, Workshop, Power Bay, Control Room, Archive and Dispatch. Assign Observer / Navigator, Systems Specialist, Investigator and Coordinator. Each records findings and requests needed information from other roles.
 
-Before testing, the Coordinator writes Version 1 at Dispatch: objective, intended route, required evidence, responsibilities and a condition that would change the plan. Preserve it when writing the revision.
+Before testing, preserve Version 1: objective, constraints, proposed evidence, necessary checks, checks you can omit with reasons, responsibilities and a revision trigger. Choose your own investigation order.
 
-## Arrival: observe, remember and orient
+## Supplied case file
 
-Place a bronze lens card, blue spool card and white tile card around the arrival table. Add two source cards:
+### Arrival — inventory and transport map
 
-- **Packing manifest:** white tile → bronze lens → blue spool.
-- **Station plan:** map north is rotated 180 degrees clockwise relative to the arrival entrance.
+The inventory contains a bronze lens in the left mount, blue spool below the navigation board and white tile beside the manifest. The manifest lists white tile → bronze lens → blue spool. Map north is rotated 180° clockwise relative to the entrance.
 
-The Observer inspects all five cards, then covers the notes and records the packing order. Compare item accuracy and order accuracy separately. Reconstruct the map orientation using the printed north arrow, not the observer's current facing direction. These records differ from A1.
+Inspect and retain identity evidence. Notes are allowed; recall is optional. Physical transport needs orientation; a stationary outcome does not.
 
-## Control: verify the source before configuring equipment
+### Control — authority and archive profiles
 
-The Investigator compares both complete archive records with the current signed source:
-
-| Record | Completeness | Reference | Published recovery profile |
+| Record | Sequence | Content reference | Required support output |
 | --- | --- | --- | --- |
-| Archive A | Complete sequence | M27-A | A: 12-tooth driver, 36-tooth follower, one-third output |
-| Archive B | Complete sequence | M27-B | B: 12-tooth driver, 48-tooth follower, one-quarter output |
+| Archive A | Complete | M27-A | One-third input speed |
+| Archive B | Complete | M27-B | One-quarter input speed |
 
-Baseline and Equipment Failure use the original signed source **M27-A**. Conflicting Archive supplies a later signed revision **M27-B**, which supersedes the earlier reference. Preserve the earlier choice in the record; a newer timestamp alone is not authority.
+Baseline and Equipment Failure use signed source M27-A. Conflicting Archive supplies signed revision M27-B, which supersedes it. A timestamp alone does not authorise a new source.
 
-Pass the verified profile to Systems. For the digital ending, the published receipt is **RECEIPT-A36** for A and **RECEIPT-B48** for B. The fictional receipt supports consistency with this model, not a claim about real cryptographic security.
+The Investigator must compare identity, completeness and authority, then tell the relevant roles what is established and what remains uncertain. The support model is needed only when the original is moved or actively stabilised.
 
-Repair the permission defect: Observer may read, Technician may service and Registrar may certify. The faulty entry also allows Observer/certify. Change that entry to deny and check that the three legitimate permissions remain allowed.
+The transmission permission mandate permits Observer/read, Technician/service and Registrar/certify. Installed entries allow those three plus Observer/certify. Derive the needed correction and check legitimate access still works. This is needed for digital transmission; it is not a generic gate for transporting a sealed original.
 
-## Workshop: use the verified profile
+### Workshop — support model
 
-Systems must receive the verified archive profile before testing the cradle.
+The driver has 12 teeth; candidate followers have 24, 36 and 48. Opposite-direction output turns = driver teeth ÷ follower teeth × input turns. The holding brake initially prevents motion.
 
-1. Select the profile's follower gear. Predict output turns as driver teeth divided by follower teeth.
-2. Release the holding brake.
-3. Turn the input once and record the opposite-direction output: one-third turn for A or one-quarter for B.
-4. Record the source/profile against which this test was performed.
+State a prediction, select a discriminating test and compare its result with the required support output. Do not claim a matched tooth ratio proves movement occurred. Keep the measured or paper-model result and profile it supports.
 
-Use gear drawings and rotation marks if no apparatus is available. A 12:24 half-speed answer from A1 does not meet either final profile.
+### Power Bay — measurement model
 
-Changing the selected archive, gearing or brake invalidates the previous cradle-dependent handoff and route evidence. Recheck them rather than carrying ticks forward.
+A 6 V supply feeds a fuse, switch, load and return in series. The load is initially dark. Potential explanations include an interrupted path or a load not connected by its switch.
 
-## Power Bay: diagnose and verify
+The compact mission provides a combined source-and-fuse check before replacement. Predict and record that result, then verify the load. Cite the Week 5 independent diagnosis record for your selection among competing tests; do not claim this one supplied check demonstrates that breadth. A facilitator reveals only the requested result using the separate [assessment facilitator sheet](assessment-facilitator.md). Isolate before replacement; record the original evidence and verify the load afterwards. Solo learners may reveal the results themselves and disclose this support.
 
-The training supply is 6 V, with fuse, switch, lamp and return in a series path. The authored initial fault is an open fuse. Record the measurement identifying the open fuse before replacing it. Open the switch before replacement, fit an intact fuse, close the switch and verify the lamp is on.
+Digital transmission and continuing stabilisation require the local supply. Physical Upper/Lift transport also requires it; Service transport is independent.
 
-For paper work, use cards showing “open fuse; lamp off” before replacement and “intact fuse; closed switch; lamp on” after the repair. A working lamp without the earlier measurement does not establish the diagnosis.
+### Archive — custody and acceptance
 
-Changing the fuse or switch reopens the route's power check.
+The custodian requires preservation of the original and a named responsible recipient. Negotiate who accepts custody, what they can verify and what they must do next.
 
-## Archive: agree, hand over and choose the route
+Dispatch accepts a **verified archive**, after its **integrity check**. Communicate item, destination and condition; the receiver reads back the profile and required evidence. A supported handoff depends on the selected objective's equipment, not automatically on a cradle.
 
-The Coordinator agrees to preserve the original and names a handover recipient. After the verified profile's cradle test, issue this complete handoff:
-
-**Verified archive → Dispatch → after integrity check.**
-
-The receiver reads it back and identifies the profile supporting it. Record corrections before proceeding.
-
-The Observer then tests a recovery route:
-
-| Route | Dependency | Published model |
+| Transport route | Dependency | Marked checkpoints |
 | --- | --- | --- |
-| Upper | Restored lift supply and tested cradle | One marked sensor pause before crossing |
-| Lift | Restored lift supply and tested cradle | One marked sensor pause before crossing |
-| Service | Tested cradle; independent of lift supply | Two marked sensor pauses before crossing |
+| Upper | Matched cradle and lift supply | Upper access threshold → Sensor pause → Dispatch crossing |
+| Lift | Matched cradle and lift supply | Lift loading line → Lift arrival platform → Dispatch crossing |
+| Service | Matched cradle; independent of lift supply | Service isolation threshold → First sensor pause → Second sensor pause |
 
-This is a route-dependency exercise. Use the separate Week 10 movement record when explaining individual sensor contacts.
+Routes concern movement of the original. Do not invent transport work for a digital or stationary-support objective.
 
-## Published presets
+## Published scenarios
 
-- **Baseline:** original source M27-A; all routes available when their dependencies are satisfied.
-- **Equipment Failure:** original source M27-A; lift supply unavailable for recovery. Upper and Lift are both blocked. Service remains available after its cradle check.
-- **Conflicting Archive:** later signed source M27-B selects Archive B and its different cradle profile. Recheck the equipment, handoff and route against that source.
+- **Baseline:** source M27-A; all routes available if their dependencies hold.
+- **Equipment Failure:** source M27-A; the transport lift supply is unavailable. Upper and Lift are blocked; the local transmission/support supply can still be measured, repaired and verified.
+- **Conflicting Archive:** signed revision M27-B supersedes the earlier reference. Check any equipment or handoff that relied on the previous profile.
 
-Presets are published and may be inspected early. Each rehearsal starts a fresh record. Show which finding changed a later action across roles.
+These are published changes, not secret answer traps.
 
-## Dispatch: revision and outcome evidence
+## Required evidence depends on the approach
 
-Preserve a distinct Version 2 explaining a tested assumption, changed evidence or dependency. Confirm the eleven common capabilities: observation, recall, orientation, archive verification, mechanism, circuit, permissions, handoff, agreement, route and revision.
+| Approach | Required checks and performed result | Why this remains demanding |
+| --- | --- | --- |
+| Physical | Inventory/source, map, matched support, viable route, custody agreement, precise handoff and preserved revision. Add measured, verified power for Upper/Lift. Release, collect, traverse the route's three checkpoints and hand over the original. | Explain why this route and recipient support preservation; defend transport risks and custody limits. |
+| Digital | Inventory/source, measured, verified power, authorised access, preservation agreement, precise handoff and revision. Transmit, collect the matching receipt, check Receiving terminal checksum and deliver acknowledgement. Original stays in place. | Explain what receipt and integrity checks establish, their limits and who protects the retained original. |
+| Stabilise | Inventory/source, matched support, measured, verified continuing power, custodian agreement, precise handoff and revision. Engage support, inspect the stable indicator and deliver the handover packet after custodian read-back. | Name monitoring responsibility, an escalation condition and the next action; explain why postponing removal is defensible. |
 
-Before completing the record, perform the chosen intervention using cards, a token and the following marked checkpoints. The facilitator permits release only after the common capability checks support it. Record each action and observed model result.
+The facilitator issues RECEIPT-A36 or RECEIPT-B48 only after transmission of the corresponding verified profile. These are invented model consistency records, not real security credentials.
 
-- **Physical:** release and collect the original archive token. For Upper, visit Upper access threshold → Sensor pause → Dispatch crossing. For Lift, visit Lift loading line → Lift arrival platform → Dispatch crossing. For Service, visit Service isolation threshold → First sensor pause → Second sensor pause. Deliver the token to the named recipient only after all three in order.
-- **Digital:** operate the verified transmission terminal. The facilitator issues its matching receipt only after transmission. Collect the receipt, check it at Receiving terminal checksum and deliver the acknowledgement. The original remains in place.
-- **Stabilise:** engage the verified support hold. Collect the support/handover packet, inspect the stable support indicator, read back the custodian handover and deliver the packet. Keep the original token on the support.
+After an intervention, preserve the action trace, recipient, actual consequence and remaining obligation. Changed supporting evidence withdraws the affected handover; unrelated equipment does not erase a valid result.
 
-If a supporting equipment setting, source or agreement changes, withdraw the completed intervention and recheck the affected work before repeating the handover. No hidden time limit applies.
+## Submission
 
-Then complete the record for the chosen ending:
+Keep two contrasting rehearsals with different presets and approaches, then a final run. Preserve original/revised plans and scope justification. Hand over all run records, role agreement, 800–1,200-word team account, ten-minute presentation and a 300-word individual defence per member.
 
-| Ending | Required record |
-| --- | --- |
-| **Physical recovery** | Responsible recipient; verified profile and tested route; confirmation of tested cradle/transport support and original-preserving custody. |
-| **Digital recovery** | Responsible recipient; profile's matching receipt; original's retained location; preservation confirmation. Explain the signed reference's limits in the account. |
-| **Stabilisation and handover** | Responsible recipient; archive location; confirmation of tested stable state; remaining limitation and the next responsibility. |
-
-A record for one ending is insufficient for another. If a dependent check changes, reconsider the outcome evidence. Compare the resolved outcome with the initial objective and justify any change. No ending automatically earns a higher academic mark.
-
-## Facilitation and submission
-
-The facilitator applies these published rules, records results and supplies no hidden obstacles. Students may pause, inspect, use accessible paper representations and replay. Model checks establish recorded conditions; a person assesses the quality of the explanation.
-
-Conduct two contrasting rehearsals using different presets, then a final run. Preserve initial/revised plans, role contributions, the source-to-equipment-to-route dependency chain and the outcome evidence.
-
-Hand over all three run records and debriefs, role agreement, 800–1,200-word team account, ten-minute presentation and 300-word individual defence per member. Use the website's final-project rubric and downloadable template. Record actual events and limits; do not claim an unbuilt apparatus was physically tested.
+A tutor judges reasoning and evidence. No ending automatically receives a higher mark, and an automated tick cannot assess the quality of an omission rationale.

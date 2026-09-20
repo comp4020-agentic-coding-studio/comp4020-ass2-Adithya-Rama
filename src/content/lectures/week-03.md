@@ -1,6 +1,6 @@
 ---
 title: "Think in Three Dimensions"
-description: "Track labelled directions through a rotation, change height independently and verify both conditions."
+description: "Reconcile a fixed diagram with a differently oriented scene, predict its transformation, then verify direction and height independently."
 week: 3
 learningOutcomes: ["LO2"]
 skillIds: ["LO2"]
@@ -11,22 +11,34 @@ date: 2027-03-08
 related: ["sessions/week-03", "assessments/assignment-1"]
 ---
 
-> **Your field application — The Broken Connection:** Reconnect the gallery passage by aligning a service module with the building’s connectors and level. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** Reconnect a service module from its diagram. Identify whether a mismatch comes from the observer's view, module rotation or floor level.
 
 
 > The drawing is correct. You are holding it the wrong way around.
 
 ## What you will learn
 
-- Keep world directions fixed while the object or camera moves.
-- Predict where labelled ports move after a clockwise rotation.
-- Change floor level independently and verify direction and height together.
+- Keep world directions fixed while the object or viewpoint changes.
+- Predict both labelled ports before rotating and test the prediction.
+- Diagnose direction and level errors separately using a transformation record.
 
 ## The briefing
 
-Establish world north, east and up before moving a component. Camera movement changes what faces you on screen; it does not change those directions. A port can appear on the left from one viewpoint and on the right from another while remaining the same world-facing port. Track a labelled feature rather than trusting its screen position.
+### Distinguish reference frames
 
-Rotation changes a component's orientation. Translation changes its position: lifting the connector to another floor does not turn its ports. Predict where the original north tip will point before pressing the rotation control, then test that prediction separately from the height requirement. Reflection would create a different handed arrangement, which is why labels matter when comparing the alternate example's substitute. Your assigned task tests rotation and height; it does not ask you to reconstruct a hidden solid from several projections.
+A reference frame is the directions against which you describe a position. The room's north arrow stays fixed. Moving the camera changes what looks left or right without changing world north. Rotating the module changes its labelled ports' world directions.
+
+Mark an original port and predict where it will point after a quarter-turn. Track the other port separately; a familiar silhouette can conceal a wrong orientation. A correct spatial account should survive a changed camera view.
+
+### Separate rotation from translation
+
+Translation changes position without turning the object. Raising this connector changes its floor level, not its port directions. Diagnose a failed connection using two independent conditions: orientation and height. Changing both at once can obscure which original condition failed.
+
+Use a transformation record: initial directions and level; intended change; predicted directions and level; observed result. The calculation is small, but the habit matters when a maintenance drawing and its physical space are oriented differently.
+
+### Explain a mismatch
+
+Commit to a prediction before manipulating the model. A failed prediction can show that you reversed clockwise, followed the camera rather than north, or coupled movement with rotation. In transfer, explain which part of the previous transformation remains reusable and which must be recalculated.
 
 ## Worked example · a different scenario
 
@@ -54,6 +66,6 @@ Read SP-01 coordinate conventions (10 minutes). Sketch an everyday object from a
 
 ## What happens next
 
-Reconstruct Meridian's layout and relate maintenance diagrams to the space around you. The lab produces **spatial-model**, which becomes evidence for [the connected assessment](/assessments/assignment-1/).
+A1 relates an unfamiliar workshop diagram to its connector. A physical final recovery may need this capability; a digital operation need not invent a transport problem.
 
-[Open this week's lab](/sessions/week-03/) · [Download the campus pack](/campus/week-03.md) · [Explore the academy](/academy/)
+Keep **spatial-model** from [this week's lab](/sessions/week-03/). [Download the campus pack](/campus/week-03.md).

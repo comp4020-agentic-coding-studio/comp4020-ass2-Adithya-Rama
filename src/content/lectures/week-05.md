@@ -1,6 +1,6 @@
 ---
 title: "Wake a Dead System"
-description: "Trace a low-voltage circuit, select informative measurements and locate an open fault."
+description: "Choose circuit measurements that distinguish faults, repair what the evidence supports and verify the powered result."
 week: 5
 learningOutcomes: ["LO3"]
 skillIds: ["LO3"]
@@ -11,22 +11,36 @@ date: 2027-03-22
 related: ["sessions/week-05", "assessments/assignment-2"]
 ---
 
-> **Your field application — Bring the Beacon Back:** Restore the approach beacon so the incoming recovery crew can identify the correct landing point. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** A model beacon is dark. Choose measurements that distinguish a supply break from an output fault before replacing anything.
 
 
 > The cart is silent. A useful diagnosis begins before the first part is replaced.
 
 ## What you will learn
 
-- Trace a complete current path through a supplied simple circuit.
-- Use measurements to distinguish an open fuse from an open switch.
-- Verify a repair without changing unrelated components.
+- Predict measurement patterns for two causes of the same dark output.
+- Use paired powered readings or isolated continuity to justify a repair.
+- Verify supply and output afterwards and state the model's limits.
 
 ## The briefing
 
-A circuit needs a source, a load and a complete conducting path. An interruption can leave a device inactive while upstream components still appear healthy. The first task is to identify what each measurement represents: voltage is a difference between two named points, not an amount simply ‘inside’ a component.
+### A symptom does not locate a fault
 
-The browser uses a deliberately simplified supply-node model. With power on, probe points read 6 V until a fuse/cable supply break; downstream nodes then read 0 V. An open lamp still has supply voltage, so a dark output with 6 V requires a different check: isolate the power and test continuity through the lamp. It is not a full analogue circuit solver and should not be used to predict arbitrary physical circuits. Diagnose using powered measurements, isolate before changing a part, then restore power and verify the original symptom. Preserve the failed readings: replacing the right part by luck is different from explaining why it was the right part.
+The ideal loop contains a six-volt source, fuse, switch/cable, lamp and return. Node readings are measured relative to common return after the named component. A dark lamp can result from a supply break or an open lamp with its supply still present.
+
+Predict patterns for at least two candidate faults. An upstream healthy reading paired with a downstream zero brackets a supply break. One zero measured with power off does not locate a fault in the operating supply.
+
+### Make measurements answer a question
+
+Choose adjacent powered readings across a candidate break, or isolate power and test the component's continuity. Continuity asks whether the isolated component supplies its expected conducting path. Include power state in every observation.
+
+When a lamp has healthy supply but stays dark, more upstream readings may add little. Isolated continuity asks a different question. The useful next test depends on what is already known; measuring every node is a beginner strategy, not the final goal.
+
+### Repair and verify separately
+
+Isolate before changing a component. Support the replacement with the earlier trace. Restore power, obtain a fresh supply reading and verify the output. Replacing a part is an action, not proof of repair. If verification fails, keep that failure and reconsider the remaining hypotheses.
+
+The browser is simplified. Physical kits have tolerances and additional failure modes. Label paper-card results as simulated and instrument readings as measured; neither automatically validates the other.
 
 ## Worked example · a different scenario
 
@@ -40,14 +54,16 @@ The separate nine-volt beacon permits two simultaneous faults. Its powered trace
 
 ## Supplied rule sheet
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **EL-01** is the six-volt circuit and its labelled probe-node rule. **EL-02** supplies the phase faults and diagnostic recording requirements; the campus pack's student record is your measurement sheet.
+**EL-01** is the six-volt circuit and probe convention. **EL-02** is the facilitator's measurement-card set; the student chooses which reading to request.
 
-- The idealised bench model uses a 6 V source, fuse, switch/cable, lamp and common return.
-- Probe labels refer to the node after each named component, measured relative to the common return.
-- With power on, a fuse or cable supply break gives 6 V before the break and 0 V at downstream nodes. An open lamp can still have 6 V at its supply node while remaining dark.
-- Practice fault: fuse. Skill-check fault: cable. Transfer fault: open lamp; its powered supply readings remain 6 V.
-- A zero voltage reading while power is off does not locate a supply fault. For fuse/cable faults, record the powered zero node before isolation and replacement. For the open lamp, first observe healthy 6 V supply with a dark output; isolate power and use the continuity check to confirm the open lamp before replacing it.
-- This deliberately simplified node model is not a full analogue circuit solver. Campus readings depend on the actual apparatus.
+- Model loop: 6 V source → fuse → switch/cable → lamp → common return.
+- Probe labels mean the node after each named component, measured relative to common return.
+- A supply break can leave healthy voltage upstream and zero downstream. An open lamp can have a healthy supply while remaining dark.
+- Candidate faults include fuse, cable and lamp. Each phase starts with one unknown open component.
+- Justify a replacement using adjacent powered readings that bracket the break, or an isolated continuity check showing the candidate is open.
+- Record power state. Isolate before continuity testing or replacement. Zero measured while off does not locate an operating supply break.
+- After replacement, restore power, obtain a fresh lamp-supply measurement and inspect the output. A lit lamp alone does not demonstrate your initial diagnosis.
+- This is an idealised node model; label real measurements separately from simulated cards.
 
 ## Before the lab
 
@@ -55,6 +71,6 @@ Trace EL-01 from source to return (10 minutes). Write predicted lamp states for 
 
 ## What happens next
 
-Restore the archive carriage's support circuit with a documented fault diagnosis. The lab produces **circuit-diagnosis**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
+A2 requires a diagnosis another role can use. Final power checks support transmission or continuous support, and transport only when the selected route depends on power.
 
-[Open this week's lab](/sessions/week-05/) · [Download the campus pack](/campus/week-05.md) · [Explore the academy](/academy/)
+Keep **circuit-diagnosis** from [this week's lab](/sessions/week-05/). [Download the campus pack](/campus/week-05.md).

@@ -19,6 +19,7 @@ export interface DemoStep {
 }
 export interface Demonstration {
  id:string; kind:"lab"|"assessment"; week?:number; title:string; subtitle:string;
+ method?:string; fieldRequired?:boolean;
  skill:string; setting:string; difference:string; transfer:string;
  sourceHref:string; sourceLabel:string; estimatedMinutes:number;
  steps:DemoStep[];

@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Combine the semester's capabilities in a documented recovery mission with several defensible resolutions.
+## The task
 
-## Field operation — Agent’s Return
+Complete Operation Last Light and explain why selected checks and performed actions serve the team's declared objective.
 
-**Objective:** Close a completed Operation Last Light with an accurate after-action account the receiving team can use.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** A proud recovery still needs a traceable account. A successful-looking story cannot substitute for a completed mission and its remaining limits.
-
-After the skill check, put the result into effect: **Attach the completed recovery and account**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The completed recovery and its account enter the handover journal. The agent returns with an evidence-backed record.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Close the agent handover**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Learning outcomes
 
-- Combine observation, systems diagnosis, investigation and coordination in a new setting.
-- Verify that a recovery resolution satisfies its stated requirements.
-- Defend decision quality using both successful and unsuccessful evidence.
+- Select and justify capabilities relevant to the declared objective.
+- Coordinate dependencies and preserve evidence when the approach changes.
+- Defend the performed result, a credible alternative and a remaining obligation.
 
 ## Equipment
 
@@ -32,76 +26,77 @@ Lay out the six station areas, publish the chosen preset and assign roles. Keep 
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **MR-01** is the Meridian recovery charter, six areas and four responsibilities. **MR-02** states the requirements for physical recovery, digital recovery and stabilised handover. The [final-project mission pack](./final-project.md) provides the detailed role cards, current archive profiles and resolution record.
+**MR-01** supplies the Meridian charter, six areas and four responsibilities. **MR-02** supplies approach-specific requirements; use the final-project pack for current profiles and evidence.
 
-- MR-01 authority: recover the research archive from fictional Meridian Station under the published handling and verification rules.
-- Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform.
-- Roles: observer/navigator, systems specialist, investigator, coordinator. Solo mode rotates these roles explicitly.
-- Physical recovery requires verified identity, working support equipment, agreed handling and confirmed custody.
-- Digital recovery requires a verified copy, recorded reference limitations and confirmed receipt; preserve the original's location.
-- Stabilisation requires a verified safe state, named custodian, documented unresolved issues and handover plan.
-- Presets: Baseline, Equipment Failure, Conflicting Archive. All disruptions are published; no hidden academic grading.
+- Shared evidence: scene/identity observations, current signed archive source, precise handoff, preservation/recipient agreement, initial plan and preserved revision.
+- Physical recovery: matched support cradle, map orientation and transport route. An Upper/Lift route also needs power; the independent Service route does not impose a circuit gate.
+- Digital recovery: diagnosed transmission supply, correct local access policy, confirmed receiving receipt and arrangements for the original. Cradle, map and transport are not required.
+- Stabilisation and handover: matched support cradle, diagnosed continuous power, stable indicator, named custodian and monitoring limitation. No transport route or access-policy gate.
+- Explain a credible alternative, why your selected checks fit the objective, and a remaining obligation. Recall is an optional tool, not a universal gate.
+- Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform. Roles: observer/navigator, systems specialist, investigator, coordinator.
+- Presets: Baseline, Equipment Failure, Conflicting Archive. They are published conditions; acting speed and endings do not determine marks.
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Agree objective and responsibilities; distinguish shared and approach-specific requirements. |
+| 10–30 minutes | Compare the alternate mission with your charter and identify a choice it cannot supply. |
+| 30–60 minutes | Perform or inspect the chosen attempt, recording each consequential action's support. |
+| 60–80 minutes | Challenge the plan from another role and inspect a contrasting rehearsal. |
+| 80–105 minutes | Prepare the account: relevant and omitted checks, alternative and remaining obligation. |
+| 105–120 minutes | Give individual defences and assemble the final bundle and backup. |
 
 ## Worked example · a different scenario
 
 The separate rainfall-recorder example aims to recover verified data while keeping the original recorder stable. The demonstrator records a 16:25 display and an amber service lamp, tests the prepared support lift for two opposite output turns, and compares copies with the twelve-record W-6 request. Ash matches; Birch does not. A confirmed handoff transfers Ash while the recorder stays at its mast. The result meets the stated objective, but matching a reference does not answer the remaining calibration question.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-12/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Use the Baseline preset and current published mission pack. Preserve the team plan before practical checks. The investigator verifies the current archive and load profile before the systems specialist configures support; the navigator then checks its route dependencies. Label this run as rehearsal and preserve the evidence for one weak dependency before starting the assessed record.
+Use an explicitly labelled rehearsal or completed run and map checks to its chosen objective.
 
 ## Skill check
 
-Complete a chosen final preset with an explicit objective. Export actions, decisions and debrief; verify each claimed resolution requirement against the record.
+Have another role challenge a decision and explain a credible alternative using the current charter.
 
 ## Transfer challenge
 
-Compare the final run with a contrasting rehearsal. Explain whether the same approach would remain defensible under that other condition and name the first decision that would change.
-
-## Facilitation
-
-A facilitator applies the current mission pack rules and records events without inventing obstacles. A changed source can change the required load profile, so confirm which equipment and route checks need repeating. Require the receipt, custody or stable-handover records for the selected resolution. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
+Compare a contrasting preset and objective if relevant. Preserve both plans and explain the actual decision changed.
 
 ## Student record
 
-Name / role:
+**Named output: recovery-record.**
 
-Scenario and route used:
+Keep objective, relevant requirements, handoffs, performed evidence, contrasting rehearsal and revision. Explain one justified omission, alternative and remaining obligation.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: What would you now teach your Week 1 self about becoming capable?
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Explanation — reveal after an attempt
 
 The debrief reports the requirements met, missing evidence and unresolved assumptions. A successful ending with unsupported reasoning is not automatically strong academic work. A carefully diagnosed incomplete recovery can still demonstrate substantial skill, while clearly acknowledging what was not achieved.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-I recovered Ash under the twelve-record W-6 request, recorded the confirmed handoff and kept the rainfall recorder at its mast. The support test and identity comparison justified those decisions. My after-action account left calibration unresolved rather than treating a matching digest as scientific validation.
+## Facilitator evidence cards · reveal on request
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Apply the final mission pack's current conditional requirements. Shared evidence is required for every approach; add the checks relevant to the selected approach and physical route. Do not invent an eleven-skill gate. Require an honest explanation of relevant omissions and remaining obligations. The facilitator checks authored model conditions; individual reasoning remains part of the assessment defence.
+
+The full pack remains available for accessible and solo study. Label assistance if you inspected all cards before choosing a test. No hidden rules or secret grading are involved.
+
+## Reflection and later use
+
+What would you now teach your Week 1 self about becoming capable?
+
+This lab assembles the final-project evidence. The after-action account does not replace the performed mission or the assessment's individual and team deliverables.
 
 ## Evidence and limitations
 
-Save as **recovery-record**. Complete Operation Last Light and defend the relationship between your objective, actions and result. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **recovery-record** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.

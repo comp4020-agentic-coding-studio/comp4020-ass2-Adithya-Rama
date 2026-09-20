@@ -225,7 +225,7 @@ const contexts: Record<string, SceneContext> = {
   },
   'mission:a1': {
     title: "Who is in the Sealed Workshop",
-    setting: "The individual assessment trial combines observation, recall, orientation and mechanism diagnosis.",
+    setting: "The individual assessment trial combines independent observation, orientation and mechanism diagnosis. Recall is an optional information aid.",
     people: ["You are the student. Observer / Navigator and Systems Specialist are responsibilities you select to access their tools, not extra people. Mara is the teaching guide."],
     evidence: "Use the arrival inventory and manifest, the labelled north arrow and the cradle's gear and brake state. Background characters are not additional inventory items.",
     apparatus: "The arrival objects form an inspection station; the connector plan and recovery cradle are labelled teaching models. Their states, not the surrounding furniture, determine trial checks."
@@ -234,7 +234,7 @@ const contexts: Record<string, SceneContext> = {
     title: "Who takes each relay responsibility",
     setting: "The pair assessment trial combines a circuit, archive comparison, permissions and handoff.",
     people: ["You and your partner record your own contributions. Systems Specialist, Investigator and Coordinator are selectable responsibilities. Mara is the instructor; the receiving role is represented by the handoff record."],
-    evidence: "Use the circuit measurements, current source reference, role/action policy and complete handoff. Observer, technician and registrar are permission identities, distinct from the students.",
+    evidence: "Use the circuit measurements, current source reference, role/action policy and complete handoff with the receiving role’s current acknowledgement code. Sender and receiver hold distinct information. Observer, technician and registrar are permission identities, distinct from the students.",
     apparatus: "The bench circuit, archive display and dispatch controls are teaching stations. A character standing near them does not operate or approve them automatically."
   },
   'mission:recovery': {

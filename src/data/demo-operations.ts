@@ -45,3 +45,9 @@ export function applyDemoFieldAction(demo:Demonstration,run:DemoFieldRun,action:
 export function demoFieldActions(demo:Demonstration):FieldOperationAction[] {
  return [{type:'execute'},{type:'collect'},...getDemoOperation(demo).checkpoints.map(id=>({type:'checkpoint' as const,id})),{type:'deliver'}];
 }
+
+/** Some investigations finish with their explained record; delivery remains optional practice. */
+export function demoNeedsHandover(demo:Demonstration):boolean { return demo.fieldRequired!==false; }
+export function demoLearningComplete(demo:Demonstration,run:DemoFieldRun):boolean {
+ return run.verifiedSteps.length===demo.steps.length && (!demoNeedsHandover(demo)||run.field.delivered);
+}

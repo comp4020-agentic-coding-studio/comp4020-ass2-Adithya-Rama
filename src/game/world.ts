@@ -929,7 +929,7 @@ export class AcademyWorld {
  private updateModels(){
   const values=this.state.values||this.state as Record<string,unknown>;
    if(this.mode==='mission'){
-    const progress=this.state.recovery as RecoveryProgress|undefined,final=this.state.missionKind==='recovery'&&progress?.version===2;
+    const progress=this.state.recovery as RecoveryProgress|undefined,final=this.state.missionKind==='recovery'&&Boolean(progress&&progress.version>=2);
     const facts=final?missionFacts.recovery:missionFacts.a1;
     this.rewriteText(this.dynamic.missionManifest,'PACK: '+facts.order.join(' → ').toUpperCase());
     this.rewriteText(this.dynamic.missionMap,'MAP NORTH: '+facts.orientation+'° CLOCKWISE');

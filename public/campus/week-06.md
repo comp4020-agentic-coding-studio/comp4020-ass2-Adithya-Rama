@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Compare supplied records, separate file labels from evidence and reconstruct an event sequence.
+## The task
 
-## Field operation — The Authentic Archive
+Choose a record that supports a stated request. Explain why its label, timestamp or apparent completeness alone is insufficient.
 
-**Objective:** Release the archive copy that actually satisfies the signed recovery order.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** Three plausible files have different contents. A newer timestamp can hide an unauthorised change; an older copy can be incomplete.
-
-After the skill check, put the result into effect: **Release the manifest-matched archive**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The selected verified copy reaches protected dispatch while the source remains in the station archive.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the verified archive receipt**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Learning outcomes
 
-- Distinguish an observed record from a conclusion about events.
-- Compare version records and integrity results without treating filenames as authority.
-- Keep a decision timeline linking each archive choice to its governing requirement and remaining limits.
+- Separate authority, content comparison and completeness evidence.
+- Compare candidate records against explicit criteria rather than labels alone.
+- Preserve the decision timeline when an authenticated instruction changes.
 
 ## Equipment
 
@@ -32,7 +26,7 @@ Give each group all three archive records and the original signed reference M-42
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **DI-01** is the three archive records with their timestamps, section counts and digests. **DI-02** supplies the original signed reference and its amendment. Record your comparison and source changes in the decision timeline; there is no separate event-log download.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **DI-01** is the three archive records with their timestamps, section counts and digests. **DI-02** supplies the original signed reference and its amendment. Record your comparison and source changes in the decision timeline; there is no separate event-log download.
 
 - Archive A: 10:10; 24 sections; digest M-42 matches the signed source manifest.
 - Archive B: 10:35; 24 sections; digest M-99 differs because of a later annotation.
@@ -43,74 +37,59 @@ Give each group all three archive records and the original signed reference M-42
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Sort the request, copies and comparison records by the questions they answer. |
+| 10–30 minutes | Inspect the alternate unsigned-request example and identify its authority boundary. |
+| 30–60 minutes | Build a comparison table and justify a provisional selection. |
+| 60–80 minutes | Exchange tables and propose a credible rival interpretation or missing requirement. |
+| 80–105 minutes | Apply the authenticated amendment without erasing the previous decision. |
+| 105–120 minutes | Keep the timeline, rejected alternative and a claim the comparison cannot establish. |
 
 ## Worked example · a different scenario
 
 In the separate weather-ledger example, authenticated R1 requires eighteen sections and Q-7. North matches both; its being newest is incidental. A later unsigned request proposes East/Q-9, but the authority register has not authenticated it, so North remains justified. Authenticated R2 later requires eighteen sections and Q-12, and a repair receipt supplies South version S2 with those properties. The demonstrator checks the new authority and repaired copy separately, then selects South S2 while keeping the incomplete original South and both earlier decisions.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-06/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Inspect all three records, compare their supplied times, counts and digests, and select the complete copy matching the current signed requirement. Start the decision timeline below; distinguish a file timestamp from the stage at which you made your choice.
+Compare two or more records against the source manifest. Record authority, completeness and integrity separately.
 
 ## Skill check
 
-Repeat the comparison with a fresh record and identify two limits on what matching the manifest establishes.
+Ask a peer to defend a rival copy. Resolve the disagreement through the supplied record, not confidence.
 
 ## Transfer challenge
 
-Apply the amended signed reference M-99. Preserve your earlier conclusion and explain why the authorised deliverable is now B.
-
-## Facilitation
-
-Ask students to quote the exact record supporting each conclusion. A partner tries to produce a different explanation that fits the same observations. Score traceability and limits rather than dramatic speculation.
+Apply the authenticated amendment and append the resulting decision to the timeline. Preserve the earlier authority.
 
 ## Student record
 
-Keep this decision timeline. Use a stage label when no event time is supplied; do not invent a time.
+**Named output: evidence-timeline.**
 
-| Stage or source time | Authority in force | Observed count and checksum | Decision and remaining limit |
-| --- | --- | --- | --- |
-| Initial comparison | | | |
-| Recheck | | | |
-| Published amendment | | | |
+Keep the governing authority, comparison of at least two records, inclusion/exclusion reasons, authenticated amendment and remaining limitation. Do not invent event times.
 
-Preserve each earlier row when the requirement changes. A matching digest establishes identity against that reference; it does not establish the truth of every underlying statement.
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Name / role:
-
-Scenario and route used:
-
-Prediction and reason:
-
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which apparently reassuring label was doing more work than the evidence justified?
+The investigation, experiment, agreement or revision is this week's practical output. A staged field handover is optional and cannot replace the reasoning record.
 
 ## Explanation — reveal after an attempt
 
 A satisfies the original 24-section M-42 requirement. B satisfies the amended M-99 requirement. C is incomplete. Changing the choice is justified by a changed authority, not simply by preferring the newest file.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-North met authenticated R1. I retained it when an unsigned East request arrived. Only authenticated R2 and the separately verified South S2 repair justified my new choice. My timeline keeps the old South, the unchanged decision and the later revision with their sources.
+## Reflection and later use
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Which apparently reassuring label was doing more work than the evidence justified?
+
+A2 uses this record to justify instructions to another role. Every final approach needs source evidence, but matching a digest does not itself choose the recovery objective.
 
 ## Evidence and limitations
 
-Save as **evidence-timeline**. Identify which archive copy can support a defensible recovery decision. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **evidence-timeline** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.

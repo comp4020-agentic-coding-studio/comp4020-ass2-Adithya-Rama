@@ -15,7 +15,7 @@ const {session}=Astro.props;const {Content}=await render(session);const week=ses
 <div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
 <StudyRoutes week={week}/>
 <nav class="actions" aria-label="Lab resources"><a class="button" href="#lab-guide">Read the complete lab instructions ↓</a><a class="button primary" href="#exercise">Open online lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
-<p class="small"><strong>For online participation and revision:</strong> follow the Lab mission checklist and named controls below. Complete the verified intervention and receiving handover; explain and save that attempt before switching phases. <strong>Need an example first?</strong> The demonstration uses a different scenario and keeps separate practice progress.</p>
+<p class="small"><strong>For online participation and revision:</strong> follow the Lab mission checklist and named controls below. Complete the practical outcome named for this week. Perform an intervention or receiving handover only when the activity requires it; other field extensions are optional. Explain and save the attempt before switching phases. <strong>Need an example first?</strong> The demonstration uses a different scenario and keeps separate practice progress.</p>
 <DemonstrationLink id={"lab-"+String(week).padStart(2,"0")}/>
 <div id="exercise"><TrainingLab week={week}/></div>
 <PassportTools compact/>

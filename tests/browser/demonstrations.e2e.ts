@@ -143,8 +143,8 @@ test('complete Watch performs and records the same mission without completing th
  await expect(page.locator('[data-field-status]')).toContainText('Venn');
  const exported=page.waitForEvent('download');await page.locator('[data-demo-export]').click();
  const record=await readFile((await (await exported).path())!,'utf8');
- expect(record).toContain('## My performed operation\nVerified chapters: 0 / 18\nHandover complete: no');
- expect(record).toContain('## Demonstrator operation\nVerified chapters: 18 / 18\nHandover complete: yes');
+ expect(record).toContain('## My performed operation\nVerified chapters: 0 / 18\nHandover required; completed: no');
+ expect(record).toContain('## Demonstrator operation\nVerified chapters: 18 / 18\nHandover required; completed: yes');
  expect(record).toContain('West gallery checkpoint');
  await page.locator('button[data-demo-control]').click();
  await expect(page.locator('[data-demo-field-proof]')).toContainText('0 / 18');
@@ -178,7 +178,7 @@ test('paused Watch cannot complete a deferred station arrival',async({page})=>{
    event.preventDefault();pending.push((event as CustomEvent<{perform:()=>void}>).detail);
   });
  });
- await page.goto('demonstrations/lab-01/');
+ await page.goto('demonstrations/lab-03/');
  await expect(page.locator('[data-demo-play]')).toBeEnabled();
  await page.locator('[data-world-launch]').evaluate(button=>(button as HTMLButtonElement).disabled=true);
  await page.locator('[data-demo-watch]').click();

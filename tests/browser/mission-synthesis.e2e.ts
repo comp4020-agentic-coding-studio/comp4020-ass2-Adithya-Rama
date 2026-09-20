@@ -22,7 +22,7 @@ test("final requires its own map and the verified profile before the cradle can 
  await page.locator("[data-orient] select").selectOption("90");await page.locator("[data-orient] button").click();await expect(page.locator("[data-mission-status]")).toHaveAttribute("data-success","false");
  await page.locator('[data-role="systems"]').click();await page.locator('[data-zone="workshop"]').click();await page.locator("[data-brake]").check();await page.locator("[data-turn]").click();await expect(page.locator("[data-mission-status]")).toContainText("Investigator");
  await page.locator('[data-role="investigator"]').click();await page.locator('[data-zone="control"]').click();await page.locator("[data-replica] button").click();
- await page.locator('[data-role="systems"]').click();await page.locator('[data-zone="workshop"]').click();await expect(page.locator("[data-profile-status]")).toContainText("36");
+ await page.locator('[data-role="systems"]').click();await page.locator('[data-zone="workshop"]').click();await expect(page.locator("[data-profile-status]")).toContainText("one-third");
  await page.locator("[data-follower]").selectOption("24");await page.locator("[data-turn]").click();await expect(page.locator("[data-mission-status]")).toHaveAttribute("data-success","false");
  await page.locator("[data-follower]").selectOption("36");await page.locator("[data-turn]").click();await expect(page.locator("[data-mission-status]")).toHaveAttribute("data-success","true");
 });
@@ -32,14 +32,14 @@ test("ending evidence belongs to its recorded outcome and later source changes r
  await recordOutcome(page,"physical");
  await page.locator('[data-ending="digital"]').click();await expect(page.locator("[data-debrief]")).toBeHidden();
  await page.locator('[data-role="investigator"]').click();await page.locator('[data-zone="control"]').click();await page.locator("[data-replica] select").selectOption("B");await page.locator("[data-replica] button").click();
- await expect(page.locator("[data-mission-progress]")).toContainText("7 / 11");
+ await expect(page.locator("[data-mission-progress]")).toContainText("5 / 9");
  await page.locator('[data-zone="dispatch"]').click();await expect(page.locator("[data-outcome-status]")).toContainText("No current outcome evidence");
 });
 
 test("digital proof rejects another receipt and recipient, then exports its actual accepted evidence",async({page})=>{
  await completeRecovery(page,"conflicting-archive");
- const form=page.locator("[data-resolution-evidence]");await form.locator("[data-outcome-choice]").selectOption("digital");await performField(page);
- await form.locator('[name="recipient"]').fill("Meridian custodian");await form.locator('[name="receipt"]').fill("RECEIPT-A36");await form.locator('[name="digital-location"]').fill("Archive chamber");await form.locator('[name="preserve-digital"]').check();await form.locator("button").click();
+ const form=page.locator("[data-resolution-evidence]");await form.locator("[data-outcome-choice]").selectOption("digital");await page.locator("[data-plan] textarea").fill("Revised digital objective: verify authority and transmission, preserve the original, omit transport and retain a responsible custodian.");await page.locator("[data-plan] button").click();await performField(page);
+ await form.locator('[name="recipient"]').fill("Meridian custodian");await form.locator('[name="receipt"]').fill("RECEIPT-A36");await form.locator('[name="digital-location"]').fill("Archive chamber");await form.locator('[name="preserve-digital"]').check();await form.locator('[name="limitation"]').fill("We omitted unnecessary transport checks while preserving the original under named custody; an unsupported copy remains an unacceptable alternative.");await form.locator("button").click();
  await expect(page.locator("[data-mission-status]")).toContainText("RECEIPT-B48");
  await form.locator('[name="receipt"]').fill("RECEIPT-B48");await form.locator('[name="recipient"]').fill("Unagreed recipient");await form.locator("button").click();await expect(page.locator("[data-mission-status]")).toContainText("renegotiate");
  await recordOutcome(page,"digital","B");await page.locator('[data-ending="digital"]').click();await expect(page.locator("[data-debrief]")).toBeVisible();
@@ -53,9 +53,9 @@ test("legacy completed recovery remains labelled and exportable when a new curre
  const passport={...newPassport(),missions:{recovery:legacy},runs:[legacy]};
  await page.addInitScript(raw=>localStorage.setItem("mastermind:SLOP4408:v2",raw),JSON.stringify(passport));
  await page.goto("operation/");await expect(page.locator("[data-legacy-mission]")).toContainText("Legacy recovery record");await expect(page.locator("[data-ending-text]")).toContainText("no verified linked-profile");
- const downloaded=page.waitForEvent("download");await page.locator("[data-export-mission]").click();expect(await readFile((await (await downloaded).path())!,"utf8")).toContain("Legacy recovery v1");
+ const downloaded=page.waitForEvent("download");await page.locator("[data-export-mission]").click();expect(await readFile((await (await downloaded).path())!,"utf8")).toContain("Historical recovery rules");
  await page.locator("[data-start-mission]").click();await page.locator("[data-restart-confirm]").click();
- await expect(page.locator("[data-legacy-mission]")).toBeHidden();await expect(page.locator("[data-mission-progress]")).toContainText("0 / 11");
+ await expect(page.locator("[data-legacy-mission]")).toBeHidden();await expect(page.locator("[data-mission-progress]")).toContainText("0 / 9");
  await expect(page.locator("[data-run-comparison]")).toContainText("Legacy recovery record");
 });
 

@@ -7,7 +7,8 @@ weight: 45
 participation: group
 learningOutcomes: ["LO1","LO2","LO3","LO4","LO5","LO6"]
 requiresRevision: true
-requires: ["observation-record", "recall-strategy", "spatial-model", "mechanism-diagnosis", "circuit-diagnosis", "evidence-timeline", "permission-audit", "handoff-agreement", "claim-verification", "sensor-route", "revised-plan"]
+requires: ["observation-record", "evidence-timeline", "handoff-agreement", "revised-plan"]
+drawsOn: ["observation-record", "recall-strategy", "spatial-model", "mechanism-diagnosis", "circuit-diagnosis", "evidence-timeline", "permission-audit", "handoff-agreement", "claim-verification", "sensor-route", "revised-plan"]
 marking:
   mode: weighted
   criteria:
@@ -41,16 +42,13 @@ related: ["sessions/week-12"]
 
 **The two operations are different:** [Operation Lamplight](/demonstrations/assessment-final/) is the complete alternate demonstration. [Operation Last Light](/operation/) is the actual mission for this assessment.
 
-1. Agree the four responsibilities below. Open **Operation Last Light**, select **Baseline** for a first rehearsal, then select **Start new trial** and confirm if prompted. Choose the **Declared recovery objective** before selecting a role or operating equipment. A resumed trial keeps its initial objective locked; starting a new trial unlocks this choice before new actions.
-2. **Inspect mission station** to establish the recovery problem. Then, as **Coordinator**, visit **Dispatch** and use **Preserve this plan version** to record the initial objective, intended route, required checks and what would make you revise it.
-3. As **Observer / Navigator**, visit **Arrival**. Inspect all five objects, hide the notes, check your recall of their packing order, and test the map's orientation.
-4. As **Investigator**, visit **Control room**. Compare the archive with the current signed source. Pass its verified recovery profile to the Systems Specialist. Repair the permission defect while preserving legitimate access.
-5. As **Systems Specialist**, visit **Workshop** and **Power bay**. Use that verified profile to choose the cradle gearing, release its brake and test it. Measure the circuit fault before replacing the fuse, then restore and verify the load. A gearing answer remembered from A1 is insufficient: the final mission publishes different requirements.
-6. As **Coordinator**, visit **Archive**. Agree original preservation and a named recipient. After the verified profile's cradle has been tested, send a handoff specifying the item, destination and condition.
-7. As **Observer / Navigator**, test a route against its power dependencies and the scenario bulletin. As **Coordinator**, return to **Dispatch** and preserve a distinct revision explaining what the evidence or tests changed.
-8. Use **Locate this objective** to identify its role and area; it does not move you. Walk through the labelled exit or use **Station areas** to travel. After the common checks, return to **Dispatch**. Choose **Approach to perform** and carry out its field operation: release and carry the original through three ordered route checkpoints, transmit and collect the verified digital receipt, or engage support and complete the custodian handover. The outcome table below describes each path. Keyboard/touch field controls perform the equivalent actions when walking is unavailable.
-9. After the field receiving point confirms handover, record the evidence for that actual outcome as Coordinator and file its completed record. Read the debrief and **Export assessment record**. Rehearse a different published preset, compare the records, then complete and export your final run. Keep both rehearsals as well as the final run.
-10. After playing, assemble the team account, presentation, individual defences and supporting records under **What you hand over**.
+1. Agree the four responsibilities below. Open **Operation Last Light** and choose the scenario and declared objective for a new trial. Inspect the mission console. A resumed record preserves its original intention.
+2. As Coordinator, preserve Version 1 at **Dispatch**: objective, necessary evidence, tests you can omit with reasons, responsibilities and a condition that would change the plan.
+3. Decide your investigation order. Read the outcome requirements below; use the role tools and labelled areas to find relevant evidence. **Locate this objective** is optional control help. It identifies an area without moving you or supplying a solution.
+4. Compare the actual findings against the intended operation. Request information from other roles and test consequential dependencies. Preserve a separate revision explaining a changed decision or a tested assumption; do not rewrite Version 1.
+5. Select **Approach to perform**. The journal changes to the requirements of that approach. At Dispatch, perform its physical release/transport, verified transmission or stationary-support handover. Keyboard/touch field buttons provide the equivalent path when walking is unavailable.
+6. After the receiving point confirms the operation, record the applicable outcome evidence. Explain the scope of your checks, a credible alternative and the remaining obligation. File that outcome, read the debrief and export it.
+7. Keep two contrasting rehearsal records using different presets, then a final run. At least one rehearsal must pursue a different approach so your comparison tests a real change of dependencies, not only renamed data. Assemble the account and individual defences after playing.
 
 **You are finished when:** the final run has a justified resolution and debrief, both contrasting rehearsals are preserved, and the entire submission bundle is ready. A different ending can be defensible; explain how it meets the objective or why that objective changed.
 
@@ -73,15 +71,25 @@ Roles distribute responsibility without making understanding exclusive. Every st
 
 ## How the skills become one operation
 
-The mission has a dependency chain: **signed source → verified archive profile → cradle configuration → supported route and handoff → performed intervention and handover → evidence for the selected ending**. The Investigator's finding changes the Systems Specialist's equipment choice; that test supports the Navigator's route and the Coordinator's handover.
+There is a shared foundation: **identity and current authority → evidence supporting an objective → coordinated action → observed consequence → accountable handover**. The exact equipment chain depends on the objective.
 
-The arrival manifest and map also differ from A1. Read the supplied records again rather than copying an earlier answer. If a source selection or equipment setting changes, dependent checks reopen. Recheck them against the new state and preserve the earlier plan.
+| Approach | Necessary capabilities | Checks that need not be repeated |
+| --- | --- | --- |
+| Physical recovery | Identity/source, original-preserving agreement, map orientation, matched cradle, viable route, precise handoff and revision. Upper/Lift also need restored power; Service is independent. | A digital access-policy repair is not needed to transport the sealed original. Recall is optional. |
+| Digital recovery | Identity/source, measured and verified transmission supply, permitted access, precise handoff, receiving receipt, preservation arrangement and revision. | No transport map, cradle release or transport-route test. |
+| Stabilisation | Identity/source, matched support, measured and verified continuing supply, named custodian, precise handoff, stable indicator, monitoring responsibility and revision. | No removal route or digital-transmission permission check. |
 
-All eleven common capability checks establish the tested conditions needed to operate the station. They do not establish understanding by themselves or move the archive. The field operation then performs the chosen intervention and handover. Its action trace supports the final evidence record. Completing fields establishes a traceable practice record; your marker still judges the quality of your explanation.
+The compact mission’s Power bay provides one combined supply-and-fuse measurement, replacement and load verification. It does not offer an independent choice of diagnostic probes. When power supports your chosen outcome, cite the relevant Lab 5 diagnosis record to explain your testing method and distinguish that prior learning from the narrower check performed here.
+
+Use all four roles to question the proposed scope. For example, the Navigator can audit whether leaving the original in place really removes a transport dependency; the Investigator can challenge whether a correct receipt proves enough. Different numbers of controls do not mean different marking standards: every approach must defend its evidence, alternative and consequences.
+
+The journal records objective-specific conditions. It does not grade the written justification or prove that omitted checks were wise. Your marker examines that reasoning. Earlier labs and assessments already establish capabilities that a particular final approach does not require.
+
+If evidence, supporting equipment or the objective changes, recheck its dependent actions. Unrelated equipment changes do not invalidate a supported digital receipt. Previous runs remain historical records; export them before beginning a new rehearsal.
 
 ## Mission and resolutions
 
-Inspect the arrival scene, restore equipment, investigate copies, agree handling, navigate the maintenance area and respond to a published disruption. Then choose a justified resolution:
+Choose an objective, investigate its requirements and respond to a published disruption. The field operation must produce the consequence you claim:
 
 | Resolution | Perform it, then record the evidence at Dispatch |
 | --- | --- |
@@ -89,13 +97,13 @@ Inspect the arrival scene, restore equipment, investigate copies, agree handling
 | **Digital recovery** | Transmit the verified profile at the terminal, collect its receiving receipt, check the receiving-terminal checksum and complete the receiving acknowledgement. Then name the recipient, enter that receipt code, record where the original remains and confirm its preservation. In your account, explain what matching the signed reference proves and what it does not prove. |
 | **Stabilisation and handover** | Engage the support hold, collect the handover packet, inspect the stability indicator and read back the custodian handover before delivering it. The original stays supported. Then name the responsible recipient, record the original's location, confirm the stable state and explain a remaining limitation or obligation. Include the next action in the team account. |
 
-A record for one ending does not authorise another. If you change the ending or a dependent check, review and record the applicable evidence again.
+For every ending, record why its checks were necessary, which could be omitted and why, a credible alternative and a remaining obligation. Stabilisation additionally needs a named monitoring responsibility and an escalation condition. A record for one ending does not authorise another. If you change the ending or a dependent check, review and record the applicable evidence again.
 
 No ending is automatically worth more marks. A resolution must meet the objective the team actually claims. If the objective changes, record and defend the change.
 
 ## What you hand over
 
-- Two contrasting rehearsal records using different published presets.
+- Two contrasting rehearsal records using different published presets and different approaches.
 - A final mission run with performed intervention, ordered checkpoints and receiving handover, its outcome-specific evidence record and its evidence-linked debrief.
 - The original team plan and a preserved revision.
 - A role agreement and contribution record.
@@ -123,7 +131,7 @@ Feedback is scheduled within seven days. The standard 48-hour extension cannot m
 
 ### Integration — 25%
 
-- **Outstanding:** Selects and combines relevant capabilities in the unfamiliar mission, verifying all claimed resolution requirements.
+- **Outstanding:** Selects and combines relevant capabilities, justifies omissions, verifies the claimed resolution and compares a credible alternative.
 - **Competent:** Combines the major capabilities with minor gaps in verification.
 - **Developing:** Weekly skills appear separately but their mission dependencies are weak.
 - **Insufficient:** The mission account does not demonstrate the required integrated capability.

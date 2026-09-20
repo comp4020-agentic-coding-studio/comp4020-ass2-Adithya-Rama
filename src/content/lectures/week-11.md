@@ -1,6 +1,6 @@
 ---
 title: "When the Plan Breaks"
-description: "Preserve a working plan, diagnose a disruption and coordinate a justified revision."
+description: "Identify dependencies invalidated by disruption, retain supported decisions and rehearse a revision without overwriting the original."
 week: 11
 learningOutcomes: ["LO3","LO4","LO5","LO6"]
 skillIds: ["LO3","LO4","LO5","LO6"]
@@ -11,22 +11,36 @@ date: 2027-05-17
 related: ["sessions/week-11", "assessments/final-project"]
 ---
 
-> **Your field application — The Route That Failed:** Keep recovery moving after a disruption while preserving the plan that depended on the old condition. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** An agreed plan loses a dependency. Decide what must change, what remains valid and whether the objective is still defensible.
 
 
 > The plan was sensible when you wrote it. The station has changed.
 
 ## What you will learn
 
-- Identify which dependencies a disruption invalidates.
-- Preserve the original plan and explain each consequential revision.
-- Reassign work through an explicit, verified handoff.
+- Classify earlier decisions as retained, requiring retest or invalidated.
+- Compare a minimal revision with an alternative and explain objective changes.
+- Rehearse a replacement, assign responsibility and preserve Version 1.
 
 ## The briefing
 
-Improvisation is disciplined adaptation under changed conditions. It begins by locating the failed dependency: which proposed action required the unavailable tool, route or assumption? Some earlier decisions remain valid; others must be revisited. Rebuilding everything wastes sound work, while changing only the visible symptom can leave hidden dependencies broken.
+### Plans contain conditional promises
 
-Preserve a baseline before receiving the disruption. A revision record should connect the new evidence to the changed action, role, verification and consequence. Team coordination matters because a technically correct change can fail if another role continues executing the old plan. Use an explicit handoff and read-back. Disagreement is useful when it exposes a constraint; record how it was resolved rather than describing the team as automatically unanimous.
+“Use the east passage” assumes it is available and suitable. Make such conditions explicit. A dependency connects a required finding or resource to a later action. Follow that link when conditions change instead of immediately rewriting the whole plan.
+
+Classify earlier decisions as retained, requiring retest or invalidated. A passage closure does not automatically invalidate a source comparison. An amended source can invalidate a load calculation even when the passage stays open. Follow the reason rather than the step's position in a list.
+
+### Preserve history and choose a response
+
+Version 1 records what made sense under its own evidence. Keep it intact. Version 2 identifies new evidence, affected decisions, retained decisions, replacement checks, owners and acknowledgement. Compare a minimal revision with a more substantial alternative.
+
+Supplied readings can support planning when a meter is unavailable, but they are not your personal measurements. Record their provenance and verification limits. If those limits defeat a required assurance, defer the action or change the objective.
+
+### Rehearse and coordinate
+
+Test the replacement before committing. Name the observation that would stop the action. Obtain read-back from whoever receives changed responsibility; a plan in one notebook is not yet shared.
+
+The browser checks the published replacement condition and preserves versions. A facilitator judges the explanation linking choice to evidence. Prose length and a successful animation cannot establish that reasoning.
 
 ## Worked example · a different scenario
 
@@ -55,6 +69,6 @@ Bring one earlier diagnostic record and one communication record (15 minutes). R
 
 ## What happens next
 
-Respond to Meridian's changed equipment or evidence while keeping responsibility and verification clear. The lab produces **revised-plan**, which becomes evidence for [the connected assessment](/assessments/final-project/).
+The final project needs a reasoned change between contrasting rehearsals. Explain why its chosen objective remains feasible or why the team deliberately revises it.
 
-[Open this week's lab](/sessions/week-11/) · [Download the campus pack](/campus/week-11.md) · [Explore the academy](/academy/)
+Keep **revised-plan** from [this week's lab](/sessions/week-11/). [Download the campus pack](/campus/week-11.md).

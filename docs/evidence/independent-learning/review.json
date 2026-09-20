@@ -1,0 +1,222 @@
+{
+  "capturedAt": "2026-09-20T18:37:43.684Z",
+  "results": [
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "observation",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "diagnosis",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "negotiation",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "example",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "observation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "diagnosis",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "negotiation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "example",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "observation",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "diagnosis",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "negotiation",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "example",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "observation",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "diagnosis",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "negotiation",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "example",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

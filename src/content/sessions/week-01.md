@@ -1,6 +1,6 @@
 ---
 title: "Read the Room"
-description: "Inspect a furnished scene, reconstruct what was present and distinguish observations from interpretations."
+description: "Distinguish visible facts, reported claims and explanations, then choose an inspection that tests a proposed explanation."
 week: 1
 learningOutcomes: ["LO1"]
 skillIds: ["LO1"]
@@ -24,25 +24,23 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation Silent Gallery.** Give Control a reliable account of the gallery before its recovery team enters.
+**Your task:** A gallery report calls the room abandoned. Establish what the evidence supports before the academy acts on that description.
 
-An urgent message says the room was abandoned. Its objects establish conditions, but not who left or why. An unsupported report sends the team after the wrong lead.
+**What you will produce:** Keep two plausible explanations, the inspection you chose, the result that would have changed your mind, and your bounded conclusion. Classification is the beginning of the record, not its whole purpose.
 
-**What you will produce:** A recalled display reading, five classified statements, and a short account of one detail or assumption you corrected.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
-Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Do not memorise the answer key.
+Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Use the definitions to explain your own decisions; consult the optional explanation after an attempt.
 
 Read the [briefing](/lectures/week-01/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-01.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
-- Record specific observable details without silently adding a cause.
-- Separate a missed detail from a remembered detail that was never present.
-- Transfer a deliberate inspection method to a changed scene.
+- Distinguish a directly inspected feature, a reported claim and an inferred explanation.
+- Choose an inspection whose possible results distinguish competing explanations.
+- Revise a bounded conclusion while preserving what remains unknown.
 
 ## Three words you will use
 
@@ -54,27 +52,38 @@ Seeing that a note exists is an observation. The story written on it is the clai
 
 ## Supplied case file and rules
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **PG-01** is the practice-room inventory: clock, cup, door and written account. **PG-02** is the changed inventory for the Skill check and Transfer challenge.
+**PG-01** supplies the practice room; **PG-02** supplies changed rooms and follow-up records. These identifiers are sections of this page and the combined campus pack, not missing downloads.
 
-- Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
-- The explanation that the owner left in a hurry is an inference: the visible objects do not establish intent.
-- Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
-- Transfer: display 14:10; silver flask beside a map; open service hatch; an operator reports a power failure; the open hatch causing it is an inference.
-- Classify three directly supplied scene features as observations, the account's contents as a claim and the proposed explanation as an inference. The existence of a note is itself observable; its content is the claim being classified.
-- Cover the scene to recall its display reading. Reopening it is allowed and should be recorded as assistance.
+- Practice statements: clock 08:20; blue cup beside ledger; door open; note says “I left first”; proposed explanation: the owner left in a hurry.
+- Skill check: clock 09:40; amber cup on shelf; door closed; note says “The sample is intact”; proposed explanation: someone deliberately concealed the sample.
+- Transfer: display 14:10; silver flask beside map; service hatch open; operator reports power failure; proposed explanation: the hatch caused the failure.
+- Classify the five statements by what each asserts. A note's physical presence differs from the account written on it.
+- Choose a follow-up: Practice offers a door/delivery record or another cup-colour inspection; Skill check offers inspection/door records or another cup inspection; Transfer offers outage/hatch timestamps or the map title.
+- Predict which explanations your selected test can distinguish before viewing its result. Select a conclusion no stronger than the returned evidence.
+- Recall and covering the scene are optional. Written observation is an acceptable support.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Read the gallery report; list what ‘abandoned’ would require you to establish. |
+| 10–30 minutes | Inspect the separate example and contrast observation, claim and inference. |
+| 30–60 minutes | Inspect the room; propose two explanations and select a discriminating follow-up. |
+| 60–80 minutes | Analyse the second room independently; exchange reports and find an unsupported conclusion. |
+| 80–105 minutes | Investigate the hatch scene; explain why repeating an inspection may add no evidence. |
+| 105–120 minutes | Compare initial and revised claims; save the record and a remaining question. |
 
 ## In-person lab · preferred route
 
@@ -82,32 +91,32 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Equipment:** A table, printed clock/display cards, cup/flask cards, a ledger/map, open/closed door cards and the supplied written claims. All equipment can be paper.
 
-**Setup:** Print the five scene statements and arrange simple cup, clock and door cards to match them. Conceal the cards for recall. Change the scene using the complete published check/transfer inventories.
+**Setup:** Print the five scene statements and arrange simple cup, clock and door cards to match them. Provide an optional cover for recall; written notes remain valid. Hold the follow-up evidence cards until students choose an inspection. Change the scene using the complete published check/transfer inventories.
 
-**What you do together:** Each student writes independently before pairs compare. The facilitator reveals the printed inventory and asks students to classify their own errors. Do not reward speed or secretly change the scene during inspection.
+**What you do together:** Inspect a staged scene, classify specific statements and propose two explanations. Request a record that can distinguish them, then revise a bounded conclusion. Recall is optional.
 
 The [printable facilitator pack](/campus/week-01.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Select **Practice**. Select each **Inspect…** button for the clock, cup, door and note. Read the detail each inspection reveals; camera movement alone does not record an inspection.
-2. Select **Cover scene and recall**. Enter the time you remember in **HH:MM** format. You may reopen the scene to compare; mention this assistance in your later reflection.
-3. For each statement choose **Observed fact**, **Someone’s claim** or **An inferred explanation**. An observation is a directly visible or measured detail; a claim is somebody’s account; an inference is your explanation of the evidence.
-4. Select **Test this configuration**. Read which part needs attention. Correct that answer and check again; the aim is a supported account, not speed.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** with its changed room, then **Transfer challenge** with the service hatch. Inspect each new scene afresh. An open hatch is visible; a reported power failure is a claim; saying the hatch caused the failure needs further evidence.
-6. After playing, compare your attempts and write the observation record. Explain one remembered detail and one distinction between fact and explanation.
+1. Select **Practice**. Use each **Inspect…** control for the clock, cup, door and note; camera movement alone does not record inspection.
+2. Classify each statement as **Observed fact**, **Someone’s claim** or **An inferred explanation**. You may keep the scene visible; recall is optional.
+3. Read the competing explanations. Choose a **Follow-up investigation** and state what its possible results could establish before selecting **Run selected investigation**.
+4. Read the returned record and answer **What does the new evidence support?**. Preserve what remains unresolved; do not claim the record proves motive or identity when it does not.
+5. Select **Test this configuration**, read the feedback and save with **Record attempt in skills passport** before changing phases. The field extension is optional.
+6. Repeat in **Skill check** and **Transfer challenge**. Each changes the explanation and available investigation; choose afresh. Afterwards compare the evidence that changed your view.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Transmit the verified scene report**. The scene and mission record now show the consequence: Control receives an evidence-labelled report and clears the investigation entrance. Unverified explanations remain unresolved.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Transmit the verified scene report**. The scene and mission record now show the consequence: Control receives an evidence-labelled report and clears the investigation entrance. Unverified explanations remain unresolved.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm Control received the report** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm Control received the report** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -117,21 +126,32 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**observation-record** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**observation-record**
 
-Use the arrival scene to notice changed equipment before committing the team to a route.
+Keep two plausible explanations, the inspection you chose, the result that would have changed your mind, and your bounded conclusion. Classification is the beginning of the record, not its whole purpose.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A1 uses this method to choose which workshop condition needs investigation. The final project uses it to keep an arrival impression from becoming an unsupported operating assumption.
 
 ## Feedback and explanation
 
-Three supplied scene details are observations, the account is a claim and the proposed cause is an inference. The exact display reading is a separate recall check. The classification depends on what is asserted, not whether you personally believe it.
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+Classification applies to each assertion, not whether you believe its speaker. A discriminating follow-up can weaken an explanation without proving another. A record consistent with delivery does not identify the person; an earlier outage cannot be caused by a later hatch opening under these supplied timings. Optional recall is not the completion condition.
 
 **Worked reflection from the separate demonstration:** I recorded 11:35, the green mug and the closed hatch. I kept ‘I checked every tray’ as the note author's claim. My thirty-five-minute duration estimate lacked a start time. The later 11:50 reading and open hatch showed changes, not who caused them.
 
 [Inspect this example's complete record](/demonstrations/lab-01/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep two plausible explanations, the inspection you chose, the result that would have changed your mind, and your bounded conclusion. Classification is the beginning of the record, not its whole purpose.
 
 ## Closing reflection
 

@@ -2,7 +2,7 @@ import type {Demonstration, DemoValue, DemoFrame} from "../lib/demonstration-typ
 import {getDemoWalkthrough} from "../data/demonstration-walkthroughs";
 import {createDemoNarrator,speechAvailable} from "../lib/demo-speech";
 import {createDemoProgress,checkDemoStep,applyDemoAttempt,advanceDemo,demoCoaching,useDemoHint,setDemoMode,markDemoWatched,assertDemo,demoExpectedResponses} from "../lib/demonstration-engine";
-import {getDemoOperation,createDemoFieldRun,recordDemoFieldProof,applyDemoFieldAction} from "../data/demo-operations";
+import {demoNeedsHandover,demoLearningComplete,getDemoOperation,createDemoFieldRun,recordDemoFieldProof,applyDemoFieldAction} from "../data/demo-operations";
 import type {FieldOperationAction} from "../lib/field-operation";
 import {renderFieldOperation,broadcastFieldOperation,requestFieldOperation} from "./field-operation-view";
 
@@ -17,6 +17,7 @@ function mount(root:HTMLElement){
  let responses:Record<string,DemoValue>={};const cached=new Map<string,Record<string,DemoValue>>();
  type WalkPhase="introduction"|"briefing"|"action"|"outcome"|"field-action"|"field-result"|"completion";
  const walkthrough=getDemoWalkthrough(demo);
+ const fieldRequired=demoNeedsHandover(demo);
  const operation=getDemoOperation(demo),fieldScope="demo:"+demo.id;
  const fieldRuns={watch:createDemoFieldRun(demo),control:createDemoFieldRun(demo)};
  let fieldIndex=0,fieldResult="";
@@ -25,7 +26,7 @@ function mount(root:HTMLElement){
  function renderField(){
   renderFieldOperation(root,operation,fieldRun().field,action=>dispatchField(action));
   if(progress.mode==="watch")root.querySelectorAll<HTMLButtonElement>("[data-field-operation] button").forEach(button=>button.disabled=true);
-  el("[data-demo-field-proof]").textContent=(progress.mode==="watch"?"Demonstrator":"Your practice")+": "+fieldRun().verifiedSteps.length+" / "+demo.steps.length+" chapter checks support this operation. "+(progress.mode==="watch"?"Watch performs the same station actions after every required check.":"After all chapter checks, perform the intervention, collect the package and follow its handover route.")+" Watching and your own operation remain separate.";
+  el("[data-demo-field-proof]").textContent=(progress.mode==="watch"?"Demonstrator":"Your practice")+": "+fieldRun().verifiedSteps.length+" / "+demo.steps.length+" chapter checks support this operation. "+(!fieldRequired?"The core learning record is complete when the chapter checks are complete. Scene delivery is optional.":progress.mode==="watch"?"Watch performs the same station actions after every required check.":"After all chapter checks, perform the intervention, collect the package and follow its handover route.")+" Watching and your own operation remain separate.";
  }
  function dispatchField(action:FieldOperationAction,playback=false){
   if(progress.mode==="watch"&&!playback){announce("Take control to operate the mission stations. Watching never completes your own operation.");return false;}
@@ -77,7 +78,7 @@ function mount(root:HTMLElement){
   if(phase==="introduction")return walkthrough.introduction;
   if(phase==="field-action")return walkthrough.fieldActions[fieldIndex]!.intention;
   if(phase==="field-result")return fieldResult;
-  if(phase==="completion")return (fieldRuns.watch.field.delivered?"The demonstrated field operation has been completed through its recorded station actions. ":"Completion preview: this visit has not completed the full demonstrated field operation. The following is the authored finished example, not a receipt for actions performed in this visit. ")+walkthrough.completion;
+  if(phase==="completion")return (demoLearningComplete(demo,fieldRuns.watch)?(fieldRequired?"The demonstrated field operation has been completed through its recorded station actions. ":"The demonstrated investigation and explained record are complete. The delivery extension is optional. "):"Completion preview: this visit has not completed the full demonstrated field operation. The following is the authored finished example, not a receipt for actions performed in this visit. ")+walkthrough.completion;
   return walkthrough.steps[step().id]![phase];
  }
  const phaseNames:Record<WalkPhase,string>={introduction:"Before we begin",briefing:"What I need to do",action:"Watch my actions",outcome:"What I observed","field-action":"Perform the mission action","field-result":"Observe its consequence",completion:"My observations and finished submission"};
@@ -118,6 +119,7 @@ function mount(root:HTMLElement){
  function advanceSegment(){
   if(!playing)return;
   if(phase==="introduction"){
+   if(!fieldRequired){introSeen=true;phase="briefing";renderStep();segment();return;}
    const token=segmentVersion;
    requestFieldOperation(fieldScope,{type:"inspect"},()=>{
     if(!playing||token!==segmentVersion||progress.mode!=="watch")return;
@@ -129,7 +131,7 @@ function mount(root:HTMLElement){
   else if(phase==="action"){phase="outcome";showOutcome(true);}
   else if(phase==="outcome"){
    if(progress.stepIndex<demo.steps.length-1){progress=advanceDemo(demo,progress);phase="briefing";renderStep();}
-   else if(fieldRun().field.verified){fieldIndex=0;phase="field-action";}
+   else if(fieldRequired&&fieldRun().field.verified){fieldIndex=0;phase="field-action";}
    else{phase="completion";el<HTMLDetailsElement>(".demo-finished details").open=true;}
   }else if(phase==="field-action"){
    const token=segmentVersion,action=walkthrough.fieldActions[fieldIndex]!.action;
@@ -148,7 +150,7 @@ function mount(root:HTMLElement){
    else{phase="completion";el<HTMLDetailsElement>(".demo-finished details").open=true;}
   }else{
    finished=true;elapsed=duration();stop();el("[data-demo-progress-bar]").style.width="100%";
-   announce(fieldRuns.watch.field.delivered?"The narrated mission and its handover are complete. The worked submission is open below; take control for a separate practice run.":"Chapter preview finished. The authored submission is open, but this visit has not performed every chapter and mission action. Replay from the introduction for the complete operation.");return;
+   announce(demoLearningComplete(demo,fieldRuns.watch)?"The narrated worked example is complete. The finished learning record is open below; take control for a separate practice run.":"Chapter preview finished. The authored submission is open, but this visit has not performed every chapter and mission action. Replay from the introduction for the complete operation.");return;
   }
   segment();
  }
@@ -306,7 +308,7 @@ function mount(root:HTMLElement){
   fieldRuns.control=recordDemoFieldProof(demo,fieldRuns.control,step().id,result.correct);sendField();
   feedback.textContent=result.feedback;feedback.dataset.correct=String(result.correct);
   inputs.querySelectorAll<HTMLElement>("[data-demo-field]").forEach(field=>{const correct=result.fields[field.dataset.demoField!];field.querySelector("input,select")?.setAttribute("aria-invalid",String(correct===false));});
-  if(result.correct){elapsed=duration();showOutcome();announce(progress.completed?"Every chapter check now supports your operation. Return to the mission station, perform the intervention, then collect and deliver its package before your debrief.":"Decision demonstrated. Read the result, then continue when ready.");}
+  if(result.correct){elapsed=duration();showOutcome();announce(progress.completed?(fieldRequired?"Every chapter check now supports your operation. Return to the mission station, perform the intervention, then collect and deliver its package before your debrief.":"Your investigation checks are complete. Read the finished example, explain the method and export your learning record. Scene delivery is an optional extension."):"Decision demonstrated. Read the result, then continue when ready.");}
   else{
    shownAfter=false;sendFrame();
    if(coaching==="guided"&&(progress.attempts[step().id]?.attempts??0)>=2)showHint();
@@ -329,7 +331,7 @@ function mount(root:HTMLElement){
   const lines=["# My worked-example practice: "+demo.title,"","This record is demonstration practice, separate from the assigned task and skills passport.","",coach.summary,coach.nextFocus,"","## Chapter record"];
   for(const chapter of demo.steps){const attempt=progress.attempts[chapter.id];lines.push("","### "+chapter.title,"Observed: "+(progress.watched?.includes(chapter.id)?"yes":"no"),"Practised successfully: "+(attempt?.completed?"yes":"no"),"Attempts: "+(attempt?.attempts??0)+"; hints shown: "+(attempt?.hints??0));if(attempt?.lastFeedback)lines.push(attempt.lastFeedback);}
   for(const mode of ["control","watch"] as const){
-   const run=fieldRuns[mode];lines.push("","## "+(mode==="control"?"My performed operation":"Demonstrator operation"),"Verified chapters: "+run.verifiedSteps.length+" / "+demo.steps.length,"Handover complete: "+(run.field.delivered?"yes":"no"),...run.field.log.map(line=>"- "+line));
+   const run=fieldRuns[mode];lines.push("","## "+(mode==="control"?"My performed operation":"Demonstrator operation"),"Verified chapters: "+run.verifiedSteps.length+" / "+demo.steps.length,"Handover "+(fieldRequired?"required":"optional extension")+"; completed: "+(run.field.delivered?"yes":"no"),...run.field.log.map(line=>"- "+line));
   }
   lines.push("","## Transfer",demo.transfer);download(demo.id+"-my-practice.md",lines.join("\n"));
  });

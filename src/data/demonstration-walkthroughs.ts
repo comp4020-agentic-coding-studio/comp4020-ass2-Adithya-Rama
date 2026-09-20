@@ -1,6 +1,6 @@
 import type {Demonstration, DemoControl} from "../lib/demonstration-types";
 import type {FieldOperationAction} from "../lib/field-operation";
-import {getDemoOperation,demoFieldActions} from "./demo-operations";
+import {getDemoOperation,demoFieldActions,demoNeedsHandover} from "./demo-operations";
 
 /** Authored voice of the example learner. Exact settings come from the same
  * controls as the scene and transcript, so spoken answers cannot drift. */
@@ -230,9 +230,9 @@ export function getDemoWalkthrough(demo:Demonstration):DemoWalkthrough {
  const script=scripts[demo.id];
  if(!script)throw new Error("Missing worked-example narration: "+demo.id);
  return {
-  introduction:script.task+" Our field objective is: "+getDemoOperation(demo).objective+" "+getDemoOperation(demo).problem+" I inspect the mission station, investigate each dependency, then perform the intervention and handover. You can pause, mute, replay, or take control at any point. The captions show the same explanation.",
+  introduction:script.task+" The method we are practising is: "+(demo.method??demo.skill)+". Our field objective is: "+getDemoOperation(demo).objective+" "+getDemoOperation(demo).problem+(demoNeedsHandover(demo)?" I will perform the supported intervention and handover.":" The investigation and explained record complete this lesson. A scene delivery is an optional extension.")+" You can pause, mute, replay, or take control at any point. The captions show the same explanation.",
   fieldActions:demoFieldActions(demo).map(action=>({action,intention:describeFieldAction(demo,action)})),
-  completion:script.conclusion+' Open "Read the finished work" or download the complete example to inspect the evidence and explanation together. '+demo.transfer,
+  completion:script.conclusion+" "+(demo.method??"")+" "+' Open "Read the finished work" or download the complete example to inspect the evidence and explanation together. '+demo.transfer,
   steps:Object.fromEntries(demo.steps.map((step,index)=>{
    const intention=script.intentions[step.id];
    if(!intention)throw new Error("Missing narrated intention: "+demo.id+"/"+step.id);

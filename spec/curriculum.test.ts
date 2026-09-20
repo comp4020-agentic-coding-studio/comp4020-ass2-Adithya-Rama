@@ -83,7 +83,7 @@ describe("the published skills academy contract",()=>{
  it("requires preservation at the disruption rehearsal and accumulated evidence in the final",()=>{
   const w11=nodes("sessions").find(n=>n.meta.week===11)!;expect(w11.meta.disruption).toBe("IM-02");expect(w11.meta.preserves).toBe("original-plan");
   const final=api.nodes.find(n=>n.id==="assessments/final-project")!;
-  expect(final.meta.requires).toEqual(weeks.slice(0,11).map(w=>w.output));expect(final.meta.requiresRevision).toBe(true);
+  expect(final.meta.drawsOn).toEqual(weeks.slice(0,11).map(w=>w.output));expect(final.meta.requires).toEqual(["observation-record","evidence-timeline","handoff-agreement","revised-plan"]);expect(final.meta.requiresRevision).toBe(true);
   const finalText=source(final.id);for(const resolution of ["Physical recovery","Digital recovery","Stabilisation and handover"])expect(finalText).toContain(resolution);
  });
  it("publishes and links a fourteen-slide permissions deck with notes and HTML summary",()=>{

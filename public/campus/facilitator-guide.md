@@ -34,3 +34,8 @@ Never add secret decisive evidence, silently change rules or imply the construct
 - [Circuit and sensor grid](./circuit-sensor-sheet.svg)
 
 The SVG sheets use A4 millimetres and include a 50 mm print-scale line. Cut lines are dashed; use the supplied coordinate/rule sheets to operate the model. Paper ratio wheels are deliberately labelled as manually operated aids, not working transmission gears.
+
+
+## Facilitate independent reasoning
+
+Begin with the stated question and the model rules. Ask students to predict what competing explanations imply before choosing a test. Keep worked solutions and facilitator explanations separate from the initial student brief; all required evidence remains available. Gradually withdraw suggested sequences, not accessible controls or help. Use the distinct timings in each weekly pack. Investigation, comparison and negotiation records are valid endpoints; require a delivery only where the task calls for one. During the final project, ask why a check is needed for the selected approach and what omission would leave a genuine dependency unsupported. Do not require every earlier station to be repeated.

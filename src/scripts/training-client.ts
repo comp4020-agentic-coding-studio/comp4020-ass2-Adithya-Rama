@@ -1,5 +1,6 @@
+import { observationInvestigations, memoryMethods, memoryContexts, routeObjectives } from '../lib/training-challenges';
 import {
-  applyTraining, applyTrainingField, trainingMissionComplete, archiveFiles, councilClaims, createTraining, handoffTarget, loci, mechanismConfig,
+  applyTraining, applyTrainingField, trainingMissionComplete, labRequiresEnactment, archiveFiles, councilClaims, createTraining, handoffTarget, loci, mechanismConfig,
   memoryItems, observationFacts, phases, policyActions, policyRoles, rotatedPorts, sensorCells,
   spatialTarget, validTraining, type TrainingAction, type TrainingPhase, type Value,
 } from '../lib/training-engine';
@@ -56,7 +57,7 @@ function mount(root:HTMLElement) {
     after.dataset.ready=String(trainingMissionComplete(state));
     const afterMessage=root.querySelector<HTMLElement>('[data-lab-after-message]')!;
     afterMessage.textContent=trainingMissionComplete(state)
-      ? 'The mission consequence and receiver acknowledgement are recorded. Now explain your attempt and save it before changing phase. Mention any scene reopening, examples or hints you used.'
+      ? (labRequiresEnactment(week)?'The practical consequence and receiver acknowledgement are recorded.':'The practical investigation, experiment or agreement is recorded. The field extension remains optional.')+' Now explain and save the attempt before changing phase. Disclose examples, hints and reopened evidence.'
       : 'Finish the practical attempt first. Then record what you noticed, what changed and any help you used. You can also preserve an unfinished attempt.';
   }
   const coach=node('aside',undefined,'training-coaching');
@@ -77,12 +78,7 @@ function mount(root:HTMLElement) {
     else if(checksThisPhase>0){
       next='Use the specific feedback above to revise one choice, then test again. Compare the new result with the previous attempt.';
       if(week===4){
-        const target=mechanismConfig(state.phase);
-        next=v.interlock?'Your interlock is still engaged. Release it before trying to reposition the cam; changing gears cannot remove this obstruction.':
-         !v.spring?'The return spring is missing in your current setup. Attach it and check the cam before applying another input turn.':
-         Number(v.cam)!==target.cam?'Your cam is at '+v.cam+'°, while this configuration requires '+target.cam+'°. Reposition it, then test the movement.':
-         Math.abs(target.driver/Number(v.gear)*target.inputTurns-target.targetTurns)>.001?'Your '+v.gear+'-tooth follower does not produce the required '+target.targetTurns+' turns. Recalculate the ratio from '+target.driver+' driver teeth and '+target.inputTurns+' input turns.':
-         'The mechanism now has the required ratio and support conditions. Check your direction prediction, then turn it once more to verify.';
+        next=v.diagnosed?'A diagnosis is recorded. Compare the correction with the required output; preserve both the original observation and the result.':'Choose an inspection that distinguishes the possible faults. Record your diagnosis before adjusting the apparatus. A correct final setting alone cannot establish the initial cause.';
       }
       if(week===5){
         const poweredReadings=state.actions.filter(a=>a.startsWith('Measured ')&&a.includes('(power on)'));
@@ -102,7 +98,7 @@ function mount(root:HTMLElement) {
           'Your current matrix matches the mandate. Run the complete check to verify both allowed and forbidden actions.';
       }
       if(week===10)next=Number(v.position)!==4?'Your route currently ends at row '+(Math.floor(Number(v.position)/5)+1)+', column '+(Number(v.position)%5+1)+'. Continue or revise it toward row 1, column 5 before comparing contacts.':
-        'You reached the destination with '+v.detected+' recorded sensor contacts. Compare that count with your prediction, and locate the first entry your prediction missed.';
+        'You reached the destination with '+v.detected+' recorded contacts. Check the chosen objective and compare the prediction recorded before moving. Rewind to test a revised objective or prediction.';
     }
     coachNext.textContent=next;
   }
@@ -112,7 +108,7 @@ function mount(root:HTMLElement) {
   };
   const sync=()=>{
     feedback.textContent=state.feedback;
-    result.textContent=trainingMissionComplete(state)?'Mission accomplished':state.complete?'Skill verified · enact your mission intervention':'Investigation in progress';
+    result.textContent=trainingMissionComplete(state)?(labRequiresEnactment(week)?'Mission accomplished':'Practical record ready'):state.complete?'Skill verified · enact your mission intervention':'Investigation in progress';
     result.dataset.complete=String(trainingMissionComplete(state));
     result.dataset.skillVerified=String(state.complete);
     trace.replaceChildren(...state.actions.slice(-16).map(a=>node('li',a)));
@@ -129,7 +125,7 @@ function mount(root:HTMLElement) {
   const select=(title:string,key:string,options:{value:string;label:string}[],parent:HTMLElement=bench)=>{
     const label=node('label',title);const input=node('select');input.name=key;input.id='training-'+week+'-'+key.replace(':','-');
     label.htmlFor=input.id;for(const o of [{value:'',label:'Choose…'},...options]){const option=node('option',o.label);option.value=o.value;input.append(option);}
-    input.value=String(state.values[key]??'');input.addEventListener('change',()=>{state=applyTraining(state,{type:'set',key,value:input.value});sync();checkpoint();});
+    input.value=String(state.values[key]??'');input.addEventListener('change',()=>{state=applyTraining(state,{type:'set',key,value:input.value});if(key==='memoryMethod'){render();bench.querySelector<HTMLSelectElement>('[name=memoryMethod]')?.focus({preventScroll:true});}sync();checkpoint();});
     parent.append(label,input);return input;
   };
   const field=(title:string,key:string,parent:HTMLElement=bench,multiline=false)=>{
@@ -159,9 +155,15 @@ function mount(root:HTMLElement) {
         const findings=node('div',undefined,'learner-findings');findings.append(node('h4','Your inspection findings'));
         const list=node('ul');observationFacts[phase].filter(fact=>state.inspected.includes(fact.id)).forEach(fact=>list.append(node('li',fact.label)));findings.append(list);f.append(findings);
       }
-      p(v.covered?'The physical scene is covered. Complete your account from memory, then reopen it to compare.':'Inspect each object. A written statement can be directly visible while its claim remains unverified.',f);
-      field('What time did the display show? Use HH:MM.','recall0',f);
+      p(v.covered?'You covered the scene for optional recall. Reopen it whenever needed; this lab assesses evidence and investigation, not memory.':'Inspect each object. A written statement can be visible while its claim remains unverified.',f);
+      field('Optional recall: what time did the display show? Use HH:MM.','recall0',f);
       observationFacts[phase].forEach((fact,i)=>select(i===0?'A report of the display reading':i===1?'A report of the vessel’s position':fact.id==='note'?'The message being asserted: '+fact.label:fact.label,'classification'+i,[{value:'observation',label:'Observed fact'},{value:'claim',label:'Someone’s claim'},{value:'inference',label:'An inferred explanation'}],f));
+      const investigation=observationInvestigations[phase];const followup=group('Test an explanation');p(investigation.question,followup);
+      select('Choose a follow-up investigation','followup',investigation.tests.map(t=>({value:t.id,label:t.label})),followup);
+      button('Run selected investigation',{type:'investigate'},followup);
+      investigation.tests.filter(t=>state.inspected.includes('investigation:'+t.id)).forEach(t=>p(t.result,followup));
+      select('What does the new evidence support?','conclusion',investigation.conclusions.map(c=>({value:c.id,label:c.label})),followup);
+
     }
     if(week===2){
       const f=group(v.covered?'Retrieve along your route':'Encode four associations');
@@ -172,7 +174,14 @@ function mount(root:HTMLElement) {
       });
       button('Walk to next location',{type:'inspect'},f);button(v.covered?'Review associations':'Cover list and retrieve',{type:'cover'},f);
       if(v.covered)loci.forEach((place,i)=>field('Recall the item at '+place,'recall'+i,f));
-      p('Enter each item name. The check ignores letter case and spaces at the ends. Try unaided, then review; record both attempts in your reflection.',f);
+      select('Retrieval method for this trial','memoryMethod',memoryMethods.map(method=>({value:method,label:method==='unaided'?'Unaided attempt (disclose previous exposure)':method==='loci'?'Location cues':'Written notes'})),f);
+      if(v.covered&&v.memoryMethod==='notes')p('Written record available in this condition: '+memoryItems[phase].join(' → ')+'.',f);
+      button('Record retrieval trial',{type:'recall-trial'},f);
+      p('Record one trial per method. Accuracy is evidence to compare, not a pass requirement. You have seen the items before; this is practice, not a controlled experiment.',f);
+      readout(memoryMethods.map(method=>[method+' trial',typeof v['score-'+method]==='number'?v['score-'+method]+'/4':'Not recorded']));
+      p('Use context: '+memoryContexts[phase]);
+      select('Which strategy suits this use?','memoryStrategy',[{value:'loci',label:'Location cues for temporary recall'},{value:'notes',label:'A durable written record'},{value:'combined',label:'Temporary cues plus a written record for reconciliation'}]);
+
     }
     if(week===3){
       const target=spatialTarget(phase);
@@ -187,7 +196,12 @@ function mount(root:HTMLElement) {
     if(week===4){
       const c=mechanismConfig(phase);
       p('Training mechanism: a '+c.driver+'-tooth driver turns '+c.inputTurns+' times. Produce exactly '+c.targetTurns+' output turns with the cam at '+c.cam+'°. Meshed gears turn oppositely. Output = driver teeth ÷ driven teeth × input turns.');
-      readout([['Driven gear',v.gear+' teeth'],['Cam',v.cam+'°'],['Interlock',v.interlock?'Engaged':'Released'],['Spring',v.spring?'Attached':'Detached'],['Observed output',v.turns+' turns']]);
+      const probe=group('Investigate before changing the apparatus');
+      for(const [key,label] of [['interlock','holding brake'],['spring','return spring'],['cam','cam datum'],['ratio','gear tooth counts']])button('Inspect '+label,{type:'probe',key},probe);
+      p('The crank symptom could arise from different faults. Choose a discriminating inspection and record the diagnosis before changing anything.',probe);
+      select('Diagnosis of the original fault','diagnosis',[{value:'interlock',label:'Holding brake prevents movement'},{value:'spring',label:'Missing return spring prevents movement'},{value:'cam',label:'Cam datum does not meet the specification'},{value:'ratio',label:'Follower ratio produces the wrong output'}],probe);
+      button('Record diagnosis',{type:'diagnose'},probe);
+      readout([['Driven gear',(state.inspected.includes('probe:ratio')||state.actions.some(a=>a.startsWith('Installed ')))?v.gear+' teeth':'Inspect tooth counts'],['Cam',(state.inspected.includes('probe:cam')||state.actions.some(a=>a.startsWith('Cam set ')))?v.cam+'°':'Inspect datum'],['Brake',(state.inspected.includes('probe:interlock')||state.actions.some(a=>a.startsWith('Interlock ')))?(v.interlock?'Engaged':'Released'):'Inspect brake'],['Spring',(state.inspected.includes('probe:spring')||state.actions.some(a=>a.startsWith('Return spring ')))?(v.spring?'Attached':'Detached'):'Inspect spring'],['Observed output',v.turns+' turns']]);
       const f=group('Manipulate the mechanism');button('Change driven gear (12 → 24 → 36)',{type:'gear'},f);button(v.interlock?'Release interlock':'Engage interlock',{type:'interlock'},f);button('Rotate cam 90°',{type:'cam'},f);button(v.spring?'Detach spring':'Attach return spring',{type:'spring'},f);
       select('Predict output direction relative to the driver','prediction',[{value:'same',label:'Same direction'},{value:'opposite',label:'Opposite direction'}],f);
       button('Turn the crank',{type:'crank'},f);
@@ -198,7 +212,7 @@ function mount(root:HTMLElement) {
       const f=group('Circuit bench');button(v.power?'Isolate power':'Switch on',{type:'power'},f);
       for(const point of ['battery','fuse','cable','lamp'])button('Measure '+point,{type:'measure',key:point},f);
       for(const part of ['fuse','cable','lamp']){button('Test '+part+' continuity',{type:'continuity',key:part},f);button('Replace '+part,{type:'repair',key:part},f);}
-      p('A working lamp alone is insufficient evidence of diagnosis. Your trace should locate the original fault before replacement. Reset this phase to try again.',f);
+      p('Support a supply-break diagnosis with an upstream 6 V and adjacent downstream 0 V reading, or an isolated open continuity result. After repair, measure the lamp supply again and observe light. One zero reading alone leaves the upstream fault unresolved.',f);
     }
     if(week===6){
       p(phase==='transfer'?'Amended signed manifest: deliver the authorised annotated copy, 24 sections, checksum M-99. The source copy remains preserved.':'Signed source manifest: complete archive = 24 sections and checksum M-42. Compare the supplied copies; timestamps provide sequence, not integrity.');
@@ -230,13 +244,22 @@ function mount(root:HTMLElement) {
       p('For pairs: only the active role reads its card; communicate aloud or in a shared note. Solo: switch roles explicitly and check what information changed.');
     }
     if(week===9){
-      p(phase==='transfer'?'Changed mandate: the original’s physical provenance is essential. It must remain stabilised until a supported handover. A digital copy alone is insufficient.':'Mandate: recover a verified usable record, keep the original with its custodian, and document custody. Your role is recovery mediator.');
+      p(phase==='transfer'?'Changed mandate: original provenance must remain traceable; a digital copy alone is insufficient. Negotiate monitored on-site protection or a supported move with the custodian.':phase==='check'?'Mandate: restore service or agree a monitored deferral. The original must remain on site today.':'Mandate: restore service or negotiate a recorded deferral while protecting original provenance. More than one agreement can satisfy the parties.');
       const f=group('Council statements');
       for(const c of councilClaims){const card=node('div',undefined,'training-document');card.append(node('h4',c.speaker),node('p','“'+c.claim+'”'));button('Check '+c.speaker+' against the record',{type:'inspect',key:c.id},card);if(state.inspected.includes(c.id))p(c.record,card);f.append(card);}
-      select('Propose an agreement','proposal',[{value:'copy',label:'Verify a copy and document its handover; preserve the original.'},{value:'original',label:'Take the original immediately on the unsupported cart.'},{value:'stabilise',label:'Stabilise the original and arrange supported, documented handover.'}]);
+      p('Custodian priority: recorded responsibility and original protection. Operator priority: service this shift, or an explicit review. Engineer priority: no unsupported 11-unit load; certified support arrives next shift. Every agreement needs independent comparison with the authoritative record.');
+      select('Propose an agreement','proposal',[{value:'copy',label:'Verify a copy; preserve the original on site'},{value:'stabilise',label:'Monitor the original and defer service until review'},{value:'supported-original',label:'Move the original with certified support and custodian escort'},{value:'original',label:'Take the original now on the unsupported cart'}]);
+      select('Custody terms','custody',[{value:'recorded',label:'Named responsibility and a signed custody record'},{value:'verbal',label:'A verbal promise without a custody record'}]);
+      select('Verification terms','verification',[{value:'independent',label:'Compare with the authoritative record before acceptance'},{value:'trust',label:'Rely on the confident account alone'}]);
+      select('Who accepts the continuing responsibility?','responsibility',[{value:'receiver',label:'Receiver verifies and acknowledges the copy'},{value:'monitor',label:'On-site monitor protects the original and schedules review'},{value:'escort',label:'Custodian escorts the original with the support crew'}]);
+      select('When does this agreement take effect?','timing',[{value:'now',label:'Copy receipt this shift'},{value:'review',label:'Protection now, service decision at scheduled review'},{value:'support',label:'Move next shift when certified support arrives'}]);
+      p('Test the terms to see feasibility and costs. The check cannot decide whether your concessions are fair; explain the trade-off and a feasible alternative in your record.');
+
     }
     if(week===10){
       p('Navigate from row 5, column 1 to row 1, column 5. Bronze cells are visible sensor coverage. Each entry into one records a contact. Predict the total before executing. You can pause after every move.');
+      select('What should this route accomplish?','routeObjective',routeObjectives.map(o=>({value:o.id,label:o.label})));
+      p('Choose before planning. The centre service point is row 3, column 3. Survey contacts are useful evidence; zero contacts are not automatically preferable.');
       const grid=node('div',undefined,'training-grid');grid.setAttribute('role','img');grid.setAttribute('aria-label','Five by five sensor map. Start row 5 column 1, goal row 1 column 5. Sensors at '+sensorCells(phase).map(i=>'row '+(Math.floor(i/5)+1)+' column '+(i%5+1)).join('; '));
       for(let i=0;i<25;i++){const cell=node('span',i===Number(v.position)?'YOU':i===4?'GOAL':sensorCells(phase).includes(i)?'◉':String(i+1));cell.dataset.sensor=String(sensorCells(phase).includes(i));cell.dataset.player=String(i===Number(v.position));grid.append(cell);}bench.append(grid);
       const f=group('Plan and step through your route');for(const dir of ['north','east','south','west'])button('Add '+dir,{type:'route',key:dir},f);
@@ -306,7 +329,7 @@ function mount(root:HTMLElement) {
     window.dispatchEvent(new CustomEvent('mastermind:evidence',{detail}));
     const next=trainingMissionComplete(state)
       ? state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':state.phase==='practice'?'When ready, select Skill check to test your method against its published conditions.':'When ready, select Transfer challenge to try changed conditions.'
-      : 'This record is marked unfinished. Return to Field operation, verify any unresolved equipment, perform the intervention and confirm its receiving handover. Then record the completed attempt before switching phases.';
+      : 'This record is marked unfinished. Complete the remaining evidence checks'+(labRequiresEnactment(week)?' and enact the verified intervention and handover':'')+', then save again before switching phases.';
     saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+next;
   });
   const hintButton=root.querySelector<HTMLButtonElement>('[data-training-hint]')!;hintButton.disabled=false;
@@ -334,10 +357,10 @@ function mount(root:HTMLElement) {
     if(!Array.isArray(records))return;
     const saved=event.detail.drafts?.[String(week)]??[...records].reverse().find((r)=>r&&typeof r==='object'&&'week' in r&&(r as {week:number}).week===week) as {state?:unknown;reflection?:string}|undefined;
     if(saved&&validTraining(saved.state,week)){state=saved.state;
-      if(!state.field){
+      if(!state.field||state.learningVersion!==2){
         const restored=createTraining(week,state.phase);
-        state={...restored,...state,values:{...restored.values,...state.values},complete:false,field:restored.field};
-        state.feedback='Historical skill record restored. Recheck the equipment and complete the new mission intervention; earlier evidence remains in your passport.';
+        state={...restored,feedback:state.feedback};
+        state.feedback='Your earlier work remains in this passport and is archived automatically before a current checkpoint or record replaces it. This attempt starts with the revised investigation requirements; the earlier check does not complete them.';
       }
       reflection.value=typeof saved.reflection==='string'?saved.reflection:'';restoreApplied=true;render();sync();saveStatus.textContent='Restored your most recently recorded attempt for this week.';}
   }) as EventListener);

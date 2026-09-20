@@ -10,6 +10,10 @@ Scenario / route / attempt date:
 
 ## Evidence and initial prediction
 
+## Independent test selection
+
+Which explanations were plausible? Which test did you choose, what did you predict, and what would have contradicted your explanation? Compare memory with an external record and justify the aid you used.
+
 ## Practical record
 
 Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
@@ -35,6 +39,7 @@ Follow the word guidance and deliverables in the published brief.
 ## What you hand over
 
 - The exported trial record, or equivalent campus event record.
+- Supporting Labs 1–4 records: statement classifications and follow-up investigation; comparison of unaided recall, location cues and written notes; connector directions and level; mechanism diagnosis and checks. Include at least one labelled changed-condition attempt and declare assistance.
 - A causal model linking input, gear, cam, spring, interlock and output.
 - **350–500 words** explaining two consequential decisions and one changed-situation response.
 - One failed prediction or limitation, with the evidence that revealed it.

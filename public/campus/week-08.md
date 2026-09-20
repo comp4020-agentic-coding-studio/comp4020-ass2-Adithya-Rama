@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Pass an exact instruction between role views and use read-back to catch a misunderstanding.
+## The task
 
-## Field operation — Across the Divide
+Two competent people hold different dispatch information. Establish a shared, acknowledged instruction before acting.
 
-**Objective:** Get the correct sealed batch to its receiver through a relay where each role sees different information.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** The sender has the manifest; the operator has dispatch controls. “Send those there” identifies neither the destination nor the batch.
-
-After the skill check, put the result into effect: **Dispatch the read-back-confirmed batch**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The relay dispatches the confirmed batch and a receiver acknowledgement closes the handoff.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the receiver acknowledged delivery**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+After verifying the apparatus, enact its stated consequence and record the observed result. If a receiving role is needed, have that person acknowledge what changed.
 
 ## Learning outcomes
 
-- Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
-- Identify the information a receiver needs without assuming they can see the sender's card.
-- Use read-back to detect a consequential misunderstanding.
+- Identify missing action-critical information from the receiver's position.
+- Use questions and full read-back to resolve misunderstanding before action.
+- Reconfirm changed instructions and distinguish solo practice from pair evidence.
 
 ## Equipment
 
@@ -32,7 +26,7 @@ Print separate analyst cards for Relay/2/AMBER, Archive/3/COPPER and Dispatch/1/
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **CO-01** is the analyst's destination, quantity and code for the selected phase. **CO-02** is the operator's receiving task: record those fields, read them back and obtain confirmation. The campus pack explains how to keep the two role views separate.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **CO-01** is the analyst's destination, quantity and code for the selected phase. **CO-02** is the operator's receiving task: record those fields, read them back and obtain confirmation. The campus pack explains how to keep the two role views separate.
 
 - The analyst holds the authoritative destination, quantity and verification code. The operator must record and read back all three.
 - Practice handoff: destination Relay; quantity 2; code AMBER.
@@ -43,64 +37,67 @@ Print separate analyst cards for Relay/2/AMBER, Archive/3/COPPER and Dispatch/1/
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Separate role views; the receiver lists the information needed to act. |
+| 10–30 minutes | Attempt a short exchange and compare it with the alternate example's correction. |
+| 30–60 minutes | Complete the practice instruction with an explicit read-back and keep the exchange. |
+| 60–80 minutes | Swap responsibilities for the second request without silently sharing the source. |
+| 80–105 minutes | Introduce a changed request and obtain a new confirmation. |
+| 105–120 minutes | Compare role records and explain the ambiguity removed by the protocol. |
 
 ## Worked example · a different scenario
 
 In the separate example, the analyst requests Dome, five cases, VIOLET. The operator reads back four cases. That mismatch is kept in the record and corrected before confirmation. A later card requests Pool, two cases, SILVER, so the demonstrator repeats the complete read-back rather than reusing the first acknowledgement. The method transfers; the message itself changes.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-08/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Inspect the analyst card, compose an explicit message and switch to the operator role. Enter the destination, quantity and code, then confirm read-back.
+Separate role information. Operator asks for missing details; analyst supplies them and checks a full read-back.
 
 ## Skill check
 
-Reverse roles and complete Archive / 3 / COPPER. Explain why reusing a previously correct code fails the new handoff.
+Swap responsibilities and complete the new instruction while recording a misunderstanding or potential ambiguity.
 
 ## Transfer challenge
 
-Complete Dispatch / 1 / IVORY and state which values changed while the communication protocol remained the same.
-
-## Facilitation
-
-Keep the analyst card out of the operator's view until debrief. Require a read-back, allow questions and rotate roles. Do not introduce secret constraints beyond the published three fields.
+Publish the changed request after the first confirmation. Obtain a new read-back and record its scope.
 
 ## Student record
 
-Name / role:
+**Named output: handoff-agreement.**
 
-Scenario and route used:
+Keep source version, instruction sent, read-back, corrections and confirmation. Name each partner's responsibility; label solo rehearsal honestly.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: What did the other role know that changed your plan?
+After verifying the apparatus, enact its stated consequence and record the observed result. If a receiving role is needed, have that person acknowledge what changed.
 
 ## Explanation — reveal after an attempt
 
 All three fields and acknowledgement matter. A correct destination with the wrong count is still an incomplete shared model. The exercise tests accurate handoff, not speaking speed.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-The Dome message requested five cases and VIOLET. The operator first repeated four, so we corrected and confirmed all three fields. For Pool, two and SILVER, we made a fresh read-back. The first confirmation could not approve a changed instruction.
+## Facilitator evidence cards · reveal on request
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Cut or fold the source values away from the operator. Analyst cards: Practice Relay / 2 / AMBER; Skill check Archive / 3 / COPPER; Transfer Dispatch / 1 / IVORY. Operator card: available destinations Relay, Archive, Dispatch; quantities one, two, three; request the exact destination, quantity and code. Do not show the source card before the first exchange.
+
+The analyst compares the read-back with the source and records confirmation or correction. Reveal the transfer request only after the earlier acknowledgement. Roles rotate; the full published pack remains available for later review. No hidden marking criteria are introduced.
+
+The full pack remains available for accessible and solo study. Label assistance if you inspected all cards before choosing a test. No hidden rules or secret grading are involved.
+
+## Reflection and later use
+
+What did the other role know that changed your plan?
+
+A2 assesses a real handoff between partners. The final team uses this method when source findings, equipment conditions or responsibilities change another person's work.
 
 ## Evidence and limitations
 
-Save as **handoff-agreement**. Create an explicit agreement between Meridian's operator, investigator and station custodian. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **handoff-agreement** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.

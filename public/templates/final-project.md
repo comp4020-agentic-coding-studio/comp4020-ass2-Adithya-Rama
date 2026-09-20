@@ -4,7 +4,7 @@ Name(s):
 
 Student roles and contributions:
 
-Scenario / route / attempt date:
+Scenario / chosen approach / applicable transport route / attempt date:
 
 ## Objective and constraints
 
@@ -20,7 +20,9 @@ Attach or link the exported activity/mission record. For campus work include a r
 | --- | --- | --- | --- | --- |
 | | | | | |
 
-Trace the signed source through the archive profile, equipment configuration, route and handover. Explain one dependency outside your main role. Include the actual exported values rather than copying a demonstration.
+Trace the signed source through the checks required by your chosen objective to its performed result and handover. Do not invent transport checks for a stationary outcome. Explain one dependency outside your main role. Include the actual exported values rather than copying a demonstration.
+
+When power is relevant, cite the Lab 5 independent diagnostic trace and identify the narrower combined supply-and-fuse check used in this final model. Distinguish selecting a diagnostic test from applying a supplied test.
 
 ## Performed intervention and handover
 
@@ -30,7 +32,9 @@ Attach the exported field log. What changed visibly when you operated the tested
 
 Chosen ending and relation to the initial objective:
 
-Verified archive/profile and tested route:
+Verified archive/profile (every approach):
+
+Transport route (only if the original moves):
 
 Named recipient or responsible custodian:
 
@@ -39,6 +43,10 @@ Named recipient or responsible custodian:
 - **Stabilisation:** performed support hold, checked stability indicator and custodian read-back, stable-state confirmation, original location, remaining limitation and next action.
 
 Complete the section appropriate to your ending. Attach the exported outcome record; retain earlier records if your objective changed.
+
+## Scope and alternative
+
+Which checks were necessary, which were omitted and why? Compare a credible alternative. For digital recovery, explain protection of the retained original. For stabilisation, name monitoring responsibility and an escalation condition. For physical recovery, explain custody and transport limits.
 
 ## Changed-situation response
 
@@ -54,7 +62,7 @@ Follow the word guidance and deliverables in the published brief.
 
 ## What you hand over
 
-- Two contrasting rehearsal records using different published presets.
+- Two contrasting rehearsal records using different published presets and approaches.
 - A final mission run, its outcome-specific evidence record and its evidence-linked debrief.
 - The original team plan and a preserved revision.
 - A role agreement and contribution record.

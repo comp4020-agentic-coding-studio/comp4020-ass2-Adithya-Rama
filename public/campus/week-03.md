@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Track labelled directions through a rotation, change height independently and verify both conditions.
+## The task
 
-## Field operation — The Broken Connection
+Reconnect a service module from its diagram. Identify whether a mismatch comes from the observer's view, module rotation or floor level.
 
-**Objective:** Reconnect the gallery passage by aligning a service module with the building’s connectors and level.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** The passage is isolated because its module faces the wrong way. Raising it cannot correct a rotation, and camera direction is not map north.
-
-After the skill check, put the result into effect: **Seat the aligned service module**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The aligned module completes the connection and the passage gate opens.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the passage is connected**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+After the direction and level checks pass, **seat the aligned service module** against the target on your paper or physical model. Mark the connected passage gate open, then have a partner check both port directions and the level and record **Passage connected**. A solo learner records this as a self-check. Keep the before/after connection sketch.
 
 ## Learning outcomes
 
-- Keep world directions fixed while the object or camera moves.
-- Predict where labelled ports move after a clockwise rotation.
-- Change floor level independently and verify direction and height together.
+- Keep world directions fixed while the object or viewpoint changes.
+- Predict both labelled ports before rotating and test the prediction.
+- Diagnose direction and level errors separately using a transformation record.
 
 ## Equipment
 
@@ -32,7 +26,7 @@ Cut an L-shaped card with north/east ports and one marked original north tip. Dr
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **SP-01** is the labelled north/east connector and fixed coordinate convention. **SP-02** supplies the target directions and floor levels for the three phases.
+**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **SP-01** is the labelled north/east connector and fixed coordinate convention. **SP-02** supplies the target directions and floor levels for the three phases.
 
 - The connector begins with ports pointing north and east on level 0.
 - A rotation moves the connector clockwise by 90 degrees; its handedness remains unchanged.
@@ -42,67 +36,62 @@ Cut an L-shaped card with north/east ports and one marked original north tip. Dr
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Compare the scene and diagram; identify their reference frames. |
+| 10–30 minutes | Predict the marked port in the alternate example before it turns. |
+| 30–60 minutes | Work in pairs: one predicts, one operates, then exchange roles. |
+| 60–80 minutes | Independently meet the second target; separate direction and height adjustments. |
+| 80–105 minutes | Reconcile the third target from a changed viewpoint. |
+| 105–120 minutes | Keep the transformation sketch and a counterexample to confusing rotation with translation. |
 
 ## Worked example · a different scenario
 
 The separate dome example begins with north and west ports. One clockwise quarter-turn maps them to east and north. The demonstrator then raises the connector from level 0 to level 2 without changing those directions. When a later target calls for level 1 with the same ports, only height changes. A similar-looking mirrored substitute is rejected by checking its labels. In your assigned browser task, the controls test rotation and height; use the fixed compass and the original labelled port to justify both.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-03/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Rotate the connector to east/south on level 0. Predict where the original north port moves before checking the module.
+Predict both labelled ports, rotate the card and compare with the first target.
 
 ## Skill check
 
-Fit south/west on level 1 and explain why two rotations plus one level change are required from the initial state.
+Meet the second target independently and explain whether each correction changes orientation or height.
 
 ## Transfer challenge
 
-Fit west/north on level 2. Explain which transformation changed orientation and which changed position.
-
-## Facilitation
-
-Before turning the card, students record where each labelled port will face. Rotate it against the fixed north arrow, then move it between level sheets without turning it. A partner checks direction and level separately. For a nonvisual route, use spoken direction mappings and tactile or numbered level markers.
+Apply the third target from a changed viewing position. Give an equivalent text model for someone unable to see the card.
 
 ## Student record
 
-Name / role:
+**Named output: spatial-model.**
 
-Scenario and route used:
+Keep a before/after sketch or text model, the prediction made before manipulation, an alternative configuration and evidence separating a level error from an orientation error.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which labelled port helped you check the rotation, and how did you verify height separately?
+After the direction and level checks pass, **seat the aligned service module** against the target on your paper or physical model. Mark the connected passage gate open, then have a partner check both port directions and the level and record **Passage connected**. A solo learner records this as a self-check. Keep the before/after connection sketch.
 
 ## Explanation — reveal after an attempt
 
 One, two and three clockwise quarter-turns move the north port to east, south and west respectively. Translation to another level does not rotate it. Matching a silhouette without tracking a labelled port can conceal a reflection or orientation error.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-In the dome example, I predicted north→east and west→north before the quarter-turn. I then raised the connector to level 2. When the target moved to level 1, I changed height alone because the labelled port directions still matched.
+## Reflection and later use
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Which labelled port helped you check the rotation, and how did you verify height separately?
+
+A1 relates an unfamiliar workshop diagram to its connector. A physical final recovery may need this capability; a digital operation need not invent a transport problem.
 
 ## Evidence and limitations
 
-Save as **spatial-model**. Reconstruct Meridian's layout and relate maintenance diagrams to the space around you. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **spatial-model** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.
 
 ## Printable model sheet
 

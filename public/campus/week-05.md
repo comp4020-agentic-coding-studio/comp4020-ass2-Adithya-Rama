@@ -2,25 +2,19 @@
 
 Campus / printable lab pack · Semester 1, 2027
 
-Trace a low-voltage circuit, select informative measurements and locate an open fault.
+## The task
 
-## Field operation — Bring the Beacon Back
+A model beacon is dark. Choose measurements that distinguish a supply break from an output fault before replacing anything.
 
-**Objective:** Restore the approach beacon so the incoming recovery crew can identify the correct landing point.
+In-person teaching is preferred. The paper route is a complete conceptual activity when apparatus is unavailable; online students use the equivalent controls and keep the same learning record.
 
-**Obstacle:** The beacon is dark. Random replacement can conceal the fault, and supply voltage alone cannot prove that its lamp works.
-
-After the skill check, put the result into effect: **Connect the verified beacon circuit**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
-
-**Expected consequence:** The measured and repaired circuit powers the approach beacon; the receiving crew acknowledges the signal.
-
-A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the approach signal is received**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+After the supported repair and fresh supply/output verification, **connect the verified beacon circuit**. On paper, reveal the restored 6 V supply and lit-output cards; with an approved low-voltage kit, record the actual measured supply and lamp state. Have the receiving partner record **Approach signal received** only after seeing that output. Label a solo acknowledgement as a self-check and paper readings as simulated.
 
 ## Learning outcomes
 
-- Trace a complete current path through a supplied simple circuit.
-- Use measurements to distinguish an open fuse from an open switch.
-- Verify a repair without changing unrelated components.
+- Predict measurement patterns for two causes of the same dark output.
+- Use paired powered readings or isolated continuity to justify a repair.
+- Verify supply and output afterwards and state the model's limits.
 
 ## Equipment
 
@@ -28,82 +22,95 @@ Preferred: battery-powered educational circuit kit with a lamp, switch and prote
 
 ## Facilitator setup
 
-Prepare a healthy series loop and label both sides of each component. The facilitator introduces one open fault at a time. Verify the kit's manufacturer instructions and component ratings before class; the proposed physical setup has not been hardware-tested by this prototype.
+Use the voltage and continuity cards below, or a facilitator-prepared protected low-voltage teaching kit. Introduce one open component per round without naming it. Follow the kit's ratings and instructions; this proposed setup has not been physically validated.
 
 ## Complete supplied rules
 
-**Material labels:** The following identifiers refer to the records and rules supplied in this combined pack, rather than separate documents to find. **EL-01** is the six-volt circuit and its labelled probe-node rule. **EL-02** supplies the phase faults and diagnostic recording requirements; the campus pack's student record is your measurement sheet.
+**EL-01** is the six-volt circuit and probe convention. **EL-02** is the facilitator's measurement-card set; the student chooses which reading to request.
 
-- The idealised bench model uses a 6 V source, fuse, switch/cable, lamp and common return.
-- Probe labels refer to the node after each named component, measured relative to the common return.
-- With power on, a fuse or cable supply break gives 6 V before the break and 0 V at downstream nodes. An open lamp can still have 6 V at its supply node while remaining dark.
-- Practice fault: fuse. Skill-check fault: cable. Transfer fault: open lamp; its powered supply readings remain 6 V.
-- A zero voltage reading while power is off does not locate a supply fault. For fuse/cable faults, record the powered zero node before isolation and replacement. For the open lamp, first observe healthy 6 V supply with a dark output; isolate power and use the continuity check to confirm the open lamp before replacing it.
-- This deliberately simplified node model is not a full analogue circuit solver. Campus readings depend on the actual apparatus.
+- Model loop: 6 V source → fuse → switch/cable → lamp → common return.
+- Probe labels mean the node after each named component, measured relative to common return.
+- A supply break can leave healthy voltage upstream and zero downstream. An open lamp can have a healthy supply while remaining dark.
+- Candidate faults include fuse, cable and lamp. Each phase starts with one unknown open component.
+- Justify a replacement using adjacent powered readings that bracket the break, or an isolated continuity check showing the candidate is open.
+- Record power state. Isolate before continuity testing or replacement. Zero measured while off does not locate an operating supply break.
+- After replacement, restore power, obtain a fresh lamp-supply measurement and inspect the output. A lit lamp alone does not demonstrate your initial diagnosis.
+- This is an idealised node model; label real measurements separately from simulated cards.
 
 ## Two-hour schedule
 
-0–10 briefing; 10–30 separate worked example; 30–60 practice; 60–80 skill check under its published conditions; 80–105 transfer with a changed published condition; 105–120 debrief and export.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
+
+| Time | Activity |
+| --- | --- |
+| 0–10 minutes | Sketch the current path and predict two reasons for a dark output. |
+| 10–30 minutes | Pause the alternate two-fault example after its first repair; predict verification results. |
+| 30–60 minutes | Select and record measurements, isolate and replace only the supported part. |
+| 60–80 minutes | Diagnose the second fault using an evidence pair rather than a disclosed name. |
+| 80–105 minutes | Investigate a changed symptom; change test type if healthy supply is insufficient. |
+| 105–120 minutes | Keep prediction, diagnosis, repair and fresh verification, including any failed verification. |
 
 ## Worked example · a different scenario
 
 The separate nine-volt beacon permits two simultaneous faults. Its powered trace is 9/9/0/0 V at source, fuse, cable and lamp supply. An isolated cable replacement restores 9 V throughout, but the same lamp stays dark. The first repair was supported and incomplete. An isolated continuity check then identifies an open lamp; replacing it and restoring power produces both 9 V and light. Your assigned cases publish a one-fault model, so derive the diagnosis from their own rules and measurements instead of assuming this example's two defects.
 
-This is supplied demonstration material. Use the assigned rules in this pack for your own practice and record.
+[Watch this separate example and inspect its finished record](/demonstrations/lab-05/).
+
+The example explains a method. Its completed decisions are not the assigned task. Use the materials above for your own choices.
 
 ## Practice
 
-Power the model, compare battery and downstream nodes, and find the first zero supply reading. Isolate power before replacing the fuse; then verify the lamp node.
+Predict readings for two faults. Request a discriminating pair or isolated continuity result and propose the supported repair.
 
 ## Skill check
 
-Diagnose the cable fault using consecutive node readings. Record the powered zero reading before replacing anything.
+Use a fresh unknown configuration and explain why one upstream alternative is ruled out.
 
 ## Transfer challenge
 
-Diagnose a dark lamp with healthy 6 V supply readings. Isolate power, check the lamp's continuity and identify the open load. Replace it, restore power and verify light as well as voltage.
-
-## Facilitation
-
-Students submit predicted measurements before using an instrument or revealing voltage cards. The facilitator controls power and component changes. Distinguish ideal-model answers from the actual measured tolerance of the kit.
+Investigate the new symptom without assuming an earlier repair applies. Verify the whole output after intervention.
 
 ## Student record
 
-Name / role:
+**Named output: circuit-diagnosis.**
 
-Scenario and route used:
+Keep candidate faults, predicted readings, selected measurements and power states, the repair and fresh powered verification. Explain why a plausible alternative no longer fits.
 
-Prediction and reason:
+Record your name/role, phase and scenario, prediction before action, evidence requested, result, decision, alternative and remaining uncertainty. Include assistance, format used and any physical-model limitation. Keep a failed attempt that explains a revision.
 
-Actions or measurements:
-
-Observed result:
-
-Intervention and its before/after consequence:
-
-Receiver acknowledgement or unresolved handover condition:
-
-Difference from prediction:
-
-Changed-situation response:
-
-Assistance and hints:
-
-Reflection: Which measurement reduced uncertainty most, and which merely repeated what you already knew?
+After the supported repair and fresh supply/output verification, **connect the verified beacon circuit**. On paper, reveal the restored 6 V supply and lit-output cards; with an approved low-voltage kit, record the actual measured supply and lamp state. Have the receiving partner record **Approach signal received** only after seeing that output. Label a solo acknowledgement as a self-check and paper readings as simulated.
 
 ## Explanation — reveal after an attempt
 
-The first zero node localises a supply break in the fuse/cable cases. An open lamp is different: supply voltage remains present, so confirm the load fault using continuity with power isolated. Verify the repaired output, not voltage alone.
+A single zero is ambiguous. Pair upstream and downstream powered measurements or obtain isolated open continuity before replacement. After repair, a fresh lamp-supply reading and lit output verify more than the replacement action alone.
 
-## Example reflection · separate demonstration
+A facilitator judges the reasoning. The record's existence and the model's successful result do not by themselves establish learning.
 
-The nine-volt beacon's first trace supported a cable repair. Afterwards every supply point read 9 V, but the lamp remained dark. I preserved that failed verification, isolated power, confirmed an open lamp and replaced it. I verified both light and supply before calling the whole repair complete.
+## Facilitator evidence cards · reveal on request
 
-Write your own reflection from your assigned scenario; do not copy this account.
+Keep these labelled reading cards with the facilitator. A solo learner predicts the requested result before revealing its table cell.
+
+| Phase | Battery | After fuse | After cable | Lamp supply | Lamp output |
+| --- | --- | --- | --- | --- | --- |
+| Practice, powered | 6 V | 0 V | 0 V | 0 V | Dark |
+| Skill check, powered | 6 V | 6 V | 0 V | 0 V | Dark |
+| Transfer, powered | 6 V | 6 V | 6 V | 6 V | Dark |
+
+Isolated continuity: practice fuse is open; check cable is open; transfer lamp is open. Other isolated components are continuous. With the simulated supply isolated, downstream voltage reads zero; the battery terminal card still represents its 6 V source. This does not locate a supply fault.
+
+Accept paired powered readings bracketing a fault, or an isolated open-continuity result, before the targeted replacement. After correct replacement: battery, fuse, cable and lamp supply each read 6 V with power on, and lamp is lit. Require fresh verification. A real kit's readings must be measured and labelled; do not present these authored cards as instrument results.
+
+The full pack remains available for accessible and solo study. Label assistance if you inspected all cards before choosing a test. No hidden rules or secret grading are involved.
+
+## Reflection and later use
+
+Which measurement reduced uncertainty most, and which merely repeated what you already knew?
+
+A2 requires a diagnosis another role can use. Final power checks support transmission or continuous support, and transport only when the selected route depends on power.
 
 ## Evidence and limitations
 
-Save as **circuit-diagnosis**. Restore the archive carriage's support circuit with a documented fault diagnosis. Physical activities are specified teaching designs, not verified hardware builds. Use paper/tabletop substitutions when apparatus is unavailable. Neither route certifies physical dexterity; both assess the stated concepts, diagnosis and transfer.
+Save **circuit-diagnosis** with your explanation. Physical activities are proposed teaching designs, not hardware-tested equipment. Distinguish model-card results from actual measurements. Neither browser success nor paper completion establishes physical dexterity or classroom enjoyment. A dated station record is sufficient; a duplicate browser run is not required.
 
 ## Printable model sheet
 

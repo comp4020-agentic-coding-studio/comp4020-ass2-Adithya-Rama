@@ -1,6 +1,6 @@
 ---
 title: "Challenge the System"
-description: "Test an invented permission system, repair an overbroad rule and check legitimate access still works."
+description: "Translate authority into testable permissions, diagnose deviations and preserve policy versions when requirements change."
 week: 7
 learningOutcomes: ["LO4"]
 skillIds: ["LO4"]
@@ -12,22 +12,34 @@ related: ["sessions/week-07", "assessments/assignment-2"]
 slides: "/decks/week-07/"
 ---
 
-> **Your field application — The Wrong Authority:** Restore useful control-desk access without giving an observer permission to service or certify equipment. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** Make a records system useful to authorised people while preventing actions outside their responsibilities.
 
 
 > The system recognises you. It has mistaken that for permission.
 
 ## What you will learn
 
-- Distinguish identity, object and requested action in an access decision.
-- Demonstrate a fault using an explicit expected-versus-observed test.
-- Repair the fictional policy and test both denied and permitted operations.
+- Derive expected decisions from governing clauses.
+- Test useful and prohibited operations and diagnose discrepancies.
+- Separate a behaviour repair from an authorised policy revision.
 
 ## The briefing
 
-An access decision relates a subject, an action and an object. Authentication identifies the subject; authorisation determines whether a requested action is allowed. The supplied local records application deliberately assigns the wrong permissions: an observer can perform privileged actions while the specialist roles cannot perform their intended work.
+### Authority comes before the table
 
-Define the intended policy before testing. Otherwise an unexpected result cannot be judged against a clear contract. For each case, record role, action, expected result and observed result. A repair must remove unauthorised actions while preserving legitimate ones. Denying every operation fails the system's purpose. Regression checks revisit the whole matrix after a change so a narrow fix does not quietly break another role. When the published mandate changes, preserve the earlier matrix and document which expectation changes.
+Authentication identifies a subject. Authorisation determines whether that subject may perform an action on an object. A recognised technician is not authorised for everything. Derive each expected decision from the mandate before viewing the software's result.
+
+Use role, action, governing clause, expected result and observed result. An unexpected allow and an unexpected denial are both faults. A policy refusing everything can appear restrictive while defeating its intended work.
+
+### Test boundaries and ordinary use
+
+For permitted operations, check nearby prohibited combinations: another role, action or object. Our local model has nine decisions. In a larger system, test coverage needs its own strategy; this exercise does not establish general security expertise.
+
+Make a justified repair and retest all nine cases. An interface change alone does not prove the access rule changed. The expected-versus-observed record supplies the evidence.
+
+### Distinguish repair from policy change
+
+A repair makes behaviour match existing authority. A maintenance hold changes that authority, so a formerly correct result may need to differ. Preserve the first matrix under its original mandate. Explain the changed expectation in the second. Yesterday's successful tests can certify the wrong policy when their expected values are no longer justified.
 
 ## Worked example · a different scenario
 
@@ -45,7 +57,7 @@ Hiding the certify button changes the interface without establishing the policy 
 
 - Roles: observer, technician, registrar. Actions: read shared records, service the cart, certify the archive.
 - Every role may read. Only technician may service; only registrar may certify. Other combinations are denied.
-- The initial faulty matrix grants the observer all actions while failing to grant technician service and registrar certification.
+- The starting matrix is supplied by the activity. Derive expectations from the mandate and compare them with that matrix; record discrepancies yourself.
 - Repair all nine role/action decisions and test both allowed and denied actions.
 - Transfer: a published maintenance hold suspends technician service; read access and registrar certification remain unchanged.
 - All requests operate within the local fictional simulation.
@@ -56,9 +68,9 @@ Read CY-01 and predict all entries in the role matrix (20 minutes). Read the Wee
 
 ## What happens next
 
-Repair Meridian's local recovery policy without blocking the work the team is authorised to perform. The lab produces **permission-audit**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
+A2 needs legitimate relay access. The digital final approach uses the appropriate local policy; physical handover does not gain an arbitrary software gate.
 
-[Open this week's lab](/sessions/week-07/) · [Download the campus pack](/campus/week-07.md) · [Explore the academy](/academy/)
+Keep **permission-audit** from [this week's lab](/sessions/week-07/). [Download the campus pack](/campus/week-07.md).
 
 ## Slide deck and readable summary
 

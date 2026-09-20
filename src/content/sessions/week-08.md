@@ -1,6 +1,6 @@
 ---
 title: "Get the Message Through"
-description: "Pass an exact instruction between role views and use read-back to catch a misunderstanding."
+description: "Coordinate across unequal information using questions, read-back and renewed confirmation when an instruction changes."
 week: 8
 learningOutcomes: ["LO5"]
 skillIds: ["LO5"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation Across the Divide.** Get the correct sealed batch to its receiver through a relay where each role sees different information.
+**Your task:** Two competent people hold different dispatch information. Establish a shared, acknowledged instruction before acting.
 
-The sender has the manifest; the operator has dispatch controls. “Send those there” identifies neither the destination nor the batch.
+**What you will produce:** Keep source version, instruction sent, read-back, corrections and confirmation. Name each partner's responsibility; label solo rehearsal honestly.
 
-**What you will produce:** A destination, quantity and code agreed by both roles, a role rotation, and an account of a corrected or prevented misunderstanding.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,9 +38,9 @@ Read the [briefing](/lectures/week-08/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
-- Identify the information a receiver needs without assuming they can see the sender's card.
-- Use read-back to detect a consequential misunderstanding.
+- Identify missing action-critical information from the receiver's position.
+- Use questions and full read-back to resolve misunderstanding before action.
+- Reconfirm changed instructions and distinguish solo practice from pair evidence.
 
 ## Supplied case file and rules
 
@@ -55,18 +53,28 @@ Read the [briefing](/lectures/week-08/). All starting rules and data are supplie
 - The handoff is complete only when the operator's fields agree with the analyst card and acknowledgement is recorded.
 - Role switching is explicit in solo mode; a team can divide the two information views.
 
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
+
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Separate role views; the receiver lists the information needed to act. |
+| 10–30 minutes | Attempt a short exchange and compare it with the alternate example's correction. |
+| 30–60 minutes | Complete the practice instruction with an explicit read-back and keep the exchange. |
+| 60–80 minutes | Swap responsibilities for the second request without silently sharing the source. |
+| 80–105 minutes | Introduce a changed request and obtain a new confirmation. |
+| 105–120 minutes | Compare role records and explain the ambiguity removed by the protocol. |
 
 ## In-person lab · preferred route
 
@@ -74,11 +82,11 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Print separate analyst cards for Relay/2/AMBER, Archive/3/COPPER and Dispatch/1/IVORY. Give the operator a blank three-field form and acknowledgement box.
 
-**What you do together:** Keep the analyst card out of the operator's view until debrief. Require a read-back, allow questions and rotate roles. Do not introduce secret constraints beyond the published three fields.
+**What you do together:** Separate analyst and operator source views. Request missing information, record a full read-back and confirmation, then swap roles and reconfirm the changed instruction.
 
 The [printable facilitator pack](/campus/week-08.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
@@ -107,11 +115,18 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**handoff-agreement** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**handoff-agreement**
 
-Create an explicit agreement between Meridian's operator, investigator and station custodian.
+Keep source version, instruction sent, read-back, corrections and confirmation. Name each partner's responsibility; label solo rehearsal honestly.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A2 assesses a real handoff between partners. The final team uses this method when source findings, equipment conditions or responsibilities change another person's work.
 
 ## Feedback and explanation
+
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
 
 All three fields and acknowledgement matter. A correct destination with the wrong count is still an incomplete shared model. The exercise tests accurate handoff, not speaking speed.
 
@@ -119,9 +134,13 @@ All three fields and acknowledgement matter. A correct destination with the wron
 
 [Inspect this example's complete record](/demonstrations/lab-08/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep source version, instruction sent, read-back, corrections and confirmation. Name each partner's responsibility; label solo rehearsal honestly.
 
 ## Closing reflection
 

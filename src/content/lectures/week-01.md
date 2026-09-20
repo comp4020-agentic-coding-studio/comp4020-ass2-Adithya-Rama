@@ -1,6 +1,6 @@
 ---
 title: "Read the Room"
-description: "Inspect a furnished scene, reconstruct what was present and distinguish observations from interpretations."
+description: "Distinguish visible facts, reported claims and explanations, then choose an inspection that tests a proposed explanation."
 week: 1
 learningOutcomes: ["LO1"]
 skillIds: ["LO1"]
@@ -11,22 +11,34 @@ date: 2027-02-22
 related: ["sessions/week-01", "assessments/assignment-1"]
 ---
 
-> **Your field application — Silent Gallery:** Give Control a reliable account of the gallery before its recovery team enters. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** A gallery report calls the room abandoned. Establish what the evidence supports before the academy acts on that description.
 
 
 > The room looks ordinary. That is why it is such a useful test.
 
 ## What you will learn
 
-- Record specific observable details without silently adding a cause.
-- Separate a missed detail from a remembered detail that was never present.
-- Transfer a deliberate inspection method to a changed scene.
+- Distinguish a directly inspected feature, a reported claim and an inferred explanation.
+- Choose an inspection whose possible results distinguish competing explanations.
+- Revise a bounded conclusion while preserving what remains unknown.
 
 ## The briefing
 
-Observation is an active sampling process. You cannot inspect every detail at once, so the method you choose changes what you are likely to notice. A sweep by region reduces accidental omissions; a second sweep by object state catches details such as open lids or disconnected parts. Neither method makes perception infallible. Record what you inspected and what you did not.
+### Observation is a choice about attention
 
-Separate three things: a visible feature, your interpretation of that feature, and information you do not have. A blue lamp is visible; ‘the machine is healthy’ is an interpretation requiring a rule about the lamp. Confidence describes your judgement, not the truth of the claim. When a reconstruction is wrong, distinguish an omission from an invented addition. The remedy for failing to look is different from the remedy for confidently filling a gap.
+Observation means recording a directly visible or measured detail. Your first sweep might cover the walls, then work surfaces, then openings. Record object, location and state. A note is visibly present; the event described on it remains the author's claim. An inference connects information to an explanation, such as why somebody left.
+
+These categories apply to a statement, not permanently to an object. A clock reading is observable, but assuming the clock is accurate adds a claim about its condition. You can be certain about what its face displays while remaining uncertain about the time of an event.
+
+### Explanations need competing predictions
+
+An open door fits several stories: a person left recently, ventilation was needed, or maintenance is underway. Seeing the same door again does little to distinguish these stories. A useful follow-up asks for evidence they predict differently: an occupancy record, a maintenance entry, or an independent time source, depending on the claim being tested.
+
+Write two possible explanations before choosing an inspection. For each, name a result that would weaken it. A good investigation can end with “not established”; refusing an unsupported conclusion is productive work.
+
+### Update without inventing
+
+After the additional inspection, change only the statements it supports. A changed clock reading does not prove who touched a hatch. An occupancy entry can challenge abandonment without identifying who moved a cup. Show the original idea, test, result and remaining gap. Recall is optional support for noticing change; a written observation record is acceptable.
 
 ## Worked example · a different scenario
 
@@ -40,21 +52,22 @@ Staring for longer without a plan can strengthen confidence more than accuracy. 
 
 ## Supplied rule sheet
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **PG-01** is the practice-room inventory: clock, cup, door and written account. **PG-02** is the changed inventory for the Skill check and Transfer challenge.
+**PG-01** supplies the practice room; **PG-02** supplies changed rooms and follow-up records. These identifiers are sections of this page and the combined campus pack, not missing downloads.
 
-- Practice scene: the clock reads 08:20; a blue cup lies beside the ledger; the door is open; a note claims ‘I left first’.
-- The claim that the owner left in a hurry is an inference: the visible objects do not establish intent.
-- Skill check: clock 09:40; amber cup on shelf; closed door; a note claims ‘The sample is intact’; deliberate concealment is an inference.
-- Transfer: display 14:10; silver flask beside a map; open service hatch; an operator reports a power failure; the open hatch causing it is an inference.
-- Classify three directly supplied scene features as observations, the account's contents as a claim and the proposed explanation as an inference. The existence of a note is itself observable; its content is the claim being classified.
-- Cover the scene to recall its display reading. Reopening it is allowed and should be recorded as assistance.
+- Practice statements: clock 08:20; blue cup beside ledger; door open; note says “I left first”; proposed explanation: the owner left in a hurry.
+- Skill check: clock 09:40; amber cup on shelf; door closed; note says “The sample is intact”; proposed explanation: someone deliberately concealed the sample.
+- Transfer: display 14:10; silver flask beside map; service hatch open; operator reports power failure; proposed explanation: the hatch caused the failure.
+- Classify the five statements by what each asserts. A note's physical presence differs from the account written on it.
+- Choose a follow-up: Practice offers a door/delivery record or another cup-colour inspection; Skill check offers inspection/door records or another cup inspection; Transfer offers outage/hatch timestamps or the map title.
+- Predict which explanations your selected test can distinguish before viewing its result. Select a conclusion no stronger than the returned evidence.
+- Recall and covering the scene are optional. Written observation is an acceptable support.
 
 ## Before the lab
 
-Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Do not memorise the answer key.
+Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Use the definitions to explain your own decisions; consult the optional explanation after an attempt.
 
 ## What happens next
 
-Use the arrival scene to notice changed equipment before committing the team to a route. The lab produces **observation-record**, which becomes evidence for [the connected assessment](/assessments/assignment-1/).
+A1 uses this method to choose which workshop condition needs investigation. The final project uses it to keep an arrival impression from becoming an unsupported operating assumption.
 
-[Open this week's lab](/sessions/week-01/) · [Download the campus pack](/campus/week-01.md) · [Explore the academy](/academy/)
+Keep **observation-record** from [this week's lab](/sessions/week-01/). [Download the campus pack](/campus/week-01.md).

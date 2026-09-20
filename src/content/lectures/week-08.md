@@ -1,6 +1,6 @@
 ---
 title: "Get the Message Through"
-description: "Pass an exact instruction between role views and use read-back to catch a misunderstanding."
+description: "Coordinate across unequal information using questions, read-back and renewed confirmation when an instruction changes."
 week: 8
 learningOutcomes: ["LO5"]
 skillIds: ["LO5"]
@@ -11,22 +11,36 @@ date: 2027-04-26
 related: ["sessions/week-08", "assessments/assignment-2"]
 ---
 
-> **Your field application — Across the Divide:** Get the correct sealed batch to its receiver through a relay where each role sees different information. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+> **The week's question:** Two competent people hold different dispatch information. Establish a shared, acknowledged instruction before acting.
 
 
 > Both people are competent. Each has half the information.
 
 ## What you will learn
 
-- Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
-- Identify the information a receiver needs without assuming they can see the sender's card.
-- Use read-back to detect a consequential misunderstanding.
+- Identify missing action-critical information from the receiver's position.
+- Use questions and full read-back to resolve misunderstanding before action.
+- Reconfirm changed instructions and distinguish solo practice from pair evidence.
 
 ## The briefing
 
-Communication is a coordination mechanism. A receiver needs enough information to carry out the intended action and check that they understood it. This lab makes three details explicit: destination, quantity and verification code. Shared vocabulary cannot be assumed: ‘there’, ‘the usual amount’ or an old code can leave a plausible but wrong instruction. Use the current card's named values.
+### Unequal information creates the task
 
-The analyst holds the instruction and the operator records it. The separate role views create a need to communicate rather than assume both people read the same source. Read-back checks the resulting shared understanding: the receiver repeats all three fields and the sender confirms or corrects them before dispatch. An acknowledgement cannot replace that comparison. Record a missing detail as unresolved instead of treating silence as consent. Week 9 extends this habit into agreements between people with different legitimate constraints; this week's narrow task is an accurate, confirmed handoff.
+The analyst sees the source request. The operator controls dispatch and must establish destination, quantity and verification code. Keep the source card with the analyst during the first attempt. If everyone reads the same card, the task becomes copying rather than communication.
+
+The receiver should identify missing information before asking. “Tell me everything” may work for a tiny card, but does not demonstrate deliberate coordination. Ask for the detail that changes the next action and explain why it matters.
+
+### Read-back tests shared understanding
+
+The receiver repeats the instruction as an executable action. The sender compares every consequential field with the current source, then confirms or corrects it. “Okay” records receipt of a message without showing what was understood.
+
+Preserve misunderstandings instead of tidying the record into a perfect conversation. Name the ambiguity and the clarification that resolved it. Uncertainty should become visible before action.
+
+### Confirmation has a scope
+
+When a destination, quantity or code changes, the old confirmation no longer authorises the new instruction. Obtain a new read-back and record which version was acknowledged.
+
+Swap roles in person. Online partners can reveal one role view at a time. Solo switching rehearses the method but cannot establish team communication. Written, spoken and assistive communication can meet the same accuracy standard without rewarding speed or theatrical style.
 
 ## Worked example · a different scenario
 
@@ -55,6 +69,6 @@ Read only your assigned role pack first (10 minutes). Rewrite one vague everyday
 
 ## What happens next
 
-Create an explicit agreement between Meridian's operator, investigator and station custodian. The lab produces **handoff-agreement**, which becomes evidence for [the connected assessment](/assessments/assignment-2/).
+A2 assesses a real handoff between partners. The final team uses this method when source findings, equipment conditions or responsibilities change another person's work.
 
-[Open this week's lab](/sessions/week-08/) · [Download the campus pack](/campus/week-08.md) · [Explore the academy](/academy/)
+Keep **handoff-agreement** from [this week's lab](/sessions/week-08/). [Download the campus pack](/campus/week-08.md).

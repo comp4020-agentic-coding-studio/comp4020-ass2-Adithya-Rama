@@ -1,6 +1,6 @@
 ---
 title: "When the Plan Breaks"
-description: "Preserve a working plan, diagnose a disruption and coordinate a justified revision."
+description: "Identify dependencies invalidated by disruption, retain supported decisions and rehearse a revision without overwriting the original."
 week: 11
 learningOutcomes: ["LO3","LO4","LO5","LO6"]
 skillIds: ["LO3","LO4","LO5","LO6"]
@@ -27,13 +27,11 @@ requiresRevision: true
 
 ## Your mission, in plain language
 
-**Operation The Route That Failed.** Keep recovery moving after a disruption while preserving the plan that depended on the old condition.
+**Your task:** An agreed plan loses a dependency. Decide what must change, what remains valid and whether the objective is still defensible.
 
-Version 1 no longer works. A new paragraph alone cannot reopen a passage: select and rehearse the replacement dependency before committing it.
+**What you will produce:** Keep both versions, affected-dependency table, retained decision, two candidate responses, replacement test, owner and stopping condition. Label supplied evidence you did not measure.
 
-**What you will produce:** Preserved Version 1, a distinct Version 2, and an explanation of the changed dependency, responsibility and remaining uncertainty.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -43,9 +41,9 @@ Read the [briefing](/lectures/week-11/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Identify which dependencies a disruption invalidates.
-- Preserve the original plan and explain each consequential revision.
-- Reassign work through an explicit, verified handoff.
+- Classify earlier decisions as retained, requiring retest or invalidated.
+- Compare a minimal revision with an alternative and explain objective changes.
+- Rehearse a replacement, assign responsibility and preserve Version 1.
 
 ## Supplied case file and rules
 
@@ -58,18 +56,28 @@ Read the [briefing](/lectures/week-11/). All starting rules and data are supplie
 - Create a revised plan and rationale naming the failed dependency, replacement action, verification and responsibility.
 - The activity prompts reflection; it does not assign a grade to the quality of open-ended reasoning.
 
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
+
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Mark the conditions behind the baseline and preserve dated Version 1. |
+| 10–30 minutes | Inspect the alternate authority disruption and identify retained findings. |
+| 30–60 minutes | Publish the route disruption and map affected dependencies before proposing responses. |
+| 60–80 minutes | Rehearse a replacement and obtain read-back from the changed role. |
+| 80–105 minutes | Address unavailable measurement equipment and distinguish reference evidence from new measurement. |
+| 105–120 minutes | Compare versions, one retained decision and a stopping condition. |
 
 ## In-person lab · preferred route
 
@@ -77,11 +85,11 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Publish the disruption cards as course material. Have teams complete and date their baseline before selecting one. Provide a clearly labelled baseline for students entering directly.
 
-**What you do together:** The facilitator records decisions and checks whether all roles receive the changed plan. Avoid surprise rules or performance theatre. Allow the team to pause, inspect evidence and replay the revised sequence.
+**What you do together:** Preserve Version 1 and map dependencies affected by a disruption. Compare two responses, rehearse the replacement, retain valid decisions and obtain responsibility read-back.
 
 The [printable facilitator pack](/campus/week-11.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
@@ -91,16 +99,16 @@ Keep the same prediction, changed-condition attempt and explanation as the onlin
 2. Select **Publish the disruption**. Identify which step depends on the unavailable passage and which earlier findings still hold.
 3. Write a revised plan in the supplied field. Name the replacement passage, its extra check, who performs that check and what confirms readiness.
 4. Write the revision rationale, select the supported **Replacement dependency to rehearse**, then **Rehearse the replacement dependency**. Select **Verify revised plan and rehearsal**. The dependency must work; a teacher evaluates the written reasoning.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge**. In transfer, the meter is unavailable: use the labelled reference readings and state what you did not personally measure.
+5. Before switching, select **Record attempt in skills passport**. The field extension is optional; save the learning record after each phase. Try **Skill check**, then **Transfer challenge**. In transfer, the meter is unavailable: use the labelled reference readings and state what you did not personally measure.
 6. After playing, compare the original and revised plans. Explain one change and one retained decision; do not rewrite Version 1 as though you knew the disruption all along.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Activate the rehearsed replacement plan**. The scene and mission record now show the consequence: The rehearsed alternative becomes active. Version 1 remains in the journal so the reason for the change stays visible.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Activate the rehearsed replacement plan**. The scene and mission record now show the consequence: The rehearsed alternative becomes active. Version 1 remains in the journal so the reason for the change stays visible.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the revised route is in use** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the revised route is in use** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -108,15 +116,22 @@ After each practical phase, open **After playing · explain and save this attemp
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
-Select **Replacement dependency to rehearse**: the west relay under the passage closure, or supplied reference readings under the meter failure. Select **Rehearse the replacement dependency** before **Verify revised plan and rehearsal**. An unsupported choice leaves the intervention unavailable; the computer checks the dependency, while a teacher reviews the explanation.
-
 ## What leaves the room
 
-**revised-plan** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**revised-plan**
 
-Respond to Meridian's changed equipment or evidence while keeping responsibility and verification clear.
+Keep both versions, affected-dependency table, retained decision, two candidate responses, replacement test, owner and stopping condition. Label supplied evidence you did not measure.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+The final project needs a reasoned change between contrasting rehearsals. Explain why its chosen objective remains feasible or why the team deliberately revises it.
 
 ## Feedback and explanation
+
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+Select **Replacement dependency to rehearse**: the west relay under the passage closure, or supplied reference readings under the meter failure. Select **Rehearse the replacement dependency** before **Verify revised plan and rehearsal**. An unsupported choice leaves the intervention unavailable; the computer checks the dependency, while a teacher reviews the explanation.
 
 The route disruption changes transport readiness and adds a relay check; it does not invalidate manifest inspection. Reference readings can support a conditional diagnosis, but are not measurements you personally took. A strong revision distinguishes retained evidence from new assumptions.
 
@@ -124,9 +139,13 @@ The route disruption changes transport readiness and adds a relay check; it does
 
 [Inspect this example's complete record](/demonstrations/lab-11/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep both versions, affected-dependency table, retained decision, two candidate responses, replacement test, owner and stopping condition. Label supplied evidence you did not measure.
 
 ## Closing reflection
 

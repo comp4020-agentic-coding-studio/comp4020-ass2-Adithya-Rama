@@ -24,7 +24,7 @@ related: ["sessions/week-12"]
 
 ## How to participate
 
-**In person is the preferred route.** Use the [campus teaching pack](/resources/) in the facilitated session, with the supplied apparatus or paper models and the required individual, pair or team responsibilities. Keep your station sheets, predictions, revisions, receiver acknowledgements and explanation. These form the practical record; an additional browser run is not required.
+**In person is the preferred route.** Use the [campus teaching pack](/resources/) in the facilitated session, with the supplied apparatus or paper models and the required individual, pair or team responsibilities. Keep your station sheets, predictions, revisions and explanation, plus receiver acknowledgements where the weekly activity requires a handoff. These form the practical record; an additional browser run is not required.
 
 **Online, if you cannot attend:** use the equivalent activity and control instructions below. The 3D environment supports the same reasoning, rehearsals and evidence requirements. Both routes use this brief's deliverables and rubric. Label measured, paper-model and simulated results accurately.
 
@@ -60,6 +60,10 @@ For every record include:
 - Any hints, assistance or adapted materials.
 
 An exported activity record supplies evidence but does not replace your explanation. Preserve unsuccessful attempts when they show a useful diagnosis or revision. A campus record can use measurements, photographs of your own model, coordinates or a written event trace. No public ranking or speed score is required.
+
+## What counts as a completed activity
+
+Use the completion conditions for that week. An investigated explanation, strategy comparison, tested diagnosis or feasible agreement can be the practical outcome. A receiving handover is required only when the activity names it as part of its skill. Optional scene delivery adds practice but carries no extra academic credit. Record a useful failed attempt with its diagnosis rather than inventing a success.
 
 ## How fieldwork accumulates
 

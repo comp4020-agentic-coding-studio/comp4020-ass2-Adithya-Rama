@@ -1,6 +1,6 @@
 ---
 title: "Recover the Impossible"
-description: "Combine the semester's capabilities in a documented recovery mission with several defensible resolutions."
+description: "Select relevant capabilities for a recovery objective, coordinate their dependencies and defend the result and remaining obligations."
 week: 12
 learningOutcomes: ["LO1","LO2","LO3","LO4","LO5","LO6"]
 skillIds: ["LO1","LO2","LO3","LO4","LO5","LO6"]
@@ -10,7 +10,8 @@ teachers: ["sol-renn"]
 date: 2027-05-28
 checkpointDue: 2027-05-28T17:00:00+10:00
 produces: ["recovery-record"]
-requires: ["observation-record","recall-strategy","spatial-model","mechanism-diagnosis","circuit-diagnosis","evidence-timeline","permission-audit","handoff-agreement","claim-verification","sensor-route","revised-plan"]
+requires: ["observation-record", "evidence-timeline", "handoff-agreement", "revised-plan"]
+drawsOn: ["observation-record","recall-strategy","spatial-model","mechanism-diagnosis","circuit-diagnosis","evidence-timeline","permission-audit","handoff-agreement","claim-verification","sensor-route","revised-plan"]
 sampleAvailable: true
 campusPack: "/campus/week-12.md"
 browserActivity: "/sessions/week-12/#activity"
@@ -24,13 +25,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation Agent’s Return.** Close a completed Operation Last Light with an accurate after-action account the receiving team can use.
+**Your task:** Complete Operation Last Light and explain why selected checks and performed actions serve the team's declared objective.
 
-A proud recovery still needs a traceable account. A successful-looking story cannot substitute for a completed mission and its remaining limits.
+**What you will produce:** Keep objective, relevant requirements, handoffs, performed evidence, contrasting rehearsal and revision. Explain one justified omission, alternative and remaining obligation.
 
-**What you will produce:** An exported mission record and an after-action account with three decisions, one limitation and a credible alternative.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,34 +39,44 @@ Read the [briefing](/lectures/week-12/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Combine observation, systems diagnosis, investigation and coordination in a new setting.
-- Verify that a recovery resolution satisfies its stated requirements.
-- Defend decision quality using both successful and unsuccessful evidence.
+- Select and justify capabilities relevant to the declared objective.
+- Coordinate dependencies and preserve evidence when the approach changes.
+- Defend the performed result, a credible alternative and a remaining obligation.
 
 ## Supplied case file and rules
 
-**Where to find the named materials:** These labels identify the supplied material on this page and in the combined campus pack; they are not separate files you need to locate. **MR-01** is the Meridian recovery charter, six areas and four responsibilities. **MR-02** states the requirements for physical recovery, digital recovery and stabilised handover. The final-project mission pack provides the detailed role cards, current archive profiles and resolution record.
+**MR-01** supplies the Meridian charter, six areas and four responsibilities. **MR-02** supplies approach-specific requirements; use the final-project pack for current profiles and evidence.
 
-- MR-01 authority: recover the research archive from fictional Meridian Station under the published handling and verification rules.
-- Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform.
-- Roles: observer/navigator, systems specialist, investigator, coordinator. Solo mode rotates these roles explicitly.
-- Physical recovery requires verified identity, working support equipment, agreed handling and confirmed custody.
-- Digital recovery requires a verified copy, recorded reference limitations and confirmed receipt; preserve the original's location.
-- Stabilisation requires a verified safe state, named custodian, documented unresolved issues and handover plan.
-- Presets: Baseline, Equipment Failure, Conflicting Archive. All disruptions are published; no hidden academic grading.
+- Shared evidence: scene/identity observations, current signed archive source, precise handoff, preservation/recipient agreement, initial plan and preserved revision.
+- Physical recovery: matched support cradle, map orientation and transport route. An Upper/Lift route also needs power; the independent Service route does not impose a circuit gate.
+- Digital recovery: diagnosed transmission supply, correct local access policy, confirmed receiving receipt and arrangements for the original. Cradle, map and transport are not required.
+- Stabilisation and handover: matched support cradle, diagnosed continuous power, stable indicator, named custodian and monitoring limitation. No transport route or access-policy gate.
+- Explain a credible alternative, why your selected checks fit the objective, and a remaining obligation. Recall is an optional tool, not a universal gate.
+- Locations: arrival hall, workshop, power bay, control room, archive chamber, dispatch platform. Roles: observer/navigator, systems specialist, investigator, coordinator.
+- Presets: Baseline, Equipment Failure, Conflicting Archive. They are published conditions; acting speed and endings do not determine marks.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Agree objective and responsibilities; distinguish shared and approach-specific requirements. |
+| 10–30 minutes | Compare the alternate mission with your charter and identify a choice it cannot supply. |
+| 30–60 minutes | Perform or inspect the chosen attempt, recording each consequential action's support. |
+| 60–80 minutes | Challenge the plan from another role and inspect a contrasting rehearsal. |
+| 80–105 minutes | Prepare the account: relevant and omitted checks, alternative and remaining obligation. |
+| 105–120 minutes | Give individual defences and assemble the final bundle and backup. |
 
 ## In-person lab · preferred route
 
@@ -75,30 +84,30 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Lay out the six station areas, publish the chosen preset and assign roles. Keep rule sheets accessible. Use the same resolution requirements for browser and campus routes.
 
-**What you do together:** A facilitator applies published domain rules and records events without inventing obstacles. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
+**What you do together:** Perform or review the team's conditional final recovery, challenge its chosen and omitted checks from another role, and defend the outcome, alternative and remaining obligation.
 
 The [printable facilitator pack](/campus/week-12.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Open [Operation Last Light](/operation/). Choose a preset, then select **Start new trial** and confirm if prompted. Set the **Declared recovery objective** before choosing a role or operating equipment. Use Baseline first if you are learning the controls. A resumed trial keeps its original objective; starting a new trial unlocks the choice before new actions.
-2. Before the first practical checks, select Coordinator and preserve an initial plan at Dispatch. Follow the mission journal through the six station areas, selecting the responsible role for each control. Solo practice can switch freely.
-3. Have the investigator verify the current signed archive and load profile before the systems specialist configures its support. Pass that result between roles. Preserve a separately explained revision when evidence, equipment or your objective changes, and recheck any dependent equipment or route.
-4. Once the eleven common objectives are verified, choose **Approach to perform** in the mission's **Field operation** panel: carry the original, transmit a verified copy, or hold the original stable. Inspect the mission station, perform the enabled intervention, collect its case or record, visit each named checkpoint in order and confirm the receiving handover. At Dispatch, choose the matching **Outcome to document**, supply its receipt, custody or stable-handover evidence and select **Record outcome evidence**. Complete the resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
-5. Return to this lab's after-action controls. Enter the original objective, actual result, three consequential decisions, limitation and alternative. Select **Verify completed run and account**. The current recovery must already be complete in this passport.
-6. Finish this lab's separate **Field operation**: attach the verified recovery and account, follow its debrief checkpoint and **Close the agent handover**. Select **Record attempt in skills passport** before changing phases. Use the later phases to compare your run with a contrasting preset; complete and save their lab handovers too. Finish your reflection after the action; the account explains the practical recovery and does not replace it.
+1. Open [Operation Last Light](/operation/), read its charter and choose a preset. Select **Start new trial** and a **Declared recovery objective** before acting. A resumed run preserves its objective.
+2. Record an initial plan as Coordinator at Dispatch. Read the current requirement checklist: it changes with your objective and, for physical recovery, the selected transport route.
+3. Decide which role should investigate first. Verify the signed archive/profile before relying on it; coordinate dependent checks and preserve a revision when evidence or approach changes. Consult controls without treating their order as a required walkthrough.
+4. When the relevant conditions are met, choose the matching **Approach to perform** and carry out its field intervention and receiving handover. Record its custody, receipt or stable-handover evidence at Dispatch and export the assessment record.
+5. Return here. Record objective, result, consequential decisions, a justified omitted check, a limitation and a credible alternative. Select **Verify completed run and account**; the passport must contain the current completed mission.
+6. Save the account with **Record attempt in skills passport** and keep its mission export. This lab's separate ceremonial handover is optional. Compare a contrasting preset in the final-project bundle; explain revisions after the practical work.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Attach the completed recovery and account**. The scene and mission record now show the consequence: The completed recovery and its account enter the handover journal. The agent returns with an evidence-backed record.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Attach the completed recovery and account**. The scene and mission record now show the consequence: The completed recovery and its account enter the handover journal. The agent returns with an evidence-backed record.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Close the agent handover** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Close the agent handover** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -110,11 +119,18 @@ The browser requires a **currently completed Operation Last Light** in your loca
 
 ## What leaves the room
 
-**recovery-record** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**recovery-record**
 
-Complete Operation Last Light and defend the relationship between your objective, actions and result.
+Keep objective, relevant requirements, handoffs, performed evidence, contrasting rehearsal and revision. Explain one justified omission, alternative and remaining obligation.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+This lab assembles the final-project evidence. The after-action account does not replace the performed mission or the assessment's individual and team deliverables.
 
 ## Feedback and explanation
+
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
 
 The debrief reports the requirements met, missing evidence and unresolved assumptions. A successful ending with unsupported reasoning is not automatically strong academic work. A carefully diagnosed incomplete recovery can still demonstrate substantial skill, while clearly acknowledging what was not achieved.
 
@@ -122,9 +138,13 @@ The debrief reports the requirements met, missing evidence and unresolved assump
 
 [Inspect this example's complete record](/demonstrations/lab-12/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep objective, relevant requirements, handoffs, performed evidence, contrasting rehearsal and revision. Explain one justified omission, alternative and remaining obligation.
 
 ## Closing reflection
 

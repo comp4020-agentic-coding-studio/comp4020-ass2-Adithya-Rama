@@ -1,6 +1,6 @@
 ---
 title: "Move Through the Model"
-description: "Predict fictional sensor observations and compare a route model with the actual event trace."
+description: "Choose a route for an explicit objective, predict its published sensor events and compare its dependencies with an alternative."
 week: 10
 learningOutcomes: ["LO2","LO6"]
 skillIds: ["LO2","LO6"]
@@ -24,13 +24,11 @@ spec:
 
 ## Your mission, in plain language
 
-**Operation The Surveyed Passage.** Guide the team across a published sensor grid and accurately report what its passage records.
+**Your task:** Plan a journey for its purpose: fast dispatch, support through a checkpoint or deliberate sampling of instrumented cells.
 
-An untested route can miss sensor contacts. The team needs an observed route and its limitations, not an unsupported promise of being unseen.
+**What you will produce:** Keep the objective, two routes with costs and dependencies, prediction before movement, actual trace and reason for selecting one.
 
-**What you will produce:** A planned route, its predicted and actual sensor contacts, and a comparison under a changed layout.
-
-**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions. If you cannot attend, use the **Online lab** with the same learning record. The 3D environment also supports preparation and revision.
 
 ## Before you arrive
 
@@ -40,9 +38,9 @@ Read the [briefing](/lectures/week-10/). All starting rules and data are supplie
 
 ## What you will learn
 
-- Apply the published cell-entry rule to predict sensor contacts along a route.
-- Compare predicted sensor events with a recorded trace.
-- Revise a route after a rule or environmental condition changes.
+- Compare routes against an explicit objective and its distinct conditions.
+- Predict a step-by-step contact trace using the cell-entry rule.
+- Revise route or prediction after a changed map and defend the trade-off.
 
 ## Supplied case file and rules
 
@@ -55,19 +53,31 @@ Read the [briefing](/lectures/week-10/). All starting rules and data are supplie
 - A contact is counted on each executed step ending in a sensor cell, including revisits. Predict the total before stepping through the route.
 - Contacts are explicit game events, not automatic failure. Reach the destination and reconcile the predicted and observed counts.
 - These are published board-game detection rules, not specifications for real surveillance.
+- Select an objective before planning: **Fast dispatch** reaches the goal within eight moves; **Support** visits centre row 3, column 3 before the goal; **Survey** visits at least two distinct sensor cells before the goal.
+- All objectives need a correct predicted contact count. Zero contacts are not automatically best.
+
+## From example to independent challenge
+
+**Worked example:** use the alternate scenario to learn the method. Its completed decisions cannot be copied into your assigned case.
+
+**Practice:** use prompts and hints, recording help. Make the prediction or choice before checking.
+
+**Skill check:** begin from the objective and evidence. Decide which test or action matters before consulting the optional explanation.
+
+**Transfer:** inspect the changed condition. Decide what it invalidates and what remains supported; a justified unchanged decision can be correct.
 
 ## The two-hour lab
 
-These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+These are the teaching session's time blocks, not six compulsory game objectives. Adjust timing as needed; reasoning matters more than speed.
 
 | Time | Activity |
 | --- | --- |
-| 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
-| 10–30 minutes | Learn: inspect the worked example and predict its outcome before checking. |
-| 30–60 minutes | Practise: complete the first configuration, inspect feedback and retry deliberately. |
-| 60–80 minutes | Skill check: retest the method under the published check conditions and preserve the result. |
-| 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
-| 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
+| 0–10 minutes | Compare dispatch, support and survey objectives and why their routes differ. |
+| 10–30 minutes | Inspect the alternate route example and locate contacts step by step. |
+| 30–60 minutes | Choose an objective and compare two routes by moves, checkpoints and contacts. |
+| 60–80 minutes | Execute the selection and find the first mismatch; test the second layout independently. |
+| 80–105 minutes | Apply changed coverage and decide whether route, prediction or both must change. |
+| 105–120 minutes | Keep both routes, maps, trace and an objective-based justification. |
 
 ## In-person lab · preferred route
 
@@ -77,30 +87,30 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 
 **Setup:** Draw a 5×5 grid, mark start and destination, and highlight the published sensor cells for the chosen phase. Keep all cells and rules visible.
 
-**What you do together:** Write the full route and predicted contact count before moving. The facilitator records each step ending on a sensor marker, including revisits. Compare traces and repeat with the changed published layout.
+**What you do together:** Choose fast dispatch, centre support or sensor survey. Compare two routes, predict contacts and execute the chosen path; revise the route or prediction under changed coverage.
 
 The [printable facilitator pack](/campus/week-10.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
-Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+Keep the same prediction, changed-condition attempt and explanation as the online route. A dated observation, test, agreement or route sheet serves as the action record. Add acknowledgement where a handoff is part of the task; an additional browser run is not required.
 
 ## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
-1. Select **Practice**. Locate the start at row 5, column 1 and goal at row 1, column 5. Read which cells contain sensors.
-2. Use **Add north**, **Add east**, **Add south** and **Add west** to build the route. Each entry into a marked sensor cell counts once, including a repeat visit.
-3. Before moving, enter your predicted number of sensor contacts. Use **Execute next step** to move through the planned route one cell at a time.
-4. At the goal, select **Test this configuration**. Compare your predicted count with the recorded count and identify the first step where your mental model differed.
-5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge** with their changed sensor layouts. Recalculate contacts before repeating an old route or testing a new one.
-6. After playing, keep the route and trace. Explain what changed between layouts. Contacts are observations to predict, not an automatic failure or a race.
+1. Choose the phase, inspect its sensor map and use **What should this route accomplish?** to select fast dispatch, support via the centre or survey.
+2. Compare two candidate paths on paper or in notes. Record moves, required stops and predicted contacts; use the selected objective to justify a choice.
+3. Use **Add north/east/south/west** to enter the chosen route. Predict total contacts before selecting **Execute next step**. Every executed entry to a marked cell counts, including revisits.
+4. At the destination, select **Test this configuration**. Check the objective conditions as well as the contact count; find the first mismatch if prediction fails.
+5. Save the trace. Use **Rewind** before replaying so position and count restart. The field extension is optional.
+6. Repeat under the changed layouts. Try a contrasting objective and explain why a route with more contacts might better serve it.
 
-### Put your solution into effect
+### Optional field extension
 
-A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Commit the surveyed passage record**. The scene and mission record now show the consequence: The surveyed route reaches dispatch with its observed contact count attached.
+Your investigation, experiment, agreement or revision is already the practical output. You may also stage its consequence in the scene; this extension is not required for the learning record. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Commit the surveyed passage record**. The scene and mission record now show the consequence: The surveyed route reaches dispatch with its observed contact count attached.
 
-Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm dispatch received the route account** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm dispatch received the route account** at the receiver. The optional extension displays **Mission accomplished** after that acknowledgement; your learning record does not require it. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
 
-Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
+Keep any field-extension actions separate from the evidence supporting your practical decision. Neither its completion nor its absence determines an academic grade.
 
 ### Finish and keep your work
 
@@ -110,21 +120,32 @@ For an uninterrupted view, choose **Fullscreen mission**. The **Mission & contro
 
 ## What leaves the room
 
-**sensor-route** contains your initial prediction, activity results, changed-situation response and approximately 100 words of reflection. Include the scenario, route used, assistance and hints. Keep failed attempts that explain a useful revision.
+**sensor-route**
 
-Navigate Meridian's instrumented maintenance corridor under a published simulation contract.
+Keep the objective, two routes with costs and dependencies, prediction before movement, actual trace and reason for selecting one.
+
+Include scenario and assistance. Preserve a failed attempt if it explains a useful revision. Add approximately 100 words connecting result to decision.
+
+A physical final recovery needs a route suited to its load and equipment. Digital and stabilisation approaches need relevant evidence rather than compulsory token navigation.
 
 ## Feedback and explanation
 
-Contacts count steps ending in the highlighted cells, including repeated visits. Reaching the destination without explaining the count is incomplete. A zero-contact route is available, but is not required for sound reasoning.
+<details>
+<summary>Optional explanation and separate exemplar · open after an attempt</summary>
+
+Check objective, destination and predicted trace together. Dispatch, centre support and deliberate survey have different conditions. An extra contact can be justified, while a zero-contact route missing its required checkpoint fails its purpose.
 
 **Worked reflection from the separate demonstration:** My first gallery route made one contact; the alternative made zero under the same sensor set. The changed coverage made the alternative record three. I preserved each route and count with its governing map before choosing by the stated objective.
 
 [Inspect this example's complete record](/demonstrations/lab-10/). Use your own assigned scenario and observations for your reflection.
 
+</details>
+
 ## How to judge the response
 
-A strong record demonstrates the capability, tests it under a changed condition and explains any gap between prediction and observation. Merely reaching a game ending is insufficient. An unsuccessful result can still provide useful diagnostic evidence when its limits are stated accurately. Review feedback before writing your own explanation; do not present the exemplar as your original work.
+A strong response makes a decision the instructions did not supply, supports it with evidence and explains an alternative or limit. A model check establishes its published conditions only; a facilitator judges reasoning. Text length and game endings are not academic grades.
+
+Keep the objective, two routes with costs and dependencies, prediction before movement, actual trace and reason for selecting one.
 
 ## Closing reflection
 
