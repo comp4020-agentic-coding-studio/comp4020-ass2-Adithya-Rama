@@ -38,7 +38,7 @@ related: ["sessions/week-04"]
 
 **You are finished when:** the workshop trial has a debrief, you have kept the practical and transfer evidence, and every item under **What you hand over** is present. A successful trial alone is not a complete assessment.
 
-**Playing in fullscreen:** choose **Fullscreen mission**. The **Mission & controls** panel keeps objectives, roles, area buttons and equipment controls with the scene. Scroll over the scene to zoom. Use **Mouse look** to look around; press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Write your assessment explanation after the practical run.
+**Playing in fullscreen:** choose **Fullscreen mission**. The **Mission & controls** panel keeps objectives, roles, area buttons and equipment controls with the scene. Scroll over the scene to zoom. The cursor starts free: click and drag to turn, or scroll and choose options in the panel. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it. **Esc** or **Exit fullscreen** returns to the page. Write your assessment explanation after the practical run.
 
 ## The brief
 

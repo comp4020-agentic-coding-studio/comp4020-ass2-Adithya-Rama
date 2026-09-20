@@ -47,7 +47,7 @@ related: ["sessions/week-12"]
 
 **You are finished when:** the final run has a justified resolution and debrief, both contrasting rehearsals are preserved, and the entire submission bundle is ready. A different ending can be defensible; explain how it meets the objective or why that objective changed.
 
-**Playing in fullscreen:** choose **Fullscreen mission**. Its **Mission & controls** panel contains the journal, role instructions, area switches, actions and exports, so you can complete the practical run without leaving the view. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Save the longer written defence for after the run.
+**Playing in fullscreen:** choose **Fullscreen mission**. Its **Mission & controls** panel contains the journal, role instructions, area switches, actions and exports, so you can complete the practical run without leaving the view. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Save the longer written defence for after the run.
 
 ## The brief
 

@@ -12,16 +12,48 @@ async function launch(page:Page,path:string,detailed=false){
  if(!detailed)await page.locator('[data-world-quality]').selectOption('low');
  return page.locator('[data-academy-world]');
 }
+async function assertCursorUnlocked(page:Page,scene:Locator){
+ await expect(scene).toHaveAttribute('data-world-mouse-look','false');
+ await expect(scene).toHaveAttribute('data-world-look-mode','drag');
+ await expect.poll(()=>page.evaluate(()=>document.pointerLockElement===null)).toBe(true);
+ await expect(scene.locator('[data-immersive-look]')).toHaveAttribute('aria-pressed','false');
+}
 async function expand(page:Page,scene:Locator){
  await scene.locator('[data-world-fullscreen]').click();
  await expect(scene).toHaveAttribute('data-immersive','true');
  await expect(scene.locator('[data-immersive-console]')).toBeVisible();
- // Wait for the asynchronous native request or disclosed fallback before releasing it.
- await expect(scene).toHaveAttribute('data-world-look-mode',/locked|free/);
- await page.keyboard.press('Tab');
- await expect(scene).toHaveAttribute('data-world-mouse-look','false');
+ // Every lab, assignment, project and demonstration starts with usable controls.
+ await assertCursorUnlocked(page,scene);
+ await scene.locator('[data-world-canvas] canvas').focus();
+ await page.keyboard.press('x');
+ await expect(scene).toHaveAttribute('data-world-look-mode',/locked|free/,{timeout:20000});
+ await expect(scene.locator('[data-immersive-look]')).toHaveAttribute('aria-pressed','true');
+ await page.keyboard.press('x');
+ await assertCursorUnlocked(page,scene);
  await page.screenshot({path:test.info().outputPath('immersive-instructions.png')});
  return scene.locator('[data-immersive-console]');
+}
+async function nextFrames(page:Page){
+ await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+}
+async function unlockedCameraUsesDrag(page:Page,scene:Locator){
+ const canvas=scene.locator('[data-world-canvas] canvas');
+ const rect=(await canvas.boundingBox())!;
+ // Keep the scene stationary so a camera change can only come from our input.
+ await scene.locator('[data-world-pause]').click();
+ await expect(scene.locator('[data-world-pause]')).toHaveAttribute('aria-pressed','true');
+ await canvas.hover({position:{x:25,y:rect.height*.5}});
+ await nextFrames(page);
+ const before=await scene.getAttribute('data-world-camera');
+ await page.mouse.move(rect.x+80,rect.y+rect.height*.6,{steps:4});
+ await nextFrames(page);
+ expect(await scene.getAttribute('data-world-camera')).toBe(before);
+ await page.mouse.down();
+ await page.mouse.move(rect.x+150,rect.y+rect.height*.5,{steps:4});
+ await page.mouse.up();
+ await expect(scene).not.toHaveAttribute('data-world-camera',before!);
+ await canvas.click({position:{x:25,y:rect.height*.5}});
+ await assertCursorUnlocked(page,scene);
 }
 async function denyNativeApis(page:Page){
  await page.addInitScript(()=>{
@@ -35,7 +67,8 @@ async function viewFits(page:Page,scene:Locator){
   const panel=root.querySelector<HTMLElement>('[data-immersive-console]')!;
   const canvas=root.querySelector<HTMLElement>('[data-world-canvas]')!;
   const exit=root.querySelector<HTMLElement>('[data-immersive-exit]')!;
-  return {viewport:{width:innerWidth,height:innerHeight},root:root.getBoundingClientRect().toJSON(),panel:panel.getBoundingClientRect().toJSON(),canvas:canvas.getBoundingClientRect().toJSON(),exit:exit.getBoundingClientRect().toJSON(),exitReceivesPointer:exit.contains(document.elementFromPoint(exit.getBoundingClientRect().left+exit.clientWidth/2,exit.getBoundingClientRect().top+exit.clientHeight/2)),panelWidth:panel.clientWidth,panelScrollWidth:panel.scrollWidth};
+  const buttons=[...root.querySelectorAll<HTMLElement>('[data-immersive-bar] button')].filter(node=>node.getClientRects().length).map(node=>({text:node.textContent,rect:node.getBoundingClientRect().toJSON()}));
+  return {buttons,viewport:{width:innerWidth,height:innerHeight},root:root.getBoundingClientRect().toJSON(),panel:panel.getBoundingClientRect().toJSON(),canvas:canvas.getBoundingClientRect().toJSON(),exit:exit.getBoundingClientRect().toJSON(),exitReceivesPointer:exit.contains(document.elementFromPoint(exit.getBoundingClientRect().left+exit.clientWidth/2,exit.getBoundingClientRect().top+exit.clientHeight/2)),panelWidth:panel.clientWidth,panelScrollWidth:panel.scrollWidth};
  });
  expect(bounds.root.left).toBeGreaterThanOrEqual(-1);
  expect(bounds.root.right).toBeLessThanOrEqual(bounds.viewport.width+1);
@@ -49,25 +82,73 @@ async function viewFits(page:Page,scene:Locator){
  expect(bounds.exit.top).toBeGreaterThanOrEqual(0);
  expect(bounds.exit.bottom).toBeLessThanOrEqual(bounds.viewport.height);
  expect(bounds.panelScrollWidth).toBeLessThanOrEqual(bounds.panelWidth+1);
+ for(let i=0;i<bounds.buttons.length;i++)for(let j=i+1;j<bounds.buttons.length;j++){
+  const a=bounds.buttons[i]!,b=bounds.buttons[j]!;
+  const overlaps=Math.min(a.rect.right,b.rect.right)-Math.max(a.rect.left,b.rect.left)>1&&Math.min(a.rect.bottom,b.rect.bottom)-Math.max(a.rect.top,b.rect.top)>1;
+  expect(overlaps,'Fullscreen buttons overlap: '+a.text+' / '+b.text).toBe(false);
+ }
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  await page.screenshot({path:test.info().outputPath('immersive-'+bounds.viewport.width+'x'+bounds.viewport.height+'.png')});
 }
 
-test('native fullscreen captures mouse-look, updates the rendered camera and releases with Escape',async({page})=>{
+test('native fullscreen starts unlocked; X toggles mouse-look, drag works, typing is safe and Tab releases',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});
  const scene=await launch(page,'sessions/week-04/',true);
  await scene.locator('[data-world-fullscreen]').click();
  await expect.poll(()=>page.evaluate(()=>document.fullscreenElement===document.querySelector('[data-academy-world]')),{timeout:20000}).toBe(true);
+ await assertCursorUnlocked(page,scene);
+ await unlockedCameraUsesDrag(page,scene);
+ const canvas=scene.locator('[data-world-canvas] canvas');
+ await canvas.focus();
+ await page.keyboard.press('x');
  await expect.poll(()=>page.evaluate(()=>document.pointerLockElement===document.querySelector('[data-world-canvas] canvas')),{timeout:20000}).toBe(true);
  await expect(scene).toHaveAttribute('data-world-look-mode','locked');
  await expect(scene).toHaveAttribute('data-world-camera',/^-?[\d.]+,-?[\d.]+,-?[\d.]+$/);
  const before=await scene.getAttribute('data-world-camera');
- await page.mouse.move(120,180);await page.mouse.move(200,220);
+ // Native capture is real. Headless Chromium cancels CDP absolute moves with
+ // opposite recenter events, so exercise relative-delta integration explicitly.
+ // tools/native-pointer-review.mjs separately verifies trusted OS-relative input.
+ await canvas.evaluate(node=>{
+  for(const [movementX,movementY] of [[0,0],[24,8],[24,8]])
+   node.dispatchEvent(new MouseEvent('mousemove',{bubbles:true,movementX,movementY}));
+ });
+ await nextFrames(page);
  await expect(scene).not.toHaveAttribute('data-world-camera',before!);
- await page.keyboard.press('Tab');
- await expect.poll(()=>page.evaluate(()=>document.pointerLockElement===null)).toBe(true);
+ await page.keyboard.press('x');
+ await assertCursorUnlocked(page,scene);
  await expect(scene).toHaveAttribute('data-immersive','true');
+ const panel=scene.locator('[data-immersive-console]');
+ await panel.locator('[data-training-controls]').getByRole('button',{name:'Release interlock',exact:true}).click();
+ await expect(panel.locator('.training-readout')).toContainText('Released');
+ const direction=panel.locator('[data-training-controls]').getByLabel('Predict output direction relative to the driver');
+ await direction.selectOption('opposite');
+ await direction.focus();await page.keyboard.press('x');
+ await expect(direction).toHaveValue('opposite');
+ await assertCursorUnlocked(page,scene);
+ const reflection=panel.locator('[data-training-reflection]');
+ const disclosure=reflection.locator('xpath=ancestor::details[1]');
+ if(await disclosure.count())await disclosure.locator('summary').click();
+ await reflection.focus();
+ await page.keyboard.press('x');
+ await expect(reflection).toHaveValue('x');
+ await assertCursorUnlocked(page,scene);
+ // A modifier shortcut and a held key must not toggle camera control.
+ await canvas.focus();
+ await page.keyboard.press('Control+x');
+ await assertCursorUnlocked(page,scene);
+ await scene.locator('[data-immersive-look]').click();
+ await expect.poll(()=>page.evaluate(()=>document.pointerLockElement!==null),{timeout:20000}).toBe(true);
+ await page.keyboard.down('x');
+ await assertCursorUnlocked(page,scene);
+ await page.keyboard.down('x');
+ await assertCursorUnlocked(page,scene);
+ await page.keyboard.up('x');
+ await scene.locator('[data-immersive-look]').click();
+ await expect.poll(()=>page.evaluate(()=>document.pointerLockElement!==null),{timeout:20000}).toBe(true);
+ await page.keyboard.press('Tab');
+ await assertCursorUnlocked(page,scene);
  await expect(scene.locator('[data-immersive-console]')).toBeFocused();
+ await expect(scene).toHaveAttribute('data-immersive','true');
  await viewFits(page,scene);
  await page.keyboard.press('Escape');
  await expect(scene).toHaveAttribute('data-immersive','false');
@@ -75,14 +156,19 @@ test('native fullscreen captures mouse-look, updates the rendered camera and rel
  await expect(scene.locator('[data-world-fullscreen]')).toBeFocused();
 });
 
-test('denied native APIs keep free look, scene zoom and independent mission-panel scrolling usable',async({page})=>{
+test('denied native APIs start unlocked and X toggles fallback look while panel choices and scrolling stay usable',async({page})=>{
  await denyNativeApis(page);
+ await page.emulateMedia({reducedMotion:'reduce'});
  const scene=await launch(page,'sessions/week-04/',true);
  await scene.locator('[data-world-fullscreen]').click();
- await expect(scene).toHaveAttribute('data-world-look-mode','free');
+ await expect(scene).toHaveAttribute('data-immersive','true');
+ await assertCursorUnlocked(page,scene);
  expect(await page.evaluate(()=>document.fullscreenElement)).toBeNull();
  expect(await page.evaluate(()=>document.pointerLockElement)).toBeNull();
+ await unlockedCameraUsesDrag(page,scene);
  const canvas=scene.locator('[data-world-canvas] canvas');
+ await canvas.focus();await page.keyboard.press('x');
+ await expect(scene).toHaveAttribute('data-world-look-mode','free');
  await canvas.hover({position:{x:40,y:70}});
  const before=await scene.getAttribute('data-world-camera');
  const rect=await canvas.boundingBox();
@@ -94,7 +180,8 @@ test('denied native APIs keep free look, scene zoom and independent mission-pane
  const closer=Number(await scene.getAttribute('data-world-zoom'));
  await page.mouse.wheel(0,160);
  await expect.poll(async()=>Number(await scene.getAttribute('data-world-zoom'))).toBeGreaterThan(closer);
- await page.keyboard.press('Tab');
+ await page.keyboard.press('x');
+ await assertCursorUnlocked(page,scene);
  const panel=scene.locator('[data-immersive-console]');
  const zoom=await scene.getAttribute('data-world-zoom');
  await panel.hover({position:{x:30,y:60}});
@@ -109,6 +196,12 @@ test('denied native APIs keep free look, scene zoom and independent mission-pane
  await panel.locator('[data-training-confirm-cancel]').click();
  await expect(panel.locator('.training-readout')).toContainText('Released');
  await expect(scene).toHaveAttribute('data-immersive','true');
+ await assertCursorUnlocked(page,scene);
+ await canvas.focus();await page.keyboard.press('x');
+ await expect(scene).toHaveAttribute('data-world-look-mode','free');
+ await page.keyboard.press('Tab');
+ await assertCursorUnlocked(page,scene);
+ await expect(panel).toBeFocused();
  await viewFits(page,scene);
  await scene.locator('[data-immersive-exit]').click();
  await expect(scene).toHaveAttribute('data-immersive','false');

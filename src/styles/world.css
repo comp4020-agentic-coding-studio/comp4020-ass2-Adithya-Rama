@@ -54,3 +54,7 @@
  .demo-player[data-mode=watch] .academy-world--demo .world-control-group select{width:auto;min-height:44px}
  .demo-player[data-mode=watch] .academy-world--demo .world-instructions{padding:.45rem .7rem;font-size:.7rem}
 }
+
+/* In Take Control, the status already names the mode. Leave the bottom row
+   exclusively for equipment actions in both page and fullscreen views. */
+.academy-world--demo[data-demo-control=true] .world-demo-badge {display:none}

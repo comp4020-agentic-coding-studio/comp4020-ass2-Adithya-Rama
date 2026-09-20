@@ -8,7 +8,7 @@ const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftsh
 const results=[];
 try {
  for (const viewport of [{width:1920,height:1080},{width:390,height:844}]) {
-  for (const route of ['sessions/week-01/','operation/','demonstrations/assessment-final/']) {
+  for (const route of ['sessions/week-01/','operation/','demonstrations/lab-01/?mode=control','demonstrations/assessment-final/']) {
    const page=await browser.newPage({viewport});
    await page.goto(base+route);
    await page.locator('[data-world-launch]').click();
@@ -16,13 +16,22 @@ try {
    await page.locator('[data-world-quality]').selectOption('low');
    await page.locator('[data-world-fullscreen]').click();
    await page.waitForFunction(()=>document.querySelector('[data-academy-world]')?.getAttribute('data-immersive')==='true');
-   await page.keyboard.press('Tab');
    await page.locator('[data-immersive-controls]').click();
    await page.addScriptTag({path:axe});
    const violations=await page.evaluate(async()=> (await window.axe.run(document.querySelector('[data-academy-world]'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))})));
-   const name=route.replaceAll('/','-')+viewport.width;
+   const name=route.replace(/[^a-z0-9-]/gi,'-')+viewport.width;
    await page.screenshot({path:'.browser-immersive-review/'+name+'.png'});
-   results.push({route,viewport,violations});
+   const layout=await page.locator('[data-academy-world]').evaluate(root=>{
+    const panel=root.querySelector('[data-immersive-console]');
+    const scene=root.querySelector('[data-world-canvas]');
+    const text=panel.querySelector('.demo-caption p, .learner-guide p, p');
+    const button=root.querySelector('[data-immersive-look]');
+    return {rootFont:getComputedStyle(document.documentElement).fontSize,
+      bodyFont:text?getComputedStyle(text).fontSize:null,buttonFont:getComputedStyle(button).fontSize,
+      scene:scene.getBoundingClientRect().toJSON(),panel:panel.getBoundingClientRect().toJSON(),
+      panelOverflowsHorizontally:panel.scrollWidth>panel.clientWidth+1};
+   });
+   results.push({route,viewport,layout,violations});
    await page.close();
   }
  }

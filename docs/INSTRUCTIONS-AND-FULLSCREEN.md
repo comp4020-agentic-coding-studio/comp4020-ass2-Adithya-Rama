@@ -11,8 +11,8 @@ Lab 1 defines observation, claim, inference and inspect at the point of use. The
 1. Open the 3D environment.
 2. Select **Fullscreen mission**.
 3. Read the current objective in the persistent top bar. **Mission & controls** returns to the guide; **Task controls** jumps directly to the apparatus; in a mission it selects the role and room required by the displayed objective.
-4. Move the mouse to look around. Scroll over the scene to zoom; the zoom buttons and keyboard plus/minus are alternatives.
-5. Press **Tab** to release the cursor for inputs and buttons; **Mouse look** resumes camera control. Touchscreens use drag and zoom buttons.
+4. Fullscreen starts with the cursor free. Click and drag the scene to turn, or scroll and choose options in the task panel. Scroll over the scene to zoom; the zoom buttons and keyboard plus/minus are alternatives.
+5. Press **X** or **Lock cursor (X)** to turn by moving the mouse. Press **X** again or **Tab** to free the cursor and return to click-and-drag turning. The toolbar states the current mode. X does not interrupt text fields, selects or editable content. Touchscreens use drag and zoom buttons.
 6. Complete the practical task, then write the reflection and save/export its record inside the same view.
 7. **Escape** or **Exit fullscreen** returns to the page without duplicating or resetting the activity.
 
@@ -23,15 +23,15 @@ Week 12 is the after-action account of Last Light. The final debrief links to th
 ## Implementation guarantees and fallbacks
 
 - Existing DOM controls move into the scene and back; there is one authoritative activity state and one set of event listeners.
-- Native fullscreen and pointer lock start only from the learner's click. Pointer lock is requested first because fullscreen consumes transient activation; see the [Pointer Lock specification](https://www.w3.org/TR/pointerlock-2/).
-- If native fullscreen is unavailable or rejected, a full-window top-layer view keeps the mission above the site's header. If pointer lock is unavailable, mouse movement over the scene still turns the view.
+- Native fullscreen starts from the learner's fullscreen button. Pointer lock requires a separate deliberate X keypress or labelled toggle click; entering fullscreen and clicking the canvas never request it.
+- If native fullscreen is unavailable or rejected, a full-window top-layer view keeps the mission above the site's header. If pointer lock is unavailable, enabling X mouse-look turns the view only while the mouse is over the scene; the toolbar discloses that the cursor remains available. X returns to drag controls. Late lock responses cannot recapture a cursor the learner already released.
 - Wheel handling is scoped to the canvas; scrolling the instructions does not zoom the scene.
 - Native browser confirmation prompts were replaced with accessible in-scene dialogs to prevent accidental fullscreen exits.
 - Keyboard focus returns to the entry button after exit. Text inputs do not trigger walking. Dialog cancellation preserves the current attempt.
 - New A2 trials use the relay's digital objective. Existing saved histories remain intact, including optional planning notes.
 - Reflections follow the practical task. Predictions, recall and plan revisions remain inside the activity when they are the skill being practised.
 
-## Local verification — 20 September 2026
+## Earlier local verification — 20 September 2026, commit 1f4a73a
 
 Validation was performed on the production build in local Chromium. The 3D browser runs use SwiftShader; longer completion journeys select the existing Lightweight graphics option. Native mouse capture was checked separately from explicitly denied-API fallback tests.
 
@@ -64,3 +64,32 @@ Use an independent preview server when running separate browser commands concurr
 The retained [desktop view](evidence/immersive-mission-desktop.png) and [phone view](evidence/immersive-mission-phone.png) were inspected. The review led to a top-layer fallback to keep Exit visible, a more compact phone toolbar, a persistent objective title and a direct task-control shortcut. Rendered accessibility review additionally identified and corrected the toolbar's hover contrast.
 
 These checks establish the recorded local browser behaviour. They do not establish physical-phone performance, student enjoyment, learning effectiveness, publication or an assessment grade. The user retains control of pushing and deployment.
+
+## Cursor and compact-layout follow-up — 20 September 2026
+
+Adithya's screenshot exposed oversized controls, overlapping scene overlays and a playback label broken across lines. Their use also established that automatic cursor capture prevented comfortable access to the task panel.
+
+- Fullscreen now opens with a free cursor. X toggles mouse-look; X again or Tab releases it. Ordinary canvas clicks keep drag-to-turn. The status bar and toggle button show the mode.
+- Form fields, selects, held X keys and modified shortcuts keep their ordinary behaviour.
+- A local interface scale overrides the course page's larger prose/control styles. Scene labels and equipment actions have their own rows. Playback pace has an intact label beside its selector.
+- Selected roles, rooms and example chapters stay visibly selected. Touch controls retain usable targets.
+- Narrow-screen testing exposed a second issue: long status messages could consume the scene's height. Scene updates now scroll in a bounded, keyboard-focusable strip. Portrait and landscape layouts reserve useful scene space alongside the task controls.
+- The embedded Take Control demonstration also removes the redundant mode badge that previously collided with equipment buttons.
+
+### Follow-up verification
+
+- `pnpm check`: 112 tests passed; zero type errors/warnings (two existing hints). The final production build generated 59 pages with no broken links, base-path failures or static accessibility violations.
+- `pnpm check:evidence`: all four process citations resolve.
+- The complete updated immersive suite passed **16/16** cases in one serial run, at 1920×1080 and 390×844. This includes actual native fullscreen/capture, X lock/release, Tab/Escape, typed X and select safety, drag versus hover, denied-API fallback, independent panel scrolling, complete lab/A1/A2/final exports, demonstrations, and resizing/touch at 320×700, 844×390 and 768×1024.
+- Rendered accessibility review passed **eight** views with zero WCAG A/AA violations and no horizontal panel overflow: Lab 1, final mission, Lab 1 demonstration and final demonstration at both marking viewports. [Results and measured layout](evidence/compact-fullscreen-accessibility.json).
+- The [compact desktop demonstration](evidence/compact-fullscreen-desktop.png) and [completed final mission on phone](evidence/compact-fullscreen-phone.png) were visually inspected. The playback label stays intact, selected mode remains clear, scene labels/actions no longer overlap, and long final feedback no longer collapses the phone scene.
+
+### Native mouse-input evidence
+
+The first headless test acquired pointer lock but produced equal-and-opposite trusted movement pairs from each absolute automation gesture. Their net movement was zero. Increasing the number of absolute moves confirmed that test-environment behaviour rather than an application failure.
+
+The portable regression retains actual native fullscreen/capture/release assertions and explicitly uses scripted relative deltas for the camera-handler integration check. A separate headed Chromium check under Xvfb used **real XTest relative mouse input**: a trusted locked `(12, 4)` event changed the rendered camera from `0.000,3.514,8.550` to `-0.360,3.604,8.550`. [Native input record](evidence/native-pointer-input.json).
+
+The optional reproduction is `xvfb-run -a pnpm exec node tools/native-pointer-review.mjs`; it uses existing Linux Xvfb, Python, X11 and XTest libraries, and adds no mandatory dependency to the portable tests or build. Camera logic was not altered to compensate for headless cursor warping.
+
+All results are local. Phone viewports and emulated touch do not establish physical-device performance. Publication remains with Adithya. Earlier results above remain attached to their original implementation.

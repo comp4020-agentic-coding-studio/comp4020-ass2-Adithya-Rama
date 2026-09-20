@@ -47,7 +47,7 @@ export class AcademyWorld {
   this.renderer.setClearColor(0x344f58);this.renderer.outputColorSpace=THREE.SRGBColorSpace;this.renderer.toneMapping=THREE.ACESFilmicToneMapping;
   this.renderer.toneMappingExposure=1.05;this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   this.stage.append(this.renderer.domElement);this.renderer.domElement.tabIndex=0;
-  this.renderer.domElement.setAttribute('aria-label','Interactive third-person academy. Move with W A S D or arrows. Press E to inspect. Scroll to zoom, or use the zoom buttons. Drag to look; fullscreen mouse-look also supports moving the mouse without dragging. Press Escape to release mouse-look. Equipment also has buttons.');
+  this.renderer.domElement.setAttribute('aria-label','Interactive third-person academy. Move with W A S D or arrows. Press E to inspect. Scroll to zoom, or use the zoom buttons. Drag to turn. In fullscreen, X toggles cursor lock for mouse-look; X or Tab frees the cursor for controls. Escape exits fullscreen. Equipment also has buttons.');
   this.renderer.domElement.setAttribute('role','application');if(this.mode==='demo')this.renderer.domElement.setAttribute('aria-label','Guided three-dimensional worked example. Watch its equipment and instructor, or choose Take control for exploration. Scroll or use the zoom buttons to examine the scene more closely.');
   await RAPIER.init();this.physics=new RAPIER.World({x:0,y:-9.81,z:0});this.controller=this.physics.createCharacterController(.015);
   this.controller.enableAutostep(.22,.3,true);this.controller.enableSnapToGround(.3);

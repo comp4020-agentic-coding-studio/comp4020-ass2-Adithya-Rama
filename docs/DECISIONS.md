@@ -64,3 +64,13 @@ The final opening-screen review moved the audience and fictional premise into th
 **Observed corrections:** Browser testing exposed native confirmation dialogs leaving fullscreen, a sticky site header covering the fallback exit controls, and previously saved planning notes becoming inaccessible in A1/A2. Phase/example confirmations now use in-scene dialogs; fallback uses the browser top layer; optional planning notes remain accessible. Review also corrected contrast and fallback keyboard focus. These were actual implementation findings, not student-playtesting claims.
 
 **Verification:** See INSTRUCTIONS-AND-FULLSCREEN.md for commands, final results and scope. This decision is carried in the implementation commit containing this entry. The student's existing PROCESS.md account is preserved.
+
+## 2026-09-20 — Cursor control must be deliberate
+
+**Observed problem:** Adithya supplied a fullscreen demonstration screenshot with oversized controls, overlapping scene overlays and a playback label wrapping within a word. They also could not scroll or select responses with the captured mouse. Their requested correction was an X-key toggle, with ordinary drag-to-turn and a usable cursor when unlocked.
+
+**Decision:** Fullscreen opens with the cursor free. X or the labelled toolbar toggle enables mouse-look; X again or Tab releases it. Clicking the scene never captures the mouse. Editable inputs and selectors keep their normal X-key behaviour. The mode is explained in the persistent toolbar and throughout the lab and assessment instructions.
+
+**Implementation rule:** Keep the shared scene input layer authoritative across all labs, demonstrations and assessment missions. Guard delayed pointer-lock responses so they cannot recapture a cursor after release. Give the fullscreen interface its own compact typography and controls; reserve space for scene status and actions instead of overlapping overlays.
+
+**Verification:** The follow-up section in INSTRUCTIONS-AND-FULLSCREEN.md records the actual test and visual review results. This decision responds to the user's screenshot and reported use; it does not claim independent student playtesting. Publication remains with Adithya.

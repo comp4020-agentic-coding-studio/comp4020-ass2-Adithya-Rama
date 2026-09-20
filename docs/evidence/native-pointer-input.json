@@ -1,0 +1,20 @@
+{
+  "method": "Headed Chromium with real XTest relative mouse input under Xvfb",
+  "before": "0.000,3.514,8.550",
+  "after": "-0.360,3.604,8.550",
+  "mode": "locked",
+  "samples": [
+    {
+      "x": 502,
+      "y": -611,
+      "trusted": true,
+      "locked": true
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "trusted": true,
+      "locked": true
+    }
+  ]
+}

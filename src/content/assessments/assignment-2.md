@@ -43,7 +43,7 @@ related: ["sessions/week-08"]
 
 **You are finished when:** you have a completed relay record, a preserved checkpoint and revision, evidence of role rotation, and the full submission bundle. The compact trial does not replace the lab records that demonstrate all nine policy checks and read-back under changed conditions.
 
-**Playing in fullscreen:** choose **Fullscreen mission**. Use its **Mission & controls** panel for the journal, role and area switches, and equipment. Scroll over the scene to zoom; use **Mouse look** to look around and **Tab** to release the pointer. **Esc** or **Exit fullscreen** returns to the page. The joint written account comes after playing.
+**Playing in fullscreen:** choose **Fullscreen mission**. Use its **Mission & controls** panel for the journal, role and area switches, and equipment. Scroll over the scene to zoom; click and drag to turn with the cursor free. Press **X** to lock it for mouse-look and **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. The joint written account comes after playing.
 
 ## The brief
 
