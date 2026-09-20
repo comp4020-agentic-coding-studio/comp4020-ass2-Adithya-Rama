@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Check three people's statements against records and choose an agreement that meets their actual constraints.
+**Operation The Custodian’s Terms.** Secure an agreement the custodian can honour while protecting the original and respecting the support limit.
+
+Confident accounts contradict the comparison log, mandate and cart certificate. Without a feasible agreement the custodian cannot release the requested record.
 
 **What you will produce:** Three checked claims, an evidence-based agreement, and a revised agreement when the handling requirement changes.
 
@@ -74,8 +76,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. For each speaker, select **Check … against the record**. Compare the claim with the archive comparison, custody condition or cart capacity shown.
 3. In **Propose an agreement**, choose the option supported by the mandate and those records. Confidence or hesitation is not evidence that somebody is right or wrong.
 4. Select **Test this configuration**. If your agreement fails, identify the specific handling, capacity or objective requirement it misses.
-5. Use **Skill check** to explain the agreement from another role's perspective. Then open **Transfer challenge** and read the changed requirement before choosing again.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Use **Skill check** to explain the agreement from another role's perspective. Then open **Transfer challenge** and read the changed requirement before choosing again.
 6. After playing, explain one contradicted claim, one legitimate concern and why the changed mandate affects your agreement.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Present the evidence-backed agreement**. The scene and mission record now show the consequence: The custodian accepts the supported proposal and issues the appropriate custody authority.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the custody terms are recorded** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

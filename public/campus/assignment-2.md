@@ -31,3 +31,7 @@ Complete a new handoff: Dispatch / 1 / IVORY. Preserve earlier records and expla
 ## Evidence and interpretation
 
 Provide both roles' records, before/after matrix, source comparison, handoff and contribution statements with the 500–700-word joint account. Use the website's criterion descriptors. There is no requirement for acting speed or hidden information after debrief.
+
+## Performed transmission and acknowledgement
+
+After diagnosis, verified source, permission repair and the precise handoff are complete, operate the relay terminal card. The facilitator supplies a receiving acknowledgement. Collect it, read it back at Check the receiving terminal and deliver it to the receiving point. Preserve the original and revised transmission records. A working lamp alone does not establish that the record was received.

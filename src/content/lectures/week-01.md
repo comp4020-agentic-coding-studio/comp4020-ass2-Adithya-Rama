@@ -11,6 +11,9 @@ date: 2027-02-22
 related: ["sessions/week-01", "assessments/assignment-1"]
 ---
 
+> **Your field application — Silent Gallery:** Give Control a reliable account of the gallery before its recovery team enters. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The room looks ordinary. That is why it is such a useful test.
 
 ## What you will learn

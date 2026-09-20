@@ -1,20 +1,22 @@
 # Assignment 2 reflection — retro notes
 
-These optional notes support [PROCESS.md](../PROCESS.md), the assessed account. The [Assignment 2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/) requires no separate reflection; the retro presents the breakthrough from that account.
+These notes support [PROCESS.md](../PROCESS.md). They reflect the supplied author account and directions; implementation checks are the agent's evidence.
 
 ## What moved the work forward?
 
-My breakthrough was changing what I asked the agent to deliver: a complete learning experience for a specific skill. The first course had a coherent story and organised evidence, but I was dissatisfied because it had lost the attraction of acquiring unusual capabilities. More visual polish would not fix that. I redirected the work toward practice, feedback and transfer.
+My main correction was recognising that a working educational simulation could still miss the experience I wanted. I wanted students to feel like agents: enter a situation, discover what prevents their objective, investigate, apply a skill and experience the consequence. Finishing a list of labelled models did not fully express that intention.
 
-I then required a complete alternate demonstration for every lab and assessment. My later question was whether those examples actually differed from the assigned work. The review found that separate names and numbers sometimes concealed the same decision path. In [1c215a0](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/1c215a0), one circuit example gained two simultaneous faults: the first correct repair does not finish its diagnosis. That teaches students to verify the result and reconsider their model. It gives them a method to transfer instead of a repair sequence to copy.
+The earlier redesign established useful capabilities and complete alternate demonstrations. My question about example separation also mattered: changing names or numbers could leave students copying the same solution. The correction in [1c215a0](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/1c215a0) made differences consequential, including a diagnosis where one correct repair does not finish the problem.
+
+I then clarified that mission experience belongs in every lab, assignment, project and worked example. The agent's explanation of problem, investigation, skill, consequence and recovery finally matched what I was asking for. Students should learn along the way and feel proud of a successful recovery. That describes my aim; it does not claim that students have already experienced it.
 
 ## What does this mean for the developer I want to be?
 
-I want to take responsibility for the experience I ask an agent to create. My questions were whether a student understands the skill, sees its purpose, genuinely practises it and wants to return. Those questions matter even when the implementation is substantial and its checks pass.
+I want to judge what the learner actually does, including the reason for each action and the response it produces. Visual polish, complete content and passing tests each matter, but I still need to question whether they serve the intended experience.
 
-“Different examples” needed a precise meaning. The [harness](../CLAUDE.md) now requires consequential contrasts across browser and campus cases, including changed conditions, briefing prose, slides and reflection examples. The [current rubric review](../docs/RUBRIC-AUDIT.md) also adds a conventional Course guide for prerequisites, workload, timetable, assessment and help. A student should understand the course before entering its 3D world. The final local checks passed; the audit distinguishes agent validation from personal student playtesting.
+The [harness](../CLAUDE.md) now requires performed interventions and handovers, shared demonstration rules, separate practice records and evidence invalidation. The [mission review](../docs/FIELD-MISSIONS.md) records implementation checks and actual findings. An agent review caught stalled paused-scene actions, an old-save prerequisite issue and an original archive that remained visible after collection. These are concrete implementation observations, not a personal student playtest.
 
-Causal rules and preserved records can be checked. Enjoyment and learning still need human judgement. The agent's recorded inspections establish particular behaviours, not a student playtest or a grade. I remain responsible for what the automation leaves unresolved.
+Causal rules and records can be tested. Enjoyment, learning and the feeling of being an agent require human judgement. I remain responsible for that distinction and for deciding whether the next version fulfils the purpose.
 
 *Edited with coding-agent assistance from the supplied [author account and feedback](../docs/AUTHOR-NOTES.md). No personal testing or research experience is invented.*
 
@@ -22,8 +24,8 @@ Causal rules and preserved records can be checked. Enjoyment and learning still 
 
 This is a presentation plan, not a record of a presentation already delivered.
 
-1. **Before:** show the [earlier dossier design](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/bc31705). Explain why an organised story still missed the desired learning experience.
-2. **Direction:** show [CLAUDE.md](../CLAUDE.md): practice, feedback, transfer and meaningfully different examples.
-3. **After:** open the Week 5 demonstration. Show why its first repair is insufficient, then compare the assigned lab's conditions.
-4. **Evidence:** show the [separation tests](../spec/example-separation.test.ts) and [rendered review](../docs/EXAMPLE-SEPARATION-AUDIT.md). Explain what the supply-label correction revealed beyond passing answer checks.
-5. **Student view:** use the Course guide to find preparation and help. Distinguish local evidence from the deployed submission, and functional checks from learning quality.
+1. **Initial direction:** show the [earlier dossier design](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/bc31705) and explain why organised evidence did not fulfil the skills-academy intention.
+2. **A consequential correction:** compare the Week 5 demonstration's two-fault problem with the assigned diagnosis and show the example-separation rule.
+3. **The experiential gap:** explain why a checked route and a performed recovery are different student actions.
+4. **Revised experience:** open Lab 3, align the module, enact the passage intervention and deliver its verification; then show a final recovery handover.
+5. **Evidence and limits:** show the mission checks and agent observations. Distinguish reliable behaviour from enjoyment, learning, grading and publication.

@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Pass an exact instruction between role views and use read-back to catch a misunderstanding.
 
+## Field operation — Across the Divide
+
+**Objective:** Get the correct sealed batch to its receiver through a relay where each role sees different information.
+
+**Obstacle:** The sender has the manifest; the operator has dispatch controls. “Send those there” identifies neither the destination nor the batch.
+
+After the skill check, put the result into effect: **Dispatch the read-back-confirmed batch**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The relay dispatches the confirmed batch and a receiver acknowledgement closes the handoff.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the receiver acknowledged delivery**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Replace a vague dispatch instruction with a destination, quantity, code and confirmation.
@@ -66,6 +78,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

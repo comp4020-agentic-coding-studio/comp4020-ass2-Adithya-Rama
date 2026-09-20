@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Predict how a route interacts with a published sensor map, then compare the prediction with the recorded journey.
+**Operation The Surveyed Passage.** Guide the team across a published sensor grid and accurately report what its passage records.
+
+An untested route can miss sensor contacts. The team needs an observed route and its limitations, not an unsupported promise of being unseen.
 
 **What you will produce:** A planned route, its predicted and actual sensor contacts, and a comparison under a changed layout.
 
@@ -75,8 +77,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Use **Add north**, **Add east**, **Add south** and **Add west** to build the route. Each entry into a marked sensor cell counts once, including a repeat visit.
 3. Before moving, enter your predicted number of sensor contacts. Use **Execute next step** to move through the planned route one cell at a time.
 4. At the goal, select **Test this configuration**. Compare your predicted count with the recorded count and identify the first step where your mental model differed.
-5. Try **Skill check**, then **Transfer challenge** with their changed sensor layouts. Recalculate contacts before repeating an old route or testing a new one.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge** with their changed sensor layouts. Recalculate contacts before repeating an old route or testing a new one.
 6. After playing, keep the route and trace. Explain what changed between layouts. Contacts are observations to predict, not an automatic failure or a race.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Commit the surveyed passage record**. The scene and mission record now show the consequence: The surveyed route reaches dispatch with its observed contact count attached.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm dispatch received the route account** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

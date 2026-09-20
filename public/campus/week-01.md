@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Inspect a furnished scene, reconstruct what was present and distinguish observations from interpretations.
 
+## Field operation — Silent Gallery
+
+**Objective:** Give Control a reliable account of the gallery before its recovery team enters.
+
+**Obstacle:** An urgent message says the room was abandoned. Its objects establish conditions, but not who left or why. An unsupported report sends the team after the wrong lead.
+
+After the skill check, put the result into effect: **Transmit the verified scene report**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** Control receives an evidence-labelled report and clears the investigation entrance. Unverified explanations remain unresolved.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm Control received the report**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Record specific observable details without silently adding a cause.
@@ -66,6 +78,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

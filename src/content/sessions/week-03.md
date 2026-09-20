@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Match a connector to a target by changing its direction and height independently.
+**Operation The Broken Connection.** Reconnect the gallery passage by aligning a service module with the building’s connectors and level.
+
+The passage is isolated because its module faces the wrong way. Raising it cannot correct a rotation, and camera direction is not map north.
 
 **What you will produce:** The matched connectors for the three targets, a prediction of where the original north port moves, and a labelled spatial explanation.
 
@@ -73,8 +75,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Before moving it, predict where the original north connector will point. Select that direction in **Where did the original north connector move?**
 3. Use **Rotate clockwise 90°** to turn the module. Use **Raise one level (cycles 0–2)** to set its height. Read the ports and level display after each change.
 4. Select **Test this configuration**. If it does not match, decide whether the error is in rotation, height or your prediction before adjusting the relevant control.
-5. Try **Skill check**, then **Transfer challenge**. Read each new target; rotation and level requirements change.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge**. Read each new target; rotation and level requirements change.
 6. After playing, draw or describe the original and final ports. Explain why changing the camera view is different from rotating the module.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Seat the aligned service module**. The scene and mission record now show the consequence: The aligned module completes the connection and the passage gate opens.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the passage is connected** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

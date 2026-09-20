@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Trace a low-voltage circuit, select informative measurements and locate an open fault.
 
+## Field operation — Bring the Beacon Back
+
+**Objective:** Restore the approach beacon so the incoming recovery crew can identify the correct landing point.
+
+**Obstacle:** The beacon is dark. Random replacement can conceal the fault, and supply voltage alone cannot prove that its lamp works.
+
+After the skill check, put the result into effect: **Connect the verified beacon circuit**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The measured and repaired circuit powers the approach beacon; the receiving crew acknowledges the signal.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the approach signal is received**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Trace a complete current path through a supplied simple circuit.
@@ -66,6 +78,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

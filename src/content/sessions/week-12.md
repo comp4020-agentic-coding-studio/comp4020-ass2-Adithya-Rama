@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Combine the semester's skills in Operation Last Light, then defend the relationship between your objective, decisions and outcome.
+**Operation Agent’s Return.** Close a completed Operation Last Light with an accurate after-action account the receiving team can use.
+
+A proud recovery still needs a traceable account. A successful-looking story cannot substitute for a completed mission and its remaining limits.
 
 **What you will produce:** An exported mission record and an after-action account with three decisions, one limitation and a credible alternative.
 
@@ -74,15 +76,25 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 1. Open [Operation Last Light](/operation/). Choose a preset, then select **Start new trial** and confirm if prompted. Set the **Declared recovery objective** before choosing a role or operating equipment. Use Baseline first if you are learning the controls. A resumed trial keeps its original objective; starting a new trial unlocks the choice before new actions.
 2. Before the first practical checks, select Coordinator and preserve an initial plan at Dispatch. Follow the mission journal through the six station areas, selecting the responsible role for each control. Solo practice can switch freely.
 3. Have the investigator verify the current signed archive and load profile before the systems specialist configures its support. Pass that result between roles. Preserve a separately explained revision when evidence, equipment or your objective changes, and recheck any dependent equipment or route.
-4. At Dispatch, supply the records required for your chosen resolution, including its receipt, custody or stable-handover evidence. Complete the resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
-5. Return to this lab's after-action controls. Enter the original objective, actual result, three consequential decisions, limitation and alternative. Select **Review record readiness**.
-6. Use the later phases to compare your final run with a contrasting preset. Finish your reflection after the mission; the lab account explains the run and does not replace it.
+4. Once the eleven common objectives are verified, choose **Approach to perform** in the mission's **Field operation** panel: carry the original, transmit a verified copy, or hold the original stable. Inspect the mission station, perform the enabled intervention, collect its case or record, visit each named checkpoint in order and confirm the receiving handover. At Dispatch, choose the matching **Outcome to document**, supply its receipt, custody or stable-handover evidence and select **Record outcome evidence**. Complete the resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
+5. Return to this lab's after-action controls. Enter the original objective, actual result, three consequential decisions, limitation and alternative. Select **Verify completed run and account**. The current recovery must already be complete in this passport.
+6. Finish this lab's separate **Field operation**: attach the verified recovery and account, follow its debrief checkpoint and **Close the agent handover**. Select **Record attempt in skills passport** before changing phases. Use the later phases to compare your run with a contrasting preset; complete and save their lab handovers too. Finish your reflection after the action; the account explains the practical recovery and does not replace it.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Attach the completed recovery and account**. The scene and mission record now show the consequence: The completed recovery and its account enter the handover journal. The agent returns with an evidence-backed record.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Close the agent handover** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 
 Save the after-action account with **Record attempt in skills passport** and keep the mission export with it. The final project also needs contrasting rehearsals and the written/team deliverables in its assessment brief.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
+
+The browser requires a **currently completed Operation Last Light** in your local passport before verifying the after-action account. A draft narrative or historical legacy record cannot create practical completion. Complete the linked mission, then return here; keep both its run export and your account.
 
 ## Campus route
 

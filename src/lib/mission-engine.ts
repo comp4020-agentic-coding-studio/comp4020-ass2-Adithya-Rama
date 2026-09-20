@@ -1,4 +1,5 @@
 /** Authoritative recovery rules. Rendering and physics cannot award a task. */
+import {createFieldOperation,applyFieldOperation,type FieldOperationState,type FieldOperationSpec,type FieldOperationAction} from "./field-operation";
 export const roleIds = ["observer", "systems", "investigator", "coordinator"] as const;
 export type Role = typeof roleIds[number];
 export const scenarioIds = ["baseline", "equipment-failure", "conflicting-archive"] as const;
@@ -65,7 +66,7 @@ export function missionRoleBrief(role:Role,kind:MissionKind):string {
  observer:"The final packing order is white tile, bronze lens, blue spool. Meridian's map north is rotated 180 degrees clockwise. Use the verified archive profile and tested cradle when choosing a supported route; upper and lift share the lift supply.",
  systems:"The Investigator must verify the current signed archive profile first. Profile A (M27-A) requires a 36-tooth follower: one-third output. Profile B (M27-B) requires 48 teeth: one-quarter output. Release the brake and test the profile's ratio. Measure the 6 V fuse fault before replacing it.",
  investigator:"Verify the complete copy against the current signed source. That copy supplies the recovery profile used by the Systems Specialist: A requires 36 teeth; B requires 48. Give the verified profile to the team before they configure the cradle. Repair observer certification without removing legitimate access.",
- coordinator:"Preserve the original plan, agree custody and name the recipient. Send a handoff after the verified profile's cradle is tested. At Dispatch, record evidence specific to physical recovery, digital receipt or stable handover before resolving that outcome."
+ coordinator:"Preserve the original plan, agree custody and name the recipient. Send a handoff after the verified profile's cradle is tested. At Dispatch, perform the selected release, transmission or support handover. Record its actual custody, receiving receipt or continuing-support evidence after the field operation, then file the outcome."
  };return briefs[role];
 }
 export const roles:Record<Role,{title:string;brief:string;tools:string[]}> = {
@@ -82,7 +83,7 @@ export interface MissionState {
  tasks:Task[]; inspected:string[]; driver:number; follower:number; brake:boolean; turns:number;
  fuse:"open"|"intact"; switchClosed:boolean; measured:boolean; replica:"A"|"B"|null;
  policyPatched:boolean; route:string; handoff:string; agreement:string; plans:MissionPlan[];
- recovery?:RecoveryProgress; disruptionSeen:boolean; declaredObjective:"physical"|"digital"|"stabilise"; log:MissionLog[]; ending:"physical"|"digital"|"stabilise"|null;
+ field?:FieldOperationState; resolutionChoice?:Ending; recovery?:RecoveryProgress; disruptionSeen:boolean; declaredObjective:"physical"|"digital"|"stabilise"; log:MissionLog[]; ending:"physical"|"digital"|"stabilise"|null;
 }
 export type MissionAction =
  {type:"objective";objective:"physical"|"digital"|"stabilise"}|{type:"role";role:Role}|{type:"zone";zone:Zone}|{type:"inspect";item:string}|
@@ -94,35 +95,89 @@ export type MissionAction =
  {type:"agreement";preserve:boolean;recipient:string}|
  {type:"route";route:string}|{type:"plan";text:string}|
  {type:"resolution-evidence";evidence:Omit<ResolutionEvidence,"profile"|"route">}|
- {type:"resolve";ending:"physical"|"digital"|"stabilise"};
+ {type:"resolve";ending:"physical"|"digital"|"stabilise"}|{type:"resolution-choice";ending:Ending}|{type:"field";action:FieldOperationAction};
 export const missionRequirements:Record<MissionKind,Task[]> = {
  a1:["observe","recall","orient","mechanism"],
  a2:["circuit","investigate","permission","handoff"],
  recovery:["observe","recall","orient","investigate","mechanism","circuit","permission","handoff","agreement","route","revision"]
 };
 export function newMission(kind:MissionKind="recovery",scenario:Scenario="baseline"):MissionState {
- return {...(kind==="recovery"?{recovery:{version:2 as const,verifiedProfile:null,cradleProfile:null,handoffProfile:null,routeProfile:null,resolution:null}}:{}),kind,scenario,role:"observer",zone:kind==="a2"?"power":"arrival",status:"active",tasks:[],inspected:[],driver:12,follower:36,brake:true,turns:0,fuse:"open",switchClosed:false,measured:false,replica:null,policyPatched:false,route:"upper",handoff:"",agreement:"",plans:[],disruptionSeen:false,declaredObjective:"physical",log:[],ending:null};
+ const state:MissionState={...(kind==="recovery"?{recovery:{version:2 as const,verifiedProfile:null,cradleProfile:null,handoffProfile:null,routeProfile:null,resolution:null}}:{}),kind,scenario,role:"observer",zone:kind==="a2"?"power":"arrival",status:"active",tasks:[],inspected:[],driver:12,follower:36,brake:true,turns:0,fuse:"open",switchClosed:false,measured:false,replica:null,policyPatched:false,route:"upper",handoff:"",agreement:"",plans:[],disruptionSeen:false,declaredObjective:kind==="a2"?"digital":"physical",resolutionChoice:kind==="a2"?"digital":"physical",log:[],ending:null};
+ state.field=createFieldOperation(missionFieldSpec(state));return state;
+}
+/** A performed outcome uses the same verified model as the preparatory skill checks. */
+export function missionFieldSpec(s:MissionState):FieldOperationSpec {
+ const ending=s.kind==="a1"?"physical":s.kind==="a2"?"digital":s.resolutionChoice??s.declaredObjective;
+ const profile=requiredProfile(s);
+ const shared={id:"mission-"+s.kind+"-"+ending+(s.kind==="recovery"?"-"+s.route+"-"+profile.id:""),cargoLabel:"Sealed workshop case"};
+ if(s.kind==="a1")return {...shared,title:"The sealed dispatch",objective:"Release the workshop case and take it to the receiving point.",problem:"The case is trapped behind a jammed handling cradle. Its inventory and room map must be checked before the release can be trusted.",consequence:"The tested half-speed cradle releases the case. You can now collect and carry it through the marked exit route.",actionLabel:"Release the verified cradle",resolveLabel:"Deliver the workshop case",effect:"door",checkpoints:["Workshop threshold","Orientation turn","Receiving lane"]};
+ if(s.kind==="a2")return {...shared,title:"A signal that reaches someone",objective:"Restore the relay, transmit the verified record and return with its acknowledgement.",problem:"The relay is dark. Competing copies and a defective permission rule make blindly restoring its power insufficient.",consequence:"The repaired relay transmits the verified record. A receiving acknowledgement is now available at the terminal.",actionLabel:"Transmit the verified relay record",resolveLabel:"Deliver the receiving acknowledgement",effect:"relay",cargoLabel:"Receiving acknowledgement",checkpoints:["Check the receiving terminal"]};
+ if(ending==="physical")return {...shared,title:"Extract the original",objective:"Bring the verified archive through the tested "+s.route+" route into the agreed recipient's custody.",problem:"The original is still on its support cradle. A checked plan does not move it or establish a safe handover.",consequence:"Profile "+profile.id+"'s tested cradle releases the original into its transport case. Carry it through all three "+s.route+" checkpoints in order.",actionLabel:"Release the supported archive",resolveLabel:"Hand the archive to the agreed recipient",effect:"recovery",cargoLabel:"Original archive · profile "+profile.id,checkpoints:s.route==="service"?["Service isolation threshold","First sensor pause","Second sensor pause"]:s.route==="lift"?["Lift loading line","Lift arrival platform","Dispatch crossing"]:["Upper access threshold","Sensor pause","Dispatch crossing"]};
+ if(ending==="digital")return {...shared,title:"Transmit and verify receipt",objective:"Transmit the checked copy, read the receiving receipt and preserve the original in place.",problem:"A matching source identifies a copy; it does not prove that anyone has received it.",consequence:"The terminal transmits verified profile "+profile.id+". Its receiving station issues "+profile.receipt+". Collect that receipt and check its return path.",actionLabel:"Transmit verified profile "+profile.id,resolveLabel:"Confirm received copy and retained original",effect:"signal",cargoLabel:"Receipt "+profile.receipt,checkpoints:["Receiving terminal checksum"]};
+ return {...shared,title:"Keep the archive stable",objective:"Engage the verified support and perform a responsible handover without removing the original.",problem:"The original needs continuing support. Naming a custodian alone does not establish a stable handover.",consequence:"The tested support holds the original in place. Take its handover packet to the stability indicator and the custodian's receiving point.",actionLabel:"Engage the verified support hold",resolveLabel:"Complete the custodian handover",effect:"custody",cargoLabel:"Support and handover packet",checkpoints:["Inspect the stable support indicator","Read back the custodian handover"]};
+}
+export function missionProofProblem(s:MissionState):string|null {
+ if(s.kind==="recovery")return recoveryModelProblem(s);
+ const missing=missionRequirements[s.kind].filter(task=>!s.tasks.includes(task));
+ if(missing.length)return "Still required: "+missing.map(task=>taskLabels[task]).join("; ")+".";
+ if(s.kind==="a1"){
+  if(!["lens","spool","tile","map","manifest"].every(item=>s.inspected.includes(item)))return "Inspect the arrival inventory before releasing its case.";
+  if(s.follower!==24||s.brake||s.turns<1)return "The half-speed cradle must still be tested and released.";
+ }else{
+  if(s.fuse!=="intact"||!s.switchClosed||!s.measured)return "Restore the diagnosed relay supply before transmitting.";
+  if(s.replica!==(s.scenario==="conflicting-archive"?"B":"A"))return "Verify the copy against the current signed source.";
+  if(!s.policyPatched||s.handoff!=="verified archive → dispatch → after integrity check")return "Repair the permission defect and agree the precise receiving handoff.";
+ }
+ return null;
+}
+export function missionFieldProblem(s:MissionState):string|null {
+ if(!s.field)return "This historical trial has no performed mission record. Export it and start a new trial.";
+ if(s.field.operationId!==missionFieldSpec(s).id)return "The performed mission no longer matches the selected route or outcome.";
+ if(missionProofProblem(s))return missionProofProblem(s);
+ if(!s.field.delivered)return "Perform the field operation: inspect the problem, use the tested equipment, collect its case or receipt, visit the marked checkpoints and complete the handover.";
+ return null;
+}
+function syncMissionField(s:MissionState):void {
+ if(!s.field)return;
+ const spec=missionFieldSpec(s);
+ if(s.field.operationId!==spec.id)s.field=createFieldOperation(spec);
+ const verified=missionProofProblem(s)===null;
+ if(s.field.verified!==verified)s.field=applyFieldOperation(spec,s.field,{type:"proof",verified}).state;
 }
 const taskRole:Partial<Record<MissionAction["type"],Role>> = {inspect:"observer",recall:"observer",orient:"observer",gear:"systems",brake:"systems",turn:"systems",measure:"systems",fuse:"systems",switch:"systems",replica:"investigator",policy:"investigator",handoff:"coordinator",agreement:"coordinator",plan:"coordinator",route:"observer","resolution-evidence":"coordinator"};
 export function applyMission(current:MissionState,action:MissionAction):{state:MissionState;message:string;success:boolean} {
  const s:MissionState=JSON.parse(JSON.stringify(current));
  let message="",success=true;
  const complete=(task:Task)=>{if(!s.tasks.includes(task))s.tasks.push(task);};
- const invalidate=(...tasks:Task[])=>{s.tasks=s.tasks.filter(task=>!tasks.includes(task));if(s.recovery){s.recovery.resolution=null;if(tasks.includes("mechanism"))s.recovery.cradleProfile=null;if(tasks.includes("handoff"))s.recovery.handoffProfile=null;if(tasks.includes("route"))s.recovery.routeProfile=null;}};
+ const invalidate=(...tasks:Task[])=>{if(s.field?.verified&&tasks.some(task=>missionRequirements[s.kind].includes(task)&&s.tasks.includes(task)))s.field=applyFieldOperation(missionFieldSpec(s),s.field,{type:"proof",verified:false}).state;s.tasks=s.tasks.filter(task=>!tasks.includes(task));if(s.recovery){s.recovery.resolution=null;if(tasks.includes("mechanism"))s.recovery.cradleProfile=null;if(tasks.includes("handoff"))s.recovery.handoffProfile=null;if(tasks.includes("route"))s.recovery.routeProfile=null;}};
  const integrated=currentRecovery(s),profile=requiredProfile(s);
  const facts=integrated?missionFacts.recovery:missionFacts.a1;
  const fail=(why:string)=>{success=false;message=why;};
  if(action.type==="role") {s.role=action.role;return {state:s,message:missionRoleBrief(s.role,integrated?"recovery":s.kind==="recovery"?"a1":s.kind),success:true};}
  if(action.type==="zone") {s.zone=action.zone;return {state:s,message:"Entered "+s.zone+". Your progress is retained.",success:true};}
+ if(!s.field)return {state:s,message:"This historical trial is preserved for export. Start a new trial for the performed mission; no movement, transmission or handover has been invented.",success:false};
  if(s.kind==="recovery"&&!integrated)return {state:s,message:"This is a legacy recovery record. Export it for safekeeping, then start a new trial to use the current linked-profile and outcome-evidence rules.",success:false};
   if(s.status==="complete") return {state:s,message:"This run is complete. Start a new run to try another approach.",success:false};
  const owner=taskRole[action.type];
  if(owner&&s.role!==owner) return {state:s,message:"Switch to "+roles[owner].title+" to use this role's tools. Solo students can switch freely.",success:false};
  switch(action.type) {
+ case "field": {
+  const spec=missionFieldSpec(s),problem=missionProofProblem(s);
+  if(action.action.type!=="inspect"&&action.action.type!=="proof"&&s.zone!=="dispatch"){fail("Take the tested solution to Dispatch. The release, transmission and handover stations are physically located there.");break;}
+  if(action.action.type!=="inspect"&&action.action.type!=="proof"&&problem){fail(problem);break;}
+  const input=action.action.type==="proof"?{type:"proof" as const,verified:problem===null}:action.action;
+  const result=applyFieldOperation(spec,s.field!,input);s.field=result.state;success=result.success;message=result.message;
+  break;
+ }
+ case "resolution-choice":
+  if(!["physical","digital","stabilise"].includes(action.ending)){fail("Choose a published recovery outcome.");break;}
+  if(s.kind!=="recovery"){fail("The workshop delivers its case; the relay delivers its acknowledgement.");break;}
+  if(s.resolutionChoice!==action.ending){s.resolutionChoice=action.ending;s.field=createFieldOperation(missionFieldSpec(s));if(s.recovery)s.recovery.resolution=null;}
+  message="Current approach: "+action.ending+". The original declared objective is preserved. Perform this approach before documenting its outcome.";break;
  case "objective":
   if(!["physical","digital","stabilise"].includes(action.objective)){fail("Choose a published recovery objective.");break;}
   if(s.log.some(entry=>entry.action!=="objective")){fail("The initial objective is preserved once the trial begins. A different ending will be explained as a revision in the debrief.");break;}
-  s.declaredObjective=action.objective;message="Initial recovery objective declared: "+action.objective+". The final debrief will compare this intention with the ending.";break;
+  s.declaredObjective=action.objective;s.resolutionChoice=action.objective;message="Initial recovery objective declared: "+action.objective+". The final debrief will compare this intention with the ending.";break;
  case "inspect":
   if(!["lens","spool","tile","map","manifest"].includes(action.item)){fail("That item is not in the supplied arrival scene.");break;}
   if(!s.inspected.includes(action.item))s.inspected.push(action.item);
@@ -196,6 +251,7 @@ export function applyMission(current:MissionState,action:MissionAction):{state:M
   else message="Version 1 preserved. Investigate the scenario, then add an explained revision.";
   break;
  case "resolution-evidence": {
+  if(s.field&&(missionFieldProblem(s)||action.evidence.ending!==s.resolutionChoice)){fail("Perform the selected field operation before recording its outcome evidence. "+(missionFieldProblem(s)??"Choose the performed ending."));break;}
   if(!integrated){fail("Outcome evidence belongs to the current final recovery mission.");break;}
   s.recovery!.resolution=null;
   const e:ResolutionEvidence={...action.evidence,profile:profile.id,route:s.route};
@@ -221,21 +277,27 @@ export function applyMission(current:MissionState,action:MissionAction):{state:M
    const missing=missionRequirements[s.kind].filter(t=>!s.tasks.includes(t));
   if(missing.length){fail("Before closing this trial: "+missing.map(t=>taskLabels[t]).join("; ")+".");break;}
   if(integrated){const evidence=s.recovery!.resolution;if(!evidence||evidence.ending!==action.ending){fail("Record the distinct "+action.ending+" outcome evidence at Dispatch before resolving this ending. A record for another ending is insufficient.");break;}const problem=resolutionEvidenceProblem(s,evidence);if(problem){fail(problem);break;}}
+  const fieldProblem=missionFieldProblem(s);
+  if(fieldProblem){fail(fieldProblem);break;}
+  const performedEnding=s.kind==="a1"?"physical":s.kind==="a2"?"digital":s.resolutionChoice;
+  if(action.ending!==performedEnding){fail("Resolve the outcome you actually performed, or select and perform a different approach.");break;}
    s.ending=action.ending;s.status="complete";message=resolutionText(s);break;
  }
  }
+ syncMissionField(s);
  s.log.push({role:s.role,action:action.type,message,success});
  if(s.log.length>200)s.log=s.log.slice(-200);
  return {state:s,message,success};
 }
 export function resolutionText(s:MissionState):string {
+ if(!s.field&&!(s.kind==="recovery"&&!currentRecovery(s)))return "Historical assessment record: the earlier skill checks and any recorded ending are preserved. This record predates performed transport, transmission and handover; no such actions have been added. Export it and start a new trial for the current mission.";
  if(s.kind==="recovery"&&!currentRecovery(s))return "Legacy recovery record from the earlier independent-task rules. "+(s.status==="complete"?"Its recorded ending is preserved. ":"Its unfinished work is preserved. ")+"It contains no verified linked-profile or outcome-specific evidence for the current final mission. Export it as historical practice and start a new trial for current evidence.";
   if(!s.ending)return "The operation is still in progress.";
  const comparison=s.ending===s.declaredObjective?"The ending matches the initially declared "+s.declaredObjective+" objective.":"The initial objective was "+s.declaredObjective+"; the ending is "+s.ending+". Explain this revision using the recorded decisions rather than presenting it as the original intention.";
  if(s.kind==="a1")return "The Sealed Workshop trial is complete: observation, recall, orientation and the current cradle configuration are demonstrated. This preparatory trial does not establish a completed archive recovery. "+comparison+" This is practice evidence, not an academic grade.";
  if(s.kind==="a2")return "Restore the Relay trial is complete: the diagnosed circuit, verified record, permission repair and precise handoff are demonstrated. The final recovery mission remains a separate integrated task. "+comparison+" This is practice evidence, not an academic grade.";
  const result=s.ending==="physical"?"Physical archive recovered with the original preserved and a recorded recipient. The remaining obligation is transport and custody.":s.ending==="digital"?"Verified digital copy recovered. Integrity is supported by the current signed source; physical preservation remains a separate obligation.":"Archive stabilised for documented handover. Immediate removal is deferred; the recipient inherits the outstanding recovery work.";
- return result+" "+resolutionEvidenceText(s)+" "+comparison+" "+(s.scenario==="equipment-failure"?"The service route avoided the failed lift dependency.":s.scenario==="conflicting-archive"?"The later source changed which replica could be justified.":"The baseline evidence supported the selected model.")+" This is practice evidence, not an academic grade.";
+ return result+" "+(s.field?.delivered?"The field log records "+s.field.visited.length+" ordered checkpoints and the completed "+s.resolutionChoice+" handover. ":"")+resolutionEvidenceText(s)+" "+comparison+" "+(s.scenario==="equipment-failure"?"The service route avoided the failed lift dependency.":s.scenario==="conflicting-archive"?"The later source changed which replica could be justified.":"The baseline evidence supported the selected model.")+" This is practice evidence, not an academic grade.";
 }
 export function resolutionEvidenceText(s:MissionState):string {
  const e=s.recovery?.resolution;if(!e)return "No outcome-specific evidence recorded.";
@@ -244,6 +306,6 @@ export function resolutionEvidenceText(s:MissionState):string {
  return base+(e.ending==="physical"?" Supported transport and original-preserving custody acknowledged.":e.ending==="digital"?" Verified receipt "+e.receipt+". Original retained at "+e.originalLocation+" with preservation confirmed.":" Stable state confirmed at "+e.originalLocation+". Remaining limitation: "+e.limitation);
 }
 export function missionMarkdown(s:MissionState):string {
- return ["# "+(s.kind==="a1"?"The Sealed Workshop":s.kind==="a2"?"Restore the Relay":"Operation Last Light"),"","Scenario: "+s.scenario,"Initial objective: "+s.declaredObjective,"Resolution: "+(s.ending??"In progress"),"Rules: "+(s.kind==="recovery"?(currentRecovery(s)?"Integrated recovery v2":"Legacy recovery v1"):"Assessment trial"),"",...(currentRecovery(s)?["## Linked recovery evidence","Packing order: "+missionFacts.recovery.order.join(", "),"Map orientation: "+missionFacts.recovery.orientation+" degrees clockwise","Verified source: "+(s.recovery!.verifiedProfile?recoveryProfiles[s.recovery!.verifiedProfile].source:"not verified"),"Cradle profile: "+(s.recovery!.cradleProfile??"not tested")+"; follower "+s.follower+" teeth","Handoff profile: "+(s.recovery!.handoffProfile??"not verified"),"Route profile: "+(s.recovery!.routeProfile??"not verified"),"","## Outcome evidence",resolutionEvidenceText(s),""]:[]),...s.tasks.map(t=>"- "+taskLabels[t]),"","## Plan history",...s.plans.flatMap(p=>["","### Version "+p.version,"Route: "+p.route,p.text]),"","## Action record",...s.log.map(l=>"- ["+roles[l.role].title+"] "+l.message),"","## Debrief",resolutionText(s)].join("\n");
+ return ["# "+(s.kind==="a1"?"The Sealed Workshop":s.kind==="a2"?"Restore the Relay":"Operation Last Light"),"","Scenario: "+s.scenario,"Initial objective: "+s.declaredObjective,"Resolution: "+(s.ending??"In progress"),"Rules: "+(s.kind==="recovery"?(currentRecovery(s)?"Integrated recovery v2":"Legacy recovery v1"):"Assessment trial"),"",...(currentRecovery(s)?["## Linked recovery evidence","Packing order: "+missionFacts.recovery.order.join(", "),"Map orientation: "+missionFacts.recovery.orientation+" degrees clockwise","Verified source: "+(s.recovery!.verifiedProfile?recoveryProfiles[s.recovery!.verifiedProfile].source:"not verified"),"Cradle profile: "+(s.recovery!.cradleProfile??"not tested")+"; follower "+s.follower+" teeth","Handoff profile: "+(s.recovery!.handoffProfile??"not verified"),"Route profile: "+(s.recovery!.routeProfile??"not verified"),"","## Outcome evidence",resolutionEvidenceText(s),""]:[]),...s.tasks.map(t=>"- "+taskLabels[t]),"","## Plan history",...s.plans.flatMap(p=>["","### Version "+p.version,"Route: "+p.route,p.text]),"","## Performed field operation",...(s.field?s.field.log.map(line=>"- "+line):["Historical trial: no performed field actions were recorded."]),"","## Action record",...s.log.map(l=>"- ["+roles[l.role].title+"] "+l.message),"","## Debrief",resolutionText(s)].join("\n");
 }
 

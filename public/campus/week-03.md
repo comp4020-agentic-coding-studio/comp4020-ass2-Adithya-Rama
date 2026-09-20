@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Track labelled directions through a rotation, change height independently and verify both conditions.
 
+## Field operation — The Broken Connection
+
+**Objective:** Reconnect the gallery passage by aligning a service module with the building’s connectors and level.
+
+**Obstacle:** The passage is isolated because its module faces the wrong way. Raising it cannot correct a rotation, and camera direction is not map north.
+
+After the skill check, put the result into effect: **Seat the aligned service module**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The aligned module completes the connection and the passage gate opens.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the passage is connected**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Keep world directions fixed while the object or camera moves.
@@ -65,6 +77,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

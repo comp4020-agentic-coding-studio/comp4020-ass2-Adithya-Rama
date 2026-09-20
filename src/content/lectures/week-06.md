@@ -11,6 +11,9 @@ date: 2027-03-29
 related: ["sessions/week-06", "assessments/assignment-2"]
 ---
 
+> **Your field application — The Authentic Archive:** Release the archive copy that actually satisfies the signed recovery order. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > Three files claim to be the last copy. Filenames are not witnesses.
 
 ## What you will learn

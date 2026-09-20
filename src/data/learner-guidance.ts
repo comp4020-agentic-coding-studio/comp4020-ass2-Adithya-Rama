@@ -108,12 +108,12 @@ export const labGuides: Record<number, LabGuide> = {
   },
   11: {
     goal: 'Revise a plan in response to a specific change without erasing the original reasoning.',
-    success: 'Keep Version 1, reveal the disruption and write a separate revised sequence and explanation for human review.',
+    success: 'Keep Version 1, rehearse a supported replacement dependency, preserve Version 2 and enact the revised route. A teacher reviews the written explanation.',
     steps: [
       { title: 'Read the preserved plan', action: 'Read Version 1 below. Identify its route, equipment and handover dependencies before revealing the change.' },
       { title: 'Reveal what changed', action: 'Select Publish the disruption. Read the new condition and identify which part of Version 1 it invalidates.' },
       { title: 'Write a usable Version 2', action: 'Enter a revised sequence and its reason. Name the changed step, who checks it, and what evidence will show that the alternative works.' },
-      { title: 'Check record readiness', action: 'Select Review record readiness. This checks that an explained revision exists; a teacher evaluates whether your reasoning is convincing.' },
+      { title: 'Rehearse and verify the revision', action: 'Select Replacement dependency to rehearse: west relay for a passage closure, reference readings for the unavailable meter. Select Rehearse the replacement dependency, then Verify revised plan and rehearsal. Enact the verified change through Field operation above; a teacher judges the prose.' },
     ],
   },
   12: {
@@ -123,7 +123,7 @@ export const labGuides: Record<number, LabGuide> = {
       { title: 'Complete the practical mission first', action: 'Select Enter the final recovery mission. Follow its Mission Journal through the practical tasks, resolve the trial and export its assessment record.' },
       { title: 'Return to this after-action lab', action: 'Use the completed run to state the objective your team pursued. If the objective changed, explain when and why.' },
       { title: 'Connect evidence to your account', action: 'Describe the recorded decisions and observations supporting the result. State a limitation and a credible alternative you rejected.' },
-      { title: 'Review and save the account', action: 'Select Review record readiness, then record this explanation in the passport. The text does not replace the mission’s practical record.' },
+      { title: 'Review and save the account', action: 'Select Verify completed run and account. The current Operation Last Light must be complete in this passport. Close the agent handover through Field operation above, then save your explanation. The text does not replace the practical run.' },
     ],
   },
 };

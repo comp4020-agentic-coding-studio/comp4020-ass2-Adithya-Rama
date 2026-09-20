@@ -1,10 +1,13 @@
 import type {Demonstration, DemoControl} from "../lib/demonstration-types";
+import type {FieldOperationAction} from "../lib/field-operation";
+import {getDemoOperation,demoFieldActions} from "./demo-operations";
 
 /** Authored voice of the example learner. Exact settings come from the same
  * controls as the scene and transcript, so spoken answers cannot drift. */
 export interface DemoWalkthrough {
  introduction:string;
  completion:string;
+ fieldActions:{action:FieldOperationAction;intention:string}[];
  steps:Record<string,{briefing:string;action:string;outcome:string}>;
 }
 interface Script { task:string; conclusion:string; intentions:Record<string,string> }
@@ -227,7 +230,8 @@ export function getDemoWalkthrough(demo:Demonstration):DemoWalkthrough {
  const script=scripts[demo.id];
  if(!script)throw new Error("Missing worked-example narration: "+demo.id);
  return {
-  introduction:script.task+" You can pause, mute, replay, or take control at any point. The captions show the same explanation.",
+  introduction:script.task+" Our field objective is: "+getDemoOperation(demo).objective+" "+getDemoOperation(demo).problem+" I inspect the mission station, investigate each dependency, then perform the intervention and handover. You can pause, mute, replay, or take control at any point. The captions show the same explanation.",
+  fieldActions:demoFieldActions(demo).map(action=>({action,intention:describeFieldAction(demo,action)})),
   completion:script.conclusion+' Open "Read the finished work" or download the complete example to inspect the evidence and explanation together. '+demo.transfer,
   steps:Object.fromEntries(demo.steps.map((step,index)=>{
    const intention=script.intentions[step.id];
@@ -239,4 +243,14 @@ export function getDemoWalkthrough(demo:Demonstration):DemoWalkthrough {
    }];
   }))
  };
+}
+
+/** Spoken intentions name the same actions used by the learner and mission stations. */
+function describeFieldAction(demo:Demonstration,action:FieldOperationAction):string {
+ const op=getDemoOperation(demo);
+ if(action.type==='execute')return 'All chapter evidence checks are complete. I return to the mission station and '+op.actionLabel.toLowerCase()+'. I am putting the verified solution into effect, then checking what changes.';
+ if(action.type==='collect')return 'I collect '+op.cargoLabel+'. The verified intervention released this package. I now carry it through the marked handover route.';
+ if(action.type==='checkpoint')return 'I carry '+op.cargoLabel+' to '+action.id+'. I confirm this checkpoint before continuing so the handover trace records the route actually followed.';
+ if(action.type==='deliver')return 'At the receiving station, I '+op.resolveLabel.toLowerCase()+'. I check the receipt before calling the field operation complete.';
+ return 'I inspect the mission station and establish its obstacle before changing anything.';
 }

@@ -17,3 +17,5 @@
 .demo-transcript-bookend h3{margin-top:0}.demo-transcript-bookend p:last-child{margin-bottom:0}
 @media(max-width:600px){.demo-transport [data-demo-narrate],.demo-transport [data-demo-introduction],.demo-transport [data-demo-completion]{flex:1 1 145px;min-height:44px}.demo-transcript-bookend{padding:.8rem 1rem}}
 @media print{.demo-transcript-bookend{background:white;border-color:#666}}
+
+.demo-field-operation{margin:1.25rem 0}.demo-field-proof{font-size:.82rem;line-height:1.55;color:#344735;max-width:92ch}.demo-field-operation .field-operation{margin-top:.55rem}

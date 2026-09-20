@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Predict a training mechanism's motion, locate a failed dependency and verify a repair.
 
+## Field operation — The Suspended Cradle
+
+**Objective:** Raise a recovery cradle to its receiving platform without forcing its blocked mechanism.
+
+**Obstacle:** The support is locked, its return spring is absent and its output must match the lift specification. A correct gear alone cannot move it.
+
+After the skill check, put the result into effect: **Engage the tested cradle drive**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The tested mechanism drives the cradle to its receiving platform and opens the supported handover point.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the cradle reached its platform**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Predict relative speed and direction in a simple gear pair.
@@ -67,6 +79,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

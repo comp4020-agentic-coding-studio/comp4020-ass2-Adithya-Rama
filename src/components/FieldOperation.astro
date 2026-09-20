@@ -1,0 +1,24 @@
+---
+import type {FieldOperationSpec} from '../lib/field-operation';
+import '../styles/field-operation.css';
+interface Props {spec:FieldOperationSpec;scope:string}
+const {spec,scope}=Astro.props;
+---
+<section class="field-operation" data-field-operation data-field-scope={scope} aria-label="Your field mission">
+  <p class="eyebrow">FIELD OPERATION · <span data-field-stage>Briefing</span></p>
+  <h3 data-field-title>{spec.title}</h3>
+  <p data-field-objective>{spec.objective}</p>
+  <p class="field-obstacle" data-field-problem>{spec.problem}</p>
+  <p class="field-next" data-field-next>Inspect the mission station to begin your investigation.</p>
+  <div class="field-actions" role="group" aria-label="Mission actions">
+    <button type="button" data-field-inspect disabled>Inspect mission station</button>
+    <button type="button" data-field-execute disabled>{spec.actionLabel}</button>
+    <button type="button" data-field-collect disabled>Collect {spec.cargoLabel}</button>
+    <div data-field-checkpoints class="field-checkpoints"></div>
+    <button type="button" data-field-deliver disabled>{spec.resolveLabel}</button>
+  </div>
+  <p class="small" data-field-cargo>Nothing collected.</p>
+  <p class="field-result" data-field-status role="status" aria-live="polite">Mission actions become available when the activity loads.</p>
+  <details><summary>Mission record and accessible controls</summary><p class="small">These controls perform the same actions as the marked stations in the scene. Use them with a keyboard or touch, or when graphics are unavailable. Equipment tests establish whether your intervention is supported. The final handover records a mission outcome; your explanation is assessed separately.</p><ol data-field-log><li>No mission actions yet.</li></ol></details>
+  <noscript><p>Use the supplied worksheet to investigate the obstacle, explain the intervention and trace the handover. The playable operation requires JavaScript.</p></noscript>
+</section>

@@ -11,6 +11,9 @@ date: 2027-05-03
 related: ["sessions/week-09", "assessments/final-project"]
 ---
 
+> **Your field application — The Custodian’s Terms:** Secure an agreement the custodian can honour while protecting the original and respecting the support limit. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > Enter as the recovery coordinator. Your authority has a limit, and the room knows it.
 
 ## What you will learn

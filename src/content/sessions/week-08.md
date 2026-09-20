@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Pass a complete instruction between two roles and use read-back to catch a misunderstanding before acting.
+**Operation Across the Divide.** Get the correct sealed batch to its receiver through a relay where each role sees different information.
+
+The sender has the manifest; the operator has dispatch controls. “Send those there” identifies neither the destination nor the batch.
 
 **What you will produce:** A destination, quantity and code agreed by both roles, a role rotation, and an account of a corrected or prevented misunderstanding.
 
@@ -74,8 +76,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Select **Switch role**. As operator, ask for any missing detail and enter **Destination communicated**, **Quantity communicated** and **Verification code read back**.
 3. Read all three fields back to the analyst. Correct differences, then tick the acknowledgement only after the analyst confirms the same information. In solo practice, switch roles and compare explicitly.
 4. Select **Test this configuration**. Correct the actual mismatch rather than treating the acknowledgement box as a substitute for checking the fields.
-5. Try **Skill check** with reversed responsibilities, then **Transfer challenge**. Each card changes the destination, quantity and code.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** with reversed responsibilities, then **Transfer challenge**. Each card changes the destination, quantity and code.
 6. After playing, explain what information the receiver needed and how read-back established agreement. Record each person's contribution, or your solo role switches.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Dispatch the read-back-confirmed batch**. The scene and mission record now show the consequence: The relay dispatches the confirmed batch and a receiver acknowledgement closes the handoff.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the receiver acknowledged delivery** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

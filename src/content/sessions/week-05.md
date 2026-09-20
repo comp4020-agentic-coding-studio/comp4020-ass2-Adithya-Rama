@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Find the failed part of a supplied model circuit using measurements, then replace it and verify the result.
+**Operation Bring the Beacon Back.** Restore the approach beacon so the incoming recovery crew can identify the correct landing point.
+
+The beacon is dark. Random replacement can conceal the fault, and supply voltage alone cannot prove that its lamp works.
 
 **What you will produce:** Measurements locating the original fault, a replacement and verification trace, and a comparison with a different fault.
 
@@ -75,7 +77,15 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 3. Select **Isolate power** before changing a part or using a **Test … continuity** control. Continuity means whether the isolated component provides the expected connected path.
 4. Use the appropriate **Replace…** control for the fault your measurements support. Select **Switch on**, measure again and check whether the lamp lights.
 5. Select **Test this configuration**. If you replaced parts without first measuring the fault, use **Restart this phase** and collect a diagnostic trace.
-6. Try **Skill check** and **Transfer challenge**. Their faults differ; the transfer lamp needs an isolated continuity check. Afterwards explain which measurement distinguished the fault from an alternative.
+6. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** and **Transfer challenge**. Their faults differ; the transfer lamp needs an isolated continuity check. Afterwards explain which measurement distinguished the fault from an alternative.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Connect the verified beacon circuit**. The scene and mission record now show the consequence: The measured and repaired circuit powers the approach beacon; the receiving crew acknowledges the signal.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the approach signal is received** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

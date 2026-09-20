@@ -58,3 +58,10 @@
 /* In Take Control, the status already names the mode. Leave the bottom row
    exclusively for equipment actions in both page and fullscreen views. */
 .academy-world--demo[data-demo-control=true] .world-demo-badge {display:none}
+
+/* Compact objective overlay leaves the equipment and interaction bar visible. */
+.world-field-hud{position:absolute;left:.65rem;top:4.5rem;z-index:4;width:min(24rem,calc(100% - 1.3rem));display:grid;gap:.25rem;background:rgba(13,37,43,.94);border-left:3px solid #d7ad63;padding:.65rem .8rem;color:#f6ecd3;pointer-events:none;box-shadow:0 3px 15px #0003}
+.world-field-hud[hidden]{display:none}.world-field-hud strong{font-size:.8rem;line-height:1.2;color:#e4bd73}.world-field-hud span{font-size:.75rem;line-height:1.35}
+@media(max-width:600px){.world-field-hud{top:3.8rem;width:min(19rem,calc(100% - 1.3rem));padding:.45rem .6rem}.world-field-hud strong{font-size:.72rem}.world-field-hud span{font-size:.68rem}}
+/* The phone already has an objective header and scrollable status row; avoid a second overlay covering the playable view. */
+@media(max-width:760px){.academy-world[data-immersive=true] .world-field-hud{display:none}.academy-world[data-immersive=true] .world-hud{max-height:48px}}

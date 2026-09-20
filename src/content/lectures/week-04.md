@@ -11,6 +11,9 @@ date: 2027-03-15
 related: ["sessions/week-04", "assessments/assignment-1"]
 ---
 
+> **Your field application — The Suspended Cradle:** Raise a recovery cradle to its receiving platform without forcing its blocked mechanism. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > Forcing the handle would make something happen. Understanding the mechanism lets you choose what happens.
 
 ## What you will learn

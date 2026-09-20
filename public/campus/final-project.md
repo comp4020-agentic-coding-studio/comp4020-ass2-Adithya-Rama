@@ -87,6 +87,14 @@ Presets are published and may be inspected early. Each rehearsal starts a fresh 
 
 Preserve a distinct Version 2 explaining a tested assumption, changed evidence or dependency. Confirm the eleven common capabilities: observation, recall, orientation, archive verification, mechanism, circuit, permissions, handoff, agreement, route and revision.
 
+Before completing the record, perform the chosen intervention using cards, a token and the following marked checkpoints. The facilitator permits release only after the common capability checks support it. Record each action and observed model result.
+
+- **Physical:** release and collect the original archive token. For Upper, visit Upper access threshold → Sensor pause → Dispatch crossing. For Lift, visit Lift loading line → Lift arrival platform → Dispatch crossing. For Service, visit Service isolation threshold → First sensor pause → Second sensor pause. Deliver the token to the named recipient only after all three in order.
+- **Digital:** operate the verified transmission terminal. The facilitator issues its matching receipt only after transmission. Collect the receipt, check it at Receiving terminal checksum and deliver the acknowledgement. The original remains in place.
+- **Stabilise:** engage the verified support hold. Collect the support/handover packet, inspect the stable support indicator, read back the custodian handover and deliver the packet. Keep the original token on the support.
+
+If a supporting equipment setting, source or agreement changes, withdraw the completed intervention and recheck the affected work before repeating the handover. No hidden time limit applies.
+
 Then complete the record for the chosen ending:
 
 | Ending | Required record |

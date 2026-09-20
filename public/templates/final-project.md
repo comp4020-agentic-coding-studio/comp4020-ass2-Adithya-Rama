@@ -22,6 +22,10 @@ Attach or link the exported activity/mission record. For campus work include a r
 
 Trace the signed source through the archive profile, equipment configuration, route and handover. Explain one dependency outside your main role. Include the actual exported values rather than copying a demonstration.
 
+## Performed intervention and handover
+
+Attach the exported field log. What changed visibly when you operated the tested station? What did you collect, which ordered checkpoints did you complete, and how did the receiving point confirm the handover? Preserve failed attempts and subsequent revisions.
+
 ## Outcome-specific evidence
 
 Chosen ending and relation to the initial objective:
@@ -30,9 +34,9 @@ Verified archive/profile and tested route:
 
 Named recipient or responsible custodian:
 
-- **Physical recovery:** supported transport and preservation/custody confirmations.
-- **Digital recovery:** matching receipt, original location and preservation; explain the reference's limits.
-- **Stabilisation:** stable-state confirmation, original location, remaining limitation and next action.
+- **Physical recovery:** release, collection, three ordered route checkpoints, supported transport and preservation/custody confirmations.
+- **Digital recovery:** performed transmission, collected matching receipt, receiving-terminal check, original location and preservation; explain the reference's limits.
+- **Stabilisation:** performed support hold, checked stability indicator and custodian read-back, stable-state confirmation, original location, remaining limitation and next action.
 
 Complete the section appropriate to your ending. Attach the exported outcome record; retain earlier records if your objective changed.
 

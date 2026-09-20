@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Combine the semester's capabilities in a documented recovery mission with several defensible resolutions.
 
+## Field operation — Agent’s Return
+
+**Objective:** Close a completed Operation Last Light with an accurate after-action account the receiving team can use.
+
+**Obstacle:** A proud recovery still needs a traceable account. A successful-looking story cannot substitute for a completed mission and its remaining limits.
+
+After the skill check, put the result into effect: **Attach the completed recovery and account**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The completed recovery and its account enter the handover journal. The agent returns with an evidence-backed record.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Close the agent handover**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Combine observation, systems diagnosis, investigation and coordination in a new setting.
@@ -67,6 +79,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

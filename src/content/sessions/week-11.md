@@ -27,7 +27,9 @@ requiresRevision: true
 
 ## Your mission, in plain language
 
-Keep an original plan visible, identify what a disruption breaks and produce a revised plan with a named check and owner.
+**Operation The Route That Failed.** Keep recovery moving after a disruption while preserving the plan that depended on the old condition.
+
+Version 1 no longer works. A new paragraph alone cannot reopen a passage: select and rehearse the replacement dependency before committing it.
 
 **What you will produce:** Preserved Version 1, a distinct Version 2, and an explanation of the changed dependency, responsibility and remaining uncertainty.
 
@@ -76,15 +78,25 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 1. Select **Practice**. Read **Version 1** and its sequence from manifest inspection through relay, passage and handover. This original remains preserved for comparison.
 2. Select **Publish the disruption**. Identify which step depends on the unavailable passage and which earlier findings still hold.
 3. Write a revised plan in the supplied field. Name the replacement passage, its extra check, who performs that check and what confirms readiness.
-4. Write the revision rationale, then select **Review record readiness**. This checks that an account is present; a teacher evaluates whether its reasoning is strong.
-5. Try **Skill check**, then **Transfer challenge**. In transfer, the meter is unavailable: use the labelled reference readings and state what you did not personally measure.
+4. Write the revision rationale, select the supported **Replacement dependency to rehearse**, then **Rehearse the replacement dependency**. Select **Verify revised plan and rehearsal**. The dependency must work; a teacher evaluates the written reasoning.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge**. In transfer, the meter is unavailable: use the labelled reference readings and state what you did not personally measure.
 6. After playing, compare the original and revised plans. Explain one change and one retained decision; do not rewrite Version 1 as though you knew the disruption all along.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Activate the rehearsed replacement plan**. The scene and mission record now show the consequence: The rehearsed alternative becomes active. Version 1 remains in the journal so the reason for the change stays visible.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the revised route is in use** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
+
+Select **Replacement dependency to rehearse**: the west relay under the passage closure, or supplied reference readings under the meter failure. Select **Rehearse the replacement dependency** before **Verify revised plan and rehearsal**. An unsupported choice leaves the intervention unavailable; the computer checks the dependency, while a teacher reviews the explanation.
 
 ## Campus route
 

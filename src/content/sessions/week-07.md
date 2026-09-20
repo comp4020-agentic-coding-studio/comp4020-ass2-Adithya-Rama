@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Repair a small access table so every role can do its authorised work and cannot do work outside its permission.
+**Operation The Wrong Authority.** Restore useful control-desk access without giving an observer permission to service or certify equipment.
+
+The damaged policy blocks legitimate work and authorises the wrong role. Closing every permission would stop the recovery too.
 
 **What you will produce:** Before/after permission tables, checks of all nine combinations, and the changed table for the maintenance hold.
 
@@ -74,8 +76,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. In **Repair the access policy**, tick an **Allow…** box to permit that action for that role; untick it to deny it. Compare all three actions for each of the three roles with the mandate.
 3. Select **Test this configuration** to check all nine combinations. Read both kinds of failure: an action wrongly allowed and an authorised action wrongly blocked.
 4. Correct the specific mismatches, then check the entire table again. Denying everything does not meet the task.
-5. Try **Skill check**, then **Transfer challenge**. The transfer maintenance hold changes technician service permission; preserve the other legitimate permissions.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check**, then **Transfer challenge**. The transfer maintenance hold changes technician service permission; preserve the other legitimate permissions.
 6. After playing, include the original and repaired tables and explain one allowed action and one refused action. State what changed under the hold.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Deploy the verified access policy**. The scene and mission record now show the consequence: The corrected policy is deployed: allowed actions illuminate, forbidden actions remain denied, and the authorised gate responds.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm authorised control is restored** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

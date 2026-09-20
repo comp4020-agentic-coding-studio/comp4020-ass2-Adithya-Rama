@@ -11,6 +11,9 @@ date: 2027-03-22
 related: ["sessions/week-05", "assessments/assignment-2"]
 ---
 
+> **Your field application — Bring the Beacon Back:** Restore the approach beacon so the incoming recovery crew can identify the correct landing point. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The cart is silent. A useful diagnosis begins before the first part is replaced.
 
 ## What you will learn

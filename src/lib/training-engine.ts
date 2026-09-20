@@ -1,9 +1,13 @@
+import { labOperation } from '../data/lab-operations';
+import { createFieldOperation, applyFieldOperation, validFieldOperation, type FieldOperationState, type FieldOperationAction } from './field-operation';
 /** Authored teaching models shared by spatial and HTML presentations. */
 export type TrainingPhase = 'practice' | 'check' | 'transfer';
 export type Value = string | number | boolean;
 export interface TrainingState {
   week: number; phase: TrainingPhase; values: Record<string, Value>; sequence: string[];
   inspected: string[]; actions: string[]; feedback: string; complete: boolean;
+  /** Domain completion and enacted mission completion are intentionally separate. */
+  field?: FieldOperationState;
 }
 export interface TrainingAction { type: string; key?: string; value?: Value }
 export const phases: TrainingPhase[] = ['practice', 'check', 'transfer'];
@@ -58,9 +62,9 @@ export function createTraining(week:number, phase:TrainingPhase='practice'):Trai
   if(week===8){values.role='analyst';values.destination='';values.quantity='';values.code='';values.acknowledged=false;}
   if(week===9){values.role='mediator';values.proposal='';}
   if(week===10){values.position=20;values.detected=0;values.steps=0;values.prediction='';}
-  if(week===11){values.disrupted=false;values.original=initialPlan.join(' → ');values.revision='';values.reason='';}
+  if(week===11){values.disrupted=false;values.original=initialPlan.join(' → ');values.revision='';values.reason='';values.replacement='';values.dependencyChecked=false;}
   if(week===12){values.objective='';values.evidence='';values.alternative='';}
-  return {week,phase,values,sequence:[],inspected:[],actions:[],feedback:'Inspect the supplied rules, then try the controls. Practice can be repeated without a time limit.',complete:false};
+  return {week,phase,values,sequence:[],inspected:[],actions:[],feedback:'Inspect the supplied rules, then try the controls. Practice can be repeated without a time limit.',complete:false,field:createFieldOperation(labOperation(week,phase))};
 }
 export function mechanismConfig(phase:TrainingPhase) {
   return {driver:12,inputTurns:phase==='transfer'?6:4,targetTurns:phase==='check'?4:2,cam:phase==='transfer'?90:180};
@@ -83,26 +87,33 @@ export function rotatedPorts(rotation:number):string[] {
 export function spatialTarget(phase:TrainingPhase){return phase==='practice'?{rotation:90,level:0}:phase==='check'?{rotation:180,level:1}:{rotation:270,level:2};}
 export function handoffTarget(phase:TrainingPhase){return phase==='practice'?{destination:'Relay',quantity:'2',code:'AMBER'}:phase==='check'?{destination:'Archive',quantity:'3',code:'COPPER'}:{destination:'Dispatch',quantity:'1',code:'IVORY'};}
 export function sensorCells(phase:TrainingPhase):number[]{return phase==='practice'?[10,11,12,13]:phase==='check'?[6,11,16,21]:[8,13,18,23];}
-export function applyTraining(previous:TrainingState,action:TrainingAction):TrainingState {
+export function applyTraining(previous:TrainingState,action:TrainingAction,context:{recoveryComplete?:boolean}={}):TrainingState {
   const s:TrainingState={...previous,values:{...previous.values},sequence:[...previous.sequence],inspected:[...previous.inspected],actions:[...previous.actions]};
-  const {week,phase}=s;const v=s.values; if(!['inspect','cover','role'].includes(action.type))s.complete=false;
+  const {week,phase}=s;const v=s.values;
+  const fieldSpec=labOperation(week,phase);
+  const invalidate=()=>{s.complete=false;if(s.field)s.field=applyFieldOperation(fieldSpec,s.field,{type:'proof',verified:false}).state;};
+  if(!['inspect','cover','role','test','crank'].includes(action.type))invalidate();
   const log=(line:string)=>{const bounded=line.slice(0,600); const match=bounded.match(/^Set ([^=]+) = /); if(match&&s.actions.at(-1)?.startsWith('Set '+match[1]+' = '))s.actions[s.actions.length-1]=bounded;else s.actions.push(bounded);if(s.actions.length>160)s.actions.shift();};
   const see=(id:string)=>{if(!s.inspected.includes(id))s.inspected.push(id);};
-  const finish=(ok:boolean,yes:string,no:string)=>{s.complete=ok;s.feedback=ok?yes:no;log(s.feedback);};
+  const finish=(ok:boolean,yes:string,no:string)=>{
+    s.complete=ok;s.field=applyFieldOperation(fieldSpec,s.field??createFieldOperation(fieldSpec),{type:'proof',verified:ok}).state;
+    s.feedback=(ok?yes:no)+(ok?' Skill verified. Return to the mission actions: apply the result and confirm its consequence.':'');log(s.feedback);
+  };
   if(action.type==='set'&&action.key&&typeof action.value!=='undefined'){
-    const allowed=/^(classification\d|recall\d|locus\d|association\d|prediction|archive|destination|quantity|code|acknowledged|role|proposal|revision|reason|objective|evidence|alternative|observer:(read|service|certify)|technician:(read|service|certify)|registrar:(read|service|certify))$/;
+    const allowed=/^(classification\d|recall\d|locus\d|association\d|prediction|archive|destination|quantity|code|acknowledged|role|proposal|revision|reason|objective|evidence|alternative|replacement|observer:(read|service|certify)|technician:(read|service|certify)|registrar:(read|service|certify))$/;
     if(!allowed.test(action.key))return previous;
+    if(week===11&&action.key==='replacement')v.dependencyChecked=false;
     v[action.key]=typeof action.value==='string'?action.value.slice(0,4000):action.value;s.complete=false;log('Set '+action.key+' = '+String(v[action.key]));return s;
   }
   if(week===1){
     if(action.type==='inspect'){const facts=observationFacts[phase];const id=action.key??facts[s.actions.filter(a=>a.startsWith('Inspected ')).length%facts.length]!.id;const fact=facts.find(f=>f.id===id);if(fact){see(id);s.feedback=fact.label;log('Inspected '+fact.label);}}
     if(action.type==='cover'){v.covered=!v.covered;log(v.covered?'Covered scene for recall':'Reopened scene');}
-    if(action.type==='test'){const correct=observationFacts[phase].filter((f,i)=>v['classification'+i]===f.category).length;finish(correct===5&&v.recall0===(phase==='practice'?'08:20':phase==='check'?'09:40':'14:10'),'All five statements distinguished and the display recalled. A note is evidence that a claim was made; its contents still need checking.',correct+'/5 statement categories agree with the supplied scene. Recheck whether a sentence reports a visible fact, someone’s account, or your explanation. Check the recalled display separately.');}
+    if(action.type==='test'){const correct=observationFacts[phase].filter((f,i)=>v['classification'+i]===f.category).length;finish(['clock','cup','door','note'].every(id=>s.inspected.includes(id))&&s.actions.some(a=>a.startsWith('Covered scene'))&&correct===5&&v.recall0===(phase==='practice'?'08:20':phase==='check'?'09:40':'14:10'),'All five statements distinguished and the display recalled. A note is evidence that a claim was made; its contents still need checking.',correct+'/5 statement categories agree with the supplied scene. Inspect all four objects and cover the scene for a recall attempt. Recheck whether a sentence reports a visible fact, someone’s account, or your explanation. Check the recalled display separately.');}
   }
   if(week===2){
     if(action.type==='inspect'){const i=s.actions.filter(a=>a.startsWith('Visited ')).length%4;see(loci[i]!);s.feedback=loci[i]+': associate '+memoryItems[phase][i]+' with a vivid image here. Your image can be unusual, but keep the route fixed.';log('Visited '+loci[i]);}
     if(action.type==='cover'){v.covered=!v.covered;log(v.covered?'Entered recall without item list':'Reopened encoding list');}
-    if(action.type==='test'){const correct=memoryItems[phase].filter((item,i)=>String(v['recall'+i]??'').trim().toLowerCase()===item.toLowerCase()).length;finish(correct===4,'All four items retrieved in order. Compare with your earlier attempt; this demonstrates this retrieval task, not photographic memory.',correct+'/4 items retrieved in the correct locations. Revisit the association at each missing location, then cover the list and try again.');}
+    if(action.type==='test'){const correct=memoryItems[phase].filter((item,i)=>String(v['recall'+i]??'').trim().toLowerCase()===item.toLowerCase()).length;finish(loci.every(place=>s.inspected.includes(place))&&s.actions.some(a=>a.startsWith('Entered recall'))&&correct===4,'All four items retrieved in order. Compare with your earlier attempt; this demonstrates this retrieval task, not photographic memory.',correct+'/4 items retrieved in the correct locations. Visit all four route locations and cover the list before recalling. Revisit the association at each missing location, then cover the list and try again.');}
   }
   if(week===3){
     if(action.type==='rotate'){v.rotation=(Number(v.rotation)+90)%360;log('Rotated module to '+v.rotation+'°');}
@@ -147,9 +158,17 @@ export function applyTraining(previous:TrainingState,action:TrainingAction):Trai
   }
   if(week===11){
     if(action.type==='disrupt'){v.disrupted=true;s.feedback=phase==='transfer'?'The meter is unavailable. Use the supplied reference readings and isolate uncertainty before choosing equipment.':'The east passage is unavailable. The west passage remains open, but requires an additional relay check.';log('Published disruption; original plan preserved');}
-    if(action.type==='test'){finish(Boolean(v.disrupted)&&String(v.revision).trim().length>=30&&String(v.reason).trim().length>=30,'Original and revised plans are preserved together. Compare which dependency changed, how you checked the replacement and what uncertainty remains. This is a reflection prompt, not an automated judgement of your plan.','Reveal the disruption, then record a substantive replacement plan and its reason. The original stays unchanged. Explain the affected dependency and how you will verify your alternative.');}
+    if(action.type==='rehearse'){
+      const target=phase==='transfer'?'reference-readings':'west-relay';
+      v.dependencyChecked=Boolean(v.disrupted)&&v.replacement===target;
+      s.feedback=v.dependencyChecked?(phase==='transfer'?'The reference trace identifies an open cable. The alternative can proceed with recorded evidence; live meter confirmation remains unavailable.':'The west relay responds. The replacement passage is supported; the east passage stays closed.'):'That replacement still depends on unavailable equipment or ignores the added relay check. Compare it with the published disruption.';
+      log('Rehearsed replacement: '+s.feedback);
+    }
+    if(action.type==='test'){finish(Boolean(v.disrupted)&&Boolean(v.dependencyChecked)&&v.replacement===(phase==='transfer'?'reference-readings':'west-relay')&&String(v.revision).trim().length>=30&&String(v.reason).trim().length>=30,
+      'The replacement dependency was rehearsed and both plan records exist. Their written reasoning still needs human review; this check does not grade prose.',
+      'Reveal the disruption, select a supported replacement, rehearse its dependency and record Version 2 with its reason. Version 1 stays unchanged.');}
   }
-  if(week===12&&action.type==='test')finish(String(v.objective).trim().length>=12&&String(v.evidence).trim().length>=30&&String(v.alternative).trim().length>=30,'Your after-action account is ready to export alongside the mission run. Compare this account with the recorded actions; the narrative alone does not establish mission completion.','Record the objective, evidence from a real mission run and a credible alternative. Use the linked mission for practical completion.');
+  if(week===12&&action.type==='test')finish(context.recoveryComplete===true&&String(v.objective).trim().length>=12&&String(v.evidence).trim().length>=30&&String(v.alternative).trim().length>=30,'Your after-action account is ready to export alongside the mission run. Compare this account with the recorded actions; the narrative alone does not establish mission completion.','Complete the current Operation Last Light recovery first, then record its objective, evidence and a credible alternative. Text alone cannot satisfy this practical requirement.');
   return s;
 }
 export function validTraining(value:unknown,week:number):value is TrainingState {
@@ -158,16 +177,31 @@ export function validTraining(value:unknown,week:number):value is TrainingState 
     ||!s.values||typeof s.values!=='object'||Array.isArray(s.values)||Object.keys(s.values).length>=100
     ||![s.sequence,s.inspected,s.actions].every(list=>Array.isArray(list)&&list.length<=160&&list.every(v=>typeof v==='string'&&v.length<8000)))return false;
   const base=createTraining(week,s.phase).values;
-  if(Object.entries(base).some(([key,v])=>typeof s.values[key]!==typeof v))return false;
+  if(Object.entries(base).some(([key,v])=>!(s.field===undefined&&week===11&&['replacement','dependencyChecked'].includes(key))&&typeof s.values[key]!==typeof v))return false;
   if(Object.values(s.values).some(v=>!['string','number','boolean'].includes(typeof v)||(typeof v==='string'&&v.length>4000)||(typeof v==='number'&&!Number.isFinite(v))))return false;
   if(week===3&&(![0,90,180,270].includes(Number(s.values.rotation))||![0,1,2].includes(Number(s.values.level))))return false;
   if(week===4&&(![12,24,36].includes(Number(s.values.gear))||![0,90,180,270].includes(Number(s.values.cam))||Number(s.values.turns)<0||Number(s.values.turns)>6))return false;
   if(week===5&&s.values.fault!==base.fault)return false;
   if(week===10&&(!Number.isInteger(s.values.position)||Number(s.values.position)<0||Number(s.values.position)>24||!Number.isInteger(s.values.steps)||Number(s.values.steps)<0||Number(s.values.steps)>24||!Number.isInteger(s.values.detected)||Number(s.values.detected)<0||Number(s.values.detected)>24||s.sequence.some(d=>!['north','east','south','west'].includes(d))))return false;
+  if(s.field!==undefined&&(!validFieldOperation(s.field,labOperation(week,s.phase))||s.field.verified!==s.complete))return false;
   if(week===11&&s.values.original!==initialPlan.join(' → '))return false;
+  if(s.field?.verified&&week<12&&!applyTraining({...s,field:undefined},{type:'test'}).complete)return false;
   return true;
 }
 
 
 
 
+
+/** Only the domain engine may grant proof. Scene or HTML actions cannot bypass it. */
+export function applyTrainingField(previous:TrainingState,action:FieldOperationAction):TrainingState {
+  if(action.type==='proof')return previous;
+  const spec=labOperation(previous.week,previous.phase);
+  let field=previous.field??createFieldOperation(spec);
+  if(field.verified!==previous.complete)field=applyFieldOperation(spec,field,{type:'proof',verified:previous.complete}).state;
+  const result=applyFieldOperation(spec,field,action);
+  return {...previous,field:result.state,feedback:result.message,actions:[...previous.actions,'Mission: '+result.message].slice(-160)};
+}
+export function trainingMissionComplete(state:TrainingState):boolean {
+  return state.complete&&state.field?.delivered===true;
+}

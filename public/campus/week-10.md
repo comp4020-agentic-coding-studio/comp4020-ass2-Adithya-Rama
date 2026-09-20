@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Predict fictional sensor observations and compare a route model with the actual event trace.
 
+## Field operation — The Surveyed Passage
+
+**Objective:** Guide the team across a published sensor grid and accurately report what its passage records.
+
+**Obstacle:** An untested route can miss sensor contacts. The team needs an observed route and its limitations, not an unsupported promise of being unseen.
+
+After the skill check, put the result into effect: **Commit the surveyed passage record**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The surveyed route reaches dispatch with its observed contact count attached.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm dispatch received the route account**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Apply the published cell-entry rule to predict sensor contacts along a route.
@@ -67,6 +79,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

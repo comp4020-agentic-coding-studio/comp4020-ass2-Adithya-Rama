@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Choose the archive copy supported by the current signed requirement, rather than guessing from its name or timestamp.
+**Operation The Authentic Archive.** Release the archive copy that actually satisfies the signed recovery order.
+
+Three plausible files have different contents. A newer timestamp can hide an unauthorised change; an older copy can be incomplete.
 
 **What you will produce:** A comparison of at least two copies and a short written decision timeline showing the original requirement, your supported choice, the amendment and your revised choice.
 
@@ -73,9 +75,17 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 1. Select **Practice**. Read the signed manifest: it states the required number of sections and checksum. A checksum is the supplied identifier used to compare file contents in this model.
 2. Select **Inspect…** for the archive copies and read their records. Compare completeness and checksum with the manifest, not just the latest timestamp.
 3. Choose a copy in **Which copy satisfies this manifest?** and select **Test this configuration**.
-4. Try **Skill check** and explain your choice using at least two compared records. The unchanged manifest still has authority; a newer file alone does not change it.
-5. Select **Transfer challenge**. Read the amended signed manifest and repeat the comparison against its new requirement.
+4. Complete Practice's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport** before switching. Try **Skill check** and explain your choice using at least two compared records. The unchanged manifest still has authority; a newer file alone does not change it.
+5. Complete the Skill check's **Field operation** and record that attempt before switching. Select **Transfer challenge**; after testing its changed configuration, complete and record its field handover too. Read the amended signed manifest and repeat the comparison against its new requirement.
 6. After playing, make a short timeline on paper or in your own document. Use four columns: **stage or source time**, **authority in force**, **observed count/checksum**, and **decision with its limit**. Include the original choice and amendment, preserving the earlier row. The browser export supplies the action trace; this written table supplies your explanation. Do not invent an event time the record does not give.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Release the manifest-matched archive**. The scene and mission record now show the consequence: The selected verified copy reaches protected dispatch while the source remains in the station archive.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the verified archive receipt** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

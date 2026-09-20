@@ -1,3 +1,6 @@
+import {FieldOperationWorld} from './field-operation-world';
+import type {FieldOperationFrame} from '../scripts/field-operation-view';
+import type {FieldOperationAction} from '../lib/field-operation';
 import * as THREE from 'three'; import type { DemoFrame } from '../lib/demonstration-types'; import { demonstrationItem, demonstrationGear, demonstrationCamera } from './demonstration-visuals';
 import { demonstrationPlacement, MEMORY_STATIONS, TEACHING_BAY, type SceneSupport } from './scene-layout';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -27,6 +30,7 @@ const materials = {
 };
 const finiteSceneNumber=(value:unknown,fallback=0,min=-1000,max=1000)=>{const number=Number(value);return Number.isFinite(number)?THREE.MathUtils.clamp(number,min,max):fallback;};
 export class AcademyWorld {
+ private fieldWorld?:FieldOperationWorld;private fieldFrame?:FieldOperationFrame;private fieldBarrier?:RAPIER.Collider;private pendingField?:{target:THREE.Vector3;perform:()=>void;scope:string;deadline:number};private fieldChoreography=0;private fieldHold=false;
  private demo?:DemoFrame;private demoControlled=false;private demoPlaying=true;private demoTime=0;private demoItemsSignature='';private demoOverlay=new THREE.Group();private demoItemNodes=new Map<string,THREE.Object3D>();private demoFocus=new THREE.Vector3(0,2,-3);private demoClockTarget=new THREE.Vector3(0,2,-3);private coach?:THREE.Object3D;private coachLabels:THREE.Object3D[]=[];private studentLabel?:THREE.Mesh;private demoNarrationPhase='briefing';private demoNarrationPlaying=false;private observationPhase='';private root:HTMLElement;private scene=new THREE.Scene();private camera=new THREE.PerspectiveCamera(56,1,.08,120);
  private renderer!:THREE.WebGLRenderer;private stage:HTMLElement;private environment=new THREE.Group();private kit!:THREE.Group;
  private player!:THREE.Object3D;private physics!:RAPIER.World;private body!:RAPIER.RigidBody;private collider!:RAPIER.Collider;
@@ -60,6 +64,7 @@ export class AcademyWorld {
   const sun=new THREE.DirectionalLight(0xffe1ae,2.8);sun.position.set(-7,14,7);sun.castShadow=true;
   sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-14;sun.shadow.camera.right=14;sun.shadow.camera.top=14;sun.shadow.camera.bottom=-14;sun.shadow.normalBias=.04;this.scene.add(sun);
   const fill=new THREE.DirectionalLight(0x98bacf,1.5);fill.position.set(9,7,-6);this.scene.add(fill);this.scene.add(this.environment);
+  this.fieldWorld=new FieldOperationWorld();this.scene.add(this.fieldWorld.group);
   this.buildRoom();this.installControls();this.root.querySelector<HTMLElement>('.world-poster')!.hidden=true;
   for(const selector of ['[data-world-canvas]','[data-world-hud]','[data-world-toolbar]'])this.root.querySelector<HTMLElement>(selector)!.hidden=false;
   this.resize=new ResizeObserver(()=>this.resizeView());this.resize.observe(this.stage);this.resizeView();this.setQuality('auto');
@@ -111,6 +116,7 @@ export class AcademyWorld {
  }
  private buildRoom(){
   this.sceneRevision++;
+  this.pendingField=undefined;this.fieldBarrier=undefined;
   this.colliders.forEach(c=>this.physics.removeCollider(c,true));this.colliders=[];this.demoColliders=[];
   const assetGeometries=new Set<THREE.BufferGeometry>();const retainedMaterials=new Set<THREE.Material>(Object.values(materials));this.kit.traverse(o=>{if(o instanceof THREE.Mesh){assetGeometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])retainedMaterials.add(m);}});
   this.environment.traverse(o=>{if(o instanceof THREE.Mesh){if(o.material instanceof THREE.MeshBasicMaterial&&o.material.map){o.material.map.dispose();o.material.dispose()}if(!assetGeometries.has(o.geometry))o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(!retainedMaterials.has(m))m.dispose();}});
@@ -118,7 +124,7 @@ export class AcademyWorld {
   this.makeArchitecture();if(this.room==='atrium')this.makeAtrium();else this.makeEquipment();
   this.player.visible=true;this.player.rotation.y=Math.PI;this.player.position.set(0,.07,2.8);this.body.setTranslation({x:0,y:.87,z:2.8},true);this.azimuth=0;this.target=undefined;
   this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-location]')!.textContent=this.mode==='mission'?'MERIDIAN / '+ZONES[this.zone as keyof typeof ZONES]:ROOMS[this.room].name;
-  const menu=this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!;menu.replaceChildren();this.equipment.forEach((item,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=item.label;menu.append(option)});const first=this.equipment.find(e=>!e.travel)||this.equipment[0];if(first)this.select(first);if(this.mode==='demo'){this.environment.add(this.demoOverlay);this.updateDemoVisuals();}else this.updateModels();this.recordStaging();
+  const menu=this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!;menu.replaceChildren();this.equipment.forEach((item,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=item.label;menu.append(option)});const first=this.equipment.find(e=>!e.travel)||this.equipment[0];if(first)this.select(first);if(this.mode==='demo'){this.environment.add(this.demoOverlay);this.updateDemoVisuals();}else this.updateModels();this.installFieldEquipment();this.recordStaging();
  }
  private makeArchitecture(){
   const room=ROOMS[this.room];const wall=new THREE.MeshStandardMaterial({color:room.tone,roughness:.88});
@@ -186,7 +192,7 @@ export class AcademyWorld {
   const changed=this.demo?.stepId!==frame.stepId;const moved=this.room!==frame.room;const introduced=this.demo?.demoId!==frame.demoId;const representationChanged=frame.room==='council'&&(frame.stepId==='crew')!==(this.demo?.stepId==='crew');
   this.demo={...frame,shot:frame.room==='movement'?'overhead':frame.shot,progress:THREE.MathUtils.clamp(Number(frame.progress)||0,0,1)};
   const demoFov=frame.room==='movement'?70:56;if(this.camera.fov!==demoFov){this.camera.fov=demoFov;this.camera.updateProjectionMatrix();}
-  this.room=frame.room;this.keys.clear();this.target=undefined;
+  this.room=frame.room;if(!this.pendingField){this.keys.clear();this.target=undefined;}if(changed){this.fieldHold=false;this.fieldChoreography=0;}
   if(moved||introduced||representationChanged)this.buildRoom();else this.updateDemoVisuals();
   if(changed){this.demoTime=0;this.demoYaw=0;this.demoPitch=0;this.cameraDirty=true;if(!this.demoPlaying||this.demo.shot==='overhead'){this.demoClockTarget.copy(this.demoFocus);const pose=demonstrationCamera(this.demo.shot,this.demoFocus,this.camera.aspect,frame.progress,true);this.camera.position.copy(this.adjustDemoCamera(pose.position,pose.target));this.camera.lookAt(pose.target);}}
   this.root.querySelector<HTMLElement>('[data-world-location]')!.textContent='WORKED EXAMPLE / '+ROOMS[this.room].name;
@@ -304,7 +310,7 @@ export class AcademyWorld {
   }
   else if(this.room==='movement')this.demoFocus.set(0,.35,.5);
   else if(known)this.demoFocus.copy(known.at);else this.demoFocus.set(0,2,-3);
-  this.root.querySelector<HTMLElement>('[data-world-demo-badge]')!.hidden=false;if(!this.demoControlled)this.placeDemonstrator();this.updateStudentLabel();this.recordStaging();
+  this.root.querySelector<HTMLElement>('[data-world-demo-badge]')!.hidden=false;if(!this.demoControlled&&!this.pendingField&&!this.fieldHold)this.placeDemonstrator();this.updateStudentLabel();this.recordStaging();
  }
  private updateDemoConnectors(ports:unknown){
   const assembly=this.dynamic.assembly;if(!assembly)return;
@@ -507,7 +513,7 @@ export class AcademyWorld {
   if(this.room==='mechanics')this.makeMechanism(bench);else if(this.room==='systems')this.makeCircuit(bench);else if(this.room==='spatial')this.makeSpatial(bench);
   else if(this.room==='perception')this.makePerception(bench);else if(this.room==='digital')this.makeDigital(bench);else if(this.room==='council')this.makeCouncil(bench);
   else if(this.room==='movement')this.makeSensors(bench);else this.makeOperations(bench);
-  this.addAsset('Planter',-5,0,2);const entry=this.box(1.5,2.4,.07,-8,1.3,5,materials.dark);this.text(this.mode==='mission'?'NEXT ZONE':'RETURN TO ATRIUM',-8,1.6,5.05,1.4);
+  this.addAsset('Planter',-8.2,0,-4.8);const entry=this.box(1.5,2.4,.07,-8,1.3,5,materials.dark);this.text(this.mode==='mission'?'NEXT ZONE':'RETURN TO ATRIUM',-8,1.6,5.05,1.4);
   this.equipmentAt(entry,this.mode==='mission'?'Travel through Meridian':'Return to academy atrium','exit',new THREE.Vector3(-8,1.3,5),this.mode==='mission'?'next':'atrium');
  }
  private subtitle(){return {mechanics:'PREDICT · OPERATE · DIAGNOSE',systems:'MEASURE BEFORE YOU REPLACE',perception:this.week===2?'MAKE A PLACE FOR A MEMORY':'NOTICE WHAT CHANGES',spatial:'ONE OBJECT · MANY PERSPECTIVES',digital:this.week===7?'IDENTITY × ACTION × PERMISSION':'FOLLOW THE EVIDENCE',council:'INFORMATION IS UNEVENLY DISTRIBUTED',movement:'PREDICT THE SENSOR MODEL',operations:'A PLAN IS A TESTABLE CLAIM',atrium:''}[this.room]}
@@ -688,8 +694,67 @@ export class AcademyWorld {
   this.equipmentAt(map,this.mode==='mission'?'Archive recovery controls':'Rehearsal table · introduce a disruption',this.mode==='mission'?'archive':'rehearsal',new THREE.Vector3(0,1.9,-3));this.dynamic.archive=archive;this.text(this.mode==='mission'?'MERIDIAN / SIX CONNECTED AREAS':'OPERATION MODEL / SIX CONNECTED AREAS',0,3.5,-6.9,3.5);
  }
 
+
+ private fieldScope(){return this.mode==='lab'?'lab:'+this.week:this.mode==='mission'?'mission:'+this.root.closest<HTMLElement>('[data-mission]')?.dataset.mission:this.mode==='demo'?'demo:'+this.root.closest<HTMLElement>('[data-demo-id]')?.dataset.demoId:'';}
+ private installFieldEquipment(){
+  if(!this.fieldWorld||!this.fieldFrame)return;
+  const active=this.mode!=='mission'||this.zone==='dispatch';
+  this.fieldWorld.setBriefingOnly(!active);
+  this.equipment=this.equipment.filter(e=>!e.id.startsWith('field-'));
+  if(active){for(const item of this.fieldWorld.equipment()){
+    if(item.id.startsWith('field-checkpoint-')&&Number(item.id.slice(17))>=this.fieldFrame.spec.checkpoints.length)continue;
+    this.equipment.push(item);
+   }
+   if(!this.fieldBarrier)this.fieldBarrier=this.solid(2.16,2.32,.15,-1.1,1.22,3.6);
+   this.fieldBarrier.setEnabled(['door','route','revision','recovery','lift'].includes(this.fieldFrame.spec.effect)&&!this.fieldFrame.state.executed);
+  }else{this.fieldBarrier?.setEnabled(false);const briefing=this.fieldWorld.equipment()[0]!;this.equipment.push({...briefing,id:'field-briefing',label:'Mission briefing terminal · inspect the obstacle'});}
+  const menu=this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!;
+  const selected=this.selected?.id;menu.replaceChildren();this.equipment.forEach((item,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=item.label;menu.append(option)});
+  if(selected){const index=this.equipment.findIndex(e=>e.id===selected);if(index>=0)menu.value=String(index);}
+ }
+ private fieldAction(id:string):FieldOperationAction|undefined{
+  const f=this.fieldFrame;if(!f)return;
+  if(id==='field-briefing')return {type:'inspect'};
+  if(id==='field-station')return !f.state.inspected?{type:'inspect'}:!f.state.executed?{type:'execute'}:{type:'collect'};
+  if(id==='field-receiver')return {type:'deliver'};
+  if(id.startsWith('field-checkpoint-')){const label=f.spec.checkpoints[Number(id.slice(17))];if(label)return {type:'checkpoint',id:label};}
+ }
+ private receiveField(frame:FieldOperationFrame){
+  if(frame.scope!==this.fieldScope()||!this.fieldWorld)return;
+  const before=this.fieldFrame;if(before&&before.spec.id!==frame.spec.id){this.pendingField=undefined;this.target=undefined;this.fieldChoreography=0;this.fieldHold=false;}this.fieldFrame=frame;this.fieldWorld.setFrame(frame);this.installFieldEquipment();
+  this.root.dataset.worldFieldState=JSON.stringify(frame.state);this.root.dataset.worldFieldEffect=frame.spec.effect;
+  this.root.querySelector<HTMLElement>('[data-world-field-title]')!.textContent=frame.spec.title;
+  const goal=this.root.querySelector<HTMLElement>('[data-world-field-goal]')!;
+  goal.textContent=frame.state.delivered?'MISSION ACCOMPLISHED · '+frame.spec.cargoLabel+' received':!frame.state.inspected?'Investigate: '+frame.spec.objective:!frame.state.verified?'Resolve the obstacle using the equipment':!frame.state.executed?frame.spec.actionLabel:!frame.state.carrying?'Collect '+frame.spec.cargoLabel:frame.state.visited.length<frame.spec.checkpoints.length?'Next: '+frame.spec.checkpoints[frame.state.visited.length]:frame.spec.resolveLabel;
+  this.root.querySelector<HTMLElement>('[data-world-field-hud]')!.hidden=false;
+  const changed=before?.spec.id===frame.spec.id&&JSON.stringify(before.state)!==JSON.stringify(frame.state);
+  if(this.mode==='demo'&&!this.demoControlled&&changed){
+   let action:FieldOperationAction|undefined;
+   if(!before.state.executed&&frame.state.executed)action={type:'execute'};
+   else if(!before.state.carrying&&frame.state.carrying)action={type:'collect'};
+   else if(frame.state.visited.length>before.state.visited.length)action={type:'checkpoint',id:frame.state.visited.at(-1)!};
+   else if(!before.state.delivered&&frame.state.delivered)action={type:'deliver'};
+   if(action){this.leaveInspection();this.target=this.fieldWorld.target(action);this.fieldChoreography=12;this.player.visible=true;this.body.setTranslation({x:this.player.position.x,y:.87,z:this.player.position.z},true);}
+  }
+  this.cameraDirty=true;this.updateEquipmentAction();
+ }
+ private walkToField(action:FieldOperationAction,perform:()=>void){
+  if(!this.fieldWorld||!this.fieldFrame)return;
+  if(this.mode==='mission'&&this.zone!=='dispatch'&&action.type!=='inspect'){perform();return;}
+  const target=this.fieldWorld.target(action);
+  if(this.reduced||this.paused){this.fieldHold=true;this.player.position.copy(target).setY(.07);this.body.setTranslation({x:target.x,y:.87,z:target.z},true);perform();this.cameraDirty=true;return;}
+  this.leaveInspection();this.pendingField={target,perform,scope:this.fieldFrame.scope,deadline:performance.now()+20000};this.target=target.clone();this.keys.clear();this.fieldHold=true;this.fieldChoreography=12;this.cameraDirty=true;
+  this.status('Moving to '+(action.type==='checkpoint'?action.id:action.type==='deliver'?'the receiving station':'the mission station')+'. Use movement controls to cancel.');
+ }
+
  private installControls(){
   const listen=(target:EventTarget,type:string,fn:EventListener,options?:AddEventListenerOptions)=>{target.addEventListener(type,fn,options);this.cleanups.push(()=>target.removeEventListener(type,fn,options))};const canvas=this.renderer.domElement;
+  listen(window,'mastermind:field-state',((event:CustomEvent<FieldOperationFrame>)=>this.receiveField(event.detail)) as EventListener);
+  listen(window,'mastermind:field-request',((event:CustomEvent<{scope:string;action:FieldOperationAction;perform:()=>void}>)=>{
+   if(event.detail.scope!==this.fieldScope()||!this.fieldFrame||this.disposed||document.hidden)return;
+   if(event.detail.action.type==='proof')return;
+   event.preventDefault();this.walkToField(event.detail.action,event.detail.perform);
+  }) as EventListener);
   listen(canvas,'keydown',((event:KeyboardEvent)=>{
    if(event.target instanceof HTMLElement&&event.target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])'))return;
    if(event.ctrlKey||event.metaKey||event.altKey)return;
@@ -697,7 +762,7 @@ export class AcademyWorld {
    // Escape belongs to the browser while fullscreen or pointer lock is active.
    if(key==='escape'){this.keys.clear();this.leaveInspection();return;}
    if(['+','=','-','_'].includes(key)){event.preventDefault();this.zoom(key==='+'||key==='='?-.18:.18);return;}
-   if(['w','a','s','d','c','arrowup','arrowdown','arrowleft','arrowright','e'].includes(key)){event.preventDefault();this.keys.add(key);this.target=undefined;if(key==='e'&&!event.repeat)this.inspectSelected();}
+   if(['w','a','s','d','c','arrowup','arrowdown','arrowleft','arrowright','e'].includes(key)){event.preventDefault();this.keys.add(key);this.target=undefined;this.pendingField=undefined;this.fieldChoreography=0;if(key==='e'&&!event.repeat)this.inspectSelected();}
   }) as EventListener);
   listen(canvas,'keyup',((event:KeyboardEvent)=>{this.keys.delete(event.key.toLowerCase())}) as EventListener);
   const clearInput=()=>{this.keys.clear();this.drag=undefined;this.freeLookPointer=undefined;};
@@ -762,10 +827,11 @@ export class AcademyWorld {
    if(this.mode!=='demo'||(this.demo&&event.detail.demoId!==this.demo.demoId))return;
    this.demoNarrationPhase=event.detail.phase;this.demoNarrationPlaying=Boolean(event.detail.playing);
    this.root.dataset.worldNarrationPhase=this.demoNarrationPhase;
-   if(!this.demoControlled){this.placeDemonstrator();this.updateDemonstratorGesture(0);this.updateStudentLabel();this.recordStaging();this.cameraDirty=true;}
+   if(!this.demoControlled&&!this.fieldChoreography&&!this.fieldHold){this.placeDemonstrator();this.updateDemonstratorGesture(0);this.updateStudentLabel();this.recordStaging();this.cameraDirty=true;}
   }) as EventListener);
   listen(window,'mastermind:demo-playback',((event:CustomEvent<{playing:boolean}>)=>{
    if(this.mode!=='demo')return;this.demoPlaying=Boolean(event.detail.playing);
+   if(!this.demoPlaying){this.pendingField=undefined;this.target=undefined;this.fieldChoreography=0;}
    if(!this.demoPlaying&&(this.demo?.progress||0)>=1)this.gears.forEach((gear,i)=>gear.rotation.z=this.gearTargets[i]!);
    this.root.dataset.worldDemoPlaying=String(this.demoPlaying);
   }) as EventListener);
@@ -775,7 +841,7 @@ export class AcademyWorld {
   button('[data-world-reset-camera]',()=>{this.leaveInspection();this.azimuth=0;this.pitch=.36;this.exploreZoom=1;this.inspectionZoom=1;this.demoZoom=1;this.demoYaw=0;this.demoPitch=0;this.cameraDirty=true;this.updateCameraControls();this.status('Camera reset. Scroll over the scene or use the zoom buttons to get closer.');});
   button('[data-world-pause]',()=>{this.paused=!this.paused;this.keys.clear();const b=this.root.querySelector<HTMLButtonElement>('[data-world-pause]')!;b.textContent=this.paused?'Resume':'Pause';b.setAttribute('aria-pressed',String(this.paused));this.status(this.paused?'Scene paused. Course controls remain available.':'Scene resumed.');});
   listen(this.root.querySelector('[data-world-quality]')!,'change',((e:Event)=>this.setQuality((e.target as HTMLSelectElement).value)) as EventListener);
-  listen(this.root.querySelector('[data-world-equipment]')!,'change',((event:Event)=>{const item=this.equipment[Number((event.target as HTMLSelectElement).value)];if(item){this.select(item);this.inspectSelected()}}) as EventListener);const travel=this.root.querySelector<HTMLSelectElement>('[data-world-travel]')!;const entries=this.mode==='mission'?Object.entries(ZONES):Object.entries(ROOMS).map(([key,value])=>[key,value.name]);
+  listen(this.root.querySelector('[data-world-equipment]')!,'change',((event:Event)=>{const item=this.equipment[Number((event.target as HTMLSelectElement).value)];if(item){this.select(item);this.inspectSelected()}}) as EventListener);const travel=this.root.querySelector<HTMLSelectElement>('[data-world-travel]')!;const entries=this.mode==='mission'?Object.entries(ZONES).filter(([id])=>this.missionZones().includes(id)):Object.entries(ROOMS).map(([key,value])=>[key,value.name]);
   for(const [value,label] of entries){const option=document.createElement('option');option.value=value!;option.textContent=label!;travel.append(option)}travel.value=this.mode==='mission'?this.zone:this.room;listen(travel,'change',()=>this.travel(travel.value));
   this.updateCameraControls();
  }
@@ -804,8 +870,9 @@ export class AcademyWorld {
   this.root.querySelectorAll<HTMLButtonElement>('[data-world-zoom-in]').forEach(button=>button.disabled=zoom<=min+.0001);
   this.root.querySelectorAll<HTMLButtonElement>('[data-world-zoom-out]').forEach(button=>button.disabled=zoom>=max-.0001);
  }
+ private missionZones(){const kind=this.state.missionKind||this.root.closest<HTMLElement>('[data-mission]')?.dataset.mission;return kind==='a1'?['arrival','workshop','dispatch']:kind==='a2'?['power','control','archive','dispatch']:Object.keys(ZONES);}
  private travel(destination:string){if(this.mode==='demo'){this.status('This worked example controls its location. Use its chapters to move between scenes.');return;}
-  if(this.mode==='mission'){const zones=Object.keys(ZONES);this.zone=destination==='next'?zones[(zones.indexOf(this.zone)+1)%zones.length]!:destination;this.room=ZONE_ROOMS[this.zone]||'perception';window.dispatchEvent(new CustomEvent('mastermind:mission-zone',{detail:{zone:this.zone}}));}
+  if(this.mode==='mission'){const zones=this.missionZones();if(destination!=='next'&&!zones.includes(destination))return;this.zone=destination==='next'?zones[(zones.indexOf(this.zone)+1)%zones.length]!:destination;this.room=ZONE_ROOMS[this.zone]||'perception';window.dispatchEvent(new CustomEvent('mastermind:mission-zone',{detail:{zone:this.zone}}));}
   else{this.room=(destination in ROOMS?destination:'atrium') as RoomId;if(this.mode==='academy'||this.mode==='hero')this.week=ROOMS[this.room].week;}
   this.root.querySelector<HTMLSelectElement>('[data-world-travel]')!.value=this.mode==='mission'?this.zone:this.room;if(this.mode!=='mission')this.state={};this.buildRoom();this.status('Entered '+(this.mode==='mission'?ZONES[this.zone as keyof typeof ZONES]:ROOMS[this.room].name)+'.');
  }
@@ -813,7 +880,7 @@ export class AcademyWorld {
   const rect=this.renderer.domElement.getBoundingClientRect();this.pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);this.ray.setFromCamera(this.pointer,this.camera);
   const hits=this.ray.intersectObjects(this.equipment.map(e=>e.mesh),true);
   if(hits.length){let target:THREE.Object3D|null=hits[0]!.object;while(target){const item=this.equipment.find(e=>e.mesh===target);if(item){this.select(item);this.inspectSelected();return}target=target.parent}}
-  if(this.inspect)return;const ground=new THREE.Plane(new THREE.Vector3(0,1,0),0);const dest=new THREE.Vector3();
+  if(this.inspect)return;this.pendingField=undefined;this.fieldChoreography=0;const ground=new THREE.Plane(new THREE.Vector3(0,1,0),0);const dest=new THREE.Vector3();
   if(this.ray.ray.intersectPlane(ground,dest)){dest.x=THREE.MathUtils.clamp(dest.x,-9,9);dest.z=THREE.MathUtils.clamp(dest.z,-7.7,8);this.target=dest;this.status('Walking to the selected position.');}
  }
  private select(item:Equipment){if(this.selectionHelper){this.selectionHelper.removeFromParent();this.selectionHelper.geometry.dispose();(this.selectionHelper.material as THREE.Material).dispose();}this.selectionHelper=new THREE.BoxHelper(item.mesh,0xe7c680);this.scene.add(this.selectionHelper);this.selected=item;this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!.value=String(this.equipment.indexOf(item));this.root.querySelector<HTMLElement>('[data-world-object]')!.hidden=false;this.root.querySelector<HTMLElement>('[data-world-object-label]')!.textContent=item.label;this.updateEquipmentAction();}
@@ -822,6 +889,11 @@ export class AcademyWorld {
   const button=this.root.querySelector<HTMLButtonElement>('[data-world-use]')!,id=this.selected.id,values=this.state.values||this.state;
   button.disabled=false;
   if(this.selected.travel){button.textContent='Enter room';return;}
+  if(id.startsWith('field-')&&this.fieldFrame){
+   const action=this.fieldAction(id),f=this.fieldFrame;
+   button.textContent=action?.type==='inspect'?'Inspect mission station':action?.type==='execute'?f.spec.actionLabel:action?.type==='collect'?'Collect '+f.spec.cargoLabel:action?.type==='checkpoint'?'Travel to '+action.id:action?.type==='deliver'?f.spec.resolveLabel:'Checkpoint unavailable';
+   button.disabled=!action||f.state.delivered||(this.mode==='demo'&&!this.demoControlled);return;
+  }
   if(this.mode==='demo'){
    if(!this.demoControlled){button.textContent='Read example guidance';return;}
    const alias:Record<string,string>={gear:'gearFollower',driver:'turns',crank:'turns',interlock:'interlock',spring:'spring',cam:'cam',spatial:'orientation'};
@@ -840,9 +912,9 @@ export class AcademyWorld {
   const byWeek:Record<number,string>={1:'Read next scene detail',2:'Visit next memory location',3:'Rotate model 90°',4:'Turn crank and test',5:'Measure next circuit point',6:'Inspect next archive',7:'Test all permissions',8:'Switch communication role',9:'Check next claim',10:'Execute next route step',11:'Publish the disruption',12:'Review record readiness'};
   button.textContent=this.week===4&&common[id]?common[id]:this.week===5&&id.startsWith('measure-')?'Measure '+id.slice(8):byWeek[this.week]||'Open activity controls';
  }
- private inspectSelected(){if(!this.selected)return;if(this.selected.travel){this.travel(this.selected.travel);return}this.inspect=true;this.player.visible=false;this.keys.clear();this.target=undefined;this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=false;this.status('Close-up inspection. Scroll or use the zoom buttons for a closer view. Use the activity controls to perform the current task.');}
+ private inspectSelected(){if(!this.selected)return;if(this.selected.id.startsWith('field-')){this.useSelected();return;}if(this.selected.travel){this.travel(this.selected.travel);return}this.inspect=true;this.player.visible=false;this.keys.clear();this.target=undefined;this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=false;this.status('Close-up inspection. Scroll or use the zoom buttons for a closer view. Use the activity controls to perform the current task.');}
  private leaveInspection(){this.inspect=false;this.player.visible=true;this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=true;}
- private useSelected(){if(this.mode==='demo'){if(this.selected){this.actionTime=.65;window.dispatchEvent(new CustomEvent('mastermind:demo-interact',{detail:{id:this.selected.id}}));this.status('Example equipment selected. Use the demonstration controls to test a response.');}return;}
+ private useSelected(){if(this.selected?.id.startsWith('field-')&&this.fieldFrame){const action=this.fieldAction(this.selected.id);if(action&&!(this.mode==='demo'&&!this.demoControlled))this.walkToField(action,()=>window.dispatchEvent(new CustomEvent('mastermind:field-action',{detail:{scope:this.fieldFrame!.scope,action}})));return;}if(this.mode==='demo'){if(this.selected){this.actionTime=.65;window.dispatchEvent(new CustomEvent('mastermind:demo-interact',{detail:{id:this.selected.id}}));this.status('Example equipment selected. Use the demonstration controls to test a response.');}return;}
   if(!this.selected)return;if(this.selected.travel){this.travel(this.selected.travel);return}
   this.actionTime=.65;window.dispatchEvent(new CustomEvent('mastermind:interact',{detail:{week:this.week,objectId:this.selected.id,room:this.room}}));
   if(this.mode==='academy'||this.mode==='hero'){const previous=this.state.values||{};this.state={week:this.week,kind:'training',values:{...previous,turns:Number(previous.turns||0)+1,power:!previous.power,repaired:true,rotation:(Number(previous.rotation||0)+90)%360,covered:!previous.covered,position:(Number(previous.position||0)+1)%25},sequence:[]};this.updateModels();this.status(this.room==='atrium'?'Eight specialist rooms. Choose a portal or use Travel.':'Equipment demonstration. Open this week’s lab for guided practice, a fresh challenge and saved evidence.');}
@@ -880,30 +952,39 @@ export class AcademyWorld {
   if(this.dynamic.cover)this.dynamic.cover.visible=Boolean(values.covered);if(this.dynamic.observations)this.dynamic.observations.visible=this.mode!=='mission'&&!Boolean(values.covered);
   if(this.dynamic.token){const p=Number(values.position||0);this.dynamic.token.position.set(p%5-2,.1,Math.floor(p/5)-1.5)}if(this.dynamic.route)this.dynamic.route.visible=!values.detected;
   if(this.dynamic.selected){const selected=String(values.archive||'B');this.dynamic.selected.position.x=({A:-2.5,B:0,C:2.5} as Record<string,number>)[selected]||0}
-  if(this.dynamic.archive)this.dynamic.archive.rotation.z=values.disrupted?.3:0;if(this.selectionHelper&&this.selected){this.selectionHelper.setFromObject(this.selected.mesh);this.selectionHelper.visible=!(values.covered&&this.room==='perception');}this.updateEquipmentAction();this.recordStaging();if(this.state.complete)this.status('Skill check complete. Your evidence is available in the lab record.');
+  if(this.dynamic.archive){this.dynamic.archive.rotation.z=values.disrupted?.3:0;const field=this.fieldFrame?.state;this.dynamic.archive.visible=!(this.mode==='mission'&&this.state.missionKind==='recovery'&&(this.state.resolutionChoice??this.state.declaredObjective)==='physical'&&field&&(field.carrying||field.delivered));}if(this.selectionHelper&&this.selected){this.selectionHelper.setFromObject(this.selected.mesh);this.selectionHelper.visible=!(values.covered&&this.room==='perception');}this.updateEquipmentAction();this.recordStaging();if(this.fieldFrame?.state.delivered)this.status('Mission accomplished. Keep the field record and explain your decisions.');
  }
  private setQuality(value:string){this.low=value==='low'||(value==='auto'&&(innerWidth<700||(navigator.hardwareConcurrency||4)<4));this.renderer.setPixelRatio(this.low?Math.min(devicePixelRatio,1.2):Math.min(devicePixelRatio,1.8));this.renderer.shadowMap.enabled=!this.low;this.resizeView();}
  private resizeView(){const w=this.stage.clientWidth||640,h=this.stage.clientHeight||400;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();this.cameraDirty=true;}
  private status(message:string){if(message===this.statusText)return;this.statusText=message;this.root.querySelector<HTMLElement>('[data-world-status]')!.textContent=message;}
- private tick=(time:number)=>{if(this.disposed)return;const dt=Math.min((time-this.last)/1000||.016,.045);this.last=time;this.elapsed+=dt;if((!this.paused||this.cameraDirty)&&!document.hidden){if(!this.paused){this.move(dt);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));}this.updateCamera(dt);this.updateStudentLabel();this.renderer.render(this.scene,this.camera);this.root.dataset.worldRenderCount=String(++this.renderedFrames);this.root.dataset.worldRenderedRevision=String(this.sceneRevision);this.root.dataset.worldRenderedRoom=this.room;this.root.dataset.worldRenderedZone=this.zone;this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);this.root.dataset.worldCamera=this.camera.position.toArray().map(value=>value.toFixed(3)).join(',');}this.frame=requestAnimationFrame(this.tick);}
- private move(dt:number){if(this.mode==='demo'&&!this.demoControlled){this.player.visible=true;this.updateDemonstratorGesture(dt);return;}this.player.visible=!this.inspect;
+ private tick=(time:number)=>{if(this.disposed)return;const elapsedStep=Math.min((time-this.last)/1000||.016,.25),dt=Math.min(elapsedStep,.045);this.last=time;this.elapsed+=dt;if((!this.paused||this.cameraDirty)&&!document.hidden){if(!this.paused){this.move(this.pendingField?Math.min(elapsedStep,.18):dt);this.fieldWorld?.tick(dt,this.player,this.reduced);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));}this.updateCamera(dt);this.updateStudentLabel();this.renderer.render(this.scene,this.camera);this.root.dataset.worldRenderCount=String(++this.renderedFrames);this.root.dataset.worldRenderedRevision=String(this.sceneRevision);this.root.dataset.worldRenderedRoom=this.room;this.root.dataset.worldRenderedZone=this.zone;this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);this.root.dataset.worldCamera=this.camera.position.toArray().map(value=>value.toFixed(3)).join(',');}this.frame=requestAnimationFrame(this.tick);}
+ private move(dt:number){if(this.pendingField&&performance.now()>this.pendingField.deadline){this.pendingField=undefined;this.target=undefined;this.fieldChoreography=0;this.status('The walking route is obstructed. Move closer, or pause the scene and use the accessible mission controls. No handover was recorded.');}
+  if(this.mode==='demo'&&!this.demoControlled&&!this.fieldChoreography){this.player.visible=true;this.updateDemonstratorGesture(dt);return;}this.player.visible=!this.inspect;
   const movement=new THREE.Vector3();
   if(!this.inspect){const forward=Number(this.keys.has('s')||this.keys.has('arrowdown'))-Number(this.keys.has('w')||this.keys.has('arrowup'));const side=Number(this.keys.has('d')||this.keys.has('arrowright'))-Number(this.keys.has('a')||this.keys.has('arrowleft'));movement.set(side,0,forward).applyAxisAngle(new THREE.Vector3(0,1,0),this.azimuth);
-   if(this.target){movement.copy(this.target).sub(this.player.position);movement.y=0;if(movement.length()<.18){this.target=undefined;movement.set(0,0,0)}}if(movement.lengthSq()>0)movement.normalize().multiplyScalar(this.keys.has('c')?1.5:3.15);
+   if(this.target){movement.copy(this.target).sub(this.player.position);movement.y=0;if(movement.length()<.18){this.target=undefined;movement.set(0,0,0)}}if(movement.lengthSq()>0){
+    // Stop on the destination even when a slow frame would step past it.
+    // Otherwise the character can oscillate across the arrival radius forever.
+    const remaining=movement.length(),speed=this.keys.has('c')?1.5:3.15;
+    movement.multiplyScalar((this.target?Math.min(speed,remaining/Math.max(dt,.001)):speed)/remaining);
+   }
   }
+  if(this.fieldChoreography)this.fieldChoreography=Math.max(0,this.fieldChoreography-dt);
   this.moving=movement.lengthSq()>0;this.controller.computeColliderMovement(this.collider,{x:movement.x*dt,y:-.12,z:movement.z*dt});const next=this.controller.computedMovement(),position=this.body.translation();
   this.body.setNextKinematicTranslation({x:position.x+next.x,y:position.y+next.y,z:position.z+next.z});this.physics.timestep=dt;this.physics.step();const actual=this.body.translation();this.player.position.set(actual.x,actual.y-.8,actual.z);
+  if(this.pendingField&&this.player.position.clone().setY(0).distanceTo(this.pendingField.target)<.28){const pending=this.pendingField;this.pendingField=undefined;this.target=undefined;this.fieldChoreography=0;if(pending.scope===this.fieldFrame?.scope)pending.perform();}
   if(this.moving){const targetAngle=Math.atan2(movement.x,movement.z);let diff=targetAngle-this.player.rotation.y;diff=Math.atan2(Math.sin(diff),Math.cos(diff));this.player.rotation.y+=diff*Math.min(dt*12,1)}
   const cycle=this.elapsed*(this.keys.has('c')?5:9),swing=this.moving?Math.sin(cycle)*.48:0;
   for(const [name,sign] of [['LegL',1],['LegR',-1],['ArmL',-1],['ArmR',1]] as const){const limb=this.player.getObjectByName(name);if(limb)limb.rotation.x=swing*sign}this.player.scale.y=this.keys.has('c')?.72:1;this.actionTime=Math.max(0,this.actionTime-dt);if(this.actionTime>0){const arm=this.player.getObjectByName('ArmR');if(arm)arm.rotation.x=-.9;}
   if(!this.inspect&&this.moving){const closest=this.equipment.reduce<Equipment|undefined>((best,e)=>!best||e.at.distanceTo(this.player.position)<best.at.distanceTo(this.player.position)?e:best,undefined);if(closest&&closest.at.distanceTo(this.player.position)<3.5&&closest!==this.selected)this.select(closest)}
  }
- private updateCamera(dt:number){if(this.mode==='demo'&&!this.demoControlled){this.updateDemoCamera(dt);return;}
+ private updateCamera(dt:number){if(this.mode==='demo'&&!this.demoControlled&&!this.fieldChoreography&&!this.fieldHold){this.updateDemoCamera(dt);return;}
   const target=this.inspect&&this.selected?this.selected.at.clone():this.player.position.clone().add(new THREE.Vector3(0,1.15,0));const portrait=this.camera.aspect<1.1;
   const distance=this.inspect?(portrait?4.3:3.6)*this.inspectionZoom:(portrait?7:6)*this.exploreZoom;const desired=target.clone().add(new THREE.Vector3(Math.sin(this.azimuth)*distance,Math.sin(this.pitch)*distance+(this.inspect?.1:.3),Math.cos(this.azimuth)*distance));
   desired.x=THREE.MathUtils.clamp(desired.x,-9.5,9.5);desired.z=THREE.MathUtils.clamp(desired.z,-8.1,8.55);desired.y=Math.max(.5,desired.y);const delta=desired.clone().sub(target),length=delta.length();delta.normalize();const hit=this.physics.castRay(new RAPIER.Ray(target,delta),length,true,undefined,undefined,this.collider,this.body);if(hit&&hit.timeOfImpact>.1)desired.copy(target).addScaledVector(delta,Math.max(.5,hit.timeOfImpact-.18));const alpha=this.reduced?1:1-Math.exp(-dt*7);this.camera.position.lerp(desired,alpha);this.camera.lookAt(target);if(this.camera.position.distanceToSquared(desired)<.0001)this.cameraDirty=false;
  }
  dispose(){
+  this.fieldWorld?.dispose();this.pendingField=undefined;this.root.querySelector<HTMLElement>('[data-world-field-hud]')?.setAttribute('hidden','');
   this.disposed=true;this.root.dispatchEvent(new Event('mastermind:world-disposed'));if(document.pointerLockElement===this.renderer?.domElement)document.exitPointerLock();this.keys.clear();cancelAnimationFrame(this.frame);this.resize?.disconnect();this.cleanups.forEach(fn=>fn());
   this.scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material]){if(m instanceof THREE.MeshStandardMaterial||m instanceof THREE.MeshBasicMaterial)m.map?.dispose();m.dispose();}}});
   if(this.selectionHelper){this.selectionHelper.geometry.dispose();(this.selectionHelper.material as THREE.Material).dispose();}this.physics?.free();this.renderer?.dispose();this.renderer?.forceContextLoss();this.stage.replaceChildren();this.root.querySelector<HTMLElement>('.world-poster')!.hidden=false;

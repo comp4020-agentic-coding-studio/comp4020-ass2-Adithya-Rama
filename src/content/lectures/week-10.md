@@ -11,6 +11,9 @@ date: 2027-05-10
 related: ["sessions/week-10", "assessments/final-project"]
 ---
 
+> **Your field application — The Surveyed Passage:** Guide the team across a published sensor grid and accurately report what its passage records. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The hall does exactly what its rules say. Your model might not.
 
 ## What you will learn

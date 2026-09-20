@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Preserve a working plan, diagnose a disruption and coordinate a justified revision.
 
+## Field operation — The Route That Failed
+
+**Objective:** Keep recovery moving after a disruption while preserving the plan that depended on the old condition.
+
+**Obstacle:** Version 1 no longer works. A new paragraph alone cannot reopen a passage: select and rehearse the replacement dependency before committing it.
+
+After the skill check, put the result into effect: **Activate the rehearsed replacement plan**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The rehearsed alternative becomes active. Version 1 remains in the journal so the reason for the change stays visible.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the revised route is in use**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Identify which dependencies a disruption invalidates.
@@ -55,6 +67,10 @@ Work with the missing-meter disruption and supplied 6/6/0/0 V reference readings
 
 The facilitator records decisions and checks whether all roles receive the changed plan. Avoid surprise rules or performance theatre. Allow the team to pause, inspect evidence and replay the revised sequence.
 
+## Rehearse before authorising
+
+For the passage closure, assign a relay check and demonstrate its passing result before moving the route token west. For the unavailable meter, use the supplied 6/6/0/0 V trace; mark its provenance and the absence of a live confirmation. Preserve both the unchanged Version 1 and the tested Version 2. The factual dependency can be checked; the quality of your explanation requires human judgement.
+
 ## Student record
 
 Name / role:
@@ -66,6 +82,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

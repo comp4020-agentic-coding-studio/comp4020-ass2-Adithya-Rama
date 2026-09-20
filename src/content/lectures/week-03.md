@@ -11,6 +11,9 @@ date: 2027-03-08
 related: ["sessions/week-03", "assessments/assignment-1"]
 ---
 
+> **Your field application — The Broken Connection:** Reconnect the gallery passage by aligning a service module with the building’s connectors and level. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The drawing is correct. You are holding it the wrong way around.
 
 ## What you will learn

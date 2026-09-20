@@ -126,7 +126,10 @@ test('the final conclusion narrates observations and opens the complete worked s
  await page.locator('[data-demo-completion]').click();
  await expect(player).toHaveAttribute('data-demo-narration-phase','completion');
  await expect(page.locator('.demo-finished details')).toHaveAttribute('open','');
- await expect(page.locator('[data-demo-jump]').last().locator('[data-demo-chapter-state]')).toHaveText('Observed');
+ await expect(page.locator('[data-demo-jump]').last().locator('[data-demo-chapter-state]')).toHaveText('Ready to explore');
+ await expect(page.locator('[data-demo-caption]')).toContainText('Completion preview');
+ await expect(page.locator('[data-demo-field-proof]')).toContainText('0 / 18');
+ await expect(page.locator('[data-field-operation]')).not.toHaveAttribute('data-field-state','complete');
  await expect(page.locator('[data-demo-caption]')).toContainText('Read the finished work');
  expect(await page.evaluate(()=>(window as unknown as SpeechWindow).__demoSpeechMock.spoken.length)).toBeGreaterThan(0);
  for(let i=0;i<100&&await page.locator('[data-demo-play]').textContent()==='Pause';i++)await page.evaluate(()=>(window as unknown as SpeechWindow).__demoSpeechMock.finish());

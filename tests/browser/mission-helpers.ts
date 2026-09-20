@@ -5,6 +5,7 @@ import type {Ending,Scenario} from "../../src/lib/mission-engine";
 export async function completeRecovery(page:Page,scenario:Scenario="baseline"){
  await page.goto("operation/");await expect(page.locator("[data-start-mission]")).toBeEnabled();
  if(scenario!=="baseline"){await page.locator("[data-scenario]").selectOption(scenario);await page.locator("[data-start-mission]").click();await page.locator("[data-restart-confirm]").click();}
+ await page.locator("[data-field-inspect]").click();
  const role=async(id:string)=>page.locator('[data-role="'+id+'"]').click();
  const zone=async(id:string)=>page.locator('[data-zone="'+id+'"]').click();
  await role("coordinator");await zone("dispatch");await page.locator("[data-plan] textarea").fill("Original plan: verify the source, configure its matching cradle, restore power and test the upper route.");await page.locator("[data-plan] button").click();
@@ -20,11 +21,39 @@ export async function completeRecovery(page:Page,scenario:Scenario="baseline"){
  await role("observer");await page.locator("[data-route] select").selectOption(scenario==="equipment-failure"?"service":"upper");await page.locator("[data-route] button").click();
  await role("coordinator");await zone("dispatch");await page.locator("[data-plan] textarea").fill("Revised plan: retain the verified profile and its tested cradle, use the available route and preserve the original with recorded custody.");await page.locator("[data-plan] button").click();
  await expect(page.locator("[data-mission-progress]")).toContainText("11 / 11");
+ await performField(page);
 }
 
+/** Perform the real public intervention, collection and ordered handover controls. */
+export async function performField(scope:Page|Locator){
+ await scope.locator('[data-zone="dispatch"]').click();
+ const field=scope.locator("[data-field-operation]");
+ if(await field.getAttribute("data-field-state")==="complete")return;
+ // A public control requests actual avatar travel when graphics are active.
+ // Each leg has a bounded world timeout; allow 30 seconds for arrival and the
+ // resulting DOM update, rather than treating a five-second walk as a failure.
+ const arrival={timeout:30000};
+ await field.locator("[data-field-inspect]").click();
+ await expect(field.locator("[data-field-execute]")).toBeEnabled(arrival);
+ await field.locator("[data-field-execute]").click();
+ await expect(field.locator("[data-field-collect]")).toBeEnabled(arrival);
+ await field.locator("[data-field-collect]").click();
+ await expect(field).toHaveAttribute("data-field-state","handover",arrival);
+ const checkpoints=field.locator("[data-field-checkpoint]");
+ for(let i=0;i<await checkpoints.count();i++){
+  await expect(checkpoints.nth(i)).toBeEnabled(arrival);
+  await checkpoints.nth(i).click();
+  await expect(checkpoints.nth(i)).toHaveText(/^✓ /,arrival);
+  await expect(checkpoints.nth(i)).toBeDisabled();
+ }
+ await expect(field.locator("[data-field-deliver]")).toBeEnabled(arrival);
+ await field.locator("[data-field-deliver]").click();
+ await expect(field).toHaveAttribute("data-field-state","complete",arrival);
+}
 export async function recordOutcome(scope:Page|Locator,ending:Ending,profile:"A"|"B"="A",recipient="Meridian custodian"){
  const form=scope.locator("[data-resolution-evidence]");
  await form.locator("[data-outcome-choice]").selectOption(ending);
+ await performField(scope);
  await form.locator('[name="recipient"]').fill(recipient);
  if(ending==="physical"){await form.locator('[name="support"]').check();await form.locator('[name="preserve-physical"]').check();}
  if(ending==="digital"){

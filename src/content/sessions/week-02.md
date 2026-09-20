@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Remember four items by linking each one to a place, then retrieve the items without looking at the list.
+**Operation The Silent Dispatch.** Carry the correct four-item recovery manifest through an area where the written list must remain covered.
+
+Dispatch will prepare the wrong kit if an item is lost or reordered. Build a route of memory cues, then retrieve the manifest without reopening it.
 
 **What you will produce:** Four place–item associations, a recorded unaided baseline and cued recall attempt, changed-list attempts, and an explanation of which cue helped or failed.
 
@@ -74,8 +76,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Use **Review associations** to reopen the list. Read the four locations in order. In each **Your association** box, describe a memorable imagined interaction between that place and its item.
 3. Use **Walk to next location** to follow the route. Select **Cover list and retrieve**, then enter the item belonging to each location from memory.
 4. Select **Test this configuration** and save this cued attempt separately. On your comparison sheet, record the same two scores: exact items present and correct positions. Keep missing items and substitutions visible. The browser's result checks ordered recall; your two-column comparison is a separate written record.
-5. Try **Skill check** and **Transfer challenge**. They supply different item lists, so create fresh associations and retrieve them rather than reuse the original answers.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** and **Transfer challenge**. They supply different item lists, so create fresh associations and retrieve them rather than reuse the original answers.
 6. After playing, compare baseline and cued attempts, explain which cue helped or failed, and state that repeating a list also gives extra rehearsal. Changed lists can differ in difficulty. These small comparisons support a limited account of your attempts, not proof of a lasting memory improvement.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Send the recalled kit manifest**. The scene and mission record now show the consequence: The dispatch board displays the correctly recalled kit in route order, making the equipment available to the next team.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm dispatch prepared the kit** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

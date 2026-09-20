@@ -1,6 +1,6 @@
 import {describe,it,expect} from "vitest";
 import {createTraining} from "../src/lib/training-engine";
-import {newMission,applyMission,missionMarkdown,missionRequirements,scenarioIds,requiredProfile,missionFacts,resolutionText,type MissionState,type Ending,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
+import {newMission,applyMission,missionMarkdown,missionRequirements,scenarioIds,requiredProfile,missionFacts,resolutionText,missionFieldSpec,type MissionState,type Ending,type MissionAction,type MissionKind,type Scenario} from "../src/lib/mission-engine";
 import {newPassport,parsePassport,PassportStore,withEvidence,withMission,SAVE_KEY,LEGACY_KEY,passportMarkdown,type StorageLike} from "../src/lib/passport";
 function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
  let s=newMission(kind,scenario);
@@ -30,11 +30,24 @@ function complete(kind:MissionKind="recovery",scenario:Scenario="baseline"){
   act({type:"role",role:"observer"});act({type:"route",route:scenario==="equipment-failure"?"service":"upper"});
   act({type:"role",role:"coordinator"});act({type:"plan",text:"Revision: use the verified profile, matched cradle and tested route; preserve the original with recorded custody."});
  }
+ return perform(s);
+}
+function perform(state:MissionState,ending:Ending=state.resolutionChoice??state.declaredObjective):MissionState{
+ let s=state;
+ const act=(a:MissionAction)=>{const r=applyMission(s,a);expect(r.success,r.message).toBe(true);s=r.state;};
+ if(s.kind==="recovery"&&s.resolutionChoice!==ending)act({type:"resolution-choice",ending});
+ act({type:"zone",zone:"dispatch"});
+ if(!s.field?.delivered){
+  act({type:"field",action:{type:"inspect"}});act({type:"field",action:{type:"proof",verified:true}});
+  act({type:"field",action:{type:"execute"}});act({type:"field",action:{type:"collect"}});
+  for(const id of missionFieldSpec(s).checkpoints)act({type:"field",action:{type:"checkpoint",id}});
+  act({type:"field",action:{type:"deliver"}});
+ }
  return s;
 }
 function outcome(state:MissionState,ending:Ending):MissionState{
  if(state.kind!=="recovery")return state;
- const s=applyMission(state,{type:"role",role:"coordinator"}).state;
+ const s=applyMission(perform(state,ending),{type:"role",role:"coordinator"}).state;
  const r=applyMission(s,{type:"resolution-evidence",evidence:{ending,recipient:"Station custodian",originalLocation:"Meridian Archive chamber",receipt:requiredProfile(s).receipt,supportConfirmed:true,preservationConfirmed:true,stableConfirmed:true,limitation:"The custodian must arrange the later transport and confirm continuing support."}});
  expect(r.success,r.message).toBe(true);return r.state;
 }
@@ -47,7 +60,7 @@ describe("integrated recovery rules",()=>{
  it("historical plan remains identical after revision",()=>{let s=newMission();s=applyMission(s,{type:"role",role:"coordinator"}).state;s=applyMission(s,{type:"plan",text:"First plan: inspect, restore equipment, verify and recover."}).state;const first=structuredClone(s.plans[0]);s=applyMission(s,{type:"plan",text:"Revised plan: replace the unavailable route after checking the source."}).state;expect(s.plans[0]).toEqual(first);expect(s.plans[1]!.version).toBe(2);});
  for(const kind of ["a1","a2","recovery"] as const)for(const scenario of scenarioIds)it(kind+" / "+scenario+" has reachable resolutions with reproducible evidence",()=>{
   const s=complete(kind,scenario);expect(complete(kind,scenario)).toEqual(s);
-  for(const ending of ["physical","digital","stabilise"] as const){const r=applyMission(outcome(s,ending),{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(missionRequirements[kind]));}
+  for(const ending of (kind==="recovery"?["physical","digital","stabilise"]:kind==="a1"?["physical"]:["digital"]) as Ending[]){const r=applyMission(outcome(s,ending),{type:"resolve",ending});expect(r.success,r.message).toBe(true);expect(r.state.status).toBe("complete");expect(r.state.ending).toBe(ending);expect(missionMarkdown(r.state)).toContain("## Debrief");expect(r.state.tasks).toEqual(expect.arrayContaining(missionRequirements[kind]));}
  });
  it("an early ending exposes missing capabilities instead of pretending success",()=>{const r=applyMission(newMission(),{type:"resolve",ending:"physical"});expect(r.success).toBe(false);expect(r.state.status).toBe("active");expect(r.message).toContain("Inspect");});
 });
@@ -71,6 +84,7 @@ describe("mission state invariants after a successful check",()=>{
   s=applyMission(s,{type:"gear",follower:24}).state;
   expect(applyMission(s,{type:"resolve",ending:"physical"}).success).toBe(false);
   s=applyMission(s,{type:"turn"}).state;
+  s=perform(s);
   expect(applyMission(s,{type:"resolve",ending:"physical"}).success).toBe(true);
  });
  it("a switched-off circuit invalidates completion and dependent route evidence",()=>{
@@ -185,7 +199,7 @@ describe("final mission synthesis and distinct outcome evidence",()=>{
   const finished=applyMission(outcome(complete("recovery","conflicting-archive"),"digital"),{type:"resolve",ending:"digital"}).state;
   expect(missionMarkdown(finished)).toContain("RECEIPT-B48");expect(missionMarkdown(finished)).toContain("follower 48 teeth");
   let p=withMission(newPassport(),finished);expect(parsePassport(JSON.stringify(p))).toEqual(p);
-  const legacy=structuredClone(finished);delete legacy.recovery;
+  const legacy=structuredClone(finished);delete legacy.recovery;delete legacy.field;delete legacy.resolutionChoice;
   p=withMission(newPassport(),legacy);const restored=parsePassport(JSON.stringify(p));
   expect(restored.missions.recovery?.recovery).toBeUndefined();
   expect(resolutionText(restored.missions.recovery!)).toContain("Legacy recovery record");
@@ -204,6 +218,7 @@ describe("outcome evidence stays consistent across import and resolution",()=>{
   expect(changed.success).toBe(false);expect(changed.message).toContain("renegotiate");
   s=applyMission(s,{type:"agreement",preserve:true,recipient:"Different custodian"}).state;
   expect(s.recovery?.resolution).toBeNull();
+  s=perform(s);
   expect(applyMission(s,{type:"resolution-evidence",evidence:{...evidence,recipient:"Different custodian"}}).success).toBe(true);
  });
  it("rejects false outcome fields in an active import and again at resolution",()=>{
@@ -223,4 +238,66 @@ describe("outcome evidence stays consistent across import and resolution",()=>{
 it("completed-run history cannot import an active mission as a completed rehearsal",()=>{
  const backup={...newPassport(),runs:[newMission()]};
  expect(()=>parsePassport(JSON.stringify(backup))).toThrow();
+});
+
+
+describe("performed assessment missions",()=>{
+ it("refuses a scene request to invent proof before the skill model supports it",()=>{
+  let s=newMission("a1");
+  s=applyMission(s,{type:"field",action:{type:"inspect"}}).state;
+  s=applyMission(s,{type:"field",action:{type:"proof",verified:true}}).state;
+  expect(s.field?.verified).toBe(false);
+  s=applyMission(s,{type:"zone",zone:"dispatch"}).state;
+  expect(applyMission(s,{type:"field",action:{type:"execute"}}).success).toBe(false);
+ });
+ it("requires the actual Dispatch station and ordered physical checkpoints",()=>{
+  let s=complete("a1");
+  // Changing a supporting part withdraws the completed field operation.
+  s=applyMission(s,{type:"role",role:"systems"}).state;
+  s=applyMission(s,{type:"gear",follower:24}).state;
+  s=applyMission(s,{type:"turn"}).state;
+  expect(s.field?.delivered).toBe(false);
+  s=applyMission(s,{type:"zone",zone:"workshop"}).state;
+  expect(applyMission(s,{type:"field",action:{type:"execute"}}).success).toBe(false);
+  s=applyMission(s,{type:"zone",zone:"dispatch"}).state;
+  s=applyMission(s,{type:"field",action:{type:"execute"}}).state;
+  const ids=missionFieldSpec(s).checkpoints;
+  expect(applyMission(s,{type:"field",action:{type:"checkpoint",id:ids[0]!}}).success).toBe(false);
+  s=applyMission(s,{type:"field",action:{type:"collect"}}).state;
+  expect(applyMission(s,{type:"field",action:{type:"checkpoint",id:ids[2]!}}).success).toBe(false);
+  expect(applyMission(s,{type:"field",action:{type:"deliver"}}).success).toBe(false);
+  for(const id of ids)s=applyMission(s,{type:"field",action:{type:"checkpoint",id}}).state;
+  s=applyMission(s,{type:"field",action:{type:"deliver"}}).state;
+  expect(applyMission(s,{type:"resolve",ending:"physical"}).success).toBe(true);
+ });
+ it("changes the performed action and cargo for each final outcome",()=>{
+  const source=complete();
+  for(const ending of ["physical","digital","stabilise"] as const){
+   const chosen=applyMission(source,{type:"resolution-choice",ending}).state;
+   const spec=missionFieldSpec(chosen);
+   expect(spec.effect).toBe(ending==="physical"?"recovery":ending==="digital"?"signal":"custody");
+   expect(spec.checkpoints).toHaveLength(ending==="physical"?3:ending==="digital"?1:2);
+   const ready=outcome(chosen,ending);
+   expect(ready.field?.delivered).toBe(true);
+   expect(missionMarkdown(ready)).toContain(spec.resolveLabel);
+  }
+ });
+ it("cannot file a different outcome or keep a prior handover after approach changes",()=>{
+  const s=outcome(complete(),"physical");
+  const changed=applyMission(s,{type:"resolution-choice",ending:"digital"}).state;
+  expect(changed.declaredObjective).toBe("physical");
+  expect(changed.field?.delivered).toBe(false);
+  expect(changed.recovery?.resolution).toBeNull();
+  expect(applyMission(changed,{type:"resolve",ending:"physical"}).success).toBe(false);
+ });
+ it("rejects forged field state and preserves pre-field records as historical",()=>{
+  const ready=outcome(complete(),"digital");
+  const invalid=structuredClone(ready);invalid.field!.visited=["unpublished route"];
+  expect(()=>parsePassport(JSON.stringify({...newPassport(),missions:{recovery:invalid}}))).toThrow();
+  const historical=structuredClone(ready);delete historical.field;delete historical.resolutionChoice;
+  const restored=parsePassport(JSON.stringify({...newPassport(),missions:{recovery:historical}})).missions.recovery!;
+  expect(restored.field).toBeUndefined();
+  expect(resolutionText(restored)).toContain("predates performed transport");
+  expect(applyMission(restored,{type:"field",action:{type:"execute"}}).success).toBe(false);
+ });
 });

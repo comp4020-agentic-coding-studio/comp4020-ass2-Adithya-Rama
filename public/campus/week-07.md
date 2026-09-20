@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Test an invented permission system, repair an overbroad rule and check legitimate access still works.
 
+## Field operation — The Wrong Authority
+
+**Objective:** Restore useful control-desk access without giving an observer permission to service or certify equipment.
+
+**Obstacle:** The damaged policy blocks legitimate work and authorises the wrong role. Closing every permission would stop the recovery too.
+
+After the skill check, put the result into effect: **Deploy the verified access policy**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The corrected policy is deployed: allowed actions illuminate, forbidden actions remain denied, and the authorised gate responds.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm authorised control is restored**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Distinguish identity, object and requested action in an access decision.
@@ -66,6 +78,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Build a stable route, attach distinctive associations and compare recall with a baseline.
 
+## Field operation — The Silent Dispatch
+
+**Objective:** Carry the correct four-item recovery manifest through an area where the written list must remain covered.
+
+**Obstacle:** Dispatch will prepare the wrong kit if an item is lost or reordered. Build a route of memory cues, then retrieve the manifest without reopening it.
+
+After the skill check, put the result into effect: **Send the recalled kit manifest**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The dispatch board displays the correctly recalled kit in route order, making the equipment available to the next team.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm dispatch prepared the kit**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Use ordered locations as retrieval cues.
@@ -73,6 +85,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

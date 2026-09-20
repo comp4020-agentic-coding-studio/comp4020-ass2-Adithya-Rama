@@ -30,9 +30,9 @@ related: ["sessions/week-04"]
 
 1. If the controls are unfamiliar, watch [the different worked example](/demonstrations/assessment-a1/), then return here. The example is practice, not your assessment record.
 2. Select **Enter assessment trial**, choose **Baseline**, and select **Start new trial**; confirm the restart if prompted. A role describes the tools you are using; you still complete A1 individually.
-3. Select **Observer / Navigator** and **Arrival**. Use all five **Inspect…** buttons, read their details, hide the inspection notes, enter the packing order and select **Check recall**. Use the map to choose **Clockwise rotation of north**, then **Test orientation**.
+3. **Inspect mission station** to establish why the case is trapped. Select **Observer / Navigator** and **Arrival**. Use all five **Inspect…** buttons, read their details, hide the inspection notes, enter the packing order and select **Check recall**. Use the map to choose **Clockwise rotation of north**, then **Test orientation**.
 4. Select **Systems Specialist** and **Workshop**. Read the required output, choose a **Follower gear**, release the holding brake and select **Turn input once**. Use the feedback to diagnose an incorrect ratio or blocked mechanism.
-5. Check the **Mission Journal**. Its four workshop objectives should be complete. Open **Dispatch** and select **Finish workshop trial**, then **Export assessment record**.
+5. Check the **Mission Journal**. Its four workshop objectives should be complete. Visit **Dispatch**. At the field console, **Release the verified cradle**, collect the released workshop case and take it through **Workshop threshold → Orientation turn → Receiving lane**. Complete **Deliver the workshop case** at the receiving point. Only then select **Finish workshop trial** and **Export assessment record**. The keyboard/touch field buttons perform the same ordered route when walking is unavailable.
 6. Keep your existing Lab 1 classification record, Lab 3 connector-and-level record and Lab 4 cam/spring record with the trial export. Include at least one changed-condition attempt from Labs 1–4. Use the submission table below to identify the evidence for each capability.
 7. After playing, use the assessment template to assemble the exported record, causal model, explanation and limitation listed below. Declare hints or other assistance.
 
@@ -42,7 +42,7 @@ related: ["sessions/week-04"]
 
 ## The brief
 
-Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. In the browser trial, inspect its scene, recall the packing order, interpret the map and prepare the geared cradle. Your lab records show the more detailed observation classification, connector positioning and mechanism checks. The context combines skills you have already practised.
+Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. In the browser trial, inspect its scene, recall the packing order, interpret the map prepare the geared cradle, release its case and carry it through the marked receiving route. Your lab records show the more detailed observation classification, connector positioning and mechanism checks. The context combines skills you have already practised.
 
 The trial is playable from this page. You can inspect instructions and practise before recording an attempt. Use the [campus trial pack](/campus/assignment-1.md) for the equivalent tabletop route.
 
@@ -64,13 +64,13 @@ Assemble one labelled bundle using the [assessment template](/templates/assignme
 
 | Submission item | Where to get it and what to include |
 | --- | --- |
-| **Completed workshop record** | At Dispatch, finish the trial and select **Export assessment record**. This records scene inspection, ordered recall, map orientation and the gear/brake test. Campus students use the [campus trial event record](/campus/assignment-1.md). |
+| **Completed workshop record** | At Dispatch, finish the trial and select **Export assessment record**. This records scene inspection, ordered recall, map orientation and the gear/brake test and the performed release, collection, three route checkpoints and receiving handover. Campus students use the [campus trial event record](/campus/assignment-1.md). |
 | **Detailed skill and transfer evidence** | Keep your [Lab 1](/sessions/week-01/) statement classifications, [Lab 3](/sessions/week-03/) connector directions and level, and [Lab 4](/sessions/week-04/) interlock, cam and spring checks. Record each relevant attempt in the skills passport, then **Export learning record**; equivalent completed campus worksheets also work. Include at least one changed-condition attempt from Labs 1–4 and label its phase. |
 | **Causal model** | Draw or write your own labelled chain linking input, gear, cam, spring, interlock and output, using the Week 4 rules and your observations. Show what each part changes and what can block movement. |
 | **350–500-word account** | Write your own explanation of two consequential decisions and one changed-situation response. Include one failed prediction or limitation and point to the record that revealed it. |
 | **Attribution and assistance statement** | Name any collaborators in permitted preparation, sources, hints, worked examples or AI assistance you used, and explain what remained your own work. |
 
-**The browser trial has four objectives.** The statement-classification form, connector height controls and adjustable cam/spring are in the linked labs. Their saved records provide those parts of the assessment evidence.
+**The browser trial has four skill objectives followed by a performed release and delivery.** The statement-classification form, connector height controls and adjustable cam/spring are in the linked labs. Their saved records provide those parts of the assessment evidence.
 
 Include the configuration and attempt date. Diagram labels, source references and the event trace are outside the word guidance. A trial ending is evidence to analyse, not the academic mark.
 

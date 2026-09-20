@@ -30,12 +30,22 @@ for(const id of ids)test("complete alternate worked example through learner cont
  await page.goto("demonstrations/"+id+"/?mode=control");
  const demo=await definition(page);
  const before=await page.evaluate(()=>localStorage.getItem("mastermind:SLOP4408:v2"));
+ await expect(page.locator("[data-field-execute]")).toBeDisabled();
+ await page.locator("[data-field-inspect]").click();
  for(let i=0;i<demo.steps.length;i++){
   await expect(page.locator("[data-demo-step-title]")).toHaveText(demo.steps[i]!.title);
   await solve(page,demo,i);
   if(i<demo.steps.length-1)await page.locator("[data-demo-next]").click();
  }
  await expect(page.locator("[data-demo-coaching-result]")).toContainText(demo.steps.length+" of "+demo.steps.length);
+ await expect(page.locator("[data-field-operation]")).toHaveAttribute("data-field-state","ready");
+ await expect(page.locator("[data-field-deliver]")).toBeDisabled();
+ await page.locator("[data-field-execute]").click();
+ await page.locator("[data-field-collect]").click();
+ const checkpoints=page.locator("[data-field-checkpoint]");
+ for(let i=0;i<await checkpoints.count();i++)await checkpoints.nth(i).click();
+ await page.locator("[data-field-deliver]").click();
+ await expect(page.locator("[data-field-operation]")).toHaveAttribute("data-field-state","complete");
  expect(await page.evaluate(()=>localStorage.getItem("mastermind:SLOP4408:v2"))).toBe(before);
  const downloaded=page.waitForEvent("download");await page.locator("[data-demo-download]").click();
  const sample=await readFile((await (await downloaded).path())!,"utf8");
@@ -118,4 +128,80 @@ test("printing includes the complete example and restores the reading state",asy
  await page.emulateMedia({media:"screen"});
  await expect(finished).not.toHaveAttribute("open","");await expect(transcript).not.toHaveAttribute("open","");
  await expect(reason).toHaveAttribute("open","");
+});
+test('complete Watch performs and records the same mission without completing the learner run',async({page})=>{
+ test.setTimeout(60000);
+ await installSpeechMock(page,{autoEndMs:80});
+ await page.goto('demonstrations/assessment-final/');
+ await expect(page.locator('[data-demo-play]')).toBeEnabled();
+ // This journey verifies semantic playback and exact action records independently of WebGL.
+ await page.locator('[data-world-launch]').evaluate(button=>(button as HTMLButtonElement).disabled=true);
+ await page.locator('[data-demo-watch]').click();
+ await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','complete',{timeout:40000});
+ await expect(page.locator('[data-demo-field-proof]')).toContainText('18 / 18');
+ await expect(page.locator('[data-field-cargo]')).toContainText('Verified Cinder');
+ await expect(page.locator('[data-field-status]')).toContainText('Venn');
+ const exported=page.waitForEvent('download');await page.locator('[data-demo-export]').click();
+ const record=await readFile((await (await exported).path())!,'utf8');
+ expect(record).toContain('## My performed operation\nVerified chapters: 0 / 18\nHandover complete: no');
+ expect(record).toContain('## Demonstrator operation\nVerified chapters: 18 / 18\nHandover complete: yes');
+ expect(record).toContain('West gallery checkpoint');
+ await page.locator('button[data-demo-control]').click();
+ await expect(page.locator('[data-demo-field-proof]')).toContainText('0 / 18');
+ await expect(page.locator('[data-field-execute]')).toBeDisabled();
+ await expect(page.locator('[data-demo-coaching-result]')).toContainText('No control attempt');
+});
+test('changing a verified response reopens the completed example mission',async({page})=>{
+ await page.goto('demonstrations/lab-01/?mode=control');
+ const demo=await definition(page);
+ await page.locator('[data-field-inspect]').click();
+ for(let i=0;i<demo.steps.length;i++){await solve(page,demo,i);if(i<demo.steps.length-1)await page.locator('[data-demo-next]').click();}
+ await page.locator('[data-field-execute]').click();await page.locator('[data-field-collect]').click();
+ for(const button of await page.locator('[data-field-checkpoint]').all())await button.click();
+ await page.locator('[data-field-deliver]').click();
+ await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','complete');
+ await page.locator('[data-demo-jump="0"]').click();
+ await page.locator('[data-demo-input="clock"]').fill('12:00');
+ await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','investigating');
+ await expect(page.locator('[data-field-execute]')).toBeDisabled();
+ await expect(page.locator('[data-field-status]')).toContainText('evidence changed');
+});
+
+test('paused Watch cannot complete a deferred station arrival',async({page})=>{
+ test.setTimeout(60000);
+ await installSpeechMock(page);
+ await page.addInitScript(()=>{
+  const pending:{perform:()=>void}[]=[];
+  Object.defineProperty(window,'__fieldArrivals',{value:pending,configurable:true});
+  // Exercise the same deferred-arrival contract as the 3D walker without a GPU dependency.
+  window.addEventListener('mastermind:field-request',event=>{
+   event.preventDefault();pending.push((event as CustomEvent<{perform:()=>void}>).detail);
+  });
+ });
+ await page.goto('demonstrations/lab-01/');
+ await expect(page.locator('[data-demo-play]')).toBeEnabled();
+ await page.locator('[data-world-launch]').evaluate(button=>(button as HTMLButtonElement).disabled=true);
+ await page.locator('[data-demo-watch]').click();
+ const finishIntroduction=async(expectedArrivals:number)=>{
+  await expect.poll(()=>page.evaluate(()=>(window as unknown as {__demoSpeechMock:{speaking:boolean}}).__demoSpeechMock.speaking),{timeout:10000}).toBe(true);
+  // Complete each actual queued utterance; no wall-clock timer or fabricated station callback.
+  const count=await page.evaluate(expected=>{
+   const state=window as unknown as {__demoSpeechMock:{speaking:boolean;finish:()=>void};__fieldArrivals:{perform:()=>void}[]};
+   for(let i=0;i<100&&state.__fieldArrivals.length<expected;i++){
+    if(!state.__demoSpeechMock.speaking)break;
+    state.__demoSpeechMock.finish();
+   }
+   return state.__fieldArrivals.length;
+  },expectedArrivals);
+  expect(count,'Finishing the introduction must request exactly one new deferred arrival').toBe(expectedArrivals);
+ };
+ await finishIntroduction(1);
+ await page.locator('[data-demo-play]').click();
+ await page.evaluate(()=>(window as unknown as {__fieldArrivals:{perform:()=>void}[]}).__fieldArrivals[0]!.perform());
+ await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','briefing');
+ await expect(page.locator('[data-demo-chapter]')).toContainText('01 /');
+ await page.locator('[data-demo-play]').click();
+ await finishIntroduction(2);
+ await page.evaluate(()=>(window as unknown as {__fieldArrivals:{perform:()=>void}[]}).__fieldArrivals[1]!.perform());
+ await expect(page.locator('[data-field-operation]')).toHaveAttribute('data-field-state','investigating');
 });

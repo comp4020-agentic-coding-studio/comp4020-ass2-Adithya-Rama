@@ -2,6 +2,8 @@
 import { weekByNumber } from '../data/curriculum';
 import { withBase } from 'astro-theme-university/url';
 import AcademyScene from './AcademyScene.astro';
+import FieldOperation from './FieldOperation.astro';
+import { labOperation, labOperations } from '../data/lab-operations';
 import { observationFacts, memoryItems, loci, archiveFiles, councilClaims, initialPlan } from '../lib/training-engine';
 import '../styles/training.css';
 import '../styles/learner-guidance.css';
@@ -10,6 +12,8 @@ interface Props { week:number }
 const {week}=Astro.props;
 const lesson=weekByNumber(week);
 const guide=labGuides[week]!;
+const fieldSpec=labOperation(week);
+const operation=labOperations[week]!;
 const directions=[
   'Inspect four scene objects, cover the scene, recall the display and classify five statements.',
   'Associate four objects with four familiar locations, cover the list and retrieve each item in route order.',
@@ -41,9 +45,11 @@ const examples=[
 ---
 <section class="training-lab" data-training-week={week} data-mission-url={withBase('/operation/')} aria-labelledby={'training-title-'+week}>
   <header class="training-header">
-    <p class="eyebrow">SKILLS STUDIO / {String(week).padStart(2,'0')}</p>
+    <p class="eyebrow">FIELD TRAINING / {String(week).padStart(2,'0')}</p>
     <h2 id={'training-title-'+week}>{lesson.title}</h2>
-    <p class="intro">{directions[week-1]}</p>
+    <p class="intro"><strong>{operation.title}.</strong> {operation.objective}</p>
+    <p>{operation.problem}</p>
+    <p><strong>The skill you need:</strong> {directions[week-1]}</p>
     <p class="small"><strong>Evidence output:</strong> {lesson.output}. <strong>Later use:</strong> {lesson.missionUse}</p>
   </header>
   <details class="training-learn" data-immersive-panel="worked-example" open>
@@ -51,24 +57,25 @@ const examples=[
     <p>{examples[week-1]}</p>
     <p>First explain what you predict. Manipulate the apparatus, compare the observed result, then change one relevant condition. The transfer challenge changes the context so that repeating an earlier answer may fail.</p>
   </details>
-  <p class="learner-orientation"><strong>Start here:</strong> read the worked example, then use the controls in <strong>Practice</strong>. Complete the changed <strong>Skill check</strong> and <strong>Transfer challenge</strong> afterwards. The six rows in the lab timetable describe the whole teaching session; they are not six hidden game levels.</p>
+  <p class="learner-orientation"><strong>Start here:</strong> read the worked example, then use the controls in <strong>Practice</strong>. After verifying the skill, apply it at the mission station and follow the receiver checkpoints to finish the operation. Then try <strong>Skill check</strong> and <strong>Transfer challenge</strong>. The six rows in the lab timetable describe the whole teaching session; they are not six hidden game levels.</p>
   <AcademyScene room={String(week)} week={week} mode="lab" />
   <div data-immersive-panel="lab">
+  <FieldOperation spec={fieldSpec} scope={'lab:'+week} />
   <section class="learner-guide" aria-labelledby={'lab-mission-'+week}>
     <p class="eyebrow">LAB MISSION / <span data-guidance-phase>Practice</span></p>
     <h3 id={'lab-mission-'+week}>What you are trying to do</h3>
     <p>{guide.goal}</p>
     <div class="learner-next"><p class="eyebrow">DO THIS NEXT</p><p data-lab-next role="status" aria-live="polite">{guide.steps[0]!.action}</p></div>
     <details class="learner-checklist" open>
-      <summary>All steps for this activity</summary>
+      <summary>Equipment instructions for this mission</summary>
       <ol data-lab-checklist>{guide.steps.map((step,i)=><li data-lab-step={i}><strong>{step.title}</strong><p>{step.action}</p></li>)}</ol>
     </details>
-    <p class="small"><strong>How you know you are done:</strong> {guide.success}</p>
+    <p class="small"><strong>How you know you are done:</strong> {guide.success} Then enact the verified intervention at the mission station and confirm the receiver’s acknowledgement.</p>
     {week===1&&<details class="learner-vocabulary" open><summary>Observation, claim and inference — in plain words</summary><dl><dt>Observation</dt><dd>A detail you directly see or measure: “The door is open.”</dd><dt>Claim</dt><dd>Something a person or document tells you: “I left first.” It may be true, but the statement alone does not verify it.</dd><dt>Inference</dt><dd>An explanation you draw from evidence: “Someone left in a hurry.” An open door alone does not establish that explanation.</dd></dl><p>For the note, classify the <strong>message it asserts</strong>. Seeing that a note exists is an observation; believing its message is a separate question.</p></details>}
     <p class="small"><strong>Inspect</strong> means select a named object and read its finding. <strong>Use the equipment</strong> means operate the labelled controls below, then check the result. Exploring the scene does not automatically complete the task.</p>
   </section>
-  <div class="training-legend"><span>01 · Learn</span><span>02 · Practise</span><span>03 · Test</span><span>04 · Transfer</span><span>05 · Record</span></div>
-  <p class="small">The apparatus and the controls below use the same model. All tasks can be completed with keyboard controls. No timer is required.</p>
+  <div class="training-legend"><span>01 · Briefing</span><span>02 · Investigate</span><span>03 · Verify</span><span>04 · Act</span><span>05 · Handover</span></div>
+  <p class="small">The apparatus and the controls below use the same model. All tasks can be completed with keyboard controls. {week===1?'Inspect all four objects and cover the scene for a recall attempt before testing. You can reopen it for help and disclose that support. ':week===2?'Visit all four stations and cover the item list before testing recall. Your memory associations are a strategy, not an automatically graded response. ':''}No timer is required.</p>
   <div class="training-phase" role="group" aria-label="Choose a training configuration">
     <button type="button" data-training-phase="practice" aria-pressed="true" disabled>Practice</button>
     <button type="button" data-training-phase="check" aria-pressed="false" disabled>Skill check</button>
@@ -76,7 +83,7 @@ const examples=[
   </div>
   <div data-training-controls class="training-controls"><p>The complete worksheet below is available while the interactive lab loads.</p></div>
   <div class="actions">
-    <button type="button" data-training-test disabled>{week>=11?'Review record readiness':'Test this configuration'}</button>
+    <button type="button" data-training-test disabled>{week===12?'Verify completed run and account':week===11?'Verify revised plan and rehearsal':'Test this configuration'}</button>
     <button type="button" data-training-reset disabled>Restart this phase</button>
     <button type="button" data-training-hint disabled>Reveal next hint</button>
   </div>
@@ -104,7 +111,7 @@ const examples=[
   </div>
   <details class="training-worksheet" data-immersive-panel="worksheet">
     <summary>Complete worksheet and explanation · works without JavaScript</summary>
-    <p><strong>Task:</strong> {directions[week-1]}</p>
+    <p><strong>Mission:</strong> {operation.objective}</p><p><strong>Obstacle:</strong> {operation.problem}</p><p><strong>Task:</strong> {directions[week-1]}</p><p><strong>Enactment:</strong> once the equipment check passes, {operation.actionLabel.toLowerCase()}. Trace the result through {operation.checkpoints.join(' → ')}, then {operation.resolveLabel.toLowerCase()}. Expected consequence: {operation.consequence}</p>
     {week===1&&<><h3>Supplied practice scene</h3><ul>{observationFacts.practice.map(f=><li>{f.label}</li>)}</ul><p>Cover these details. Record the time and classify each sentence as observation, claim or inference. Check scene: 09:40, amber cup on a shelf, closed door, note “The sample is intact”, inference that someone deliberately concealed it. Transfer scene: 14:10, silver flask beside a map, open service hatch, operator reports a power failure; inferred claim that the hatch caused it.</p><p><strong>Explanation:</strong> the first three statements describe visible facts, the fourth contains a claim, and the fifth is an inference. Recalled times are respectively 08:20, 09:40 and 14:10.</p></>}
     {week===2&&<><h3>Supplied route and item sets</h3><p>{loci.join(' → ')}</p><ul>{Object.entries(memoryItems).map(([phase,items])=><li><strong>{phase}:</strong> {items.join(', ')}.</li>)}</ul><p>First attempt recall without a technique and record the result. Then create one vivid association per location, cover the list and retrieve it. Repeat with the next item set. Compare errors and the usefulness of your associations. The expected order is the supplied order; improved performance here does not prove unlimited memory.</p></>}
     {week===3&&<><h3>Supplied module</h3><p>The initial ports face north and east at level 0. Practice target: east/south, level 0. Skill check: south/west, level 1. Transfer: west/north, level 2. Draw each original and rotated view; name where the north port ends up.</p><p><strong>Explanation:</strong> clockwise rotations are 90°, 180° and 270° respectively. The original north port becomes east, south and west. Raising the module does not change these directions.</p></>}
@@ -115,7 +122,7 @@ const examples=[
     {week===8&&<><h3>Supplied role cards</h3><p>Analyst practice card: two sealed units, Relay, code AMBER. Check: three units, Archive, COPPER. Transfer: one unit, Dispatch, IVORY. Operator card: destinations Relay/Archive/Dispatch, batch sizes one/two/three; request exact instructions.</p><p>Work as a pair or switch roles. Compose the handoff, have the operator read back all three fields and record the analyst’s confirmation. Explain how you repaired an ambiguous instruction.</p><p><strong>Explanation:</strong> agreement requires matching destination, quantity and code plus acknowledgement; the sender’s confidence alone is insufficient.</p></>}
     {week===9&&<><h3>Supplied council records</h3><ul>{councilClaims.map(c=><li><strong>{c.speaker}:</strong> “{c.claim}” <br/>{c.record}</li>)}</ul><p>Original mandate: recover a verified usable copy, retain the original with the custodian and document custody. Transfer mandate: physical provenance is essential; stabilise the original until supported handover. Propose an agreement and explain why a competing option fails.</p><p><strong>Explanation:</strong> verified-copy recovery satisfies the first mandate; stabilisation and supported handover satisfies the second. Carrying the original immediately on the unsupported cart fails the capacity constraint in both.</p></>}
     {week===10&&<><h3>Supplied sensor map</h3><p>Draw a 5×5 grid. Start row 5, column 1; goal row 1, column 5. Practice sensors occupy row 3, columns 1–4. Check sensors: column 2, rows 2–5. Transfer sensors: column 4, rows 2–5. Mark a route and predict the number of entries into sensor cells. Execute one cell at a time.</p><p><strong>Explanation:</strong> every entry into a marked cell counts once, including repeat entries. Boundary moves leave position unchanged. A zero-contact practice route goes four cells east then four north; changed layouts require reconsideration. Explain any difference between predicted and recorded contacts.</p></>}
-    {week===11&&<><h3>Preserved Version 1</h3><p>{initialPlan.join(' → ')}</p><p>Practice/check disruption: east passage blocked; west passage remains available but needs an extra relay check. Transfer disruption: meter unavailable; recorded readings battery 6 V, fuse 6 V, cable 0 V, lamp 0 V remain available.</p><p>Write Version 2 separately. Assign the additional check, explain the changed dependency and state what remains uncertain. Retain Version 1 so that the effect of the new evidence is visible. Written length only indicates that a record exists; a human must evaluate its quality.</p></>}
+    {week===11&&<><h3>Preserved Version 1</h3><p>{initialPlan.join(' → ')}</p><p>Practice/check disruption: east passage blocked; west passage remains available but needs an extra relay check. Transfer disruption: meter unavailable; recorded readings battery 6 V, fuse 6 V, cable 0 V, lamp 0 V remain available.</p><p>Write Version 2 separately. Assign the additional check, explain the changed dependency and state what remains uncertain. Retain Version 1 so that the effect of the new evidence is visible. Select the replacement dependency (west relay for practice/check; reference readings for transfer) and rehearse it before activating Version 2. Written length only indicates that a record exists; a human must evaluate its quality.</p></>}
     {week===12&&<><h3>After-action worksheet</h3><p>Complete the mission via <a href={withBase('/operation/')}>Operation Last Light</a> or its published facilitator worksheet. Record the original objective, actual result, three consequential decisions, an unresolved limitation and a credible alternative. Attach the run record. This account does not replace practical evidence.</p></>}
     <h3>Reflection and example</h3><p>{lesson.exemplar}</p><p><strong>Your output:</strong> {lesson.output}. Record the conditions, actions, result and what you would test next. An explanation can be defensible while differing from the example.</p>
   </details>

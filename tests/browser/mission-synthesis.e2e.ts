@@ -2,7 +2,7 @@ import {test,expect,type Page,type Locator} from "@playwright/test";
 import {mkdir,readFile} from "node:fs/promises";
 import {newPassport} from "../../src/lib/passport";
 import {newMission} from "../../src/lib/mission-engine";
-import {completeRecovery,recordOutcome} from "./mission-helpers";
+import {completeRecovery,recordOutcome,performField} from "./mission-helpers";
 test.use({launchOptions:{args:["--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader"]}});
 
 async function waitForRenderedZone(page:Page,scene:Locator,zone:string,before=0){
@@ -38,7 +38,7 @@ test("ending evidence belongs to its recorded outcome and later source changes r
 
 test("digital proof rejects another receipt and recipient, then exports its actual accepted evidence",async({page})=>{
  await completeRecovery(page,"conflicting-archive");
- const form=page.locator("[data-resolution-evidence]");await form.locator("[data-outcome-choice]").selectOption("digital");
+ const form=page.locator("[data-resolution-evidence]");await form.locator("[data-outcome-choice]").selectOption("digital");await performField(page);
  await form.locator('[name="recipient"]').fill("Meridian custodian");await form.locator('[name="receipt"]').fill("RECEIPT-A36");await form.locator('[name="digital-location"]').fill("Archive chamber");await form.locator('[name="preserve-digital"]').check();await form.locator("button").click();
  await expect(page.locator("[data-mission-status]")).toContainText("RECEIPT-B48");
  await form.locator('[name="receipt"]').fill("RECEIPT-B48");await form.locator('[name="recipient"]').fill("Unagreed recipient");await form.locator("button").click();await expect(page.locator("[data-mission-status]")).toContainText("renegotiate");
@@ -49,7 +49,7 @@ test("digital proof rejects another receipt and recipient, then exports its actu
 });
 
 test("legacy completed recovery remains labelled and exportable when a new current trial begins",async({page})=>{
- const legacy=newMission();delete legacy.recovery;legacy.status="complete";legacy.ending="physical";
+ const legacy=newMission();delete legacy.recovery;delete legacy.field;delete legacy.resolutionChoice;legacy.status="complete";legacy.ending="physical";
  const passport={...newPassport(),missions:{recovery:legacy},runs:[legacy]};
  await page.addInitScript(raw=>localStorage.setItem("mastermind:SLOP4408:v2",raw),JSON.stringify(passport));
  await page.goto("operation/");await expect(page.locator("[data-legacy-mission]")).toContainText("Legacy recovery record");await expect(page.locator("[data-ending-text]")).toContainText("no verified linked-profile");
@@ -87,4 +87,26 @@ test("final profile B geometry and all three outcome forms remain readable at th
  await expect(scene).toHaveAttribute("data-world-rendered-room","perception");
  await scene.screenshot({path:".browser-rubric-audit/final-arrival-"+info.project.name+".png"});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});
+
+
+test("locating an objective does not teleport the student and supported equipment enables performed recovery",async({page})=>{
+ await page.goto("assessments/assignment-1/");
+ await page.locator("[data-field-inspect]").click();
+ await page.locator("[data-mission-next]").click();
+ await expect(page.locator('[data-zone="arrival"]')).toHaveAttribute("aria-current","location");
+ await expect(page.locator("[data-field-execute]")).toBeDisabled();
+ // A marker or button cannot execute the intervention while the skill model is unresolved.
+ await expect(page.locator("[data-field-operation]")).toHaveAttribute("data-field-state","investigating");
+});
+
+test("final physical recovery records every route checkpoint and later changes withdraw the performed result",async({page})=>{
+ await completeRecovery(page,"equipment-failure");
+ const field=page.locator("[data-field-operation]");
+ await expect(field).toHaveAttribute("data-field-state","complete");
+ for(const checkpoint of ["Service isolation threshold","First sensor pause","Second sensor pause"])await expect(field.locator("[data-field-log]")).toContainText(checkpoint);
+ await page.locator('[data-role="systems"]').click();await page.locator('[data-zone="workshop"]').click();
+ await page.locator("[data-follower]").selectOption("24");
+ await expect(field).not.toHaveAttribute("data-field-state","complete");
+ await expect(field.locator("[data-field-execute]")).toBeDisabled();
 });

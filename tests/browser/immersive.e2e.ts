@@ -1,5 +1,5 @@
 import {readFile} from 'node:fs/promises';
-import {recordOutcome} from './mission-helpers';
+import {recordOutcome,performField} from './mission-helpers';
 import {test,expect,type Page,type Locator} from '@playwright/test';
 
 test.use({launchOptions:{args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}});
@@ -209,6 +209,7 @@ test('denied native APIs start unlocked and X toggles fallback look while panel 
 });
 
 test('all mechanism phases can be completed, explained and saved inside fullscreen without losing state on return',async({page})=>{
+ test.setTimeout(180000);
  const scene=await launch(page,'sessions/week-04/');
  const panel=await expand(page,scene);
  for(const phase of ['practice','check','transfer'] as const){
@@ -234,6 +235,16 @@ test('all mechanism phases can be completed, explained and saved inside fullscre
   for(let i=0;i<changes;i++)await c.getByRole('button',{name:'Change driven gear (12 → 24 → 36)',exact:true}).click();
   await c.getByLabel('Predict output direction relative to the driver').selectOption('opposite');
   await panel.locator('[data-training-test]').click();
+  await expect(panel.locator('[data-training-result]')).toHaveAttribute('data-skill-verified','true');
+  const field=panel.locator('[data-field-operation]');
+  await field.locator('[data-field-inspect]').click();
+  await field.locator('[data-field-execute]').click();
+  await field.locator('[data-field-collect]').click();
+  const checkpoints=field.locator('[data-field-checkpoint]');
+  for(let i=0;i<await checkpoints.count();i++)await checkpoints.nth(i).click();
+  await field.locator('[data-field-deliver]').click();
+  // Delivery includes actual travel to the receiver, with the scene's bounded arrival deadline.
+  await expect(field).toHaveAttribute('data-field-state','complete',{timeout:30000});
   await expect(panel.locator('[data-training-result]')).toHaveAttribute('data-complete','true');
   const reflection=panel.locator('[data-training-reflection]');
   // The written account follows the completed practical check, still in the same fullscreen panel.
@@ -273,6 +284,7 @@ test('A1 can be completed and its real assessment record exported without leavin
  await panel.locator('[data-brake]').check();
  await panel.locator('[data-turn]').click();
  await panel.locator('[data-zone="dispatch"]').click();
+ await performField(panel);
  await panel.locator('[data-ending="physical"]').click();
  await expect(panel.locator('[data-debrief]')).toBeVisible();
  const download=page.waitForEvent('download');
@@ -293,7 +305,7 @@ test('A2 keeps paired restoration controls and the exported relay record inside 
  await panel.locator('[data-replica] select').selectOption('A');await panel.locator('[data-replica] button').click();await panel.locator('[data-policy] button').click();
  await panel.locator('[data-role="coordinator"]').click();await panel.locator('[data-zone="archive"]').click();
  await panel.locator('[data-handoff] [name=item]').selectOption('verified archive');await panel.locator('[data-handoff] [name=destination]').selectOption('dispatch');await panel.locator('[data-handoff] [name=condition]').selectOption('after integrity check');await panel.locator('[data-handoff] button').click();
- await panel.locator('[data-zone="dispatch"]').click();await panel.locator('[data-ending="digital"]').click();
+ await panel.locator('[data-zone="dispatch"]').click();await performField(panel);await panel.locator('[data-ending="digital"]').click();
  await expect(panel.locator('[data-debrief]')).toBeVisible();
  const download=page.waitForEvent('download');await panel.locator('[data-export-mission]').click();
  const record=await readFile((await (await download).path())!,'utf8');
@@ -306,7 +318,10 @@ test('the final project keeps roles, areas, plan versions, resolution and export
  const panel=await expand(page,scene);
  const role=(id:string)=>panel.locator('[data-role="'+id+'"]').click();
  const zone=(id:string)=>panel.locator('[data-zone="'+id+'"]').click();
+ await panel.locator('[data-field-inspect]').click();
  await scene.locator('[data-immersive-task]').click();
+ // The task control opens guidance. Travel and responsibility are explicit actions.
+ await role('coordinator');await zone('dispatch');
  await expect(panel.locator('[data-role="coordinator"]')).toHaveAttribute('aria-pressed','true');
  await expect(panel.locator('[data-zone="dispatch"]')).toHaveAttribute('aria-current','location');
  await panel.locator('[data-plan] textarea').fill('Version 1: inspect the source, restore power and the cradle, then use the upper passage for recovery.');
@@ -339,6 +354,8 @@ test('the final project keeps roles, areas, plan versions, resolution and export
  expect(record).toContain('Version 1:');expect(record).toContain('Version 2:');
  await expect(scene).toHaveAttribute('data-immersive','true');
  await viewFits(page,scene);
+ await panel.locator('[data-debrief]').scrollIntoViewIfNeeded();
+ await page.screenshot({path:test.info().outputPath('recovery-debrief.png')});
 });
 
 test('worked-example chapters and response controls stay usable in fullscreen and remain separate from coursework',async({page})=>{

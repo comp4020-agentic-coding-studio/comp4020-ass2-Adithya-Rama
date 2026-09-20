@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Represent a professional role, test contradictory claims and negotiate a justified agreement.
 
+## Field operation — The Custodian’s Terms
+
+**Objective:** Secure an agreement the custodian can honour while protecting the original and respecting the support limit.
+
+**Obstacle:** Confident accounts contradict the comparison log, mandate and cart certificate. Without a feasible agreement the custodian cannot release the requested record.
+
+After the skill check, put the result into effect: **Present the evidence-backed agreement**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The custodian accepts the supported proposal and issues the appropriate custody authority.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the custody terms are recorded**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Act within an assigned role's responsibilities while recognising other legitimate interests.
@@ -66,6 +78,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

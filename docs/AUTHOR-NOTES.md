@@ -52,3 +52,12 @@ The consequential-overlap findings, code changes and browser results that follow
 The user requested a thorough check against the rubric, then asked whether the site looked and worked like a real university course website and asked for missing elements to be implemented. They also explicitly asked to keep PROCESS.md, CLAUDE.md and the existing reflections/README.md current.
 
 The resulting course-guide, teaching-consistency and final-mission changes are agent implementation work recorded in [the rubric audit](RUBRIC-AUDIT.md). This request does not establish a grade, a new student playtest or the user's personal acceptance of every change.
+
+
+## 21 September — The mission must be experienced
+
+The user supplied an external critique contrasting a sequence of training exhibits with an explorable recovery operation. Their explicit request extended the agent-mission experience to every lab, assignment, final project and demonstration, rather than reserving it for the final.
+
+After the agent explained the desired loop as objective, exploration, obstacle, investigation, skill, consequence and recovery, the user confirmed: “exactly you have now precisely understood what i m after”. They said students should feel like they are playing a game, learn along the way and finish “a proud agent” after a successful recovery.
+
+This is approval of the design direction and an aspiration for student enjoyment. It is not evidence that the user played or accepted the resulting implementation. The agent's implementation, independent review and validation are recorded in [FIELD-MISSIONS.md](FIELD-MISSIONS.md).

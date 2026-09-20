@@ -1,6 +1,7 @@
 import {z} from "astro/zod";
 import {validTraining} from "./training-engine";
-import {roleIds,scenarioIds,zoneIds,taskIds,missionMarkdown,recoveryModelProblem,resolutionEvidenceProblem,type MissionState,type MissionKind} from "./mission-engine";
+import {validFieldOperation} from "./field-operation";
+import {roleIds,scenarioIds,zoneIds,taskIds,missionMarkdown,recoveryModelProblem,resolutionEvidenceProblem,missionFieldSpec,missionProofProblem,missionFieldProblem,type MissionState,type MissionKind} from "./mission-engine";
 export const SAVE_KEY="mastermind:SLOP4408:v2";
 export const LEGACY_KEY="mastermind:SLOP4408:v1";
 export const MAX_BYTES=1024*1024;
@@ -26,6 +27,10 @@ const recoverySchema=z.strictObject({
  version:z.literal(2),verifiedProfile:profileId.nullable(),cradleProfile:profileId.nullable(),
  handoffProfile:profileId.nullable(),routeProfile:profileId.nullable(),resolution:resolutionSchema.nullable()
 });
+const fieldSchema=z.strictObject({
+ version:z.literal(1),operationId:z.string().min(1).max(150),inspected:z.boolean(),verified:z.boolean(),executed:z.boolean(),
+ carrying:z.boolean(),visited:z.array(z.string().max(150)).max(20),delivered:z.boolean(),log:z.array(z.string().max(2000)).max(200)
+});
 const missionSchema=z.strictObject({
  kind:z.enum(["recovery","a1","a2"]),scenario:z.enum(scenarioIds),role:z.enum(roleIds),zone:z.enum(zoneIds),status:z.enum(["active","complete"]),
  tasks:z.array(z.enum(taskIds)).max(11),inspected:z.array(z.enum(["lens","spool","tile","map","manifest"])).max(5),
@@ -34,13 +39,21 @@ const missionSchema=z.strictObject({
  route:z.enum(["upper","service","lift"]),handoff:text,agreement:text,
  plans:z.array(z.strictObject({version:z.number().int().positive(),text,route:z.enum(["upper","service","lift"])})).max(50),
  disruptionSeen:z.boolean(),log:z.array(z.strictObject({role:z.enum(roleIds),action:z.string().max(50),message:text,success:z.boolean()})).max(200),
- recovery:recoverySchema.optional(),ending:z.enum(["physical","digital","stabilise"]).nullable(),declaredObjective:z.enum(["physical","digital","stabilise"]).default("physical")
+ field:fieldSchema.optional(),resolutionChoice:z.enum(["physical","digital","stabilise"]).optional(),recovery:recoverySchema.optional(),ending:z.enum(["physical","digital","stabilise"]).nullable(),declaredObjective:z.enum(["physical","digital","stabilise"]).default("physical")
 }).refine(s=>new Set(s.tasks).size===s.tasks.length&&new Set(s.inspected).size===s.inspected.length,"Repeated task identifiers.").refine(s=>s.plans.every((p,i)=>p.version===i+1),"Plan versions must remain in sequence.").refine(s=>(s.status==="complete")===(s.ending!==null),"Mission status and ending disagree.").refine(s=>!s.recovery||s.kind==="recovery","Linked recovery facts belong to final missions.").refine(s=>{
  if(!s.recovery)return true;
  const state=s as MissionState;
  if(s.recovery.resolution&&resolutionEvidenceProblem(state,s.recovery.resolution)!==null)return false;
  return s.status!=="complete"||(s.recovery.resolution?.ending===s.ending&&recoveryModelProblem(state)===null);
-},"Recovery facts or outcome evidence contradict the current model.");
+},"Recovery facts or outcome evidence contradict the current model.").refine(s=>{
+ if(!s.field)return true;
+ const state=s as MissionState;
+ if(!s.resolutionChoice||!validFieldOperation(s.field,missionFieldSpec(state)))return false;
+ if(s.field.verified&&missionProofProblem(state)!==null)return false;
+ if(s.recovery?.resolution&&(!s.field.delivered||s.recovery.resolution.ending!==s.resolutionChoice))return false;
+ if(s.status==="complete"&&(missionFieldProblem(state)!==null||s.ending!==(s.kind==="a1"?"physical":s.kind==="a2"?"digital":s.resolutionChoice)))return false;
+ return true;
+},"Performed field actions contradict the mission model.");
 export const evidenceSchema=z.strictObject({
  week:z.number().int().min(1).max(12),phase:z.enum(["practice","check","transfer"]),
  actions:z.array(z.string().max(1000)).max(500),result:text,reflection:text,completed:z.boolean(),state:stateValue.optional()

@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-09-20T15:55:46.813Z",
+  "environment": "Local built Astro preview; Playwright Chromium; software rendering for 3D checks",
+  "requiredCheck": {
+    "command": "pnpm check",
+    "status": "passed",
+    "logicAndContentTests": 214,
+    "builtPages": 60
+  },
+  "browserRuns": [
+    {
+      "scope": "Full suite",
+      "passed": 195,
+      "failed": 4,
+      "skipped": 1,
+      "notes": "Three movement waits allowed only five seconds; one mocked-narration fixture depended on a wall-clock timer. Failures retained and followed up."
+    },
+    {
+      "scope": "First focused regression",
+      "passed": 16,
+      "failed": 2,
+      "notes": "Longer return journeys exposed slow-frame station-arrival stalls; automatic displacement was then bounded to the remaining distance."
+    },
+    {
+      "scope": "Affected journeys after displacement correction",
+      "passed": 17,
+      "failed": 1,
+      "notes": "Desktop and phone recovery and delayed-frame return passed; a separate three-phase delivery assertion still used the old five-second timeout."
+    },
+    {
+      "scope": "Final three-phase lab confirmation",
+      "passed": 2,
+      "failed": 0,
+      "notes": "Desktop and phone practice, skill check and transfer completed after waiting for actual receiver arrival, preserving all coursework state assertions."
+    }
+  ],
+  "intentionallySkipped": "The desktop academy room/resource stress journey is skipped in the phone project; phone world, context-loss, field-operation and fullscreen cases run separately.",
+  "observations": "Agent source and screenshot review. No new student playtest, audible device voice test, deployment or predicted mark.",
+  "captures": [
+    {
+      "file": "docs/evidence/field-missions/lab-03-desktop.jpg",
+      "viewport": "1920x1080",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "description": "Completed verified passage and evidence handover"
+    },
+    {
+      "file": "docs/evidence/field-missions/recovery-desktop.jpg",
+      "viewport": "1920x1080",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "description": "Completed digital recovery and debrief"
+    },
+    {
+      "file": "docs/evidence/field-missions/lab-03-phone.jpg",
+      "viewport": "390x844",
+      "sourceSize": [
+        390,
+        844
+      ],
+      "description": "Completed verified passage and evidence handover"
+    },
+    {
+      "file": "docs/evidence/field-missions/recovery-phone.jpg",
+      "viewport": "390x844",
+      "sourceSize": [
+        390,
+        844
+      ],
+      "description": "Completed digital recovery and debrief"
+    }
+  ],
+  "reproducedFinalCommand": "pnpm exec playwright test tests/browser/field-world.e2e.ts tests/browser/immersive.e2e.ts tests/browser/mission-synthesis.e2e.ts tests/browser/demonstrations.e2e.ts tests/browser/training.e2e.ts tests/browser/course.e2e.ts -g \"paused Watch|verified lab intervention|paused graphics|final project keeps|profile B geometry|expanded view responds|all mechanism phases|mechanical controls preserve|course identity\"",
+  "evidenceCheck": {
+    "status": "passed",
+    "resolvedCommitReferences": 5,
+    "command": "pnpm check:evidence"
+  },
+  "finalConfirmationCommand": "pnpm exec playwright test tests/browser/immersive.e2e.ts -g \"all mechanism phases\""
+}

@@ -49,6 +49,19 @@ Build detailed, legible apparatus and original stylised spaces. Show the actual 
 - Do the practical activity before the reflective account. Predictions, recall and plan revisions that are intrinsic to the skill remain part of the task; do not interrupt them with unrelated reflection prompts.
 - Test native fullscreen/pointer-lock and denied-API fallback separately. Check desktop, phone, resizing, exit/re-entry, a completed in-scene task and download. Never describe a simulated fallback test as proof of native mouse capture.
 
+## Performed agent missions
+
+The accepted experience is **objective → exploration → obstacle → investigation → skill → intervention → visible consequence → handover → debrief** across all labs, assessments and demonstrations. The user wants the satisfaction of an original agent recovery game. A complete curriculum and working controls do not by themselves establish that experience.
+
+- Give every lab phase a concrete operation, problem and receiving condition. Its skill must enable a consequential action. Preserve clear instructions and explicit early teaching; increase independence as skills accumulate.
+- Keep the domain model authoritative. A field button, animation, elapsed timer, viewed chapter or prose length cannot supply practical proof. Shared field actions must reject unsupported release, out-of-order checkpoints and premature delivery.
+- Render the actual change: restored signal, opened passage, raised cradle, released package, carried case, receipt or stable handover. Physical recovery removes the packed original from its earlier scene; digital and stabilisation outcomes preserve it.
+- Let students inspect the initial mission briefing inside the scene. Course pages and accessible controls remain directly available. Travel menus expose only locations relevant to the current assessment.
+- Watch and Take Control use the same performed-operation reducer with separate records and alternate scenarios. Narration explains intent, waits for the performed action, then explains the result. Skipping chapters remains a disclosed preview. Pause/navigation must cancel pending movement and stale speech callbacks.
+- When a live scene is available, public field controls move the character to the corresponding station before recording the action. Reduced motion, paused/unavailable graphics and keyboard/touch controls retain an explicit equivalent path. A blocked walking path must never silently complete or wait indefinitely.
+- Persist and validate field state, preserve historical records, and invalidate dependent execution when its supporting evidence changes. Lab 12 requires a current completed recovery with performed evidence.
+- Use shared field-operation, lab-operation and demo-operation rules in tests. Review their rendered effects and actual movement separately; answer checks do not establish mission feel.
+
 ## Complete worked demonstrations
 
 Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration.

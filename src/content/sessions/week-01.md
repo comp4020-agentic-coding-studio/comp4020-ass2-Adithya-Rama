@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Examine a room and separate what you can see from what somebody says and what you think might have happened.
+**Operation Silent Gallery.** Give Control a reliable account of the gallery before its recovery team enters.
+
+An urgent message says the room was abandoned. Its objects establish conditions, but not who left or why. An unsupported report sends the team after the wrong lead.
 
 **What you will produce:** A recalled display reading, five classified statements, and a short account of one detail or assumption you corrected.
 
@@ -82,8 +84,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Select **Cover scene and recall**. Enter the time you remember in **HH:MM** format. You may reopen the scene to compare; mention this assistance in your later reflection.
 3. For each statement choose **Observed fact**, **Someone’s claim** or **An inferred explanation**. An observation is a directly visible or measured detail; a claim is somebody’s account; an inference is your explanation of the evidence.
 4. Select **Test this configuration**. Read which part needs attention. Correct that answer and check again; the aim is a supported account, not speed.
-5. Try **Skill check** with its changed room, then **Transfer challenge** with the service hatch. Inspect each new scene afresh. An open hatch is visible; a reported power failure is a claim; saying the hatch caused the failure needs further evidence.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** with its changed room, then **Transfer challenge** with the service hatch. Inspect each new scene afresh. An open hatch is visible; a reported power failure is a claim; saying the hatch caused the failure needs further evidence.
 6. After playing, compare your attempts and write the observation record. Explain one remembered detail and one distinction between fact and explanation.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Transmit the verified scene report**. The scene and mission record now show the consequence: Control receives an evidence-labelled report and clears the investigation entrance. Unverified explanations remain unresolved.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm Control received the report** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

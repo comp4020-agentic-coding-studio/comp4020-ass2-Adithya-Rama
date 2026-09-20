@@ -11,6 +11,9 @@ date: 2027-03-01
 related: ["sessions/week-02", "assessments/assignment-1"]
 ---
 
+> **Your field application — The Silent Dispatch:** Carry the correct four-item recovery manifest through an area where the written list must remain covered. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The registrar will give you four things to remember. The real test is whether you know how you remembered them.
 
 ## What you will learn

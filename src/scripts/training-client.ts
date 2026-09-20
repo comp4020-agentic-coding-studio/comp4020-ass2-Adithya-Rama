@@ -1,10 +1,14 @@
 import {
-  applyTraining, archiveFiles, councilClaims, createTraining, handoffTarget, loci, mechanismConfig,
+  applyTraining, applyTrainingField, trainingMissionComplete, archiveFiles, councilClaims, createTraining, handoffTarget, loci, mechanismConfig,
   memoryItems, observationFacts, phases, policyActions, policyRoles, rotatedPorts, sensorCells,
   spatialTarget, validTraining, type TrainingAction, type TrainingPhase, type Value,
 } from '../lib/training-engine';
 import { labGuides, labMilestones } from '../data/learner-guidance';
 import { passport } from './passport-client';
+import { completedRecoverySupportsLab } from '../lib/lab-recovery';
+import { labOperation, labOperations } from '../data/lab-operations';
+import { createFieldOperation, type FieldOperationAction } from '../lib/field-operation';
+import { renderFieldOperation, broadcastFieldOperation } from './field-operation-view';
 
 function mount(root:HTMLElement) {
   if(root.dataset.mounted)return;root.dataset.mounted='true';
@@ -22,14 +26,26 @@ function mount(root:HTMLElement) {
   };
   let checksThisPhase=0;let hintsThisVisit=0;
   const guide=labGuides[week]!;
+  const hasCompletedRecovery=()=>completedRecoverySupportsLab(passport.getMission('recovery'));
+  const operationScope='lab:'+week;
+  const fieldAct=(action:FieldOperationAction)=>{
+    if(week===12&&!hasCompletedRecovery())state=applyTraining(state,{type:'test'},{recoveryComplete:false});
+    state=applyTrainingField(state,action);sync();checkpoint();
+  };
+  function updateField(){
+    const spec=labOperation(week,state.phase);
+    state.field??=createFieldOperation(spec);
+    renderFieldOperation(root,spec,state.field,fieldAct);
+    broadcastFieldOperation(operationScope,spec,state.field);
+  }
   function updateGuidance(){
     const milestones=labMilestones(state);
-    if(week===12)milestones[0]=passport.getMission('recovery')?.status==='complete'||passport.state.runs.some(run=>run.kind==='recovery');
+    if(week===12)milestones[0]=hasCompletedRecovery();
     const nextIndex=milestones.findIndex(done=>!done);
     const next=root.querySelector<HTMLElement>('[data-lab-next]')!;
-    const nextText=state.complete&&week!==12||state.complete&&milestones[0]
-      ? 'This configuration is complete. Open After playing below, explain the attempt and select Record attempt in skills passport before changing phase. '+(state.phase==='transfer'?'You can then export your learning record.':state.phase==='practice'?'Next, use Skill check to test your method against its published conditions.':'Next, try Transfer challenge with its changed conditions.')
-      : guide.steps[nextIndex<0?guide.steps.length-1:nextIndex]!.action;
+    const nextText=trainingMissionComplete(state)
+      ? 'Mission accomplished. Open After playing below, explain the attempt and select Record attempt in skills passport before changing phase. '+(state.phase==='transfer'?'You can then export your learning record.':state.phase==='practice'?'Next, use Skill check to test your method against its published conditions.':'Next, try Transfer challenge with its changed conditions.')
+      : state.complete?'The skill is verified. Return to Field operation above, enact the intervention and follow its checkpoints to finish the mission.':guide.steps[nextIndex<0?guide.steps.length-1:nextIndex]!.action;
     if(next.textContent!==nextText)next.textContent=nextText;
     root.querySelector<HTMLElement>('[data-guidance-phase]')!.textContent=phaseLabels[state.phase];
     root.querySelectorAll<HTMLElement>('[data-lab-step]').forEach((entry,i)=>{
@@ -37,10 +53,10 @@ function mount(root:HTMLElement) {
       if(i===nextIndex&&!state.complete)entry.setAttribute('aria-current','step');else entry.removeAttribute('aria-current');
     });
     const after=root.querySelector<HTMLElement>('[data-immersive-reflection]')!;
-    after.dataset.ready=String(state.complete);
+    after.dataset.ready=String(trainingMissionComplete(state));
     const afterMessage=root.querySelector<HTMLElement>('[data-lab-after-message]')!;
-    afterMessage.textContent=state.complete
-      ? 'The practical check is complete. Now explain your attempt and save it before changing phase. Mention any scene reopening, examples or hints you used.'
+    afterMessage.textContent=trainingMissionComplete(state)
+      ? 'The mission consequence and receiver acknowledgement are recorded. Now explain your attempt and save it before changing phase. Mention any scene reopening, examples or hints you used.'
       : 'Finish the practical attempt first. Then record what you noticed, what changed and any help you used. You can also preserve an unfinished attempt.';
   }
   const coach=node('aside',undefined,'training-coaching');
@@ -54,7 +70,8 @@ function mount(root:HTMLElement) {
     coachStats.textContent=checksThisPhase+' checks in this phase visit · '+hintsThisVisit+' hints opened this visit. These are practice observations, not marks.';
     const v=state.values;
     let next='Make one prediction, test it, then use the observed result to decide what to change. No attempt has been diagnosed yet.';
-    if(state.complete)next=week>=11?'Your account is ready for human review. Check it against the actual run and preserve a credible alternative.':
+    if(state.complete&&!trainingMissionComplete(state))next='Your equipment check passed. Apply its result at the mission station, carry the resulting evidence through the indicated checkpoints and confirm the handover.';
+    else if(trainingMissionComplete(state))next=week>=11?'Your account is ready for human review. Check it against the actual run and preserve a credible alternative.':
       state.phase==='transfer'?'You met this changed configuration. Explain which rule transferred and which details needed a new decision.':
       'You met this configuration. Try the '+(state.phase==='practice'?'skill check':'transfer challenge')+' and make a fresh prediction before operating it.';
     else if(checksThisPhase>0){
@@ -91,18 +108,19 @@ function mount(root:HTMLElement) {
   }
 
   const dispatch=()=>{
-    window.dispatchEvent(new CustomEvent('mastermind:scene-state',{detail:{week,kind:'training',phase:state.phase,values:state.values,sequence:state.sequence,inspected:state.inspected,feedback:state.feedback,complete:state.complete}}));
+    window.dispatchEvent(new CustomEvent('mastermind:scene-state',{detail:{week,kind:'training',phase:state.phase,values:state.values,sequence:state.sequence,inspected:state.inspected,feedback:state.feedback,complete:state.complete,field:state.field}}));
   };
   const sync=()=>{
     feedback.textContent=state.feedback;
-    result.textContent=state.complete?(week>=11?'Account recorded for review':'Current task demonstrated'):'Practice in progress';
-    result.dataset.complete=String(state.complete);
+    result.textContent=trainingMissionComplete(state)?'Mission accomplished':state.complete?'Skill verified · enact your mission intervention':'Investigation in progress';
+    result.dataset.complete=String(trainingMissionComplete(state));
+    result.dataset.skillVerified=String(state.complete);
     trace.replaceChildren(...state.actions.slice(-16).map(a=>node('li',a)));
     root.querySelectorAll<HTMLButtonElement>('[data-training-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.trainingPhase===state.phase)));
-    updateCoaching();updateGuidance();dispatch();
+    updateCoaching();updateGuidance();updateField();dispatch();
   };
   const checkpoint=()=>window.dispatchEvent(new CustomEvent('mastermind:checkpoint',{detail:{week,state:structuredClone(state),reflection:reflection.value}}));
-  const act=(action:TrainingAction)=>{const focusKey=bench.contains(document.activeElement)?(document.activeElement as HTMLElement)?.dataset.trainingAction:undefined;if(action.type==='test'||action.type==='crank')checksThisPhase++;state=applyTraining(state,action);render();sync();checkpoint();if(focusKey)Array.from(bench.querySelectorAll<HTMLButtonElement>('[data-training-action]')).find(b=>b.dataset.trainingAction===focusKey)?.focus({preventScroll:true});};
+  const act=(action:TrainingAction)=>{const focusKey=bench.contains(document.activeElement)?(document.activeElement as HTMLElement)?.dataset.trainingAction:undefined;if(action.type==='test'||action.type==='crank')checksThisPhase++;state=applyTraining(state,action,{recoveryComplete:hasCompletedRecovery()});render();sync();checkpoint();if(focusKey)Array.from(bench.querySelectorAll<HTMLButtonElement>('[data-training-action]')).find(b=>b.dataset.trainingAction===focusKey)?.focus({preventScroll:true});};
   const p=(text:string,parent:HTMLElement=bench)=>parent.append(node('p',text));
   const button=(text:string,action:TrainingAction,parent:HTMLElement=bench)=>{
     const b=node('button',text);b.type='button';b.dataset.trainingAction=action.type+':'+(action.key??'');b.addEventListener('click',()=>act(action));parent.append(b);return b;
@@ -130,6 +148,7 @@ function mount(root:HTMLElement) {
   function render(){
     bench.replaceChildren();const v=state.values,phase=state.phase;
     const top=node('div',undefined,'training-mode-heading');top.append(node('span',phaseLabels[phase],'eyebrow'));
+    top.append(node('p',labOperations[week]!.phases[phase]));
     top.append(node('p',phase==='practice'?'Learn the controls and inspect the example. Hints are always available.':phase==='check'?'Test your method against the published conditions. Explain the result you observe.':'Apply the capability to a changed context; an earlier answer may no longer satisfy the requirement.'));
     bench.append(top);
     if(week===1){
@@ -231,12 +250,21 @@ function mount(root:HTMLElement) {
       const compare=node('div',undefined,'training-comparison');const original=node('div',undefined,'training-document');original.append(node('h4','Version 1 · preserved'),node('p',String(v.original)));compare.append(original);
       const revision=node('div',undefined,'training-document');revision.append(node('h4','Version 2 · your revision'));field('Revised sequence','revision',revision,true);field('Why this revision addresses the changed dependency','reason',revision,true);compare.append(revision);bench.append(compare);
       button('Publish the disruption',{type:'disrupt'});
+      select('Replacement dependency to rehearse','replacement',[
+        {value:'east',label:'Keep using the east passage'},
+        {value:'west-unchecked',label:'Use the west passage without another relay check'},
+        {value:'west-relay',label:'Verify the west relay, then use the west passage'},
+        {value:'live-meter',label:'Wait for a live reading from the unavailable meter'},
+        {value:'reference-readings',label:'Use supplied reference readings and preserve their limitation'},
+      ]);
+      button('Rehearse the replacement dependency',{type:'rehearse'});
+      p(v.dependencyChecked?'The selected replacement has a recorded rehearsal result.':'No supported replacement rehearsal has been recorded.');
       if(v.disrupted)p(phase==='transfer'?'Changed condition: meter unavailable. Supplied reference readings: battery 6 V, fuse 6 V, cable 0 V, lamp 0 V. Explain the limit of diagnosing from recorded readings.':'Changed condition: east passage unavailable. West passage is open, but adds one relay check before handover.');
     }
     if(week===12){
       p('Launch Operation Last Light below. Complete a mission run before writing this account; the activity stores your explanation separately from the mission’s practical record.');
       const a=node('a','Enter the final recovery mission','button primary');a.href=root.dataset.missionUrl??'../../operation/';bench.append(a);
-      p(passport.getMission('recovery')?.status==='complete'||passport.state.runs.some(run=>run.kind==='recovery')?'A completed recovery run is present in this passport. Use its exported action record for the account below.':'No completed recovery run is recorded in this passport yet. Complete the practical mission first; this page records your account afterwards.');
+      p(hasCompletedRecovery()?'A completed recovery run is present in this passport. Use its exported action record for the account below.':'No completed recovery run is recorded in this passport yet. Complete the practical mission first; this page records your account afterwards.');
       field('What objective did your team pursue?','objective');field('Which recorded actions and observations support the result?','evidence',bench,true);field('What credible alternative did you reject, and why?','alternative',bench,true);
     }
   }
@@ -274,15 +302,21 @@ function mount(root:HTMLElement) {
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.addEventListener('click',()=>{
     if(reflection.value.trim().length<20){saveStatus.textContent='Add a brief explanation of what you tried, observed and would change (at least 20 characters).';reflection.focus();return;}
-    const detail={week,phase:state.phase,actions:state.actions,result:state.feedback,reflection:reflection.value.trim(),completed:state.complete,state:structuredClone(state)};
+    const detail={week,phase:state.phase,actions:state.actions,result:state.feedback,reflection:reflection.value.trim(),completed:trainingMissionComplete(state),state:structuredClone(state)};
     window.dispatchEvent(new CustomEvent('mastermind:evidence',{detail}));
-    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+(state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':state.phase==='practice'?'When ready, select Skill check to test your method against its published conditions.':'When ready, select Transfer challenge to try changed conditions.');
+    const next=trainingMissionComplete(state)
+      ? state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':state.phase==='practice'?'When ready, select Skill check to test your method against its published conditions.':'When ready, select Transfer challenge to try changed conditions.'
+      : 'This record is marked unfinished. Return to Field operation, verify any unresolved equipment, perform the intervention and confirm its receiving handover. Then record the completed attempt before switching phases.';
+    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+next;
   });
   const hintButton=root.querySelector<HTMLButtonElement>('[data-training-hint]')!;hintButton.disabled=false;
   hintButton.addEventListener('click',()=>{
     const hints=Array.from(root.querySelectorAll<HTMLElement>('[data-training-hint-text]'));
     const next=hints[hint];if(next){next.hidden=false;hint++;hintsThisVisit++;hintButton.textContent=hint===hints.length?'All hints revealed':'Reveal next hint';updateCoaching();}
   });
+  window.addEventListener('mastermind:field-action',((event:CustomEvent<{scope:string;action:FieldOperationAction}>)=>{
+    if(event.detail?.scope===operationScope)fieldAct(event.detail.action);
+  }) as EventListener);
   window.addEventListener('mastermind:interact',((event:CustomEvent<{week:number;objectId:string}>)=>{
     if(event.detail.week!==week)return;
     const byWeek:Record<number,string>={1:'inspect',2:'inspect',3:'rotate',4:'crank',5:'measure',6:'inspect',7:'test',8:'role',9:'inspect',10:'step',11:'disrupt',12:'test'};
@@ -299,7 +333,13 @@ function mount(root:HTMLElement) {
     const records=event.detail?.records;
     if(!Array.isArray(records))return;
     const saved=event.detail.drafts?.[String(week)]??[...records].reverse().find((r)=>r&&typeof r==='object'&&'week' in r&&(r as {week:number}).week===week) as {state?:unknown;reflection?:string}|undefined;
-    if(saved&&validTraining(saved.state,week)){state=saved.state;reflection.value=typeof saved.reflection==='string'?saved.reflection:'';restoreApplied=true;render();sync();saveStatus.textContent='Restored your most recently recorded attempt for this week.';}
+    if(saved&&validTraining(saved.state,week)){state=saved.state;
+      if(!state.field){
+        const restored=createTraining(week,state.phase);
+        state={...restored,...state,values:{...restored.values,...state.values},complete:false,field:restored.field};
+        state.feedback='Historical skill record restored. Recheck the equipment and complete the new mission intervention; earlier evidence remains in your passport.';
+      }
+      reflection.value=typeof saved.reflection==='string'?saved.reflection:'';restoreApplied=true;render();sync();saveStatus.textContent='Restored your most recently recorded attempt for this week.';}
   }) as EventListener);
   window.addEventListener('mastermind:reset',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;checksThisPhase=0;render();sync();});
   window.addEventListener('mastermind:replace',()=>{state=createTraining(week);reflection.value='';restoreApplied=false;hint=0;checksThisPhase=0;render();sync();});
@@ -308,6 +348,6 @@ function mount(root:HTMLElement) {
   window.addEventListener('afterprint',()=>{printDetails.forEach(d=>d.open=false);printDetails=[];});
   reflection.addEventListener('input',checkpoint);
   render();sync();window.dispatchEvent(new CustomEvent('mastermind:request-restore'));
-  window.addEventListener('mastermind:scene-ready',dispatch);
+  window.addEventListener('mastermind:scene-ready',()=>{updateField();dispatch();});
 }
 document.querySelectorAll<HTMLElement>('[data-training-week]').forEach(mount);

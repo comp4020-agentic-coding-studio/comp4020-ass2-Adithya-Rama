@@ -1,5 +1,7 @@
 # Assignment 2 rubric and course-site review
 
+**Subsequent iteration:** the [21 September performed-mission review](FIELD-MISSIONS.md) records the author's later agent-experience direction, implementation and updated validation. This audit retains the findings and counts from its earlier review.
+
 Reviewed 20–21 September 2026 (Canberra time). Starting local commit: 1c215a0. This is an agent review of the actual source, teaching material and rendered prototype, not a predicted mark or student playtest.
 
 ## Basis and overall judgement

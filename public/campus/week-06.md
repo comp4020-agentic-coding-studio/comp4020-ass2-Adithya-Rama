@@ -4,6 +4,18 @@ Campus / printable lab pack · Semester 1, 2027
 
 Compare supplied records, separate file labels from evidence and reconstruct an event sequence.
 
+## Field operation — The Authentic Archive
+
+**Objective:** Release the archive copy that actually satisfies the signed recovery order.
+
+**Obstacle:** Three plausible files have different contents. A newer timestamp can hide an unauthorised change; an older copy can be incomplete.
+
+After the skill check, put the result into effect: **Release the manifest-matched archive**. In the paper route, move the apparatus or labelled mission token only after the supplied rule check passes. Keep a before/after sketch and the action that changed it.
+
+**Expected consequence:** The selected verified copy reaches protected dispatch while the source remains in the station archive.
+
+A partner or facilitator acts as the clearly labelled receiver. Trace the named evidence or result to that receiver and **Confirm the verified archive receipt**. In solo study, use the published rule sheet to check and record the receiver conditions yourself, labelling this as a self-check. Record any failed condition honestly. The paper model provides an equivalent reasoning task; it does not claim a physical apparatus has been validated.
+
 ## Learning outcomes
 
 - Distinguish an observed record from a conclusion about events.
@@ -76,6 +88,10 @@ Prediction and reason:
 Actions or measurements:
 
 Observed result:
+
+Intervention and its before/after consequence:
+
+Receiver acknowledgement or unresolved handover condition:
 
 Difference from prediction:
 

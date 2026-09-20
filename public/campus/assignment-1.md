@@ -29,3 +29,7 @@ Give the student the complete rule sheet; no secret rules apply. Preserve predic
 Record scene classifications, ordered recall, rotation/level prediction, mechanism state, transfer and explanation. Submit the equivalent event record, causal model and 350–500 words required by the website. The original mechanism uses a 12-tooth driven gear; its transfer uses 36. The connector needs two clockwise quarter-turns and one level change.
 
 See the published brief for criterion-specific descriptors. This pack does not submit work or certify dexterity.
+
+## Performed release and delivery
+
+After the verified carriage task, the facilitator releases a case token. Collect it, then move it through Workshop threshold → Orientation turn → Receiving lane before handing it to the receiving point. Record release, collection, each checkpoint and handover. The worksheet route represents the same operation as the browser; it does not certify physical handling dexterity.

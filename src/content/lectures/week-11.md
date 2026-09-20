@@ -11,6 +11,9 @@ date: 2027-05-17
 related: ["sessions/week-11", "assessments/final-project"]
 ---
 
+> **Your field application — The Route That Failed:** Keep recovery moving after a disruption while preserving the plan that depended on the old condition. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The plan was sensible when you wrote it. The station has changed.
 
 ## What you will learn

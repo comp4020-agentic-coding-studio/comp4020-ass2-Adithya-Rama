@@ -1,18 +1,32 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect,type Page,type Locator} from '@playwright/test';
+import {completeRecovery,recordOutcome} from './mission-helpers';
 const route=(week:number)=>'sessions/week-'+String(week).padStart(2,'0')+'/';
 async function openLab(page:Page,week:number){
   await page.goto(route(week));const lab=page.locator('[data-training-week="'+week+'"]');
   await expect(lab.locator('[data-training-test]')).toBeEnabled();return lab;
 }
+async function finishField(lab:Locator){
+  const field=lab.locator('[data-field-operation]');
+  await field.locator('[data-field-inspect]').click();
+  await field.locator('[data-field-execute]').click();
+  await field.locator('[data-field-collect]').click();
+  const checkpoints=field.locator('[data-field-checkpoint]');
+  for(let i=0;i<await checkpoints.count();i++)await checkpoints.nth(i).click();
+  await field.locator('[data-field-deliver]').click();
+  await expect(field).toHaveAttribute('data-field-state','complete');
+}
 async function solve(lab:Locator,week:number,phase:'practice'|'check'|'transfer'='practice'){
   const c=lab.locator('[data-training-controls]');
   const click=(name:string)=>c.getByRole('button',{name,exact:true}).click();
   if(week===1){
+    for(const id of ['clock','cup','door','note'])await click('Inspect '+id);
+    await click('Cover scene and recall');
     await c.getByLabel('What time did the display show? Use HH:MM.').fill(phase==='practice'?'08:20':phase==='check'?'09:40':'14:10');
     for(let i=0;i<5;i++)await c.locator('select[name="classification'+i+'"]').selectOption(i<3?'observation':i===3?'claim':'inference');
   }
   if(week===2){
+    for(let i=0;i<4;i++)await click('Walk to next location');
     await click('Cover list and retrieve');
     const items=phase==='practice'?['Compass','Lantern','Coil','Archive']:phase==='check'?['Lens','Battery','Map','Seal']:['Sample','Receipt','Sensor','Capsule'];
     for(let i=0;i<4;i++)await c.locator('input[name="recall'+i+'"]').fill(items[i]!);
@@ -63,16 +77,29 @@ async function solve(lab:Locator,week:number,phase:'practice'|'check'|'transfer'
     await click('Publish the disruption');await c.getByLabel('Revised sequence',{exact:true}).fill('Inspect manifest, restore relay, verify the extra west relay, use west passage and record handover.');
     await c.getByLabel('Why this revision addresses the changed dependency').fill('The east passage is no longer available. Assign an operator to verify the west relay before the team commits to the new route.');
   }
+  if(week===11){
+    await c.getByLabel('Replacement dependency to rehearse').selectOption(phase==='transfer'?'reference-readings':'west-relay');
+    await click('Rehearse the replacement dependency');
+  }
   if(week===12){
     await c.getByLabel('What objective did your team pursue?').fill('Recover a verified usable archive copy.');
     await c.getByLabel('Which recorded actions and observations support the result?').fill('The mission record should identify the inspected source manifest and the completed checksum comparison.');
     await c.getByLabel('What credible alternative did you reject, and why?').fill('A supported handover could preserve the original; compare its delay with the requirement for a usable copy.');
   }
   await lab.locator('[data-training-test]').click();
+  await expect(lab.locator('[data-training-result]')).toHaveAttribute('data-skill-verified','true');
+  await expect(lab.locator('[data-training-result]')).toHaveAttribute('data-complete','false');
+  await finishField(lab);
   await expect(lab.locator('[data-training-result]')).toHaveAttribute('data-complete','true');
 }
 for(let week=1;week<=12;week++)test('week '+week+' supports meaningful controls and evidence',async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  if(week===12){
+    await completeRecovery(page);
+    await recordOutcome(page,'physical');
+    await page.locator('[data-ending="physical"]').click();
+    await expect(page.locator('[data-mission-status]')).toContainText('complete');
+  }
   const lab=await openLab(page,week);await solve(lab,week);
   await lab.locator('[data-training-reflection]').fill('I compared my prediction with the observed result and checked the specific rule before recording this attempt.');
   await lab.locator('[data-training-save]').click();

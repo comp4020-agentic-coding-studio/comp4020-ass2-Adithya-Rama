@@ -24,7 +24,9 @@ spec:
 
 ## Your mission, in plain language
 
-Make a model carriage move by choosing the right gear relationship and making its supporting parts ready.
+**Operation The Suspended Cradle.** Raise a recovery cradle to its receiving platform without forcing its blocked mechanism.
+
+The support is locked, its return spring is absent and its output must match the lift specification. A correct gear alone cannot move it.
 
 **What you will produce:** A gear prediction, a trace of the mechanism test, a changed-configuration attempt and an explanation of a blocked or incorrect result.
 
@@ -75,8 +77,16 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 2. Use **Change driven gear (12 → 24 → 36)** to select the size you predicted. Select the expected output direction.
 3. Select **Release interlock**, then use **Rotate cam 90°** until the displayed cam matches the requirement. Select **Attach return spring**.
 4. Select **Turn the crank** and read the observed output and feedback. A correct gear ratio will not overcome an engaged interlock or missing spring. Use **Test this configuration** to check the full arrangement.
-5. Try **Skill check** and **Transfer challenge**. Recalculate for their changed input/output requirements and read the new cam requirement before operating.
+5. Before switching, complete the current phase's **Field operation** intervention, checkpoints and receiver acknowledgement, then select **Record attempt in skills passport**. Repeat that handover and save after each later phase. Try **Skill check** and **Transfer challenge**. Recalculate for their changed input/output requirements and read the new cam requirement before operating.
 6. After playing, explain your prediction and the evidence for one repair. Distinguish a wrong gear ratio from a mechanism that cannot move.
+
+### Put your solution into effect
+
+A correct equipment check is the preparation for your mission action. In **Field operation**, first **Inspect mission station**. Once your skill check is verified, select **Engage the tested cradle drive**. The scene and mission record now show the consequence: The tested mechanism drives the cradle to its receiving platform and opens the supported handover point.
+
+Collect the named result or record, follow the checkpoint controls in order (or visit the marked stations in the scene), and select **Confirm the cradle reached its platform** at the receiver. The status changes to **Mission accomplished** only after that acknowledgement. Keyboard and touch controls perform the same actions. If you change the underlying model, the dependent intervention must be verified again.
+
+Your mission outcome is practice evidence, not an academic grade. Explain its reasoning in the debrief after playing.
 
 ### Finish and keep your work
 

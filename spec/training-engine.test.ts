@@ -1,6 +1,6 @@
 import {describe,it,expect} from 'vitest';
 import {applyTraining,createTraining,mechanismResult,circuitReading,observationFacts,memoryItems,phases,policyRoles,policyActions,permissionExpected,sensorCells,validTraining,initialPlan,type TrainingAction,type TrainingState} from '../src/lib/training-engine';
-const run=(state:TrainingState,...actions:TrainingAction[])=>actions.reduce(applyTraining,state);
+const run=(state:TrainingState,...actions:TrainingAction[])=>actions.reduce((current,action)=>applyTraining(current,action),state);
 const set=(key:string,value:string|number|boolean):TrainingAction=>({type:'set',key,value});
 describe('skills training domain models',()=>{
   it('keeps the caller state immutable and rejects unknown configuration writes',()=>{
@@ -11,13 +11,14 @@ describe('skills training domain models',()=>{
   });
   it.each(phases)('observation separates claims, inference and recall in %s',phase=>{
     let s=createTraining(1,phase);expect(applyTraining(s,{type:'test'}).complete).toBe(false);
+    for(const key of ['clock','cup','door','note'])s=applyTraining(s,{type:'inspect',key});s=applyTraining(s,{type:'cover'});
     observationFacts[phase].forEach((fact,i)=>s=applyTraining(s,set('classification'+i,fact.category)));
     s=applyTraining(s,set('recall0',phase==='practice'?'08:20':phase==='check'?'09:40':'14:10'));
     expect(applyTraining(s,{type:'test'}).complete).toBe(true);
     s=applyTraining(s,set('classification4','observation'));expect(applyTraining(s,{type:'test'}).complete).toBe(false);
   });
   it.each(phases)('memory retrieval changes the item set and accepts case-normalised recall in %s',phase=>{
-    let s=createTraining(2,phase);memoryItems[phase].forEach((item,i)=>s=applyTraining(s,set('recall'+i,' '+item.toLowerCase()+' ')));
+    let s=createTraining(2,phase);for(let i=0;i<4;i++)s=applyTraining(s,{type:'inspect'});s=applyTraining(s,{type:'cover'});memoryItems[phase].forEach((item,i)=>s=applyTraining(s,set('recall'+i,' '+item.toLowerCase()+' ')));
     expect(applyTraining(s,{type:'test'}).complete).toBe(true);
     s=applyTraining(s,set('recall2','invented'));expect(applyTraining(s,{type:'test'}).complete).toBe(false);
   });
@@ -86,7 +87,7 @@ describe('skills training domain models',()=>{
     expect(sensorCells('transfer')).not.toEqual(sensorCells('practice'));
   });
   it('a disrupted revision never rewrites the original plan',()=>{
-    const original=createTraining(11);const revised=run(original,{type:'disrupt'},set('revision','Inspect the manifest, restore relay, check west relay, use west passage, hand over.'),set('reason','The east route is unavailable, so verify the additional relay before committing to the west route.'),{type:'test'});
+    const original=createTraining(11);const revised=run(original,{type:'disrupt'},set('revision','Inspect the manifest, restore relay, check west relay, use west passage, hand over.'),set('reason','The east route is unavailable, so verify the additional relay before committing to the west route.'),set('replacement','west-relay'),{type:'rehearse'},{type:'test'});
     expect(revised.complete).toBe(true);expect(revised.values.original).toBe(initialPlan.join(' → '));expect(original.values.revision).toBe('');
     expect(applyTraining(revised,set('original','rewritten')).values.original).toBe(initialPlan.join(' → '));
   });

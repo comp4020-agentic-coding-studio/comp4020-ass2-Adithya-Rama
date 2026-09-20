@@ -12,6 +12,9 @@ related: ["sessions/week-07", "assessments/assignment-2"]
 slides: "/decks/week-07/"
 ---
 
+> **Your field application — The Wrong Authority:** Restore useful control-desk access without giving an observer permission to service or certify equipment. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The system recognises you. It has mistaken that for permission.
 
 ## What you will learn

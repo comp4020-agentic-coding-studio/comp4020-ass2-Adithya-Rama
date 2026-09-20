@@ -14,6 +14,10 @@ Scenario / route / attempt date:
 
 Attach or link the exported activity/mission record. For campus work include a reproducible event or measurement record.
 
+## Performed mission evidence
+
+Attach the field log showing the intervention, collected case or acknowledgement, ordered checkpoints and completed receiving handover. Explain how the equipment tests supported these actions.
+
 ## Changed-situation response
 
 Preserve the initial version; explain the authority or observation requiring a revision.

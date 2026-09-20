@@ -11,6 +11,9 @@ date: 2027-05-24
 related: ["sessions/week-12", "assessments/final-project"]
 ---
 
+> **Your field application — Agent’s Return:** Close a completed Operation Last Light with an accurate after-action account the receiving team can use. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > The station opens. Your notes are useful only if you can act on them.
 
 ## What you will learn

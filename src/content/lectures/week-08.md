@@ -11,6 +11,9 @@ date: 2027-04-26
 related: ["sessions/week-08", "assessments/assignment-2"]
 ---
 
+> **Your field application — Across the Divide:** Get the correct sealed batch to its receiver through a relay where each role sees different information. Your lab turns the verified skill into a visible intervention and receiving-team acknowledgement.
+
+
 > Both people are competent. Each has half the information.
 
 ## What you will learn
