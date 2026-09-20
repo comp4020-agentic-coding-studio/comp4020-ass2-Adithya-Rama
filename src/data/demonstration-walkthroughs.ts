@@ -11,11 +11,11 @@ interface Script { task:string; conclusion:string; intentions:Record<string,stri
 const scripts:Record<string,Script> = {
  "lab-01":{
  task:"I am investigating the conservatory. My job is to make a record another person could check, separate what I see from what someone says, and choose evidence that could test an explanation. I will inspect, classify, recall, compare, and finish an observation record. Mara is our instructor in the teaching bay. She is not the gardener; the gardener is mentioned only in the written account.",
- conclusion:"My initial observations were 11:35 on the wall clock, a green mug beside the ledger, and a closed hatch. The note's statement about checking every tray is a claim. My idea that the gardener left in a hurry is an inference. I corrected my mistaken recall of the hatch, then recorded the later 11:50 reading and open hatch as two changes. I still cannot say who caused them. I finish by requesting tray-check records and preserving that uncertainty in my observation record.",
+ conclusion:"My initial observations were 11:35 on the wall clock, a green mug beside the ledger, and a closed hatch. The note's statement about checking every tray is a claim. My estimate of a thirty-five-minute inspection is an inference: the clock reading supplies no start time. I corrected my mistaken recall of the hatch, then recorded the later 11:50 reading and open hatch as two changes. I still cannot say who caused them. I finish by requesting tray-check records and preserving that uncertainty in my observation record.",
  intentions:{
  inspect:"I start with the wall clock. I read its hands and write the time, without inventing a reason why the room looks this way.",
  note:"I inspect the note beside the ledger. I can observe that the note exists, but I have not independently checked its statement that every tray was inspected.",
- cause:"I consider the empty mug. A hurried departure is one possible explanation, not something I can see directly.",
+ cause:"I compare the clock reading with my duration estimate. Thirty-five minutes would require a justified start time; the scene supplies none.",
  recall:"With the scene covered, I reconstruct the hatch state. I initially remembered it as open. I check my original record and preserve the correction to closed.",
  compare:"I compare the second inspection with my first record, feature by feature. I look for changes and things that stayed the same.",
  verify:"I choose the next record that could test the gardener's claim. Someone's handwriting or confident manner cannot establish whether the trays were checked."
@@ -53,39 +53,42 @@ const scripts:Record<string,Script> = {
  run:"I apply five input turns and compare the output amount and direction with my prediction. Movement alone is not enough.",
  transfer:"The output requirement has changed. I recompute the gear ratio while retaining the cam and spring checks that remain valid."
  }},
- "lab-05":{
- task:"I need to diagnose two different faults in a fictional nine-volt beacon. I will compare readings at named points, isolate the model before replacement, restore power, and verify the output. My finished circuit diagnosis must explain why each test was useful.",
- conclusion:"The first powered trace was nine, nine, zero, zero volts across source, fuse, cable and beacon supply. That supported an open cable. After isolated replacement, I verified both nine volts at the beacon and visible light. The second dark beacon had nine volts throughout, so I used an isolated continuity check to identify an open lamp. My record distinguishes these two fault types and limits the conclusion to the supplied model.",
- intentions:{
- measure:"I record the source and downstream readings while the model is powered, keeping each reading attached to its probe location.",
- locate:"I find the first missing supply after a healthy point. I compare the cable input and output rather than guessing the familiar fuse fault.",
- isolate:"I switch the model source off before replacing the cable. I retain the earlier powered measurements as the diagnostic evidence.",
- verify:"After replacement, I restore power and check both the beacon supply and visible light.",
- load:"The second beacon has supply voltage but no light. I isolate power and test the lamp's continuity instead of looking for a supply zero that is absent.",
- conclude:"I compare the repaired cable fault with the repaired lamp fault. The different evidence required a different check."
- }},
- "lab-06":{
- task:"I must identify which weather ledger satisfies a signed request. I will compare section count and digest, keep the timeline separate from identity, and revise my recommendation after an authorised amendment. My finished evidence timeline must preserve both decisions and their authority.",
- conclusion:"North matched the original eighteen-section, Q-7 request. East was newer but carried Q-9, so recency did not make it the original answer. The later signed amendment requested Q-9, making East the current selection. I retained North's earlier justification and stated that matching a supplied reference does not prove the weather observations scientifically correct.",
- intentions:{
- contract:"I read the signed requirement before choosing a ledger. I need the required section count and the reference digest.",
- timeline:"I order the timestamps, then keep that ordering separate from the identity check. Newest does not automatically mean required.",
- compare:"I compare each candidate against both requirements. A correct count alone cannot establish the requested content identity.",
- limit:"I state exactly what the digest comparison establishes. Reference agreement does not verify every scientific observation inside the ledger.",
- amend:"I read the signed amendment and change the current selection under its new requirement. I preserve my earlier choice under the original request.",
- record:"I write a recommendation that names the current authority, the matching ledger and the question still unresolved."
- }},
- "lab-07":{
- task:"I need to test and repair the observatory's fictional access charter. I will compare intended rights with observed decisions, fix the role condition, test permitted and forbidden actions, and document a later policy change. My completed audit must show why each expected result is justified.",
- conclusion:"The charter gave release approval to the custodian, but the initial system allowed a reader to approve. I preserved that failed test, repaired the role condition, and checked that legitimate reading, maintenance and approval still worked. A later calibration hold suspended approval without removing other rights. My audit retains both policy versions and distinguishes a bug fix from an authorised change.",
- intentions:{
- mandate:"I turn the written charter into an expected decision before testing the system.",
- negative:"I request approval as a reader and record the actual result, even though it contradicts the charter. A failed test is useful evidence.",
- repair:"I change the approval condition itself. Hiding a button would not repair the underlying decision.",
- positive:"I check that maintenance and legitimate approval still work, as well as testing the prohibited request.",
- hold:"I apply the published calibration hold only to the affected approval right and retain the repaired original matrix.",
- audit:"I label each test with the rule that governed it, so a reader can tell why a later expected result changed."
- }},
+ "lab-05": {
+  "task": "I must restore one fictional nine-volt beacon. This case allows more than one fault at the same time, unlike the assigned lab's single-fault cases. I will locate a supported supply fault, make a controlled repair, test the original symptom, and continue if the beacon still fails. My diagnosis must preserve the incomplete first repair as well as the final working result.",
+  "conclusion": "My initial trace was nine, nine, zero, zero volts across source, fuse, cable and lamp supply. I diagnosed and replaced the cable while isolated. That restored nine volts throughout, but the same beacon stayed dark. The first diagnosis was useful, not complete. An isolated continuity test then identified an open lamp. After replacing it and restoring power, I verified nine volts and visible light. My record keeps both faults, the failed intermediate verification and the final result. I will use the assigned case's own one-fault rule and measurements rather than assume every circuit shares this example's two defects.",
+  "intentions": {
+    "measure": "I read the rule that several faults may coexist. I power the model for voltage readings and record each point. A missing supply means I cannot yet conclude that the lamp itself is healthy.",
+    "locate": "I compare the healthy fuse output with the zero cable output. This supports a cable fault, while the load remains untested. I state that limit before changing a component.",
+    "isolate": "I isolate power and replace only the cable justified by the trace. I keep the lamp unchanged so the next check can tell me what the cable repair actually achieved.",
+    "verify": "I restore power to the same beacon. All supply points now read nine volts, but the lamp is still dark. I record a successful supply repair and an unsuccessful whole-system check together.",
+    "load": "Healthy supply with a dark output gives me a new question about the lamp. I isolate power and check its continuity. The open result identifies a second defect in the same beacon.",
+    "conclude": "With power isolated, I replace the confirmed open lamp. I restore power and verify both supply and light. I preserve the first failed verification because it explains why the second test was necessary."
+  }
+},
+ "lab-06": {
+  "task": "I must choose a weather ledger using both content evidence and instruction authority. The case's register states which requests are authenticated. I will establish a valid first selection, receive an unsigned proposal, decide whether it can change the current requirement, then inspect a genuinely authenticated instruction and a repaired candidate. My completed timeline must explain a decision that stayed valid as well as a later justified change.",
+  "conclusion": "North met authenticated R1: eighteen sections and Q-7. It happened to be newest, but the count and digest justified it. An unsigned eight o'clock message requested East and Q-9. Because the register marked that message unverified, I retained North and asked for authority. Later, authenticated R2 required eighteen sections and Q-12, and South version S2 supplied exactly that after a recorded repair. I checked those two new facts separately before selecting South S2. I preserved the original incomplete South, the North decision and the unsigned message. The final recommendation verifies authority, completeness and identity, not the scientific truth of every weather observation.",
+  "intentions": {
+    "contract": "I read the rule for a request to supersede the current authority. I record R1's section count and digest before comparing the candidates.",
+    "timeline": "I order East, South and North by their timestamps. North is newest here; that does not make it either right or wrong. The reference comparison decides the selection.",
+    "compare": "I compare every record against R1. North has both eighteen sections and Q-7; the alternatives fail at least one required condition.",
+    "limit": "The later message proposes East, but the authority register marks the request unverified. I preserve it as a claim, retain North under the still-current R1, and request authentication.",
+    "amend": "The register now authenticates R2, requiring Q-12. A separate repair receipt supplies South S2 with eighteen sections and Q-12. I verify both the authority and the new version before changing the selection.",
+    "record": "I keep three distinct decisions: North under R1, no authorised change from the unsigned message, and South S2 under authenticated R2. I preserve the incomplete original South and explain the remaining scientific limit."
+  }
+},
+ "lab-07": {
+  "task": "I must repair the observatory’s embargo charter. Maintainers may service equipment but may not read research. I will preserve an excessive permission and a missing required permission, repair the two cells, retest the complete matrix and then apply a narrow release hold. My audit must distinguish a bug from a later authorised change.",
+  "conclusion": "The faulty table allowed maintainer research reading and blocked reader reading. I denied the former and restored the latter without removing service or custodian duties. All nine decisions then matched the embargo charter. A later release hold changed only custodian approval. My completed audit retains the failed tests and both justified versions; the assigned lab has a different reading rule and must be derived afresh.",
+  "intentions": {
+    "mandate": "I derive each right from the explicit embargo rather than assuming service responsibility grants research visibility.",
+    "negative": "I record both actual failures before editing: forbidden maintainer reading and blocked reader reading.",
+    "repair": "I correct only the two mismatched cells and preserve the seven already valid decisions.",
+    "positive": "I retest positive and negative cases, including the different reading results for reader and maintainer.",
+    "hold": "I apply the new release hold only to custodian approval and keep the research embargo unchanged.",
+    "audit": "I attach the governing charter or notice to each result so the two versions remain explainable."
+  }
+},
  "lab-08":{
  task:"I need to pass an instruction between an analyst and an operator without losing its meaning. I will state destination, quantity and code, expose a mistaken read-back, correct it, and repeat the protocol for a new message. My completed handoff record must include confirmation.",
  conclusion:"The first confirmed message was Dome, five cases, VIOLET. The operator first repeated four; I kept that mismatch and the correction. The next message changed to Pool, two, SILVER and received a fresh read-back. My record includes both complete messages and confirmations, showing how the protocol survives changed information.",
@@ -97,17 +100,18 @@ const scripts:Record<string,Script> = {
  confirm:"I wait for a complete read-back of destination, count and code, then confirm all three.",
  transfer:"I replace all three fields with the new card's values and perform another read-back. Earlier confirmation cannot approve a changed message."
  }},
- "lab-09":{
- task:"I am mediating a conservatory council. Ada, Rin and Bo are represented by their labelled accounts and role dossiers; Mara remains our instructor. I must test claims, check carrying capacity, negotiate within the mandate, and revise the agreement if the objective changes. My finished council record should justify an agreement without pretending to read minds.",
- conclusion:"Rin's identical-copy claim conflicted with the R-4 and R-8 record, but that did not establish intent. The five-unit cart could not support the seven-unit original. Under the first objective, I agreed on a verified copy with custody recorded. The later provenance requirement needed the original stabilised pending supported handover. My record preserves both agreements, their constraints and the unresolved question about intent.",
- intentions:{
- role:"I establish what my mediator role may decide. I can negotiate a documented agreement, not simply order the original removed.",
- claim:"I test the identical-copy claim against the digest record. I do not use confidence or appearance as evidence of truth.",
- capacity:"I compare the seven-unit load with the cart's five-unit capacity. The uninstalled cradle is a possible remedy, not support already available.",
- agree:"I look for an agreement that meets research access while preserving the caretaker's custody conditions.",
- change:"The new signed objective requires physical provenance. I revise the agreement because a copy alone no longer completes that objective.",
- record:"I keep the contradicted claim, capacity evidence and two agreements, while leaving the speaker's intent unresolved."
- }},
+ "lab-09": {
+  "task": "I am mediating a conservatory handover with Ada, Rin and Bo represented in the records. The original brief requests a physical provenance examination. I will test the copy claim, compare load with certified capacity, prepare an authorised agreement, then reconsider it if the brief changes before dispatch.",
+  "conclusion": "The two twelve-section copies both matched R-4, supporting Rin’s specific claim. The seven-unit original fit the nine-unit cart, so a documented physical handover to Mira was feasible under the first brief. Before dispatch, a replacement request required remote access while the original stayed with Ada. I revised the agreement to a verified Cedar copy, preserved the unexecuted physical plan and made no claim about Rin’s general honesty.",
+  "intentions": {
+    "role": "I read the original request and custody conditions before assuming a copy is sufficient.",
+    "claim": "I compare both digests and counts. This time the record supports the limited claim rather than contradicting it.",
+    "capacity": "I check seven against nine instead of assuming the cart has the same deficit as another scenario.",
+    "agree": "I prepare the physical agreement with a named recipient and custody record while clearly stating dispatch has not happened.",
+    "change": "I reread the replacement brief. It changes the desired outcome, so the usable cart no longer justifies moving the original.",
+    "record": "I keep the corroborated claim and both agreements while stating their scope and actual completion status."
+  }
+},
  "lab-10":{
  task:"I need to predict and test contacts on an invented instrumented floor grid. I will read the coordinate rule, trace two routes, compare predicted and recorded contacts, then recompute after coverage changes. My output is a route and trace explanation, not a success badge.",
  conclusion:"The first route reached cell three and contacted sensor fifteen once. The alternative east route made zero contacts under the original sensor set, with the same number of moves. When sensors moved to twenty-one, twenty-two and twenty-three, that east route made three contacts. I preserved both traces under their respective rules and chose by the stated training objective.",
@@ -119,17 +123,18 @@ const scripts:Record<string,Script> = {
  change:"The sensor set has changed. I recompute the prediction without overwriting the earlier trace under the old rule.",
  defend:"I state whether my objective is testing a detector or minimising contact before I recommend a route."
  }},
- "lab-11":{
- task:"I must revise a plan after the east bridge closes. I will preserve Version One, identify the affected dependency, retain valid evidence, assign the new check, and communicate Version Two. My revision record must make the change traceable.",
- conclusion:"Version One used the east bridge. The closure invalidated that route but did not change the signed ledger comparison or completed trolley check. Version Two adds a platform-capacity check owned by the systems specialist before crossing west. I kept the original plan and confirmed every role received the revised route and stop condition.",
- intentions:{
- baseline:"I freeze the original sequence before considering the disruption, so the later comparison has a real baseline.",
- disruption:"I identify the dependency the closure invalidates and the condition attached to the alternative route.",
- retain:"I carry forward the unchanged signed comparison and completed trolley inspection without claiming they verify the new platform.",
- assign:"I give the platform-capacity check a named owner and identify who must receive its result.",
- revise:"I add the capacity check before west-platform movement and keep Version One intact.",
- communicate:"I confirm every role received the changed route and knows movement must wait for the new check."
- }},
+ "lab-11": {
+  "task": "I must revise a dispatch plan after its old authority is withdrawn. The routes stay open and equipment remains valid. I will preserve Version One, identify the new permission prerequisite, assign its checks and reorder the plan so authority is recorded before sealing.",
+  "conclusion": "The new notice invalidated the old authority, not the route or signed identity result. Version Two checks recipient scope and records replacement authorisation before sealing, then uses the same dispatch route and receipt step. The investigator checks scope; the coordinator receives the result and records authority. Both versions and the stop condition remain visible, without claiming that dispatch or authorisation has already occurred.",
+  "intentions": {
+    "baseline": "I preserve the original sequence under its original authority before reading the change.",
+    "disruption": "I locate the newly invalid permission dependency; there is no closed passage to work around.",
+    "retain": "I retain identity and equipment findings only for the questions they answer.",
+    "assign": "I name the investigator as scope checker and the coordinator as the recipient who records authority before sealing.",
+    "revise": "I insert the two prerequisites before sealing rather than appending them after dispatch.",
+    "communicate": "I read back the changed order and stop condition and distinguish an acknowledged plan from a completed operation."
+  }
+},
  "lab-12":{
  task:"I need to recover verified rainfall data while preserving the original recorder. I will define success, separate an operator's claim from evidence, verify support equipment and data identity, then agree a documented handoff. My after-action account must compare the result with the actual objective.",
  conclusion:"I recorded the 16:25 display and amber lamp, kept completeness as a claim, and verified the support lift's two opposite output turns. Ash matched the twelve-record W-6 request. The agreed recovery transferred that verified copy while leaving the recorder stable at its mast. I completed the account with the original's location, confirmed handoff and unresolved calibration question.",
@@ -167,21 +172,22 @@ const scripts:Record<string,Script> = {
  verify:"I run the model and compare both output magnitude and direction with my prediction.",
  transfer:"I recompute the follower for four output turns, retain the valid readiness conditions and preserve the first result."
  }},
- "assessment-a2":{
- task:"We are Ari and Nia, the fictional pair completing the Iris Relay example. We must diagnose the circuit, verify an archive, repair permissions and complete confirmed handoffs while rotating responsibilities. I will narrate our shared record as we work, then show both contributions and the joint explanation. The names on the role cards are our example roles, not the instructor.",
- conclusion:"We diagnosed the open fuse from the powered twelve, zero, zero, zero trace, repaired it while isolated and verified the lamp. Delta met I-4; the later signed I-8 amendment changed our selection to Echo without erasing the first decision. We checked all nine permission cells and preserved useful work. We corrected the first South Dome handoff to four, TEAL, then confirmed Hill Station, two, GOLD after another role exchange. The complete package includes both role records, the policy comparison, revision and joint explanation.",
- intentions:{
- roles:"We agree who operates and who holds the requirement cards, and when we will exchange those responsibilities.",
- measure:"Ari records the powered trace while Nia compares competing fault predictions. We locate the missing supply before replacing anything.",
- isolate:"Ari isolates the source for fuse replacement while preserving the powered diagnostic readings.",
- verify:"We restore power and verify the supply and light before Nia becomes operator and Ari takes the requirement pack.",
- archive:"Nia compares the candidates against the section count and digest that Ari reads from the original request.",
- matrix:"We repair every role and action decision against the charter, preserving intended access as well as removing excess rights.",
- regression:"We test a permitted service operation and a prohibited reader approval, alongside the full matrix.",
- handoff:"We correct the first count mismatch, repeat destination, quantity and code, then obtain confirmation.",
- amend:"We apply the signed amendment to the archive selection and keep the earlier choice under its original authority.",
- "final-handoff":"We rotate responsibilities again and confirm every field of the revised handoff. The earlier confirmation cannot carry over."
- }},
+ "assessment-a2": {
+  "task": "We are Ari and Nia, the fictional pair restoring Iris Relay. A dark lamp has supply at every test point, so we must choose a test that separates available voltage from a working load. We will also compare identical archive mirrors, respond to a changed evidence scope, repair the policy, and complete two confirmed handoffs while rotating roles. Our finished work includes both contribution records, preserved versions and a joint explanation. Mara is the instructor, not either partner.",
+  "conclusion": "We measured twelve volts throughout the dark circuit, then isolated it and found the lamp open while fuse and cable were continuous. After lamp replacement the voltages stayed the same, but the light worked. Both Delta and Echo satisfied the first twenty-two-section I-4 request. The amendment added six calibration-trace sections, so Foxtrot became the required twenty-eight-section I-9 bundle without making the original mirrors corrupt. We verified all nine policy decisions, corrected the South Dome count to four with TEAL, and completed a fresh Hill Station, two, GOLD handoff after rotating again. Our complete record explains the changed test, the non-unique first match and the scope-based revision.",
+  "intentions": {
+    "roles": "We state who operates, who supplies the requirements, and when we will exchange those responsibilities.",
+    "measure": "Ari records twelve volts at all four supply points while the lamp remains dark. Nia chooses isolated continuity because this trace contains no supply break to locate.",
+    "isolate": "We isolate power, record the lamp as OPEN and the fuse and cable as continuous, then replace only the lamp while retaining that diagnostic evidence.",
+    "verify": "We restore power. The voltage trace stays at twelve volts throughout, but the lamp now lights. We verify that output before Nia operates and Ari takes the requirement pack.",
+    "archive": "We compare all candidates against the exact core-only scope. Both identical mirrors match; neither timestamp justifies excluding the other.",
+    "matrix": "We repair the complete policy against its charter, retaining each specialist responsibility and removing reader excess rights.",
+    "regression": "We check an allowed maintainer service and a denied reader approval, alongside the other seven expected decisions.",
+    "handoff": "We keep the first core-package instruction separate from the copy-equivalence finding. We correct three to four, repeat all fields, and obtain confirmation.",
+    "amend": "We read the additional trace requirement. The original mirrors still match the old scope; the larger Foxtrot bundle alone contains the newly requested evidence.",
+    "final-handoff": "We rotate responsibilities again and attach a fresh confirmed message to the amended trace package. We do not reuse the old package confirmation."
+  }
+},
  "assessment-final":{
  task:"We are Lena, Omar, Priya and Jonah, the example team for Operation Lamplight at Halcyon Observatory. We must recover verified research while preserving original records and custody. I will narrate our shared decisions, showing who owns each check and who receives it. We will preserve a baseline rehearsal, respond to a disruption, test a revised plan, execute the final run, and assemble the dossier, presentation script and delivery plan and individual defences. This is a complete alternate example for learning the method; your assigned operation has different conditions.",
  conclusion:"Our baseline recovered the verified H-3 atlas with cradle support and a recorded receipt. We kept that rehearsal as Version One. In the second rehearsal, the east route closed, the cradle was withdrawn and the signed research requirement changed to H-8. We stopped unsupported movement and built Version Two around verified Cinder data, the west route and explicit digital custody. Both the revised rehearsal and final run recorded one predicted contact at cell five. Venn acknowledged the copy; Quill confirmed the original stayed supported at its original location. Our dossier includes the contract, evidence, crew responsibilities, two rehearsals, preserved plans, final receipt, presentation script and delivery plan and individual defences. It explains that data identity and custody are verified while scientific accuracy and future physical provenance work remain separate questions. The ending supports our explanation; it does not determine an academic grade.",

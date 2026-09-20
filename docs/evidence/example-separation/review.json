@@ -1,0 +1,248 @@
+{
+  "scope": "Local production preview. Final revised example states at desktop and phone viewports.",
+  "views": [
+    {
+      "id": "lab-05",
+      "step": "verify",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-05",
+      "step": "conclude",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-06",
+      "step": "limit",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-06",
+      "step": "amend",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-07",
+      "step": "repair",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-09",
+      "step": "agree",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-09",
+      "step": "change",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-11",
+      "step": "revise",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "measure",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "archive",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "amend",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-05",
+      "step": "verify",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-05",
+      "step": "conclude",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-06",
+      "step": "limit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-06",
+      "step": "amend",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-07",
+      "step": "repair",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-09",
+      "step": "agree",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-09",
+      "step": "change",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "lab-11",
+      "step": "revise",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "measure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "archive",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "id": "assessment-a2",
+      "step": "amend",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "correct": true,
+      "panelOverflow": false,
+      "pageErrors": []
+    }
+  ],
+  "limits": "Automated acceptance and rendered inspection do not establish student learning or audible narration quality."
+}

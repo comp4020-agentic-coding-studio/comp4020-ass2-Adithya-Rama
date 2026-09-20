@@ -47,7 +47,11 @@ Build detailed, legible apparatus and original stylised spaces. Show the actual 
 
 ## Complete worked demonstrations
 
-Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration. Each needs:
+Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration.
+
+Compare each example with its assigned browser and campus cases, including Practice, Skill check and Transfer. Share the capability, method and submission standard; require fresh interpretation of the actual evidence, constraints and decisions. Renaming people or replacing numbers is insufficient when the full answer pattern and reasoning remain unchanged. Preserve a per-example comparison and protect consequential differences with tests; do not call a non-empty “difference” label proof of separation.
+
+Each needs:
 
 - Authored before/after scenes, reasoning, a decision, causal feedback, a plausible mistake and a hint.
 - Hands-free Watch playback starts narration after the user's Watch or Play action, with a prominent mute control, pause, replay, chapter access, adjustable pace and matching captions. Never start sound on page load.

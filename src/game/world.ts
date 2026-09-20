@@ -252,7 +252,7 @@ export class AcademyWorld {
   if(this.dynamic.bulb instanceof THREE.Mesh){
    const powered=Boolean(v.powered),fault=String(v.fault||'none');const lit=powered&&['none','repaired','intact',''].includes(fault);
    const m=this.dynamic.bulb.material as THREE.MeshStandardMaterial;m.color.set(lit?0xffe3a1:0x788e88);m.emissive.set(lit?0xffbd5d:0);m.emissiveIntensity=lit?1.7:0;
-   this.rewriteText(this.dynamic.demoReadout2,Number(v.voltage||0)+' V  ·  '+(lit?'LOAD ON':powered?'CIRCUIT UNDER TEST':'POWER ISOLATED')+'  ·  '+(fault==='none'?'No open fault':fault));
+   this.rewriteText(this.dynamic.demoReadout2,Number(v.sourceVoltage??v.voltage??0)+' V  ·  '+(lit?'LOAD ON':powered?'CIRCUIT UNDER TEST':'POWER ISOLATED')+'  ·  '+(String(v.faultLabel||(fault==='none'?'No open fault':fault))));
   }
   if(this.dynamic.assembly){this.updateDemoConnectors(v.ports);this.dynamic.assembly.rotation.y=-finiteSceneNumber(v.orientation,0,-3600,3600)*Math.PI/180;this.dynamic.assembly.position.y=1.6+finiteSceneNumber(v.level,0,0,8)*.3;}
   if(this.dynamic.board){
@@ -530,16 +530,17 @@ export class AcademyWorld {
   this.equipmentAt(handle,'Turn the crank','crank',new THREE.Vector3(-.6,2.2,-3));this.equipmentAt(this.gears[1]!,'Change the driven gear','gear',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(cam,'Set the cam angle','cam',new THREE.Vector3(.06,2.2,-3));this.equipmentAt(this.dynamic.lock!,'Release or engage the interlock','interlock',new THREE.Vector3(1.3,2.2,-3));this.equipmentAt(this.dynamic.spring!,'Attach or detach the return spring','spring',new THREE.Vector3(-1.1,1.8,-3));this.dynamic.readout=this.text('12 : 24',0,3.3,-3.2,1.4,'#f4d599');
  }
  private makeCircuit(_bench:THREE.Object3D){
+  const supply=this.mode==='demo'?finiteSceneNumber(this.demo?.values?.sourceVoltage??this.demo?.values?.voltage,6,0,48):6;
   const cart=this.addAsset('ServiceCart',-4,0,-.5,1.3);cart.rotation.y=.4;
   const plate=this.box(2.9,.10,1.14,0,1.6,-3,materials.dark);this.markStaging(plate,'circuit','Mounted low-voltage diagnostic circuit','desk');const battery=this.box(.43,.4,.4,-1.05,1.85,-3,materials.green);
-  this.box(.1,.07,.1,-1.05,2.075,-3,materials.bronze);this.text('6 V',-1.05,2.2,-2.96,.55);
+  this.box(.1,.07,.1,-1.05,2.075,-3,materials.bronze);this.text(supply+' V',-1.05,2.2,-2.96,.55);
   const fuse=this.box(.45,.13,.2,-.25,1.75,-3,materials.stone);this.box(.13,.15,.23,-.48,1.75,-3,materials.bronze);this.box(.13,.15,.23,-.02,1.75,-3,materials.bronze);
   this.cylinder(.24,.23,1,1.75,-3,materials.bronze);
   const bulb=new THREE.Mesh(new THREE.SphereGeometry(.2,20,12),new THREE.MeshStandardMaterial({color:0x989582,emissive:0x000000}));bulb.position.set(1,2,-3);this.environment.add(bulb);this.dynamic.bulb=bulb;
   this.line([new THREE.Vector3(-1.05,1.67,-2.7),new THREE.Vector3(-1.05,1.7,-2.5),new THREE.Vector3(1,1.7,-2.5),new THREE.Vector3(1,1.75,-3)],materials.red);
   this.line([new THREE.Vector3(-1.05,1.7,-3.2),new THREE.Vector3(-1.05,1.7,-3.45),new THREE.Vector3(1,1.7,-3.45),new THREE.Vector3(1,1.75,-3)],materials.green);
   this.box(.37,.11,.6,.25,1.71,-2.7,materials.bronze);this.box(.25,.012,.25,.25,1.775,-2.84,materials.teal);
-  this.equipmentAt(plate,'Six-volt diagnostic bench','circuit',new THREE.Vector3(0,1.9,-3));this.equipmentAt(battery,'Measure the battery','measure-battery',new THREE.Vector3(-1,1.9,-3));
+  this.equipmentAt(plate,(this.mode==='demo'?supply+' V':'Six-volt')+' diagnostic bench','circuit',new THREE.Vector3(0,1.9,-3));this.equipmentAt(battery,'Measure the battery','measure-battery',new THREE.Vector3(-1,1.9,-3));
   this.equipmentAt(fuse,'Measure across the fuse','measure-fuse',new THREE.Vector3(-.25,1.8,-3));this.equipmentAt(bulb,'Measure the lamp','measure-lamp',new THREE.Vector3(1,2,-3));
  }
  private makeSpatial(_bench:THREE.Object3D){

@@ -126,7 +126,7 @@ describe('authored demonstration validation',()=>{
 
 
 describe('published demonstration catalog',()=>{
- it('provides a distinct complete worked example for all twelve labs and four assessments',()=>{
+ it('provides a complete labelled worked example for all twelve labs and four assessments',()=>{
   expect(demonstrations).toHaveLength(16);
   expect(new Set(demonstrations.map(item=>item.id)).size).toBe(16);
   expect(demonstrations.filter(item=>item.kind==='lab').map(item=>item.week).sort((a,b)=>a!-b!)).toEqual(Array.from({length:12},(_,i)=>i+1));

@@ -128,25 +128,31 @@ const contexts: Record<string, SceneContext> = {
     apparatus: "The bench assembly is the lift's teaching model. Its gear output represents the specified lift behaviour."
   },
   'demo:lab-05': {
-    title: "People and the beacon circuit",
-    setting: "A nine-volt bench beacon with cable and load fault examples.",
-    people: ["The example learner takes the recorded measurements. Mara is the teaching guide."],
-    evidence: "Use source and node readings, isolated continuity and beacon output. Room lighting is not a measurement.",
-    apparatus: "The beacon is a labelled circuit rig. Its nine-volt example values differ from the assigned six-volt lab."
+    "title": "People and the beacon with several possible faults",
+    "setting": "One nine-volt bench beacon remains under investigation throughout; its case rule permits simultaneous faults.",
+    "people": [
+      "The example learner performs the recorded tests and repairs. Mara is the teaching guide; her gestures and the room lights are not measurements."
+    ],
+    "evidence": "Use named probe readings, isolated continuity and the same beacon’s light output. Preserve any failed verification after a repair; a repaired prerequisite does not prove the whole device works.",
+    "apparatus": "The beacon is one labelled circuit rig. It is not exchanged for a second specimen between chapters. Its multiple-fault rule differs from the assigned lab’s one-fault configurations."
   },
   'demo:lab-06': {
-    title: "People and the weather records",
-    setting: "North, East and South weather-ledger candidates.",
-    people: ["The requesting authority appears through the signed request and amendment. Mara is not that authority; the demonstrator is the example investigator."],
-    evidence: "Use section counts, digests and the current signed request. Matching a reference does not establish the scientific truth of each weather observation.",
-    apparatus: "The displayed books represent record candidates. Names and cover appearance identify them; the recorded data supports the decision."
+    "title": "People, proposed instructions and verified authority",
+    "setting": "Weather-ledger versions are compared with an authority register, including an unsigned proposal and a later authenticated instruction.",
+    "people": [
+      "The requesters are represented through supplied messages and authority records. Mara does not authenticate a request by standing near it; the example learner checks the case’s register."
+    ],
+    "evidence": "Check whether an instruction is authenticated, then compare the required completeness and identity. Keep an unverified message as a claim and preserve old record versions when a repaired version arrives.",
+    "apparatus": "The displayed books represent record versions, not their authors. Labels and timestamps identify a version; the supplied authority and comparison records justify using it."
   },
   'demo:lab-07': {
-    title: "Who the policy roles represent",
-    setting: "A local telescope-record permission charter.",
-    people: ["Reader, maintainer and custodian are test identities in the policy. They are not the visible student or instructor."],
-    evidence: "Use the charter and later calibration hold to interpret expected and observed permissions.",
-    apparatus: "The matrix is a model of access decisions. Character appearance and room position do not grant authority."
+    "title": "Who the embargo roles represent",
+    "setting": "A local telescope charter separates research reading from equipment service.",
+    "people": [
+      "Reader, maintainer and custodian are policy identities, not the visible learner or instructor. Maintainers have a specific research-reading restriction in this example."
+    ],
+    "evidence": "Use the embargo charter, observed faulty table and later release hold. The maintainer’s equipment role does not imply permission to read research.",
+    "apparatus": "The matrix represents nine role/action decisions. Its labels and charter define authority; character appearance or location does not."
   },
   'demo:lab-08': {
     title: "Who sends the delivery instruction",
@@ -156,11 +162,13 @@ const contexts: Record<string, SceneContext> = {
     apparatus: "The dispatch table and cases represent a delivery instruction. The response controls record its destination, quantity, code and acknowledgement."
   },
   'demo:lab-09': {
-    title: "Who speaks in this council",
-    setting: "Caretaker Ada, archivist Rin and engineer Bo disagree about a field ledger.",
-    people: ["Ada, Rin and Bo are named in the example's records and dialogue. They are distinct from Mara and the example learner, who acts as mediator. Council dossiers identify the speakers."],
-    evidence: "Compare Rin's copy claim with the digests, Bo's proposal with capacity, and Ada's agreement with the mandate. Do not infer honesty from a character's appearance.",
-    apparatus: "The table, record objects and capacity display represent the discussion and its constraints. They do not show a completed handover."
+    "title": "Who speaks in the changing-brief council",
+    "setting": "Ada, Rin and Bo prepare a physical handover to Mira; a replacement request arrives before dispatch.",
+    "people": [
+      "Ada is caretaker, Rin compares copies and Bo checks capacity; their labelled dossiers identify the council roles. Mira is the proposed recipient named in the written record, not an additional person shown in the 3D scene. None is Mara. The example learner mediates."
+    ],
+    "evidence": "Matching digests corroborate a limited claim; the seven-unit original fits the nine-unit cart. The replacement brief changes the required outcome before dispatch.",
+    "apparatus": "The council display represents evidence and proposed agreements. Capacity does not prove movement occurred, and role dossiers are not additional witnesses."
   },
   'demo:lab-10': {
     title: "Who the route marker represents",
@@ -170,11 +178,13 @@ const contexts: Record<string, SceneContext> = {
     apparatus: "The grid models the gallery; its numbered cells define movement. Walking elsewhere in the teaching room does not run the route."
   },
   'demo:lab-11': {
-    title: "Who owns the revised checks",
-    setting: "A conservatory delivery plan affected by an east-bridge closure.",
-    people: ["The systems role checks platform capacity; the coordinator must receive its result. These are named responsibilities in the example plan, not actions performed by Mara."],
-    evidence: "Use the closure notice, retained ledger and trolley evidence, new capacity check and acknowledged revision.",
-    apparatus: "The original and revised plan boards describe dependencies. They are not a live bridge or proof that delivery has happened."
+    "title": "Who verifies the new authority",
+    "setting": "A dispatch plan receives a new authorisation prerequisite while routes and equipment stay available.",
+    "people": [
+      "The investigator checks recipient scope. The coordinator receives the result and records replacement authority before sealing. These are assigned responsibilities, not actions performed by Mara."
+    ],
+    "evidence": "Use the superseding notice, unchanged identity record, revised order and acknowledged stop condition. An open route is not release authority.",
+    "apparatus": "The before/after boards represent plan versions. They do not prove permission was granted, a case was sealed or a delivery occurred."
   },
   'demo:lab-12': {
     title: "Who is responsible at Lark Weather Mast",
@@ -198,11 +208,13 @@ const contexts: Record<string, SceneContext> = {
     apparatus: "Room fixtures belong in the observation scene. The connector and exposed carriage mechanism are separate teaching rigs used in later chapters."
   },
   'demo:assessment-a2': {
-    title: "Who Ari and Nia are",
-    setting: "An alternate twelve-volt relay and research dispatch console.",
-    people: ["Ari and Nia are the example student pair described in the narration and role records. Their responsibilities rotate. The single controllable avatar lets you try either role; Mara is their instructor, not Ari or Nia."],
-    evidence: "Use the pair's measurements, reference comparisons, policy tests and corrected read-backs. Keep each person's recorded contribution distinct.",
-    apparatus: "The bench circuit and dispatch console represent the relay exercise. Reader, maintainer and custodian are policy identities, distinct from Ari and Nia."
+    "title": "Who Ari and Nia are",
+    "setting": "Iris Relay: a twelve-volt dark-load diagnosis and mirrored-core versus calibration-trace records.",
+    "people": [
+      "Ari and Nia are the example student pair. They rotate operator, analyst, sender and receiver responsibilities. The controllable example student lets you try either role; Mara is the instructor, not Ari or Nia."
+    ],
+    "evidence": "Use the full-supply voltage trace, isolated lamp continuity, verified output, signed content scope, nine policy decisions and corrected read-backs. Two identical mirrors can both be valid under one request; a larger trace bundle needs its own scope justification.",
+    "apparatus": "The circuit and console are labelled teaching models. Reader, maintainer and custodian are policy identities, distinct from the pair. Archive book models identify records; their colours and positions do not establish authority."
   },
   'demo:assessment-final': {
     title: "Who belongs to Operation Lamplight",

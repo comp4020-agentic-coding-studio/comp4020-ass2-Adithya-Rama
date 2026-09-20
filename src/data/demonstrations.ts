@@ -12,7 +12,7 @@ export const demonstrations:Demonstration[] = [
     "subtitle": "Observe, test an account and correct an invented explanation.",
     "skill": "Observation and source judgement",
     "setting": "A glass conservatory after an interrupted instrument check.",
-    "difference": "This scene uses an 11:35 clock, green mug, closed hatch and a gardener's note; none is an assigned scene answer.",
+    "difference": "The conservatory uses its own 11:35 scene, a tray-check claim, an unsupported duration estimate, and a later two-feature comparison. Its recall and investigation decisions differ from the assigned scene.",
     "transfer": "Use the same observation/claim/inference distinction on your own scene, then inspect what changed.",
     "sourceHref": "/sessions/week-01/",
     "sourceLabel": "Week 1 lab",
@@ -284,10 +284,10 @@ export const demonstrations:Demonstration[] = [
       },
       {
         "id": "cause",
-        "title": "Challenge a plausible story",
-        "narration": "The green mug is empty. The demonstrator proposes that the gardener left in a hurry, but neither an empty mug nor a closed hatch identifies the reason for leaving.",
-        "why": "Several causes fit the same visible features. Naming one does not make it an observation.",
-        "prompt": "Classify 'The gardener left in a hurry'.",
+        "title": "Distinguish clock time from duration",
+        "narration": "The wall clock reads 11:35. The demonstrator initially writes that the tray inspection lasted thirty-five minutes. No start time or elapsed-time record has been supplied, so the duration is an inference.",
+        "why": "A clock reading gives a time of day. Duration needs a justified start and finish; the minute hand alone does not supply either.",
+        "prompt": "Classify 'The tray inspection lasted thirty-five minutes'.",
         "controls": [
           {
             "id": "classification",
@@ -318,12 +318,12 @@ export const demonstrations:Demonstration[] = [
             "clock": "11:35",
             "hatch": "closed",
             "mugColor": "#5b956c",
-            "selected": "mug"
+            "selected": "clock"
           },
           "labels": [
-            "Empty green mug"
+            "Clock time 11:35; start time unknown"
           ],
-          "focus": "mug",
+          "focus": "clock",
           "items": [
             {
               "id": "clock",
@@ -370,12 +370,12 @@ export const demonstrations:Demonstration[] = [
             "clock": "11:35",
             "hatch": "closed",
             "mugColor": "#5b956c",
-            "selected": "uncertain"
+            "selected": "clock"
           },
           "labels": [
-            "Cause remains unresolved"
+            "Inspection duration remains unresolved"
           ],
-          "focus": "mug",
+          "focus": "clock",
           "items": [
             {
               "id": "clock",
@@ -414,9 +414,9 @@ export const demonstrations:Demonstration[] = [
             }
           ]
         },
-        "success": "The causal explanation is recorded as an inference, with its uncertainty intact.",
-        "pitfall": "A familiar scene can make an unsupported cause feel certain.",
-        "hint": "Imagine another ordinary reason an empty mug might be present.",
+        "success": "The proposed duration is recorded as an unsupported inference. The observation remains the 11:35 clock reading.",
+        "pitfall": "Treating the minute hand as elapsed time silently invents a start at eleven o'clock.",
+        "hint": "What start time would you need before this clock reading could establish thirty-five elapsed minutes?",
         "duration": 18
       },
       {
@@ -828,7 +828,7 @@ export const demonstrations:Demonstration[] = [
     "artifact": {
       "title": "Completed observation record — conservatory",
       "filename": "worked-lab-01.md",
-      "markdown": "# Completed demonstration example — conservatory observation record\n\nThis alternate example shows a method. It is not an answer to the assigned lab.\n\n## Initial inspection\nAt the first inspection the clock displayed 11:35, a green mug stood beside the planting ledger and the service hatch was closed. These are supplied scene observations. A visible note asserted, “I checked every tray.” The note's presence is observable; its contents remain a claim.\n\n## Reconstruction and correction\nI initially recalled the hatch as open. Rechecking the scene showed that I had inserted a familiar detail. I preserved the incorrect recollection and correction rather than rewriting the attempt. I classified “the gardener left in a hurry” as an inference because several explanations fit an empty mug.\n\n## Changed situation\nAt the second inspection the clock read 11:50 and the hatch was open. The green mug remained unchanged. Two recorded features changed. No record established who opened the hatch or why.\n\n## Next investigation\nInspect the tray check records against the claimed complete inspection. Matching records would support the account within their scope; missing entries would require clarification.\n\n## Reflection\nMy main error was adding a plausible detail, not failing to look at an object. A regional inspection helped coverage, but preserving a separate interpretation column helped more with this mistake. In my own scene I would make the same distinction before building a story. I would not claim that two changed features prove a particular person's intent.\n\nRoute: authored 3D/interactive demonstration. Assistance: narrated example and one recorded correction."
+      "markdown": "# Completed demonstration example — conservatory observation record\n\nThis alternate example shows a method. It is not an answer to the assigned lab.\n\n## Initial inspection\nAt the first inspection the clock displayed 11:35, a green mug stood beside the planting ledger and the service hatch was closed. These are supplied scene observations. A visible note asserted, “I checked every tray.” The note's presence is observable; its contents remain a claim.\n\n## Reconstruction and correction\nI initially recalled the hatch as open. Rechecking the scene showed that I had inserted a familiar detail. I preserved the incorrect recollection and correction rather than rewriting the attempt. I classified “the tray inspection lasted thirty-five minutes” as an inference: the 11:35 reading alone supplies neither the inspection start nor its duration.\n\n## Changed situation\nAt the second inspection the clock read 11:50 and the hatch was open. The green mug remained unchanged. Two recorded features changed. No record established who opened the hatch or why.\n\n## Next investigation\nInspect the tray check records against the claimed complete inspection. Matching records would support the account within their scope; missing entries would require clarification.\n\n## Reflection\nMy main error was adding a plausible detail, not failing to look at an object. A regional inspection helped coverage, but preserving a separate interpretation column helped more with this mistake. In my own scene I would make the same distinction before building a story. I would not claim that two changed features prove a particular person's intent.\n\nRoute: authored 3D/interactive demonstration. Assistance: narrated example and one recorded correction."
     }
   },
   {
@@ -2369,22 +2369,22 @@ export const demonstrations:Demonstration[] = [
     "id": "lab-05",
     "kind": "lab",
     "week": 5,
-    "title": "The nine-volt beacon",
-    "subtitle": "Separate a missing supply from a failed load.",
+    "title": "The beacon with two faults",
+    "subtitle": "Repair one supply break, then explain why the same beacon still fails.",
     "skill": "Electronic fault diagnosis",
-    "setting": "A fictional bench beacon uses a nine-volt supply and a replaceable cable segment.",
-    "difference": "The supply voltage and equipment differ from the assigned circuit; a second fault requires a different diagnostic test.",
-    "transfer": "Identify probe locations, isolate before changes and verify both supply and output.",
+    "setting": "One fictional nine-volt beacon whose fault card permits more than one open component at the same time.",
+    "difference": "The assigned browser and campus circuits each contain exactly one open fault. This single beacon contains a cable break and an open lamp together: the first correct repair restores supply but does not restore light.",
+    "transfer": "Use the habit of checking the original symptom after a repair. Your assigned case promises one fault, so use its own trace and rules instead of assuming this example has revealed its component.",
     "sourceHref": "/sessions/week-05/",
     "sourceLabel": "Week 5 lab",
-    "estimatedMinutes": 8,
+    "estimatedMinutes": 10,
     "steps": [
       {
         "id": "measure",
-        "title": "Read the actual supply",
-        "narration": "The published source is 9 V. With power on, the source and fuse outputs read 9 V, but the cable output and beacon supply read 0 V. The demonstrator records the probe locations.",
-        "why": "A voltage belongs to a difference between points. Naming the node and common return makes the result repeatable.",
-        "prompt": "Record the source voltage.",
+        "title": "Read the case rule and initial trace",
+        "narration": "The case card says this one beacon may contain several faults at once. With power on, source and fuse outputs read 9 V; cable output and beacon supply read 0 V. The dark lamp cannot yet tell us whether its own load is healthy because supply is missing.",
+        "why": "A known supply break can hide a second defect. The assigned single-fault assumption does not apply to this example.",
+        "prompt": "Record the powered source and the case rule before diagnosing.",
         "controls": [
           {
             "id": "voltage",
@@ -2403,6 +2403,22 @@ export const demonstrations:Demonstration[] = [
             "type": "toggle",
             "initial": false,
             "expected": true
+          },
+          {
+            "id": "faultRule",
+            "label": "How many faults may coexist?",
+            "type": "select",
+            "options": [
+              {
+                "value": "Exactly one fault is guaranteed",
+                "label": "Exactly one fault is guaranteed"
+              },
+              {
+                "value": "More than one fault may coexist",
+                "label": "More than one fault may coexist"
+              }
+            ],
+            "expected": "More than one fault may coexist"
           }
         ],
         "before": {
@@ -2411,9 +2427,12 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": false,
-            "fault": "cable"
+            "fault": "cable-and-lamp",
+            "faultLabel": "Awaiting measurements",
+            "sourceVoltage": 9
           },
           "labels": [
+            "One beacon; multiple faults are possible",
             "Measure relative to common return"
           ],
           "focus": "source"
@@ -2424,28 +2443,31 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "cable"
+            "fault": "cable-and-lamp",
+            "faultLabel": "Supply break; load unknown",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Source 9 / Fuse 9 / Cable 0 / Beacon 0 V"
+            "Powered trace: 9 / 9 / 0 / 0 V",
+            "Lamp dark; load condition not yet established"
           ],
           "focus": "cable"
         },
-        "success": "The powered trace identifies where the supply first disappears.",
-        "pitfall": "A zero reading while isolated would not locate this supply fault.",
-        "hint": "Use the 9 V source named in this example.",
+        "success": "The trace establishes a supply interruption without declaring that it is the only defect.",
+        "pitfall": "Importing the assigned lab’s one-fault guarantee would make the first diagnosis falsely exhaustive.",
+        "hint": "Read this case’s fault-count rule, then separate the missing supply from the unknown lamp condition.",
         "duration": 18
       },
       {
         "id": "locate",
-        "title": "Localise the interrupted path",
-        "narration": "The first missing supply is after the cable segment. The fuse output remains healthy, so the demonstrator does not replace the fuse merely because it is often the cause of a dark lamp.",
-        "why": "Consecutive readings distinguish candidate faults with the same symptom.",
-        "prompt": "Select the fault supported by the readings.",
+        "title": "Locate the first supported fault",
+        "narration": "The fuse output is 9 V while the cable output is 0 V. That comparison supports an open cable. The demonstrator records a first diagnosis, not a claim that every other component is working.",
+        "why": "A diagnosis should say what the measurement discriminates. A downstream unpowered load remains untested.",
+        "prompt": "Identify the supported first fault and the limit of this conclusion.",
         "controls": [
           {
             "id": "fault",
-            "label": "Located open component",
+            "label": "First supported open component",
             "type": "select",
             "options": [
               {
@@ -2462,6 +2484,26 @@ export const demonstrations:Demonstration[] = [
               }
             ],
             "expected": "cable"
+          },
+          {
+            "id": "scope",
+            "label": "What is still unresolved?",
+            "type": "select",
+            "options": [
+              {
+                "value": "The cable must be healthy",
+                "label": "The cable must be healthy"
+              },
+              {
+                "value": "Whether the lamp itself also has a fault",
+                "label": "Is the lamp also faulty?"
+              },
+              {
+                "value": "Nothing; the whole repair is already verified",
+                "label": "Nothing; repair is complete"
+              }
+            ],
+            "expected": "Whether the lamp itself also has a fault"
           }
         ],
         "before": {
@@ -2470,7 +2512,9 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "cable"
+            "fault": "cable-and-lamp",
+            "faultLabel": "Locate supply break",
+            "sourceVoltage": 9
           },
           "labels": [
             "Before cable: 9 V",
@@ -2484,29 +2528,128 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "cable",
-            "selected": "cable"
+            "fault": "cable-and-lamp",
+            "selected": "cable",
+            "faultLabel": "Cable open; load unknown",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Diagnosis: cable supply break"
+            "First diagnosis: open cable",
+            "Lamp condition remains unresolved"
           ],
           "focus": "cable"
         },
-        "success": "The diagnosis follows a discriminating pair of measurements.",
-        "pitfall": "Replacing the most familiar component is a guess unless the readings support it.",
-        "hint": "Find the first transition from healthy supply to zero.",
+        "success": "The cable fault is supported while the load remains an open question.",
+        "pitfall": "Finding one real fault does not establish that no other fault exists.",
+        "hint": "The supply readings can locate the cable break; they cannot exercise an unpowered lamp.",
         "duration": 18
       },
       {
         "id": "isolate",
-        "title": "Isolate before replacement",
-        "narration": "The demonstrator switches the model source off before touching the cable. The earlier powered readings remain in the record.",
-        "why": "The diagnostic condition and the safe replacement condition are different states.",
-        "prompt": "Isolate the source.",
+        "title": "Replace the cable while isolated",
+        "narration": "The demonstrator switches the model source off and replaces only the cable supported by the trace. The lamp has not been tested or replaced. The original powered readings stay in the record.",
+        "why": "Changing only the diagnosed component makes the next verification informative.",
+        "prompt": "Isolate the model and choose the evidence-backed first replacement.",
         "controls": [
           {
             "id": "powered",
-            "label": "Source powered",
+            "label": "Source powered during replacement",
+            "type": "toggle",
+            "initial": true,
+            "expected": false
+          },
+          {
+            "id": "replacement",
+            "label": "Replace first",
+            "type": "select",
+            "options": [
+              {
+                "value": "Cable only",
+                "label": "Cable only"
+              },
+              {
+                "value": "Lamp only",
+                "label": "Lamp only"
+              },
+              {
+                "value": "Every component",
+                "label": "Every component"
+              }
+            ],
+            "expected": "Cable only"
+          }
+        ],
+        "before": {
+          "room": "systems",
+          "shot": "close",
+          "values": {
+            "voltage": 9,
+            "powered": true,
+            "fault": "cable-and-lamp",
+            "faultLabel": "Isolate before replacement",
+            "sourceVoltage": 9
+          },
+          "labels": [
+            "Cable replacement pending",
+            "Retain the original powered trace"
+          ],
+          "focus": "source"
+        },
+        "after": {
+          "room": "systems",
+          "shot": "close",
+          "values": {
+            "voltage": 9,
+            "powered": false,
+            "fault": "lamp",
+            "cableRepaired": true,
+            "faultLabel": "Cable replaced; load unknown",
+            "sourceVoltage": 9
+          },
+          "labels": [
+            "Cable replaced with power isolated",
+            "Load condition still unverified"
+          ],
+          "focus": "cable"
+        },
+        "success": "The cable is replaced without treating the untested lamp as repaired.",
+        "pitfall": "Replacing everything would conceal which change resolved which symptom.",
+        "hint": "Use the trace to justify one replacement and keep the source off during it.",
+        "duration": 18
+      },
+      {
+        "id": "verify",
+        "title": "Let failed verification change the diagnosis",
+        "narration": "Power returns to the same beacon. Source, fuse, cable output and lamp supply now all read 9 V, yet the lamp stays dark. The cable repair restored supply but did not fix the original symptom. The demonstrator keeps the first diagnosis and opens a second investigation.",
+        "why": "A successful intermediate repair and an unsuccessful whole-system check can both be true.",
+        "prompt": "Restore power, report the remaining symptom and decide whether the job is complete.",
+        "controls": [
+          {
+            "id": "powered",
+            "label": "Restore power",
+            "type": "toggle",
+            "initial": false,
+            "expected": true
+          },
+          {
+            "id": "verification",
+            "label": "Observed output after cable repair",
+            "type": "select",
+            "options": [
+              {
+                "value": "Lamp lit; repair complete",
+                "label": "Lamp lit; repair complete"
+              },
+              {
+                "value": "9 V at the lamp, but the lamp is still dark",
+                "label": "9 V present; lamp still dark"
+              }
+            ],
+            "expected": "9 V at the lamp, but the lamp is still dark"
+          },
+          {
+            "id": "complete",
+            "label": "Whole beacon verified working",
             "type": "toggle",
             "initial": true,
             "expected": false
@@ -2517,77 +2660,15 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "voltage": 9,
-            "powered": true,
-            "fault": "cable"
-          },
-          "labels": [
-            "Replacement pending"
-          ],
-          "focus": "source"
-        },
-        "after": {
-          "room": "systems",
-          "shot": "close",
-          "values": {
-            "voltage": 9,
             "powered": false,
-            "fault": "cable"
+            "fault": "lamp",
+            "cableRepaired": true,
+            "faultLabel": "Output not yet verified",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Source isolated; evidence preserved"
-          ],
-          "focus": "source"
-        },
-        "success": "The component can be replaced in the intended isolated state.",
-        "pitfall": "Taking all readings with the source off would avoid the required diagnosis.",
-        "hint": "Turn power off now, after preserving the measurements.",
-        "duration": 18
-      },
-      {
-        "id": "verify",
-        "title": "Restore and verify the whole path",
-        "narration": "The cable is replaced, power restored and the beacon lights. The beacon supply reads 9 V. The demonstrator checks output as well as voltage.",
-        "why": "A successful local replacement should restore the intended system behaviour.",
-        "prompt": "Choose the complete verification.",
-        "controls": [
-          {
-            "id": "verification",
-            "label": "Repair check",
-            "type": "select",
-            "options": [
-              {
-                "value": "Only inspect the replacement label",
-                "label": "Only inspect the replacement label"
-              },
-              {
-                "value": "Confirm 9 V at beacon and light output",
-                "label": "Confirm 9 V at beacon and light output"
-              },
-              {
-                "value": "Assume replacement means success",
-                "label": "Assume replacement means success"
-              }
-            ],
-            "expected": "Confirm 9 V at beacon and light output"
-          },
-          {
-            "id": "powered",
-            "label": "Restore power",
-            "type": "toggle",
-            "initial": false,
-            "expected": true
-          }
-        ],
-        "before": {
-          "room": "systems",
-          "shot": "close",
-          "values": {
-            "voltage": 9,
-            "powered": false,
-            "fault": "none"
-          },
-          "labels": [
-            "Replacement installed"
+            "Cable replacement complete",
+            "Whole beacon not yet tested"
           ],
           "focus": "beacon"
         },
@@ -2597,25 +2678,29 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "none",
-            "verified": true
+            "fault": "lamp",
+            "cableRepaired": true,
+            "verified": false,
+            "faultLabel": "Supply OK; lamp dark",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Beacon supply 9 V; beacon lit"
+            "After cable repair: 9 / 9 / 9 / 9 V",
+            "Same beacon remains dark"
           ],
           "focus": "beacon"
         },
-        "success": "The restored supply and observed light support the repair.",
-        "pitfall": "A component label does not establish that the complete path works.",
-        "hint": "Verify the symptom that originally motivated the diagnosis.",
+        "success": "The record preserves a valid cable repair and a failed complete-system verification.",
+        "pitfall": "Counting healthy supply as success would leave the original dark-beacon problem unresolved.",
+        "hint": "Compare the light output with the original symptom as well as reading the voltage.",
         "duration": 18
       },
       {
         "id": "load",
-        "title": "Recognise a different fault",
-        "narration": "A second beacon stays dark while every supply node reads 9 V. The demonstrator rejects the first-zero method because no supply zero exists, then isolates power for a continuity check.",
-        "why": "An open load can have healthy voltage at its input. The same symptom can require a different test.",
-        "prompt": "Select the next justified test and isolate power.",
+        "title": "Test the newly exposed load fault",
+        "narration": "The healthy 9 V supply and still-dark output make a load check informative. The demonstrator isolates the source and tests lamp continuity. The authored result is open: the same beacon had an open lamp as well as the cable break.",
+        "why": "Restoring one prerequisite can expose a defect that the original measurements could not distinguish.",
+        "prompt": "Choose the next discriminating test and its required power state.",
         "controls": [
           {
             "id": "test",
@@ -2623,16 +2708,16 @@ export const demonstrations:Demonstration[] = [
             "type": "select",
             "options": [
               {
-                "value": "Replace the fuse without testing",
-                "label": "Replace the fuse without testing"
+                "value": "Repeat the healthy source voltage",
+                "label": "Repeat the healthy source voltage"
               },
               {
                 "value": "Check lamp continuity with power isolated",
-                "label": "Check lamp continuity with power isolated"
+                "label": "Isolate; test lamp continuity"
               },
               {
-                "value": "Repeat the unchanged source reading",
-                "label": "Repeat the unchanged source reading"
+                "value": "Replace the already verified cable again",
+                "label": "Replace the cable again"
               }
             ],
             "expected": "Check lamp continuity with power isolated"
@@ -2651,10 +2736,14 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "lamp"
+            "fault": "lamp",
+            "cableRepaired": true,
+            "faultLabel": "Test load while isolated",
+            "sourceVoltage": 9
           },
           "labels": [
-            "All supply nodes 9 V; beacon dark"
+            "Healthy supply, dark output",
+            "Choose a test of the load"
           ],
           "focus": "beacon"
         },
@@ -2664,44 +2753,76 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": false,
-            "fault": "lamp"
+            "fault": "lamp",
+            "cableRepaired": true,
+            "continuity": "open",
+            "faultLabel": "Lamp continuity: OPEN",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Isolated continuity: open"
+            "Isolated lamp continuity: OPEN",
+            "Second defect confirmed in the same beacon"
           ],
           "focus": "beacon"
         },
-        "success": "The isolated continuity result identifies the open lamp rather than a missing supply.",
-        "pitfall": "Healthy voltage does not prove that current passes through a working load.",
-        "hint": "Distinguish the lamp's input voltage from its continuity.",
+        "success": "Isolated continuity identifies the second fault without invalidating the earlier cable diagnosis.",
+        "pitfall": "Repeating the source reading adds no evidence about the load itself.",
+        "hint": "The remaining question is whether the lamp has a complete internal path, with power isolated.",
         "duration": 18
       },
       {
         "id": "conclude",
-        "title": "Repair and state the limit",
-        "narration": "The lamp is replaced while isolated. Restored power produces light with 9 V supply. The record distinguishes the cable fault from the open-load fault.",
-        "why": "Explaining why the test changed demonstrates transfer beyond a memorised replacement sequence.",
-        "prompt": "Select the supported conclusion.",
+        "title": "Repair the second fault and verify the whole beacon",
+        "narration": "With power still isolated, the demonstrator replaces the confirmed open lamp. Restored power now gives 9 V at every supply node and visible light. The final record retains both faults, the incomplete first repair and the final verification; no second beacon or reset was introduced.",
+        "why": "Completion follows a check of the original system requirement after all supported repairs, not simply the first successful intervention.",
+        "prompt": "Choose the second replacement, restore power and state what the complete trace established.",
         "controls": [
+          {
+            "id": "replacement",
+            "label": "Second isolated replacement",
+            "type": "select",
+            "options": [
+              {
+                "value": "Lamp",
+                "label": "Lamp"
+              },
+              {
+                "value": "Cable again",
+                "label": "Cable again"
+              },
+              {
+                "value": "Source",
+                "label": "Source"
+              }
+            ],
+            "expected": "Lamp"
+          },
+          {
+            "id": "powered",
+            "label": "Restore power after lamp replacement",
+            "type": "toggle",
+            "initial": false,
+            "expected": true
+          },
           {
             "id": "conclusion",
             "label": "Diagnostic lesson",
             "type": "select",
             "options": [
               {
-                "value": "Every dark lamp means zero supply",
-                "label": "Every dark lamp means zero supply"
+                "value": "The first diagnosis was wrong because the beacon stayed dark",
+                "label": "The cable diagnosis was wrong"
               },
               {
-                "value": "Supply and load faults may need different checks",
-                "label": "Supply and load faults may need different checks"
+                "value": "Two coexisting faults required two justified repairs and a final output check",
+                "label": "Two faults; verify both repairs"
               },
               {
-                "value": "A lit lamp proves every circuit is safe",
-                "label": "A lit lamp proves every circuit is safe"
+                "value": "Every circuit always has two faults",
+                "label": "Every circuit has two faults"
               }
             ],
-            "expected": "Supply and load faults may need different checks"
+            "expected": "Two coexisting faults required two justified repairs and a final output check"
           }
         ],
         "before": {
@@ -2710,10 +2831,15 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": false,
-            "fault": "none"
+            "fault": "lamp",
+            "cableRepaired": true,
+            "continuity": "open",
+            "faultLabel": "Lamp fault confirmed",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Lamp replaced while isolated"
+            "Lamp continuity confirmed open",
+            "Replace this lamp while isolated"
           ],
           "focus": "beacon"
         },
@@ -2724,45 +2850,50 @@ export const demonstrations:Demonstration[] = [
             "voltage": 9,
             "powered": true,
             "fault": "none",
-            "verified": true
+            "cableRepaired": true,
+            "lampRepaired": true,
+            "verified": true,
+            "faultLabel": "Repairs verified",
+            "sourceVoltage": 9
           },
           "labels": [
-            "Second fault resolved; diagnosis recorded"
+            "Final trace: 9 / 9 / 9 / 9 V; light ON",
+            "Both repairs and failed interim check preserved"
           ],
           "focus": "beacon"
         },
-        "success": "The record supports this apparatus and these checks, not arbitrary physical circuits.",
-        "pitfall": "Do not generalise a simplified teaching model into an unrestricted hardware rule.",
-        "hint": "State exactly what the two different tests established.",
+        "success": "The same beacon now meets its supply and light requirements after two evidence-backed repairs.",
+        "pitfall": "Neither a one-fault assumption nor an “always two faults” rule transfers safely to a different published case.",
+        "hint": "Name both established defects and the final observation that proves this beacon’s original symptom is resolved.",
         "duration": 18
       }
     ],
     "artifact": {
-      "title": "Completed circuit diagnosis — nine-volt beacon",
+      "title": "Completed example — beacon with two faults",
       "filename": "worked-lab-05.md",
-      "markdown": "# Completed demonstration example — nine-volt beacon\n\nThis alternate apparatus uses 9 V. It is a fictional bench model, not an instruction to work on mains equipment.\n\n## First fault\nPowered readings relative to common return: source 9 V; fuse output 9 V; cable output 0 V; beacon supply 0 V. The first missing supply followed the cable segment, supporting an open cable rather than an open fuse.\n\nI isolated power, replaced the cable, restored power and verified 9 V at the beacon together with visible light.\n\n## Changed fault\nThe second beacon remained dark with 9 V at every supply node. Those readings did not support a missing supply. I isolated power and checked continuity through the lamp; the model reported an open load. I replaced the lamp while isolated, restored power and verified light plus 9 V supply.\n\n## Reflection\nMy original first-zero strategy worked for a supply break but could not diagnose the second fault. Repeating a healthy source measurement added no information. The important change was to distinguish supply from load continuity. The record preserves the powered observations and the later isolated action so another reader can see why each test was appropriate.\n\n## Limits\nThese are authored model readings. They are not measurements from constructed hardware, and their idealisation does not establish the behaviour of an arbitrary physical circuit.\n\nNamed output: circuit-diagnosis. Assistance: complete narrated worked example."
+      "markdown": "# Completed demonstration example — beacon with two faults\n\nThis is one fictional nine-volt beacon throughout the attempt. Its published case card allows multiple simultaneous open faults. The assigned browser and campus lab instead introduce exactly one fault at a time.\n\n## Initial evidence and first diagnosis\nWith power on, source / fuse output / cable output / lamp supply read **9 / 9 / 0 / 0 V** relative to the common return. The lamp was dark. The first missing supply supported an open cable. The unpowered lamp's own condition remained unresolved; the readings did not prove it healthy.\n\n## First repair and failed whole-system check\nI isolated the source and replaced the cable only. After restoring power, the trace became **9 / 9 / 9 / 9 V**, but the **same beacon stayed dark**. The repair successfully restored supply without resolving the original symptom. I preserved both statements instead of calling the cable diagnosis wrong or declaring the job complete.\n\n## Second diagnosis and repair\nWith healthy supply and a dark load, I isolated power and tested lamp continuity. The result was **open**. I replaced that confirmed open lamp while isolated, then restored power. The supply remained **9 / 9 / 9 / 9 V** and the lamp lit.\n\n## Preserved diagnostic chain\n\n| Stage | Supported finding | Action | Verification |\n| --- | --- | --- | --- |\n| Initial trace | Open cable; lamp condition unknown | Isolated cable replacement | Supply restored, light still absent |\n| Same beacon after first repair | Healthy lamp supply, dark output | Isolated lamp continuity test | Open load confirmed |\n| Confirmed second fault | Open lamp as well as the earlier cable break | Isolated lamp replacement | 9 V supply and visible light |\n\n## Reflection\nMy first diagnosis was useful but incomplete. Assuming it explained the entire symptom would have stopped the investigation too early. The failed output check changed what I needed to test, without erasing the evidence that justified the cable replacement. In a new case I would read whether its rules permit multiple faults, diagnose from its own trace and check the original symptom after every repair. This example does not establish that the assigned one-fault circuit has two defects.\n\n## Limits\nThese are idealised authored model readings, not measurements from constructed hardware. A continuity check is performed only in the model's isolated state. The record establishes this fictional apparatus's behaviour and does not certify work on an arbitrary physical circuit.\n\nNamed output: circuit-diagnosis. Assistance: complete narrated worked example.\n"
     }
   },
   {
     "id": "lab-06",
     "kind": "lab",
     "week": 6,
-    "title": "Which weather ledger is required?",
-    "subtitle": "Compare versions against a changing signed requirement.",
+    "title": "The request that is not yet authority",
+    "subtitle": "Keep a valid decision through an unsigned request, then verify a repaired record under a genuine amendment.",
     "skill": "Digital investigation",
-    "setting": "Three conservatory weather ledgers differ in completeness, timestamp and digest.",
-    "difference": "The alternate records contain 18 sections and Q-7/Q-9 digests instead of assigned archive values.",
-    "transfer": "Use the current authority and preserve the scope of earlier conclusions.",
+    "setting": "Three weather ledgers, an initially valid signed request, an unsigned proposed change and a later authenticated amendment with a repaired candidate.",
+    "difference": "An unsigned request cannot supersede the current authority. A later authenticated instruction and a separately verified repair justify a new selection; this example requires checking both authority and version identity.",
+    "transfer": "Compare completeness and identity under your assigned source, and establish whether a new instruction is authoritative before revising a decision. This example’s unsigned message, repaired candidate and North-to-South outcome are not assigned answers.",
     "sourceHref": "/sessions/week-06/",
     "sourceLabel": "Week 6 lab",
-    "estimatedMinutes": 8,
+    "estimatedMinutes": 11,
     "steps": [
       {
         "id": "contract",
-        "title": "Read the reference first",
-        "narration": "The signed request specifies 18 sections with digest Q-7. Ledger North has 18/Q-7 at 07:20; East has 18/Q-9 at 07:45; South has 17/Q-2 at 07:15.",
-        "why": "The target defines what a comparison is meant to establish.",
-        "prompt": "Record the required section count.",
+        "title": "Identify which instruction can govern the choice",
+        "narration": "The published rule says that only an instruction marked authenticated in the supplied authority register can supersede the current request. Signed request R1 requires 18 sections with digest Q-7. North is 18/Q-7 at 07:50; East is 18/Q-9 at 07:20; South is 17/Q-2 at 07:35. The three book objects represent these version records.",
+        "why": "A content match and an authorised requirement are separate conditions. A message about a new requirement is not automatically authority to change it.",
+        "prompt": "Record the required count and the rule for changing the request.",
         "controls": [
           {
             "id": "count",
@@ -2773,19 +2904,39 @@ export const demonstrations:Demonstration[] = [
             "min": 0,
             "max": 30,
             "tolerance": 0
+          },
+          {
+            "id": "authority",
+            "label": "What may supersede R1?",
+            "type": "select",
+            "options": [
+              {
+                "value": "Any later message",
+                "label": "Any later message"
+              },
+              {
+                "value": "An instruction marked authenticated in the authority register",
+                "label": "Authenticated instruction"
+              },
+              {
+                "value": "Whichever file has the newest timestamp",
+                "label": "Newest file wins"
+              }
+            ],
+            "expected": "An instruction marked authenticated in the authority register"
           }
         ],
         "before": {
           "room": "digital",
           "shot": "establishing",
           "values": {
+            "count": 18,
+            "authority": "signed-R1",
             "verified": false
           },
           "labels": [
-            "Mandate: 18 sections, Q-7",
-            "North 07:20 / Q-7",
-            "East 07:45 / Q-9",
-            "South 07:15 / Q-2"
+            "Authenticated R1: 18 sections / Q-7",
+            "Only authenticated instructions can supersede R1"
           ],
           "focus": "manifest",
           "items": [
@@ -2794,21 +2945,21 @@ export const demonstrations:Demonstration[] = [
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
@@ -2816,10 +2967,13 @@ export const demonstrations:Demonstration[] = [
           "room": "digital",
           "shot": "close",
           "values": {
-            "count": 18
+            "count": 18,
+            "authority": "signed-R1",
+            "verified": false
           },
           "labels": [
-            "Reference scope recorded"
+            "Authority rule recorded",
+            "R1 remains the current request"
           ],
           "focus": "manifest",
           "items": [
@@ -2828,63 +2982,63 @@ export const demonstrations:Demonstration[] = [
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
-        "success": "The comparison has an explicit completeness and identity requirement.",
-        "pitfall": "A latest-file habit can override the actual request.",
-        "hint": "Read the signed requirement before choosing a candidate.",
+        "success": "The comparison has both a completeness requirement and an explicit authority rule.",
+        "pitfall": "Treating any later message as an amendment would remove the very check this case requires.",
+        "hint": "Use the supplied authority register, not a sender’s confident wording or a file timestamp.",
         "duration": 18
       },
       {
         "id": "timeline",
-        "title": "Put recency in its place",
-        "narration": "The demonstrator orders the timestamps South, North, East. East is newest, but its digest differs from Q-7.",
-        "why": "Time order and content identity answer different questions.",
-        "prompt": "Arrange the versions from earliest to latest.",
+        "title": "Separate chronology from selection",
+        "narration": "The records arrived East, South, North. North is newest in this example. Recency alone neither qualifies nor disqualifies it: the next step must still compare count and digest with authenticated R1.",
+        "why": "“Never choose the newest” is as unsupported as “always choose the newest.” Timing and content answer different questions.",
+        "prompt": "Order the records without treating their order as the selection rule.",
         "controls": [
           {
-            "id": "items",
-            "label": "Timeline",
+            "id": "timeline",
+            "label": "Record timeline",
             "type": "order",
             "options": [
               {
-                "value": "East 07:45",
-                "label": "East 07:45"
+                "value": "East 07:20",
+                "label": "East 07:20"
               },
               {
-                "value": "South 07:15",
-                "label": "South 07:15"
+                "value": "South 07:35",
+                "label": "South 07:35"
               },
               {
-                "value": "North 07:20",
-                "label": "North 07:20"
+                "value": "North 07:50",
+                "label": "North 07:50"
               }
             ],
             "initial": [
-              "East 07:45",
-              "South 07:15",
-              "North 07:20"
+              "North 07:50",
+              "East 07:20",
+              "South 07:35"
             ],
             "expected": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
+              "East 07:20",
+              "South 07:35",
+              "North 07:50"
             ]
           }
         ],
@@ -2893,10 +3047,11 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "selected": "East"
+            "authority": "signed-R1"
           },
           "labels": [
-            "Newest does not mean required"
+            "East 07:20 / South 07:35 / North 07:50",
+            "Newest can be correct, but needs evidence"
           ],
           "focus": "manifest",
           "items": [
@@ -2905,21 +3060,21 @@ export const demonstrations:Demonstration[] = [
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
@@ -2928,14 +3083,16 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
+            "authority": "signed-R1",
+            "itemsOrder": [
+              "East 07:20",
+              "South 07:35",
+              "North 07:50"
             ]
           },
           "labels": [
-            "Chronology recorded separately"
+            "Chronology recorded separately",
+            "Now check count and digest against R1"
           ],
           "focus": "manifest",
           "items": [
@@ -2944,39 +3101,39 @@ export const demonstrations:Demonstration[] = [
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
-        "success": "The timeline is accurate without being mistaken for an integrity test.",
-        "pitfall": "Selecting East solely because of 07:45 ignores the digest requirement.",
-        "hint": "Sort time first; evaluate the signed reference separately.",
+        "success": "The timeline is recorded without turning newest or oldest into an authenticity rule.",
+        "pitfall": "Rejecting North merely because it is newest replaces evidence with a blanket recency rule.",
+        "hint": "Sort the times first; save the selection for the reference comparison.",
         "duration": 18
       },
       {
         "id": "compare",
-        "title": "Use both required checks",
-        "narration": "North meets both 18 sections and Q-7. South lacks a section; East differs in content. The demonstrator chooses North under the original request.",
-        "why": "A candidate must meet all relevant conditions, not just one favourable feature.",
-        "prompt": "Choose the matching ledger.",
+        "title": "Select the copy supported by R1",
+        "narration": "North has both the required 18 sections and Q-7 digest. East is complete but differs from R1; the original South is incomplete and has Q-2. The demonstrator selects North because it meets both requirements, not because it is newest.",
+        "why": "The same candidate can be newest and correct; only the actual count and reference comparison justify that decision.",
+        "prompt": "Select the version that meets authenticated R1.",
         "controls": [
           {
             "id": "selected",
-            "label": "Original selection",
+            "label": "Selection under R1",
             "type": "select",
             "options": [
               {
@@ -3000,17 +3157,12 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
+            "authority": "signed-R1",
             "verified": false
           },
           "labels": [
-            "North 18/Q-7",
-            "East 18/Q-9",
-            "South 17/Q-2"
+            "R1 requires 18 / Q-7",
+            "North 18/Q-7; East 18/Q-9; South 17/Q-2"
           ],
           "focus": "manifest",
           "items": [
@@ -3019,21 +3171,21 @@ export const demonstrations:Demonstration[] = [
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
@@ -3042,172 +3194,74 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "selected": "North",
-            "verified": true
+            "authority": "signed-R1",
+            "verified": true,
+            "selected": "North"
           },
           "labels": [
-            "North matches original request"
+            "North verified under authenticated R1",
+            "Historical selection preserved"
           ],
-          "focus": "manifest",
+          "focus": "North",
           "items": [
             {
               "id": "North",
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
-        "success": "North is supported as the unchanged requested ledger.",
-        "pitfall": "The correct section count alone cannot establish matching content.",
-        "hint": "Check count and digest together.",
+        "success": "North is supported by count and digest under the current authenticated request.",
+        "pitfall": "A correct answer reached only by timestamp luck is weaker than the stated two-part check.",
+        "hint": "Require both completeness and the digest named by R1.",
         "duration": 18
       },
       {
         "id": "limit",
-        "title": "Bound the integrity claim",
-        "narration": "Matching Q-7 establishes agreement with the supplied reference. It does not establish that every weather observation is scientifically correct.",
-        "why": "A precise verification claim leaves semantic accuracy as a separate question.",
-        "prompt": "Choose what the match establishes.",
+        "title": "Do not promote an unsigned message into authority",
+        "narration": "At 08:00 an unsigned message says “Use East, Q-9 instead.” The authority register marks that message unverified. Nothing has superseded R1. The demonstrator records the proposed change as a claim, keeps North as the current authorised selection, and asks for an authenticated instruction.",
+        "why": "A plausible or later instruction can remain a claim. Preserving a valid decision while checking authority is an active evidence-based response.",
+        "prompt": "Classify the proposed change and decide which version is currently authorised.",
         "controls": [
           {
-            "id": "scope",
-            "label": "Supported scope",
+            "id": "status",
+            "label": "Status of the 08:00 message",
             "type": "select",
             "options": [
               {
-                "value": "Every observation is scientifically true",
-                "label": "Every observation is scientifically true"
+                "value": "Authenticated amendment",
+                "label": "Authenticated amendment"
               },
               {
-                "value": "The ledger matches the supplied Q-7 reference",
-                "label": "The ledger matches the supplied Q-7 reference"
+                "value": "Unverified request requiring confirmation",
+                "label": "Unverified; ask for authority"
               },
               {
-                "value": "No future amendment is possible",
-                "label": "No future amendment is possible"
+                "value": "Proof that East is scientifically correct",
+                "label": "East is scientifically proven"
               }
             ],
-            "expected": "The ledger matches the supplied Q-7 reference"
-          }
-        ],
-        "before": {
-          "room": "digital",
-          "shot": "close",
-          "values": {
-            "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "selected": "North",
-            "verified": true
+            "expected": "Unverified request requiring confirmation"
           },
-          "labels": [
-            "Match confirmed"
-          ],
-          "focus": "manifest",
-          "items": [
-            {
-              "id": "North",
-              "label": "North record",
-              "shape": "book",
-              "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
-            },
-            {
-              "id": "East",
-              "label": "East record",
-              "shape": "book",
-              "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
-            },
-            {
-              "id": "South",
-              "label": "South record",
-              "shape": "book",
-              "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
-            }
-          ]
-        },
-        "after": {
-          "room": "digital",
-          "shot": "close",
-          "values": {
-            "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "selected": "North",
-            "verified": true
-          },
-          "labels": [
-            "Limit: content truth not established"
-          ],
-          "focus": "manifest",
-          "items": [
-            {
-              "id": "North",
-              "label": "North record",
-              "shape": "book",
-              "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
-            },
-            {
-              "id": "East",
-              "label": "East record",
-              "shape": "book",
-              "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
-            },
-            {
-              "id": "South",
-              "label": "South record",
-              "shape": "book",
-              "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
-            }
-          ]
-        },
-        "success": "The conclusion stays within the evidence's scope.",
-        "pitfall": "Confusing identity with truth overstates what a checksum comparison proves.",
-        "hint": "Matching content can still contain an error in the reference.",
-        "duration": 18
-      },
-      {
-        "id": "amend",
-        "title": "Respond to a signed amendment",
-        "narration": "A later signed request explicitly requires the annotated Q-9 ledger with 18 sections. The demonstrator preserves the original selection and changes the current recommendation to East.",
-        "why": "An authoritative requirement can change without making the historical comparison false.",
-        "prompt": "Choose the candidate under the amendment.",
-        "controls": [
           {
             "id": "selected",
-            "label": "Amended selection",
+            "label": "Current selection while authority is unresolved",
             "type": "select",
             "options": [
               {
@@ -3223,7 +3277,7 @@ export const demonstrations:Demonstration[] = [
                 "label": "South"
               }
             ],
-            "expected": "East"
+            "expected": "North"
           }
         ],
         "before": {
@@ -3231,39 +3285,36 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
+            "authority": "signed-R1",
+            "proposedDigest": "Q-9",
             "selected": "North"
           },
           "labels": [
-            "Amended mandate: 18 / Q-9",
-            "Original North choice preserved"
+            "08:00 message: use East / Q-9",
+            "Authority register: UNVERIFIED"
           ],
-          "focus": "manifest",
+          "focus": "North",
           "items": [
             {
               "id": "North",
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
@@ -3272,74 +3323,206 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "selected": "East",
-            "revision": "Q-7 → Q-9",
-            "verified": true
+            "authority": "signed-R1",
+            "messageStatus": "claim",
+            "verified": true,
+            "selected": "North"
           },
           "labels": [
-            "East matches current mandate"
+            "Retain North under R1",
+            "Request authentication; do not erase the valid comparison"
           ],
-          "focus": "manifest",
+          "focus": "North",
           "items": [
             {
               "id": "North",
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South original",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "17 sections / Q-2 / 07:35"
             }
           ]
         },
-        "success": "The changed selection is explained by changed authority.",
-        "pitfall": "Silently overwriting North hides why the original decision made sense.",
-        "hint": "Use the current signed digest, not the earlier preference.",
+        "success": "The unsigned proposal is preserved as a claim and North remains valid under R1.",
+        "pitfall": "Immediately switching to East would treat an unverified request as an authenticated instruction.",
+        "hint": "A later message has not changed the active requirement unless the authority register authenticates it.",
+        "duration": 18
+      },
+      {
+        "id": "amend",
+        "title": "Check genuine authority and a repaired version independently",
+        "narration": "The register later authenticates instruction R2, issued at 08:15, requiring 18 sections with Q-12. It does not authenticate the earlier Q-9 message. A repair receipt publishes South version S2 at 08:20: 18 sections and Q-12. South’s original 17/Q-2 record remains preserved. The demonstrator checks both the new authority and the repaired version before selecting South S2.",
+        "why": "An authoritative requirement does not repair a file, and a repaired file does not authorise itself. Both new facts must be verified.",
+        "prompt": "Confirm the authenticated instruction and choose the version that now satisfies it.",
+        "controls": [
+          {
+            "id": "authenticated",
+            "label": "R2 marked authenticated in supplied register",
+            "type": "toggle",
+            "initial": false,
+            "expected": true
+          },
+          {
+            "id": "selected",
+            "label": "Selection under authenticated R2",
+            "type": "select",
+            "options": [
+              {
+                "value": "North",
+                "label": "North"
+              },
+              {
+                "value": "East",
+                "label": "East"
+              },
+              {
+                "value": "South",
+                "label": "South"
+              }
+            ],
+            "expected": "South"
+          },
+          {
+            "id": "version",
+            "label": "South version to transfer",
+            "type": "select",
+            "options": [
+              {
+                "value": "Original 17-section Q-2 version",
+                "label": "Original 17-section Q-2 version"
+              },
+              {
+                "value": "Repaired S2: 18 sections / Q-12",
+                "label": "Repaired S2: 18 sections / Q-12"
+              }
+            ],
+            "expected": "Repaired S2: 18 sections / Q-12"
+          }
+        ],
+        "before": {
+          "room": "digital",
+          "shot": "close",
+          "values": {
+            "count": 18,
+            "authority": "signed-R2",
+            "verified": false,
+            "oldSouth": "17 / Q-2 / 07:35",
+            "selected": "North"
+          },
+          "labels": [
+            "Authenticated R2: 18 / Q-12",
+            "South S2 repair receipt: 18 / Q-12 at 08:20"
+          ],
+          "focus": "North",
+          "items": [
+            {
+              "id": "North",
+              "label": "North record",
+              "shape": "book",
+              "color": "#8bbca0",
+              "text": "18 sections / Q-7 / 07:50"
+            },
+            {
+              "id": "East",
+              "label": "East record",
+              "shape": "book",
+              "color": "#c89179",
+              "text": "18 sections / Q-9 / 07:20"
+            },
+            {
+              "id": "South",
+              "label": "South repaired version",
+              "shape": "book",
+              "color": "#a4afc7",
+              "text": "18 sections / Q-12 / 08:20; earlier 17/Q-2 retained"
+            }
+          ]
+        },
+        "after": {
+          "room": "digital",
+          "shot": "close",
+          "values": {
+            "count": 18,
+            "authority": "signed-R2",
+            "verified": true,
+            "revision": "North under R1 → South S2 under authenticated R2",
+            "oldSouth": "17 / Q-2 / 07:35",
+            "selected": "South"
+          },
+          "labels": [
+            "South S2 matches R2",
+            "North under R1 and original South retained"
+          ],
+          "focus": "South",
+          "items": [
+            {
+              "id": "North",
+              "label": "North record",
+              "shape": "book",
+              "color": "#8bbca0",
+              "text": "18 sections / Q-7 / 07:50"
+            },
+            {
+              "id": "East",
+              "label": "East record",
+              "shape": "book",
+              "color": "#c89179",
+              "text": "18 sections / Q-9 / 07:20"
+            },
+            {
+              "id": "South",
+              "label": "South repaired version",
+              "shape": "book",
+              "color": "#a4afc7",
+              "text": "18 sections / Q-12 / 08:20; earlier 17/Q-2 retained"
+            }
+          ]
+        },
+        "success": "South S2 is supported by authenticated R2 and its new completeness and identity checks.",
+        "pitfall": "Neither the unsigned East request nor the old incomplete South record satisfies R2.",
+        "hint": "Check the instruction’s authentication and the repaired version’s 18 sections/Q-12 separately.",
         "duration": 18
       },
       {
         "id": "record",
-        "title": "Write a traceable recommendation",
-        "narration": "The completed recommendation cites each mandate, the selected ledger and unresolved semantic accuracy. It does not call East malicious merely because it was annotated.",
-        "why": "A useful investigation record separates observations, authority and motive.",
-        "prompt": "Which statement belongs in the final record?",
+        "title": "Preserve the decision that stayed and the decision that changed",
+        "narration": "The final timeline retains North under R1, the rejected-as-authority unsigned East request, and South S2 under authenticated R2. It also retains South’s earlier incomplete version. The demonstrator limits the conclusion to authority, completeness and identity; the weather observations still need their own scientific checks.",
+        "why": "A traceable record explains why one proposed change was withheld and a later different change was justified.",
+        "prompt": "Choose the conclusion that preserves the full sequence and its limit.",
         "controls": [
           {
-            "id": "statement",
-            "label": "Recommendation",
+            "id": "recommendation",
+            "label": "Final recommendation",
             "type": "select",
             "options": [
               {
-                "value": "East was certainly forged",
-                "label": "East was certainly forged"
+                "value": "East became authorised as soon as the unsigned message arrived",
+                "label": "Unsigned request approves East"
               },
               {
-                "value": "East matches the amended request; purpose of annotation remains a separate question",
-                "label": "East matches the amended request; purpose of annotation remains a separate question"
+                "value": "North stayed authorised under R1; authenticated R2 and the repaired S2 record later justified South; scientific truth remains unchecked",
+                "label": "Retain R1; verify R2 and S2"
               },
               {
-                "value": "North was never a valid choice",
-                "label": "North was never a valid choice"
+                "value": "South was complete all along and the earlier records can be deleted",
+                "label": "Erase South’s earlier failure"
               }
             ],
-            "expected": "East matches the amended request; purpose of annotation remains a separate question"
+            "expected": "North stayed authorised under R1; authenticated R2 and the repaired S2 record later justified South; scientific truth remains unchecked"
           }
         ],
         "before": {
@@ -3347,38 +3530,36 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "selected": "East",
-            "revision": "Original and amended decisions"
+            "authority": "signed-R2",
+            "verified": true,
+            "selected": "South"
           },
           "labels": [
-            "Historical and current selections visible"
+            "Keep R1 / unsigned proposal / R2 separate",
+            "Keep original South and repaired S2 separate"
           ],
+          "focus": "South",
           "items": [
             {
               "id": "North",
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South repaired version",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "18 sections / Q-12 / 08:20; earlier 17/Q-2 retained"
             }
           ]
         },
@@ -3387,92 +3568,91 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "count": 18,
-            "items": [
-              "South 07:15",
-              "North 07:20",
-              "East 07:45"
-            ],
-            "verified": true
+            "authority": "signed-R2",
+            "verified": true,
+            "selected": "South"
           },
           "labels": [
-            "Recommendation includes scope and provenance"
+            "Final: South S2 under authenticated R2",
+            "History preserved; scientific accuracy remains separate"
           ],
+          "focus": "South",
           "items": [
             {
               "id": "North",
               "label": "North record",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "18 sections / Q-7 / 07:20"
+              "text": "18 sections / Q-7 / 07:50"
             },
             {
               "id": "East",
               "label": "East record",
               "shape": "book",
               "color": "#c89179",
-              "text": "18 sections / Q-9 / 07:45"
+              "text": "18 sections / Q-9 / 07:20"
             },
             {
               "id": "South",
-              "label": "South record",
+              "label": "South repaired version",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "17 sections / Q-2 / 07:15"
+              "text": "18 sections / Q-12 / 08:20; earlier 17/Q-2 retained"
             }
           ]
         },
-        "success": "The completed timeline can be reconstructed by another investigator.",
-        "pitfall": "A mismatch alone does not establish intent.",
-        "hint": "Describe what changed without inventing a motive.",
+        "success": "The completed record explains both retaining a valid selection and making a later justified revision.",
+        "pitfall": "A final correct file name cannot replace the explanation of which authority and which version made it correct.",
+        "hint": "Include the unchanged decision at 08:00, the later authenticated change, the repaired version and the remaining limit.",
         "duration": 18
       }
     ],
     "artifact": {
-      "title": "Completed evidence timeline — weather ledgers",
+      "title": "Completed example — request authority and repaired weather ledger",
       "filename": "worked-lab-06.md",
-      "markdown": "# Completed demonstration example — weather-ledger investigation\n\nAlternate fixtures: 18 sections, Q-7/Q-9 references and North/East/South ledgers.\n\n| Time | Record | Direct result | Interpretation |\n| --- | --- | --- | --- |\n| 07:15 | South | 17 sections, Q-2 | Incomplete against the original request |\n| 07:20 | North | 18 sections, Q-7 | Matches original signed request |\n| 07:45 | East | 18 sections, Q-9 | Annotated variant; newest is not automatically required |\n| Amendment | Signed request | 18 sections, Q-9 required | Current target changes to East |\n\n## Preserved recommendations\nOriginal: select North because it meets both the count and Q-7 requirement.\nAmended: select East because the later signed authority explicitly requires Q-9.\n\n## Limits and next check\nDigest agreement establishes identity against the supplied reference, not the truth of every weather observation. The annotation's purpose requires its own supporting record. I would inspect that record before making claims about motive.\n\n## Reflection\nSeparating the timeline from the comparison stopped recency from deciding the answer. The amendment changed the appropriate recommendation without invalidating the recorded fact that North matched the earlier request. My revised record preserves both authorities so the reader can explain the change without guessing.\n\nNamed output: evidence-timeline. Demonstration material, not an assigned response."
+      "markdown": "# Completed demonstration example — request authority and repaired weather ledger\n\nThis alternate example changes the authority problem. The assigned browser and campus transfer immediately provides a valid signed amendment. Here an unsigned message is not sufficient, and the later valid deliverable is a newly repaired version of a previously incomplete record.\n\n## Published authority rule\nOnly an instruction marked authenticated in the supplied authority register can supersede the current request. This is a fictional case-file rule; no live signature service is contacted.\n\n## Preserved timeline\n\n| Time | Record | Direct result | Decision or limit |\n| --- | --- | --- | --- |\n| 07:05 | Authenticated R1 | Requires 18 sections and Q-7 | Governs the initial comparison |\n| 07:20 | East | 18 sections, Q-9 | Complete but does not match R1 |\n| 07:35 | Original South | 17 sections, Q-2 | Incomplete and different from R1 |\n| 07:50 | North | 18 sections, Q-7 | Matches R1, although it is newest |\n| 08:00 | Unsigned message | Says “Use East, Q-9”; register marks unverified | Record as a claim; retain North under R1 and request authentication |\n| 08:15 | Authenticated R2 | Requires 18 sections and Q-12 | Legitimately supersedes R1; does not authenticate the earlier Q-9 message |\n| 08:20 | South repair receipt S2 | Repaired version contains 18 sections and Q-12 | Verify this new version; select South S2 under R2 |\n\n## Preserved recommendations\n1. **Under R1:** select North after count and digest checks. Its newer timestamp neither proves nor disproves correctness.\n2. **After the unsigned message:** retain North as the currently authorised deliverable. Preserve the request, ask for authenticated authority and do not quietly promote the claim into a rule.\n3. **Under authenticated R2:** select South **S2**, after separately checking authentication, 18 sections and Q-12. Preserve the original South record at 17/Q-2 and the original North justification.\n\n## Two independent checks\nAuthentication established what the current instruction required. The repair receipt and new comparison established what South S2 contained. Neither check could substitute for the other. The old incomplete South file was not silently rewritten into a successful historical result.\n\n## Limits and next check\nAgreement with the authenticated reference establishes identity and completeness within this case. It does not prove the scientific accuracy of the weather observations. The unsigned Q-9 proposal remains an unverified account; the later R2 does not retroactively authorise it. Its origin and purpose would need separate investigation.\n\n## Reflection\nI initially expected a later request to trigger a different selection. The authority rule showed why keeping North at 08:00 was the justified action. When an authenticated instruction and a newly repaired record later appeared, I changed to South S2 for two explicit reasons. The useful method is to verify authority and content, not to memorise “choose the first copy, then the second.” My assigned case has different rules and records, so I must read those afresh.\n\nNamed output: evidence-timeline. Demonstration material, not an assigned response.\n"
     }
   },
   {
     "id": "lab-07",
     "kind": "lab",
     "week": 7,
-    "title": "The observatory access charter",
+    "title": "The embargoed observatory charter",
     "subtitle": "A complete alternate worked example, followed by meaningful takeover practice.",
     "skill": "Permission diagnosis",
-    "setting": "A local telescope-record system has reader, maintainer and custodian roles.",
-    "difference": "Different role names and an approve operation require applying the policy concept rather than copying the assigned matrix.",
-    "transfer": "Write expectations before testing, repair both excess and missing rights, then retest a changed mandate.",
+    "setting": "A telescope console separates research-reading authority from equipment-maintenance authority.",
+    "difference": "This local charter permits equipment maintenance without research reading and contains two opposite permission faults. Derive the matrix from this embargo charter, then derive a fresh matrix from your assigned task's own rules.",
+    "transfer": "Derive every permission from its local charter. Retain required work, repair missing and excess rights, then apply a narrow release hold.",
     "sourceHref": "/sessions/week-07/",
     "sourceLabel": "Week 7 lab",
     "estimatedMinutes": 8,
     "steps": [
       {
         "id": "mandate",
-        "title": "Write the intended authority",
-        "narration": "The charter allows everyone to read, only the maintainer to service and only the custodian to approve release. An initial shortcut gives every signed-in role approval.",
-        "why": "Recognition of an identity is not a grant of every capability.",
-        "prompt": "Who may approve release?",
+        "title": "Derive rights from this charter",
+        "narration": "The research embargo separates two responsibilities. Readers may read research; maintainers may service equipment but may not read research; custodians may read and approve release. Every other combination is denied. A job title does not imply extra access.",
+        "why": "Equipment responsibility and research visibility are separate permissions in this local model.",
+        "prompt": "Which action is the maintainer authorised to perform?",
         "controls": [
           {
             "id": "role",
-            "label": "Authorised approval role",
+            "label": "Maintainer authority",
             "type": "select",
             "options": [
               {
-                "value": "reader",
-                "label": "reader"
+                "value": "Service only",
+                "label": "Service only"
               },
               {
-                "value": "maintainer",
-                "label": "maintainer"
+                "value": "Read and service",
+                "label": "Read and service"
               },
               {
-                "value": "custodian",
-                "label": "custodian"
+                "value": "Read and approve",
+                "label": "Read and approve"
               }
             ],
-            "expected": "custodian"
+            "expected": "Service only"
           }
         ],
         "before": {
@@ -3480,21 +3660,21 @@ export const demonstrations:Demonstration[] = [
           "shot": "establishing",
           "values": {
             "policy": [
-              "reader:read:allow",
+              "reader:read:deny",
               "reader:service:deny",
-              "reader:approve:allow",
+              "reader:approve:deny",
               "maintainer:read:allow",
               "maintainer:service:allow",
-              "maintainer:approve:allow",
+              "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:allow"
             ]
           },
           "labels": [
-            "Read: all",
-            "Service: maintainer",
-            "Approve: custodian"
+            "Reader: read only",
+            "Maintainer: service only; no research reading",
+            "Custodian: read and approve"
           ],
           "focus": "policy"
         },
@@ -3503,50 +3683,66 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "policy": [
-              "reader:read:allow",
+              "reader:read:deny",
               "reader:service:deny",
-              "reader:approve:allow",
+              "reader:approve:deny",
               "maintainer:read:allow",
               "maintainer:service:allow",
-              "maintainer:approve:allow",
+              "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:allow"
             ],
-            "role": "custodian"
+            "role": "maintainer"
           },
           "labels": [
-            "Expected approval authority recorded"
+            "Expected: maintainer service allowed; research read denied"
           ],
           "focus": "policy"
         },
-        "success": "The expected decision follows a published charter.",
-        "pitfall": "Using the currently enabled button as the authority merely repeats the bug.",
-        "hint": "Read the operation's role requirement.",
+        "success": "The maintainer needs service access without research visibility. The local charter defines the expected result.",
+        "pitfall": "Assuming every signed-in role must read would reproduce the defect.",
+        "hint": "Find the explicit embargo restriction before inferring rights from a role name.",
         "duration": 18
       },
       {
         "id": "negative",
-        "title": "Reproduce an unauthorised success",
-        "narration": "The demonstrator requests approval as reader. The current system allows it; the charter requires denial. Both expected and observed results are recorded.",
-        "why": "A reproducible failure needs a specific subject and action.",
-        "prompt": "Record what the faulty system actually does for reader approval.",
+        "title": "Record an excess right and a missing right",
+        "narration": "The observed policy allows maintainer reading even though the embargo forbids it. It also denies reader reading even though the charter requires it. The demonstrator records both failures before changing anything.",
+        "why": "A policy can simultaneously expose information and prevent legitimate work.",
+        "prompt": "Record the observed results, even though both contradict the charter.",
         "controls": [
           {
-            "id": "observedApproval",
-            "label": "Observed reader approval result",
+            "id": "observedMaintainerRead",
+            "label": "Observed maintainer / read",
             "type": "select",
             "options": [
               {
-                "value": "allow",
-                "label": "Allow — unauthorised success"
+                "value": "Allow",
+                "label": "Allow"
               },
               {
-                "value": "deny",
-                "label": "Deny — matches the charter"
+                "value": "Deny",
+                "label": "Deny"
               }
             ],
-            "expected": "allow"
+            "expected": "Allow"
+          },
+          {
+            "id": "observedReaderRead",
+            "label": "Observed reader / read",
+            "type": "select",
+            "options": [
+              {
+                "value": "Allow",
+                "label": "Allow"
+              },
+              {
+                "value": "Deny",
+                "label": "Deny"
+              }
+            ],
+            "expected": "Deny"
           }
         ],
         "before": {
@@ -3554,20 +3750,20 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "policy": [
-              "reader:read:allow",
+              "reader:read:deny",
               "reader:service:deny",
-              "reader:approve:allow",
+              "reader:approve:deny",
               "maintainer:read:allow",
               "maintainer:service:allow",
-              "maintainer:approve:allow",
+              "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:allow"
-            ],
-            "role": "reader"
+            ]
           },
           "labels": [
-            "Faulty matrix — reader approval is allowed"
+            "Maintainer/read expected deny; observed allow",
+            "Reader/read expected allow; observed deny"
           ],
           "focus": "policy"
         },
@@ -3576,54 +3772,54 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "policy": [
-              "reader:read:allow",
+              "reader:read:deny",
               "reader:service:deny",
-              "reader:approve:allow",
+              "reader:approve:deny",
               "maintainer:read:allow",
               "maintainer:service:allow",
-              "maintainer:approve:allow",
+              "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:allow"
             ],
-            "role": "reader"
+            "role": "maintainer"
           },
           "labels": [
-            "Negative test records an unauthorised success"
+            "Two failed tests retained before repair"
           ],
           "focus": "policy"
         },
-        "success": "The actual allow result contradicts the charter's expected denial. Keep this failed test as evidence before repairing the condition.",
-        "pitfall": "Saying 'the system is insecure' gives no reproducible test.",
-        "hint": "The reader role only needs read access.",
+        "success": "The audit preserves a forbidden success and a required operation that failed. Both need repair.",
+        "pitfall": "Recording only the excessive permission would miss the blocked reader.",
+        "hint": "Separate what the charter expects from what the faulty table does.",
         "duration": 18
       },
       {
         "id": "repair",
-        "title": "Repair the condition",
-        "narration": "Approval is restricted to custodian. The demonstrator does not merely hide a button; the role/action decision itself changes.",
-        "why": "The policy must hold regardless of which interface issued the request.",
-        "prompt": "Choose the approval rule.",
+        "title": "Repair the two affected decisions",
+        "narration": "The demonstrator denies maintainer reading and restores reader reading. Maintainer service remains allowed. Custodian reading and release approval remain allowed. The other four denied combinations are retained.",
+        "why": "The repair must remove excess authority and restore required work without inventing a broader role.",
+        "prompt": "Choose the smallest complete repair.",
         "controls": [
           {
             "id": "rule",
-            "label": "Approval condition",
+            "label": "Policy repair",
             "type": "select",
             "options": [
               {
-                "value": "Any signed-in role",
-                "label": "Any signed-in role"
+                "value": "Deny maintainer reading and allow reader reading",
+                "label": "Deny maintainer; allow reader"
               },
               {
-                "value": "Role is custodian",
-                "label": "Role is custodian"
+                "value": "Allow every role to read",
+                "label": "Allow every role to read"
               },
               {
-                "value": "No role ever",
-                "label": "No role ever"
+                "value": "Deny every operation",
+                "label": "Deny every operation"
               }
             ],
-            "expected": "Role is custodian"
+            "expected": "Deny maintainer reading and allow reader reading"
           }
         ],
         "before": {
@@ -3631,28 +3827,7 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "policy": [
-              "reader:read:allow",
-              "reader:service:deny",
-              "reader:approve:allow",
-              "maintainer:read:allow",
-              "maintainer:service:allow",
-              "maintainer:approve:allow",
-              "custodian:read:allow",
-              "custodian:service:deny",
-              "custodian:approve:allow"
-            ]
-          },
-          "labels": [
-            "Overbroad condition"
-          ],
-          "focus": "policy"
-        },
-        "after": {
-          "room": "digital",
-          "shot": "close",
-          "values": {
-            "policy": [
-              "reader:read:allow",
+              "reader:read:deny",
               "reader:service:deny",
               "reader:approve:deny",
               "maintainer:read:allow",
@@ -3664,101 +3839,55 @@ export const demonstrations:Demonstration[] = [
             ]
           },
           "labels": [
-            "Approval restricted to custodian"
+            "Two incorrect cells in the original table"
           ],
           "focus": "policy"
         },
-        "success": "The repair removes excess authority while preserving intended approval.",
-        "pitfall": "Denying all approvals would break the system's legitimate purpose.",
-        "hint": "The charter specifies one authorised role.",
+        "after": {
+          "room": "digital",
+          "shot": "close",
+          "values": {
+            "policy": [
+              "reader:read:allow",
+              "reader:service:deny",
+              "reader:approve:deny",
+              "maintainer:read:deny",
+              "maintainer:service:allow",
+              "maintainer:approve:deny",
+              "custodian:read:allow",
+              "custodian:service:deny",
+              "custodian:approve:allow"
+            ]
+          },
+          "labels": [
+            "Reader/read restored",
+            "Maintainer/read denied",
+            "Other seven decisions preserved"
+          ],
+          "focus": "policy"
+        },
+        "success": "Exactly the two observed mismatches are corrected under the published charter.",
+        "pitfall": "Denying all reading prevents the exposure but also violates reader and custodian duties.",
+        "hint": "There are two errors, not one; the other seven cells already match.",
         "duration": 18
       },
       {
         "id": "positive",
-        "title": "Check useful work survives",
-        "narration": "The maintainer services an instrument and the custodian approves a release. Both operations still succeed. The reader continues to read.",
-        "why": "Negative tests alone cannot detect a repair that disables all useful operations.",
-        "prompt": "Which positive check must still pass?",
+        "title": "Check that useful work remains possible",
+        "narration": "The repaired policy passes all nine expected decisions. Positive checks include reader reading, maintainer service and custodian approval. Negative checks include maintainer reading and reader approval. The demonstrator records the complete table.",
+        "why": "Testing only forbidden requests cannot show whether a repair preserves useful work.",
+        "prompt": "Set the two regression results that distinguish this charter.",
         "controls": [
           {
-            "id": "check",
-            "label": "Required positive case",
-            "type": "select",
-            "options": [
-              {
-                "value": "Reader approves",
-                "label": "Reader approves"
-              },
-              {
-                "value": "Maintainer services",
-                "label": "Maintainer services"
-              },
-              {
-                "value": "Reader services",
-                "label": "Reader services"
-              }
-            ],
-            "expected": "Maintainer services"
-          }
-        ],
-        "before": {
-          "room": "digital",
-          "shot": "close",
-          "values": {
-            "policy": [
-              "reader:read:allow",
-              "reader:service:deny",
-              "reader:approve:deny",
-              "maintainer:read:allow",
-              "maintainer:service:allow",
-              "maintainer:approve:deny",
-              "custodian:read:allow",
-              "custodian:service:deny",
-              "custodian:approve:allow"
-            ]
+            "id": "readerRead",
+            "label": "Reader may read research",
+            "type": "toggle",
+            "initial": false,
+            "expected": true
           },
-          "labels": [
-            "Regression checks pending"
-          ],
-          "focus": "policy"
-        },
-        "after": {
-          "room": "digital",
-          "shot": "close",
-          "values": {
-            "policy": [
-              "reader:read:allow",
-              "reader:service:deny",
-              "reader:approve:deny",
-              "maintainer:read:allow",
-              "maintainer:service:allow",
-              "maintainer:approve:deny",
-              "custodian:read:allow",
-              "custodian:service:deny",
-              "custodian:approve:allow"
-            ],
-            "verified": true
-          },
-          "labels": [
-            "Read / service / approval preserved"
-          ],
-          "focus": "policy"
-        },
-        "success": "The matrix now supports both permitted and forbidden cases.",
-        "pitfall": "A repair can pass one denial test while breaking required work.",
-        "hint": "Choose an action the charter explicitly permits.",
-        "duration": 18
-      },
-      {
-        "id": "hold",
-        "title": "Apply a narrow policy update",
-        "narration": "A calibration hold temporarily suspends custodian approval but preserves reading and maintenance. The original repaired matrix is retained as version 1.",
-        "why": "A new authoritative rule changes expectations rather than making the old test dishonest.",
-        "prompt": "Disable only the affected approval.",
-        "controls": [
           {
-            "id": "custodianApprove",
-            "label": "Custodian approval during hold",
+            "id": "maintainerRead",
+            "label": "Maintainer may read research",
             "type": "toggle",
             "initial": true,
             "expected": false
@@ -3772,17 +3901,16 @@ export const demonstrations:Demonstration[] = [
               "reader:read:allow",
               "reader:service:deny",
               "reader:approve:deny",
-              "maintainer:read:allow",
+              "maintainer:read:deny",
               "maintainer:service:allow",
               "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:allow"
-            ],
-            "revision": "Policy V1 retained"
+            ]
           },
           "labels": [
-            "Calibration hold suspends approval"
+            "Retest all nine role/action pairs"
           ],
           "focus": "policy"
         },
@@ -3794,51 +3922,40 @@ export const demonstrations:Demonstration[] = [
               "reader:read:allow",
               "reader:service:deny",
               "reader:approve:deny",
-              "maintainer:read:allow",
+              "maintainer:read:deny",
               "maintainer:service:allow",
               "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
-              "custodian:approve:deny"
+              "custodian:approve:allow"
             ],
-            "revision": "Policy V2: approval hold"
+            "verified": true
           },
           "labels": [
-            "Read and service remain available"
+            "Reader/read allowed",
+            "Maintainer/read denied; service allowed",
+            "Custodian/approve allowed"
           ],
           "focus": "policy"
         },
-        "success": "The update changes the affected authority and retains unrelated rights.",
-        "pitfall": "Disabling service as well would overreach the stated hold.",
-        "hint": "The hold names approval, not maintenance.",
+        "success": "The reading results differ by role; the repaired table also preserves maintenance and release duties.",
+        "pitfall": "Giving every role research-reading permission would violate this embargo.",
+        "hint": "Reading is allowed to reader and custodian only.",
         "duration": 18
       },
       {
-        "id": "audit",
-        "title": "Document the before and after",
-        "narration": "The record contains the initial unauthorised result, repaired charter matrix, positive checks and the later approval hold. The demonstrator labels each with its authority.",
-        "why": "Traceability lets another person distinguish a discovered bug from a changed requirement.",
-        "prompt": "Choose the correct description of the hold.",
+        "id": "hold",
+        "title": "Apply a release hold without changing the embargo",
+        "narration": "A new signed release hold suspends custodian approval. Reader and custodian reading remain permitted. Maintainer service remains permitted, while maintainer research reading is still forbidden. Version 1 is retained beside the changed authority.",
+        "why": "An authorised change must be scoped to the operation it names.",
+        "prompt": "Apply the release hold.",
         "controls": [
           {
-            "id": "status",
-            "label": "Reason for changed test",
-            "type": "select",
-            "options": [
-              {
-                "value": "The original charter never existed",
-                "label": "The original charter never existed"
-              },
-              {
-                "value": "A published new rule changed the expected result",
-                "label": "A published new rule changed the expected result"
-              },
-              {
-                "value": "The reader became the custodian",
-                "label": "The reader became the custodian"
-              }
-            ],
-            "expected": "A published new rule changed the expected result"
+            "id": "custodianApprove",
+            "label": "Custodian approval during release hold",
+            "type": "toggle",
+            "initial": true,
+            "expected": false
           }
         ],
         "before": {
@@ -3849,18 +3966,19 @@ export const demonstrations:Demonstration[] = [
               "reader:read:allow",
               "reader:service:deny",
               "reader:approve:deny",
-              "maintainer:read:allow",
+              "maintainer:read:deny",
               "maintainer:service:allow",
               "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
-              "custodian:approve:deny"
+              "custodian:approve:allow"
             ],
-            "revision": "V1 → V2"
+            "revision": "V1 retained: embargo charter"
           },
           "labels": [
-            "Original repair and later hold are separate"
-          ]
+            "New notice: suspend release approval only"
+          ],
+          "focus": "policy"
         },
         "after": {
           "room": "digital",
@@ -3870,30 +3988,109 @@ export const demonstrations:Demonstration[] = [
               "reader:read:allow",
               "reader:service:deny",
               "reader:approve:deny",
-              "maintainer:read:allow",
+              "maintainer:read:deny",
               "maintainer:service:allow",
               "maintainer:approve:deny",
               "custodian:read:allow",
               "custodian:service:deny",
               "custodian:approve:deny"
             ],
-            "verified": true,
-            "revision": "Audit complete"
+            "revision": "V2: release hold"
           },
           "labels": [
-            "Expected / observed / authority preserved"
-          ]
+            "Custodian/approve now denied",
+            "Embargo and service rules unchanged"
+          ],
+          "focus": "policy"
         },
-        "success": "The completed audit explains why a result changed.",
-        "pitfall": "Silently overwriting the original matrix removes the learning evidence.",
-        "hint": "Keep bug repair and policy revision as separate events.",
+        "success": "Only custodian approval changes. The earlier matrix was correct under its original authority.",
+        "pitfall": "Treating the hold as permission to reveal embargoed records changes an unrelated rule.",
+        "hint": "The notice names approval; it neither grants research access nor suspends maintenance.",
+        "duration": 18
+      },
+      {
+        "id": "audit",
+        "title": "Explain repair separately from authorised change",
+        "narration": "The completed audit keeps the original two failures, the nine-cell repaired matrix, the positive and negative checks, and the later release hold. The demonstrator labels each with its governing charter or notice.",
+        "why": "A reviewer must distinguish a bug from a changed requirement.",
+        "prompt": "Choose the explanation that preserves both events.",
+        "controls": [
+          {
+            "id": "status",
+            "label": "Reason for the two versions",
+            "type": "select",
+            "options": [
+              {
+                "value": "V1 repairs two bugs; V2 applies a new release hold",
+                "label": "V1: bug fixes; V2: new hold"
+              },
+              {
+                "value": "The old charter never applied",
+                "label": "The old charter never applied"
+              },
+              {
+                "value": "Both versions permit maintainers to read",
+                "label": "Maintainer may read in both"
+              }
+            ],
+            "expected": "V1 repairs two bugs; V2 applies a new release hold"
+          }
+        ],
+        "before": {
+          "room": "digital",
+          "shot": "close",
+          "values": {
+            "policy": [
+              "reader:read:allow",
+              "reader:service:deny",
+              "reader:approve:deny",
+              "maintainer:read:deny",
+              "maintainer:service:allow",
+              "maintainer:approve:deny",
+              "custodian:read:allow",
+              "custodian:service:deny",
+              "custodian:approve:deny"
+            ],
+            "revision": "V1 and V2 comparison"
+          },
+          "labels": [
+            "Bug repair and authority change are separate"
+          ],
+          "focus": "policy"
+        },
+        "after": {
+          "room": "digital",
+          "shot": "close",
+          "values": {
+            "policy": [
+              "reader:read:allow",
+              "reader:service:deny",
+              "reader:approve:deny",
+              "maintainer:read:deny",
+              "maintainer:service:allow",
+              "maintainer:approve:deny",
+              "custodian:read:allow",
+              "custodian:service:deny",
+              "custodian:approve:deny"
+            ],
+            "revision": "Two bugs repaired; later hold scoped",
+            "verified": true
+          },
+          "labels": [
+            "Expected, observed and authority recorded"
+          ],
+          "focus": "policy"
+        },
+        "success": "The audit explains each changed result without rewriting the historical charter.",
+        "pitfall": "A clean final table alone conceals why earlier outcomes differed.",
+        "hint": "Attach the governing rule to the result, not just the date.",
         "duration": 18
       }
     ],
     "artifact": {
-      "title": "The observatory access charter — completed record",
+      "title": "The embargoed observatory charter — completed record",
       "filename": "worked-lab-07.md",
-      "markdown": "# Completed demonstration example — observatory permission audit\n\nThis alternate local system uses reader, maintainer and custodian roles.\n\n## Published charter\nAll roles read. Only maintainer services. Only custodian approves release.\n\n## Initial failure\nRequest: reader / approve. Expected: deny. Observed: allow. The original condition treated any signed-in identity as approval authority.\n\n## Repaired matrix\n| Role | Read | Service | Approve |\n| --- | --- | --- | --- |\n| Reader | Allow | Deny | Deny |\n| Maintainer | Allow | Allow | Deny |\n| Custodian | Allow | Deny | Allow |\n\nNegative checks rejected reader and maintainer approval. Positive checks retained reader access, maintainer service and custodian approval.\n\n## Preserved revision\nVersion 1 is the repaired charter matrix above. Version 2 applies a later calibration hold: custodian approval becomes deny; all other cells remain unchanged. The historical V1 result was correct under the original authority.\n\n## Reflection\nThe useful distinction was between an excessive permission and a later policy change. Denying all operations would conceal the first problem by making the system useless. I checked positive cases as deliberately as negative ones and kept the authority beside each expected result.\n\nNamed output: permission-audit. These are fictional local operations, not an external security test."
+      "markdown": "# Completed demonstration example — embargoed observatory permission audit\n\n**Authored alternate example.** Read this local research embargo before deciding any permission.\n\n## Published authority\nReader: read research only. Maintainer: service equipment only; embargoed research is not readable. Custodian: read research and approve release. Every other combination is denied.\n\n## Preserved faulty results\n| Request | Expected | Observed before repair |\n| --- | --- | --- |\n| Maintainer / read | Deny | Allow |\n| Reader / read | Allow | Deny |\n\nThe other seven decisions already matched. The first failure exposed an embargoed resource; the second blocked an authorised reader.\n\n## Version 1 — repaired charter\n| Role | Read | Service | Approve |\n| --- | --- | --- | --- |\n| Reader | Allow | Deny | Deny |\n| Maintainer | Deny | Allow | Deny |\n| Custodian | Allow | Deny | Allow |\n\nAll nine cells were compared with the charter. Positive checks preserved reader reading, maintainer service and custodian reading/approval. Negative checks retained the embargo and remaining limits. The repair changed only maintainer/read and reader/read.\n\n## Version 2 — new release hold\nA later signed notice suspended custodian approval. The other eight decisions stayed as in Version 1. Reader and custodian could still read; maintainer could still service but could not read research. The previous correct approval is preserved under its earlier authority.\n\n## Reflection\nI initially expected equipment responsibility to include research visibility. The embargo contradicted that shortcut. Checking forbidden operations alone would also have missed the blocked reader, so I recorded both kinds of failure. The release hold was a new rule, not proof that the original approval test was dishonest. In the assigned lab I must derive a fresh table from its own charter and identify exactly which right its later notice changes. I can reuse the testing method without reusing these permission answers.\n\nNamed output: permission-audit. These are fictional local decisions, not an external security test."
     }
   },
   {
@@ -4219,52 +4416,55 @@ export const demonstrations:Demonstration[] = [
     "id": "lab-09",
     "kind": "lab",
     "week": 9,
-    "title": "The conservatory council",
+    "title": "The council that changes its brief",
     "subtitle": "A complete alternate worked example, followed by meaningful takeover practice.",
     "skill": "Evidence-based negotiation",
-    "setting": "Caretaker Ada, archivist Rin and engineer Bo disagree about moving a fragile field ledger.",
-    "difference": "New people, a seven-unit ledger and five/nine-unit support limits require reading the evidence afresh.",
-    "transfer": "Represent a role's legitimate responsibility and verify claims through records, not manner.",
+    "setting": "A conservatory council prepares an authorised physical ledger handover, then receives a narrower request before dispatch.",
+    "difference": "The copy claim is corroborated, the original fits the certified cart, and the initial physical handover is replaced by copy-only access before dispatch. Judge each agreement against its current evidence and mandate.",
+    "transfer": "Test each claim even when it proves correct, distinguish feasibility from authority, and reconsider an agreement when the requested outcome changes.",
     "sourceHref": "/sessions/week-09/",
     "sourceLabel": "Week 9 lab",
     "estimatedMinutes": 8,
     "steps": [
       {
         "id": "role",
-        "title": "Define the mediator's responsibility",
-        "narration": "The mediator is authorised to negotiate access while preserving the caretaker's custody responsibility. The role cannot simply order the original removed.",
-        "why": "A role grants responsibilities with limits, not universal authority.",
-        "prompt": "Choose an action within the role.",
+        "title": "Identify the actual responsibility",
+        "narration": "Ada permits the original ledger to travel to named recipient Mira for a physical provenance examination, provided custody and return are recorded. The mediator must find an agreement within that brief. A verified copy alone does not meet this original request.",
+        "why": "A defensible agreement serves the published objective and the custodian’s conditions together.",
+        "prompt": "Which outcome is required by the original brief?",
         "controls": [
           {
             "id": "proposal",
-            "label": "Permitted starting action",
+            "label": "Original required outcome",
             "type": "select",
             "options": [
               {
-                "value": "Negotiate a documented agreement",
-                "label": "Negotiate a documented agreement"
+                "value": "Documented physical handover to Mira",
+                "label": "Handover original to Mira"
               },
               {
-                "value": "Ignore the custodian",
-                "label": "Ignore the custodian"
+                "value": "Any readable copy",
+                "label": "Any readable copy"
               },
               {
-                "value": "Invent new authority",
-                "label": "Invent new authority"
+                "value": "Remove the ledger without a recipient",
+                "label": "Remove without a recipient"
               }
             ],
-            "expected": "Negotiate a documented agreement"
+            "expected": "Documented physical handover to Mira"
           }
         ],
         "before": {
           "room": "council",
           "shot": "establishing",
           "values": {
-            "role": "mediator"
+            "role": "mediator",
+            "load": 7,
+            "capacity": 9
           },
           "labels": [
-            "Mandate: negotiate access; preserve custody"
+            "Physical provenance examination",
+            "Mira: named recipient; custody and return required"
           ],
           "focus": "speaker"
         },
@@ -4273,145 +4473,154 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "role": "mediator",
+            "load": 7,
+            "capacity": 9,
             "verified": true
           },
           "labels": [
-            "Responsibilities stated before proposals"
+            "The objective requires the original"
           ],
           "focus": "speaker"
         },
-        "success": "The negotiation starts from a legitimate mandate.",
-        "pitfall": "Urgency does not erase another role's published responsibility.",
-        "hint": "State what your role can authorise and what it cannot.",
+        "success": "The mediator has an explicit required outcome and custody condition before choosing transport.",
+        "pitfall": "Assuming the lowest-effort copy is sufficient ignores physical provenance.",
+        "hint": "Read what Mira needs to examine.",
         "duration": 18
       },
       {
         "id": "claim",
-        "title": "Test a confident content claim",
-        "narration": "Rin says the two field-ledger copies are identical. The comparison record lists digests R-4 and R-8. The demonstrator questions the claim without judging Rin's confidence or intent.",
-        "why": "Conflicting content identifiers challenge identity, but do not prove deliberate deception.",
-        "prompt": "Which record tests the identical-copy claim?",
+        "title": "Accept corroboration within its limits",
+        "narration": "Rin says the two supplied copies contain identical recorded content. The comparison log lists twelve sections and digest R-4 for both. This record supports that content-identity claim. It does not prove every measurement true or establish Rin’s honesty in general.",
+        "why": "Verification can support a claim as well as contradict it; neither outcome is a personality test.",
+        "prompt": "What does the comparison record support?",
         "controls": [
           {
             "id": "evidence",
-            "label": "Relevant evidence",
+            "label": "Supported conclusion",
             "type": "select",
             "options": [
               {
-                "value": "Digest comparison R-4 / R-8",
-                "label": "Digest comparison R-4 / R-8"
+                "value": "The supplied copies match on section count and digest",
+                "label": "Count and digest both match"
               },
               {
-                "value": "Rin's eye contact",
-                "label": "Rin's eye contact"
+                "value": "Rin is always honest",
+                "label": "Rin is always honest"
               },
               {
-                "value": "Ada's confidence",
-                "label": "Ada's confidence"
+                "value": "The copies differ because Rin sounded confident",
+                "label": "Confidence proves difference"
               }
             ],
-            "expected": "Digest comparison R-4 / R-8"
+            "expected": "The supplied copies match on section count and digest"
           }
         ],
         "before": {
           "room": "council",
           "shot": "close",
           "values": {
-            "role": "archivist"
+            "role": "archivist",
+            "selected": "12/R-4 and 12/R-4"
           },
           "labels": [
-            "Claim: identical copies",
-            "Record: R-4 and R-8"
+            "Cedar: 12 sections / R-4",
+            "Birch: 12 sections / R-4"
           ],
-          "focus": "manifest"
+          "focus": "records"
         },
         "after": {
           "room": "council",
           "shot": "close",
           "values": {
-            "selected": "comparison",
+            "role": "archivist",
+            "selected": "matching comparison",
             "verified": true
           },
           "labels": [
-            "Identity claim contradicted; motive unresolved"
+            "Rin’s bounded content claim is corroborated"
           ],
-          "focus": "manifest"
+          "focus": "records"
         },
-        "success": "The challenge is grounded in a record, not a personality judgement.",
-        "pitfall": "Treating confidence as proof can endorse a false claim or unfairly reject a true one.",
-        "hint": "Choose evidence about the contents themselves.",
+        "success": "The records support the specific identity claim while leaving scientific accuracy and intent outside their scope.",
+        "pitfall": "Automatically finding a contradiction because a previous exercise contained one would misread these records.",
+        "hint": "Compare both values before deciding whether the claim conflicts.",
         "duration": 18
       },
       {
         "id": "capacity",
-        "title": "Check the physical constraint",
-        "narration": "Bo proposes placing the seven-unit original on a cart rated for five. A stabilising cradle supports nine units, but has not yet been installed.",
-        "why": "A numerical capacity limit is a constraint that negotiation cannot wish away.",
-        "prompt": "Does the unsupported cart meet the load requirement?",
+        "title": "Check whether the equipment really fits",
+        "narration": "Bo’s certificate gives the standard cart a supported capacity of nine units. The original ledger weighs seven units. No extra cradle is required under this certificate; the handling inspection is recorded as passed. Equipment capacity supports the proposed physical handover.",
+        "why": "A familiar transport concern must be checked against the current numbers rather than assumed to recur.",
+        "prompt": "Does the certified cart support this original?",
         "controls": [
           {
             "id": "supported",
-            "label": "Unsupported cart sufficient",
+            "label": "Seven-unit original fits the nine-unit cart",
             "type": "toggle",
-            "initial": true,
-            "expected": false
+            "initial": false,
+            "expected": true
           }
         ],
         "before": {
           "room": "council",
           "shot": "close",
           "values": {
-            "load": 7,
-            "capacity": 5
-          },
-          "labels": [
-            "Original 7 units; unsupported capacity 5"
-          ],
-          "focus": "cart"
-        },
-        "after": {
-          "room": "council",
-          "shot": "close",
-          "values": {
+            "role": "engineer",
             "load": 7,
             "capacity": 9
           },
           "labels": [
-            "Cradle option: capacity 9, verification needed"
+            "Original mass: 7",
+            "Certified capacity: 9",
+            "Handling inspection passed"
           ],
-          "focus": "cart"
+          "focus": "capacity"
         },
-        "success": "Unsupported transport is rejected; the cradle remains a testable alternative.",
-        "pitfall": "Calling the load 'only slightly heavier' does not satisfy the rated limit.",
-        "hint": "Compare the load with the current, not proposed, capacity.",
+        "after": {
+          "room": "council",
+          "shot": "close",
+          "values": {
+            "role": "engineer",
+            "load": 7,
+            "capacity": 9,
+            "verified": true
+          },
+          "labels": [
+            "7 ≤ 9: capacity met; custody still required"
+          ],
+          "focus": "capacity"
+        },
+        "success": "Physical handover is feasible under the published model. Capacity does not independently grant permission.",
+        "pitfall": "Calling stabilisation mandatory because another cart was too small substitutes an old result for a measurement.",
+        "hint": "Compare seven with nine, then return to the separate mandate.",
         "duration": 18
       },
       {
         "id": "agree",
-        "title": "Find an agreement the mandate supports",
-        "narration": "Ada permits a verified research copy to leave if custody is recorded and the original stays. Under the current research-access objective, a verified copy can meet the need without unsupported transport.",
-        "why": "Negotiation can satisfy different legitimate priorities through a bounded alternative.",
-        "prompt": "Choose the agreement supported by the current mandate.",
+        "title": "Prepare the authorised physical agreement",
+        "narration": "The council records a proposed handover of the original to Mira on the certified cart, with Ada retaining the custody record and a return commitment. Copy-only delivery cannot serve the original provenance examination. Nothing has been dispatched yet.",
+        "why": "A feasible plan still needs an authorised recipient and a recorded custody condition.",
+        "prompt": "Select the agreement supported by the current brief.",
         "controls": [
           {
             "id": "proposal",
-            "label": "Agreement",
+            "label": "Proposed agreement",
             "type": "select",
             "options": [
               {
-                "value": "Take the original on the unsupported cart",
-                "label": "Take the original on the unsupported cart"
+                "value": "Send the original to Mira with custody and return recorded",
+                "label": "Original + custody + return"
               },
               {
-                "value": "Recover a verified copy and record custody",
-                "label": "Recover a verified copy and record custody"
+                "value": "Send only a copy regardless of the request",
+                "label": "Copy regardless of the brief"
               },
               {
-                "value": "Assume both files are identical",
-                "label": "Assume both files are identical"
+                "value": "Move the original anonymously",
+                "label": "Move the original anonymously"
               }
             ],
-            "expected": "Recover a verified copy and record custody"
+            "expected": "Send the original to Mira with custody and return recorded"
           }
         ],
         "before": {
@@ -4419,11 +4628,12 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "load": 7,
-            "capacity": 5,
-            "role": "caretaker"
+            "capacity": 9,
+            "role": "caretaker",
+            "revision": "Before dispatch"
           },
           "labels": [
-            "Original stays; verified copy may leave"
+            "Original required; cart fits; recipient named"
           ],
           "focus": "speaker"
         },
@@ -4432,26 +4642,28 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "load": 7,
-            "capacity": 5,
-            "proposal": "verified copy",
+            "capacity": 9,
+            "proposal": "documented physical handover",
+            "revision": "Agreement V1; not yet dispatched",
             "verified": true
           },
           "labels": [
-            "Research access and custody both preserved"
+            "V1: physical handover prepared",
+            "Dispatch has not occurred"
           ],
           "focus": "speaker"
         },
-        "success": "The agreement meets the stated objective while respecting custody.",
-        "pitfall": "A compromise still needs evidence that the chosen copy is the required one.",
-        "hint": "Separate access to research from ownership of the physical original.",
+        "success": "The first agreement satisfies objective, capacity and custody. Its status is a prepared plan, not a completed delivery.",
+        "pitfall": "Presenting a proposed agreement as an accomplished handover would invent evidence.",
+        "hint": "Keep authority, capacity, recipient and completion status separate.",
         "duration": 18
       },
       {
         "id": "change",
-        "title": "Respond to a provenance requirement",
-        "narration": "A new signed brief says physical provenance is essential and the original must remain until a supported handover. A copy alone no longer completes the revised objective.",
-        "why": "A changed objective can make a previously sound agreement insufficient.",
-        "prompt": "Choose the revised approach.",
+        "title": "Revise the agreement when scope narrows",
+        "narration": "Before dispatch, a replacement signed brief cancels the physical examination. Mira now needs remote catalogue access only; the original must remain with Ada. A verified Cedar copy can meet the new request. Cart capacity has not changed.",
+        "why": "The right agreement can change even though the equipment and earlier evidence remain valid.",
+        "prompt": "Choose the agreement for the replacement brief.",
         "controls": [
           {
             "id": "proposal",
@@ -4459,19 +4671,19 @@ export const demonstrations:Demonstration[] = [
             "type": "select",
             "options": [
               {
-                "value": "Repeat the copy agreement unchanged",
-                "label": "Repeat the copy agreement unchanged"
+                "value": "Transfer the verified Cedar copy; keep the original with Ada",
+                "label": "Cedar copy; original with Ada"
               },
               {
-                "value": "Stabilise the original and arrange supported handover",
-                "label": "Stabilise the original and arrange supported handover"
+                "value": "Continue physical dispatch because the cart can carry it",
+                "label": "Cart fits; dispatch anyway"
               },
               {
-                "value": "Move it immediately on the five-unit cart",
-                "label": "Move it immediately on the five-unit cart"
+                "value": "Wait for a stronger cart before answering the request",
+                "label": "Wait for a stronger cart"
               }
             ],
-            "expected": "Stabilise the original and arrange supported handover"
+            "expected": "Transfer the verified Cedar copy; keep the original with Ada"
           }
         ],
         "before": {
@@ -4479,11 +4691,12 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "load": 7,
-            "capacity": 5,
-            "revision": "New provenance mandate"
+            "capacity": 9,
+            "revision": "New brief: remote access; original stays"
           },
           "labels": [
-            "Original required; supported handover"
+            "Remote catalogue access",
+            "Original remains with Ada"
           ],
           "focus": "speaker"
         },
@@ -4493,44 +4706,47 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "load": 7,
             "capacity": 9,
-            "revision": "Stabilise and hand over"
+            "proposal": "verified Cedar copy; original with Ada",
+            "revision": "V2 replaces unexecuted physical plan",
+            "verified": true
           },
           "labels": [
-            "Cradle verification assigned"
+            "V2: verified-copy access",
+            "Cart remains feasible but unnecessary"
           ],
-          "focus": "cart"
+          "focus": "speaker"
         },
-        "success": "The revision follows the new requirement rather than a change in personal trust.",
-        "pitfall": "Repeating an old agreement does not satisfy a different objective.",
-        "hint": "Name the new condition and design the handover around it.",
+        "success": "The scope change, rather than a transport failure, justifies switching from physical handover to copy access.",
+        "pitfall": "A valid capacity certificate does not override a new instruction to retain the original.",
+        "hint": "Identify what changed: the required outcome, not the cart.",
         "duration": 18
       },
       {
         "id": "record",
-        "title": "Preserve uncertainty honestly",
-        "narration": "The record keeps Rin's contradicted claim, the capacity numbers, Ada's authority and both agreements. It does not diagnose whether anyone lied.",
-        "why": "Evidence checking can be decisive about a claim while remaining uncertain about motive.",
-        "prompt": "Select the defensible closing statement.",
+        "title": "Keep corroboration and both decisions",
+        "narration": "The record preserves the matching copies, adequate cart, first physical agreement, replacement remote-access brief and revised copy agreement. The demonstrator states that no physical dispatch occurred and that Rin’s general intent was never established.",
+        "why": "A traceable account reports both what evidence supports and what it cannot establish.",
+        "prompt": "Choose the defensible closing statement.",
         "controls": [
           {
             "id": "conclusion",
-            "label": "Conclusion",
+            "label": "Closing statement",
             "type": "select",
             "options": [
               {
-                "value": "Rin's manner proves deceit",
-                "label": "Rin's manner proves deceit"
+                "value": "The copy claim was supported; the new brief changed the agreement before dispatch",
+                "label": "Claim supported; brief changed"
               },
               {
-                "value": "The identity claim conflicts with the record; intent is unresolved",
-                "label": "The identity claim conflicts with the record; intent is unresolved"
+                "value": "Rin’s confidence proved honesty",
+                "label": "Rin’s confidence proved honesty"
               },
               {
-                "value": "Every disagreement means bad faith",
-                "label": "Every disagreement means bad faith"
+                "value": "The original was delivered before the revised brief",
+                "label": "Original already delivered"
               }
             ],
-            "expected": "The identity claim conflicts with the record; intent is unresolved"
+            "expected": "The copy claim was supported; the new brief changed the agreement before dispatch"
           }
         ],
         "before": {
@@ -4539,11 +4755,12 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "load": 7,
             "capacity": 9,
-            "revision": "Original / revised agreement"
+            "revision": "V1 physical plan / V2 copy agreement"
           },
           "labels": [
-            "Claim evidence kept separate from motives"
-          ]
+            "Corroborated content claim; intent outside scope"
+          ],
+          "focus": "speaker"
         },
         "after": {
           "room": "council",
@@ -4551,22 +4768,25 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "load": 7,
             "capacity": 9,
+            "revision": "Both agreements and current authority retained",
             "verified": true
           },
           "labels": [
-            "Agreement and unresolved intent documented"
-          ]
+            "No physical dispatch claimed",
+            "Verified-copy request now governs"
+          ],
+          "focus": "speaker"
         },
-        "success": "The completed account supports action without pretending to read minds.",
-        "pitfall": "Confusing an inaccurate claim with proven deliberate deception overstates the evidence.",
-        "hint": "Evaluate the claim's support; leave unsupported motives open.",
+        "success": "The completed record explains the changed objective without inventing a faulty cart or a dishonest speaker.",
+        "pitfall": "Forcing a familiar copy-then-stabilise story onto this evidence reverses its supported decisions.",
+        "hint": "Report the agreement sequence these records justify.",
         "duration": 18
       }
     ],
     "artifact": {
-      "title": "The conservatory council — completed record",
+      "title": "The council that changes its brief — completed record",
       "filename": "worked-lab-09.md",
-      "markdown": "# Completed demonstration example — conservatory council agreement\n\n## Responsibilities\nMediator: negotiate research access without erasing custody.\nCaretaker Ada: retain the original unless a documented, supported handover is authorised.\nArchivist Rin: identify the required research content.\nEngineer Bo: verify equipment capacity before movement.\n\n## Claim checks\nRin's “identical copies” claim conflicts with digests R-4 and R-8. That contradiction concerns content identity; it does not establish intent.\nBo's unsupported transport proposal conflicts with original mass 7 and cart capacity 5. A cradle offers capacity 9, subject to verification.\n\n## Original agreement\nRecover a verified research copy, record custody and leave the physical original with Ada. This meets the original research-access mandate.\n\n## Revised agreement\nA new provenance mandate requires retaining the original pending supported handover. Stabilise it, verify the cradle, identify the custodian and document unresolved checks. The earlier copy agreement remains in the history but no longer completes the revised objective.\n\n## Reflection\nRepresenting the mediator meant finding a supported agreement, not winning every disagreement. Numerical constraints and written authority were more useful than interpreting confidence. The revised objective changed the right agreement without requiring a new story about anyone's character.\n\nNamed output: claim-verification."
+      "markdown": "# Completed demonstration example — changing-brief council agreement\n\n**Authored alternate example.** This council reaches a different decision sequence from the assigned negotiation.\n\n## Responsibilities and original authority\nAda is the caretaker. Rin compares the record copies. Bo checks transport capacity. The mediator coordinates the agreement. Recipient Mira initially needs the physical ledger for a provenance examination; Ada authorises that handover if custody and return are recorded.\n\n## Claim and capacity checks\nRin claims the supplied copies have matching recorded content. Cedar and Birch each contain twelve sections with digest R-4. The record corroborates that limited claim; it does not prove the observations scientifically true or establish Rin’s intent.\n\nThe original weighs 7 units. Bo’s current certificate rates the standard cart for 9, and the supplied handling inspection is marked passed. The original fits; no additional cradle is required. Capacity establishes feasibility within this model, not independent permission to move the original.\n\n## Agreement Version 1 — prepared, not executed\nSend the original to named recipient Mira using the certified cart, record custody with Ada and retain the return commitment. Copy-only delivery would not meet the physical provenance request. No dispatch occurs before the next notice.\n\n## Replacement brief and Agreement Version 2\nThe replacement signed brief cancels physical examination before dispatch. Mira now needs remote catalogue access; the original must remain with Ada. Transfer the verified Cedar copy, record the reference used and confirm the recipient’s access. The 9-unit cart remains usable but is no longer needed. The original stays with Ada.\n\n## Reflection and limit\nI checked the claim even though it turned out to be supported. I did not infer honesty or deceit from the speaker’s manner. The adequate cart made the first physical agreement feasible, but it did not entitle me to ignore the later instruction. The change was in the requested outcome, not a new equipment failure. Preserving the unexecuted first agreement made that distinction visible. In the assigned council I must reread its comparison records, capacity certificate and current mandate instead of copying this physical-then-copy sequence.\n\nNamed output: claim-verification. These are authored example agreements, not evidence of a real delivery."
     }
   },
   {
@@ -5115,22 +5335,22 @@ export const demonstrations:Demonstration[] = [
     "id": "lab-11",
     "kind": "lab",
     "week": 11,
-    "title": "When the bridge closes",
+    "title": "When the release authority expires",
     "subtitle": "A complete alternate worked example, followed by meaningful takeover practice.",
     "skill": "Preserved revision",
-    "setting": "A conservatory delivery plan depends on an east bridge and a verified trolley.",
-    "difference": "The alternate disruption closes a bridge and adds a west-platform load check.",
-    "transfer": "Locate the failed dependency, retain valid evidence and communicate the revised responsibility.",
+    "setting": "A conservatory dispatch plan must satisfy a replacement authorisation rule while every route and item of equipment remains available.",
+    "difference": "No passage closes and no meter fails. A superseding authorisation rule requires recipient-scope verification and recorded permission before sealing, so the team must reorder dependencies rather than choose another route.",
+    "transfer": "Locate the dependency a new authority invalidates, preserve valid evidence, and put a named verification before the action it now governs.",
     "sourceHref": "/sessions/week-11/",
     "sourceLabel": "Week 11 lab",
     "estimatedMinutes": 8,
     "steps": [
       {
         "id": "baseline",
-        "title": "Freeze the original plan",
-        "narration": "Version 1 reads: inspect ledger, verify trolley, cross east bridge, record custody. The demonstrator freezes it before reading the disruption.",
-        "why": "A revision can only be explained if its earlier state remains available.",
-        "prompt": "Arrange and preserve Version 1.",
+        "title": "Preserve the originally authorised sequence",
+        "narration": "Under the original release authority, Version 1 reads: verify ledger, seal case, dispatch case, log receipt. The route is open and equipment checks are valid. The demonstrator preserves this plan before reading the replacement notice.",
+        "why": "A useful revision needs an honest original plan and the authority under which it made sense.",
+        "prompt": "Arrange Version 1 under its original authority.",
         "controls": [
           {
             "id": "items",
@@ -5138,33 +5358,33 @@ export const demonstrations:Demonstration[] = [
             "type": "order",
             "options": [
               {
-                "value": "Record custody",
-                "label": "Record custody"
+                "value": "Log receipt",
+                "label": "Log receipt"
               },
               {
-                "value": "Inspect ledger",
-                "label": "Inspect ledger"
+                "value": "Dispatch case",
+                "label": "Dispatch case"
               },
               {
-                "value": "Cross east bridge",
-                "label": "Cross east bridge"
+                "value": "Seal case",
+                "label": "Seal case"
               },
               {
-                "value": "Verify trolley",
-                "label": "Verify trolley"
+                "value": "Verify ledger",
+                "label": "Verify ledger"
               }
             ],
             "initial": [
-              "Record custody",
-              "Inspect ledger",
-              "Cross east bridge",
-              "Verify trolley"
+              "Log receipt",
+              "Dispatch case",
+              "Seal case",
+              "Verify ledger"
             ],
             "expected": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ]
           }
         ],
@@ -5172,59 +5392,59 @@ export const demonstrations:Demonstration[] = [
           "room": "operations",
           "shot": "establishing",
           "values": {
-            "revision": "No baseline yet",
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
-            ]
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
+            ],
+            "revision": "Baseline awaiting preservation"
           },
           "labels": [
-            "Four-step plan awaiting preservation"
+            "Earlier authority permits this sequence"
           ],
-          "focus": "original-plan"
+          "focus": "plan"
         },
         "after": {
           "room": "operations",
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V1: inspect → verify → east bridge → custody"
+            "revision": "V1 uses earlier release authority"
           },
           "labels": [
-            "Original preserved"
+            "V1 preserved before the new notice"
           ],
-          "focus": "original-plan"
+          "focus": "plan"
         },
-        "success": "The first plan can now be compared with later decisions.",
-        "pitfall": "Writing the baseline after seeing the disruption can invent foresight.",
-        "hint": "Keep the original plan exactly as it was stated.",
+        "success": "The baseline remains visible as an earlier justified plan. It is not rewritten with later knowledge.",
+        "pitfall": "Pretending the extra checks were always in Version 1 destroys the comparison.",
+        "hint": "Keep the earlier authority beside the original sequence.",
         "duration": 18
       },
       {
         "id": "disruption",
-        "title": "Identify the affected dependency",
-        "narration": "A published notice closes the east bridge. The west platform remains available but requires a load-capacity check. Ledger identity evidence has not changed.",
-        "why": "A specific disruption does not automatically invalidate every earlier result.",
-        "prompt": "Which original dependency fails?",
+        "title": "Find the failed authority dependency",
+        "narration": "A published replacement notice withdraws the old dispatch authority. Before sealing, an investigator must check that the recipient’s request covers this ledger, and a coordinator must record the replacement authorisation. Routes remain open and equipment readings remain valid.",
+        "why": "An available route does not authorise an action; dependencies include authority as well as hardware.",
+        "prompt": "Which dependency has become invalid?",
         "controls": [
           {
             "id": "dependency",
@@ -5232,19 +5452,19 @@ export const demonstrations:Demonstration[] = [
             "type": "select",
             "options": [
               {
-                "value": "Ledger identity",
-                "label": "Ledger identity"
+                "value": "The old authority permits sealing and dispatch",
+                "label": "Old release authority"
               },
               {
-                "value": "East bridge availability",
-                "label": "East bridge availability"
+                "value": "The east route is closed",
+                "label": "The east route is closed"
               },
               {
-                "value": "Need to record custody",
-                "label": "Need to record custody"
+                "value": "The ledger identity result changed",
+                "label": "The ledger identity result changed"
               }
             ],
-            "expected": "East bridge availability"
+            "expected": "The old authority permits sealing and dispatch"
           }
         ],
         "before": {
@@ -5252,59 +5472,59 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V1 retained"
+            "revision": "V1 uses earlier release authority"
           },
           "labels": [
-            "Notice: east bridge closed",
-            "West requires load check"
+            "Verify scope and record permission before sealing",
+            "Routes and equipment unchanged"
           ],
-          "focus": "notice"
+          "focus": "plan"
         },
         "after": {
           "room": "operations",
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "Affected: transport route"
+            "revision": "Old release authority withdrawn"
           },
           "labels": [
-            "Ledger and custody evidence retained"
+            "Affected dependency: authority before sealing"
           ],
-          "focus": "notice"
+          "focus": "plan"
         },
-        "success": "The diagnosis scopes the change to the route and its new condition.",
-        "pitfall": "Discarding every earlier result wastes evidence that remains valid.",
-        "hint": "Name the step that relied on the closed bridge.",
+        "success": "The notice invalidates the old permission to proceed, not the route or verified ledger identity.",
+        "pitfall": "Searching for a west-route detour solves a problem this notice does not contain.",
+        "hint": "Read which action must now wait, and what it must wait for.",
         "duration": 18
       },
       {
         "id": "retain",
-        "title": "Keep justified work",
-        "narration": "The trolley's completed inspection and ledger reference remain applicable. The demonstrator carries those findings forward while labelling the additional platform check.",
-        "why": "Preserving valid work is as important as changing invalid work.",
-        "prompt": "Select the evidence that remains usable.",
+        "title": "Carry forward evidence within its scope",
+        "narration": "The signed ledger comparison is unchanged, and equipment checks remain valid. Those findings can be retained, but neither proves that the recipient’s current request includes this ledger. That authorisation question remains open.",
+        "why": "Preserved evidence is useful only for the question it answers.",
+        "prompt": "Which finding remains valid without establishing the new authority?",
         "controls": [
           {
             "id": "retained",
@@ -5312,19 +5532,19 @@ export const demonstrations:Demonstration[] = [
             "type": "select",
             "options": [
               {
-                "value": "The east bridge is open",
-                "label": "The east bridge is open"
+                "value": "The unchanged signed ledger identity check",
+                "label": "Signed ledger identity check"
               },
               {
-                "value": "The unchanged signed ledger comparison",
-                "label": "The unchanged signed ledger comparison"
+                "value": "The withdrawn permit is still current",
+                "label": "Withdrawn permit still applies"
               },
               {
-                "value": "No new check is required",
-                "label": "No new check is required"
+                "value": "An open route grants release permission",
+                "label": "Open route grants permission"
               }
             ],
-            "expected": "The unchanged signed ledger comparison"
+            "expected": "The unchanged signed ledger identity check"
           }
         ],
         "before": {
@@ -5332,79 +5552,79 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "Reconsider dependencies"
+            "revision": "Separate retained findings from the new question"
           },
           "labels": [
-            "Signed ledger reference unchanged"
+            "Identity and equipment evidence retained"
           ],
-          "focus": "manifest"
+          "focus": "plan"
         },
         "after": {
           "room": "operations",
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "verified": true,
-            "revision": "Ledger verification retained"
+            "revision": "Identity retained; recipient scope unchecked",
+            "verified": true
           },
           "labels": [
-            "New route still needs verification"
+            "New scope question remains explicit"
           ],
-          "focus": "manifest"
+          "focus": "plan"
         },
-        "success": "The revision preserves a justified finding without overextending it.",
-        "pitfall": "Retaining the ledger result does not prove the new platform is ready.",
-        "hint": "The disruption changed a route, not the content reference.",
+        "success": "The team keeps justified work without treating identity evidence as permission.",
+        "pitfall": "Restarting every equipment test is unnecessary; skipping the new scope check is unsupported.",
+        "hint": "Ask what the old comparison proves rather than whether the whole plan feels valid.",
         "duration": 18
       },
       {
         "id": "assign",
-        "title": "Assign the new verification",
-        "narration": "The systems role owns the platform load check. The coordinator must receive its result before authorising the changed handoff.",
-        "why": "A technically correct revision can fail when responsibility is implicit.",
-        "prompt": "Choose the verification owner.",
+        "title": "Assign the authorisation checks",
+        "narration": "The investigator compares the recipient’s signed request with this ledger’s identity and purpose. The coordinator receives that result and records the new authorisation before anyone seals the case. An unanswered scope question stops sealing.",
+        "why": "A prerequisite needs both a checker and someone who receives the result.",
+        "prompt": "Who checks the recipient’s scope?",
         "controls": [
           {
             "id": "role",
-            "label": "Load-check owner",
+            "label": "Scope-check owner",
             "type": "select",
             "options": [
               {
-                "value": "Systems specialist",
-                "label": "Systems specialist"
+                "value": "Investigator",
+                "label": "Investigator"
               },
               {
-                "value": "Nobody; assume it is fine",
-                "label": "Nobody; assume it is fine"
+                "value": "Systems specialist checking a route",
+                "label": "Systems: route check"
               },
               {
-                "value": "The most confident speaker",
-                "label": "The most confident speaker"
+                "value": "Nobody; the route is open",
+                "label": "Nobody; the route is open"
               }
             ],
-            "expected": "Systems specialist"
+            "expected": "Investigator"
           }
         ],
         "before": {
@@ -5412,22 +5632,22 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "role": "unassigned",
-            "revision": "West-platform check pending"
+            "revision": "Recipient-scope check pending",
+            "role": "unassigned"
           },
           "labels": [
-            "New condition lacks an owner"
+            "Unverified scope blocks sealing"
           ],
           "focus": "crew"
         },
@@ -5436,36 +5656,36 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "role": "systems",
-            "revision": "Owner assigned; coordinator awaits result"
+            "revision": "Investigator checks; coordinator records authority",
+            "role": "investigator"
           },
           "labels": [
-            "Explicit cross-role dependency"
+            "Named owner and recipient of the result"
           ],
           "focus": "crew"
         },
-        "success": "The new task has an owner and a recipient.",
-        "pitfall": "Putting a check in a plan does not ensure anyone performs it.",
-        "hint": "Assign the role with the relevant apparatus responsibility.",
+        "success": "The investigator owns scope comparison; the coordinator records authority and releases the next step.",
+        "pitfall": "Assigning the check to everyone without a named recipient leaves the dependency unresolved.",
+        "hint": "Separate investigation from the decision to release the package.",
         "duration": 18
       },
       {
         "id": "revise",
-        "title": "Build Version 2",
-        "narration": "The team retains inspection and trolley verification, adds the platform check, crosses west and records custody. Version 1 remains unchanged.",
-        "why": "The changed order exposes the new prerequisite rather than hiding it in prose.",
-        "prompt": "Arrange the revised sequence.",
+        "title": "Put the new prerequisite before sealing",
+        "narration": "Version 2 keeps ledger verification, then checks recipient scope and records the new authorisation before sealing. Dispatch and the receipt follow on the same open route. The original four-step plan remains unchanged beside it.",
+        "why": "A revision must change the order governing action, not append a warning after the dependent step.",
+        "prompt": "Arrange the revised plan so authority precedes sealing.",
         "controls": [
           {
             "id": "items",
@@ -5473,39 +5693,45 @@ export const demonstrations:Demonstration[] = [
             "type": "order",
             "options": [
               {
-                "value": "Cross west platform",
-                "label": "Cross west platform"
+                "value": "Log receipt",
+                "label": "Log receipt"
               },
               {
-                "value": "Record custody",
-                "label": "Record custody"
+                "value": "Dispatch case",
+                "label": "Dispatch case"
               },
               {
-                "value": "Inspect ledger",
-                "label": "Inspect ledger"
+                "value": "Seal case",
+                "label": "Seal case"
               },
               {
-                "value": "Check platform capacity",
-                "label": "Check platform capacity"
+                "value": "Record new authorisation",
+                "label": "Record new authorisation"
               },
               {
-                "value": "Verify trolley",
-                "label": "Verify trolley"
+                "value": "Check recipient scope",
+                "label": "Check recipient scope"
+              },
+              {
+                "value": "Verify ledger",
+                "label": "Verify ledger"
               }
             ],
             "initial": [
-              "Cross west platform",
-              "Record custody",
-              "Inspect ledger",
-              "Check platform capacity",
-              "Verify trolley"
+              "Log receipt",
+              "Dispatch case",
+              "Seal case",
+              "Record new authorisation",
+              "Check recipient scope",
+              "Verify ledger"
             ],
             "expected": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Check platform capacity",
-              "Cross west platform",
-              "Record custody"
+              "Verify ledger",
+              "Check recipient scope",
+              "Record new authorisation",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ]
           }
         ],
@@ -5514,64 +5740,64 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V1 preserved / V2 draft"
+            "revision": "V1 retained; V2 draft"
           },
           "labels": [
-            "West crossing depends on capacity check"
+            "Sealing waits for scope and new authority"
           ],
-          "focus": "revised-plan"
+          "focus": "plan"
         },
         "after": {
           "room": "operations",
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Check platform capacity",
-              "Cross west platform",
-              "Record custody"
+              "Verify ledger",
+              "Check recipient scope",
+              "Record new authorisation",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V2: inspect → trolley → capacity → west → custody",
-            "verified": true
+            "revision": "V2: authority before sealing"
           },
           "labels": [
-            "New prerequisite precedes movement"
+            "Same route; new prerequisites before sealing"
           ],
-          "focus": "revised-plan"
+          "focus": "plan"
         },
-        "success": "The revised plan respects the new dependency and retains the original.",
-        "pitfall": "Moving first and checking capacity afterwards cannot justify that move.",
-        "hint": "Place the new verification before the action it permits.",
+        "success": "The revised order addresses the actual dependency. A check after dispatch would not satisfy the notice.",
+        "pitfall": "Appending authorisation at the end leaves the unsupported action unchanged.",
+        "hint": "Place both new steps before the first action governed by the new rule.",
         "duration": 18
       },
       {
         "id": "communicate",
-        "title": "Confirm the shared revision",
-        "narration": "The coordinator reads the revised route and stop condition to the other roles. The team acknowledges that the east bridge remains closed and west movement awaits the check.",
-        "why": "A revised document is not necessarily a revised shared understanding.",
-        "prompt": "Confirm the changed-plan read-back.",
+        "title": "Confirm the new stop condition",
+        "narration": "The coordinator reads back the revised sequence: no sealing until the investigator confirms scope and replacement authorisation is recorded. The team confirms it will use the same route after that gate is met. This is a revised plan, not a claim that dispatch has happened.",
+        "why": "Everyone needs the same current action condition; a revised document alone does not establish shared understanding.",
+        "prompt": "Confirm the new sequencing and stop condition.",
         "controls": [
           {
             "id": "acknowledged",
-            "label": "All roles received the revision",
+            "label": "All roles know sealing waits for the new authority",
             "type": "toggle",
             "initial": false,
             "expected": true
@@ -5582,22 +5808,23 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Check platform capacity",
-              "Cross west platform",
-              "Record custody"
+              "Verify ledger",
+              "Check recipient scope",
+              "Record new authorisation",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V2 ready; handoff pending"
+            "revision": "V2 communicated; confirmation pending"
           },
           "labels": [
-            "Stop if platform check fails"
+            "Stop if scope or recorded authority is missing"
           ],
           "focus": "crew"
         },
@@ -5606,36 +5833,37 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {
             "originalPlan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Cross east bridge",
-              "Record custody"
+              "Verify ledger",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
             "plan": [
-              "Inspect ledger",
-              "Verify trolley",
-              "Check platform capacity",
-              "Cross west platform",
-              "Record custody"
+              "Verify ledger",
+              "Check recipient scope",
+              "Record new authorisation",
+              "Seal case",
+              "Dispatch case",
+              "Log receipt"
             ],
-            "revision": "V1 and V2 retained",
+            "revision": "Both versions retained; stop condition acknowledged",
             "verified": true
           },
           "labels": [
-            "Shared plan updated; uncertainty recorded"
+            "Order confirmed; dispatch not claimed"
           ],
           "focus": "crew"
         },
-        "success": "The completed record contains the change, its reason, responsibility and communication.",
-        "pitfall": "Assuming everyone noticed the edit leaves old actions in circulation.",
-        "hint": "Read back the new condition explicitly.",
+        "success": "The record identifies authority, order, owner, communication and the still-unexecuted action.",
+        "pitfall": "Treating acknowledgement as proof that authorisation was granted invents a result.",
+        "hint": "Confirm the rule separately from the future result of its checks.",
         "duration": 18
       }
     ],
     "artifact": {
-      "title": "When the bridge closes — completed record",
+      "title": "When the release authority expires — completed record",
       "filename": "worked-lab-11.md",
-      "markdown": "# Completed demonstration example — bridge revision memo\n\n## Preserved Version 1\nInspect ledger → verify trolley → cross east bridge → record custody.\n\n## Published disruption\nThe east bridge is closed. The west platform is available only after a load-capacity check.\n\n## Diagnosis\nThe failed dependency is route availability. The signed ledger comparison and completed trolley inspection remain applicable. The need to record custody also remains.\n\n## Version 2\nInspect ledger → verify trolley → check west-platform capacity → cross west platform → record custody.\n\nSystems specialist owns the added capacity check. The coordinator receives its result and stops movement if it fails. The revised route and stop condition are read back to all roles before execution.\n\n## Rationale and limits\nThe revision changes only the affected route and adds its prerequisite. It does not claim that an available platform is already verified. Version 1 remains visible because it documents the earlier decision under earlier information.\n\n## Reflection\nI initially wanted to replace the entire plan, but the disruption did not invalidate the evidence already gathered. Keeping valid work made the new dependency clearer. My main improvement was assigning both an owner for the check and a recipient for the result.\n\nNamed output: revised-plan. This is a separate demonstration, not the assigned relay revision."
+      "markdown": "# Completed demonstration example — release-authority revision memo\n\n**Authored alternate example.** Every route stays open. The disruption changes an authorisation dependency rather than equipment or transport availability.\n\n## Version 1 and its authority\nVerify ledger → Seal case → Dispatch case → Log receipt.\n\nThe original release authority permitted this order. Ledger identity and equipment checks were supplied as valid; the plan was preserved before the replacement notice.\n\n## Published disruption\nThe replacement notice withdraws the old dispatch authority. Before sealing, the investigator must compare the recipient’s request with this ledger’s identity and purpose. The coordinator must record the new authorisation. Neither open routes nor working equipment removes those conditions.\n\n## Diagnosis and retained evidence\nThe failed dependency is the old authority to seal and dispatch. The unchanged signed ledger comparison remains useful for identity. Equipment remains available. Neither finding establishes that the recipient’s current request covers this ledger. No route change is required.\n\n## Version 2\nVerify ledger → Check recipient scope → Record new authorisation → Seal case → Dispatch case → Log receipt.\n\nThe investigator owns scope comparison and sends the result to the coordinator. The coordinator records authority and authorises sealing only when both prerequisites are met. If scope is unresolved or authorisation absent, stop before sealing. The route, verified identity and receipt obligation remain unchanged.\n\n## Communication and status\nThe coordinator reads back the new order and stop condition; all roles acknowledge them. Version 1 stays preserved. This memo records a revised plan, not an invented completed authorisation or dispatch.\n\n## Reflection\nMy first temptation was to choose another route, but availability was not the dependency the notice changed. The important change was the point at which permission had to be established. Adding a scope check after dispatch would mention the new rule without satisfying it. I kept the identity evidence, named an investigator to check scope, and made the coordinator receive and record the result before sealing. In the assigned route or meter disruptions I must identify their different failed dependency instead of copying this sequence.\n\nNamed output: revised-plan. No physical dispatch or grant of authority is claimed."
     }
   },
   {
@@ -6409,7 +6637,7 @@ export const demonstrations:Demonstration[] = [
     "artifact": {
       "title": "Complete twelve-record demonstration portfolio",
       "filename": "worked-fieldwork-portfolio.md",
-      "markdown": "# Completed demonstration portfolio — Weekly Fieldwork\n\n**Authored teaching example.** These are twelve alternate worked records, not a real student's submission and not answers to the assigned configurations. The traces describe the authored demonstration path. No physical test or academic grade is claimed.\n\n## Portfolio register\n- Week 1: Completed observation record — conservatory; record and transfer included below.\n- Week 2: Completed recall strategy — storm kit; record and transfer included below.\n- Week 3: Completed spatial model — dome connector; record and transfer included below.\n- Week 4: Completed mechanism diagnosis — conservatory lift; record and transfer included below.\n- Week 5: Completed circuit diagnosis — nine-volt beacon; record and transfer included below.\n- Week 6: Completed evidence timeline — weather ledgers; record and transfer included below.\n- Week 7: The observatory access charter — completed record; record and transfer included below.\n- Week 8: Five cases to the dome — completed record; record and transfer included below.\n- Week 9: The conservatory council — completed record; record and transfer included below.\n- Week 10: Predict the instrumented gallery — completed record; record and transfer included below.\n- Week 11: When the bridge closes — completed record; record and transfer included below.\n- Week 12: Recover the rainfall recorder — completed record; record and transfer included below.\n\nTwelve records are supplied. Under the published rule, the best ten are counted by a teacher using skill 40%, transfer 40%, reflection 20%. The player does not invent grades or choose the best records by game completion.\n\n## Completed demonstration example — conservatory observation record\n\nThis alternate example shows a method. It is not an answer to the assigned lab.\n\n## Initial inspection\nAt the first inspection the clock displayed 11:35, a green mug stood beside the planting ledger and the service hatch was closed. These are supplied scene observations. A visible note asserted, “I checked every tray.” The note's presence is observable; its contents remain a claim.\n\n## Reconstruction and correction\nI initially recalled the hatch as open. Rechecking the scene showed that I had inserted a familiar detail. I preserved the incorrect recollection and correction rather than rewriting the attempt. I classified “the gardener left in a hurry” as an inference because several explanations fit an empty mug.\n\n## Changed situation\nAt the second inspection the clock read 11:50 and the hatch was open. The green mug remained unchanged. Two recorded features changed. No record established who opened the hatch or why.\n\n## Next investigation\nInspect the tray check records against the claimed complete inspection. Matching records would support the account within their scope; missing entries would require clarification.\n\n## Reflection\nMy main error was adding a plausible detail, not failing to look at an object. A regional inspection helped coverage, but preserving a separate interpretation column helped more with this mistake. In my own scene I would make the same distinction before building a story. I would not claim that two changed features prove a particular person's intent.\n\nRoute: authored 3D/interactive demonstration. Assistance: narrated example and one recorded correction.\n\n### Further reflection\n\nThe independent tray record is important because it could actually contradict the note. Asking the writer to repeat the same account would not add comparable independence. I would therefore preserve both the account and the proposed test instead of reducing the record to a confidence label.\n\n---\n\n## Completed demonstration example — storm-kit recall strategy\n\nThis alternate worked example uses Gate, Pool, Press and Dome. It does not supply the assigned lab's item answers.\n\n## Baseline\nI recalled Lens and Beacon: two correct items out of four. I kept that result before inspecting the full list.\n\n## Encoding route\n1. Gate: a giant Lens frames the entrance.\n2. Pool: a Tether splashes in the water.\n3. Press: a Pocket atlas unfolds into maps under the rollers.\n4. Dome: a Beacon lights the roof.\n\n## Retrieval and error\nWith the list covered, I retrieved Lens, Tether, Pocket atlas and Beacon in order. A later attempt produced “book” at the Press. I recorded the substitution and strengthened the map-specific cue rather than silently counting it as exact recall.\n\n## Comparison\nThe guided attempt improved from two correct items to four. That is a result of this small demonstration, not proof of permanent improvement or photographic memory. Rehearsal and item familiarity may also have helped.\n\n## Reflection\nThe fixed locations helped order, while the distinctive images helped item identity. The delayed substitution showed that a generic association preserved a category but not the required object. In another task I would preserve the route, change the items, and inspect whether the same weakness returned. For a critical instruction set that can be carried openly, a checklist may remain the better tool.\n\nRoute: guided example with list covering. Hints: association prompts. Named output: recall-strategy.\n\n### Further reflection\n\nA second unfamiliar list would be a better transfer check than endlessly repeating these four items. I would also record the delay before recall, because immediate retrieval and remembering after an interruption are different demands. The example should not hide the effect of repeated practice.\n\n---\n\n## Completed demonstration example — dome connector\n\nThe assigned connector uses different starting and target conditions.\n\n## Reference frame and prediction\nWorld north and up remain fixed when the camera moves. The alternate connector initially has north/west ports at level 0. A clockwise 90-degree turn maps the original north port to east and the original west port to north.\n\n## Transformation record\n- Initial: 0 degrees, level 0, north/west.\n- After rotation: 90 degrees, level 0, east/north.\n- After translation: 90 degrees, level 2, east/north.\n- Verification: both labelled ports and the required level match.\n\nA mirrored substitute was rejected because outline similarity did not preserve the original label mapping.\n\n## Changed destination\nThe target moved to level 1 without changing port requirements. I lowered the connector and retained its 90-degree orientation.\n\n## Reflection\nI initially treated reaching the right orientation as completion, but the target included a separate height condition. Writing two checks prevented that omission. Tracking the original north tip also made the rotation explainable when the camera changed. In a new configuration I would predict the label mapping before movement and then test position independently.\n\nNamed output: spatial-model. Evidence route: alternate worked simulation.\n\n### Further reflection\n\nI would ask for another labelled view if the mapping remained ambiguous rather than rotating until the outline looked familiar. An ordered text account of the transformation makes the same reasoning available without relying on visual mental rotation or precise manipulation.\n\n---\n\n## Completed demonstration example — conservatory lift\n\nThis alternate mechanism uses an 18-tooth driver, different turn requirements and a 270-degree cam.\n\n## Causal model\nInput rotation → external gear pair → cam → spring-return follower → lift output. The interlock blocks cam adjustment until released. Motion also requires the spring and specified cam phase.\n\n## Prediction and diagnosis\nFor three output turns from five input turns: follower = 18 × 5 ÷ 3 = 30 teeth. The driven gear turns opposite the driver. A correct ratio did not initially produce a ready mechanism because the interlock was engaged and the return spring absent.\n\nI released the interlock, set the cam to 270 degrees and attached the spring. I retained the ratio calculation because it was not contradicted by the readiness fault.\n\n## Verification\nFive input turns produced three opposite output turns. Both the amount and direction matched the prediction.\n\n## Transfer\nThe changed task required two output turns from four input turns. I selected 36 follower teeth: 18 ÷ 36 × 4 = 2. The cam and spring conditions remained valid.\n\n## Reflection\nThe useful distinction was between an incorrect transmission ratio and a blocked dependency. Changing gears would not have released the cam. In a new apparatus I would record the output requirement, list readiness conditions and test both separately.\n\nNamed output: mechanism-diagnosis. This is a model, not a real lock or physical qualification.\n\n### Further reflection\n\nThe readiness conditions belong in the model rather than a footnote. I would test a blocked configuration as a counterexample so that another student could see why the correct gear ratio alone is insufficient. That negative example explains the distinction better than a successful run by itself.\n\n---\n\n## Completed demonstration example — nine-volt beacon\n\nThis alternate apparatus uses 9 V. It is a fictional bench model, not an instruction to work on mains equipment.\n\n## First fault\nPowered readings relative to common return: source 9 V; fuse output 9 V; cable output 0 V; beacon supply 0 V. The first missing supply followed the cable segment, supporting an open cable rather than an open fuse.\n\nI isolated power, replaced the cable, restored power and verified 9 V at the beacon together with visible light.\n\n## Changed fault\nThe second beacon remained dark with 9 V at every supply node. Those readings did not support a missing supply. I isolated power and checked continuity through the lamp; the model reported an open load. I replaced the lamp while isolated, restored power and verified light plus 9 V supply.\n\n## Reflection\nMy original first-zero strategy worked for a supply break but could not diagnose the second fault. Repeating a healthy source measurement added no information. The important change was to distinguish supply from load continuity. The record preserves the powered observations and the later isolated action so another reader can see why each test was appropriate.\n\n## Limits\nThese are authored model readings. They are not measurements from constructed hardware, and their idealisation does not establish the behaviour of an arbitrary physical circuit.\n\nNamed output: circuit-diagnosis. Assistance: complete narrated worked example.\n\n### Further reflection\n\nI would record both probe locations in a physical measurement and distinguish measured tolerances from these idealised values. The lamp example reminds me that an apparently healthy input does not establish a working output. The repair check should return to the original symptom.\n\n---\n\n## Completed demonstration example — weather-ledger investigation\n\nAlternate fixtures: 18 sections, Q-7/Q-9 references and North/East/South ledgers.\n\n| Time | Record | Direct result | Interpretation |\n| --- | --- | --- | --- |\n| 07:15 | South | 17 sections, Q-2 | Incomplete against the original request |\n| 07:20 | North | 18 sections, Q-7 | Matches original signed request |\n| 07:45 | East | 18 sections, Q-9 | Annotated variant; newest is not automatically required |\n| Amendment | Signed request | 18 sections, Q-9 required | Current target changes to East |\n\n## Preserved recommendations\nOriginal: select North because it meets both the count and Q-7 requirement.\nAmended: select East because the later signed authority explicitly requires Q-9.\n\n## Limits and next check\nDigest agreement establishes identity against the supplied reference, not the truth of every weather observation. The annotation's purpose requires its own supporting record. I would inspect that record before making claims about motive.\n\n## Reflection\nSeparating the timeline from the comparison stopped recency from deciding the answer. The amendment changed the appropriate recommendation without invalidating the recorded fact that North matched the earlier request. My revised record preserves both authorities so the reader can explain the change without guessing.\n\nNamed output: evidence-timeline. Demonstration material, not an assigned response.\n\n### Further reflection\n\nA changed requirement needs its own date and authority. Otherwise a reader may think the investigation simply contradicted itself. Keeping the historical selection next to the amendment makes revision inspectable and avoids presenting hindsight as knowledge available in the first decision.\n\n---\n\n## Completed demonstration example — observatory permission audit\n\nThis alternate local system uses reader, maintainer and custodian roles.\n\n## Published charter\nAll roles read. Only maintainer services. Only custodian approves release.\n\n## Initial failure\nRequest: reader / approve. Expected: deny. Observed: allow. The original condition treated any signed-in identity as approval authority.\n\n## Repaired matrix\n| Role | Read | Service | Approve |\n| --- | --- | --- | --- |\n| Reader | Allow | Deny | Deny |\n| Maintainer | Allow | Allow | Deny |\n| Custodian | Allow | Deny | Allow |\n\nNegative checks rejected reader and maintainer approval. Positive checks retained reader access, maintainer service and custodian approval.\n\n## Preserved revision\nVersion 1 is the repaired charter matrix above. Version 2 applies a later calibration hold: custodian approval becomes deny; all other cells remain unchanged. The historical V1 result was correct under the original authority.\n\n## Reflection\nThe useful distinction was between an excessive permission and a later policy change. Denying all operations would conceal the first problem by making the system useless. I checked positive cases as deliberately as negative ones and kept the authority beside each expected result.\n\nNamed output: permission-audit. These are fictional local operations, not an external security test.\n\n### Further reflection\n\nThe strongest audit includes an operation that should succeed after each change. Otherwise a blanket denial could look like a perfect security fix. In another role model I would construct the expected matrix from its mandate rather than copy these role names.\n\n---\n\n## Completed demonstration example — dome handoff\n\n## Role information\nAnalyst card: five sealed cases to Dome, verification VIOLET.\nOperator: controls dispatch and must request exact destination, count and code.\n\n## Recorded exchange\nAnalyst: “Deliver five sealed cases to Dome; verification code VIOLET. Read back before dispatch.”\nOperator first read-back: “Dome, four, VIOLET.”\nAnalyst: “Correct the count to five.”\nOperator corrected read-back: “Dome, five, VIOLET.”\nAnalyst: “Confirmed.”\n\nThe count mismatch was found before movement. A bare acknowledgement would not have exposed it.\n\n## Changed situation\nNew card: Pool / 2 / SILVER. The team repeated the same protocol with new values. The operator's matching read-back was confirmed separately from the earlier handoff.\n\n## Agreement\nThe analyst owns instruction accuracy; the operator records and repeats the three fields; either role may stop if a field conflicts. A completed acknowledgement applies to one identified instruction, not every later delivery.\n\n## Reflection\nThe protocol was useful because it made the receiver's interpretation visible. My error was a wrong count, not unwillingness to cooperate. In another task I would preserve exact labels and ask which condition permits action, especially when the roles see different screens.\n\nNamed output: handoff-agreement. This is an alternate demonstration, not the assigned Relay/Archive/Dispatch answer.\n\n### Further reflection\n\nThe code is meaningful only because both roles know which current instruction it belongs to. I would record the instruction version as well as the acknowledgement when several deliveries are in progress. That prevents a correct read-back from being attached to the wrong task.\n\n---\n\n## Completed demonstration example — conservatory council agreement\n\n## Responsibilities\nMediator: negotiate research access without erasing custody.\nCaretaker Ada: retain the original unless a documented, supported handover is authorised.\nArchivist Rin: identify the required research content.\nEngineer Bo: verify equipment capacity before movement.\n\n## Claim checks\nRin's “identical copies” claim conflicts with digests R-4 and R-8. That contradiction concerns content identity; it does not establish intent.\nBo's unsupported transport proposal conflicts with original mass 7 and cart capacity 5. A cradle offers capacity 9, subject to verification.\n\n## Original agreement\nRecover a verified research copy, record custody and leave the physical original with Ada. This meets the original research-access mandate.\n\n## Revised agreement\nA new provenance mandate requires retaining the original pending supported handover. Stabilise it, verify the cradle, identify the custodian and document unresolved checks. The earlier copy agreement remains in the history but no longer completes the revised objective.\n\n## Reflection\nRepresenting the mediator meant finding a supported agreement, not winning every disagreement. Numerical constraints and written authority were more useful than interpreting confidence. The revised objective changed the right agreement without requiring a new story about anyone's character.\n\nNamed output: claim-verification.\n\n### Further reflection\n\nThe new provenance requirement was a substantive change, not evidence that the earlier negotiators were foolish. My record should therefore show which goal each agreement served. It should also identify who will verify the cradle before any supported movement is authorised.\n\n---\n\n## Completed demonstration example — instrumented gallery routes\n\nThis alternate five-by-five model uses zero-based cells, start 20 and destination 3.\n\n## Original sensor set\n15, 16, 11.\n\nRoute A: 20 → 15 → 10 → 5 → 0 → 1 → 2 → 3. Prediction: one contact. Trace: one contact at 15.\nRoute B: 20 → 21 → 22 → 23 → 18 → 13 → 8 → 3. Prediction: zero. Trace: zero. Both routes use seven moves.\n\n## Changed sensor set\n21, 22, 23.\nRoute B now records three contacts; Route A records zero. The earlier records remain labelled with the original pattern.\n\n## Decision\nIf the objective is minimal recorded contact, Route B fits the original pattern and Route A fits the changed one. If the task is to verify detector observations, a route through the sensor cells may be more useful. Contact is a game event, not automatic failure.\n\n## Reflection\nThe most useful artefact was the ordered route plus the sensor set, because it made each count reproducible. I avoided treating a once-correct zero as a permanent property of the path. In my own task I would predict before execution and inspect the first disagreement rather than changing the route until an attractive ending appears.\n\nNamed output: sensor-route.\n\n### Further reflection\n\nExplicit cell identifiers helped separate the model from camera position and intuition. I would keep the event trace when a prediction fails, because its first mismatch tells me more than the final contact count alone. Different objectives can justify different routes under the same rules.\n\n---\n\n## Completed demonstration example — bridge revision memo\n\n## Preserved Version 1\nInspect ledger → verify trolley → cross east bridge → record custody.\n\n## Published disruption\nThe east bridge is closed. The west platform is available only after a load-capacity check.\n\n## Diagnosis\nThe failed dependency is route availability. The signed ledger comparison and completed trolley inspection remain applicable. The need to record custody also remains.\n\n## Version 2\nInspect ledger → verify trolley → check west-platform capacity → cross west platform → record custody.\n\nSystems specialist owns the added capacity check. The coordinator receives its result and stops movement if it fails. The revised route and stop condition are read back to all roles before execution.\n\n## Rationale and limits\nThe revision changes only the affected route and adds its prerequisite. It does not claim that an available platform is already verified. Version 1 remains visible because it documents the earlier decision under earlier information.\n\n## Reflection\nI initially wanted to replace the entire plan, but the disruption did not invalidate the evidence already gathered. Keeping valid work made the new dependency clearer. My main improvement was assigning both an owner for the check and a recipient for the result.\n\nNamed output: revised-plan. This is a separate demonstration, not the assigned relay revision.\n\n### Further reflection\n\nThe load check must produce a result that someone receives. Naming its owner alone is not enough if the coordinator never learns whether it passed. I would add a read-back to the revised plan so a valid document becomes a shared agreement.\n\n---\n\n## Completed demonstration example — Lark Weather Mast recovery\n\n## Mission contract\nRecover verified rainfall data while keeping the original recorder stable. Abort movement if the support apparatus cannot meet its required output. The original remains with the mast custodian.\n\n## Evidence and actions\nThe display read 16:25 and the service lamp was amber. The operator's completeness statement remained a claim until the manifest check.\n\nA 16-tooth driver and 32-tooth follower produced two opposite output turns from four input turns after recorded readiness checks. Copy Ash contained 12 records and matched W-6; Birch contained 11/W-3 and did not meet the request.\n\nThe operator read back “Ash copy, twelve records, W-6.” The custodian confirmed transfer and retained the original at Lark.\n\n## Resolution\nVerified digital data recovered; original stabilised in place; receipt and custody recorded.\n\n## Alternative and limit\nPhysical removal was unnecessary for the research-access objective and would introduce handling work. Matching W-6 establishes identity against the reference, not calibration accuracy. A calibration review remains the next question.\n\n## Reflection\nThe operation worked because several modest checks connected: observation informed investigation, mechanical verification supported handling, and a clear agreement defined what recovery meant. I would not describe this as physical recovery or as proof that every rainfall measurement is correct.\n\nNamed output: recovery-record. Separate from the Meridian assessment and the Halcyon final demonstration.\n\n### Further reflection\n\nAn honest debrief should include a next question that the completed mission did not answer. The calibration limit is consequential because matching a data reference does not verify the instrument that produced it. Preserving that distinction is part of a useful recovery record.\n\n## Attribution and completeness\nAll twelve records are labelled alternate demonstration material. Each retains its setting, supplied result, changed-situation response and reflection. A submitted personal portfolio would replace these with the student's own attempts and declared assistance. Exporting this example does not submit it."
+      "markdown": "# Completed demonstration portfolio — Weekly Fieldwork\n\n**Authored teaching example.** These are twelve alternate worked records, not a real student's submission and not answers to the assigned configurations. The traces describe the authored demonstration path. No physical test or academic grade is claimed.\n\n## Portfolio register\n- Week 1: Completed observation record — conservatory; record and transfer included below.\n- Week 2: Completed recall strategy — storm kit; record and transfer included below.\n- Week 3: Completed spatial model — dome connector; record and transfer included below.\n- Week 4: Completed mechanism diagnosis — conservatory lift; record and transfer included below.\n- Week 5: Completed example — beacon with two faults; record and changed-condition reasoning included below.\n- Week 6: Completed example — request authority and repaired weather ledger; record and changed-condition reasoning included below.\n- Week 7: The embargoed observatory charter — completed record; record and changed-condition reasoning included below.\n- Week 8: Five cases to the dome — completed record; record and transfer included below.\n- Week 9: The council that changes its brief — completed record; record and changed-condition reasoning included below.\n- Week 10: Predict the instrumented gallery — completed record; record and transfer included below.\n- Week 11: When the release authority expires — completed record; record and changed-condition reasoning included below.\n- Week 12: Recover the rainfall recorder — completed record; record and transfer included below.\n\nTwelve records are supplied. Under the published rule, the best ten are counted by a teacher using skill 40%, transfer 40%, reflection 20%. The player does not invent grades or choose the best records by game completion.\n\n## Completed demonstration example — conservatory observation record\n\nThis alternate example shows a method. It is not an answer to the assigned lab.\n\n## Initial inspection\nAt the first inspection the clock displayed 11:35, a green mug stood beside the planting ledger and the service hatch was closed. These are supplied scene observations. A visible note asserted, “I checked every tray.” The note's presence is observable; its contents remain a claim.\n\n## Reconstruction and correction\nI initially recalled the hatch as open. Rechecking the scene showed that I had inserted a familiar detail. I preserved the incorrect recollection and correction rather than rewriting the attempt. I classified “the tray inspection lasted thirty-five minutes” as an inference: the 11:35 reading alone supplies neither the inspection start nor its duration.\n\n## Changed situation\nAt the second inspection the clock read 11:50 and the hatch was open. The green mug remained unchanged. Two recorded features changed. No record established who opened the hatch or why.\n\n## Next investigation\nInspect the tray check records against the claimed complete inspection. Matching records would support the account within their scope; missing entries would require clarification.\n\n## Reflection\nMy main error was adding a plausible detail, not failing to look at an object. A regional inspection helped coverage, but preserving a separate interpretation column helped more with this mistake. In my own scene I would make the same distinction before building a story. I would not claim that two changed features prove a particular person's intent.\n\nRoute: authored 3D/interactive demonstration. Assistance: narrated example and one recorded correction.\n\n### Further reflection\n\nThe independent tray record is important because it could actually contradict the note. Asking the writer to repeat the same account would not add comparable independence. I would therefore preserve both the account and the proposed test instead of reducing the record to a confidence label.\n\n---\n\n## Completed demonstration example — storm-kit recall strategy\n\nThis alternate worked example uses Gate, Pool, Press and Dome. It does not supply the assigned lab's item answers.\n\n## Baseline\nI recalled Lens and Beacon: two correct items out of four. I kept that result before inspecting the full list.\n\n## Encoding route\n1. Gate: a giant Lens frames the entrance.\n2. Pool: a Tether splashes in the water.\n3. Press: a Pocket atlas unfolds into maps under the rollers.\n4. Dome: a Beacon lights the roof.\n\n## Retrieval and error\nWith the list covered, I retrieved Lens, Tether, Pocket atlas and Beacon in order. A later attempt produced “book” at the Press. I recorded the substitution and strengthened the map-specific cue rather than silently counting it as exact recall.\n\n## Comparison\nThe guided attempt improved from two correct items to four. That is a result of this small demonstration, not proof of permanent improvement or photographic memory. Rehearsal and item familiarity may also have helped.\n\n## Reflection\nThe fixed locations helped order, while the distinctive images helped item identity. The delayed substitution showed that a generic association preserved a category but not the required object. In another task I would preserve the route, change the items, and inspect whether the same weakness returned. For a critical instruction set that can be carried openly, a checklist may remain the better tool.\n\nRoute: guided example with list covering. Hints: association prompts. Named output: recall-strategy.\n\n### Further reflection\n\nA second unfamiliar list would be a better transfer check than endlessly repeating these four items. I would also record the delay before recall, because immediate retrieval and remembering after an interruption are different demands. The example should not hide the effect of repeated practice.\n\n---\n\n## Completed demonstration example — dome connector\n\nThe assigned connector uses different starting and target conditions.\n\n## Reference frame and prediction\nWorld north and up remain fixed when the camera moves. The alternate connector initially has north/west ports at level 0. A clockwise 90-degree turn maps the original north port to east and the original west port to north.\n\n## Transformation record\n- Initial: 0 degrees, level 0, north/west.\n- After rotation: 90 degrees, level 0, east/north.\n- After translation: 90 degrees, level 2, east/north.\n- Verification: both labelled ports and the required level match.\n\nA mirrored substitute was rejected because outline similarity did not preserve the original label mapping.\n\n## Changed destination\nThe target moved to level 1 without changing port requirements. I lowered the connector and retained its 90-degree orientation.\n\n## Reflection\nI initially treated reaching the right orientation as completion, but the target included a separate height condition. Writing two checks prevented that omission. Tracking the original north tip also made the rotation explainable when the camera changed. In a new configuration I would predict the label mapping before movement and then test position independently.\n\nNamed output: spatial-model. Evidence route: alternate worked simulation.\n\n### Further reflection\n\nI would ask for another labelled view if the mapping remained ambiguous rather than rotating until the outline looked familiar. An ordered text account of the transformation makes the same reasoning available without relying on visual mental rotation or precise manipulation.\n\n---\n\n## Completed demonstration example — conservatory lift\n\nThis alternate mechanism uses an 18-tooth driver, different turn requirements and a 270-degree cam.\n\n## Causal model\nInput rotation → external gear pair → cam → spring-return follower → lift output. The interlock blocks cam adjustment until released. Motion also requires the spring and specified cam phase.\n\n## Prediction and diagnosis\nFor three output turns from five input turns: follower = 18 × 5 ÷ 3 = 30 teeth. The driven gear turns opposite the driver. A correct ratio did not initially produce a ready mechanism because the interlock was engaged and the return spring absent.\n\nI released the interlock, set the cam to 270 degrees and attached the spring. I retained the ratio calculation because it was not contradicted by the readiness fault.\n\n## Verification\nFive input turns produced three opposite output turns. Both the amount and direction matched the prediction.\n\n## Transfer\nThe changed task required two output turns from four input turns. I selected 36 follower teeth: 18 ÷ 36 × 4 = 2. The cam and spring conditions remained valid.\n\n## Reflection\nThe useful distinction was between an incorrect transmission ratio and a blocked dependency. Changing gears would not have released the cam. In a new apparatus I would record the output requirement, list readiness conditions and test both separately.\n\nNamed output: mechanism-diagnosis. This is a model, not a real lock or physical qualification.\n\n### Further reflection\n\nThe readiness conditions belong in the model rather than a footnote. I would test a blocked configuration as a counterexample so that another student could see why the correct gear ratio alone is insufficient. That negative example explains the distinction better than a successful run by itself.\n\n---\n\n## Completed demonstration example — beacon with two faults\n\nThis is one fictional nine-volt beacon throughout the attempt. Its published case card allows multiple simultaneous open faults. The assigned browser and campus lab instead introduce exactly one fault at a time.\n\n## Initial evidence and first diagnosis\nWith power on, source / fuse output / cable output / lamp supply read **9 / 9 / 0 / 0 V** relative to the common return. The lamp was dark. The first missing supply supported an open cable. The unpowered lamp's own condition remained unresolved; the readings did not prove it healthy.\n\n## First repair and failed whole-system check\nI isolated the source and replaced the cable only. After restoring power, the trace became **9 / 9 / 9 / 9 V**, but the **same beacon stayed dark**. The repair successfully restored supply without resolving the original symptom. I preserved both statements instead of calling the cable diagnosis wrong or declaring the job complete.\n\n## Second diagnosis and repair\nWith healthy supply and a dark load, I isolated power and tested lamp continuity. The result was **open**. I replaced that confirmed open lamp while isolated, then restored power. The supply remained **9 / 9 / 9 / 9 V** and the lamp lit.\n\n## Preserved diagnostic chain\n\n| Stage | Supported finding | Action | Verification |\n| --- | --- | --- | --- |\n| Initial trace | Open cable; lamp condition unknown | Isolated cable replacement | Supply restored, light still absent |\n| Same beacon after first repair | Healthy lamp supply, dark output | Isolated lamp continuity test | Open load confirmed |\n| Confirmed second fault | Open lamp as well as the earlier cable break | Isolated lamp replacement | 9 V supply and visible light |\n\n## Reflection\nMy first diagnosis was useful but incomplete. Assuming it explained the entire symptom would have stopped the investigation too early. The failed output check changed what I needed to test, without erasing the evidence that justified the cable replacement. In a new case I would read whether its rules permit multiple faults, diagnose from its own trace and check the original symptom after every repair. This example does not establish that the assigned one-fault circuit has two defects.\n\n## Limits\nThese are idealised authored model readings, not measurements from constructed hardware. A continuity check is performed only in the model's isolated state. The record establishes this fictional apparatus's behaviour and does not certify work on an arbitrary physical circuit.\n\nNamed output: circuit-diagnosis. Assistance: complete narrated worked example.\n\n### Further reflection\n\nThe failed first verification was essential evidence: it showed a successful supply repair without a working beacon. I would retain that intermediate state when explaining the second test. The assigned one-fault promise should still be respected; I would not invent an additional defect when its own completed trace establishes the required result. Equally, I should not import that promise into a different case that explicitly allows several faults. Each intervention needs a specific reason and a return to the original symptom. A healthy voltage after replacement answered whether supply had been restored, while the dark lamp showed that illumination remained unresolved. Preserving both observations made the second continuity test purposeful rather than another speculative component swap.\n\n---\n\n## Completed demonstration example — request authority and repaired weather ledger\n\nThis alternate example changes the authority problem. The assigned browser and campus transfer immediately provides a valid signed amendment. Here an unsigned message is not sufficient, and the later valid deliverable is a newly repaired version of a previously incomplete record.\n\n## Published authority rule\nOnly an instruction marked authenticated in the supplied authority register can supersede the current request. This is a fictional case-file rule; no live signature service is contacted.\n\n## Preserved timeline\n\n| Time | Record | Direct result | Decision or limit |\n| --- | --- | --- | --- |\n| 07:05 | Authenticated R1 | Requires 18 sections and Q-7 | Governs the initial comparison |\n| 07:20 | East | 18 sections, Q-9 | Complete but does not match R1 |\n| 07:35 | Original South | 17 sections, Q-2 | Incomplete and different from R1 |\n| 07:50 | North | 18 sections, Q-7 | Matches R1, although it is newest |\n| 08:00 | Unsigned message | Says “Use East, Q-9”; register marks unverified | Record as a claim; retain North under R1 and request authentication |\n| 08:15 | Authenticated R2 | Requires 18 sections and Q-12 | Legitimately supersedes R1; does not authenticate the earlier Q-9 message |\n| 08:20 | South repair receipt S2 | Repaired version contains 18 sections and Q-12 | Verify this new version; select South S2 under R2 |\n\n## Preserved recommendations\n1. **Under R1:** select North after count and digest checks. Its newer timestamp neither proves nor disproves correctness.\n2. **After the unsigned message:** retain North as the currently authorised deliverable. Preserve the request, ask for authenticated authority and do not quietly promote the claim into a rule.\n3. **Under authenticated R2:** select South **S2**, after separately checking authentication, 18 sections and Q-12. Preserve the original South record at 17/Q-2 and the original North justification.\n\n## Two independent checks\nAuthentication established what the current instruction required. The repair receipt and new comparison established what South S2 contained. Neither check could substitute for the other. The old incomplete South file was not silently rewritten into a successful historical result.\n\n## Limits and next check\nAgreement with the authenticated reference establishes identity and completeness within this case. It does not prove the scientific accuracy of the weather observations. The unsigned Q-9 proposal remains an unverified account; the later R2 does not retroactively authorise it. Its origin and purpose would need separate investigation.\n\n## Reflection\nI initially expected a later request to trigger a different selection. The authority rule showed why keeping North at 08:00 was the justified action. When an authenticated instruction and a newly repaired record later appeared, I changed to South S2 for two explicit reasons. The useful method is to verify authority and content, not to memorise “choose the first copy, then the second.” My assigned case has different rules and records, so I must read those afresh.\n\nNamed output: evidence-timeline. Demonstration material, not an assigned response.\n\n### Further reflection\n\nA record can justify waiting as well as changing. The unsigned message required an authority check, not a guess about which speaker sounded convincing. I would keep the current authorised selection, the proposed change and the later authenticated version in separate rows so neither hindsight nor a repaired file overwrites the original evidence. The newest original candidate was also the correct one here, which prevented me from turning an earlier warning about recency into a new rigid rule. South then became usable because a distinct repaired version satisfied a distinct authenticated request. If either authentication or the repair comparison had been absent, that final recommendation would remain unsupported. I would name the missing check rather than fill it in from expectation.\n\n---\n\n## Completed demonstration example — embargoed observatory permission audit\n\n**Authored alternate example.** Read this local research embargo before deciding any permission.\n\n## Published authority\nReader: read research only. Maintainer: service equipment only; embargoed research is not readable. Custodian: read research and approve release. Every other combination is denied.\n\n## Preserved faulty results\n| Request | Expected | Observed before repair |\n| --- | --- | --- |\n| Maintainer / read | Deny | Allow |\n| Reader / read | Allow | Deny |\n\nThe other seven decisions already matched. The first failure exposed an embargoed resource; the second blocked an authorised reader.\n\n## Version 1 — repaired charter\n| Role | Read | Service | Approve |\n| --- | --- | --- | --- |\n| Reader | Allow | Deny | Deny |\n| Maintainer | Deny | Allow | Deny |\n| Custodian | Allow | Deny | Allow |\n\nAll nine cells were compared with the charter. Positive checks preserved reader reading, maintainer service and custodian reading/approval. Negative checks retained the embargo and remaining limits. The repair changed only maintainer/read and reader/read.\n\n## Version 2 — new release hold\nA later signed notice suspended custodian approval. The other eight decisions stayed as in Version 1. Reader and custodian could still read; maintainer could still service but could not read research. The previous correct approval is preserved under its earlier authority.\n\n## Reflection\nI initially expected equipment responsibility to include research visibility. The embargo contradicted that shortcut. Checking forbidden operations alone would also have missed the blocked reader, so I recorded both kinds of failure. The release hold was a new rule, not proof that the original approval test was dishonest. In the assigned lab I must derive a fresh table from its own charter and identify exactly which right its later notice changes. I can reuse the testing method without reusing these permission answers.\n\nNamed output: permission-audit. These are fictional local decisions, not an external security test.\n\n### Further reflection\n\nThe non-obvious decision is denying research reading to a role that still needs equipment service. I would use a fresh expected-versus-observed table for another charter, because role names and a familiar layout cannot establish rights. The signed hold changes one expectation while retaining the earlier evidence.\n\n## Completed demonstration example — dome handoff\n\n## Role information\nAnalyst card: five sealed cases to Dome, verification VIOLET.\nOperator: controls dispatch and must request exact destination, count and code.\n\n## Recorded exchange\nAnalyst: “Deliver five sealed cases to Dome; verification code VIOLET. Read back before dispatch.”\nOperator first read-back: “Dome, four, VIOLET.”\nAnalyst: “Correct the count to five.”\nOperator corrected read-back: “Dome, five, VIOLET.”\nAnalyst: “Confirmed.”\n\nThe count mismatch was found before movement. A bare acknowledgement would not have exposed it.\n\n## Changed situation\nNew card: Pool / 2 / SILVER. The team repeated the same protocol with new values. The operator's matching read-back was confirmed separately from the earlier handoff.\n\n## Agreement\nThe analyst owns instruction accuracy; the operator records and repeats the three fields; either role may stop if a field conflicts. A completed acknowledgement applies to one identified instruction, not every later delivery.\n\n## Reflection\nThe protocol was useful because it made the receiver's interpretation visible. My error was a wrong count, not unwillingness to cooperate. In another task I would preserve exact labels and ask which condition permits action, especially when the roles see different screens.\n\nNamed output: handoff-agreement. This is an alternate demonstration, not the assigned Relay/Archive/Dispatch answer.\n\n### Further reflection\n\nThe code is meaningful only because both roles know which current instruction it belongs to. I would record the instruction version as well as the acknowledgement when several deliveries are in progress. That prevents a correct read-back from being attached to the wrong task.\n\n---\n\n## Completed demonstration example — changing-brief council agreement\n\n**Authored alternate example.** This council reaches a different decision sequence from the assigned negotiation.\n\n## Responsibilities and original authority\nAda is the caretaker. Rin compares the record copies. Bo checks transport capacity. The mediator coordinates the agreement. Recipient Mira initially needs the physical ledger for a provenance examination; Ada authorises that handover if custody and return are recorded.\n\n## Claim and capacity checks\nRin claims the supplied copies have matching recorded content. Cedar and Birch each contain twelve sections with digest R-4. The record corroborates that limited claim; it does not prove the observations scientifically true or establish Rin’s intent.\n\nThe original weighs 7 units. Bo’s current certificate rates the standard cart for 9, and the supplied handling inspection is marked passed. The original fits; no additional cradle is required. Capacity establishes feasibility within this model, not independent permission to move the original.\n\n## Agreement Version 1 — prepared, not executed\nSend the original to named recipient Mira using the certified cart, record custody with Ada and retain the return commitment. Copy-only delivery would not meet the physical provenance request. No dispatch occurs before the next notice.\n\n## Replacement brief and Agreement Version 2\nThe replacement signed brief cancels physical examination before dispatch. Mira now needs remote catalogue access; the original must remain with Ada. Transfer the verified Cedar copy, record the reference used and confirm the recipient’s access. The 9-unit cart remains usable but is no longer needed. The original stays with Ada.\n\n## Reflection and limit\nI checked the claim even though it turned out to be supported. I did not infer honesty or deceit from the speaker’s manner. The adequate cart made the first physical agreement feasible, but it did not entitle me to ignore the later instruction. The change was in the requested outcome, not a new equipment failure. Preserving the unexecuted first agreement made that distinction visible. In the assigned council I must reread its comparison records, capacity certificate and current mandate instead of copying this physical-then-copy sequence.\n\nNamed output: claim-verification. These are authored example agreements, not evidence of a real delivery.\n\n### Further reflection\n\nThe first agreement was not invalidated by a new capacity problem. Its objective was replaced before execution. I would keep that timing explicit so a reader can distinguish a sound earlier plan from a delivery that never occurred, and distinguish corroboration of a statement from proof of its speaker’s intent.\n\n## Completed demonstration example — instrumented gallery routes\n\nThis alternate five-by-five model uses zero-based cells, start 20 and destination 3.\n\n## Original sensor set\n15, 16, 11.\n\nRoute A: 20 → 15 → 10 → 5 → 0 → 1 → 2 → 3. Prediction: one contact. Trace: one contact at 15.\nRoute B: 20 → 21 → 22 → 23 → 18 → 13 → 8 → 3. Prediction: zero. Trace: zero. Both routes use seven moves.\n\n## Changed sensor set\n21, 22, 23.\nRoute B now records three contacts; Route A records zero. The earlier records remain labelled with the original pattern.\n\n## Decision\nIf the objective is minimal recorded contact, Route B fits the original pattern and Route A fits the changed one. If the task is to verify detector observations, a route through the sensor cells may be more useful. Contact is a game event, not automatic failure.\n\n## Reflection\nThe most useful artefact was the ordered route plus the sensor set, because it made each count reproducible. I avoided treating a once-correct zero as a permanent property of the path. In my own task I would predict before execution and inspect the first disagreement rather than changing the route until an attractive ending appears.\n\nNamed output: sensor-route.\n\n### Further reflection\n\nExplicit cell identifiers helped separate the model from camera position and intuition. I would keep the event trace when a prediction fails, because its first mismatch tells me more than the final contact count alone. Different objectives can justify different routes under the same rules.\n\n---\n\n## Completed demonstration example — release-authority revision memo\n\n**Authored alternate example.** Every route stays open. The disruption changes an authorisation dependency rather than equipment or transport availability.\n\n## Version 1 and its authority\nVerify ledger → Seal case → Dispatch case → Log receipt.\n\nThe original release authority permitted this order. Ledger identity and equipment checks were supplied as valid; the plan was preserved before the replacement notice.\n\n## Published disruption\nThe replacement notice withdraws the old dispatch authority. Before sealing, the investigator must compare the recipient’s request with this ledger’s identity and purpose. The coordinator must record the new authorisation. Neither open routes nor working equipment removes those conditions.\n\n## Diagnosis and retained evidence\nThe failed dependency is the old authority to seal and dispatch. The unchanged signed ledger comparison remains useful for identity. Equipment remains available. Neither finding establishes that the recipient’s current request covers this ledger. No route change is required.\n\n## Version 2\nVerify ledger → Check recipient scope → Record new authorisation → Seal case → Dispatch case → Log receipt.\n\nThe investigator owns scope comparison and sends the result to the coordinator. The coordinator records authority and authorises sealing only when both prerequisites are met. If scope is unresolved or authorisation absent, stop before sealing. The route, verified identity and receipt obligation remain unchanged.\n\n## Communication and status\nThe coordinator reads back the new order and stop condition; all roles acknowledge them. Version 1 stays preserved. This memo records a revised plan, not an invented completed authorisation or dispatch.\n\n## Reflection\nMy first temptation was to choose another route, but availability was not the dependency the notice changed. The important change was the point at which permission had to be established. Adding a scope check after dispatch would mention the new rule without satisfying it. I kept the identity evidence, named an investigator to check scope, and made the coordinator receive and record the result before sealing. In the assigned route or meter disruptions I must identify their different failed dependency instead of copying this sequence.\n\nNamed output: revised-plan. No physical dispatch or grant of authority is claimed.\n\n### Further reflection\n\nThe coordinator needs the scope-check result before the authority record can permit sealing. A named checker without that receipt leaves the sequence incomplete. I would ask a teammate to read back the actual stop condition rather than simply agreeing that the new document looks sensible.\n\n## Completed demonstration example — Lark Weather Mast recovery\n\n## Mission contract\nRecover verified rainfall data while keeping the original recorder stable. Abort movement if the support apparatus cannot meet its required output. The original remains with the mast custodian.\n\n## Evidence and actions\nThe display read 16:25 and the service lamp was amber. The operator's completeness statement remained a claim until the manifest check.\n\nA 16-tooth driver and 32-tooth follower produced two opposite output turns from four input turns after recorded readiness checks. Copy Ash contained 12 records and matched W-6; Birch contained 11/W-3 and did not meet the request.\n\nThe operator read back “Ash copy, twelve records, W-6.” The custodian confirmed transfer and retained the original at Lark.\n\n## Resolution\nVerified digital data recovered; original stabilised in place; receipt and custody recorded.\n\n## Alternative and limit\nPhysical removal was unnecessary for the research-access objective and would introduce handling work. Matching W-6 establishes identity against the reference, not calibration accuracy. A calibration review remains the next question.\n\n## Reflection\nThe operation worked because several modest checks connected: observation informed investigation, mechanical verification supported handling, and a clear agreement defined what recovery meant. I would not describe this as physical recovery or as proof that every rainfall measurement is correct.\n\nNamed output: recovery-record. Separate from the Meridian assessment and the Halcyon final demonstration.\n\n### Further reflection\n\nAn honest debrief should include a next question that the completed mission did not answer. The calibration limit is consequential because matching a data reference does not verify the instrument that produced it. Preserving that distinction is part of a useful recovery record.\n\n## Attribution and completeness\nAll twelve records are labelled alternate demonstration material. Each retains its setting, supplied result, changed-situation response and reflection. A submitted personal portfolio would replace these with the student's own attempts and declared assistance. Exporting this example does not submit it."
     }
   },
   {
@@ -7319,11 +7547,11 @@ export const demonstrations:Demonstration[] = [
     "id": "assessment-a2",
     "kind": "assessment",
     "title": "A2 example: Restore Iris Relay",
-    "subtitle": "A complete paired worked challenge with role rotation, revision and submission evidence.",
+    "subtitle": "A complete paired diagnosis of a dark load with healthy supply, equivalent copies and a changed evidence scope.",
     "skill": "Circuit diagnosis, digital evidence, permissions and communication",
-    "setting": "An alternate twelve-volt relay and research dispatch console.",
-    "difference": "New 12 V readings, Delta/Echo/Foxtrot records, I-4/I-8 authority and South Dome/Hill Station instructions differ from the assessed relay.",
-    "transfer": "Connect the checks while keeping each claim's authority and each role's contribution explicit.",
+    "setting": "Iris Relay: a twelve-volt lamp circuit, mirrored core records and a calibration-trace dispatch request.",
+    "difference": "The lamp is open even though every powered supply point reads 12 V. Two mirrored records both satisfy the first request; a later calibration-trace requirement selects a larger bundle. The assigned relay has a supply-break fault and a different archive problem.",
+    "transfer": "Transfer the method: choose a discriminating test, recognise when evidence permits several answers, then revise only the dependencies affected by a new requirement.",
     "sourceHref": "/assessments/assignment-2/",
     "sourceLabel": "A2 — Restore the Relay",
     "estimatedMinutes": 16,
@@ -7386,14 +7614,118 @@ export const demonstrations:Demonstration[] = [
       },
       {
         "id": "measure",
-        "title": "Diagnose from the powered trace",
-        "narration": "The source reads 12 V; fuse, cable and lamp outputs read 0 V. Ari records the readings while Nia compares the competing fault predictions.",
-        "why": "The first missing supply supports a specific location rather than a generic dark-system complaint.",
-        "prompt": "Select the supported open component.",
+        "title": "Full supply, but no light",
+        "narration": "Ari records 12 V at the source, fuse output, cable output and lamp supply, all relative to the common return. The lamp stays dark. Nia explains that supply is present throughout: these readings do not yet prove the lamp is continuous. The next discriminating test is lamp continuity with the source isolated.",
+        "why": "A healthy supply reading does not prove that current can pass through the load. Looking for the first zero would not locate this fault.",
+        "prompt": "Record the source voltage and choose the next test; do not replace a part from these readings alone.",
         "controls": [
           {
-            "id": "fault",
-            "label": "Fault location",
+            "id": "voltage",
+            "label": "Source voltage",
+            "type": "number",
+            "initial": 0,
+            "expected": 12,
+            "min": 0,
+            "max": 12,
+            "tolerance": 0,
+            "unit": "V"
+          },
+          {
+            "id": "nextTest",
+            "label": "Next discriminating test",
+            "type": "select",
+            "options": [
+              {
+                "value": "Replace the fuse immediately",
+                "label": "Replace the fuse immediately"
+              },
+              {
+                "value": "Isolate and check lamp continuity",
+                "label": "Isolate and check lamp continuity"
+              },
+              {
+                "value": "Select the newest archive",
+                "label": "Select the newest archive"
+              }
+            ],
+            "expected": "Isolate and check lamp continuity"
+          }
+        ],
+        "before": {
+          "room": "systems",
+          "shot": "close",
+          "values": {
+            "voltage": 12,
+            "powered": true,
+            "fault": "lamp",
+            "faultLabel": "Supply present · load unverified",
+            "sourceVoltage": 12
+          },
+          "labels": [
+            "Source / fuse / cable / lamp: 12 / 12 / 12 / 12 V",
+            "Lamp dark · continuity not yet established"
+          ],
+          "focus": "lamp"
+        },
+        "after": {
+          "room": "systems",
+          "shot": "close",
+          "values": {
+            "voltage": 12,
+            "powered": true,
+            "fault": "lamp",
+            "nextTest": "isolated lamp continuity",
+            "faultLabel": "Supply present · load unverified",
+            "sourceVoltage": 12
+          },
+          "labels": [
+            "Source / fuse / cable / lamp: 12 / 12 / 12 / 12 V",
+            "Lamp dark · continuity not yet established"
+          ],
+          "focus": "lamp"
+        },
+        "success": "All four supply points read 12 V. The next justified action is an isolated lamp-continuity check.",
+        "pitfall": "No supply zero appears in this trace. Replacing the fuse would skip the test that distinguishes an open load from a supply break.",
+        "hint": "The lamp receives supply but does not light. Choose the test that checks the load itself, after isolation.",
+        "duration": 18
+      },
+      {
+        "id": "isolate",
+        "title": "Prove the load fault, then replace",
+        "narration": "Ari isolates the source. The supplied continuity record now reads CONTINUOUS through the fuse and cable, but OPEN through the lamp. Nia identifies the lamp as the supported fault. Ari replaces only that lamp while power remains off; they keep the OPEN reading as pre-repair evidence.",
+        "why": "The isolated continuity result supplies the missing evidence. Replacing a part does not by itself establish what was wrong.",
+        "prompt": "Set the source off, record the lamp continuity result, and choose the component supported for replacement.",
+        "controls": [
+          {
+            "id": "powered",
+            "label": "Source powered during replacement",
+            "type": "toggle",
+            "initial": true,
+            "expected": false
+          },
+          {
+            "id": "continuity",
+            "label": "Lamp continuity before replacement",
+            "type": "select",
+            "options": [
+              {
+                "value": "CONTINUOUS",
+                "label": "CONTINUOUS"
+              },
+              {
+                "value": "OPEN",
+                "label": "OPEN"
+              },
+              {
+                "value": "Not measured",
+                "label": "Not measured"
+              }
+            ],
+            "expected": "OPEN"
+          },
+          {
+            "id": "replacement",
+            "label": "Component to replace",
             "type": "select",
             "options": [
               {
@@ -7409,18 +7741,7 @@ export const demonstrations:Demonstration[] = [
                 "label": "lamp"
               }
             ],
-            "expected": "fuse"
-          },
-          {
-            "id": "voltage",
-            "label": "Source voltage",
-            "type": "number",
-            "initial": 0,
-            "expected": 12,
-            "min": 0,
-            "max": 12,
-            "tolerance": 0,
-            "unit": "V"
+            "expected": "lamp"
           }
         ],
         "before": {
@@ -7429,59 +7750,15 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 12,
             "powered": true,
-            "fault": "fuse"
+            "fault": "lamp",
+            "faultLabel": "Supply present · load unverified",
+            "sourceVoltage": 12
           },
           "labels": [
-            "12 / 0 / 0 / 0 V"
+            "Isolate before continuity or replacement",
+            "Powered supply was 12 V at every node"
           ],
-          "focus": "fuse"
-        },
-        "after": {
-          "room": "systems",
-          "shot": "close",
-          "values": {
-            "voltage": 12,
-            "powered": true,
-            "fault": "fuse",
-            "selected": "fuse"
-          },
-          "labels": [
-            "Open fuse supported by adjacent readings"
-          ],
-          "focus": "fuse"
-        },
-        "success": "The diagnosis precedes replacement and is supported by the trace.",
-        "pitfall": "Guessing the cable would ignore the zero already present at the fuse output.",
-        "hint": "Find the first failed supply node.",
-        "duration": 18
-      },
-      {
-        "id": "isolate",
-        "title": "Replace in the isolated state",
-        "narration": "Ari switches the source off, replaces the fuse and retains the earlier powered observations. The pair does not claim that zero readings while isolated locate a fault.",
-        "why": "Diagnosis and replacement require different apparatus states.",
-        "prompt": "Isolate power for replacement.",
-        "controls": [
-          {
-            "id": "powered",
-            "label": "Source powered",
-            "type": "toggle",
-            "initial": true,
-            "expected": false
-          }
-        ],
-        "before": {
-          "room": "systems",
-          "shot": "close",
-          "values": {
-            "voltage": 12,
-            "powered": true,
-            "fault": "fuse"
-          },
-          "labels": [
-            "Replacement pending"
-          ],
-          "focus": "source"
+          "focus": "lamp"
         },
         "after": {
           "room": "systems",
@@ -7489,23 +7766,28 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 12,
             "powered": false,
-            "fault": "none"
+            "fault": "none",
+            "continuityBeforeReplacement": "OPEN",
+            "replaced": "lamp",
+            "faultLabel": "OPEN continuity recorded · lamp replaced",
+            "sourceVoltage": 12
           },
           "labels": [
-            "Fuse replaced with source isolated"
+            "Isolated: lamp OPEN; fuse and cable continuous",
+            "Lamp replaced · verification still pending"
           ],
-          "focus": "fuse"
+          "focus": "lamp"
         },
-        "success": "The faulty component is replaced in the stated isolated condition.",
-        "pitfall": "An off-state voltage trace alone would not support the diagnosis.",
-        "hint": "Keep the powered evidence, then change the source state.",
+        "success": "The isolated lamp tested OPEN while the fuse and cable were continuous. Only the lamp was replaced, with power off.",
+        "pitfall": "Zero voltage after isolation is expected everywhere; it cannot locate this fault. Keep the specific continuity result and the healthy comparison checks.",
+        "hint": "The continuity record names one open component. Preserve that result before changing it.",
         "duration": 18
       },
       {
         "id": "verify",
         "title": "Verify and rotate responsibility",
-        "narration": "Power returns, the lamp supply reads 12 V and the lamp lights. Nia becomes operator while Ari takes the requirement pack.",
-        "why": "Both a working output and a meaningful role change must be explicit in the record.",
+        "narration": "Ari restores power. The same four supply readings remain 12/12/12/12 V, but now the lamp lights. Nia checks that a changed output, not a changed voltage, supports the repair. Nia then becomes operator and Ari takes the requirement pack.",
+        "why": "The before and after voltage traces are identical; the verified lamp output and retained continuity evidence explain what changed.",
         "prompt": "Restore power and identify the next operator.",
         "controls": [
           {
@@ -7538,7 +7820,9 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 12,
             "powered": false,
-            "fault": "none"
+            "fault": "none",
+            "faultLabel": "Lamp replaced · power isolated",
+            "sourceVoltage": 12
           },
           "labels": [
             "Verify before proceeding"
@@ -7553,44 +7837,51 @@ export const demonstrations:Demonstration[] = [
             "powered": true,
             "fault": "none",
             "role": "Nia",
-            "verified": true
+            "verified": true,
+            "faultLabel": "Lamp lit · repair verified",
+            "sourceVoltage": 12
           },
           "labels": [
-            "12 V and light confirmed; roles rotated"
+            "Same 12 / 12 / 12 / 12 V · lamp now lit",
+            "Nia operates; Ari checks requirements"
           ],
           "focus": "lamp"
         },
-        "success": "The circuit result is verified before the next domain begins.",
-        "pitfall": "A rotated label without changed responsibility would not establish paired work.",
-        "hint": "Nia operates the console in the next stage.",
+        "success": "The repaired lamp lights with 12 V supply, and Nia takes over the console with Ari checking the requirements.",
+        "pitfall": "Claiming that voltage rose after this repair would misreport the trace. The lamp output changed; the measured supply did not.",
+        "hint": "Restore power, verify visible light, and name Nia as the next operator.",
         "duration": 18
       },
       {
         "id": "archive",
-        "title": "Choose the currently authorised copy",
-        "narration": "The original request is 22 sections/I-4. Delta is 22/I-4, Echo 22/I-8 and Foxtrot 21/I-1. Nia compares candidates while Ari states the reference.",
-        "why": "A correct circuit does not answer the separate content-identity question.",
-        "prompt": "Choose the copy under the original request.",
+        "title": "Recognise two defensible matches",
+        "narration": "The signed first request requires exactly 22 core sections with digest I-4. Delta and Echo are byte-identical mirrors: both contain 22 sections and I-4, although their transfer timestamps differ. Foxtrot contains the same core plus six calibration-trace sections, a 28-section bundle with digest I-9. Identify every copy that meets the first request.",
+        "why": "A reference can admit more than one matching copy. A later transfer timestamp does not make identical content more authentic, and a larger bundle does not match an exact-scope request.",
+        "prompt": "Select the complete set of copies that satisfies the original core-only request.",
         "controls": [
           {
-            "id": "selected",
-            "label": "Archive selection",
+            "id": "matches",
+            "label": "Copies matching the original request",
             "type": "select",
             "options": [
               {
-                "value": "Delta",
-                "label": "Delta"
+                "value": "Delta only",
+                "label": "Delta only"
               },
               {
-                "value": "Echo",
-                "label": "Echo"
+                "value": "Echo only",
+                "label": "Echo only"
               },
               {
-                "value": "Foxtrot",
-                "label": "Foxtrot"
+                "value": "Delta and Echo",
+                "label": "Delta and Echo"
+              },
+              {
+                "value": "Foxtrot only",
+                "label": "Foxtrot only"
               }
             ],
-            "expected": "Delta"
+            "expected": "Delta and Echo"
           }
         ],
         "before": {
@@ -7598,33 +7889,31 @@ export const demonstrations:Demonstration[] = [
           "shot": "close",
           "values": {},
           "labels": [
-            "Reference 22 / I-4",
-            "Delta 22/I-4",
-            "Echo 22/I-8",
-            "Foxtrot 21/I-1"
+            "Signed request: exactly 22 core sections / I-4",
+            "Delta 22/I-4 · Echo 22/I-4 · Foxtrot 28/I-9"
           ],
           "focus": "manifest",
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
@@ -7632,40 +7921,44 @@ export const demonstrations:Demonstration[] = [
           "room": "digital",
           "shot": "close",
           "values": {
-            "selected": "Delta",
+            "matching": [
+              "Delta",
+              "Echo"
+            ],
             "verified": true
           },
           "labels": [
-            "Delta matches original authority"
+            "Two equally matching core mirrors: Delta and Echo",
+            "Timestamp does not distinguish identical content"
           ],
           "focus": "manifest",
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
-        "success": "The selected copy satisfies count and digest.",
-        "pitfall": "Echo's later timestamp would not replace the signed request.",
-        "hint": "Use both reference conditions.",
+        "success": "Both Delta and Echo meet 22 sections/I-4. Foxtrot has additional trace material and is outside the original core-only scope.",
+        "pitfall": "Forcing a unique winner between identical mirrors invents a distinction the evidence does not support. More sections is not automatically better.",
+        "hint": "Compare content identity and required scope. Delta and Echo have the same count and digest despite different transfer times.",
         "duration": 18
       },
       {
@@ -7762,24 +8055,24 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
@@ -7807,24 +8100,24 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
@@ -7838,7 +8131,7 @@ export const demonstrations:Demonstration[] = [
         "title": "Test a positive and a negative",
         "narration": "The maintainer's service action succeeds; a reader approval request fails. The pair records these alongside the rest of the nine-cell check.",
         "why": "One successful denial is not enough to show a repair preserves required work.",
-        "prompt": "Select the necessary positive case.",
+        "prompt": "Select one required success and one required denial.",
         "controls": [
           {
             "id": "test",
@@ -7859,6 +8152,26 @@ export const demonstrations:Demonstration[] = [
               }
             ],
             "expected": "Maintainer services"
+          },
+          {
+            "id": "negative",
+            "label": "Negative regression test",
+            "type": "select",
+            "options": [
+              {
+                "value": "Reader approval denied",
+                "label": "Reader approval denied"
+              },
+              {
+                "value": "Maintainer service denied",
+                "label": "Maintainer service denied"
+              },
+              {
+                "value": "Custodian approval denied",
+                "label": "Custodian approval denied"
+              }
+            ],
+            "expected": "Reader approval denied"
           }
         ],
         "before": {
@@ -7884,24 +8197,24 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
@@ -7929,28 +8242,28 @@ export const demonstrations:Demonstration[] = [
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
-        "success": "The repair retains the intended system purpose.",
+        "success": "Maintainer service is allowed and reader approval is denied; both outcomes agree with the charter alongside the other seven checks.",
         "pitfall": "A negative-only check set could endorse a blanket denial.",
         "hint": "Choose the action expressly permitted by the charter.",
         "duration": 18
@@ -7958,8 +8271,8 @@ export const demonstrations:Demonstration[] = [
       {
         "id": "handoff",
         "title": "Repair the first read-back",
-        "narration": "The card is South Dome / four / TEAL. Nia initially repeats three; Ari corrects it and waits for the whole message to be read back.",
-        "why": "The correction is useful evidence of how the protocol prevented an erroneous dispatch.",
+        "narration": "The confirmed core package can be read from either Delta or Echo. Ari issues South Dome / four / TEAL for its labelled delivery units. Nia first repeats three; Ari corrects the count and waits for the complete destination, quantity and code before confirming this first handoff.",
+        "why": "The copy-equivalence decision and delivery instruction answer different questions. Explicit read-back catches the count error without inventing a unique archive winner.",
         "prompt": "Complete the correct handoff.",
         "controls": [
           {
@@ -8026,14 +8339,14 @@ export const demonstrations:Demonstration[] = [
       },
       {
         "id": "amend",
-        "title": "Preserve and revise the selection",
-        "narration": "A new signed request requires 22 sections/I-8. The original Delta decision is retained; Echo is now the matching deliverable. The permission charter remains unchanged.",
-        "why": "A content amendment changes a content check, not unrelated role authority.",
-        "prompt": "Select the revised copy.",
+        "title": "A changed scope needs a different bundle",
+        "narration": "A new signed scope requests the 22-section core together with six calibration-trace sections: exactly 28 sections with bundle digest I-9. Delta and Echo still match the old core-only request, but neither contains the required trace. Foxtrot contains the signed core-and-trace bundle. Preserve the original two-match finding and select the deliverable for the amended scope.",
+        "why": "The decision changes because the required evidence package changes, not because either mirror becomes corrupt or less authentic. Content scope and permission authority remain separate.",
+        "prompt": "Choose the amended deliverable and the criterion that justifies it.",
         "controls": [
           {
             "id": "selected",
-            "label": "Selection under I-8",
+            "label": "Bundle for the amended trace request",
             "type": "select",
             "options": [
               {
@@ -8049,7 +8362,27 @@ export const demonstrations:Demonstration[] = [
                 "label": "Foxtrot"
               }
             ],
-            "expected": "Echo"
+            "expected": "Foxtrot"
+          },
+          {
+            "id": "criterion",
+            "label": "Why the deliverable changes",
+            "type": "select",
+            "options": [
+              {
+                "value": "Newest transfer timestamp",
+                "label": "Newest transfer timestamp"
+              },
+              {
+                "value": "Required core plus calibration trace",
+                "label": "Core plus calibration trace"
+              },
+              {
+                "value": "The earlier mirrors are now corrupt",
+                "label": "Earlier mirrors are corrupt"
+              }
+            ],
+            "expected": "Required core plus calibration trace"
           }
         ],
         "before": {
@@ -8067,34 +8400,38 @@ export const demonstrations:Demonstration[] = [
               "custodian:service:deny",
               "custodian:approve:allow"
             ],
-            "selected": "Delta",
-            "revision": "Original I-4 decision retained"
+            "matching": [
+              "Delta",
+              "Echo"
+            ],
+            "revision": "V1: both 22/I-4 mirrors accepted"
           },
           "labels": [
-            "Amended signed reference 22 / I-8"
+            "Amended signed scope: 22 core + 6 trace = 28 / I-9",
+            "Keep the original core-only comparison"
           ],
           "focus": "manifest",
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
@@ -8113,47 +8450,48 @@ export const demonstrations:Demonstration[] = [
               "custodian:service:deny",
               "custodian:approve:allow"
             ],
-            "selected": "Echo",
-            "revision": "V2 under I-8",
+            "selected": "Foxtrot",
+            "revision": "V2: Foxtrot 28/I-9 trace bundle",
             "verified": true
           },
           "labels": [
-            "Changed authority explains changed selection"
+            "Foxtrot satisfies the added trace requirement",
+            "Original mirrors remain valid for original scope"
           ],
-          "focus": "manifest",
+          "focus": "Foxtrot",
           "items": [
             {
               "id": "Delta",
-              "label": "Delta record",
+              "label": "Delta mirror",
               "shape": "book",
               "color": "#8bbca0",
-              "text": "22 sections / I-4"
+              "text": "22 sections / I-4 / 09:10"
             },
             {
               "id": "Echo",
-              "label": "Echo record",
+              "label": "Echo mirror",
               "shape": "book",
               "color": "#c89179",
-              "text": "22 sections / I-8"
+              "text": "22 sections / I-4 / 10:40"
             },
             {
               "id": "Foxtrot",
-              "label": "Foxtrot record",
+              "label": "Foxtrot trace bundle",
               "shape": "book",
               "color": "#a4afc7",
-              "text": "21 sections / I-1"
+              "text": "28 sections / I-9 / core + trace"
             }
           ]
         },
-        "success": "Both the original and revised recommendations remain explainable.",
-        "pitfall": "Calling Delta always wrong would erase the earlier authority.",
-        "hint": "Apply the current signed reference and preserve history.",
+        "success": "Foxtrot alone provides the signed 28-section/I-9 core-and-trace bundle. Delta and Echo remain valid mirrors of the earlier 22-section/I-4 core.",
+        "pitfall": "Calling the mirrors corrupt would erase a valid earlier finding. Choosing the newest timestamp would ignore the added trace requirement.",
+        "hint": "Add the six required trace sections to the 22 core sections, then check the signed bundle digest.",
         "duration": 18
       },
       {
         "id": "final-handoff",
         "title": "Complete the revised delivery",
-        "narration": "Roles rotate again. Nia issues Hill Station / two / GOLD; Ari reads back the new message and receives confirmation. The complete example includes both role records and a joint explanation.",
+        "narration": "The revised delivery contains the verified Foxtrot core-and-trace bundle. Roles rotate again: Nia issues Hill Station / two / GOLD; Ari repeats all three fields and Nia confirms that exact message. The joint explanation links the load diagnosis, two-copy finding, changed scope, policy checks and both role records.",
         "why": "A later instruction needs its own current fields and acknowledgement.",
         "prompt": "Record the revised handoff.",
         "controls": [
@@ -8211,11 +8549,12 @@ export const demonstrations:Demonstration[] = [
             "revision": "Original and revised deliveries retained"
           },
           "labels": [
-            "Final paired record complete"
+            "Foxtrot trace bundle · Hill Station / 2 / GOLD",
+            "Both role records and preserved revision complete"
           ],
           "focus": "speaker"
         },
-        "success": "The new handoff is explicit and does not inherit stale confirmation.",
+        "success": "The Foxtrot trace bundle has its own current destination, count, code and confirmed read-back. The earlier TEAL confirmation remains attached to the earlier core package.",
         "pitfall": "Reusing TEAL would apply the old instruction to the wrong delivery.",
         "hint": "Treat the amended delivery as a distinct message.",
         "duration": 18
@@ -8224,7 +8563,7 @@ export const demonstrations:Demonstration[] = [
     "artifact": {
       "title": "Complete A2 model submission — Iris Relay",
       "filename": "worked-assessment-a2.md",
-      "markdown": "# Complete authored A2 example — Iris Relay\n\n**Teaching demonstration, not an assigned response or a claim of real student activity.**\n\n## Initial checkpoint\nCircuit: source/fuse/cable/lamp = 12/0/0/0 V while powered. Diagnosis: open fuse. Isolated replacement; powered verification 12/12/12/12 V and lamp lit.\nReference: 22 sections, I-4. Delta 22/I-4 matches; Echo 22/I-8 differs; Foxtrot 21/I-1 is incomplete.\nOriginal permission fault: reader had read/service/approve; maintainer and custodian had read only.\n\n## Before and after policy\n| Role | Before read/service/approve | After read/service/approve |\n| --- | --- | --- |\n| Reader | Allow / Allow / Allow | Allow / Deny / Deny |\n| Maintainer | Allow / Deny / Deny | Allow / Allow / Deny |\n| Custodian | Allow / Deny / Deny | Allow / Deny / Allow |\n\nAll nine after-state cells were compared with the mandate. Both denied and permitted operations were tested.\n\n## Handoff records\nFirst card: South Dome / 4 / TEAL. Initial read-back said 3; corrected complete read-back said 4 and was confirmed.\nAmended card: Hill Station / 2 / GOLD. Complete read-back matched and was confirmed.\n\n## Preserved revision\nVersion 1 selected Delta under I-4. Version 2 selected Echo after a signed amendment required I-8. The policy was not changed by that content amendment. The historical source and original selection were retained.\n\n## Responsibilities and contribution statements\n| Stage | Operator | Analyst / check |\n| --- | --- | --- |\n| Circuit diagnosis | Ari | Nia predicted and checked readings |\n| Archive and policy | Nia | Ari supplied manifest and expected matrix |\n| First handoff | Nia | Ari issued and confirmed instruction |\n| Revised handoff | Ari | Nia issued and confirmed amended instruction |\n\nAri: I obtained the circuit trace, performed the isolated replacement, checked the investigation requirements after rotation and received the revised instruction. The analyst's predictions informed my actions, but did not substitute for my recorded checks.\nNia: I compared candidate circuit faults, operated the archive and policy checks after rotation, corrected my initial count read-back and supplied the amended instruction. My role included questioning a result, not simply approving Ari's choices.\n\n## Joint explanation (543 words)\nOur pair's objective was to restore Iris Relay and deliver the research copy authorised by its current signed request. We divided the initial work between Ari as operator and Nia as analyst, then exchanged responsibilities. The role labels describe an authored demonstration rather than authenticated people. We retained separate traces so the joint explanation did not conceal which role obtained a reading, supplied a requirement or confirmed a handoff.\n\nThe twelve-volt support circuit was dark. Ari measured relative to the common return: source twelve volts, fuse output zero, cable output zero and lamp supply zero. Nia compared those values with predicted supply-break cases. Because the first missing supply was immediately after the fuse, the evidence supported an open fuse rather than a cable failure. Ari isolated power before replacement. Restoring power produced twelve volts at the lamp supply and a lit output. We recorded both observations because a healthy input alone would not establish a working load.\n\nAfter this verification we rotated roles. Nia operated the record console while Ari read the investigation pack. The signed request specified twenty-two sections and digest I-4. Delta contained twenty-two sections with I-4; Echo contained twenty-two with I-8 after annotation; Foxtrot contained twenty-one with I-1. Delta met the original count and identity conditions. Echo's later timestamp did not make it the required copy. Our recommendation remained limited to agreement with the supplied reference, not the scientific accuracy of every section.\n\nThe local permission model initially gave the reader service and approval rights while denying the specialist operations to maintainer and custodian. We wrote the intended matrix before changing it: everyone reads, only maintainer services, only custodian approves. Nia changed the policy while Ari checked each expected result. We tested all nine cells, including the legitimate operations. A blanket denial would have removed the unauthorised actions while preventing the relay from doing its job. That distinction made the positive checks necessary rather than optional reassurance.\n\nFor the first handoff, Ari's analyst card specified South Dome, four units, TEAL. Nia initially repeated three units. Ari corrected the count and Nia read back the complete message before acknowledgement. We preserved this mismatch because it shows what the protocol repaired. Merely writing that communication was good would have hidden the evidence. The acknowledgement was attached to that specific instruction, not treated as permission for later dispatches.\n\nThe published amendment then changed the signed deliverable to twenty-two sections with I-8. We preserved the Delta selection and its original authority, selected Echo under the new authority and documented why the change did not make the first comparison false. Responsibilities rotated again for the revised handoff. The new card specified Hill Station, two units, GOLD. The operator repeated all three fields and the analyst confirmed them. We did not reuse TEAL simply because it had been correct earlier.\n\nOur main lesson was that restoration, evidence and coordination form a dependency chain. A working circuit does not identify the correct data; correct data does not establish a shared delivery instruction. Each stage needed its own verification and a handoff of what had actually been established. The example remains limited to authored local models. In another system we would check its reference authority, measurement conventions and access contract before reusing any exact value from this trial.\n\n## Attribution and limitation\nThe names, actions and records form an authored worked path. No external system was tested and no physical circuit measurement is claimed. A student submission must supply its own role records and declared assistance."
+      "markdown": "# Complete authored A2 example — Iris Relay\n\n**Teaching demonstration, not an assigned response or a claim of real student activity.**\n\n## Checkpoint: diagnosis before repair\n\n| State / test | Source | Fuse output | Cable output | Lamp supply | Lamp |\n| --- | --- | --- | --- | --- | --- |\n| Powered before repair | 12 V | 12 V | 12 V | 12 V | Dark |\n| Isolated continuity | Source off | Continuous | Continuous | Lamp continuity: OPEN | Fault confirmed |\n| Powered after lamp replacement | 12 V | 12 V | 12 V | 12 V | Lit |\n\nAll voltage readings use the common return. The unchanged voltage trace does not prove the lamp repair; the OPEN pre-repair continuity and verified light explain it. Ari replaced only the lamp with the source isolated.\n\n## Source comparison: more than one valid match\n\nOriginal signed scope: **exactly 22 core sections, digest I-4**.\n\n| Record | Content | Transfer time | Original scope |\n| --- | --- | --- | --- |\n| Delta | 22 sections / I-4 | 09:10 | Matches |\n| Echo | 22 sections / I-4; byte-identical mirror of Delta | 10:40 | Matches |\n| Foxtrot | Same 22 core sections plus 6 calibration-trace sections; 28 / I-9 bundle | 10:15 | Different scope |\n\nThe signed source card supplies both the I-4 core identity and the I-9 bundle composition. Delta and Echo are equally defensible matches for the original request. A later transfer timestamp does not distinguish their content.\n\n## Before and after policy\n\n| Role | Before read/service/approve | After read/service/approve |\n| --- | --- | --- |\n| Reader | Allow / Allow / Allow | Allow / Deny / Deny |\n| Maintainer | Allow / Deny / Deny | Allow / Allow / Deny |\n| Custodian | Allow / Deny / Deny | Allow / Deny / Allow |\n\nAll nine resulting decisions were checked. Positive regression: maintainer service allowed. Negative regression: reader approval denied. The other seven results also matched the charter.\n\n## Handoff records\n\n- Core package: **South Dome / 4 / TEAL**. Nia initially repeated 3. Ari corrected the count; Nia repeated all fields and Ari confirmed.\n- Amended trace package: **Hill Station / 2 / GOLD**. Ari repeated all fields and Nia confirmed. This receipt applies to the Foxtrot bundle, not the earlier core-only instruction.\n\n## Preserved revision\n\n**Version 1:** accepted both Delta and Echo under the 22-section/I-4 core-only scope; completed the first package handoff.\n\n**Signed scope amendment:** deliver the same core **plus six calibration-trace sections**, exactly 28 sections with bundle digest I-9.\n\n**Version 2:** selected Foxtrot under that larger evidence requirement. The original mirrors remain valid for the original scope. The permission charter remains unchanged; the new delivery requires its own confirmed handoff.\n\n## Responsibilities and contribution statements\n\n| Stage | Operator / receiver | Analyst / sender |\n| --- | --- | --- |\n| Circuit | Ari measured, isolated and replaced the lamp | Nia compared fault predictions and continuity |\n| Archive and policy | Nia compared both mirrors and operated the policy | Ari read the signed scope and checked all nine cells |\n| First handoff | Nia corrected 3 to 4 and repeated the full message | Ari issued and confirmed South Dome / 4 / TEAL |\n| Revised handoff | Ari received and repeated the new message | Nia issued and confirmed Hill Station / 2 / GOLD |\n\n**Ari:** I collected the powered readings, performed the isolated continuity and replacement sequence, and verified the lamp output. After rotation I checked the archive scope and policy; I later received the amended handoff. I did not claim that identical mirrors required a unique winner.\n\n**Nia:** I proposed the continuity check because available supply did not prove a healthy load. I then operated the record and policy comparisons, preserved my corrected count error, and issued the amended trace-package instruction after another role exchange.\n\n## Joint explanation (580 words)\n\nOur pair restored Iris Relay and prepared the research package authorised by its current signed request. Ari initially operated the circuit while Nia held the requirement cards and predicted what each possible fault would produce. We agreed to exchange responsibilities after verification. This is an authored example of paired reasoning: the contribution records show who measured, compared, operated and confirmed, rather than treating a shared result as proof of equal understanding.\n\nThe lamp was dark, but Ari measured twelve volts at the source, fuse output, cable output and lamp supply, all against the common return. These readings established available supply throughout the model. They did not establish a complete path through the lamp. Nia rejected an immediate fuse replacement because there was no missing supply after that component. We chose a different test: isolate the source and inspect continuity through the load, with healthy components as comparisons.\n\nWith power off, the supplied continuity record showed the fuse and cable continuous and the lamp open. That evidence supported replacing the lamp. Ari made the replacement while isolated, then restored power. All four supply readings remained twelve volts, but the lamp now lit. The voltage trace alone therefore could not explain the repair; the retained continuity result and changed output could. We preserved both the original dark condition and the verified result before rotating roles.\n\nNia next operated the archive console while Ari stated the first request: exactly twenty-two core sections with digest I-4. Delta and Echo had identical content satisfying both conditions. Their different transfer timestamps did not create different content identities. We recorded both as matching mirrors instead of inventing a unique winner. Foxtrot contained the same core plus six calibration-trace sections, forming a twenty-eight-section bundle with digest I-9. Its extra material was outside the original exact scope, without making that material false or corrupt.\n\nThe permission charter remained a separate question. The reader originally held excess service and approval rights, while specialist roles lacked their required actions. We repaired all nine cells: everyone could read, only the maintainer could service, and only the custodian could approve. We checked both the permitted maintainer service and the denied reader approval, alongside the other seven decisions. Denying everything would remove misuse but also prevent the relay from performing its intended work.\n\nFor the first delivery, either matching mirror supported the core package. Ari issued South Dome, four units, TEAL. Nia initially repeated three units. Ari corrected that discrepancy, and Nia repeated the entire message before confirmation. We retained the mistake because it demonstrates what the protocol caught. Confirmation applied to this package and these fields; it was not general permission for a later delivery.\n\nThe signed amendment then required the core together with six calibration-trace sections, exactly twenty-eight sections and bundle digest I-9. Foxtrot alone met that enlarged scope. Delta and Echo remained valid answers to the earlier request, so Version Two preserved the original two-match finding rather than rewriting it as failure. The amendment changed the deliverable, not the permission charter. Roles rotated again: Nia issued Hill Station, two units, GOLD, and Ari completed a fresh read-back.\n\nOur completed evidence links diagnosis, content scope, authority and communication without treating them as interchangeable checks. Matching a supplied digest establishes reference agreement within this model; it does not establish scientific truth, permanent hardware reliability or a real-world delivery. In a new task we would reuse the reasoning method, identify its actual measurement conventions and requirements, and collect fresh evidence before reusing any conclusion.\n\n## Attribution and limitation\n\nThe names, actions and records are a complete authored example. No physical measurements, external system tests, real student participation or real delivery are claimed. An assessed pair must provide its own records, reasoning, contributions and declared assistance.\n"
     }
   },
   {
@@ -8895,7 +9234,8 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": true,
-            "fault": "cable"
+            "fault": "cable",
+            "sourceVoltage": 9
           },
           "labels": [
             "9 / 9 / 0 / 0 V"
@@ -8908,7 +9248,8 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": false,
-            "fault": "none"
+            "fault": "none",
+            "sourceVoltage": 9
           },
           "labels": [
             "Cable replaced with power isolated"
@@ -8952,7 +9293,8 @@ export const demonstrations:Demonstration[] = [
           "values": {
             "voltage": 9,
             "powered": false,
-            "fault": "none"
+            "fault": "none",
+            "sourceVoltage": 9
           },
           "labels": [
             "Verification and handoff pending"
@@ -8966,7 +9308,8 @@ export const demonstrations:Demonstration[] = [
             "voltage": 9,
             "powered": true,
             "fault": "none",
-            "verified": true
+            "verified": true,
+            "sourceVoltage": 9
           },
           "labels": [
             "9 V + light; coordinator informed"

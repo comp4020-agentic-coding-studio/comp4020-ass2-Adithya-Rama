@@ -31,17 +31,17 @@ Every example moves beyond revealing a correct answer. It demonstrates a consequ
 | Lab 2 | Gate, Pool, Press, Dome; Lens, Tether, Pocket atlas, Beacon | Repair two swapped associations and distinguish a specific object from a generic substitution. |
 | Lab 3 | Connector begins north/west; clockwise rotation 90 degrees; level 2 | Keep the correct orientation when only the required height changes to level 1. |
 | Lab 4 | Driver 18, follower 30, five input turns, cam 270 degrees | Diagnose a three-turn output, then choose a 36-tooth follower for two output turns from four input turns. |
-| Lab 5 | Nine-volt beacon with an open cable | Distinguish a supply break from an open lamp that retains supply voltage; isolate before changing the circuit or testing continuity. |
-| Lab 6 | Weather ledgers North 18/Q7, East 18/Q9, South 17/Q2 | Use the required reference instead of recency, then change the selection when an authoritative amendment changes that reference. |
-| Lab 7 | Reader, maintainer, custodian; read, service, approve | Repair excessive authority and revoke only the permission affected by a later calibration hold. |
+| Lab 5 | One nine-volt beacon with cable and lamp faults together | A correct cable repair restores voltage but leaves the light dark; diagnose the remaining fault before declaring completion. |
+| Lab 6 | North under R1, an unsigned East proposal, then repaired South S2 under authenticated R2 | Preserve valid authority during an unverified request and check authentication and repaired content separately. |
+| Lab 7 | Research embargo: maintainer may service but may not read; reader access is wrongly blocked | Repair both excessive and missing permissions, then apply a narrowly scoped release hold. |
 | Lab 8 | Dome, five cases, VIOLET; then Pool, two cases, SILVER | Repair a quantity mismatch through a full readback and a confirmed correction. |
-| Lab 9 | Ada, Rin, Bo; seven-unit original, five-unit carrier, nine-unit cradle | Negotiate from evidence and capacity, then revise when provenance makes a copy insufficient. |
+| Lab 9 | Ada, Rin, Bo; matching copies, seven-unit original and nine-unit cart | Authorise physical handover under one mandate, then retain the original when a replacement brief requests remote access only. |
 | Lab 10 | Start cell 20, goal 3; two declared routes and changing sensor cells | Predict contact counts before movement and update the model when the sensor arrangement changes. |
-| Lab 11 | An east bridge closes; a west route requires a capacity check | Preserve Version 1, insert the missing dependency, and give the new check an explicit owner. |
+| Lab 11 | Withdrawal of release authority while every route remains open | Insert recipient-scope verification and recorded authorisation before sealing, with named owners and preserved plans. |
 | Lab 12 | Rainfall recorder at Lark Weather Mast; Ash 12/W6 and Birch 11/W3 | Combine apparatus, identity, custody, and unresolved calibration in a small recovery decision. |
 | Fieldwork | All twelve alternate lab records | Build a complete portfolio with evidence, reasoning, revision, and reflection; distinguish completion from marking. |
 | A1 | Botanical Transfer Workshop | Combine observation, memory, spatial reasoning, and a 20-tooth drive mechanism into a traceable explanation and counterexample. |
-| A2 | Restore Iris Relay | Diagnose a 12-volt fuse fault, compare three versions, repair a permission matrix, and rotate two roles through corrected handoffs. |
+| A2 | Restore Iris Relay: powered-but-dark lamp, two valid mirrored copies and a later larger trace bundle | Use isolated continuity, avoid inventing a unique winner, and revise delivery scope with explicit read-backs. |
 | Final | Operation Lamplight at Halcyon Observatory | Apply all twelve skills across six areas, preserve two plan versions, compare two rehearsals, and defend a changed recovery method. |
 
 ## Artifact completeness and word ranges
@@ -50,9 +50,9 @@ Counts below are whitespace-delimited words in the authored text. The range appl
 
 | Artifact | Required section | Authored section | Supporting material |
 | --- | --- | --- | --- |
-| Fieldwork | Twelve records; best ten counted by the course policy | Twelve complete records | 3,504 words overall, including a register, outputs, and additional reflections. No invented marks or automated choice of a student's best records. |
+| Fieldwork | Twelve records; best ten counted by the course policy | Twelve complete records | 4,599 words overall, including a register, outputs, and additional reflections. No invented marks or automated choice of a student's best records. |
 | A1 | 350–500-word explanation | 422 words | Initial attempt, repairs, causal model, explicit counterexample, and attribution; 660 words overall. |
-| A2 | 500–700-word explanation | 543 words | Checkpoint, circuit diagnosis, before/after permissions, handoff transcripts, role rotation, contributions, and revision; 952 words overall. |
+| A2 | Restore Iris Relay: powered-but-dark lamp, two valid mirrored copies and a later larger trace bundle | Use isolated continuity, avoid inventing a unique winner, and revise delivery scope with explicit read-backs. |
 | Final | 800–1,200-word team account | 984 words | Mission contract, six-area plan, evidence register, two rehearsal records, preserved versions, revision, consequences, presentation package, and four defences; 4,616 words overall. |
 | Final individual defences | 300 words per member | 300 words each for Lena, Omar, Priya, and Jonah | Four distinct role perspectives that identify evidence, uncertainty, alternatives, and contribution. |
 
@@ -124,3 +124,7 @@ The custody register identifies original O-HAL-01, custodian Dr Edda Quill, init
 The presentation allocation was recalculated from the actual paragraph word counts at 130 words per minute: 458 seconds of rounded spoken segments, 120 seconds for six demonstrations, and 22 seconds for transitions total 600 seconds. The 984-word team account and all four 300-word defences are unchanged. Supporting additions bring the complete final package to 4,616 whitespace-delimited words.
 
 There are still eighteen chapters with identical controls. Scene changes are limited to narration, captions and explicit metadata in baseline, disruption, revised-rehearsal, final-run and debrief frames. Their rooms, camera shots and control behavior remain unchanged. No browser replay, physical trial or delivery of the presentation is claimed by this audit note.
+
+## Follow-up: separation from assigned work
+
+The later [sixteen-example audit](EXAMPLE-SEPARATION-AUDIT.md) found that some earlier examples followed the assigned decision pattern too closely despite their different names and values. Labs 1, 5, 6, 7, 9 and 11, plus A2, were corrected across the controls, narrative, scenes and finished artifacts. The map above reflects those corrections. Shared methods remain deliberate; the audit records the consequential differences and validation limits.
