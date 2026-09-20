@@ -32,7 +32,8 @@ export class AcademyWorld {
  private animated:THREE.Object3D[]=[];private gears:THREE.Object3D[]=[];private gearTargets=[0,0];private dynamic:Record<string,THREE.Object3D>={};
  private resize?:ResizeObserver;private cleanups:Array<()=>void>=[];private frame=0;private elapsed=0;private last=0;
  private disposed=false;private paused=false;private inspect=false;private moving=false;private keys=new Set<string>();private target?:THREE.Vector3;
- private azimuth=0;private pitch=.36;private drag?:{x:number;y:number;startX:number;startY:number;moved:boolean};
+ private azimuth=0;private pitch=.36;private exploreZoom=1;private inspectionZoom=1;private demoZoom=1;private demoYaw=0;private demoPitch=0;private cameraDirty=false;
+ private drag?:{x:number;y:number;startX:number;startY:number;moved:boolean};private freeLookPointer?:{x:number;y:number};private lockedMovementReady=false;
  private reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;private ray=new THREE.Raycaster();private pointer=new THREE.Vector2();
  private room:RoomId='atrium';private zone='arrival';private state:SceneUpdate={};private week:number;private mode:string;private base:string;private low=false;private statusText='';
  constructor(root:HTMLElement){
@@ -46,8 +47,8 @@ export class AcademyWorld {
   this.renderer.setClearColor(0x344f58);this.renderer.outputColorSpace=THREE.SRGBColorSpace;this.renderer.toneMapping=THREE.ACESFilmicToneMapping;
   this.renderer.toneMappingExposure=1.05;this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   this.stage.append(this.renderer.domElement);this.renderer.domElement.tabIndex=0;
-  this.renderer.domElement.setAttribute('aria-label','Interactive third-person academy. Move with W A S D or arrows. Press E to inspect. Equipment also has buttons.');
-  this.renderer.domElement.setAttribute('role','application');if(this.mode==='demo')this.renderer.domElement.setAttribute('aria-label','Guided three-dimensional worked example. Watch its equipment and instructor, or choose Take control for exploration.');
+  this.renderer.domElement.setAttribute('aria-label','Interactive third-person academy. Move with W A S D or arrows. Press E to inspect. Scroll to zoom, or use the zoom buttons. Drag to look; fullscreen mouse-look also supports moving the mouse without dragging. Press Escape to release mouse-look. Equipment also has buttons.');
+  this.renderer.domElement.setAttribute('role','application');if(this.mode==='demo')this.renderer.domElement.setAttribute('aria-label','Guided three-dimensional worked example. Watch its equipment and instructor, or choose Take control for exploration. Scroll or use the zoom buttons to examine the scene more closely.');
   await RAPIER.init();this.physics=new RAPIER.World({x:0,y:-9.81,z:0});this.controller=this.physics.createCharacterController(.015);
   this.controller.enableAutostep(.22,.3,true);this.controller.enableSnapToGround(.3);
   this.body=this.physics.createRigidBody(RAPIER.RigidBodyDesc.kinematicPositionBased().setTranslation(0,.87,2.8));
@@ -93,7 +94,7 @@ export class AcademyWorld {
   this.environment.clear();this.demoOverlay=new THREE.Group();this.demoItemsSignature='';this.demoItemNodes.clear();this.equipment=[];this.animated=[];this.gears=[];this.dynamic={};this.selected=undefined;this.inspect=false;
   this.makeArchitecture();if(this.room==='atrium')this.makeAtrium();else this.makeEquipment();
   this.player.visible=true;this.player.rotation.y=Math.PI;this.player.position.set(0,.07,2.8);this.body.setTranslation({x:0,y:.87,z:2.8},true);this.azimuth=0;this.target=undefined;
-  this.root.querySelector<HTMLElement>('[data-world-location]')!.textContent=this.mode==='mission'?'MERIDIAN / '+ZONES[this.zone as keyof typeof ZONES]:ROOMS[this.room].name;
+  this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-location]')!.textContent=this.mode==='mission'?'MERIDIAN / '+ZONES[this.zone as keyof typeof ZONES]:ROOMS[this.room].name;
   const menu=this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!;menu.replaceChildren();this.equipment.forEach((item,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=item.label;menu.append(option)});const first=this.equipment.find(e=>!e.travel)||this.equipment[0];if(first)this.select(first);if(this.mode==='demo'){this.environment.add(this.demoOverlay);this.updateDemoVisuals();}else this.updateModels();
  }
  private makeArchitecture(){
@@ -152,9 +153,9 @@ export class AcademyWorld {
   const demoFov=frame.room==='movement'?70:56;if(this.camera.fov!==demoFov){this.camera.fov=demoFov;this.camera.updateProjectionMatrix();}
   this.room=frame.room;this.keys.clear();this.target=undefined;
   if(moved)this.buildRoom();else this.updateDemoVisuals();
-  if(changed){this.demoTime=0;if(!this.demoPlaying||this.demo.shot==='overhead'){this.demoClockTarget.copy(this.demoFocus);const pose=demonstrationCamera(this.demo.shot,this.demoFocus,this.camera.aspect,frame.progress,true);this.camera.position.copy(pose.position);this.camera.lookAt(pose.target);}}
+  if(changed){this.demoTime=0;this.demoYaw=0;this.demoPitch=0;this.cameraDirty=true;if(!this.demoPlaying||this.demo.shot==='overhead'){this.demoClockTarget.copy(this.demoFocus);const pose=demonstrationCamera(this.demo.shot,this.demoFocus,this.camera.aspect,frame.progress,true);this.camera.position.copy(this.adjustDemoCamera(pose.position,pose.target));this.camera.lookAt(pose.target);}}
   this.root.querySelector<HTMLElement>('[data-world-location]')!.textContent='WORKED EXAMPLE / '+ROOMS[this.room].name;
-  this.status(frame.title+(frame.phase==='after'?' · result':' · demonstration'));
+  this.updateEquipmentAction();this.status(frame.title+(frame.phase==='after'?' · result':' · demonstration'));
  }
  private updateDemoVisuals(){
   if(this.mode!=='demo'||!this.demo)return;
@@ -325,12 +326,19 @@ export class AcademyWorld {
   this.demoOverlay.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material]){if(m instanceof THREE.MeshStandardMaterial||m instanceof THREE.MeshBasicMaterial)m.map?.dispose();m.dispose()}}});
   this.demoOverlay.clear();this.demoItemNodes.clear();
  }
+ private adjustDemoCamera(position:THREE.Vector3,target:THREE.Vector3){
+  // Keep the authored shot and teaching target; manual inspection changes only its offset.
+  const orbit=new THREE.Spherical().setFromVector3(position.clone().sub(target));
+  orbit.radius*=this.demoZoom;orbit.theta+=this.demoYaw;orbit.phi=THREE.MathUtils.clamp(orbit.phi+this.demoPitch,.02,Math.PI/2+.12);
+  return target.clone().add(new THREE.Vector3().setFromSpherical(orbit));
+ }
  private updateDemoCamera(dt:number){
-  if(!this.demo)return;
-  if(!this.demoPlaying)return;
+  if(!this.demo||(!this.demoPlaying&&!this.cameraDirty))return;
   this.demoClockTarget.lerp(this.demoFocus,this.reduced||this.demo.shot==='overhead'?1:1-Math.exp(-dt*3));
   const pose=demonstrationCamera(this.demo.shot,this.demoClockTarget,this.camera.aspect,this.demo.progress,this.reduced);
-  this.camera.position.lerp(pose.position,this.reduced||this.demo.shot==='overhead'?1:1-Math.exp(-dt*3.5));this.camera.lookAt(pose.target);
+  const desired=this.adjustDemoCamera(pose.position,pose.target);
+  this.camera.position.lerp(desired,this.reduced||this.demo.shot==='overhead'?1:1-Math.exp(-dt*3.5));this.camera.lookAt(pose.target);
+  if(this.camera.position.distanceToSquared(desired)<.0001)this.cameraDirty=false;
  }
  private updateCoach(dt:number){
   if(!this.coach)return;
@@ -497,13 +505,56 @@ export class AcademyWorld {
 
  private installControls(){
   const listen=(target:EventTarget,type:string,fn:EventListener,options?:AddEventListenerOptions)=>{target.addEventListener(type,fn,options);this.cleanups.push(()=>target.removeEventListener(type,fn,options))};const canvas=this.renderer.domElement;
-  listen(canvas,'keydown',((event:KeyboardEvent)=>{const key=event.key.toLowerCase();if(['w','a','s','d','c','arrowup','arrowdown','arrowleft','arrowright','e','escape'].includes(key)){event.preventDefault();this.keys.add(key);this.target=undefined;if(key==='e')this.inspectSelected();if(key==='escape')this.leaveInspection()}}) as EventListener);
+  listen(canvas,'keydown',((event:KeyboardEvent)=>{
+   if(event.target instanceof HTMLElement&&event.target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])'))return;
+   if(event.ctrlKey||event.metaKey||event.altKey)return;
+   const key=event.key.toLowerCase();
+   // Escape belongs to the browser while fullscreen or pointer lock is active.
+   if(key==='escape'){this.keys.clear();this.leaveInspection();return;}
+   if(['+','=','-','_'].includes(key)){event.preventDefault();this.zoom(key==='+'||key==='='?-.18:.18);return;}
+   if(['w','a','s','d','c','arrowup','arrowdown','arrowleft','arrowright','e'].includes(key)){event.preventDefault();this.keys.add(key);this.target=undefined;if(key==='e'&&!event.repeat)this.inspectSelected();}
+  }) as EventListener);
   listen(canvas,'keyup',((event:KeyboardEvent)=>{this.keys.delete(event.key.toLowerCase())}) as EventListener);
-  listen(canvas,'blur',(()=>this.keys.clear()) as EventListener);listen(window,'blur',(()=>this.keys.clear()) as EventListener);
-  listen(canvas,'pointerdown',((event:PointerEvent)=>{this.drag={x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false};canvas.setPointerCapture(event.pointerId);canvas.focus({preventScroll:true})}) as EventListener);
-  listen(canvas,'pointermove',((event:PointerEvent)=>{if(!this.drag)return;const dx=event.clientX-this.drag.x,dy=event.clientY-this.drag.y;if(Math.abs(event.clientX-this.drag.startX)+Math.abs(event.clientY-this.drag.startY)>7)this.drag.moved=true;if(this.drag.moved){this.azimuth-=dx*.005;this.pitch=THREE.MathUtils.clamp(this.pitch+dy*.004,.08,1);this.drag.x=event.clientX;this.drag.y=event.clientY}}) as EventListener);
-  listen(canvas,'pointerup',((event:PointerEvent)=>{if(this.drag&&!this.drag.moved)this.pick(event);this.drag=undefined;try{canvas.releasePointerCapture(event.pointerId)}catch{} }) as EventListener);
-  listen(canvas,'pointercancel',(()=>{this.drag=undefined}) as EventListener);
+  const clearInput=()=>{this.keys.clear();this.drag=undefined;this.freeLookPointer=undefined;};
+  listen(canvas,'blur',clearInput);listen(window,'blur',clearInput);
+  listen(canvas,'pointerdown',((event:PointerEvent)=>{
+   canvas.focus({preventScroll:true});
+   if(document.pointerLockElement===canvas||(event.pointerType==='mouse'&&this.mouseLookEnabled()))return;
+   this.drag={x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false};canvas.setPointerCapture(event.pointerId);
+  }) as EventListener);
+  listen(canvas,'pointermove',((event:PointerEvent)=>{
+   if(document.pointerLockElement===canvas)return;
+   if(event.pointerType==='mouse'&&this.mouseLookEnabled()){
+    const previous=this.freeLookPointer;this.freeLookPointer={x:event.clientX,y:event.clientY};
+    if(previous)this.look(event.clientX-previous.x,event.clientY-previous.y);
+    return;
+   }
+   if(!this.drag)return;const dx=event.clientX-this.drag.x,dy=event.clientY-this.drag.y;
+   if(Math.abs(event.clientX-this.drag.startX)+Math.abs(event.clientY-this.drag.startY)>7)this.drag.moved=true;
+   if(this.drag.moved){this.look(dx,dy);this.drag.x=event.clientX;this.drag.y=event.clientY;}
+  }) as EventListener);
+  listen(document,'mousemove',((event:MouseEvent)=>{
+   if(document.pointerLockElement!==canvas)return;
+   // Ignore the first locked sample: some browsers report their cursor-recentering
+   // delta when capture starts, which should not turn the learner's camera.
+   if(!this.lockedMovementReady){this.lockedMovementReady=true;return;}
+   this.look(event.movementX,event.movementY);
+  }) as EventListener);
+  listen(document,'pointerlockchange',()=>{clearInput();this.lockedMovementReady=false;this.updateCameraControls();});
+  listen(canvas,'pointerleave',()=>{this.freeLookPointer=undefined;});
+  listen(canvas,'pointerup',((event:PointerEvent)=>{
+   if(document.pointerLockElement!==canvas&&!(event.pointerType==='mouse'&&this.mouseLookEnabled())&&this.drag&&!this.drag.moved)this.pick(event);
+   this.drag=undefined;try{canvas.releasePointerCapture(event.pointerId)}catch{}
+  }) as EventListener);
+  listen(canvas,'pointercancel',clearInput);
+  listen(canvas,'wheel',((event:WheelEvent)=>{
+   event.preventDefault();
+   const units=event.deltaMode===WheelEvent.DOM_DELTA_LINE?16:event.deltaMode===WheelEvent.DOM_DELTA_PAGE?this.stage.clientHeight:1;
+   this.zoom(THREE.MathUtils.clamp(event.deltaY*units,-240,240)*.0015);
+  }) as EventListener,{passive:false});
+  const lookObserver=new MutationObserver(()=>{clearInput();this.updateCameraControls();});
+  lookObserver.observe(this.root,{attributes:true,attributeFilter:['data-world-mouse-look']});
+  this.cleanups.push(()=>lookObserver.disconnect());
   listen(canvas,'webglcontextlost',((event:Event)=>{event.preventDefault();this.paused=true;this.status('Graphics paused. Your lab work is safe. Use the accessible controls below or reload to restore graphics.');}) as EventListener);
   listen(canvas,'webglcontextrestored',(()=>{this.paused=false;this.status('Graphics restored. Your lab work is unchanged.')}) as EventListener);
   listen(document,'visibilitychange',(()=>{this.keys.clear();this.last=performance.now()}) as EventListener);
@@ -517,20 +568,47 @@ export class AcademyWorld {
    this.root.dataset.demoControl=String(this.demoControlled);this.player.visible=this.demoControlled;
    if(this.selectionHelper)this.selectionHelper.visible=this.demoControlled;
    this.root.querySelector<HTMLElement>('[data-world-demo-mode]')!.textContent=this.demoControlled?'YOUR TURN · EXAMPLE EQUIPMENT':'WATCHING A WORKED EXAMPLE';
-   this.status(this.demoControlled?'You control the example. Inspect the equipment and use the response controls.':'The camera follows the worked example.');
+   this.cameraDirty=true;this.updateCameraControls();this.updateEquipmentAction();this.status(this.demoControlled?'You control the example. Inspect the equipment and use the response controls.':'The camera follows the worked example. Scroll to examine the current shot more closely.');
   }) as EventListener);
   listen(window,'mastermind:demo-playback',((event:CustomEvent<{playing:boolean}>)=>{
    if(this.mode!=='demo')return;this.demoPlaying=Boolean(event.detail.playing);
    if(!this.demoPlaying&&(this.demo?.progress||0)>=1)this.gears.forEach((gear,i)=>gear.rotation.z=this.gearTargets[i]!);
    this.root.dataset.worldDemoPlaying=String(this.demoPlaying);
   }) as EventListener);
-  const button=(selector:string,fn:()=>void)=>listen(this.root.querySelector(selector)!,'click',fn);
+  const button=(selector:string,fn:()=>void)=>{const control=this.root.querySelector(selector);if(control)listen(control,'click',fn);};
   button('[data-world-inspect]',()=>this.inspectSelected());button('[data-world-use]',()=>this.useSelected());button('[data-world-exit-inspect]',()=>this.leaveInspection());
-  button('[data-world-reset-camera]',()=>{this.leaveInspection();this.azimuth=0;this.pitch=.36;this.status('Camera reset.');});
+  button('[data-world-zoom-in]',()=>this.zoom(-.18));button('[data-world-zoom-out]',()=>this.zoom(.18));
+  button('[data-world-reset-camera]',()=>{this.leaveInspection();this.azimuth=0;this.pitch=.36;this.exploreZoom=1;this.inspectionZoom=1;this.demoZoom=1;this.demoYaw=0;this.demoPitch=0;this.cameraDirty=true;this.updateCameraControls();this.status('Camera reset. Scroll over the scene or use the zoom buttons to get closer.');});
   button('[data-world-pause]',()=>{this.paused=!this.paused;this.keys.clear();const b=this.root.querySelector<HTMLButtonElement>('[data-world-pause]')!;b.textContent=this.paused?'Resume':'Pause';b.setAttribute('aria-pressed',String(this.paused));this.status(this.paused?'Scene paused. Course controls remain available.':'Scene resumed.');});
   listen(this.root.querySelector('[data-world-quality]')!,'change',((e:Event)=>this.setQuality((e.target as HTMLSelectElement).value)) as EventListener);
   listen(this.root.querySelector('[data-world-equipment]')!,'change',((event:Event)=>{const item=this.equipment[Number((event.target as HTMLSelectElement).value)];if(item){this.select(item);this.inspectSelected()}}) as EventListener);const travel=this.root.querySelector<HTMLSelectElement>('[data-world-travel]')!;const entries=this.mode==='mission'?Object.entries(ZONES):Object.entries(ROOMS).map(([key,value])=>[key,value.name]);
   for(const [value,label] of entries){const option=document.createElement('option');option.value=value!;option.textContent=label!;travel.append(option)}travel.value=this.mode==='mission'?this.zone:this.room;listen(travel,'change',()=>this.travel(travel.value));
+  this.updateCameraControls();
+ }
+ private mouseLookEnabled(){return this.root.dataset.worldMouseLook==='true';}
+ private look(dx:number,dy:number){
+  if(!Number.isFinite(dx)||!Number.isFinite(dy))return;
+  const x=THREE.MathUtils.clamp(dx,-200,200),y=THREE.MathUtils.clamp(dy,-200,200);
+  if(this.mode==='demo'&&!this.demoControlled){this.demoYaw-=x*.005;this.demoPitch=THREE.MathUtils.clamp(this.demoPitch-y*.004,-1.3,1.3);}
+  else{this.azimuth-=x*.005;this.pitch=THREE.MathUtils.clamp(this.pitch+y*.004,.08,1.15);}
+  this.cameraDirty=true;
+ }
+ private zoom(logDelta:number){
+  if(!Number.isFinite(logDelta))return;
+  const factor=Math.exp(logDelta);
+  if(this.mode==='demo'&&!this.demoControlled)this.demoZoom=THREE.MathUtils.clamp(this.demoZoom*factor,.35,2.2);
+  else if(this.inspect)this.inspectionZoom=THREE.MathUtils.clamp(this.inspectionZoom*factor,.28,2.4);
+  else this.exploreZoom=THREE.MathUtils.clamp(this.exploreZoom*factor,.4,2);
+  this.cameraDirty=true;this.updateCameraControls();
+ }
+ private updateCameraControls(){
+  const guided=this.mode==='demo'&&!this.demoControlled;
+  const zoom=guided?this.demoZoom:this.inspect?this.inspectionZoom:this.exploreZoom;
+  const min=guided?.35:this.inspect?.28:.4,max=guided?2.2:this.inspect?2.4:2;
+  this.root.dataset.worldZoom=zoom.toFixed(3);
+  this.root.dataset.worldLookMode=document.pointerLockElement===this.renderer.domElement?'locked':this.mouseLookEnabled()?'free':'drag';
+  this.root.querySelectorAll<HTMLButtonElement>('[data-world-zoom-in]').forEach(button=>button.disabled=zoom<=min+.0001);
+  this.root.querySelectorAll<HTMLButtonElement>('[data-world-zoom-out]').forEach(button=>button.disabled=zoom>=max-.0001);
  }
  private travel(destination:string){if(this.mode==='demo'){this.status('This worked example controls its location. Use its chapters to move between scenes.');return;}
   if(this.mode==='mission'){const zones=Object.keys(ZONES);this.zone=destination==='next'?zones[(zones.indexOf(this.zone)+1)%zones.length]!:destination;this.room=ZONE_ROOMS[this.zone]||'perception';window.dispatchEvent(new CustomEvent('mastermind:mission-zone',{detail:{zone:this.zone}}));}
@@ -544,14 +622,36 @@ export class AcademyWorld {
   if(this.inspect)return;const ground=new THREE.Plane(new THREE.Vector3(0,1,0),0);const dest=new THREE.Vector3();
   if(this.ray.ray.intersectPlane(ground,dest)){dest.x=THREE.MathUtils.clamp(dest.x,-9,9);dest.z=THREE.MathUtils.clamp(dest.z,-7.7,8);this.target=dest;this.status('Walking to the selected position.');}
  }
- private select(item:Equipment){if(this.selectionHelper){this.selectionHelper.removeFromParent();this.selectionHelper.geometry.dispose();(this.selectionHelper.material as THREE.Material).dispose();}this.selectionHelper=new THREE.BoxHelper(item.mesh,0xe7c680);this.scene.add(this.selectionHelper);this.selected=item;this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!.value=String(this.equipment.indexOf(item));this.root.querySelector<HTMLElement>('[data-world-object]')!.hidden=false;this.root.querySelector<HTMLElement>('[data-world-object-label]')!.textContent=item.label;this.root.querySelector<HTMLButtonElement>('[data-world-use]')!.textContent=item.travel?'Enter room':'Use equipment';}
- private inspectSelected(){if(!this.selected)return;if(this.selected.travel){this.travel(this.selected.travel);return}this.inspect=true;this.player.visible=false;this.keys.clear();this.target=undefined;this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=false;this.status('Inspection view. Use equipment to perform the lesson action.');}
- private leaveInspection(){this.inspect=false;this.player.visible=true;this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=true;}
+ private select(item:Equipment){if(this.selectionHelper){this.selectionHelper.removeFromParent();this.selectionHelper.geometry.dispose();(this.selectionHelper.material as THREE.Material).dispose();}this.selectionHelper=new THREE.BoxHelper(item.mesh,0xe7c680);this.scene.add(this.selectionHelper);this.selected=item;this.root.querySelector<HTMLSelectElement>('[data-world-equipment]')!.value=String(this.equipment.indexOf(item));this.root.querySelector<HTMLElement>('[data-world-object]')!.hidden=false;this.root.querySelector<HTMLElement>('[data-world-object-label]')!.textContent=item.label;this.updateEquipmentAction();}
+ private updateEquipmentAction(){
+  if(!this.selected)return;
+  const button=this.root.querySelector<HTMLButtonElement>('[data-world-use]')!,id=this.selected.id,values=this.state.values||this.state;
+  button.disabled=false;
+  if(this.selected.travel){button.textContent='Enter room';return;}
+  if(this.mode==='demo'){
+   if(!this.demoControlled){button.textContent='Read example guidance';return;}
+   const alias:Record<string,string>={gear:'gearFollower',driver:'turns',crank:'turns',interlock:'interlock',spring:'spring',cam:'cam',spatial:'orientation'};
+   const control=this.root.closest('[data-demo-id]')?.querySelector('[data-demo-input="'+(alias[id]||id)+'"]');
+   const labels:Record<string,string>={gear:'Change example gear',driver:'Add one input turn',crank:'Add one input turn',interlock:'Toggle example interlock',spring:'Toggle example spring',cam:'Rotate cam 90°'};
+   button.textContent=control?(labels[id]||'Open response controls'):'Open response controls';return;
+  }
+  if(this.mode==='mission'){
+   const labels:Record<string,string>={lens:'Read lens details',spool:'Read spool details',tile:'Read tile details',map:'Read map details',manifest:'Read packing manifest',mechanism:'Turn input once',crank:'Turn input once',gear:'Change follower gear',interlock:values.brake?'Release holding brake':'Engage holding brake',circuit:'Measure supply and fuse',files:'Open archive controls',permissions:'Open access controls',archive:'Open handling controls',message:'Open handoff controls',council:'Open handling controls'};
+   button.textContent=id.startsWith('measure-')?'Measure supply and fuse':labels[id]||'View-only instrument';
+   button.disabled=!id.startsWith('measure-')&&!labels[id];return;
+  }
+  if(this.mode==='academy'||this.mode==='hero'){button.textContent=this.room==='atrium'?'Read academy orientation':'Run equipment preview';return;}
+  const common:Record<string,string>={gear:'Change driven gear',cam:'Rotate cam 90°',spring:values.spring?'Detach return spring':'Attach return spring',interlock:values.interlock?'Release interlock':'Engage interlock',crank:'Turn crank and test'};
+  const byWeek:Record<number,string>={1:'Read next scene detail',2:'Visit next memory location',3:'Rotate model 90°',4:'Turn crank and test',5:'Measure next circuit point',6:'Inspect next archive',7:'Test all permissions',8:'Switch communication role',9:'Check next claim',10:'Execute next route step',11:'Publish the disruption',12:'Review record readiness'};
+  button.textContent=this.week===4&&common[id]?common[id]:this.week===5&&id.startsWith('measure-')?'Measure '+id.slice(8):byWeek[this.week]||'Open activity controls';
+ }
+ private inspectSelected(){if(!this.selected)return;if(this.selected.travel){this.travel(this.selected.travel);return}this.inspect=true;this.player.visible=false;this.keys.clear();this.target=undefined;this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=false;this.status('Close-up inspection. Scroll or use the zoom buttons for a closer view. Use the activity controls to perform the current task.');}
+ private leaveInspection(){this.inspect=false;this.player.visible=true;this.cameraDirty=true;this.updateCameraControls();this.root.querySelector<HTMLElement>('[data-world-exit-inspect]')!.hidden=true;}
  private useSelected(){if(this.mode==='demo'){if(this.selected){this.actionTime=.65;window.dispatchEvent(new CustomEvent('mastermind:demo-interact',{detail:{id:this.selected.id}}));this.status('Example equipment selected. Use the demonstration controls to test a response.');}return;}
   if(!this.selected)return;if(this.selected.travel){this.travel(this.selected.travel);return}
   this.actionTime=.65;window.dispatchEvent(new CustomEvent('mastermind:interact',{detail:{week:this.week,objectId:this.selected.id,room:this.room}}));
   if(this.mode==='academy'||this.mode==='hero'){const previous=this.state.values||{};this.state={week:this.week,kind:'training',values:{...previous,turns:Number(previous.turns||0)+1,power:!previous.power,repaired:true,rotation:(Number(previous.rotation||0)+90)%360,covered:!previous.covered,position:(Number(previous.position||0)+1)%25},sequence:[]};this.updateModels();this.status(this.room==='atrium'?'Eight specialist rooms. Choose a portal or use Travel.':'Equipment demonstration. Open this week’s lab for guided practice, a fresh challenge and saved evidence.');}
-  else this.status('Equipment action recorded. The lab controls show its result and explanation.');
+  else this.status(this.state.feedback||'Action complete. Read the activity feedback and follow the next mission step.');
  }
  private rewriteText(object:THREE.Object3D|undefined,label:string){
   if(!(object instanceof THREE.Mesh)||!(object.material instanceof THREE.MeshBasicMaterial)||object.userData.label===label)return;
@@ -582,12 +682,12 @@ export class AcademyWorld {
   if(this.dynamic.cover)this.dynamic.cover.visible=Boolean(values.covered);if(this.dynamic.observations)this.dynamic.observations.visible=this.mode!=='mission'&&!Boolean(values.covered);
   if(this.dynamic.token){const p=Number(values.position||0);this.dynamic.token.position.set(p%5-2,.1,Math.floor(p/5)-1.5)}if(this.dynamic.route)this.dynamic.route.visible=!values.detected;
   if(this.dynamic.selected){const selected=String(values.archive||'B');this.dynamic.selected.position.x=({A:-2.5,B:0,C:2.5} as Record<string,number>)[selected]||0}
-  if(this.dynamic.archive)this.dynamic.archive.rotation.z=values.disrupted?.3:0;if(this.selectionHelper&&this.selected)this.selectionHelper.setFromObject(this.selected.mesh);if(this.state.complete)this.status('Skill check complete. Your evidence is available in the lab record.');
+  if(this.dynamic.archive)this.dynamic.archive.rotation.z=values.disrupted?.3:0;if(this.selectionHelper&&this.selected)this.selectionHelper.setFromObject(this.selected.mesh);this.updateEquipmentAction();if(this.state.complete)this.status('Skill check complete. Your evidence is available in the lab record.');
  }
  private setQuality(value:string){this.low=value==='low'||(value==='auto'&&(innerWidth<700||(navigator.hardwareConcurrency||4)<4));this.renderer.setPixelRatio(this.low?Math.min(devicePixelRatio,1.2):Math.min(devicePixelRatio,1.8));this.renderer.shadowMap.enabled=!this.low;this.resizeView();}
- private resizeView(){const w=this.stage.clientWidth||640,h=this.stage.clientHeight||400;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix()}
+ private resizeView(){const w=this.stage.clientWidth||640,h=this.stage.clientHeight||400;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();this.cameraDirty=true;}
  private status(message:string){if(message===this.statusText)return;this.statusText=message;this.root.querySelector<HTMLElement>('[data-world-status]')!.textContent=message;}
- private tick=(time:number)=>{if(this.disposed)return;const dt=Math.min((time-this.last)/1000||.016,.045);this.last=time;this.elapsed+=dt;if(!this.paused&&!document.hidden){this.move(dt);this.updateCamera(dt);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));this.renderer.render(this.scene,this.camera);this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);}this.frame=requestAnimationFrame(this.tick);}
+ private tick=(time:number)=>{if(this.disposed)return;const dt=Math.min((time-this.last)/1000||.016,.045);this.last=time;this.elapsed+=dt;if((!this.paused||this.cameraDirty)&&!document.hidden){if(!this.paused){this.move(dt);this.updateCoach(dt);if(this.mode!=='demo'||this.demoPlaying||this.demoControlled)this.gears.forEach((g,i)=>g.rotation.z+=(this.gearTargets[i]!-g.rotation.z)*Math.min(dt*5,1));if(!this.reduced&&(this.mode!=='demo'||this.demoPlaying))this.animated.forEach((o,i)=>o.rotation.y+=dt*(.18+i*.05));}this.updateCamera(dt);this.renderer.render(this.scene,this.camera);this.root.dataset.worldDrawCalls=String(this.renderer.info.render.calls);this.root.dataset.worldGeometries=String(this.renderer.info.memory.geometries);this.root.dataset.worldRoom=this.room;this.root.dataset.worldDemoStep=this.demo?.stepId||'';this.root.dataset.worldDemoPhase=this.demo?.phase||'';this.root.dataset.worldDemoPlaying=String(this.demoPlaying);this.root.dataset.worldPosition=this.player.position.x.toFixed(2)+','+this.player.position.z.toFixed(2);this.root.dataset.worldCamera=this.camera.position.toArray().map(value=>value.toFixed(3)).join(',');}this.frame=requestAnimationFrame(this.tick);}
  private move(dt:number){if(this.mode==='demo'&&!this.demoControlled){this.player.visible=false;return;}this.player.visible=!this.inspect;
   const movement=new THREE.Vector3();
   if(!this.inspect){const forward=Number(this.keys.has('s')||this.keys.has('arrowdown'))-Number(this.keys.has('w')||this.keys.has('arrowup'));const side=Number(this.keys.has('d')||this.keys.has('arrowright'))-Number(this.keys.has('a')||this.keys.has('arrowleft'));movement.set(side,0,forward).applyAxisAngle(new THREE.Vector3(0,1,0),this.azimuth);
@@ -602,11 +702,11 @@ export class AcademyWorld {
  }
  private updateCamera(dt:number){if(this.mode==='demo'&&!this.demoControlled){this.updateDemoCamera(dt);return;}
   const target=this.inspect&&this.selected?this.selected.at.clone():this.player.position.clone().add(new THREE.Vector3(0,1.15,0));const portrait=this.camera.aspect<1.1;
-  const distance=this.inspect?(portrait?4.3:3.6):(portrait?7:6);const desired=target.clone().add(new THREE.Vector3(Math.sin(this.azimuth)*distance,Math.sin(this.pitch)*distance+(this.inspect?.1:.3),Math.cos(this.azimuth)*distance));
-  desired.x=THREE.MathUtils.clamp(desired.x,-9.5,9.5);desired.z=THREE.MathUtils.clamp(desired.z,-8.1,8.55);desired.y=Math.max(.5,desired.y);const delta=desired.clone().sub(target),length=delta.length();delta.normalize();const hit=this.physics.castRay(new RAPIER.Ray(target,delta),length,true,undefined,undefined,this.collider,this.body);if(hit&&hit.timeOfImpact>.1)desired.copy(target).addScaledVector(delta,Math.max(.5,hit.timeOfImpact-.18));const alpha=this.reduced?1:1-Math.exp(-dt*7);this.camera.position.lerp(desired,alpha);this.camera.lookAt(target);
+  const distance=this.inspect?(portrait?4.3:3.6)*this.inspectionZoom:(portrait?7:6)*this.exploreZoom;const desired=target.clone().add(new THREE.Vector3(Math.sin(this.azimuth)*distance,Math.sin(this.pitch)*distance+(this.inspect?.1:.3),Math.cos(this.azimuth)*distance));
+  desired.x=THREE.MathUtils.clamp(desired.x,-9.5,9.5);desired.z=THREE.MathUtils.clamp(desired.z,-8.1,8.55);desired.y=Math.max(.5,desired.y);const delta=desired.clone().sub(target),length=delta.length();delta.normalize();const hit=this.physics.castRay(new RAPIER.Ray(target,delta),length,true,undefined,undefined,this.collider,this.body);if(hit&&hit.timeOfImpact>.1)desired.copy(target).addScaledVector(delta,Math.max(.5,hit.timeOfImpact-.18));const alpha=this.reduced?1:1-Math.exp(-dt*7);this.camera.position.lerp(desired,alpha);this.camera.lookAt(target);if(this.camera.position.distanceToSquared(desired)<.0001)this.cameraDirty=false;
  }
  dispose(){
-  this.disposed=true;cancelAnimationFrame(this.frame);this.resize?.disconnect();this.cleanups.forEach(fn=>fn());
+  this.disposed=true;this.root.dispatchEvent(new Event('mastermind:world-disposed'));if(document.pointerLockElement===this.renderer?.domElement)document.exitPointerLock();this.keys.clear();cancelAnimationFrame(this.frame);this.resize?.disconnect();this.cleanups.forEach(fn=>fn());
   this.scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material]){if(m instanceof THREE.MeshStandardMaterial||m instanceof THREE.MeshBasicMaterial)m.map?.dispose();m.dispose();}}});
   if(this.selectionHelper){this.selectionHelper.geometry.dispose();(this.selectionHelper.material as THREE.Material).dispose();}this.physics?.free();this.renderer?.dispose();this.renderer?.forceContextLoss();this.stage.replaceChildren();this.root.querySelector<HTMLElement>('.world-poster')!.hidden=false;
   for(const selector of ['[data-world-canvas]','[data-world-hud]','[data-world-toolbar]','[data-world-object]'])this.root.querySelector<HTMLElement>(selector)!.hidden=true;

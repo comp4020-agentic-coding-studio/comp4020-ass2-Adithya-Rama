@@ -4,6 +4,7 @@ const {compact=false}=Astro.props;
 ---
 <section class:list={["passport-tools",{compact}]} aria-label="Skills passport">
  <div><p class="eyebrow">YOUR SKILLS PASSPORT</p><h2>Keep what you learn.</h2><p>Practice stays in this browser. Export it to take your work with you.</p></div>
+ <details class="passport-help"><summary>Which save or export should I use?</summary><ul><li><strong>Record attempt in skills passport</strong> on a lab keeps that phase's actions and your explanation. Save it before switching to a different phase.</li><li><strong>Export backup JSON</strong> downloads a backup you can bring back with <strong>Restore backup</strong>.</li><li><strong>Export learning record</strong> creates a readable account for your portfolio. <strong>Print record</strong> prepares the same kind of evidence for printing.</li><li><strong>Export assessment record</strong> inside a mission keeps that trial's decisions and debrief. Keep your written assessment explanation with it.</li></ul><p>These controls keep your work; they do not submit it to an institution. Export a backup before changing browser, clearing browser data or resetting the passport.</p></details>
  <p data-passport-status role="status">Preparing your saved progress…</p>
  <p data-passport-count class="small"></p>
  <div class="actions">

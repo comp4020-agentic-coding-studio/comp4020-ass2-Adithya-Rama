@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Repair a small access table so every role can do its authorised work and cannot do work outside its permission.
+
+**What you will produce:** Before/after permission tables, checks of all nine combinations, and the changed table for the maintenance hold.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read CY-01 and predict all entries in the role matrix (20 minutes). Read the Week 6 distinction between observed results and interpretations (5 minutes).
 
-Read the [briefing](/lectures/week-07/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-07.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-07/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-07.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-07/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-07/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Digital Observatory in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Inspect the faulty matrix. Predict all nine expected decisions, change the mismatches and run the complete check.
+1. Select **Practice**. Read the three role mandates. A permission is simply whether a named role is allowed to perform a named action.
+2. In **Repair the access policy**, tick an **Allow…** box to permit that action for that role; untick it to deny it. Compare all three actions for each of the three roles with the mandate.
+3. Select **Test this configuration** to check all nine combinations. Read both kinds of failure: an action wrongly allowed and an authorised action wrongly blocked.
+4. Correct the specific mismatches, then check the entire table again. Denying everything does not meet the task.
+5. Try **Skill check**, then **Transfer challenge**. The transfer maintenance hold changes technician service permission; preserve the other legitimate permissions.
+6. After playing, include the original and repaired tables and explain one allowed action and one refused action. State what changed under the hold.
 
-**Skill check.** Test observer certification denied, registrar certification allowed, technician service allowed and the other six matrix entries. Preserve the repaired matrix.
+### Finish and keep your work
 
-**Transfer.** Apply the published maintenance hold by denying technician service while retaining all read access and registrar certification. Explain why the hold is a changed rule, not a discovered identity.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

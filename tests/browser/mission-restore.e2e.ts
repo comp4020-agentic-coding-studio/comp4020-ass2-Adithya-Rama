@@ -24,6 +24,7 @@ async function seed(page:Page,kind:MissionKind){
  await page.goto(kind==="a1"?"assessments/assignment-1/":kind==="a2"?"assessments/assignment-2/":"operation/");
  await expect(page.locator("[data-start-mission]")).toBeEnabled();
  await expect(page.locator("[data-plans]")).toContainText(oldPlan);
+ if(kind!=="recovery")await page.locator("[data-mission-plan-notes] summary").click();
  await page.locator("[data-plan] textarea").fill("An unsaved previous plan should also be cleared.");
 }
 async function restore(page:Page,payload:ReturnType<typeof backup>){

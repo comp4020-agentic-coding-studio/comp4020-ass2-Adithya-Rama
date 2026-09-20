@@ -25,11 +25,19 @@ preserves: "original-plan"
 requiresRevision: true
 ---
 
+## Your mission, in plain language
+
+Keep an original plan visible, identify what a disruption breaks and produce a revised plan with a named check and owner.
+
+**What you will produce:** Preserved Version 1, a distinct Version 2, and an explanation of the changed dependency, responsibility and remaining uncertainty.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Bring one earlier diagnostic record and one communication record (15 minutes). Read IM-01 and write a baseline plan before opening IM-02 (15 minutes). Direct entrants may use the labelled sample.
 
-Read the [briefing](/lectures/week-11/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-11.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-11/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-11.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -48,6 +56,8 @@ Read the [briefing](/lectures/week-11/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -59,13 +69,20 @@ Read the [briefing](/lectures/week-11/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Operations Studio in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Record and inspect the four-step baseline, then reveal the published east-passage disruption. Identify the exact dependency that fails.
+1. Select **Practice**. Read **Version 1** and its sequence from manifest inspection through relay, passage and handover. This original remains preserved for comparison.
+2. Select **Publish the disruption**. Identify which step depends on the unavailable passage and which earlier findings still hold.
+3. Write a revised plan in the supplied field. Name the replacement passage, its extra check, who performs that check and what confirms readiness.
+4. Write the revision rationale, then select **Review record readiness**. This checks that an account is present; a teacher evaluates whether its reasoning is strong.
+5. Try **Skill check**, then **Transfer challenge**. In transfer, the meter is unavailable: use the labelled reference readings and state what you did not personally measure.
+6. After playing, compare the original and revised plans. Explain one change and one retained decision; do not rewrite Version 1 as though you knew the disruption all along.
 
-**Skill check.** Preserve the original, create a west-passage revision with relay verification, and explain who confirms the change before the team proceeds.
+### Finish and keep your work
 
-**Transfer.** Work with the missing-meter disruption and supplied 6/6/0/0 V reference readings. Explain what they support, what you cannot independently verify and whether to proceed or choose another resolution.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

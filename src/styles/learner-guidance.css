@@ -1,0 +1,32 @@
+.learner-orientation{padding:1rem 1.2rem;border-left:4px solid #8a5c13;background:#f4ecdc;color:#342b1d;line-height:1.65}
+.learner-guide{border:1px solid #bda77f;background:#faf5e9;color:#30291f;padding:clamp(1rem,2.5vw,1.6rem);margin:1.25rem 0}
+.learner-guide h3,.learner-guide h4,.learner-after h3{color:#47381e;margin-top:0}
+.learner-guide h3{font-size:1.25rem}.learner-guide h4{font-size:1.06rem}
+.learner-guide p,.learner-guide li,.learner-after p{overflow-wrap:anywhere}
+.learner-next{background:#e9dfcb;border-left:4px solid #8a5c13;padding:1rem;margin:1rem 0}
+.learner-next .eyebrow{color:#594322;margin-bottom:.5rem}.learner-next p:last-child{margin-bottom:0}
+.learner-next button{margin-top:.6rem;white-space:normal}
+.learner-checklist{border:1px solid #c9b996!important;background:transparent;padding:.8rem 1rem!important;margin:1rem 0}
+.learner-checklist>summary{font-weight:700;cursor:pointer}
+.learner-checklist ol{padding-left:1.5rem;margin-bottom:0}
+.learner-checklist li{padding:.65rem .3rem;border-bottom:1px solid #cabba0}
+.learner-checklist li:last-child{border-bottom:0}
+.learner-checklist li>p{font-size:.91rem;line-height:1.6;margin:.35rem 0 0}
+.learner-checklist li[data-completed=true]>strong::after{content:" · recorded";font-weight:500;font-size:.8rem;color:#285249}
+.learner-checklist li[aria-current=step]{background:#e9dfcb;border-left:3px solid #8a5c13;padding-left:.6rem}
+.learner-vocabulary{border:1px solid #c9b996!important;background:#fffaf1;padding:.8rem 1rem!important}
+.learner-vocabulary dl{margin:1rem 0}.learner-vocabulary dt{font-weight:750}.learner-vocabulary dd{margin:.15rem 0 .8rem;line-height:1.65}
+.learner-findings{padding:.7rem 1rem;background:#fffaf1;border:1px solid #c9b996;margin:.8rem 0}.learner-findings ul{padding-left:1.3rem}.learner-findings li{margin:.35rem 0}
+.learner-after{padding:1.25rem;border:1px solid #bda77f;background:#f8f3e9;color:#30291f;margin:1.5rem 0}
+.learner-after[data-ready=true]{border-top:4px solid #3d6a5d}
+.learner-role-note{background:#e9dfcb;color:#47381e;border-left:3px solid #8a5c13;padding:.7rem 1rem;font-weight:650;font-size:.9rem}
+.mission .learner-console-title{font-size:1.05rem;color:#47381e;margin-top:1rem}
+.mission-objectives .learner-checklist{padding:.6rem!important;border-color:#a69b7f!important}
+.mission-objectives .learner-checklist summary{font-size:.82rem;line-height:1.5}
+.mission-objectives .learner-checklist li strong{font-size:.88rem}
+.mission-objectives .learner-checklist li details{background:transparent;border:0;padding:.45rem 0!important}
+.mission-objectives .learner-checklist li details p{font-size:.83rem;line-height:1.6}
+.mission-objectives .learner-checklist button{font-size:.8rem;white-space:normal;text-align:left;width:100%}
+[data-immersive-panel]{min-width:0}
+@media(max-width:600px){.learner-guide{padding:1rem}.learner-next{padding:.8rem}.learner-checklist{padding:.7rem!important}.learner-checklist ol{padding-left:1.2rem}.learner-after{padding:1rem}.learner-guide h3{font-size:1.1rem}}
+@media print{.learner-guide,.learner-after{break-inside:auto;border:1px solid #777;background:white;color:black}.learner-checklist>ol{display:block}.learner-next button{display:none}}

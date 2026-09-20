@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Choose the archive copy supported by the current signed requirement, rather than guessing from its name or timestamp.
+
+**What you will produce:** A comparison of at least two copies, a justified choice under the original requirement, and a revised choice under the amendment.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read DI-01 and DI-02 (20 minutes). Write one statement the digest comparison establishes and one it cannot establish.
 
-Read the [briefing](/lectures/week-06/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-06.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-06/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-06.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-06/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-06/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Digital Observatory in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Inspect all three records and build their timeline. Select the complete copy matching M-42, explaining why a filename or timestamp alone is insufficient.
+1. Select **Practice**. Read the signed manifest: it states the required number of sections and checksum. A checksum is the supplied identifier used to compare file contents in this model.
+2. Select **Inspect…** for the archive copies and read their records. Compare completeness and checksum with the manifest, not just the latest timestamp.
+3. Choose a copy in **Which copy satisfies this manifest?** and select **Test this configuration**.
+4. Try **Skill check** and explain your choice using at least two compared records. The unchanged manifest still has authority; a newer file alone does not change it.
+5. Select **Transfer challenge**. Read the amended signed manifest and repeat the comparison against its new requirement.
+6. After playing, preserve both decisions in your account. Name the document that changed the requirement and explain why a previously justified choice can become unsuitable.
 
-**Skill check.** Repeat the comparison with a fresh record and identify two limits on what matching the manifest establishes.
+### Finish and keep your work
 
-**Transfer.** Apply the amended signed reference M-99. Preserve your earlier conclusion and explain why the authorised deliverable is now B.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

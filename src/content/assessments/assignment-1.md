@@ -24,6 +24,22 @@ spec:
 related: ["sessions/week-04"]
 ---
 
+## Start here: complete an individual workshop trial
+
+**Your task:** prepare a model archive carriage by observing the room, recalling an ordered list, interpreting the map and setting up its mechanism. This combines Weeks 1–4.
+
+1. If the controls are unfamiliar, watch [the different worked example](/demonstrations/assessment-a1/), then return here. The example is practice, not your assessment record.
+2. Select **Enter assessment trial**, choose **Baseline**, and select **Start new trial**; confirm the restart if prompted. A role describes the tools you are using; you still complete A1 individually.
+3. Select **Observer / Navigator** and **Arrival**. Use all five **Inspect…** buttons, read their details, hide the inspection notes, enter the packing order and select **Check recall**. Use the map to choose **Clockwise rotation of north**, then **Test orientation**.
+4. Select **Systems Specialist** and **Workshop**. Read the required output, choose a **Follower gear**, release the holding brake and select **Turn input once**. Use the feedback to diagnose an incorrect ratio or blocked mechanism.
+5. Check the **Mission Journal**. Its four workshop objectives should be complete. Open **Dispatch** and select **Finish workshop trial**, then **Export assessment record**.
+6. Keep at least one changed-condition attempt from Labs 1–4 with this record. The compact trial combines the skills; the linked labs supply the detailed classification, connector-level, cam/spring and transfer evidence used in your explanation.
+7. After playing, use the assessment template to assemble the exported record, causal model, explanation and limitation listed below. Declare hints or other assistance.
+
+**You are finished when:** the workshop trial has a debrief, you have kept the practical and transfer evidence, and every item under **What you hand over** is present. A successful trial alone is not a complete assessment.
+
+**Playing in fullscreen:** choose **Fullscreen mission**. The **Mission & controls** panel keeps objectives, roles, area buttons and equipment controls with the scene. Scroll over the scene to zoom. Use **Mouse look** to look around; press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Write your assessment explanation after the practical run.
+
 ## The brief
 
 Work individually in the **Sealed Workshop**. An archive carriage must be prepared for a fictional transfer. Inspect its scene, carry a short instruction set, orient a replacement connector and diagnose the training mechanism. The context changes the combination of skills; it does not introduce an unpublished rule.

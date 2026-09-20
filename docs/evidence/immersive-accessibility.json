@@ -1,0 +1,50 @@
+[
+  {
+    "route": "sessions/week-01/",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "violations": []
+  },
+  {
+    "route": "operation/",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "violations": []
+  },
+  {
+    "route": "demonstrations/assessment-final/",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "violations": []
+  },
+  {
+    "route": "sessions/week-01/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "violations": []
+  },
+  {
+    "route": "operation/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "violations": []
+  },
+  {
+    "route": "demonstrations/assessment-final/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "violations": []
+  }
+]

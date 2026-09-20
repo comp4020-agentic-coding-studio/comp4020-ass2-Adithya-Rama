@@ -4,9 +4,12 @@ import { withBase } from 'astro-theme-university/url';
 import AcademyScene from './AcademyScene.astro';
 import { observationFacts, memoryItems, loci, archiveFiles, councilClaims, initialPlan } from '../lib/training-engine';
 import '../styles/training.css';
+import '../styles/learner-guidance.css';
+import {labGuides} from '../data/learner-guidance';
 interface Props { week:number }
 const {week}=Astro.props;
 const lesson=weekByNumber(week);
+const guide=labGuides[week]!;
 const directions=[
   'Inspect four scene objects, cover the scene, recall the display and classify five statements.',
   'Associate four objects with four familiar locations, cover the list and retrieve each item in route order.',
@@ -43,12 +46,27 @@ const examples=[
     <p class="intro">{directions[week-1]}</p>
     <p class="small"><strong>Evidence output:</strong> {lesson.output}. <strong>Later use:</strong> {lesson.missionUse}</p>
   </header>
-  <details class="training-learn" open>
+  <details class="training-learn" data-immersive-panel="worked-example" open>
     <summary>Learn the skill · worked example</summary>
     <p>{examples[week-1]}</p>
     <p>First explain what you predict. Manipulate the apparatus, compare the observed result, then change one relevant condition. The transfer challenge changes the context so that repeating an earlier answer may fail.</p>
   </details>
+  <p class="learner-orientation"><strong>Start here:</strong> read the worked example, then use the controls in <strong>Practice</strong>. Complete the changed <strong>Skill check</strong> and <strong>Transfer challenge</strong> afterwards. The six rows in the lab timetable describe the whole teaching session; they are not six hidden game levels.</p>
   <AcademyScene room={String(week)} week={week} mode="lab" />
+  <div data-immersive-panel="lab">
+  <section class="learner-guide" aria-labelledby={'lab-mission-'+week}>
+    <p class="eyebrow">LAB MISSION / <span data-guidance-phase>Practice</span></p>
+    <h3 id={'lab-mission-'+week}>What you are trying to do</h3>
+    <p>{guide.goal}</p>
+    <div class="learner-next"><p class="eyebrow">DO THIS NEXT</p><p data-lab-next role="status" aria-live="polite">{guide.steps[0]!.action}</p></div>
+    <details class="learner-checklist" open>
+      <summary>All steps for this activity</summary>
+      <ol data-lab-checklist>{guide.steps.map((step,i)=><li data-lab-step={i}><strong>{step.title}</strong><p>{step.action}</p></li>)}</ol>
+    </details>
+    <p class="small"><strong>How you know you are done:</strong> {guide.success}</p>
+    {week===1&&<details class="learner-vocabulary" open><summary>Observation, claim and inference — in plain words</summary><dl><dt>Observation</dt><dd>A detail you directly see or measure: “The door is open.”</dd><dt>Claim</dt><dd>Something a person or document tells you: “I left first.” It may be true, but the statement alone does not verify it.</dd><dt>Inference</dt><dd>An explanation you draw from evidence: “Someone left in a hurry.” An open door alone does not establish that explanation.</dd></dl><p>For the note, classify the <strong>message it asserts</strong>. Seeing that a note exists is an observation; believing its message is a separate question.</p></details>}
+    <p class="small"><strong>Inspect</strong> means select a named object and read its finding. <strong>Use the equipment</strong> means operate the labelled controls below, then check the result. Exploring the scene does not automatically complete the task.</p>
+  </section>
   <div class="training-legend"><span>01 · Learn</span><span>02 · Practise</span><span>03 · Test</span><span>04 · Transfer</span><span>05 · Record</span></div>
   <p class="small">The apparatus and the controls below use the same model. All tasks can be completed with keyboard controls. No timer is required.</p>
   <div class="training-phase" role="group" aria-label="Choose a training configuration">
@@ -69,12 +87,22 @@ const examples=[
   <div class="training-hints">
     {lesson.hints.map((text:string,i:number)=><p data-training-hint-text hidden><strong>Hint {i+1}.</strong> {text}</p>)}
   </div>
+  <section data-immersive-reflection class="learner-after" aria-labelledby={'training-after-'+week}>
+  <h3 id={'training-after-'+week}>After playing · explain and save this attempt</h3>
+  <p data-lab-after-message class="small">Finish the practical attempt first. Then record what you noticed, what changed and any help you used. You can also preserve an unfinished attempt.</p>
   <label for={'training-reflection-'+week}>Explain your prediction, the result you observed and what changed in your understanding.</label>
   <textarea id={'training-reflection-'+week} data-training-reflection rows="4" maxlength="4000" placeholder="Use a specific observation from your attempt. What would you test next?"></textarea>
   <div class="actions"><button type="button" class="primary" data-training-save disabled>Record attempt in skills passport</button></div>
   <p data-training-save-status role="status" class="small">Recording preserves your actions and explanation. Practice feedback does not award an academic grade.</p>
   <details><summary>Your recent action trace</summary><ol data-training-trace class="training-trace"><li>No actions recorded yet.</li></ol></details>
-  <details class="training-worksheet">
+  </section>
+  <dialog data-training-confirm-dialog aria-labelledby={'training-confirm-title-'+week} aria-describedby={'training-confirm-message-'+week}>
+    <h2 id={'training-confirm-title-'+week}>Replace the current activity attempt?</h2>
+    <p id={'training-confirm-message-'+week} data-training-confirm-message>Export or record this attempt first to keep its evidence. Your saved passport records remain available.</p>
+    <div class="actions"><button type="button" data-training-confirm-cancel autofocus>Keep this attempt</button><button type="button" data-training-confirm-accept>Continue</button></div>
+  </dialog>
+  </div>
+  <details class="training-worksheet" data-immersive-panel="worksheet">
     <summary>Complete worksheet and explanation · works without JavaScript</summary>
     <p><strong>Task:</strong> {directions[week-1]}</p>
     {week===1&&<><h3>Supplied practice scene</h3><ul>{observationFacts.practice.map(f=><li>{f.label}</li>)}</ul><p>Cover these details. Record the time and classify each sentence as observation, claim or inference. Check scene: 09:40, amber cup on a shelf, closed door, note “The sample is intact”, inference that someone deliberately concealed it. Transfer scene: 14:10, silver flask beside a map, open service hatch, operator reports a power failure; inferred claim that the hatch caused it.</p><p><strong>Explanation:</strong> the first three statements describe visible facts, the fourth contains a claim, and the fifth is an inference. Recalled times are respectively 08:20, 09:40 and 14:10.</p></>}
@@ -94,5 +122,3 @@ const examples=[
   <noscript><p class="callout">The 3D and live controls require JavaScript. All supplied cases, rules, explanations and the complete worksheet above remain available. Record your answers in your own document and use the campus materials if preferred.</p></noscript>
 </section>
 <script>import '../scripts/training-client';</script>
-
-

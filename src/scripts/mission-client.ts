@@ -1,11 +1,60 @@
-import {newMission,applyMission,missionRequirements,taskLabels,roles,missionMarkdown,resolutionText,type MissionState,type MissionAction,type MissionKind,type Scenario,type Role,type Zone} from "../lib/mission-engine";
+import {newMission,applyMission,missionRequirements,taskLabels,roles,missionMarkdown,resolutionText,type MissionState,type MissionAction,type MissionKind,type Scenario,type Role,type Zone,type Task} from "../lib/mission-engine";
+import {missionGuides,missionSummaries} from "../data/learner-guidance";
 import {withMission} from "../lib/passport";
 import {passport,announcePassport,download} from "./passport-client";
 for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  const kind=root.dataset.mission as MissionKind;
- let state:MissionState=passport.getMission(kind)??newMission(kind);
+ function freshMission(scenario:Scenario="baseline"):MissionState{
+  const trial=newMission(kind,scenario);
+  if(kind==="a2")trial.declaredObjective="digital";
+  return trial;
+ }
+ let state:MissionState=passport.getMission(kind)??freshMission();
  const q=<T extends Element=HTMLElement>(s:string)=>root.querySelector<T>(s)!;
  const all=<T extends Element=HTMLElement>(s:string)=>root.querySelectorAll<T>(s);
+ type Objective=Task|"first-plan"|"finish"|"debrief";
+ let focusedObjective:Task|"first-plan"|null=null;
+ function currentObjective():Objective{
+  if(state.status==="complete")return "debrief";
+  if(focusedObjective==="first-plan"&&state.plans.length)focusedObjective=null;
+  if(focusedObjective&&focusedObjective!=="first-plan"&&state.tasks.includes(focusedObjective))focusedObjective=null;
+  if(focusedObjective)return focusedObjective;
+  if(kind==="recovery"&&state.plans.length===0)return "first-plan";
+  return missionRequirements[kind].find(task=>!state.tasks.includes(task))??"finish";
+ }
+ function goToObjective(objective:Objective){
+  if(objective==="debrief"){q("[data-debrief]").scrollIntoView({block:"nearest",behavior:"auto"});return;}
+  const target=objective==="first-plan"||objective==="finish"?{role:"coordinator" as Role,zone:"dispatch" as Zone}:missionGuides[objective];
+  focusedObjective=objective==="finish"?null:objective;
+  act({type:"role",role:target.role});act({type:"zone",zone:target.zone});
+  const panel=q<HTMLElement>('[data-zone-panel="'+target.zone+'"]');
+  panel.tabIndex=-1;panel.focus({preventScroll:true});panel.scrollIntoView({block:"nearest",behavior:"auto"});
+ }
+ function renderGuidance(){
+  const objective=currentObjective();
+  const title=q("[data-mission-next-title]"),action=q("[data-mission-next-action]"),success=q("[data-mission-next-success]");
+  const button=q<HTMLButtonElement>("[data-mission-next]");
+  button.hidden=objective==="debrief";
+  button.textContent=objective==="finish"?"Go to Dispatch to finish":"Go to this objective";
+  if(objective==="debrief"){
+   title.textContent="Practical trial complete";
+   action.textContent=missionSummaries[kind].after;
+   success.textContent="Use Export assessment record below. Write your observations and explanation after playing, using the recorded actions.";
+  }else if(objective==="first-plan"){
+   title.textContent="First, preserve the plan you intend to test";
+   action.textContent="At Dispatch, use Coordinator. Write an initial sequence naming your route, the evidence you need and who checks it. Select Preserve this plan version. Later, keep it and add a separate revision.";
+   success.textContent="Done when Version 1 appears in the preserved plan history. No long reflection is required during equipment tasks.";
+  }else if(objective==="finish"){
+   title.textContent=kind==="recovery"?"Choose and explain the recovery outcome":"Finish the practical trial";
+   action.textContent=kind==="recovery"?"All eleven practical objectives are currently met. At Dispatch, choose physical recovery, a verified digital copy or stabilisation according to your evidence. Read the debrief and export the run.":"The required objectives are currently met. At Dispatch, select Finish "+(kind==="a1"?"workshop":"relay")+" trial, read the debrief, then export your assessment record.";
+   success.textContent="Done when the after-action debrief appears. An ending is evidence of practice, not an academic grade.";
+  }else{
+   const guide=missionGuides[objective];
+   title.textContent=taskLabels[objective];
+   action.textContent=roles[guide.role].title+" · "+guide.zone+". "+guide.action;
+   success.textContent="Done when: "+guide.success;
+  }
+ }
  function save(){try{passport.commit(withMission(passport.state,state));announcePassport();}catch(e){q("[data-mission-status]").textContent=e instanceof Error?e.message:"Export this run before continuing.";}}
  function act(action:MissionAction){
   const r=applyMission(state,action);state=r.state;
@@ -21,7 +70,15 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
   const available:Zone[]=kind==="a1"?["arrival","workshop","dispatch"]:kind==="a2"?["power","control","archive","dispatch"]:["arrival","workshop","power","control","archive","dispatch"];
   all<HTMLButtonElement>("[data-zone]").forEach(b=>{b.hidden=!available.includes(b.dataset.zone as Zone);b.setAttribute("aria-current",b.dataset.zone===state.zone?"location":"false");});
   all("[data-zone-panel]").forEach(p=>{p.hidden=p.dataset.zonePanel!==state.zone;});
-  q("[data-objectives]").replaceChildren(...missionRequirements[kind].map(t=>{const li=document.createElement("li");li.textContent=(state.tasks.includes(t)?"✓ ":"○ ")+taskLabels[t];li.classList.toggle("done",state.tasks.includes(t));return li;}));
+  q("[data-objectives]").replaceChildren(...missionRequirements[kind].map(t=>{
+   const li=document.createElement("li"),done=state.tasks.includes(t),guide=missionGuides[t];
+   const label=document.createElement("strong");label.textContent=(done?"✓ ":"○ ")+taskLabels[t];li.append(label);li.classList.toggle("done",done);
+   const details=document.createElement("details"),summary=document.createElement("summary");summary.textContent="How to complete this objective";
+   const instruction=document.createElement("p");instruction.textContent=roles[guide.role].title+" · "+guide.zone+". "+guide.action;
+   const criterion=document.createElement("p");criterion.className="small";criterion.textContent="Done when: "+guide.success;
+   const go=document.createElement("button");go.type="button";go.textContent=done?"Revisit "+taskLabels[t].toLowerCase():"Go to "+taskLabels[t].toLowerCase();go.dataset.guideTask=t;go.addEventListener("click",()=>goToObjective(t));
+   details.append(summary,instruction,criterion,go);li.append(details);return li;
+  }));
   q("[data-mission-progress]").textContent=missionRequirements[kind].filter(t=>state.tasks.includes(t)).length+" / "+missionRequirements[kind].length+" capabilities demonstrated";
   q<HTMLSelectElement>("[data-follower]").value=String(state.follower);q<HTMLInputElement>("[data-brake]").checked=!state.brake;
   q("[data-mechanism-readout]").textContent="Ratio "+state.driver+":"+state.follower+" · output "+(state.driver/state.follower).toFixed(2)+" turns · brake "+(state.brake?"engaged":"released")+" · input turns "+state.turns;
@@ -37,6 +94,7 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
   const history=passport.state.runs.filter(r=>r.kind===kind),comparison=q("[data-run-comparison]");comparison.replaceChildren();
   history.forEach((r,i)=>{const details=document.createElement("details");const summary=document.createElement("summary");summary.textContent="Run "+(i+1)+" · "+r.scenario+" · "+r.ending;const body=document.createElement("p");body.textContent=resolutionText(r);const facts=document.createElement("p");facts.textContent="Declared objective: "+r.declaredObjective+" · archive "+(r.replica??"not required")+" · route "+r.route+" · "+r.plans.length+" plan versions";const button=document.createElement("button");button.type="button";button.textContent="Export this run";button.addEventListener("click",()=>download(missionMarkdown(r),"mastermind-run-"+(i+1)+".md","text/markdown"));details.append(summary,body,facts,button);comparison.append(details);});
   if(history.length>=2){const a=history.at(-2)!,b=history.at(-1)!;const h=document.createElement("h4");h.textContent="Compare the last two completed runs";comparison.append(h);for(const [label,left,right] of [["Scenario",a.scenario,b.scenario],["Declared objective",a.declaredObjective,b.declaredObjective],["Verified copy",a.replica??"none",b.replica??"none"],["Route",a.route,b.route],["Resolution",a.ending??"none",b.ending??"none"]]){const p=document.createElement("p");p.textContent=label+": "+left+(left===right?" (unchanged)":" → "+right);comparison.append(p);}}
+  renderGuidance();
   window.dispatchEvent(new CustomEvent("mastermind:scene-state",{detail:{...state,kind:"mission",feedback:q("[data-mission-status]").textContent}}));
  }
  all<HTMLButtonElement>("button").forEach(b=>b.disabled=false);
@@ -44,8 +102,9 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  q<HTMLSelectElement>("[data-objective]").addEventListener("change",e=>act({type:"objective",objective:(e.target as HTMLSelectElement).value as "physical"|"digital"|"stabilise"}));
  const restart=q<HTMLDialogElement>("[data-restart-dialog]");
  q("[data-start-mission]").addEventListener("click",()=>restart.showModal());
+ q("[data-mission-next]").addEventListener("click",()=>goToObjective(currentObjective()));
  q("[data-restart-cancel]").addEventListener("click",()=>restart.close());
- q("[data-restart-confirm]").addEventListener("click",()=>{state=newMission(kind,q<HTMLSelectElement>("[data-scenario]").value as Scenario);save();render();q("[data-mission-status]").textContent="New trial started. Read your role brief and begin in "+state.zone+".";restart.close();});
+ q("[data-restart-confirm]").addEventListener("click",()=>{const objective=q<HTMLSelectElement>("[data-objective]").value as MissionState["declaredObjective"];state=freshMission(q<HTMLSelectElement>("[data-scenario]").value as Scenario);if(kind==="recovery")state.declaredObjective=objective;focusedObjective=null;save();render();q("[data-mission-status]").textContent="New trial started. Read your role brief and begin in "+state.zone+".";restart.close();});
  all<HTMLButtonElement>("[data-role]").forEach(b=>b.addEventListener("click",()=>act({type:"role",role:b.dataset.role as Role})));
  all<HTMLButtonElement>("[data-zone]").forEach(b=>b.addEventListener("click",()=>act({type:"zone",zone:b.dataset.zone as Zone})));
  all<HTMLButtonElement>("[data-inspect]").forEach(b=>b.addEventListener("click",()=>act({type:"inspect",item:b.dataset.inspect!})));
@@ -71,7 +130,7 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  q("[data-print-mission]").addEventListener("click",()=>{const report=q("[data-mission-print]");report.textContent=missionMarkdown(state);report.hidden=false;document.body.classList.add("printing-mission");window.print();document.body.classList.remove("printing-mission");report.hidden=true;});
  function replaceActiveMission(reset=false){
   const saved=reset?undefined:passport.getMission(kind);
-  state=saved??newMission(kind);
+  state=saved??freshMission();focusedObjective=null;
   // A replacement may intentionally omit this trial. Never revive the prior tab state.
   all<HTMLFormElement>("form").forEach(form=>form.reset());
   q("[data-inspection]").textContent="";
@@ -95,5 +154,6 @@ for(const root of document.querySelectorAll<HTMLElement>("[data-mission]")){
  else if(id==="files"||id==="permissions")act({type:"zone",zone:"control"});
  else if(id==="archive"||id==="message"||id==="council")act({type:"zone",zone:"archive"});});
  window.addEventListener("mastermind:scene-ready",render);
+ q("[data-mission-status]").textContent=state.status==="complete"?"Your completed trial is restored. Read the debrief or export the record.":state.log.length?"Your saved trial is restored. Follow Do this next to continue.":"Ready to play. Follow Do this next; Go to this objective selects the correct role and room.";
  render();
 }

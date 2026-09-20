@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Remember four items by linking each one to a place, then retrieve the items without looking at the list.
+
+**What you will produce:** Four place–item associations, recall attempts from changed lists, and an explanation of which cue helped or failed.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read MP-01 and choose familiar or supplied locations (10 minutes). Make one association for an ordinary shopping item and test it after a short pause (5 minutes).
 
-Read the [briefing](/lectures/week-02/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-02.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-02/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-02.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-02/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-02/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Perception Gallery in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Attempt the four-item practice list without a prescribed method, then build associations at the four fixed places. Cover the list and retrieve in order. Record the baseline separately.
+1. Select **Practice**. Read the four locations in order and the item paired with each one.
+2. In each **Your association** box, describe a memorable imagined interaction between that place and its item. For example, picture an object doing something unusual at the location.
+3. Use **Walk to next location** to follow the route. Select **Cover list and retrieve**, then enter the item belonging to each location from memory.
+4. Select **Test this configuration**. Compare missing items and order errors. Use **Review associations** if you need to revise a cue; record that assistance afterwards.
+5. Try **Skill check** and **Transfer challenge**. They supply different item lists, so create fresh associations and retrieve them rather than reuse the original answers.
+6. After playing, explain which association helped, what you forgot and what you would change. This trains a recall strategy; it does not establish photographic memory.
 
-**Skill check.** Use Lens, Battery, Map and Seal with fresh associations on the same route. Cover the list, retrieve and explain one cue that worked or failed.
+### Finish and keep your work
 
-**Transfer.** Use Sample, Receipt, Sensor and Capsule. Then explain when a checklist would be more appropriate than memory for a real task.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

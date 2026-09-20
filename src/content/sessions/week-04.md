@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Make a model carriage move by choosing the right gear relationship and making its supporting parts ready.
+
+**What you will produce:** A gear prediction, a trace of the mechanism test, a changed-configuration attempt and an explanation of a blocked or incorrect result.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read the labelled ME-01 parts and trace its input-to-output chain (15 minutes). Predict the output after two input turns (5 minutes).
 
-Read the [briefing](/lectures/week-04/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-04.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-04/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-04.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -46,6 +54,8 @@ Read the [briefing](/lectures/week-04/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -57,13 +67,20 @@ Read the [briefing](/lectures/week-04/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Mechanics Workshop in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Predict the driven gear needed for two output turns from four input turns. Release the interlock, set the cam to 180 degrees and attach the return spring. Predict direction before cranking.
+1. Select **Practice**. Read the driver teeth, input turns, required output turns and cam angle. Predict the follower size using output turns = driver teeth ÷ follower teeth × input turns.
+2. Use **Change driven gear (12 → 24 → 36)** to select the size you predicted. Select the expected output direction.
+3. Select **Release interlock**, then use **Rotate cam 90°** until the displayed cam matches the requirement. Select **Attach return spring**.
+4. Select **Turn the crank** and read the observed output and feedback. A correct gear ratio will not overcome an engaged interlock or missing spring. Use **Test this configuration** to check the full arrangement.
+5. Try **Skill check** and **Transfer challenge**. Recalculate for their changed input/output requirements and read the new cam requirement before operating.
+6. After playing, explain your prediction and the evidence for one repair. Distinguish a wrong gear ratio from a mechanism that cannot move.
 
-**Skill check.** Achieve four output turns from four input turns. Explain why changing the driven gear to 12 teeth changes the ratio while the readiness conditions remain necessary.
+### Finish and keep your work
 
-**Transfer.** Achieve two output turns from six input turns with a 90-degree cam. State both changed parameters before operating.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

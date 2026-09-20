@@ -31,6 +31,16 @@ Use serious cinematic openings, precise teaching prose, original characters and 
 
 Build detailed, legible apparatus and original stylised spaces. Show the actual gear teeth, connector directions, fault conditions, evidence and route described by the lesson. Decoration must not obscure teaching information. Do not describe the browser academy as having commercial AAA production scale.
 
+## Clear instructions and immersive play
+
+- Every activity must state its goal, name the exact controls to use, explain how a student recognises completion, and identify the record to keep. Define unfamiliar words at first use; “inspect” means reveal and read an object's information.
+- Distinguish the six timetable stages from the activity's actual objectives. Keep worked demonstrations, assigned labs, compressed assessment trials and supporting written deliverables explicit.
+- Show a live mission checklist based on recorded actions and domain checks. Never treat a checklist tick as proof of understanding. Preserve direct access to any week.
+- Fullscreen must contain the actual instructions, inputs, role/area choices, feedback, completion and export controls. Move the existing controls instead of cloning them; entering or leaving fullscreen must preserve state and listeners.
+- Support wheel zoom over the scene, zoom buttons, fullscreen mouse-look, Tab to release the cursor for controls and Escape to leave. Preserve drag/touch and keyboard alternatives. Browser permission denial must retain a usable full-window layout.
+- Do the practical activity before the reflective account. Predictions, recall and plan revisions that are intrinsic to the skill remain part of the task; do not interrupt them with unrelated reflection prompts.
+- Test native fullscreen/pointer-lock and denied-API fallback separately. Check desktop, phone, resizing, exit/re-entry, a completed in-scene task and download. Never describe a simulated fallback test as proof of native mouse capture.
+
 ## Complete worked demonstrations
 
 Every lab and assessment has an alternate scenario: **sixteen examples**, including the complete Operation Lamplight capstone demonstration. Each needs:

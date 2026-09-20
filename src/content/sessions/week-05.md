@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Find the failed part of a supplied model circuit using measurements, then replace it and verify the result.
+
+**What you will produce:** Measurements locating the original fault, a replacement and verification trace, and a comparison with a different fault.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Trace EL-01 from source to return (10 minutes). Write predicted lamp states for an open switch and a broken return (10 minutes).
 
-Read the [briefing](/lectures/week-05/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-05.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-05/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-05.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-05/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-05/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Systems Garage in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Power the model, compare battery and downstream nodes, and find the first zero supply reading. Isolate power before replacing the fuse; then verify the lamp node.
+1. Select **Practice**, then **Switch on**. Use **Measure battery**, **Measure fuse**, **Measure cable** and **Measure lamp** to collect powered readings.
+2. Compare the readings in order. Find where the supply first disappears. A dark lamp with a correct supply may instead have an internal fault.
+3. Select **Isolate power** before changing a part or using a **Test … continuity** control. Continuity means whether the isolated component provides the expected connected path.
+4. Use the appropriate **Replace…** control for the fault your measurements support. Select **Switch on**, measure again and check whether the lamp lights.
+5. Select **Test this configuration**. If you replaced parts without first measuring the fault, use **Restart this phase** and collect a diagnostic trace.
+6. Try **Skill check** and **Transfer challenge**. Their faults differ; the transfer lamp needs an isolated continuity check. Afterwards explain which measurement distinguished the fault from an alternative.
 
-**Skill check.** Diagnose the cable fault using consecutive node readings. Record the powered zero reading before replacing anything.
+### Finish and keep your work
 
-**Transfer.** Diagnose a dark lamp with healthy 6 V supply readings. Isolate power, check the lamp's continuity and identify the open load. Replace it, restore power and verify light as well as voltage.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

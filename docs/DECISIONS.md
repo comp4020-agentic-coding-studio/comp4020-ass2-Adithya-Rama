@@ -52,3 +52,15 @@ Imports now reject incomplete historical runs, incomplete activity responses, un
 PROCESS.md is a 496-word edited narrative based on Adithya's supplied account. It cites the real harness, implementation and rendered-review commits. The evidence gate passes with all three citations resolved locally and all starter material replaced or removed.
 
 The final opening-screen review moved the audience and fictional premise into the hero itself. The phone tagline is compact enough that both actions remain visible at 390×844. The final check passes 30 course/logic tests; all 32 browser journeys and 12 rendered accessibility checks pass after this change. The preview also returned HTTP 200 from Windows. These remain local results. Commits are unsigned; pushing remains deferred to Adithya.
+
+## 2026-09-20 — Instructions belong inside the playable activity
+
+**Observed problem:** Adithya could not tell what the labs asked them to do, including the meaning of observation, claim, inference, inspect, and the six timetable stages. They requested explicit instructions across the course, scroll zoom, fullscreen mouse-look and mission instructions available throughout play.
+
+**Decision:** Publish a concrete start/action/finish/evidence path for every lab and assessment. Display the next objective from recorded activity state. Keep the full explanation expandable and distinguish the alternate demonstration from the assigned work. Preserve the cumulative curriculum and assessment requirements.
+
+**Implementation rule:** Fullscreen moves the existing controls, forms, feedback, exports and dialogs into the scene; it does not create a second activity state. A persistent objective title and Task controls shortcut keep the task accessible while the panel scrolls. Reflection follows the practical attempt, while predictions, recall and revision remain part of the skill itself.
+
+**Observed corrections:** Browser testing exposed native confirmation dialogs leaving fullscreen, a sticky site header covering the fallback exit controls, and previously saved planning notes becoming inaccessible in A1/A2. Phase/example confirmations now use in-scene dialogs; fallback uses the browser top layer; optional planning notes remain accessible. Review also corrected contrast and fallback keyboard focus. These were actual implementation findings, not student-playtesting claims.
+
+**Verification:** See INSTRUCTIONS-AND-FULLSCREEN.md for commands, final results and scope. This decision is carried in the implementation commit containing this entry. The student's existing PROCESS.md account is preserved.

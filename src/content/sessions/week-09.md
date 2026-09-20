@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Check three people's statements against records and choose an agreement that meets their actual constraints.
+
+**What you will produce:** Three checked claims, an evidence-based agreement, and a revised agreement when the handling requirement changes.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read your role brief and write its objective, authority and limit (15 minutes). Read the three records without inventing motives (10 minutes).
 
-Read the [briefing](/lectures/week-09/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-09.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-09/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-09.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-09/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-09/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Council Studio in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Inspect each speaker's claim and its record. Propose verified-copy recovery under the original mandate and explain why it respects the custodian.
+1. Select **Practice**. Read the recovery mandate: it states what the agreement must achieve and preserve.
+2. For each speaker, select **Check … against the record**. Compare the claim with the archive comparison, custody condition or cart capacity shown.
+3. In **Propose an agreement**, choose the option supported by the mandate and those records. Confidence or hesitation is not evidence that somebody is right or wrong.
+4. Select **Test this configuration**. If your agreement fails, identify the specific handling, capacity or objective requirement it misses.
+5. Use **Skill check** to explain the agreement from another role's perspective. Then open **Transfer challenge** and read the changed requirement before choosing again.
+6. After playing, explain one contradicted claim, one legitimate concern and why the changed mandate affects your agreement.
 
-**Skill check.** Restate the agreement from another role's perspective and identify the two contradicted claims using exact record values.
+### Finish and keep your work
 
-**Transfer.** Apply the authenticity mandate requiring the original to remain for supported handover. Choose stabilisation and explain why the earlier copy agreement no longer meets the changed objective.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

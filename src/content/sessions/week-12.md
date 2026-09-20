@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Combine the semester's skills in Operation Last Light, then defend the relationship between your objective, decisions and outcome.
+
+**What you will produce:** An exported mission record and an after-action account with three decisions, one limitation and a credible alternative.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Review two contrasting rehearsal records (20 minutes). Agree roles and the initial objective (10 minutes). Check that each member can explain one decision outside their main role (10 minutes).
 
-Read the [briefing](/lectures/week-12/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-12.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-12/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-12.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -46,6 +54,8 @@ Read the [briefing](/lectures/week-12/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -57,13 +67,20 @@ Read the [briefing](/lectures/week-12/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Meridian Station in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Use the Baseline preset to check controls and role handoffs. Label this run as rehearsal and identify one weak dependency before starting the assessed record.
+1. Open [Operation Last Light](/operation/). Choose a preset, then select **Start new trial** and confirm if prompted. Set the **Declared recovery objective** before choosing a role or operating equipment. Use Baseline first if you are learning the controls. A resumed trial keeps its original objective; starting a new trial unlocks the choice before new actions.
+2. Follow the mission journal across Arrival, Workshop, Power bay, Control room, Archive and Dispatch. Select the responsible role before using its controls; solo practice can switch freely.
+3. Preserve an initial plan as coordinator, complete the mission tasks, and save a separately explained revision when the evidence or equipment changes what you intend to do.
+4. At Dispatch, complete a justified resolution and **Export assessment record**. Keep this run labelled as rehearsal or final work, whichever it was.
+5. Return to this lab's after-action controls. Enter the original objective, actual result, three consequential decisions, limitation and alternative. Select **Review record readiness**.
+6. Use the later phases to compare your final run with a contrasting preset. Finish your reflection after the mission; the lab account explains the run and does not replace it.
 
-**Skill check.** Complete a chosen final preset with an explicit objective. Export actions, decisions and debrief; verify each claimed resolution requirement against the record.
+### Finish and keep your work
 
-**Transfer.** Compare the final run with a contrasting rehearsal. Explain whether the same approach would remain defensible under that other condition and name the first decision that would change.
+Save the after-action account with **Record attempt in skills passport** and keep the mission export with it. The final project also needs contrasting rehearsals and the written/team deliverables in its assessment brief.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

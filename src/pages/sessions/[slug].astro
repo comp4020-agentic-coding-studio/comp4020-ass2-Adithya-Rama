@@ -12,10 +12,11 @@ const {session}=Astro.props;const {Content}=await render(session);const week=ses
 ---
 <CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")} wide>
 <div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
-<nav class="actions" aria-label="Lab resources"><a class="button primary" href="#exercise">Enter browser lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
+<nav class="actions" aria-label="Lab resources"><a class="button" href="#lab-guide">Read step-by-step instructions ↓</a><a class="button primary" href="#exercise">Enter browser lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
+<p class="small"><strong>What to do:</strong> follow the Lab mission checklist and named controls below. A phase ends when you have checked its result; explain and save that attempt afterwards, before switching phases. <strong>Need an example first?</strong> The demonstration uses a different scenario and keeps separate practice progress.</p>
 <DemonstrationLink id={"lab-"+String(week).padStart(2,"0")}/>
 <div id="exercise"><TrainingLab week={week}/></div>
 <PassportTools compact/>
-<section class="teaching-reading"><Content/></section>
+<section id="lab-guide" class="teaching-reading" aria-label="Complete lab instructions"><Content/></section>
 <nav class="actions" aria-label="Week navigation">{week>1&&<a class="button" href={withBase("/sessions/week-"+String(week-1).padStart(2,"0")+"/")}>← Previous lab</a>}<a class="button" href={withBase("/sessions/")}>All labs</a>{week<12&&<a class="button" href={withBase("/sessions/week-"+String(week+1).padStart(2,"0")+"/")}>Next lab →</a>}</nav>
 </CourseLayout>

@@ -1,0 +1,24 @@
+---
+import { withBase } from "astro-theme-university/url";
+---
+<section class="course-orientation" aria-labelledby="course-orientation-title">
+  <p class="eyebrow">START HERE / HOW TO TAKE THIS COURSE</p>
+  <h2 id="course-orientation-title">Learn one skill. Use it in a bigger mission.</h2>
+  <p>Your team will recover a research archive from fictional Meridian Station. Each week teaches one part of that job: noticing details, understanding equipment, checking evidence or coordinating people.</p>
+  <ol class="orientation-path">
+    <li><strong>See an example.</strong><p>A demonstration shows a coach completing a different scenario. Choose <b>Watch</b> or <b>Take Control</b>, then inspect the finished work. It is a model to learn from; it does not complete your lab.</p><a href={withBase("/demonstrations/lab-01/")}>Watch the first example →</a></li>
+    <li><strong>Do the weekly lab.</strong><p>Read its mission, use the named controls and check the result. Try <b>Practice</b>, <b>Skill check</b> and <b>Transfer challenge</b>. After each phase, explain what happened and save your record before switching.</p><a href={withBase("/sessions/week-01/")}>Start Lab 1 →</a></li>
+    <li><strong>Combine the skills.</strong><p>A1 joins Weeks 1–4 in an individual workshop. A2 joins Weeks 5–8 in a paired relay. The final project brings the whole team and semester together.</p><a href={withBase("/assessments/")}>See what each assessment needs →</a></li>
+  </ol>
+  <p class="small"><strong>Your record:</strong> the skills passport stores your attempts in this browser. Export a backup to keep it. Completing a simulation supplies evidence for your explanation; it does not automatically award a mark or submit coursework.</p>
+</section>
+<style>
+  .course-orientation { margin: 2rem 0; padding: clamp(1rem, 3vw, 2rem); border: 1px solid var(--line, #b7aa92); border-left: 4px solid var(--color-primary, #b97d1c); border-radius: .5rem; }
+  .course-orientation h2 { margin-top: .3rem; }
+  .orientation-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; padding-left: 1.3rem; }
+  .orientation-path li { padding-left: .25rem; min-width: 0; }
+  .orientation-path li > strong { font-size: 1.13rem; }
+  .orientation-path p { margin: .6rem 0; }
+  .orientation-path a { display: inline-block; }
+  @media (max-width: 760px) { .orientation-path { grid-template-columns: 1fr; gap: 1.15rem; } }
+</style>

@@ -3,6 +3,8 @@ import {
   memoryItems, observationFacts, phases, policyActions, policyRoles, rotatedPorts, sensorCells,
   spatialTarget, validTraining, type TrainingAction, type TrainingPhase, type Value,
 } from '../lib/training-engine';
+import { labGuides, labMilestones } from '../data/learner-guidance';
+import { passport } from './passport-client';
 
 function mount(root:HTMLElement) {
   if(root.dataset.mounted)return;root.dataset.mounted='true';
@@ -19,6 +21,28 @@ function mount(root:HTMLElement) {
     const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;return el;
   };
   let checksThisPhase=0;let hintsThisVisit=0;
+  const guide=labGuides[week]!;
+  function updateGuidance(){
+    const milestones=labMilestones(state);
+    if(week===12)milestones[0]=passport.getMission('recovery')?.status==='complete'||passport.state.runs.some(run=>run.kind==='recovery');
+    const nextIndex=milestones.findIndex(done=>!done);
+    const next=root.querySelector<HTMLElement>('[data-lab-next]')!;
+    const nextText=state.complete&&week!==12||state.complete&&milestones[0]
+      ? 'This configuration is complete. Open After playing below, explain the attempt and select Record attempt in skills passport before changing phase. '+(state.phase==='transfer'?'You can then export your learning record.':'Next, try '+(state.phase==='practice'?'Skill check':'Transfer challenge')+' with its changed conditions.')
+      : guide.steps[nextIndex<0?guide.steps.length-1:nextIndex]!.action;
+    if(next.textContent!==nextText)next.textContent=nextText;
+    root.querySelector<HTMLElement>('[data-guidance-phase]')!.textContent=phaseLabels[state.phase];
+    root.querySelectorAll<HTMLElement>('[data-lab-step]').forEach((entry,i)=>{
+      entry.dataset.completed=String(Boolean(milestones[i]));
+      if(i===nextIndex&&!state.complete)entry.setAttribute('aria-current','step');else entry.removeAttribute('aria-current');
+    });
+    const after=root.querySelector<HTMLElement>('[data-immersive-reflection]')!;
+    after.dataset.ready=String(state.complete);
+    const afterMessage=root.querySelector<HTMLElement>('[data-lab-after-message]')!;
+    afterMessage.textContent=state.complete
+      ? 'The practical check is complete. Now explain your attempt and save it before changing phase. Mention any scene reopening, examples or hints you used.'
+      : 'Finish the practical attempt first. Then record what you noticed, what changed and any help you used. You can also preserve an unfinished attempt.';
+  }
   const coach=node('aside',undefined,'training-coaching');
   coach.setAttribute('aria-label','Your practice focus');
   const coachTitle=node('h3','Your practice focus');
@@ -75,7 +99,7 @@ function mount(root:HTMLElement) {
     result.dataset.complete=String(state.complete);
     trace.replaceChildren(...state.actions.slice(-16).map(a=>node('li',a)));
     root.querySelectorAll<HTMLButtonElement>('[data-training-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.trainingPhase===state.phase)));
-    updateCoaching();dispatch();
+    updateCoaching();updateGuidance();dispatch();
   };
   const checkpoint=()=>window.dispatchEvent(new CustomEvent('mastermind:checkpoint',{detail:{week,state:structuredClone(state),reflection:reflection.value}}));
   const act=(action:TrainingAction)=>{const focusKey=bench.contains(document.activeElement)?(document.activeElement as HTMLElement)?.dataset.trainingAction:undefined;if(action.type==='test'||action.type==='crank')checksThisPhase++;state=applyTraining(state,action);render();sync();checkpoint();if(focusKey)Array.from(bench.querySelectorAll<HTMLButtonElement>('[data-training-action]')).find(b=>b.dataset.trainingAction===focusKey)?.focus({preventScroll:true});};
@@ -112,9 +136,13 @@ function mount(root:HTMLElement) {
       const f=group(v.covered?'Scene covered — reconstruct it':'Observation scene');
       if(!v.covered)observationFacts[phase].slice(0,4).forEach(fact=>button('Inspect '+fact.id,{type:'inspect',key:fact.id},f));
       button(v.covered?'Reopen scene':'Cover scene and recall',{type:'cover'},f);
+      if(!v.covered&&state.inspected.length){
+        const findings=node('div',undefined,'learner-findings');findings.append(node('h4','Your inspection findings'));
+        const list=node('ul');observationFacts[phase].filter(fact=>state.inspected.includes(fact.id)).forEach(fact=>list.append(node('li',fact.label)));findings.append(list);f.append(findings);
+      }
       p(v.covered?'The physical scene is covered. Complete your account from memory, then reopen it to compare.':'Inspect each object. A written statement can be directly visible while its claim remains unverified.',f);
       field('What time did the display show? Use HH:MM.','recall0',f);
-      observationFacts[phase].forEach((fact,i)=>select(i===0?'A report of the display reading':i===1?'A report of the vessel’s position':fact.label,'classification'+i,[{value:'observation',label:'Observed fact'},{value:'claim',label:'Someone’s claim'},{value:'inference',label:'An inferred explanation'}],f));
+      observationFacts[phase].forEach((fact,i)=>select(i===0?'A report of the display reading':i===1?'A report of the vessel’s position':fact.id==='note'?'The message being asserted: '+fact.label:fact.label,'classification'+i,[{value:'observation',label:'Observed fact'},{value:'claim',label:'Someone’s claim'},{value:'inference',label:'An inferred explanation'}],f));
     }
     if(week===2){
       const f=group(v.covered?'Retrieve along your route':'Encode four associations');
@@ -208,29 +236,47 @@ function mount(root:HTMLElement) {
     if(week===12){
       p('Launch Operation Last Light below. Complete a mission run before writing this account; the activity stores your explanation separately from the mission’s practical record.');
       const a=node('a','Enter the final recovery mission','button primary');a.href=root.dataset.missionUrl??'../../operation/';bench.append(a);
+      p(passport.getMission('recovery')?.status==='complete'||passport.state.runs.some(run=>run.kind==='recovery')?'A completed recovery run is present in this passport. Use its exported action record for the account below.':'No completed recovery run is recorded in this passport yet. Complete the practical mission first; this page records your account afterwards.');
       field('What objective did your team pursue?','objective');field('Which recorded actions and observations support the result?','evidence',bench,true);field('What credible alternative did you reject, and why?','alternative',bench,true);
     }
   }
+  const confirmation=root.querySelector<HTMLDialogElement>('[data-training-confirm-dialog]')!;
+  let pendingChange:(()=>void)|undefined;
+  function confirmChange(message:string,label:string,change:()=>void){
+    if(!state.actions.length&&!reflection.value.trim()){change();return;}
+    pendingChange=change;
+    root.querySelector<HTMLElement>('[data-training-confirm-message]')!.textContent=message;
+    root.querySelector<HTMLButtonElement>('[data-training-confirm-accept]')!.textContent=label;
+    confirmation.showModal();
+  }
+  root.querySelector<HTMLButtonElement>('[data-training-confirm-accept]')!.addEventListener('click',()=>{
+    const change=pendingChange;pendingChange=undefined;confirmation.close();change?.();
+  });
+  root.querySelector<HTMLButtonElement>('[data-training-confirm-cancel]')!.addEventListener('click',()=>{pendingChange=undefined;confirmation.close();});
+  confirmation.addEventListener('cancel',()=>{pendingChange=undefined;});
+  confirmation.addEventListener('close',()=>{pendingChange=undefined;});
   root.querySelectorAll<HTMLButtonElement>('[data-training-phase]').forEach(b=>{
     b.disabled=false;b.addEventListener('click',()=>{
       const next=b.dataset.trainingPhase as TrainingPhase;if(!phases.includes(next))return;
-      if(state.actions.length&&!window.confirm('Start the '+phaseLabels[next].toLowerCase()+' configuration? Export or record this attempt first to keep its evidence.'))return;
-      state=createTraining(week,next);reflection.value='';hint=0;checksThisPhase=0;render();sync();checkpoint();
+      confirmChange('Start the '+phaseLabels[next].toLowerCase()+' configuration? Export or record this attempt first to keep its evidence.','Start '+phaseLabels[next].toLowerCase(),()=>{
+        state=createTraining(week,next);reflection.value='';hint=0;checksThisPhase=0;root.querySelectorAll<HTMLElement>('[data-training-hint-text]').forEach(text=>text.hidden=true);root.querySelector<HTMLButtonElement>('[data-training-hint]')!.textContent='Reveal next hint';render();sync();checkpoint();
+      });
     });
   });
   root.querySelector<HTMLButtonElement>('[data-training-test]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-test]')!.addEventListener('click',()=>act({type:'test'}));
   root.querySelector<HTMLButtonElement>('[data-training-reset]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-reset]')!.addEventListener('click',()=>{
-    if(state.actions.length&&!window.confirm('Restart only this activity phase? Saved passport evidence remains available.'))return;
-    state=createTraining(week,state.phase);checksThisPhase=0;render();sync();checkpoint();
+    confirmChange('Restart only this activity phase? Saved passport evidence remains available.','Restart this phase',()=>{
+      state=createTraining(week,state.phase);checksThisPhase=0;hint=0;root.querySelectorAll<HTMLElement>('[data-training-hint-text]').forEach(text=>text.hidden=true);root.querySelector<HTMLButtonElement>('[data-training-hint]')!.textContent='Reveal next hint';render();sync();checkpoint();
+    });
   });
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.disabled=false;
   root.querySelector<HTMLButtonElement>('[data-training-save]')!.addEventListener('click',()=>{
     if(reflection.value.trim().length<20){saveStatus.textContent='Add a brief explanation of what you tried, observed and would change (at least 20 characters).';reflection.focus();return;}
     const detail={week,phase:state.phase,actions:state.actions,result:state.feedback,reflection:reflection.value.trim(),completed:state.complete,state:structuredClone(state)};
     window.dispatchEvent(new CustomEvent('mastermind:evidence',{detail}));
-    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable.';
+    saveStatus.textContent='This attempt has been sent to your local skills passport. Export a backup below before leaving, especially if browser storage is unavailable. '+(state.phase==='transfer'?'All three phases use the same save action. Check your learning record for the attempts you want to keep.':'When ready, select '+(state.phase==='practice'?'Skill check':'Transfer challenge')+' to try changed conditions.');
   });
   const hintButton=root.querySelector<HTMLButtonElement>('[data-training-hint]')!;hintButton.disabled=false;
   hintButton.addEventListener('click',()=>{

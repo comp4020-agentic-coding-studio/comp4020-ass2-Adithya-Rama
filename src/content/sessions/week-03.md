@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Match a connector to a target by changing its direction and height independently.
+
+**What you will produce:** The matched connectors for the three targets, a prediction of where the original north port moves, and a labelled spatial explanation.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read SP-01 coordinate conventions (10 minutes). Sketch an everyday object from above and the side, labelling one shared feature (10 minutes).
 
-Read the [briefing](/lectures/week-03/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-03.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-03/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-03.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -44,6 +52,8 @@ Read the [briefing](/lectures/week-03/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -55,13 +65,20 @@ Read the [briefing](/lectures/week-03/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Spatial Lab in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Rotate the connector to east/south on level 0. Predict where the original north port moves before checking the module.
+1. Select **Practice** and read the required connector directions and floor level. The original module has north and east ports at level 0.
+2. Before moving it, predict where the original north connector will point. Select that direction in **Where did the original north connector move?**
+3. Use **Rotate clockwise 90°** to turn the module. Use **Raise one level (cycles 0–2)** to set its height. Read the ports and level display after each change.
+4. Select **Test this configuration**. If it does not match, decide whether the error is in rotation, height or your prediction before adjusting the relevant control.
+5. Try **Skill check**, then **Transfer challenge**. Read each new target; rotation and level requirements change.
+6. After playing, draw or describe the original and final ports. Explain why changing the camera view is different from rotating the module.
 
-**Skill check.** Fit south/west on level 1 and explain why two rotations plus one level change are required from the initial state.
+### Finish and keep your work
 
-**Transfer.** Fit west/north on level 2. Explain which transformation changed orientation and which changed position.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

@@ -1,0 +1,88 @@
+/* A single activity, moved intact between page and immersive presentation. */
+.immersive-bar {display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1rem;background:#10262d;border-bottom:1px solid #87764c;color:#fff1d3}
+.immersive-bar strong {display:block;font-size:.7rem;letter-spacing:.13em;color:#f3ce85}
+.immersive-bar span {display:block;font-size:.75rem;line-height:1.5;margin-top:.2rem;max-width:65ch}
+.immersive-actions {display:flex;gap:.5rem;flex-wrap:wrap}
+.immersive-actions button {font-size:.75rem;min-height:44px}
+.academy-world[data-immersive=true] {position:fixed;inset:0;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;border:0;border-radius:0;z-index:10000;display:grid;grid-template-columns:minmax(0,1fr) clamp(340px,32vw,490px);grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;background:#142a31}
+.academy-world[data-immersive=true] .immersive-bar {grid-column:1/-1;grid-row:1}
+.academy-world[data-immersive=true] .world-stage {grid-column:1;grid-row:2;height:100%;min-height:0;max-height:none;aspect-ratio:auto;display:block}
+.academy-world[data-immersive=true] .world-canvas {width:100%;height:100%;min-height:0}
+.academy-world[data-immersive=true] .world-toolbar {grid-column:1;grid-row:3;margin:0;max-height:26dvh;overflow:auto;gap:.65rem}
+.academy-world[data-immersive=true] .world-instructions,.academy-world[data-immersive=true] [data-world-fullscreen] {display:none}
+.academy-world[data-immersive=true] .immersive-console {grid-column:2;grid-row:2/4;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;background:#f5f0e4;color:#183139;border-left:1px solid #8c7750;padding:1rem;scroll-padding:1rem;scrollbar-gutter:stable}
+.immersive-console-intro {font-size:.78rem;line-height:1.6;padding-bottom:.8rem;border-bottom:1px solid #b4a887;color:#394e50}
+.immersive-console h2,.immersive-console h3,.immersive-console h4 {color:#183139!important;line-height:1.2!important;overflow-wrap:anywhere}
+.immersive-console h2 {font-size:1.4rem!important}
+.immersive-console h3 {font-size:1.1rem!important}
+.immersive-console p,.immersive-console li,.immersive-console label,.immersive-console summary {font-size:.84rem;line-height:1.65;overflow-wrap:anywhere}
+.immersive-console label {color:#183139}
+.immersive-console .small {font-size:.76rem}
+.immersive-console :is(input,select,textarea) {max-width:100%;min-width:0;background:#fffdf6;color:#19323a;border:1px solid #84775e;padding:.5rem;font:inherit}
+.immersive-console :is(input,select,textarea):focus-visible {outline:3px solid #725016;outline-offset:2px}
+.immersive-console :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {width:100%;box-sizing:border-box}
+.immersive-console input[type=checkbox],.immersive-console input[type=radio] {width:1.1rem;height:1.1rem;flex:none}
+.immersive-console button {min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere;background:#213d44;color:#fff4dc;border-color:#7c6b46;font-size:.8rem}
+.immersive-console button:disabled {opacity:.6;cursor:default}
+.immersive-console button:focus-visible,.immersive-console a:focus-visible {outline:3px solid #725016;outline-offset:2px}
+.immersive-console .actions {display:flex;flex-wrap:wrap;gap:.5rem}
+.immersive-console :is(.mission-grid,.mission-setup,.demo-learning-grid,.demo-context,.demo-chapters,.role-packs,.training-controls,.training-learn-grid) {display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:.8rem}
+.immersive-console :is(.mission-objectives,.mission-console,.demo-coach,.demo-practice,.demo-transport,.demo-mode-bar,.mission-rolebar) {min-width:0;max-width:100%;position:static}
+.immersive-console .mission-objectives {padding:.7rem;background:#e8e3d4}
+.immersive-console .mission-objectives * {color:#183139}
+.immersive-console .mission-objectives button {color:#fff4dc}
+.immersive-console .mission-console {padding:0}
+.immersive-console :is(.zone-tabs,.mission-rolebar,.training-phase,.demo-transport,.demo-mode-bar) {display:flex;flex-wrap:wrap;gap:.4rem}
+.immersive-console .demo-caption {display:block;padding:.7rem;background:#e8e3d4;border:0}
+.immersive-console .demo-caption * {color:#183139}
+.immersive-console .demo-caption>span {display:block;margin-bottom:.4rem}
+.immersive-console :is(.demo-status,.demo-practice,.demo-coach,.demo-transfer) {margin:.8rem 0;padding:.7rem}
+.immersive-console [data-immersive-panel] {margin-bottom:.8rem}
+.immersive-console table {display:block;max-width:100%;overflow-x:auto}
+.immersive-console pre {white-space:pre-wrap;overflow-wrap:anywhere}
+.academy-world[data-immersive=true] .world-hud {position:absolute;left:.7rem;right:.7rem;top:.7rem;padding:0;background:none;pointer-events:none}
+.academy-world[data-immersive=true] .world-object {position:absolute;bottom:.7rem;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 1.4rem)}
+.academy-world[data-immersive=true] .world-control-group {display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.4rem}
+.academy-world[data-immersive=true] .world-control-group button {width:auto;min-height:44px}
+@media(max-width:760px) {
+ .academy-world[data-immersive=true] {grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(150px,30dvh) auto minmax(0,1fr)}
+ .academy-world[data-immersive=true] .immersive-bar {grid-column:1;padding:.5rem .65rem;display:block}
+ .immersive-bar span {font-size:.68rem}
+ .immersive-actions {gap:.35rem;margin-top:.4rem}
+ .immersive-actions button {font-size:.68rem;flex:1;padding:.5rem .25rem}
+ .academy-world[data-immersive=true] .world-stage {grid-column:1;grid-row:2}
+ .academy-world[data-immersive=true] .world-toolbar {grid-column:1;grid-row:3;padding:.4rem .6rem;max-height:120px}
+ .academy-world[data-immersive=true] .world-toolbar .world-control-group {width:100%;gap:.35rem}
+ .academy-world[data-immersive=true] .world-toolbar .world-control-group>label {display:flex;align-items:center}
+ .academy-world[data-immersive=true] .world-toolbar .world-control-group>label select {width:auto}
+ .academy-world[data-immersive=true] .world-toolbar button {font-size:.68rem;padding:.4rem}
+ .academy-world[data-immersive=true] .immersive-console {grid-column:1;grid-row:4;padding:.7rem;border-left:0;border-top:1px solid #8c7750}
+ .academy-world[data-immersive=true] .world-demo-badge {display:none}
+ .academy-world[data-immersive=true] .world-object {margin:0;padding:.35rem}
+ .academy-world[data-immersive=true] .world-object>span {display:none}
+ .academy-world[data-immersive=true] .world-object button {min-height:36px;font-size:.66rem;flex:1 1 auto}
+ .academy-world[data-immersive=true] .world-location,.academy-world[data-immersive=true] .world-status {font-size:.6rem;padding:.35rem;max-width:50%}
+}
+@media(max-height:550px) and (min-width:761px) {
+ .immersive-bar {padding:.3rem .6rem}
+ .academy-world[data-immersive=true] .world-toolbar {max-height:100px}
+}
+@media print {
+ .academy-world[data-immersive=true] {position:static;display:block;height:auto;overflow:visible;color:black;background:white}
+ .academy-world[data-immersive=true] .immersive-console {display:block;height:auto;overflow:visible}
+ .immersive-bar {display:none!important}
+}
+
+.demo-player[data-mode=watch] .academy-world--demo[data-immersive=true] .world-canvas {height:100%}
+
+/* Keep a useful amount of the task panel visible below the scene on phones. */
+@media(max-width:760px) {
+ .academy-world[data-immersive=true] .immersive-actions {flex-wrap:nowrap}
+ .academy-world[data-immersive=true] .immersive-actions button {min-width:0;flex:1;font-size:.72rem;line-height:1.3;padding:.5rem .25rem}
+ .academy-world[data-immersive=true] .immersive-console-intro {font-size:.75rem;line-height:1.5;margin:.2rem 0 .6rem;padding-bottom:.6rem}
+}
+
+/* The page theme sets button ink; define matching hover surfaces explicitly. */
+.academy-world[data-immersive=true] .immersive-bar button {background:#ece4ca;color:#142b31;border-color:#d2c49d}
+.academy-world[data-immersive=true] .immersive-bar button:hover {background:#d8bd86;color:#142b31}
+.academy-world[data-immersive=true] .immersive-bar button:focus-visible {outline:3px solid #ffe0a1;outline-offset:2px}

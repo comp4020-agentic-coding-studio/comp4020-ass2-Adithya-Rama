@@ -28,6 +28,27 @@ spec:
 related: ["sessions/week-12"]
 ---
 
+## Start here: recover the archive as a team
+
+**Your task:** use the semester's skills together at Meridian Station. Establish what you intend to recover, verify the evidence, make the equipment ready, agree responsibilities and explain changes to the plan.
+
+**The two operations are different:** [Operation Lamplight](/demonstrations/assessment-final/) is the complete alternate demonstration. [Operation Last Light](/operation/) is the actual mission for this assessment.
+
+1. Agree the four responsibilities below. Open **Operation Last Light**, select **Baseline** for a first rehearsal, then select **Start new trial** and confirm if prompted. Choose the **Declared recovery objective** before selecting a role or operating equipment. A resumed trial keeps its initial objective locked; starting a new trial unlocks this choice before new actions.
+2. As **Coordinator**, visit **Dispatch** and use **Preserve this plan version** to record the initial objective, intended route, required checks and what would make you revise it.
+3. As **Observer / Navigator**, visit **Arrival**. Inspect all five objects, hide the notes, check your recall of their packing order, and test the map's orientation.
+4. As **Systems Specialist**, visit **Workshop** and **Power bay**. Set the cradle's required output, release its brake and test it. Measure the circuit fault before replacing the fuse, then restore and verify the load.
+5. As **Investigator**, visit **Control room**. Select the archive supported by the current signed source and repair the permission defect while preserving legitimate access.
+6. As **Coordinator**, visit **Archive**. Agree original preservation and a named recipient, then send a handoff specifying the item, destination and condition.
+7. As **Observer / Navigator**, test a route against its power dependencies and the scenario bulletin. As **Coordinator**, return to **Dispatch** and preserve a distinct revision explaining what the evidence or tests changed.
+8. Use the **Mission Journal** to find outstanding objectives. Its **Go to this objective** action selects the relevant role and area. Complete all required capabilities before choosing a resolution at Dispatch.
+9. Read the debrief and **Export assessment record**. Rehearse a different published preset, compare the records, then complete and export your final run. Keep both rehearsals as well as the final run.
+10. After playing, assemble the team account, presentation, individual defences and supporting records under **What you hand over**.
+
+**You are finished when:** the final run has a justified resolution and debrief, both contrasting rehearsals are preserved, and the entire submission bundle is ready. A different ending can be defensible; explain how it meets the objective or why that objective changed.
+
+**Playing in fullscreen:** choose **Fullscreen mission**. Its **Mission & controls** panel contains the journal, role instructions, area switches, actions and exports, so you can complete the practical run without leaving the view. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Save the longer written defence for after the run.
+
 ## The brief
 
 Form a group of four, normally by combining two A2 pairs. Recover the last intact research archive at fictional **Meridian Station** under the published authority and handling rules.

@@ -1,9 +1,11 @@
+import { registerImmersiveScene } from './immersive';
 type RunningScene = { dispose(): void };
 let active: RunningScene | undefined; let queue:Promise<void>=Promise.resolve();
 export function registerAcademyScenes() {
   document.querySelectorAll<HTMLElement>('[data-academy-world]').forEach(root => {
     if (root.dataset.registered) return;
     root.dataset.registered = 'true';
+    registerImmersiveScene(root);
     const launch = root.querySelector<HTMLButtonElement>('[data-world-launch]')!;
     const loading = root.querySelector<HTMLElement>('[data-world-loading]')!;
     launch.addEventListener('click', async () => {

@@ -22,6 +22,19 @@ spec:
 related: ["sessions/week-12"]
 ---
 
+## Start here: keep one useful record per week
+
+**Your task:** collect evidence of what you tried, what happened and how you adapted. Fieldwork is a portfolio of the weekly labs, not another separate game.
+
+1. Open [the lab for your week](/sessions/) and read its **Your mission, in plain language** section.
+2. Complete the practical **Practice** attempt and read its feedback. Afterwards open **After playing · explain and save this attempt**, write a brief explanation and select **Record attempt in skills passport** before switching phases.
+3. Try **Skill check** and **Transfer challenge**, reading the changed conditions each time. Save the attempts that show your learning, including a useful failure.
+4. Use the passport's export controls to keep a backup outside this browser. For campus work, keep an equivalent dated action or measurement record.
+5. After playing, use [the fieldwork template](/templates/fieldwork.md) to assemble the named output, prediction, trace, changed-situation response, approximately 100-word reflection and declared assistance.
+6. Check **What you hand over** below. Repeat for later weeks; your best ten of twelve records count.
+
+**You are finished for the week when:** your record identifies the lab and scenario, shows a practical attempt and changed-condition response, and includes your own reflection. Watching [the fieldwork example](/demonstrations/assessment-fieldwork/) shows the format but does not create your record.
+
 ## The brief
 
 Keep twelve individual lab records. Your **best ten** count; each counted record contributes up to one percentage point to the course total. Game completion alone does not earn the point.

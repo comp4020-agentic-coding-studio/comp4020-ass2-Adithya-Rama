@@ -211,7 +211,10 @@ function mount(root:HTMLElement){
   for(const chapter of demo.steps){const attempt=progress.attempts[chapter.id];lines.push("","### "+chapter.title,"Observed: "+(progress.watched?.includes(chapter.id)?"yes":"no"),"Practised successfully: "+(attempt?.completed?"yes":"no"),"Attempts: "+(attempt?.attempts??0)+"; hints shown: "+(attempt?.hints??0));if(attempt?.lastFeedback)lines.push(attempt.lastFeedback);}
   lines.push("","## Transfer",demo.transfer);download(demo.id+"-my-practice.md",lines.join("\n"));
  });
- el("[data-demo-reset]").addEventListener("click",()=>{if(!window.confirm("Restart this worked example and clear its practice record for this visit? Your course passport and assigned activities stay saved."))return;stop();progress=createDemoProgress(demo,progress.mode);cached.clear();renderStep();sendMode();announce("This example has restarted.");});
+ const resetDialog=el<HTMLDialogElement>("[data-demo-reset-dialog]");
+ el("[data-demo-reset]").addEventListener("click",()=>resetDialog.showModal());
+ el("[data-demo-reset-cancel]").addEventListener("click",()=>resetDialog.close());
+ el("[data-demo-reset-confirm]").addEventListener("click",()=>{stop();progress=createDemoProgress(demo,progress.mode);cached.clear();renderStep();sendMode();announce("This example has restarted.");resetDialog.close();});
  if("speechSynthesis" in window){
   const speech=el<HTMLButtonElement>("[data-demo-narrate]");speech.hidden=false;
   speech.textContent="Turn narration on";speech.setAttribute("aria-pressed","false");speech.addEventListener("click",()=>{narrationEnabled=!narrationEnabled;speech.setAttribute("aria-pressed",String(narrationEnabled));speech.textContent=narrationEnabled?"Turn narration off":"Turn narration on";if(narrationEnabled)narrate(shownAfter?step().success:step().narration);else stopSpeech();announce(narrationEnabled?"Device narration is enabled during playback. Captions remain visible.":"Narration is off. Captions remain visible.");});

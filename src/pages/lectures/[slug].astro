@@ -10,6 +10,7 @@ const week=lecture.data.week;
 ---
 <CourseLayout title={lecture.data.title} description={lecture.data.description} eyebrow={"BRIEFING / WEEK "+String(week).padStart(2,"0")}>
 <div class="fact-strip"><span>{formatCourseDate(lecture.data.date)}</span><span>1-hour briefing</span><span>{(lecture.data.learningOutcomes as string[]).join(" · ")}</span></div>
+<section class="callout"><h2>Read, then try it</h2><p>This briefing explains the week's idea and shows a worked example. Read the objectives and example, then open the lab for the actual controls, three practice configurations and saved fieldwork record.</p><div class="actions"><a class="button primary" href={withBase("/sessions/week-"+String(week).padStart(2,"0")+"/")}>Open this week's lab ↗</a><a class="button" href={withBase("/demonstrations/lab-"+String(week).padStart(2,"0")+"/")}>Watch a different worked example ↗</a></div></section>
 {lecture.data.slides&&<div class="actions"><a class="button primary" href={withBase(lecture.data.slides)}>Open the Week 7 lecture deck ↗</a></div>}
 <Content />
 <nav class="actions" aria-label="Week navigation">{week>1&&<a class="button" href={withBase("/lectures/week-"+String(week-1).padStart(2,"0")+"/")}>← Previous week</a>}<a class="button" href={withBase("/lectures/")}>All weeks</a>{week<12&&<a class="button" href={withBase("/lectures/week-"+String(week+1).padStart(2,"0")+"/")}>Next week →</a>}</nav>

@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Pass a complete instruction between two roles and use read-back to catch a misunderstanding before acting.
+
+**What you will produce:** A destination, quantity and code agreed by both roles, a role rotation, and an account of a corrected or prevented misunderstanding.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read only your assigned role pack first (10 minutes). Rewrite one vague everyday instruction using action/object/condition/confirmation (10 minutes). Solo students inspect packs in sequence and record what changed.
 
-Read the [briefing](/lectures/week-08/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-08.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-08/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-08.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -45,6 +53,8 @@ Read the [briefing](/lectures/week-08/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -56,13 +66,20 @@ Read the [briefing](/lectures/week-08/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Council Studio in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Inspect the analyst card, compose an explicit message and switch to the operator role. Enter the destination, quantity and code, then confirm read-back.
+1. Select **Practice**. As analyst, read the manifest instruction containing destination, quantity and code. Communicate those three details aloud or in a shared note.
+2. Select **Switch role**. As operator, ask for any missing detail and enter **Destination communicated**, **Quantity communicated** and **Verification code read back**.
+3. Read all three fields back to the analyst. Correct differences, then tick the acknowledgement only after the analyst confirms the same information. In solo practice, switch roles and compare explicitly.
+4. Select **Test this configuration**. Correct the actual mismatch rather than treating the acknowledgement box as a substitute for checking the fields.
+5. Try **Skill check** with reversed responsibilities, then **Transfer challenge**. Each card changes the destination, quantity and code.
+6. After playing, explain what information the receiver needed and how read-back established agreement. Record each person's contribution, or your solo role switches.
 
-**Skill check.** Reverse roles and complete Archive / 3 / COPPER. Explain why reusing a previously correct code fails the new handoff.
+### Finish and keep your work
 
-**Transfer.** Complete Dispatch / 1 / IVORY and state which values changed while the communication protocol remained the same.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 

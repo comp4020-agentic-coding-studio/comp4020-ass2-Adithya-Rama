@@ -28,6 +28,23 @@ spec:
 related: ["sessions/week-08"]
 ---
 
+## Start here: restore a relay as a pair
+
+**Your task:** diagnose the relay's circuit, verify its archive, repair a permission and send a precise handoff. This combines Weeks 5–8. Share one browser or screen and rotate control; there is no networked multiplayer.
+
+1. Read [the alternate worked example](/demonstrations/assessment-a2/) if you want to see the process. Agree who operates first and who reads the instructions and records. Swap those responsibilities during the task.
+2. Select **Enter assessment trial**, choose **Baseline**, then **Start new trial**; confirm the restart if prompted.
+3. Select **Systems Specialist** and **Power bay**. Select **Measure supply and fuse** before replacing anything. Keep the load switch open while changing the fuse, then close it and check the result.
+4. Select **Investigator** and **Control room**. Compare the archive records with the current signed source and use **Verify selected archive**. In the permission form, repair the named defect with **Apply policy and run checks**.
+5. Select **Coordinator** and **Archive**. Complete the item, destination and condition fields, read them back to your partner, then **Send structured handoff**. Four role labels represent tools and responsibilities; two students rotate between the roles needed for this trial.
+6. Check the **Mission Journal** for the four relay objectives. Open **Dispatch**, select **Finish relay trial**, then **Export assessment record**. Preserve the initial checkpoint separately.
+7. Complete the published changed-condition case. Use the Conflicting archive trial for the amended source, or the maintenance hold in Lab 7; also keep the full policy checks and changed-card read-back from Labs 7–8. Export the revised work without discarding the earlier record.
+8. After playing, assemble the joint explanation and both contribution statements using **What you hand over** below.
+
+**You are finished when:** you have a completed relay record, a preserved checkpoint and revision, evidence of role rotation, and the full submission bundle. The compact trial does not replace the lab records that demonstrate all nine policy checks and read-back under changed conditions.
+
+**Playing in fullscreen:** choose **Fullscreen mission**. Use its **Mission & controls** panel for the journal, role and area switches, and equipment. Scroll over the scene to zoom; use **Mouse look** to look around and **Tab** to release the pointer. **Esc** or **Exit fullscreen** returns to the page. The joint written account comes after playing.
+
 ## The brief
 
 In pairs, restore a fictional recovery relay. One role operates the equipment; the other initially holds the investigation and instruction records. Rotate roles so each person demonstrates diagnosis and communication.

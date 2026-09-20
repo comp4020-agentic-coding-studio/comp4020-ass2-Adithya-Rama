@@ -81,9 +81,11 @@ for(let week=1;week<=12;week++)test('week '+week+' supports meaningful controls 
   expect(errors).toEqual([]);
 });
 for(const week of [4,5,7,10])test('week '+week+' changes its skill check and transfer requirements',async({page})=>{
-  page.on('dialog',dialog=>dialog.accept());const lab=await openLab(page,week);
+  const lab=await openLab(page,week);
   for(const phase of ['check','transfer'] as const){
-    await lab.locator('[data-training-phase="'+phase+'"]').click();await solve(lab,week,phase);
+    await lab.locator('[data-training-phase="'+phase+'"]').click();
+    if(phase==='transfer'){await expect(lab.locator('[data-training-confirm-dialog]')).toBeVisible();await lab.locator('[data-training-confirm-accept]').click();}
+    await solve(lab,week,phase);
   }
 });
 test('mechanical controls preserve keyboard focus and reload an exact unfinished checkpoint',async({page})=>{
@@ -132,6 +134,31 @@ test('a passport reset clears this lab and an imported draft restores it in plac
   await expect(lab.locator('.training-readout')).toContainText('90°');
   await expect(lab.locator('.training-readout')).toContainText('Released');
 });
-
-
-
+test('phase and restart confirmations preserve an attempt until explicitly accepted',async({page})=>{
+  const lab=await openLab(page,4);
+  const nativeDialogs:string[]=[];page.on('dialog',dialog=>{nativeDialogs.push(dialog.type());void dialog.dismiss();});
+  await lab.locator('[data-training-controls]').getByRole('button',{name:'Release interlock',exact:true}).click();
+  await lab.locator('[data-training-reflection]').fill('Keep this explanation while I decide whether to change configuration.');
+  await lab.locator('[data-training-phase="check"]').click();
+  await expect(lab.locator('[data-training-confirm-dialog]')).toBeVisible();
+  await expect(lab.locator('[data-training-confirm-message]')).toContainText('Start the skill check configuration?');
+  await lab.locator('[data-training-confirm-cancel]').click();
+  await expect(lab.locator('[data-training-phase="practice"]')).toHaveAttribute('aria-pressed','true');
+  await expect(lab.locator('.training-readout')).toContainText('Released');
+  await expect(lab.locator('[data-training-reflection]')).toHaveValue(/Keep this explanation/);
+  await lab.locator('[data-training-reset]').click();
+  await expect(lab.locator('[data-training-confirm-dialog]')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(lab.locator('[data-training-confirm-dialog]')).not.toBeVisible();
+  await expect(lab.locator('.training-readout')).toContainText('Released');
+  await lab.locator('[data-training-reset]').click();
+  await lab.locator('[data-training-confirm-accept]').click();
+  await expect(lab.locator('.training-readout')).toContainText('Engaged');
+  await expect(lab.locator('[data-training-reflection]')).toHaveValue(/Keep this explanation/);
+  await lab.locator('[data-training-phase="check"]').click();
+  await expect(lab.locator('[data-training-confirm-dialog]')).toBeVisible();
+  await lab.locator('[data-training-confirm-accept]').click();
+  await expect(lab.locator('[data-training-phase="check"]')).toHaveAttribute('aria-pressed','true');
+  await expect(lab.locator('[data-training-reflection]')).toHaveValue('');
+  expect(nativeDialogs).toEqual([]);
+});

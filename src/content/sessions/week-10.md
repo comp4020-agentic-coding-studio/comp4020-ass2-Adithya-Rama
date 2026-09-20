@@ -22,11 +22,19 @@ spec:
   - "export the evidence; practice progress is not an academic submission"
 ---
 
+## Your mission, in plain language
+
+Predict how a route interacts with a published sensor map, then compare the prediction with the recorded journey.
+
+**What you will produce:** A planned route, its predicted and actual sensor contacts, and a comparison under a changed layout.
+
+**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+
 ## Before you arrive
 
 Read SN-01 and classify five sample cells as observed/unobserved with reasons (20 minutes). Write which criterion your first route will prioritise.
 
-Read the [briefing](/lectures/week-10/). Bring your earlier record if available; direct entrants can use the labelled sample without completing previous games. Choose the browser route or [campus pack](/campus/week-10.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-10/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-10.md). Both assess the outcomes below.
 
 ## What you will learn
 
@@ -46,6 +54,8 @@ Read the [briefing](/lectures/week-10/). Bring your earlier record if available;
 
 ## The two-hour lab
 
+These six rows are the session timetable, not six hidden game objectives. **Briefing** means read the task; **Learn** means inspect an example; **Practise**, **Test** and **Transfer** correspond to the three playable phases; **Debrief** means explain and save your work afterwards. You can pause and take longer.
+
 | Time | Activity |
 | --- | --- |
 | 0–10 minutes | Briefing: name the skill, published rules and evidence to produce. |
@@ -57,13 +67,20 @@ Read the [briefing](/lectures/week-10/). Bring your earlier record if available;
 
 ## Browser route
 
-Launch the activity below or travel to the Movement Hall in the academy. Inspect the controls and objective before acting. Camera movement, walking speed and pointer precision are not learning criteria. Keyboard controls and the interactive text view use the same published domain rules. Pause or leave at a checkpoint.
+### Do these actions in order
 
-**Practise.** Plan an eight-step route, predict its contact count, then step through it. Record where the first predicted contact occurs.
+1. Select **Practice**. Locate the start at row 5, column 1 and goal at row 1, column 5. Read which cells contain sensors.
+2. Use **Add north**, **Add east**, **Add south** and **Add west** to build the route. Each entry into a marked sensor cell counts once, including a repeat visit.
+3. Before moving, enter your predicted number of sensor contacts. Use **Execute next step** to move through the planned route one cell at a time.
+4. At the goal, select **Test this configuration**. Compare your predicted count with the recorded count and identify the first step where your mental model differed.
+5. Try **Skill check**, then **Transfer challenge** with their changed sensor layouts. Recalculate contacts before repeating an old route or testing a new one.
+6. After playing, keep the route and trace. Explain what changed between layouts. Contacts are observations to predict, not an automatic failure or a race.
 
-**Skill check.** Move the sensor cells to column 2, rows 2–5. Preserve your old route and calculate which steps now contact the sensor before replaying it.
+### Finish and keep your work
 
-**Transfer.** Use column 4, rows 2–5. Compare two routes with different contact counts and explain which objective would favour each.
+After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
+
+For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, use **Mouse look** to look around, and press **Tab** to release the pointer for controls. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 ## Campus route
 
