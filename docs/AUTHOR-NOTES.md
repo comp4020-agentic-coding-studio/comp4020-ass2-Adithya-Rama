@@ -71,3 +71,6 @@ They then clarified: “the course shld be advertised as in-person/online with i
 ## 21 September: independence, rather than repeated recovery puzzles
 
 The author asked whether the course had become escape-room training and requested a hard critique. After receiving that critique, the author supplied a further review arguing that a narrow subject does not require repetitive recovery scenarios. The author approved the revised plan with **perfect do it**. Accepted changes: one field-operation question; varied weekly outcomes; deeper diagnosis and negotiation; clear controls without solution recipes; conditional final requirements; alternate demonstrations that teach method selection; preserved in-person preference and online access. This is supplied direction, not evidence of a classroom trial or acceptance of the finished revision.
+
+
+The accepted revision is implemented in [8936152](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/8936152). The [independent-learning review](INDEPENDENT-LEARNING-REVIEW.md) records actual checks, corrections and limits; PROCESS.md and the existing reflection were updated from the supplied direction.

@@ -1,5 +1,7 @@
 # Independent learning and conditional field operations
 
+**Implementation commit:** [8936152](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Adithya-Rama/commit/8936152). Committed locally without signing; publication remains separate.
+
 ## Accepted direction
 
 On 21 September 2026 the author asked for a hard critique of the actual course, then supplied a further critique distinguishing a narrow intellectual question from a repetitive surface theme. The author approved the revised plan with "perfect do it". The accepted question is:
