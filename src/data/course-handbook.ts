@@ -1,6 +1,15 @@
 /** Course-owned participation facts. Dates, outcomes and assessment records
  * remain in their existing canonical sources. */
 export const courseHandbook = {
+  overview: "A fourth-year course in observation, memory, systems and collaborative problem-solving. Learn to investigate unfamiliar situations, test solutions and coordinate a recovery through briefings, practical labs and a cumulative team project.",
+  academicUnit: "Academy of Impossible Skills",
+  convenorId: "mara-voss",
+  delivery: "In person (preferred), with an online option for students unable to attend campus.",
+  stages: [
+    {from:1,to:4,title:"Observe and model",description:"Build reliable observations and recall, represent space and explain mechanisms. Combine these capabilities in the individual workshop."},
+    {from:5,to:8,title:"Diagnose and coordinate",description:"Trace faults, compare digital evidence, test permissions and communicate across roles. Combine them in the paired relay."},
+    {from:9,to:12,title:"Adapt and recover",description:"Negotiate constraints, test routes, revise a failed dependency and bring the semester's capabilities together in the final team recovery."},
+  ],
   audience: "Students interested in intricate puzzles, how systems work, and collaborative problem-solving.",
   prerequisites: "Basic logical reasoning and a willingness to explain your decisions. No programming, electronics or security background is required.",
   workload: {
@@ -12,7 +21,7 @@ export const courseHandbook = {
     "Open the week's briefing and read its learning objectives and preparation list.",
     "Inspect the supplied rules and case files. They contain the information needed for the activity.",
     "Watch the alternate worked example if you want to see the method and a finished record first.",
-    "Choose the browser or campus route, then keep a place for your prediction, result and explanation.",
+    "Prepare for the in-person lab using its campus pack, or choose the equivalent online route if you cannot attend. Keep a place for your prediction, result and explanation.",
   ],
   support: [
     {

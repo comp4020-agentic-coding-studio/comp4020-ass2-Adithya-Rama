@@ -1,5 +1,6 @@
 ---
 import {render} from "astro:content";
+import StudyRoutes from "../../components/StudyRoutes.astro";
 import {getPublishedCollection} from "astro-course-university/content";
 import {withBase} from "astro-theme-university/url";
 import CourseLayout from "../../layouts/CourseLayout.astro";
@@ -14,7 +15,8 @@ const kind=assessment.id==="assignment-1"?"a1":assessment.id==="assignment-2"?"a
 ---
 <CourseLayout title={assessment.data.title} description={assessment.data.description} eyebrow="ASSESSMENT / APPLY THE CAPABILITY" wide={kind!==null}>
 <div class="fact-strip"><span>{assessment.data.weight}% of course</span><span>{String(assessment.data.participation)}</span><span>Due {formatCourseDate(assessment.data.due)} · 17:00 Canberra</span></div>
-<div class="actions"><a class="button primary" href="#assessment-guide">Read the play and submission steps ↓</a><a class="button" href={withBase("/templates/"+assessment.id+".md")} download>Download assessment template</a>{kind&&<a class="button primary" href="#playable-trial">Enter assessment trial ↓</a>}{assessment.id==="final-project"&&<a class="button primary" href={withBase("/operation/")}>Enter the final mission ↗</a>}</div>
+<StudyRoutes assessment={assessment.id}/>
+<div class="actions"><a class="button primary" href="#assessment-guide">Read the assessment brief ↓</a><a class="button" href={withBase("/templates/"+assessment.id+".md")} download>Download assessment template</a>{kind&&<a class="button primary" href="#playable-trial">Enter assessment trial ↓</a>}{assessment.id==="final-project"&&<a class="button primary" href={withBase("/operation/")}>Enter the final mission ↗</a>}</div>
 <DemonstrationLink id={assessment.id==="fieldwork"?"assessment-fieldwork":assessment.id==="assignment-1"?"assessment-a1":assessment.id==="assignment-2"?"assessment-a2":"assessment-final"}/>
 <section id="assessment-guide" class="teaching-reading" aria-label="Assessment instructions"><Content/></section>
 {assessment.data.marking&&<MarkingModel marking={assessment.data.marking}/>}

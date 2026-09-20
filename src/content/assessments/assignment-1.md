@@ -24,7 +24,14 @@ spec:
 related: ["sessions/week-04"]
 ---
 
-## Start here: complete an individual workshop trial
+## How to participate
+
+**In person is the preferred route.** Use the [campus teaching pack](/campus/assignment-1.md) in the facilitated session, with the supplied apparatus or paper models and the required individual, pair or team responsibilities. Keep your station sheets, predictions, revisions, receiver acknowledgements and explanation. These form the practical record; an additional browser run is not required.
+
+**Online, if you cannot attend:** use the equivalent activity and control instructions below. The 3D environment supports the same reasoning, rehearsals and evidence requirements. Both routes use this brief's deliverables and rubric. Label measured, paper-model and simulated results accurately.
+
+
+## Online control guide: complete an individual workshop trial
 
 **Your task:** prepare a model archive carriage by observing the room, recalling an ordered list, interpreting the map and setting up its mechanism. This combines Weeks 1–4.
 

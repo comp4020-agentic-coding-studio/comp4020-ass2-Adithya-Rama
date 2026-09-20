@@ -28,7 +28,14 @@ spec:
 related: ["sessions/week-12"]
 ---
 
-## Start here: recover the archive as a team
+## How to participate
+
+**In person is the preferred route.** Use the [campus teaching pack](/campus/final-project.md) in the facilitated session, with the supplied apparatus or paper models and the required individual, pair or team responsibilities. Keep your station sheets, predictions, revisions, receiver acknowledgements and explanation. These form the practical record; an additional browser run is not required.
+
+**Online, if you cannot attend:** use the equivalent activity and control instructions below. The 3D environment supports the same reasoning, rehearsals and evidence requirements. Both routes use this brief's deliverables and rubric. Label measured, paper-model and simulated results accurately.
+
+
+## Online control guide: recover the archive as a team
 
 **Your task:** use the semester's skills together at Meridian Station. Establish what you intend to recover, verify the evidence, make the equipment ready, agree responsibilities and explain changes to the plan.
 

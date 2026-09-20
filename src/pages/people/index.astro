@@ -1,10 +1,11 @@
 ---
+import {courseHandbook} from "../../data/course-handbook";
 import CourseLayout from "../../layouts/CourseLayout.astro";
 import {getPublishedCollection} from "astro-course-university/content";
 import {withBase} from "astro-theme-university/url";
 const people=await getPublishedCollection("people");
 ---
-<CourseLayout title="The people behind the plan" description="Three fictional instructors. Different responsibilities. The same expectation: explain what your decision depends on." eyebrow="THE ACADEMY / PEOPLE">
-{people.map(p=><article class="staff-row"><span class="staff-mark" aria-hidden="true">{p.data.title.split(" ").slice(-2).map(w=>w[0]).join("")}</span><div><h2><a href={withBase("/people/"+p.id+"/")}>{p.data.title}</a></h2><p>{p.data.description}</p></div></article>)}
+<CourseLayout title="Teaching team" description="Course convenor, teaching responsibilities and where to get help with your studies." eyebrow="THE ACADEMY / PEOPLE">
+{people.map(p=><article class="staff-row"><span class="staff-mark" aria-hidden="true">{p.data.title.split(" ").slice(-2).map(w=>w[0]).join("")}</span><div><h2><a href={withBase("/people/"+p.id+"/")}>{p.data.title}</a></h2><p><strong>{p.id===courseHandbook.convenorId?"Course convenor · ":""}{p.data.role}</strong></p><p>{p.data.description}</p></div></article>)}
 <p class="small">These are original fictional teaching characters. Mission role packs describe four student responsibilities, which can be shared or rotated. There are no live staff accounts or contact addresses.</p>
 </CourseLayout>

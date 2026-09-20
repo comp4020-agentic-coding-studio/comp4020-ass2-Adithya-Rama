@@ -40,7 +40,8 @@ describe("the published skills academy contract",()=>{
    expect(n.meta.browserActivity).toBe("/"+n.id+"/#activity");
    expect(existsSync("public"+n.meta.campusPack)).toBe(true);
    const body=source(n.id),campus=readFileSync("public"+n.meta.campusPack,"utf8");
-   for(const heading of ["## Before you arrive","## Supplied case file and rules","## The two-hour lab","## Browser route","## Campus route","## What leaves the room","## Feedback and explanation","## Closing reflection"])expect(body).toContain(heading);
+   for(const heading of ["## Before you arrive","## Supplied case file and rules","## The two-hour lab","## In-person lab · preferred route","## Online lab · equivalent participation and revision","## What leaves the room","## Feedback and explanation","## Closing reflection"])expect(body).toContain(heading);
+   expect(body.indexOf("## In-person lab")).toBeLessThan(body.indexOf("## Online lab"));
    for(const range of ["0–10","10–30","30–60","60–80","80–105","105–120"])expect(body).toContain(range);
    for(const heading of ["## Equipment","## Facilitator setup","## Complete supplied rules","## Practice","## Skill check","## Transfer challenge","## Student record","## Explanation"])expect(campus).toContain(heading);
    expect(campus).toContain(w.output);

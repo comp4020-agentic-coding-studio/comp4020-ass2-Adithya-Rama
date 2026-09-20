@@ -28,7 +28,14 @@ spec:
 related: ["sessions/week-08"]
 ---
 
-## Start here: restore a relay as a pair
+## How to participate
+
+**In person is the preferred route.** Use the [campus teaching pack](/campus/assignment-2.md) in the facilitated session, with the supplied apparatus or paper models and the required individual, pair or team responsibilities. Keep your station sheets, predictions, revisions, receiver acknowledgements and explanation. These form the practical record; an additional browser run is not required.
+
+**Online, if you cannot attend:** use the equivalent activity and control instructions below. The 3D environment supports the same reasoning, rehearsals and evidence requirements. Both routes use this brief's deliverables and rubric. Label measured, paper-model and simulated results accurately.
+
+
+## Online control guide: restore a relay as a pair
 
 **Your task:** diagnose the relay's circuit, verify its archive, repair a permission and send a precise handoff. This combines Weeks 5–8. Share one browser or screen and rotate control; there is no networked multiplayer.
 

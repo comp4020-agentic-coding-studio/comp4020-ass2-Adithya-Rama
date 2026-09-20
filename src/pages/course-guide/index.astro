@@ -20,15 +20,20 @@ const support = courseHandbook.support.map(entry => ({
   <p class="guide-course-name"><strong>{courseMeta.code} — {courseMeta.title}</strong></p>
   <CourseFacts showGuideLink={false}/>
   <nav class="guide-contents" aria-label="On this page">
-    <a href="#entry">Entry &amp; preparation</a>
+    <a href="#overview">Overview</a><a href="#entry">Entry &amp; preparation</a>
     <a href="#outcomes">Learning outcomes</a>
     <a href="#weekly-rhythm">How it runs</a>
-    <a href="#timetable">Timetable</a>
+    <a href="#timetable">Classes &amp; timetable</a><a href="#materials">Readings &amp; equipment</a>
     <a href="#assessment">Assessment</a>
     <a href="#help">Getting help</a>
     <a href="#keep-your-work">Save &amp; back up</a>
   </nav>
 
+  <section id="overview">
+    <h2>Course overview</h2>
+    <p>{courseHandbook.overview}</p>
+    <p><strong>Mode of study:</strong> {courseHandbook.delivery} Campus sessions centre on facilitated investigation, shared apparatus or paper models, discussion and teamwork. The online academy provides equivalent model-based practice for students who cannot attend, and supports preparation and revision between classes.</p>
+  </section>
   <section id="entry">
     <h2>Is this course for you?</h2>
     <p>{courseHandbook.audience} The semester follows one recovery operation at Meridian Station: learn to notice, test, coordinate and adapt before the team brings its skills together.</p>
@@ -51,15 +56,15 @@ const support = courseHandbook.support.map(entry => ({
   </section>
 
   <section id="weekly-rhythm">
-    <h2>How the course runs</h2>
+    <h2>Study and class format</h2>
     <p>Plan for approximately <strong>{weeklyWorkloadHours} hours per teaching week</strong>. Allow more time around the larger assessment deadlines.</p>
     <dl class="guide-rhythm">
       <div><dt>Monday · {courseHandbook.workload.briefingHours} hour</dt><dd><strong>Briefing.</strong> Learn the idea, inspect a worked example and identify the prediction you will test in the lab.</dd></div>
       <div><dt>Friday · {courseHandbook.workload.labHours} hours</dt><dd><strong>Lab.</strong> Practise with feedback, complete the skill check, then try the transfer challenge with changed conditions.</dd></div>
       <div><dt>Independent · about {courseHandbook.workload.independentHours} hours</dt><dd><strong>Prepare and explain.</strong> Read the supplied material, revisit difficult steps and organise the evidence and written work required by the assessment.</dd></div>
     </dl>
-    <p><strong>After playing:</strong> explain the result, save the phase's attempt in your skills passport and export a backup. A worked example demonstrates a different scenario; watching or completing it does not complete your assigned lab.</p>
-    <h3>From briefing to mission accomplished</h3>
+    <p><strong>After each activity:</strong> explain the result and keep your station sheet or online learning record. Online participants can save the phase's attempt in their skills passport and export a backup. A worked example demonstrates a different scenario; watching or completing it does not complete your assigned lab.</p>
+    <h3>Inside the online practical environment</h3>
     <p>Every playable activity gives you a practical job. The skill you are learning helps resolve its obstacle. Follow the current objective in the scene and the <strong>Field operation</strong> panel:</p>
     <ol class="guide-checklist">
       <li><strong>Accept the objective.</strong> Read what must reach whom, what is going wrong and why your intervention matters.</li>
@@ -72,22 +77,21 @@ const support = courseHandbook.support.map(entry => ({
     <p><strong>Start by watching:</strong> an alternate worked example narrates the brief, demonstrates its investigation and intervention, then reviews the completed work. Choose <em>Take control</em> to try that example yourself. Return to your assigned activity for its different conditions.</p>
     <p><strong>Inside the scene:</strong> drag to look around and scroll over the scene to zoom. In fullscreen, X switches between a free cursor for the task panel and mouse-look. Mission controls move your character to the selected station before recording its action. If graphics are paused or unavailable, the same controls perform the action directly.</p>
     <p><strong>If a previously cleared objective reopens:</strong> a supporting answer or requirement changed. Re-test it and repeat the affected intervention and handover; the earlier action record remains visible.</p>
-    <h3>Choose your learning route</h3>
+    <h3>In-person teaching and the online option</h3>
     <div class="guide-routes">
-      <article>
-        <h4>Browser route</h4>
-        <p>Use a current browser on a computer, tablet or phone. The supplied controls support keyboard, touch and pointer input. Headphones are optional; narration has captions.</p>
-        <p>The standard activity controls remain available alongside the 3D scene. If graphics are unavailable, use those controls; without JavaScript, use the complete downloadable worksheet.</p>
-      </article>
-      <article>
-        <h4>Campus or paper route</h4>
-        <p>Each campus pack lists its equipment, facilitator setup, rules and record sheet. Read that list before the session; you do not need to purchase apparatus to take the browser or paper route.</p>
-        <p>Keep equivalent evidence of prediction, action, result and transfer. Label a simulated result accurately; it is different from a measurement on physical equipment.</p>
-      </article>
+      <article><h4>In person · preferred</h4><p>Attend the Monday briefing and Friday facilitated lab. Inspect the supplied models, make predictions, compare results with classmates and carry out the published mission using its station sheets and role packs.</p><p>Each campus pack lists equipment, setup and a paper alternative. Read its preparation section before class. Keep a dated practical record and receiver acknowledgement; completing an additional online run is not required.</p></article>
+      <article><h4>Online · if you cannot attend</h4><p>Use the published briefing, complete narrated example and 3D activity to practise the same concepts and keep the same evidence. Online pairs and groups may share a screen and rotate control while preserving individual contribution records.</p><p>Use keyboard, touch or pointer controls. Captions accompany narration. Standard controls work without 3D graphics, and printable worksheets support study without JavaScript. No live class stream or online enrolment service is provided by this prototype.</p></article>
     </div>
     <p><a href={withBase("/resources/")}>Find all supplied materials and campus packs</a> · <a href={withBase("/policies/")}>Read accessible participation arrangements</a></p>
   </section>
 
+  <section id="materials">
+    <h2>Readings, preparation and equipment</h2>
+    <p>No purchased textbook is required. Each briefing includes a preparation list with time estimates. The supplied case files, rule sheets, worked examples and campus packs contain the required activity material.</p>
+    <p>For in-person study, check the week's campus equipment list and bring a way to record predictions and observations. Facilitators can use the supplied paper models where apparatus is unavailable. The proposed hardware setups require local preparation and have not been physically validated by this website.</p>
+    <p>For online study, use a browser on a computer, tablet or phone. A computer provides more scene space; keyboard/touch controls and printable alternatives remain available. No specialised equipment or software purchase is required.</p>
+    <p><a href={withBase("/resources/")}>Required materials and weekly campus packs →</a></p>
+  </section>
   <section id="timetable">
     <h2>The dated teaching schedule</h2>
     <p>{courseMeta.session}, {courseMeta.year}: <strong>{formatCourseDate(courseMeta.startDate)}–{formatCourseDate(courseMeta.endDate)}</strong>. Each row links directly to its briefing and lab. The teaching pause appears between Weeks 6 and 7.</p>
@@ -96,7 +100,7 @@ const support = courseHandbook.support.map(entry => ({
   </section>
 
   <section id="assessment">
-    <h2>What you submit and why</h2>
+    <h2>Assessment and submission expectations</h2>
     <p>Keep individual weekly records, combine Weeks 1–4 in A1, work with a partner on Weeks 5–8 in A2, then form a team of four for the final recovery. The best ten of twelve Fieldwork records count.</p>
     <AssessmentSummary/>
     <p>Open each brief for its complete deliverables, rubric, checkpoint and downloadable template. Practical completion supplies evidence; you also need the explanation and contribution records named in the brief. A game ending does not determine your academic mark.</p>

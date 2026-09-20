@@ -1,0 +1,402 @@
+{
+  "capturedAt": "2026-09-20T17:05:34.144Z",
+  "results": [
+    {
+      "page": "home",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDThe Academy of Impossible Skills",
+        "What will you study?",
+        "Who is this course for?",
+        "Course information",
+        "What will you be able to do?",
+        "How does the semester fit together?",
+        "How will your learning be assessed?",
+        "Who will guide your learning?",
+        "The academy, wherever you study.",
+        "Learn one skill. Use it in a bigger mission."
+      ],
+      "clipped": []
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Course overview",
+        "Is this course for you?",
+        "What you will learn",
+        "Study and class format",
+        "Readings, preparation and equipment",
+        "The dated teaching schedule",
+        "Assessment and submission expectations",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "people",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Teaching team",
+        "Iona Vale — The Investigator",
+        "Dr Mara Voss — The Architect",
+        "Sol Renn — The Coordinator"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "lab",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Wake a Dead System",
+        "What you will learn in this lab",
+        "The beacon with two faults",
+        "Wake a Dead System",
+        "Systems Garage",
+        "Replace the current activity attempt?",
+        "Keep what you learn.",
+        "Replace this passport?",
+        "Your mission, in plain language#",
+        "Before you arrive#",
+        "What you will learn#",
+        "Supplied case file and rules#",
+        "The two-hour lab#",
+        "In-person lab · preferred route#",
+        "Online lab · equivalent participation and revision#",
+        "What leaves the room#",
+        "Feedback and explanation#",
+        "How to judge the response#",
+        "Closing reflection#",
+        "Afterwards#"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "assessment",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "A1 — The Sealed Workshop",
+        "What this assessment develops",
+        "A1 example: Botanical Transfer Workshop",
+        "How to participate#",
+        "Online control guide: complete an individual workshop trial#",
+        "The brief#",
+        "What you must demonstrate#",
+        "What you hand over#",
+        "Suggested account structure#",
+        "Independent work and feedback#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked",
+        "The Sealed Workshop",
+        "Meridian Station",
+        "Keep what you learn.",
+        "Replace this passport?",
+        "Start a new trial?"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Final Project — Operation Last Light",
+        "What this assessment develops",
+        "Final example: Operation Lamplight",
+        "How to participate#",
+        "Online control guide: recover the archive as a team#",
+        "The brief#",
+        "Roles and responsibilities#",
+        "How the skills become one operation#",
+        "Mission and resolutions#",
+        "What you hand over#",
+        "Team account and presentation#",
+        "Individual defence#",
+        "Feedback and final-week arrangements#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "home",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDThe Academy of Impossible Skills",
+        "What will you study?",
+        "Who is this course for?",
+        "Course information",
+        "What will you be able to do?",
+        "How does the semester fit together?",
+        "How will your learning be assessed?",
+        "Who will guide your learning?",
+        "The academy, wherever you study.",
+        "Learn one skill. Use it in a bigger mission."
+      ],
+      "clipped": []
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Course overview",
+        "Is this course for you?",
+        "What you will learn",
+        "Study and class format",
+        "Readings, preparation and equipment",
+        "The dated teaching schedule",
+        "Assessment and submission expectations",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "people",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Teaching team",
+        "Iona Vale — The Investigator",
+        "Dr Mara Voss — The Architect",
+        "Sol Renn — The Coordinator"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "lab",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Wake a Dead System",
+        "What you will learn in this lab",
+        "The beacon with two faults",
+        "Wake a Dead System",
+        "Systems Garage",
+        "Replace the current activity attempt?",
+        "Keep what you learn.",
+        "Replace this passport?",
+        "Your mission, in plain language#",
+        "Before you arrive#",
+        "What you will learn#",
+        "Supplied case file and rules#",
+        "The two-hour lab#",
+        "In-person lab · preferred route#",
+        "Online lab · equivalent participation and revision#",
+        "What leaves the room#",
+        "Feedback and explanation#",
+        "How to judge the response#",
+        "Closing reflection#",
+        "Afterwards#"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "assessment",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "A1 — The Sealed Workshop",
+        "What this assessment develops",
+        "A1 example: Botanical Transfer Workshop",
+        "How to participate#",
+        "Online control guide: complete an individual workshop trial#",
+        "The brief#",
+        "What you must demonstrate#",
+        "What you hand over#",
+        "Suggested account structure#",
+        "Independent work and feedback#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked",
+        "The Sealed Workshop",
+        "Meridian Station",
+        "Keep what you learn.",
+        "Replace this passport?",
+        "Start a new trial?"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "final",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Final Project — Operation Last Light",
+        "What this assessment develops",
+        "Final example: Operation Lamplight",
+        "How to participate#",
+        "Online control guide: recover the archive as a team#",
+        "The brief#",
+        "Roles and responsibilities#",
+        "How the skills become one operation#",
+        "Mission and resolutions#",
+        "What you hand over#",
+        "Team account and presentation#",
+        "Individual defence#",
+        "Feedback and final-week arrangements#",
+        "Criterion-specific performance standards#",
+        "Format, export and access#",
+        "How it is marked"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "home",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDThe Academy of Impossible Skills",
+        "What will you study?",
+        "Who is this course for?",
+        "Course information",
+        "What will you be able to do?",
+        "How does the semester fit together?",
+        "How will your learning be assessed?",
+        "Who will guide your learning?",
+        "The academy, wherever you study.",
+        "Learn one skill. Use it in a bigger mission."
+      ],
+      "clipped": []
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Course overview",
+        "Is this course for you?",
+        "What you will learn",
+        "Study and class format",
+        "Readings, preparation and equipment",
+        "The dated teaching schedule",
+        "Assessment and submission expectations",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "clipped": []
+    },
+    {
+      "page": "home",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "MASTERMINDThe Academy of Impossible Skills",
+        "What will you study?",
+        "Who is this course for?",
+        "Course information",
+        "What will you be able to do?",
+        "How does the semester fit together?",
+        "How will your learning be assessed?",
+        "Who will guide your learning?",
+        "The academy, wherever you study.",
+        "Learn one skill. Use it in a bigger mission."
+      ],
+      "clipped": []
+    },
+    {
+      "page": "guide",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": 200,
+      "overflow": false,
+      "headings": [
+        "Course guide",
+        "Course overview",
+        "Is this course for you?",
+        "What you will learn",
+        "Study and class format",
+        "Readings, preparation and equipment",
+        "The dated teaching schedule",
+        "Assessment and submission expectations",
+        "Where to get help",
+        "Keep your work between sessions",
+        "Keep what you learn.",
+        "Replace this passport?"
+      ],
+      "clipped": []
+    }
+  ],
+  "errors": []
+}

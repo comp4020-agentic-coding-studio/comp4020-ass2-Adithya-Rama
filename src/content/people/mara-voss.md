@@ -8,9 +8,9 @@ contact: "Fictional staff profile; support is described in the course policies."
 
 > A convincing diagnosis explains both the symptom and the observation that would disprove it.
 
-## Teaching responsibility
+## Course convenor and teaching responsibility
 
-Weeks 3–5, sensor modelling and integrated rehearsals. Mara reviews causal models and asks students to distinguish a useful approximation from a physical measurement.
+Mara convenes the course and leads its systems teaching. Weeks 3–5, sensor modelling and integrated rehearsals. Mara reviews causal models and asks students to distinguish a useful approximation from a physical measurement.
 
 ## What to bring to a discussion
 

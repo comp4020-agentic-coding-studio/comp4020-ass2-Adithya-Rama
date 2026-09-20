@@ -61,3 +61,9 @@ The user supplied an external critique contrasting a sequence of training exhibi
 After the agent explained the desired loop as objective, exploration, obstacle, investigation, skill, consequence and recovery, the user confirmed: “exactly you have now precisely understood what i m after”. They said students should feel like they are playing a game, learn along the way and finish “a proud agent” after a successful recovery.
 
 This is approval of the design direction and an aspiration for student enjoyment. It is not evidence that the user played or accepted the resulting implementation. The agent's implementation, independent review and validation are recorded in [FIELD-MISSIONS.md](FIELD-MISSIONS.md).
+
+## 21 September 2026 — academic course first; preferred in-person delivery
+
+The author accepted the lab, assignment and project work but said the site still needed to look and function as a university course website. They supplied the Round Trip course and requested an ANU-style overview of the course code, purpose, audience, learning and study expectations before entering activities.
+
+They then clarified: “the course shld be advertised as in-person/online with in-person being the major preference” and explained that the 3D activities exist for students who cannot attend. This supports a preferred facilitated campus route, an equivalent online route and a homepage that introduces the academic course. It does not establish physical classroom delivery, live online teaching or student acceptance of the new pages.

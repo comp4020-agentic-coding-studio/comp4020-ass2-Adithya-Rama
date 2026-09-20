@@ -5,23 +5,88 @@ import CourseOrientation from "../components/CourseOrientation.astro";
 import CourseFacts from "../components/CourseFacts.astro";
 import AssessmentSummary from "../components/AssessmentSummary.astro";
 import {learningOutcomes,weeks} from "../data/curriculum";
+import {courseHandbook,weeklyWorkloadHours} from "../data/course-handbook";
+import {getPublishedCollection} from "astro-course-university/content";
 import {withBase} from "astro-theme-university/url";
 import {courseMeta} from "../course-config";
-import "../styles/demonstration.css";
+const people=await getPublishedCollection("people");
+const convenor=people.find(person=>person.id===courseHandbook.convenorId)!;
 ---
 <CourseLayout title={courseMeta.title} description={courseMeta.description} home>
-<section class="academy-hero">
- <div class="hero-copy"><p class="eyebrow">SLOP4408 · THE ACADEMY OF IMPOSSIBLE SKILLS</p><h1>MASTER<br class="hero-break"/>MIND<span>Learn the art<br/>of the impossible.</span></h1><p class="hero-description">Notice what others miss. Understand how things work. Recover what seems unreachable.</p><div class="actions"><a class="button primary" href={withBase("/academy/")}>Enter the academy <span aria-hidden="true">↗</span></a><a class="button ghost" href={withBase("/lectures/")}>Explore the course</a></div><p class="hero-caption">An original, playable Slop University course.<br/>Twelve weeks of extraordinary skills.</p></div>
- <div class="academy-illustration"><AcademyMark/><div class="art-caption"><span>01 / THE TRAINING GROUND</span><span>EST. 2027</span></div></div>
-</section>
-<div class="course-ribbon"><span>THIRD-PERSON EXPLORATION</span><span>12 INTERACTIVE LABS</span><span>ONE IMPOSSIBLE RECOVERY</span></div>
+<header class="course-introduction">
+ <div>
+  <p class="eyebrow">SLOP UNIVERSITY · UNDERGRADUATE COURSE</p>
+  <p class="course-code">{courseMeta.code} · {courseMeta.session}, {courseMeta.year}</p>
+  <h1>MASTERMIND<span>The Academy of Impossible Skills</span></h1>
+  <p class="course-lead">{courseHandbook.overview}</p>
+  <p class="delivery-line"><strong>In-person teaching preferred.</strong> Online participation is available if you cannot attend on campus.</p>
+  <div class="actions"><a class="button primary" href="#overview">Explore the course overview</a><a class="button ghost" href={withBase("/course-guide/")}>Study &amp; class information</a></div>
+ </div>
+ <figure><AcademyMark/><figcaption>Observation. Systems. Evidence. Teamwork.<br/>Practised through an original recovery mission.</figcaption></figure>
+</header>
 <CourseFacts/>
-<CourseOrientation/>
-<section class="manifesto section-grid"><div><p class="eyebrow">CURIOSITY IS THE ENTRY REQUIREMENT</p><h2>The skills you've<br/>always wondered about.</h2></div><div><p class="large-copy">How do you remember a room? Understand a mechanism? Trace a digital contradiction? Get a team through a problem that keeps changing?</p><p>Learn through original training equipment, navigable spaces and people with different information. Make a prediction. Try it. See what happens. Then use the skill somewhere new.</p><p>For fourth-year students drawn to puzzles, systems and collaborative problem-solving. No programming or security background is needed.</p></div></section>
-<section class="demo-library-intro"><div><p class="eyebrow">THE DEMONSTRATION STUDIO</p><h2>Watch the thinking.<br/>Then take the controls.</h2><p>See a coach work through a complete example in the 3D academy. Pause at a decision, inspect the apparatus and try it yourself. Every lab and assessment has its own different scenario and finished sample submission.</p></div><div><h3>Begin with a front-row seat.</h3><p>Sixteen guided experiences, with chapter controls, clear explanations and feedback shaped by your actual attempts.</p><a class="button primary" href={withBase("/demonstrations/")}>Explore the worked examples ↗</a></div></section>
-<section class="capability-index"><p class="eyebrow">YOUR SEMESTER / TWELVE CAPABILITIES</p><h2>Every week changes what you can do.</h2><div class="skill-rows">{weeks.map(w=><a href={withBase("/sessions/week-"+String(w.week).padStart(2,"0")+"/")}><span class="skill-number">{String(w.week).padStart(2,"0")}</span><span><strong>{w.title}</strong><small>{w.skill}</small></span><span class="skill-arrow" aria-hidden="true">↗</span></a>)}</div></section>
-<section class="mission-feature"><div><p class="eyebrow">FINAL MISSION / OPERATION LAST LIGHT</p><h2>Meridian is going dark.<br/>The archive must survive.</h2><p>A failed support system. Contradictory copies. Six areas of a research station, and four roles with different information.</p><p>Repair the equipment, verify the archive, reach an agreement and carry out a recovery you can defend. Everything you learned has a job to do.</p><a class="button primary" href={withBase("/operation/")}>Explore the final mission ↗</a></div><div class="mission-coordinate" aria-hidden="true"><span>MERIDIAN<br/>STATION</span><b>27</b><small>ARCHIVE INTEGRITY / UNKNOWN<br/>RECOVERY TEAM / REQUESTED</small></div></section>
-<div class="section-grid"><section><p class="eyebrow">A COURSE YOU CAN ACTUALLY FOLLOW</p><h2>Learn. Try. Transfer.</h2><p>Monday: one-hour briefing. Friday: two-hour lab. Around three further hours for preparation and assessment.</p><p>22 February–28 May 2027, with a 5–18 April break. Every lab offers campus and browser routes. Remote teams can share a screen and rotate control; solo students can switch roles.</p><a href={withBase("/sessions/week-01/")}>Try the observation lab →</a></section><section><p class="eyebrow">ASSESSMENT / 100%</p><h2>Show what you can do.</h2><AssessmentSummary/><p class="small">Practical evidence, transfer, diagnosis and explanation. Game endings do not determine academic marks.</p></section></div>
-<section><p class="eyebrow">WHAT YOU LEAVE WITH</p><ol class="outcome-list">{learningOutcomes.map(o=><li><span>{o.id}</span><div><strong>{o.title}</strong><span>{o.description}</span></div></li>)}</ol></section>
-<div class="section-grid"><section><h2>Three instructors.<br/>Very different questions.</h2><p>Mara Voss asks how it works. Iona Vale asks what supports the claim. Sol Renn asks whether the next person can act on your instructions.</p><a href={withBase("/people/")}>Meet the teaching team ↗</a></section><section><h2>Start anywhere.</h2><p>Every briefing, lab, assessment and sample is open. Your skills passport saves locally, with exports you can keep. Accessible controls and printable teaching materials accompany the 3D experience.</p><a href={withBase("/policies/")}>Access, collaboration and course policies ↗</a></section></div>
+<nav class="overview-contents" aria-label="Course overview sections">
+ <a href="#overview">Overview</a><a href="#audience">Who it is for</a><a href="#outcomes">Learning outcomes</a><a href="#study">Study &amp; classes</a><a href="#assessment">Assessment</a><a href="#teaching-team">Teaching team</a>
+</nav>
+<div class="course-overview-layout">
+ <div>
+  <section id="overview">
+   <p class="eyebrow">COURSE OVERVIEW</p><h2>What will you study?</h2>
+   <p>How do you notice what others miss, remember an important sequence, work out why a mechanism has stopped, or decide which account to trust? This course brings those questions together through observation, deliberate recall, spatial reasoning, model mechanisms and circuits, digital evidence, communication and negotiation.</p>
+   <p>You will learn to make a prediction, examine the relevant evidence, test a solution and explain its limits. The semester builds towards <strong>Operation Last Light</strong>: a team recovery at fictional Meridian Station where the archive, equipment and people depend on one another.</p>
+   <p>The agent setting gives each skill a practical purpose. In-person briefings explain the ideas; facilitated labs let you handle models, compare evidence and work with other students; assessments ask you to combine the skills and defend your decisions.</p>
+  </section>
+  <section id="audience">
+   <h2>Who is this course for?</h2><p>{courseHandbook.audience}</p>
+   <p><strong>Entry knowledge:</strong> {courseHandbook.prerequisites}</p>
+   <p><strong>Level {courseMeta.level}:</strong> the advanced challenge is combining different kinds of evidence, diagnosing unfamiliar situations, coordinating a team and revising a decision when conditions change. The individual teaching models start with accessible rules.</p>
+  </section>
+ </div>
+ <aside class="academic-sidebar" aria-label="Course information">
+  <h2>Course information</h2>
+  <dl><div><dt>Offered by</dt><dd>{courseHandbook.academicUnit}<br/>Slop University</dd></div><div><dt>Course convenor</dt><dd><a href={withBase("/people/"+convenor.id+"/")}>{convenor.data.title.split(" — ")[0]}</a></dd></div><div><dt>Mode of study</dt><dd>{courseHandbook.delivery}</dd></div><div><dt>Weekly commitment</dt><dd>About {weeklyWorkloadHours} hours, including preparation and assessment work.</dd></div><div><dt>Required materials</dt><dd>Supplied briefings, rules, case files and worksheets. No purchased textbook is required.</dd></div></dl>
+  <a href={withBase("/course-guide/#timetable")}>Teaching dates &amp; timetable →</a><a href={withBase("/course-guide/#help")}>Study support &amp; getting help →</a><a href={withBase("/policies/")}>Course policies &amp; accessible participation →</a>
+ </aside>
+</div>
+<section id="outcomes" class="academic-section">
+ <p class="eyebrow">LEARNING OUTCOMES</p><h2>What will you be able to do?</h2><p>On successful completion, you should be able to:</p>
+ <ol class="outcome-list overview-outcomes">{learningOutcomes.map(outcome=><li><span>{outcome.id}</span><div><strong>{outcome.title}</strong><span>{outcome.description}</span></div></li>)}</ol>
+ <p class="small">These outcomes are practised in the weekly activities and assessed through the records, explanations and team work specified in each brief.</p>
+</section>
+<section id="study" class="academic-section">
+ <p class="eyebrow">STUDY &amp; CLASSES</p><h2>How does the semester fit together?</h2>
+ <p>Each week includes a {courseHandbook.workload.briefingHours}-hour Monday briefing, a {courseHandbook.workload.labHours}-hour Friday lab and about {courseHandbook.workload.independentHours} hours of independent preparation and assessment work. Read the briefing before the practical activity.</p>
+ <p><strong>In person:</strong> attend the facilitated session, work with the supplied apparatus or paper models, compare predictions with your classmates and explain the result. <strong>Online:</strong> use the same briefing and supplied rules, inspect a narrated worked example and carry out the equivalent 3D activity. Keep the same required learning record.</p>
+ <div class="study-stages">{courseHandbook.stages.map(stage=><article><p class="eyebrow">WEEKS {stage.from}–{stage.to}</p><h3>{stage.title}</h3><p>{stage.description}</p><ul>{weeks.filter(week=>week.week>=stage.from&&week.week<=stage.to).map(week=><li><a href={withBase("/lectures/week-"+String(week.week).padStart(2,"0")+"/")}>Week {week.week}: {week.title}</a></li>)}</ul></article>)}</div>
+ <p><a href={withBase("/course-guide/#timetable")}>View the dated class schedule</a> · <a href={withBase("/course-guide/#materials")}>Preparation, readings &amp; equipment</a></p>
+</section>
+<section id="assessment" class="academic-section">
+ <p class="eyebrow">ASSESSMENT</p><h2>How will your learning be assessed?</h2>
+ <p>Keep individual weekly fieldwork records, combine the first four weeks in an individual workshop, work in pairs on the next four weeks, then bring the semester together in a four-person recovery project. The best ten of twelve fieldwork records count.</p>
+ <AssessmentSummary/>
+ <p>In-person teams use the published campus stations, role packs and record sheets. Online teams can share a screen and rotate control through the equivalent mission; each member keeps their contribution evidence. Both routes use the same learning outcomes, deliverables and rubric.</p>
+ <p>Assessment considers practical evidence, diagnosis, transfer and explanation. A successful simulation supplies evidence to discuss; it does not automatically award an academic mark.</p><a href={withBase("/assessments/")}>Read the full assessment requirements →</a>
+</section>
+<section id="teaching-team" class="academic-section">
+ <p class="eyebrow">TEACHING TEAM &amp; SUPPORT</p><h2>Who will guide your learning?</h2>
+ <div class="teaching-summary">{people.map(person=><article><h3><a href={withBase("/people/"+person.id+"/")}>{person.data.title.split(" — ")[0]}</a></h3><p>{person.id===courseHandbook.convenorId&&<strong>Course convenor · </strong>}{person.data.role}</p><p>{person.data.description}</p></article>)}</div>
+ <p><a href={withBase("/people/")}>Teaching responsibilities and profiles</a> · <a href={withBase("/course-guide/#help")}>Find the right support for your question</a></p>
+</section>
+<section id="learning-environment" class="academic-section">
+ <p class="eyebrow">ONLINE LEARNING &amp; BETWEEN-CLASS PRACTICE</p><h2>The academy, wherever you study.</h2>
+ <p>The 3D academy lets students who cannot attend in person practise the course's models and complete an equivalent mission. It also supports preparation, revision and catching up between campus sessions. Every lab and assessment has a different worked example to watch or control before undertaking the assigned task.</p>
+ <p>Keyboard and touch controls accompany each activity. Printable worksheets and campus packs provide alternatives when graphics or scripting are unavailable. Label simulated readings accurately; they are evidence from a model.</p>
+ <CourseOrientation/>
+ <div class="actions"><a class="button primary" href={withBase("/lectures/")}>Find your week's briefing</a><a class="button" href={withBase("/academy/")}>Visit the online academy</a><a class="button" href={withBase("/demonstrations/")}>Browse worked examples</a></div>
+ <p class="small">This is an original fictional Slop University course. Its staff and setting are fictional. Your practice saves in this browser; exports are backups and learning records, not institutional submissions.</p>
+</section>
 </CourseLayout>
+<style>
+ .course-introduction{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:2.5rem;padding:clamp(1.3rem,3vw,2.8rem);margin-top:1.2rem;background:var(--academy-dark);color:#f3f0e7;align-items:center}.course-introduction .eyebrow,.course-code{color:#e1c38f}.course-code{font-size:.9rem;margin-bottom:.8rem}.course-introduction h1{font-size:clamp(2rem,4vw,3.9rem);color:#fff9e9;max-width:none;letter-spacing:-.04em;margin:0 0 1rem}.course-introduction h1 span{display:block;font-size:clamp(1.15rem,2vw,1.7rem);font-weight:450;letter-spacing:0;line-height:1.35;margin-top:.6rem}.course-lead{max-width:66ch;color:#e2e9dc;font-size:1rem}.delivery-line{color:#e7d2ac;font-size:.88rem}
+ .course-introduction .button.primary{background:#e3c897;color:#152b23;border-color:#e3c897}.course-introduction .button.ghost{background:transparent;color:#fff9e9;border-color:#9aa88d}.course-introduction figure{margin:0;min-width:0}.course-introduction svg{width:100%;max-height:245px}.course-introduction figcaption{text-align:center;font-size:.75rem;line-height:1.65;color:#d6dfce}
+ .overview-contents{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;border-bottom:1px solid var(--academy-line);padding:.3rem 0 1rem}.overview-contents a{font-size:.88rem;line-height:1.6;padding-block:.4rem}.course-overview-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,1fr);gap:3rem;margin:2rem 0}.course-overview-layout section:first-child h2{margin-top:.4rem}.academic-sidebar{border:1px solid var(--academy-line);padding:1.4rem;align-self:start;background:#e9e9dd}.academic-sidebar h2{font-size:1.15rem;margin:0 0 1rem;letter-spacing:0}.academic-sidebar dl{margin:0}.academic-sidebar dl>div{padding:.8rem 0;border-bottom:1px solid var(--academy-line)}.academic-sidebar dt{font-size:.78rem;font-weight:700}.academic-sidebar dd{font-size:.9rem;line-height:1.6;margin:.25rem 0 0}.academic-sidebar>a{display:block;font-size:.85rem;line-height:1.6;margin-top:1rem}
+ section[id]{scroll-margin-top:6rem}.academic-section{padding:1.8rem 0;border-top:1px solid var(--academy-line)}.academic-section>h2{margin-top:.2rem}.overview-outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem;margin-bottom:1.2rem}.study-stages,.teaching-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:1.6rem 0}.study-stages article,.teaching-summary article{min-width:0;border-top:2px solid var(--academy-line);padding-top:1rem}.study-stages h3,.teaching-summary h3{margin-top:.3rem}.study-stages .eyebrow{margin-bottom:.5rem}.study-stages li{font-size:.87rem;margin:.55rem 0}.teaching-summary p{font-size:.9rem}
+ @media(max-width:850px){.course-introduction{grid-template-columns:1fr}.course-introduction figure{display:none}.course-overview-layout{grid-template-columns:1fr;gap:1rem}.study-stages,.teaching-summary{grid-template-columns:1fr;gap:1rem}.overview-outcomes{grid-template-columns:1fr}}
+ @media(max-width:400px){.course-introduction h1{font-size:1.95rem}.course-introduction{padding:1.2rem}.course-introduction .actions>a{width:100%;text-align:center}.course-introduction .eyebrow{font-size:.64rem}}
+ @media print{.course-introduction{display:block;background:white;color:black;padding:0}.course-introduction h1,.course-introduction p,.course-introduction h1 span{color:black}.course-introduction figure,.overview-contents,.actions{display:none}.academic-sidebar{background:white}.course-overview-layout,.study-stages,.teaching-summary{display:block}.academic-section,article{break-inside:avoid}}
+</style>

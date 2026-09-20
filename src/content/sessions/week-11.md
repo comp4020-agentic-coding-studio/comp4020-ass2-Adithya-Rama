@@ -33,13 +33,13 @@ Version 1 no longer works. A new paragraph alone cannot reopen a passage: select
 
 **What you will produce:** Preserved Version 1, a distinct Version 2, and an explanation of the changed dependency, responsibility and remaining uncertainty.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Bring one earlier diagnostic record and one communication record (15 minutes). Read IM-01 and write a baseline plan before opening IM-02 (15 minutes). Direct entrants may use the labelled sample.
 
-Read the [briefing](/lectures/week-11/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-11.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-11/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-11.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -71,7 +71,19 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+**Equipment:** Baseline and disruption cards, role cards, previous lab records and two labelled plan sheets. Physical props from earlier sessions are optional.
+
+**Setup:** Publish the disruption cards as course material. Have teams complete and date their baseline before selecting one. Provide a clearly labelled baseline for students entering directly.
+
+**What you do together:** The facilitator records decisions and checks whether all roles receive the changed plan. Avoid surprise rules or performance theatre. Allow the team to pause, inspect evidence and replay the revised sequence.
+
+The [printable facilitator pack](/campus/week-11.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -97,16 +109,6 @@ After each practical phase, open **After playing · explain and save this attemp
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 Select **Replacement dependency to rehearse**: the west relay under the passage closure, or supplied reference readings under the meter failure. Select **Rehearse the replacement dependency** before **Verify revised plan and rehearsal**. An unsupported choice leaves the intervention unavailable; the computer checks the dependency, while a teacher reviews the explanation.
-
-## Campus route
-
-**Equipment:** Baseline and disruption cards, role cards, previous lab records and two labelled plan sheets. Physical props from earlier sessions are optional.
-
-**Setup:** Publish the disruption cards as course material. Have teams complete and date their baseline before selecting one. Provide a clearly labelled baseline for students entering directly.
-
-**Activity:** The facilitator records decisions and checks whether all roles receive the changed plan. Avoid surprise rules or performance theatre. Allow the team to pause, inspect evidence and replay the revised sequence.
-
-The [printable facilitator pack](/campus/week-11.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

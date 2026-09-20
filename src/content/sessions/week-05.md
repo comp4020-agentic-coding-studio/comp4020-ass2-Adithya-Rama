@@ -30,13 +30,13 @@ The beacon is dark. Random replacement can conceal the fault, and supply voltage
 
 **What you will produce:** Measurements locating the original fault, a replacement and verification trace, and a comparison with a different fault.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Trace EL-01 from source to return (10 minutes). Write predicted lamp states for an open switch and a broken return (10 minutes).
 
-Read the [briefing](/lectures/week-05/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-05.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-05/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-05.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -68,7 +68,21 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+[Printable circuit and grid sheet](/campus/circuit-sensor-sheet.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** Preferred: battery-powered educational circuit kit with a lamp, switch and protected low-voltage source; labels and fault cards. No mains supplies. A printed circuit with voltage cards is an equally available conceptual route.
+
+**Setup:** Prepare a healthy series loop and label both sides of each component. The facilitator introduces one open fault at a time. Verify the kit's manufacturer instructions and component ratings before class; the proposed physical setup has not been hardware-tested by this prototype.
+
+**What you do together:** Students submit predicted measurements before using an instrument or revealing voltage cards. The facilitator controls power and component changes. Distinguish ideal-model answers from the actual measured tolerance of the kit.
+
+The [printable facilitator pack](/campus/week-05.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -92,18 +106,6 @@ Your mission outcome is practice evidence, not an academic grade. Explain its re
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
-
-## Campus route
-
-[Printable circuit and grid sheet](/campus/circuit-sensor-sheet.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
-
-**Equipment:** Preferred: battery-powered educational circuit kit with a lamp, switch and protected low-voltage source; labels and fault cards. No mains supplies. A printed circuit with voltage cards is an equally available conceptual route.
-
-**Setup:** Prepare a healthy series loop and label both sides of each component. The facilitator introduces one open fault at a time. Verify the kit's manufacturer instructions and component ratings before class; the proposed physical setup has not been hardware-tested by this prototype.
-
-**Activity:** Students submit predicted measurements before using an instrument or revealing voltage cards. The facilitator controls power and component changes. Distinguish ideal-model answers from the actual measured tolerance of the kit.
-
-The [printable facilitator pack](/campus/week-05.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

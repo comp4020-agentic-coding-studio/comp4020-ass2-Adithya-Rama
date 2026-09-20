@@ -30,13 +30,13 @@ Three plausible files have different contents. A newer timestamp can hide an una
 
 **What you will produce:** A comparison of at least two copies and a short written decision timeline showing the original requirement, your supported choice, the amendment and your revised choice.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Read DI-01 and DI-02 (20 minutes). Write one statement the digest comparison establishes and one it cannot establish.
 
-Read the [briefing](/lectures/week-06/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-06.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-06/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-06.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -68,7 +68,19 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+**Equipment:** Printed evidence cards or the downloadable text pack, a blank timeline and coloured markers with text labels. No external account or live system is involved.
+
+**Setup:** Give each group all three archive records and the original signed reference M-42. Preserve the initial choice, then publish the amended signed reference M-99 for the transfer stage.
+
+**What you do together:** Ask students to quote the exact record supporting each conclusion. A partner tries to produce a different explanation that fits the same observations. Score traceability and limits rather than dramatic speculation.
+
+The [printable facilitator pack](/campus/week-06.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -92,16 +104,6 @@ Your mission outcome is practice evidence, not an academic grade. Explain its re
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
-
-## Campus route
-
-**Equipment:** Printed evidence cards or the downloadable text pack, a blank timeline and coloured markers with text labels. No external account or live system is involved.
-
-**Setup:** Give each group all three archive records and the original signed reference M-42. Preserve the initial choice, then publish the amended signed reference M-99 for the transfer stage.
-
-**Activity:** Ask students to quote the exact record supporting each conclusion. A partner tries to produce a different explanation that fits the same observations. Score traceability and limits rather than dramatic speculation.
-
-The [printable facilitator pack](/campus/week-06.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

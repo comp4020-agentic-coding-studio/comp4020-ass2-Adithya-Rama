@@ -1,0 +1,24 @@
+---
+import {withBase} from 'astro-theme-university/url';
+import {campusActivities,assessmentStudy} from '../data/study-modes';
+import {weekByNumber} from '../data/curriculum';
+interface Props {week?:number;assessment?:string}
+const {week,assessment}=Astro.props;
+const lesson=week?weekByNumber(week):null;
+const info=assessment?assessmentStudy[assessment]:null;
+const pack=week?'/campus/week-'+String(week).padStart(2,'0')+'.md':info!.pack;
+---
+<section class="study-routes" aria-label="How you will study this activity">
+ <p class="eyebrow">IN PERSON (PREFERRED) · ONLINE AVAILABLE</p>
+ <h2>{lesson?'What you will learn in this lab':'What this assessment develops'}</h2>
+ <p>{lesson?lesson.summary:info!.learn}</p>
+ {lesson&&<p><strong>Keep this evidence:</strong> {lesson.output.replaceAll('-',' ')}. <strong>Later use:</strong> {lesson.missionUse}</p>}
+ <div class="study-route-options">
+  <section><h3>In person · facilitated session</h3><p>{week?campusActivities[week]:info!.campus}</p><a href={withBase(pack)}>{week||assessment!=='fieldwork'?'Read the campus activity pack →':'Find weekly campus packs →'}</a></section>
+  <section><h3>Online · when you cannot attend</h3><p>{week?'Read the same briefing and rules, watch the separate worked example, then complete the online activity below. Its 3D equipment and controls let you practise the same reasoning and record the result. Use the supplied worksheet if graphics are unavailable.':info!.online}</p><p class="small">The same outcomes, deliverables and rubric apply. Keep predictions, actions, results and limitations, and identify whether a result came from apparatus, paper rules or a simulation.</p></section>
+ </div>
+ <p class="small">The online environment also supports preparation and revision between classes. Campus packs specify the proposed teaching setup; physical apparatus has not been validated by this website prototype.</p>
+</section>
+<style>
+ .study-routes{margin:1.5rem 0 2rem;padding:1.3rem;border:1px solid var(--academy-line);border-left:4px solid #8a5c13;background:#f7f5ed}.study-routes h2{margin:.3rem 0 1rem;font-size:1.5rem}.study-route-options{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.study-route-options>section{min-width:0}.study-route-options h3{font-size:1.05rem;margin:.7rem 0}.study-routes .eyebrow{font-size:.67rem}.study-routes>p:last-child{margin:1rem 0 0}@media(max-width:700px){.study-route-options{grid-template-columns:1fr;gap:.6rem}}
+</style>

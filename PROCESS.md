@@ -16,6 +16,8 @@ This became a shared performed-operation model: verified equipment enables an in
 
 The agent's independent review found paused-scene actions could stall, historical saves could satisfy a new prerequisite, and a collected original remained visible on its pedestal. Those findings produced changes to movement, validation and rendering. I treat these as agent observations, not personal playtesting. [Logic tests](spec/field-operation.test.ts) and [rendered journeys](tests/browser/field-world.e2e.ts) examine different promises; neither establishes learning or enjoyment.
 
+My next correction was that this must still introduce a university course. I requested the purpose, audience, outcomes, study expectations and staff before activity entry, then made in-person teaching the preferred route. The 3D academy serves students unable to attend and supports revision. The agent compared my supplied example and ANU pages, then checked that every activity described its campus task and equivalent online evidence.
+
 I remain responsible for the course's purpose and for challenging substantial work that misses it. Originality, appeal and educational value remain human judgements. The intended result is a student who arrives for the agent fantasy and leaves better able to observe, test, coordinate and revise. Local verification and publication remain separate.
 
 *Edited with coding-agent assistance from my supplied [account and subsequent directions](docs/AUTHOR-NOTES.md).*

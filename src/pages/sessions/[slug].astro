@@ -1,5 +1,6 @@
 ---
 import {render} from "astro:content";
+import StudyRoutes from "../../components/StudyRoutes.astro";
 import {getPublishedCollection} from "astro-course-university/content";
 import {withBase} from "astro-theme-university/url";
 import CourseLayout from "../../layouts/CourseLayout.astro";
@@ -12,8 +13,9 @@ const {session}=Astro.props;const {Content}=await render(session);const week=ses
 ---
 <CourseLayout title={session.data.title} description={session.data.description} eyebrow={"LAB / WEEK "+String(week).padStart(2,"0")} wide>
 <div class="fact-strip"><span>{formatCourseDate(session.data.date)}</span><span>2-hour lab</span><span>Fieldwork due 17:00 Canberra</span></div>
-<nav class="actions" aria-label="Lab resources"><a class="button" href="#lab-guide">Read step-by-step instructions ↓</a><a class="button primary" href="#exercise">Enter browser lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
-<p class="small"><strong>What to do:</strong> follow the Lab mission checklist and named controls below. A phase ends when you have checked its result; explain and save that attempt afterwards, before switching phases. <strong>Need an example first?</strong> The demonstration uses a different scenario and keeps separate practice progress.</p>
+<StudyRoutes week={week}/>
+<nav class="actions" aria-label="Lab resources"><a class="button" href="#lab-guide">Read the complete lab instructions ↓</a><a class="button primary" href="#exercise">Open online lab ↓</a><a class="button" href={withBase("/lectures/week-"+String(week).padStart(2,"0")+"/")}>Read the briefing</a><a class="button" download href={withBase("/campus/week-"+String(week).padStart(2,"0")+".md")}>Download campus pack</a></nav>
+<p class="small"><strong>For online participation and revision:</strong> follow the Lab mission checklist and named controls below. Complete the verified intervention and receiving handover; explain and save that attempt before switching phases. <strong>Need an example first?</strong> The demonstration uses a different scenario and keeps separate practice progress.</p>
 <DemonstrationLink id={"lab-"+String(week).padStart(2,"0")}/>
 <div id="exercise"><TrainingLab week={week}/></div>
 <PassportTools compact/>

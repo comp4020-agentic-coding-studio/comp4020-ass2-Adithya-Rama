@@ -30,13 +30,13 @@ The passage is isolated because its module faces the wrong way. Raising it canno
 
 **What you will produce:** The matched connectors for the three targets, a prediction of where the original north port moves, and a labelled spatial explanation.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Read SP-01 coordinate conventions (10 minutes). Sketch an everyday object from above and the side, labelling one shared feature (10 minutes).
 
-Read the [briefing](/lectures/week-03/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-03.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-03/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-03.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -67,7 +67,21 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+[Printable connector and mechanism sheet](/campus/spatial-mechanism-sheet.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** One asymmetric L-shaped connector card, a labelled north arrow and three level sheets. Tactile or spoken orientation descriptions provide an equivalent route.
+
+**Setup:** Cut an L-shaped card with north/east ports and one marked original north tip. Draw three floor levels. Rotate clockwise in quarter-turns; move the same card between levels without turning it.
+
+**What you do together:** Before turning the card, students record where each labelled port will face. Rotate it against the fixed north arrow, then move it between level sheets without turning it. A partner checks direction and level separately. For a nonvisual route, use spoken direction mappings and tactile or numbered level markers.
+
+The [printable facilitator pack](/campus/week-03.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -91,18 +105,6 @@ Your mission outcome is practice evidence, not an academic grade. Explain its re
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
-
-## Campus route
-
-[Printable connector and mechanism sheet](/campus/spatial-mechanism-sheet.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
-
-**Equipment:** One asymmetric L-shaped connector card, a labelled north arrow and three level sheets. Tactile or spoken orientation descriptions provide an equivalent route.
-
-**Setup:** Cut an L-shaped card with north/east ports and one marked original north tip. Draw three floor levels. Rotate clockwise in quarter-turns; move the same card between levels without turning it.
-
-**Activity:** Before turning the card, students record where each labelled port will face. Rotate it against the fixed north arrow, then move it between level sheets without turning it. A partner checks direction and level separately. For a nonvisual route, use spoken direction mappings and tactile or numbered level markers.
-
-The [printable facilitator pack](/campus/week-03.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

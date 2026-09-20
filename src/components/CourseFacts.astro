@@ -11,12 +11,12 @@ const {showGuideLink = true} = Astro.props;
     <div><dt>Teaching period</dt><dd>{courseMeta.session}, {courseMeta.year}</dd></div>
     <div><dt>Level</dt><dd>{courseMeta.level} · undergraduate</dd></div>
     <div><dt>Weekly workload</dt><dd>About {weeklyWorkloadHours} hours</dd></div>
-  </dl>
+  <div><dt>Mode of study</dt><dd>In person preferred · Online available</dd></div></dl>
   {showGuideLink && <a href={withBase("/course-guide/")}>Course guide &amp; getting started →</a>}
 </section>
 <style>
   .course-facts {margin: 1.5rem 0; padding: 1rem 0; border-block: 1px solid var(--academy-line);}
-  .course-facts dl {display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem 1.4rem; margin: 0;}
+  .course-facts dl {display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .9rem 1.4rem; margin: 0;}
   .course-facts dl > div {min-width: 0;}
   .course-facts dt {font-size: .76rem; color: var(--academy-muted); line-height: 1.5;}
   .course-facts dd {margin: .2rem 0 0; font-size: .93rem; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere;}

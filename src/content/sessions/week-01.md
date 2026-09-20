@@ -30,13 +30,13 @@ An urgent message says the room was abandoned. Its objects establish conditions,
 
 **What you will produce:** A recalled display reading, five classified statements, and a short account of one detail or assumption you corrected.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Read the inventory and the observation/interpretation distinction below (10 minutes). Practise describing one ordinary object without naming its purpose (5 minutes). Do not memorise the answer key.
 
-Read the [briefing](/lectures/week-01/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-01.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-01/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-01.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -76,7 +76,21 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+[Printable scene and memory cards](/campus/perception-cards.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** A table, printed clock/display cards, cup/flask cards, a ledger/map, open/closed door cards and the supplied written claims. All equipment can be paper.
+
+**Setup:** Print the five scene statements and arrange simple cup, clock and door cards to match them. Conceal the cards for recall. Change the scene using the complete published check/transfer inventories.
+
+**What you do together:** Each student writes independently before pairs compare. The facilitator reveals the printed inventory and asks students to classify their own errors. Do not reward speed or secretly change the scene during inspection.
+
+The [printable facilitator pack](/campus/week-01.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -100,18 +114,6 @@ Your mission outcome is practice evidence, not an academic grade. Explain its re
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
-
-## Campus route
-
-[Printable scene and memory cards](/campus/perception-cards.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
-
-**Equipment:** A table, printed clock/display cards, cup/flask cards, a ledger/map, open/closed door cards and the supplied written claims. All equipment can be paper.
-
-**Setup:** Print the five scene statements and arrange simple cup, clock and door cards to match them. Conceal the cards for recall. Change the scene using the complete published check/transfer inventories.
-
-**Activity:** Each student writes independently before pairs compare. The facilitator reveals the printed inventory and asks students to classify their own errors. Do not reward speed or secretly change the scene during inspection.
-
-The [printable facilitator pack](/campus/week-01.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

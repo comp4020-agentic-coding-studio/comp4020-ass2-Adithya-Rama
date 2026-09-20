@@ -6,7 +6,7 @@ export const graphCollections=["sessions","assessments","lectures","people"];
 export const courseApiCollections=[...graphCollections.map(key=>({key})),{key:"policies",dir:"pages/policies"}];
 export const siteConfig=defineSiteConfig({
  ...slopBranding,name:"Slop University",
- links:[{text:"Overview",href:"/"},{text:"Weeks",href:"/lectures/"},{text:"Labs",href:"/sessions/"},{text:"Assessments",href:"/assessments/"},{text:"Academy",href:"/academy/"},{text:"Final Mission",href:"/operation/"}],
+ links:[{text:"Overview",href:"/"},{text:"Course guide",href:"/course-guide/"},{text:"Weeks",href:"/lectures/"},{text:"Labs",href:"/sessions/"},{text:"Assessments",href:"/assessments/"},{text:"People",href:"/people/"}],
  licence:"CC-BY-NC-SA-4.0",socialImage:"/src/assets/images/card.png",
  socialImageAlt:"The original Meridian academy for "+courseMeta.code+" — "+courseMeta.title,
 });

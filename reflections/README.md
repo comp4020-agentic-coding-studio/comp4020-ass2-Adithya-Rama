@@ -20,6 +20,10 @@ Causal rules and records can be tested. Enjoyment, learning and the feeling of b
 
 *Edited with coding-agent assistance from the supplied [author account and feedback](../docs/AUTHOR-NOTES.md). No personal testing or research experience is invented.*
 
+## Keeping the course visible
+
+I clarified that satisfying missions still need a university course around them. A student should first understand the subject, audience, outcomes, workload, assessments and teaching team. I also specified in-person teaching as the preferred mode: students work with facilitators, apparatus or paper models and one another. The online academy provides an equivalent route when they cannot attend and supports revision. These are teaching intentions; the website review does not claim a classroom trial.
+
 ## Short retro demonstration outline
 
 This is a presentation plan, not a record of a presentation already delivered.

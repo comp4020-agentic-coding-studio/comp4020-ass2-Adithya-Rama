@@ -30,13 +30,13 @@ A proud recovery still needs a traceable account. A successful-looking story can
 
 **What you will produce:** An exported mission record and an after-action account with three decisions, one limitation and a credible alternative.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Review two contrasting rehearsal records (20 minutes). Agree roles and the initial objective (10 minutes). Check that each member can explain one decision outside their main role (10 minutes).
 
-Read the [briefing](/lectures/week-12/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-12.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-12/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-12.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -69,7 +69,19 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+**Equipment:** The full published mission pack, role sheets, previous lab props or equivalent cards, and the resolution checklist. A single shared browser or printed tabletop map can serve the group.
+
+**Setup:** Lay out the six station areas, publish the chosen preset and assign roles. Keep rule sheets accessible. Use the same resolution requirements for browser and campus routes.
+
+**What you do together:** A facilitator applies published domain rules and records events without inventing obstacles. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
+
+The [printable facilitator pack](/campus/week-12.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -95,16 +107,6 @@ Save the after-action account with **Record attempt in skills passport** and kee
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
 
 The browser requires a **currently completed Operation Last Light** in your local passport before verifying the after-action account. A draft narrative or historical legacy record cannot create practical completion. Complete the linked mission, then return here; keep both its run export and your account.
-
-## Campus route
-
-**Equipment:** The full published mission pack, role sheets, previous lab props or equivalent cards, and the resolution checklist. A single shared browser or printed tabletop map can serve the group.
-
-**Setup:** Lay out the six station areas, publish the chosen preset and assign roles. Keep rule sheets accessible. Use the same resolution requirements for browser and campus routes.
-
-**Activity:** A facilitator applies published domain rules and records events without inventing obstacles. Rotate responsibility for explaining decisions. End with a team debrief and an individual account; acting speed and dramatic performance do not determine marks.
-
-The [printable facilitator pack](/campus/week-12.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 

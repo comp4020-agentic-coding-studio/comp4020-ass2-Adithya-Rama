@@ -30,13 +30,13 @@ Dispatch will prepare the wrong kit if an item is lost or reordered. Build a rou
 
 **What you will produce:** Four place–item associations, a recorded unaided baseline and cued recall attempt, changed-list attempts, and an explanation of which cue helped or failed.
 
-**Start here:** read the steps under **Browser route** on this page, then open the browser lab. If you want to see an example first, use the separate demonstration; it shows different data and does not complete this activity.
+**Start here:** in-person attendance is preferred. Read the briefing and **In-person lab** instructions, then bring the named preparation to the facilitated session. If you cannot attend, use the **Online lab** and separate worked example below; they practise the same outcomes.
 
 ## Before you arrive
 
 Read MP-01 and choose familiar or supplied locations (10 minutes). Make one association for an ordinary shopping item and test it after a short pause (5 minutes).
 
-Read the [briefing](/lectures/week-02/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. Choose the browser route or [campus pack](/campus/week-02.md). Both assess the outcomes below.
+Read the [briefing](/lectures/week-02/). All starting rules and data are supplied here, so you can begin directly even if you missed an earlier lab. For the preferred in-person route, read the [campus pack](/campus/week-02.md). The online route is available when you cannot attend. Both assess the outcomes below.
 
 ## What you will learn
 
@@ -68,7 +68,21 @@ These six rows are the session timetable, not six hidden game objectives. **Brie
 | 80–105 minutes | Transfer: apply the same principle in the unfamiliar situation below. |
 | 105–120 minutes | Debrief: compare predictions with results, reflect and export the record. |
 
-## Browser route
+## In-person lab · preferred route
+
+[Printable scene and memory cards](/campus/perception-cards.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
+
+**Equipment:** Four location cards, the three item lists, opaque cover sheets and a recall comparison sheet. Real walking is optional.
+
+**Setup:** Place location cards around a room or in a row on a table. Provide a seated, visual or spoken route with the same order. Give each student their own list copy.
+
+**What you do together:** Students complete a baseline independently, create associations and retrieve with the list concealed. A partner scores against the declared rules. Do not use public ranking, compulsory speed tests or claims about intelligence.
+
+The [printable facilitator pack](/campus/week-02.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
+
+Keep the same prediction, changed-condition attempt and explanation as the online route. A signed or dated station sheet and receiver acknowledgement can serve as the action record; an additional browser run is not required.
+
+## Online lab · equivalent participation and revision
 
 ### Do these actions in order
 
@@ -92,18 +106,6 @@ Your mission outcome is practice evidence, not an academic grade. Explain its re
 After each practical phase, open **After playing · explain and save this attempt**, write a brief reflection and select **Record attempt in skills passport** before switching phases. Keep the attempts and changed-condition evidence you discuss; an unfinished attempt can still be useful if you explain its limit. Export a backup using the passport tools.
 
 For an uninterrupted view, choose **Fullscreen mission**. The **Mission & controls** panel contains the task and lesson controls. Scroll over the scene to zoom, click and drag to turn with the cursor free. Press **X** to lock the cursor for mouse-look; press **X** again (or **Tab**) to free it for scrolling and choosing options. **Esc** or **Exit fullscreen** returns to the page. Touch and keyboard controls remain available.
-
-## Campus route
-
-[Printable scene and memory cards](/campus/perception-cards.svg). Print at 100% on A4; each sheet includes a 50 mm scale check.
-
-**Equipment:** Four location cards, the three item lists, opaque cover sheets and a recall comparison sheet. Real walking is optional.
-
-**Setup:** Place location cards around a room or in a row on a table. Provide a seated, visual or spoken route with the same order. Give each student their own list copy.
-
-**Activity:** Students complete a baseline independently, create associations and retrieve with the list concealed. A partner scores against the declared rules. Do not use public ranking, compulsory speed tests or claims about intelligence.
-
-The [printable facilitator pack](/campus/week-02.md) includes rules, prompts and explanation. Campus apparatus is a proposed teaching design; physical construction and handling have not been validated by browser tests. Use the paper model when equipment is unavailable.
 
 ## What leaves the room
 
